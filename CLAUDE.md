@@ -11,7 +11,8 @@
 6. `docs/06_ROADMAP.md` — build order + done criteria. **work phase by phase**
 7. `brand/BRAND.md` + `brand/tokens.css` — name, colours, type, logo
 8. `docs/07_FREE_TIER.md` — **Spark-only constraints. overrides 02 where they conflict.**
-9. `docs/00_WORKPLAN.md` — current task breakdown + status
+9. `docs/08_GUEST_MODE.md` — guest (no sign-in, local-only) mode + migration
+10. `docs/00_WORKPLAN.md` — current task breakdown + status
 
 ## non-negotiables
 - **exam patterns are config.** never hard-code counts/marks. read `content/blueprints/*.json`.
@@ -24,6 +25,8 @@
 - users are mostly minors → DPDP: DOB at signup, parental consent flow <18, attempt data used only for the student's own learning.
 - math rendering: KaTeX with `trust:false`. user content = markdown only, no raw HTML.
 - CBT UI must not use NTA / TCS logos or names. copy behaviour, not branding.
+
+- **guest mode:** the whole practice/exam experience works without sign-in; guest data lives only on the device (IndexedDB) and is migrated to Firestore when they sign in. all feature code reads/writes user state through `UserStore` (app/src/store) — never call Firestore directly from features. see `docs/08_GUEST_MODE.md`.
 
 ## stack
 **firebase project `kairos-76a0d`, Spark plan only — never add anything that requires billing.**
