@@ -3,6 +3,7 @@ import { parseBlueprint, type Blueprint, type Question } from '@kairos/core';
 import { BANK_BASE } from '../bank/config';
 import { getLatestVersion, getMockPaper, getQuestionsByIds } from '../bank/client';
 import { buildExamModel, type ExamModel, type MockPaperLike } from './model';
+import { getGeneratedStore, isGeneratedId } from '../diagnostic/generatedStore';
 
 export type AnswerMap = ReadonlyMap<string, Question>;
 
@@ -42,12 +43,31 @@ export interface ExamDataState {
   error: Error | undefined;
 }
 
+/**
+ * `gen_*` papers are generated on this device (W6a): paper, answer key and blueprint come from
+ * IndexedDB `kairos-generated`, not the bank. The blueprint is stored with the paper (offline-safe);
+ * older records without one fall back to the bank's copy.
+ */
+export async function loadGeneratedExamData(paperId: string): Promise<ExamData> {
+  const rec = await getGeneratedStore().get(paperId);
+  if (!rec) throw new Error('This generated paper is not on this device any more. Make a new one from Mocks.');
+  const version = rec.blueprint ? 0 : await getLatestVersion();
+  const blueprint = rec.blueprint ?? (await fetchBlueprint(version, rec.blueprintId));
+  const model = buildExamModel(
+    { paperId: rec.paperId, blueprint: rec.blueprintId, title: rec.title, slots: rec.paper.map((q) => q.id), questions: rec.paper },
+    blueprint,
+  );
+  const map = new Map(rec.paper.map((q) => [q.id, { ...q, answer: rec.answers[q.id] ?? undefined } as unknown as Question]));
+  return { version, model, loadAnswers: async () => (rec.paper.every((q) => rec.answers[q.id]) ? map : null) };
+}
+
 export function useExamData(paperId: string | null): ExamDataState {
   const [s, setS] = useState<{ id: string | null; data?: ExamData; error?: Error }>({ id: null });
   useEffect(() => {
     if (!paperId) return;
     let live = true;
     (async () => {
+      if (isGeneratedId(paperId)) return loadGeneratedExamData(paperId);
       const version = await getLatestVersion();
       const paper = await (await getMockPaper(version, paperId)) as unknown as MockPaperLike;
       const blueprint = await fetchBlueprint(version, paper.blueprint);
