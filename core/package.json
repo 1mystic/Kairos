@@ -9,7 +9,8 @@
   "scripts": {
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sim": "KAIROS_SIM_FULL=1 vitest run src/sim/full.sim.test.ts"
   },
   "dependencies": {
     "katex": "^0.16",

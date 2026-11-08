@@ -10,3 +10,4 @@ export * from './measure/index';
 export * from './plan/index';
 export * from './gen/index';
 export * from './byo/index';
+export * from './sim/index';
