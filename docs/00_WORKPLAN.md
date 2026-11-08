@@ -75,45 +75,44 @@ Every prompt must say: read CLAUDE.md + docs/07 + brand/BRAND.md; own only liste
 - [ ] **W6c predicted score** (core monte-carlo + UI band)
 Phase 4 (server grading / all-India mocks / FCM digest / community uploads) needs `/worker` on Cloudflare — plan separately.
 
-## Live status (orchestrator log, updated 2026-11-08, for session handoff)
-Repo: https://github.com/1mystic/Kairos (`main` = committed work; branch `wip-snapshot` = full working-tree snapshot incl. UNFINISHED agent work, force-pushed, never merge blindly — diff it against main to recover work if a session dies).
-Firebase `kairos-76a0d` (Spark): Firestore (asia-south1) + rules + indexes + email/password + Google auth DEPLOYED. Hosting NOT deployed. `app/.env.local` holds the web config (owner pasted it; never read it).
-Tools: firebase CLI + gh logged in; Java for emulators at `~/.local/jre/jdk-21.0.13+9-jre/bin` (prepend to PATH before `pnpm test:rules`); pipeline venv `pipeline/.venv`.
+## Live status (orchestrator log; last updated end of session 2, 2026-11-08 evening)
+Repo: https://github.com/1mystic/Kairos (`main` = committed work; branch `wip-snapshot` = full working-tree snapshot incl. UNFINISHED agent work, force-pushed each save; never merge blindly: `git fetch origin wip-snapshot && git diff main origin/wip-snapshot --stat`, then `git checkout origin/wip-snapshot -- <paths>` for what you need).
+Firebase `kairos-76a0d` (Spark): Firestore (asia-south1) + rules (v1, the 55-test set) + indexes + email/password + Google auth DEPLOYED. **Hosting NOT deployed. The new admin rules (commit 0ca07a1) are committed but NOT deployed and their ~120 tests have NEVER been run** (dry-run compile passed). `app/.env.local` holds the web config (owner pasted; never read it).
+Tools: firebase CLI + gh logged in; Java for emulators at `~/.local/jre/jdk-21.0.13+9-jre/bin`; pipeline venv `pipeline/.venv`; `pdftotext/pdftoppm` installed.
 
-### Done and committed on main (as of the end of session 1)
-W1 scaffold · W2a core · W2b app shell/auth · W2c firebase+rules (55 rules tests) · W2d pipeline · W3a guest mode + store · W3b/e core media + bank client + QuestionView · W3d CI · W3f landing · **W3g flat design system + responsive + production landing/FAQ/legal/settings (docs/10_DESIGN_SYSTEM.md, consistency test)** · W4a mock exam (CBT) · W4b measurement engine · W4c practice mode · W4d-core upload data layer + media rules · W5b-core schedule/pace · **W5c planner engine + backlog + sim (1,000 students, 100 days: planner 144.8 vs random 131.6 vs chapter-order 109.9 marks gain; paired CIs > 0, gate passes; run `pnpm --filter @kairos/core sim`)** · W6a-core generator/diagnostic/predict · **W7a question bank v2 (519 Qs: 495 JEEBench JEE-Adv + 24 authored; bank v2 live)**. Core: 261 tests ~99% coverage. Routes MOUNTED in App.tsx: landing (/), auth, settings, privacy/terms, practice (picker/session/summary), mocks list + result, full-screen /exam/:paperId (guests allowed).
+### OWNER RULES LEARNED (apply to every agent prompt)
+- **CPU is overloaded: agents (and the orchestrator) must NOT run tests, tsc, vite/dev servers, builds, Playwright/Chromium or screenshots.** Only file edits, git, and `pnpm exec eslint <changed files>` once. The owner runs tests/type-check/visual checks manually and reports failures. (Exception granted: orchestrator may run tests LIGHTLY once at final integration before deploying hosting, per owner.)
+- **Never commit code that imports files that don't exist**: create the file BEFORE adding the import; before committing check every new import resolves in the same commit. Don't commit other agents' half-finished work.
+- **Never weaken TLS/security checks** (no curl -k) for downloads; an unverifiable host = unavailable, ask the owner.
+- Design: brand palette = neutrals + indigo + saffron; **semantic green/red allowed for status** (tokens `--good*`/`--bad*`, classes in app/src/styles/semantic.css); flat (no borders/shadows/gradients); one spacing scale; symmetric two-column layouts (TwoPane/Columns/CardGrid); hover = pointer cursor + tint change (app/src/styles/interactions.css); responsive 320→2560.
+- Content: official papers + official final keys + MIT datasets + own/user questions ONLY; never coaching/publisher sites (Aakash, PW, Vedantu, Motion, Careers360, AglaSem, etc.).
+- Sonnet subagents only. One owner per directory; commits by explicit pathspec with trailer `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`; never `git add -A` on main, never stash/reset.
 
-### Known issues
-- (fixed) App.test.tsx guest-routing test: the practice routes are now stubbed in that test (picker has its own tests).
-- Lint/tsc errors in unfinished W4d-ui files (store/bank.ts unused vars, upload/raster.ts `destroy`) — agent resumed to fix.
-- Flaky: core `generatePaper > hard constraints hold across 200 seeds` can time out under parallel coverage load (passes alone); consider raising its timeout.
+### Done and committed on main
+Phase 0 foundations (scaffold, core, app shell/auth, firebase config+rules, pipeline) · guest mode + store + migration (onboarding fields, user bank/media, decide-later modal, limited session reads) · bank client + QuestionView (+ user images) · CI workflow · landing page (animated, FAQ, legal) · measurement engine · practice mode (+ My questions, self-check) · mock exam/CBT (+ fullscreen exit, result page with report tabs) · upload your questions (prompt copy, PDF/images, paste, review, crop, local+cloud bank) · analysis (mastery heatmap, mistakes, full mock report) · planner engine + backlog + simulation (planner 144.8 vs random 131.6 vs chapter-order 109.9) · generator/diagnostic/predicted score + UI · onboarding + daily plan UI · customisable dashboard (mounted on Home) · question bank v2 (519 Qs) · flat design system + layout primitives (docs/10_DESIGN_SYSTEM.md, docs/layout-audit.md) · custom Select, sidebar branding, interactions.css (hover/pointer) · semantic green/red tokens+classes · admin RULES + rules tests (written, not run).
+Routes MOUNTED in App.tsx: landing `/`, auth, settings, privacy/terms, practice, mocks/results, exam runner, upload (/upload, /bank), diagnostic (/diagnostic, /mocks/new), analysis, onboarding, plan. ScrollToTop on route change.
 
-### IN FLIGHT when session 1 ended (uncommitted in working tree; saved on branch `wip-snapshot`)
-- W4d-ui upload screens: app/src/upload/**, app/src/store/bank*.ts, app/scripts/sync-prompt.mjs, adds pdfjs-dist (package.json/pnpm-lock changed). Routes `/upload`, `/bank` not mounted yet.
-- W5d customisable dashboard: app/src/dashboard/** (spec docs/11_DASHBOARD.md). Mount `<Dashboard/>` inside pages/Home.tsx when done.
-To recover: `git fetch origin wip-snapshot && git diff main origin/wip-snapshot --stat`; either check out the files you need from that branch (`git checkout origin/wip-snapshot -- <paths>`) or re-launch the task text from this plan with model sonnet, telling the agent to continue from existing files. Check each agent's tests/lint before committing.
+### IN FLIGHT when session 2 ended (check `git status`, `git log`, wip-snapshot)
+1. **W9 admin console + remote config + roadmap + telemetry** (app/src/admin, config, roadmap, telemetry; docs/12_ADMIN.md; spec in the conversation: `/admin` gated by `admins/{uid}` doc the owner creates in the Firebase console with their UID; tabs Overview/Exam dates/Announcement/Roadmap defaults/Users/System; public `config/{exam_calendar,announcement,roadmap_defaults}` docs; aggregate-only `stats/{day}` counters with daily-active marker; user Default-vs-Custom roadmap page `/roadmap`; Settings "Exam & plan" rows). **Uncommitted & incomplete at snapshot: `app/src/pages/Settings.tsx` imports `../admin/useIsAdmin` which does not exist yet (Vite error); `app/src/admin/` has calendarEdit/insights/publish/users/tabs only.** If the agent is gone: re-run it from this plan ("continue, don't restart", read app/src/admin, app/src/config, app/src/roadmap, app/src/telemetry and the rules contract in firestore.rules + firestore-tests/src/admin.rules.test.ts). It must NOT leave dangling imports.
+2. **W7b official PYQ sourcing pilot** (pipeline/acquire, extract, ingest/nta_*, content/sources/nta|iiser): find official NTA/IISER paper+final-key URLs (no coaching sites, no TLS bypass; iiseradmission.in failed TLS verification (curl exit 60) → treat as unavailable unless a verifying official host exists; ask owner), build acquire→pdftotext→structure→validate pipeline, pilot 1 paper per exam, report quality + scaling plan for ~10 years (owner approves scale/usage). Raw PDFs go to gitignored `pipeline/raw/`.
 
-### Launched after the first handoff (also in flight; check git log/status/wip-snapshot)
-- W5b-ui + W6b: onboarding (exam date, minutes/day, off-day, chapters done, ambition, plan preview) + daily plan UI (today card, tasks, week view, pace, backlog/triage). Owns app/src/onboarding/**, app/src/plan/**; exports `useTodayPlan()`, `useOnboardingProfile()`. Routes: /onboarding, /plan, /plan/:date.
-- W5a analysis: app/src/analysis/** (mastery heatmap, mistakes, full mock report: waterfall, quadrant, time map, fatigue, fix list). Routes /analysis, /analysis/mock/:mockId; exports `<MockReport/>` to mount as tabs in the cbt ResultPage.
-- W6a-ui + W6c: app/src/diagnostic/** (diagnostic test, personalised mock generator -> `gen_` papers opened by the cbt runner via a small additive edit in cbt/loader.ts, predicted score band). Routes /diagnostic, /mocks/new; exports `usePredictedScore()`, `<PredictedBand/>`.
-Orchestrator mounting checklist when they land: add their `*Routes` in App.tsx (inside AppLayout), mark nav items `built: true` in pages/AppLayout.tsx (Plan, Analysis, Upload...), mount `<MockReport/>` in cbt ResultPage tabs, embed `<PredictedBand/>` + `useTodayPlan()` in Home/dashboard, `<Dashboard/>` in Home, then run the verify block, e2e smoke (landing -> guest -> onboarding -> plan -> practice -> mock -> analysis), and deploy hosting.
-
-### Next, in order
-0. Fix the failing App.test.tsx case above, then:
-1. Finish/recover in-flight agents (W4d-ui, W5c, W5d); run the verify block (pnpm lint, typecheck, core test:coverage, app test, build, test:rules if rules changed, pipeline pytest); commit; push main.
-2. INTEGRATION (orchestrator, tiny edits in app/src/App.tsx): practice + mocks + exam + landing + settings are DONE. Still to mount: uploadRoutes (/upload, /bank), `<Dashboard/>` in Home, BankPreview at /dev/bank (DEV only), and add 'My questions' source into practice (`userBankSource()`). Add missing core exports (JEE_ADV exam enum if W7a reports it). Update docs/03 mastery doc with reps/lapses/st fields.
-3. Deploy hosting: `pnpm build && firebase deploy --only hosting --project kairos-76a0d --non-interactive`; smoke test landing → guest → practice → sample mock → upload → sign up/in.
-4. Remaining features (feature map above): W5a analysis (mock report tabs + heatmap), W5b-ui onboarding + exam date + today card (uses core/plan + nudge('exam_date_set')), W6b daily plan UI (uses planner), W6c predicted-score UI, practice mode: include user bank source (`userBankSource()` from upload) + session screen change, diagnostic UI.
-5. Content: NEET/JEE Main source decision pending (official NTA PYQs via vision extraction vs authored+cross-checked).
-6. Phase 4 later (Cloudflare Worker for server-graded all-India mocks, FCM digest).
+### TODO next, in order
+1. Let W9 + W7b finish (or re-run). Check W9's imports all resolve; commit by explicit paths.
+2. **Mount** in App.tsx: `adminRoutes`, `roadmapRoutes` (+ `/privacy` etc. already). Tidy Settings (sidebar tagline wraps; nav column too wide; content card shorter than nav; add "Admin" row only for admins; add "Add this device's progress" row via `useMigration().retry()`).
+3. **Telemetry wiring** (call sites in app/src/telemetry/README.md): practice commitSession, mock submit, diagnostic finish, upload save, signup, onboarded; call `installTelemetry()` once.
+4. **Apply semantic green/red** across screens (practice/mock correct vs wrong feedback and review rows `opt-right/opt-wrong`, pace on-track/behind chips, dashboard deltas, analysis waterfall, form errors/success toasts, Save=btn-success, Delete/Discard=btn-danger). Agent task; don't overlap with W9 files.
+5. **Conformance pass for onboarding/plan/Settings/AppLayout** to layout primitives (layout agent's conformance list) after W9 is done.
+6. Put `<PredictedBand/>` + `useTodayPlan()` into Home/dashboard (dashboard plan/readiness widgets currently fall back); set `bundle.band` in useDashboardData.
+7. **OWNER runs checks manually** (nothing was run since ~W4f): `pnpm test:rules` (needs Java on PATH; 55 old + ~120 new admin rules tests), `pnpm --filter @kairos/app test`, `pnpm --filter @kairos/core test:coverage`, `pnpm lint`, `pnpm --filter @kairos/app exec tsc --noEmit`, `pnpm --filter @kairos/app exec vite build`. Known test risks: practice/summary.test.tsx (focus change after last run), analysis tests (layout markup changed), consistency.test.ts (new rules), Wizard/Dashboard "Esc closes" timeouts under load (20s timeout added), noborders tests. Fix failures with agents.
+8. **Deploy** (after tests pass): `firebase deploy --only firestore:rules,firestore:indexes --project kairos-76a0d` (admin rules), then `pnpm build && firebase deploy --only hosting --project kairos-76a0d`; smoke test landing → guest → onboarding → plan → practice → mock → analysis → upload. Owner then creates `admins/<uid>` in the console.
+9. Content: after W7b report, approve scope; extract more official PYQs (JEE Main shifts, NEET, IAT); fill empty/thin chapters (organic needs figures: add figure cropping step); NEET/IAT mocks need more questions. Add `chapter_weights` files so the generator uses real weights; fill real exam dates in config/exam_calendar via the admin page.
+10. Later phases: Cloudflare Worker for server-graded all-India mocks + FCM digest; App Check; parental consent flow; Hindi; JEE Advanced skin.
 
 ### Owner decisions pending
-- Migration modal: closing it (Esc/X) currently discards local data — proposed fix: closing keeps local data and re-asks next time; only an explicit "Discard local" deletes.
-- NEET/JEE Main question source (see 5).
-
-### Conventions that must hold
-Spark only (no billing). 3 colours (neutrals + indigo + saffron), flat (no borders/shadows/gradients except landing ring; CBT screen keeps NTA-style tokens), Plus Jakarta Sans, spacing scale 4/8/12/16/24/32/48/64, responsive 320→2560. All user state through `UserStore` (guest = local only). Sonnet subagents only; one owner per directory; commits by explicit pathspec, trailer `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`; never `git add -A` on main, never stash/reset.
+- Scale/usage for the 10-year PYQ extraction (after W7b pilot report); what to do about iiseradmission.in TLS (use another official host or skip IAT papers).
+- Real exam dates for 2027 sessions (fill in admin page when announced).
+- Verify targets: ambition → target fractions of max marks (0.4/0.6/0.8) against real cut-offs; PRIOR_NEW/PRIOR_DONE constants make new students read "Behind".
+- Verify taxonomy additions marked VERIFY (7 chapters added, JEE Advanced-only flags).
 
 ## Later phases
 1 exam engine → 2 measure → 3 plan per docs/06, each broken into waves here before starting. Phase 4 server work goes to `/worker` (Cloudflare), see 07.
