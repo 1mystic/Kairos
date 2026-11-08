@@ -7,7 +7,6 @@ import { Forgot } from './auth/Forgot';
 import { CompleteProfile } from './auth/CompleteProfile';
 import { AppLayout } from './pages/AppLayout';
 import { Home } from './pages/Home';
-import { Placeholder } from './pages/Placeholder';
 import { Privacy, Terms } from './pages/Legal';
 import { PublicEntry } from './pages/PublicEntry';
 import { Settings } from './pages/Settings';
@@ -16,6 +15,8 @@ import { cbtExamRoutes, cbtPageRoutes } from './cbt/routes';
 import { uploadRoutes } from './upload/routes';
 import { diagnosticRoutes } from './diagnostic/routes';
 import { analysisRoutes } from './analysis/routes';
+import { onboardingRoutes } from './onboarding/routes';
+import { planRoutes } from './plan/routes';
 import { ScrollToTop } from './lib/ScrollToTop';
 import { StoreProvider } from './store/StoreProvider';
 import { NudgeProvider } from './store/NudgeProvider';
@@ -54,7 +55,12 @@ export function AppRoutes() {
           {cbtPageRoutes.map((r) => (
             <Route key={r.path} path={r.path} element={r.element} />
           ))}
-          <Route path="/onboarding" element={<Placeholder title="Set your exam date">Exam date and daily time setup is on its way.</Placeholder>} />
+          {onboardingRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {planRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
           <Route path="/settings" element={<Settings />} />
         </Route>
         {/* Full-screen exam runner: no app chrome. Guests allowed (ProtectedRoute admits them). */}
