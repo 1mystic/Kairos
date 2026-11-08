@@ -26,7 +26,7 @@
 - CBT UI must not use NTA / TCS logos or names. copy behaviour, not branding.
 
 ## stack
-**firebase project `kairos-43000`, Spark plan only — never add anything that requires billing.**
+**firebase project `kairos-76a0d`, Spark plan only — never add anything that requires billing.**
 
 React + TypeScript + Vite (PWA via vite-plugin-pwa/Workbox) · Tailwind using `brand/tokens.css` vars · KaTeX · Firebase Auth (Google + email/password) · Firestore (offline persistence on) · Firebase Hosting · Cloudflare Workers for server logic (no Cloud Functions: Spark plan only, see 07) · `ts-fsrs` · zod · vitest + playwright · Python 3.11 pipeline in `/pipeline` (GitHub Actions cron).
 

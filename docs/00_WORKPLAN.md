@@ -20,7 +20,7 @@ Each agent: read CLAUDE.md + docs it needs, do its task, run its tests, commit w
 - [ ] **W3c CI** — GitHub Actions: lint, test, build, rules tests on emulator.
 
 ### Orchestrator-only (needs Firebase project access)
-- [ ] register web app in `kairos-43000`, write `app/.env.local` from `firebase apps:sdkconfig`
+- [ ] register web app in `kairos-76a0d`, write `app/.env.local` from `firebase apps:sdkconfig`
 - [ ] create Firestore DB (`asia-south1`), deploy rules + auth config, add authorized domains
 - [ ] first hosting deploy
 

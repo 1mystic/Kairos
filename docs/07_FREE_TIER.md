@@ -2,7 +2,7 @@
 
 **Hard rule: Firebase Spark plan only. No billing account, ever.** Owner is in India. If something needs Blaze, use a free third party (Cloudflare first) or defer it.
 
-Firebase project: `kairos-43000` (single project for now; `dev` = emulators).
+Firebase project: `kairos-76a0d` (single project for now; `dev` = emulators).
 
 ## what we use on Spark (free, no card)
 | need | service | Spark limit (VERIFY at build time) |
