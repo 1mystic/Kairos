@@ -22,6 +22,10 @@ export interface BufferedSession {
   /** question ids already checked */
   checked: string[];
   updatedAt: number;
+  /** 'only' = just your own questions, '1' = bank + your own in these chapters */
+  my?: 'only' | '1';
+  /** include your questions without answers (self-check) */
+  selfCheck?: boolean;
 }
 
 /** Local buffer. The only writer is the session screen; it is cleared once the session is flushed. */

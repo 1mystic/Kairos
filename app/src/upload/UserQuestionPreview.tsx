@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { UserQuestion } from '@kairos/core';
 import { QuestionView } from '../components/QuestionView';
 import { imageIdsOf, toPracticeQuestion } from '../store/bank';
@@ -20,8 +20,6 @@ export function previewQuestion(q: UserQuestion): UserQuestion {
   };
 }
 
-const ID_IN_SRC = /([0-9a-f]{16})\.w\d+\.webp/;
-
 /** data URLs for the images of these questions: `local` (unsaved crops) first, then the bank media store. */
 export function useMediaUrls(qs: readonly UserQuestion[], local?: ReadonlyMap<string, string>): ReadonlyMap<string, string> {
   const store = useBankStore();
@@ -38,26 +36,9 @@ export function useMediaUrls(qs: readonly UserQuestion[], local?: ReadonlyMap<st
   return useMemo(() => new Map([...loaded, ...(local ?? [])]), [loaded, local]);
 }
 
-/**
- * QuestionView (review variant) for a user question. QuestionView resolves `img:<id>` to bank CDN
- * urls, which do not exist for user images, so after render we point those <img> at the data URLs.
- */
+/** QuestionView (review variant) for a user question; `urls` (unsaved crops + stored media) win over the bank store. */
 export function UserQuestionPreview({ question, urls, showSolution = true }: { question: UserQuestion; urls: ReadonlyMap<string, string>; showSolution?: boolean }) {
-  const box = useRef<HTMLDivElement>(null);
   const shown = useMemo(() => toPracticeQuestion(previewQuestion(question)), [question]);
-  useLayoutEffect(() => {
-    box.current?.querySelectorAll('img').forEach((img) => {
-      const id = ID_IN_SRC.exec(img.getAttribute('src') ?? '')?.[1];
-      const u = id ? urls.get(id) : undefined;
-      if (u && img.getAttribute('src') !== u) {
-        img.removeAttribute('srcset');
-        img.setAttribute('src', u);
-      }
-    });
-  });
-  return (
-    <div ref={box}>
-      <QuestionView question={shown} variant="review" showSolution={showSolution} />
-    </div>
-  );
+  const userImages = useMemo(() => Object.fromEntries(urls), [urls]);
+  return <QuestionView question={shown} variant="review" showSolution={showSolution} userImages={userImages} />;
 }

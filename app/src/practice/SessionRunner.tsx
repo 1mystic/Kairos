@@ -6,10 +6,14 @@ import { Banner, Button, Card, Chip, Input, ProgressBar } from '../components/ui
 import { saveQuietly, type BufferedSession, type SessionBuffer } from './buffer';
 import {
   REASON_CHIPS,
+  SELF_RIGHT,
+  SELF_WRONG,
   checkAnswer,
   correctAnswerText,
+  isMine,
   valueToResponse,
 } from './finish';
+import { isSelfCheck } from './queue';
 import { SessionRecorder, isMarked, lastAnswer } from './recorder';
 import type { KairosEvent } from '@kairos/core';
 
@@ -58,7 +62,9 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
 
   const q = questions[index];
   const isChecked = !!q && checked.includes(q.id);
-  const verdict = q && isChecked ? checkAnswer(q, answer === '' ? null : valueToResponse(q, answer)) : null;
+  const selfCheck = !!q && isSelfCheck(q);
+  const [revealed, setRevealed] = useState(false);
+  const verdict = q && isChecked && !selfCheck ? checkAnswer(q, answer === '' ? null : valueToResponse(q, answer)) : null;
   const isNumeric = q?.type === 'NVQ' || q?.type === 'INT';
   const selected = useMemo(() => (q && !isNumeric && answer ? answer.split(',') : []), [q, isNumeric, answer]);
   const flagged = q ? isMarked(r.events, q.id) : false;
@@ -84,6 +90,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
     if (!q || visited.current === q.id) return;
     visited.current = q.id;
     setAnswer(lastAnswer(r.events, q.id));
+    setRevealed(false);
     setTimedOut(false);
     acc.current = 0;
     if (!checked.includes(q.id)) {
@@ -147,10 +154,23 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
     [q, checked, paused, answer, reasons, persist],
   );
 
+  /** self-check: log the student's own verdict; scoring and mastery ignore it (see finishSession) */
+  const selfGrade = (right: boolean) => {
+    if (!q || checked.includes(q.id) || paused) return;
+    const v = right ? SELF_RIGHT : SELF_WRONG;
+    r.save(q.id, v);
+    r.submit(q.id);
+    stopClock();
+    setAnswer(v);
+    const nextChecked = [...checked, q.id];
+    setChecked(nextChecked);
+    persist({ checked: nextChecked });
+  };
+
   // timed mode: time is up
   useEffect(() => {
-    if (timed && q && !isChecked && !paused && elapsed >= timeLimitMs(q)) check(true);
-  }, [timed, q, isChecked, paused, elapsed, check]);
+    if (timed && q && !selfCheck && !isChecked && !paused && elapsed >= timeLimitMs(q)) check(true);
+  }, [timed, q, selfCheck, isChecked, paused, elapsed, check]);
 
   const goNext = useCallback(() => {
     if (!q) return;
@@ -202,10 +222,10 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
         if (el?.tagName === 'BUTTON') return; // let the focused button act
         e.preventDefault();
         if (isChecked) goNext();
-        else if (answer.trim() !== '') check();
+        else if (!selfCheck && answer.trim() !== '') check();
         return;
       }
-      if (typing || isChecked || isNumeric) return;
+      if (typing || isChecked || isNumeric || selfCheck) return;
       const i = Number(e.key) - 1;
       const opt = q.options?.[i];
       if (opt && i >= 0 && i < 4) {
@@ -226,6 +246,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
   const last = index + 1 >= questions.length;
   const answered = checked.length;
 
+  const mine = isMine(q);
   const side = (
     <aside className="stack gap-s4" aria-label="Session progress">
       <Card>
@@ -273,9 +294,12 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
     <div className="mx-auto grid w-full max-w-reading gap-s5 xl:max-w-app xl:grid-cols-3 xl:gap-s6 3xl:max-w-app">
       <div className="stack gap-s4 xl:col-span-2">
         <div className="row justify-between gap-s3">
-          <Chip tone="primary">
-            Question {index + 1} of {questions.length}
-          </Chip>
+          <span className="row gap-s2">
+            <Chip tone="primary">
+              Question {index + 1} of {questions.length}
+            </Chip>
+            {mine && <Chip>{selfCheck ? 'Your question, self-check' : 'Your question'}</Chip>}
+          </span>
           <span className="row gap-s2 text-small text-slate xl:hidden">
             <ClockIcon width={16} height={16} />
             <span className="tabular" data-testid="timer-compact">
@@ -304,10 +328,13 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
               <QuestionView
                 question={q}
                 selected={selected}
-                onSelect={isChecked || isNumeric ? undefined : (keys) => setValue([...keys].sort().join(','))}
-                showSolution={isChecked}
+                onSelect={isChecked || isNumeric || selfCheck ? undefined : (keys) => setValue([...keys].sort().join(','))}
+                showSolution={isChecked || revealed}
               />
-              {isNumeric && (
+              {selfCheck && revealed && !q.solution && (
+                <p className="text-small text-slate">No solution saved for this question. Work it out and grade yourself honestly.</p>
+              )}
+              {isNumeric && !selfCheck && (
                 <div className="stack gap-s2">
                   <label htmlFor="numeric-answer" className="text-small font-semibold">
                     Your answer
@@ -328,7 +355,14 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
           </Card>
         )}
 
-        {isChecked && (
+        {isChecked && selfCheck && (
+          <div data-testid="feedback">
+            <Banner tone={answer === SELF_RIGHT ? 'primary' : 'accent'} icon={answer === SELF_RIGHT ? <CheckIcon className="shrink-0" /> : <CloseIcon className="shrink-0" />} role="status">
+              {answer === SELF_RIGHT ? 'Marked as right.' : 'Marked as wrong.'} Self-checked questions are logged but do not change your mastery.
+            </Banner>
+          </div>
+        )}
+        {isChecked && !selfCheck && (
           <div className="stack gap-s3" data-testid="feedback">
             <Banner
               tone={verdict === 'correct' ? 'primary' : 'accent'}
@@ -364,6 +398,17 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
           </div>
         )}
 
+        {!paused && selfCheck && !isChecked && (
+          <div className="stack gap-s2" role="group" aria-label="Grade yourself">
+            <span className="text-small text-slate">
+              This question has no answer key, so you grade it. It will not change your mastery.
+            </span>
+            <div className="row gap-s2">
+              <Button size="sm" variant="secondary" onClick={() => selfGrade(true)}>I got it right</Button>
+              <Button size="sm" variant="secondary" onClick={() => selfGrade(false)}>I got it wrong</Button>
+            </div>
+          </div>
+        )}
         {!paused && (
           <div className="row justify-between gap-s3">
             <div className="row gap-s2">
@@ -378,6 +423,10 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
             </div>
             {isChecked ? (
               <Button onClick={goNext}>{last ? 'Finish' : 'Next'}</Button>
+            ) : selfCheck ? (
+              <Button variant="secondary" onClick={() => setRevealed(!revealed)} aria-pressed={revealed}>
+                {revealed ? 'Hide solution' : 'Reveal solution'}
+              </Button>
             ) : (
               <Button onClick={() => check()} disabled={answer.trim() === ''}>
                 Check

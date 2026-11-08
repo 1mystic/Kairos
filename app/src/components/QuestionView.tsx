@@ -4,6 +4,7 @@ import 'katex/dist/katex.min.css';
 import './QuestionView.css';
 import { CheckIcon } from './icons';
 import { IMG_BASE, imageUrl } from '../bank/config';
+import { isUserQuestion, useUserImageMap } from './useUserImages';
 
 const MAX_SRC_WIDTH = 960;
 
@@ -19,12 +20,37 @@ export function imageHtml(im: ImageRef, imgBase: string = IMG_BASE): string {
   );
 }
 
-export function contentToHtml(markdown: string, images: readonly ImageRef[] = [], imgBase?: string): string {
+/** Only inline image data/blob URLs: user images never become arbitrary URLs. */
+const SAFE_USER_URL = /^(data:image\/(webp|png|jpeg);base64,[A-Za-z0-9+/=]+|blob:[^\s"'<>]+)$/;
+
+/** `<img>` for a user image: single resolved URL (data/blob), declared size, same white card. */
+export function userImageHtml(im: ImageRef, url: string): string {
+  return (
+    `<figure class="kc-fig"><img src="${escapeHtml(url)}" width="${im.w}" height="${im.h}" loading="lazy" ` +
+    `decoding="async" alt="${escapeHtml(im.alt)}"></figure>`
+  );
+}
+
+export type ImageResolver = (id: string) => string | undefined;
+
+export function contentToHtml(
+  markdown: string,
+  images: readonly ImageRef[] = [],
+  imgBase?: string,
+  resolve?: ImageResolver,
+  /** user content: images not found by the resolver render their alt text instead of a CDN url */
+  strict = false,
+): string {
   const byId = new Map(images.map((i) => [i.id, i]));
   return renderContentHtml(markdown, {
     imageHtml: (id, alt) => {
       const im = byId.get(id);
-      return im ? imageHtml(im, imgBase) : `<span>${escapeHtml(alt)}</span>`;
+      if (!im) return `<span>${escapeHtml(alt)}</span>`;
+      const url = resolve?.(id);
+      if (url && SAFE_USER_URL.test(url)) return userImageHtml(im, url);
+      // user media not loaded (or missing): alt text, never a dead CDN link
+      if (strict) return `<span class="kc-alt">${escapeHtml(im.alt)}</span>`;
+      return imageHtml(im, imgBase);
     },
   });
 }
@@ -36,11 +62,20 @@ export interface ContentHtmlProps {
   images?: readonly ImageRef[];
   className?: string;
   as?: 'div' | 'span';
+  /** id -> data/blob URL for user images; ids it resolves skip the CDN srcset */
+  imageResolver?: ImageResolver;
+  /** convenience: the same as imageResolver, from a plain map */
+  userImages?: Record<string, string>;
+  /** unresolved images show alt text (set for user questions) */
+  strictImages?: boolean;
 }
 
 /** Renders any question markdown string (safe: escaped text, KaTeX trust:false). */
-export function ContentHtml({ markdown, images, className = '', as: Tag = 'div' }: ContentHtmlProps) {
-  const html = useMemo(() => contentToHtml(markdown, images), [markdown, images]);
+export function ContentHtml({ markdown, images, className = '', as: Tag = 'div', imageResolver, userImages, strictImages }: ContentHtmlProps) {
+  const html = useMemo(
+    () => contentToHtml(markdown, images, undefined, imageResolver ?? (userImages ? (id) => userImages[id] : undefined), strictImages),
+    [markdown, images, imageResolver, userImages, strictImages],
+  );
   return <Tag className={`kc ${className}`} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
@@ -52,6 +87,9 @@ export interface QuestionViewProps {
   /** called with the new full selection (SCQ: [key]; MSQ: toggled set) */
   onSelect?: (keys: string[]) => void;
   variant?: 'practice' | 'review';
+  /** resolves `img:<id>` for user images; default: loaded automatically for user questions */
+  imageResolver?: ImageResolver;
+  userImages?: Record<string, string>;
 }
 
 const NO_OPTIONS = new Set(['NVQ', 'INT']);
@@ -62,8 +100,14 @@ export function QuestionView({
   selected = [],
   onSelect,
   variant = 'practice',
+  imageResolver,
+  userImages,
 }: QuestionViewProps) {
   const name = useId();
+  const user = isUserQuestion(q);
+  const auto = useUserImageMap(q, user && !imageResolver && !userImages);
+  const imgs = userImages ?? auto;
+  const img = { imageResolver, userImages: imageResolver ? undefined : imgs, strictImages: user };
   const multi = q.type === 'MSQ';
   const options = NO_OPTIONS.has(q.type) ? [] : (q.options ?? []);
   const full = q as Question;
@@ -82,11 +126,11 @@ export function QuestionView({
       {q.passage ? (
         <ContentHtml
           markdown={q.passage}
-          images={q.images}
+          images={q.images} {...img}
           className="rounded-card bg-surface-2 p-s4 text-slate"
         />
       ) : null}
-      <ContentHtml markdown={q.stem} images={q.images} className="text-body leading-relaxed" />
+      <ContentHtml markdown={q.stem} images={q.images} {...img} className="text-body leading-relaxed" />
 
       {options.length > 0 && (
         <div
@@ -112,7 +156,7 @@ export function QuestionView({
                   className="sr-only"
                 />
                 <span aria-hidden="true" className={`opt-key${multi ? ' opt-key-sq' : ''}`}>{o.key}</span>
-                <ContentHtml markdown={o.text} images={q.images} className="min-w-0 flex-1 pt-s1" />
+                <ContentHtml markdown={o.text} images={q.images} {...img} className="min-w-0 flex-1 pt-s1" />
                 {isCorrect && <span className="chip chip-accent shrink-0"><CheckIcon width={14} height={14} />Correct</span>}
               </label>
             );
@@ -133,7 +177,7 @@ export function QuestionView({
               </strong>
             </p>
           )}
-          {full.solution && <ContentHtml markdown={full.solution} images={q.images} />}
+          {full.solution && <ContentHtml markdown={full.solution} images={q.images} {...img} />}
         </section>
       )}
     </article>

@@ -15,6 +15,7 @@ import {
   type SessionSummary,
 } from '@kairos/core';
 import type { SessionDoc, UserStore } from '../store';
+import { isSelfCheck } from './queue';
 
 // ---------------------------------------------------------------- reasons
 
@@ -89,21 +90,57 @@ export interface FinishInput {
   mastery: MasteryDoc | null | undefined;
   now: number;
 }
+export interface SelfCheckTally {
+  /** questions the student self-graded */
+  n: number;
+  right: number;
+}
 export interface FinishResult {
   summary: SessionSummary;
+  /** self-checked questions: logged in events, never scored or fed into mastery */
+  selfChecked: SelfCheckTally;
   attempts: Attempt[];
   mastery: MasteryDoc;
 }
 
-/** Pure: summary + updated mastery doc (size-guarded). No I/O. */
+export const SELF_RIGHT = 'self:right';
+export const SELF_WRONG = 'self:wrong';
+
+/** Splits out self-check questions (no answer key) and their events. */
+export function splitSelfCheck(events: KairosEvent[], questions: Question[]) {
+  const selfIds = new Set(questions.filter(isSelfCheck).map((q) => q.id));
+  return {
+    selfIds,
+    scored: questions.filter((q) => !selfIds.has(q.id)),
+    scoredEvents: events.filter((e) => !selfIds.has(e.q)),
+    selfEvents: events.filter((e) => selfIds.has(e.q)),
+  };
+}
+
+export function tallySelfCheck(selfEvents: KairosEvent[]): SelfCheckTally {
+  const last = new Map<string, string>();
+  for (const e of [...selfEvents].sort((a, b) => a.t - b.t)) if (e.a === 'save') last.set(e.q, e.v ?? '');
+  const graded = [...last.values()].filter((v) => v === SELF_RIGHT || v === SELF_WRONG);
+  return { n: graded.length, right: graded.filter((v) => v === SELF_RIGHT).length };
+}
+
+/**
+ * Pure: summary + updated mastery doc (size-guarded). No I/O.
+ * Self-check questions are removed before scoring, so they never reach summary, attempts or mastery.
+ */
 export function finishSession(input: FinishInput): FinishResult {
   const labels = reasonsToLabels(input.reasons);
-  const summary = summarizeSession(input.events, input.questions, { reasons: labels });
-  const attempts = attemptsFromEvents(input.events, input.questions, { reasons: labels });
+  const { scored, scoredEvents, selfEvents } = splitSelfCheck(input.events, input.questions);
+  const summary = summarizeSession(scoredEvents, scored, { reasons: labels });
+  const attempts = attemptsFromEvents(scoredEvents, scored, { reasons: labels });
   const prev = input.mastery ?? emptyMastery();
-  const next = guardSize(applySession(prev, attempts, input.questions, input.now));
-  return { summary, attempts, mastery: next };
+  const next = guardSize(applySession(prev, attempts, scored, input.now));
+  return { summary, selfChecked: tallySelfCheck(selfEvents), attempts, mastery: next };
 }
+
+/** A question from the student's own uploads. */
+export const isMine = (q: Pick<Question, 'id'> & { source?: { kind?: string } }): boolean =>
+  q.source?.kind === 'user' || q.id.startsWith('u_');
 
 export interface SessionMeta {
   id: string;
@@ -114,6 +151,9 @@ export interface SessionMeta {
   chapters: string[];
   mode: 'timed' | 'relaxed';
   sourceIds?: string[];
+  /** which of the session's questions came from the student's own bank */
+  my?: 'only' | '1';
+  selfCheck?: boolean;
 }
 
 /**
@@ -130,7 +170,12 @@ export async function commitSession(
   const doc: SessionDoc = {
     ...meta,
     ctx: 'practice',
-    summary: { ...result.summary },
+    summary: {
+      ...result.summary,
+      selfChecked: result.selfChecked.n,
+      selfRight: result.selfChecked.right,
+      fromMine: data.questions.filter((q) => isMine(q)).length,
+    },
     events: data.events,
     qids: data.questions.map((q) => q.id),
     reasons: data.reasons,
@@ -155,12 +200,15 @@ export interface ReviewRow {
   labels: BehaviourLabel[];
 }
 
-/** Per-question rows for the summary page, rebuilt from the stored events. */
+/** Per-question rows for the summary page, rebuilt from the stored events (self-checked ones excluded). */
 export function buildReview(
   events: KairosEvent[],
   questions: Question[],
   reasons: Record<string, string>,
 ): ReviewRow[] {
+  const { scored, scoredEvents } = splitSelfCheck(events, questions);
+  events = scoredEvents;
+  questions = scored;
   const byId = new Map(questions.map((q) => [q.id, q]));
   const labels = reasonsToLabels(reasons);
   const finals = new Map<string, string>();

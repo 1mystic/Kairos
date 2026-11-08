@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import type { Aggregate, Manifest } from '@kairos/core';
+import type { Aggregate, Manifest, UserQuestion } from '@kairos/core';
 import { useManifest } from '../bank/hooks';
 import { Button, Card, Chip, EmptyState, Input, LinkButton, Page, PageHeader, Section, Skeleton, Tabs } from '../components/ui';
 import { useStore } from '../store';
+import { BankContext } from '../store/bankHooks';
 import { getSessionBuffer, isResumable } from './buffer';
 import { SESSION_SIZES, type Band } from './queue';
 import {
@@ -24,6 +25,29 @@ export interface PickerViewProps {
   mastery?: Record<string, Aggregate>;
   initialExam?: ExamId;
   resumeLink?: { to: string; label: string } | null;
+  /** the student's own uploaded questions (section shows only when there is at least one) */
+  myQuestions?: readonly Pick<UserQuestion, 'id' | 'exam' | 'status' | 'dropped' | 'pending_figures' | 'tax'>[];
+}
+
+/** Own questions that can be practised for this exam, counted per chapter. */
+export function countMine(
+  qs: NonNullable<PickerViewProps['myQuestions']>,
+  exam: string,
+  selfCheck: boolean,
+): { total: number; byChapter: Map<string, number>; selfCheckCount: number } {
+  const byChapter = new Map<string, number>();
+  let total = 0;
+  let selfCheckCount = 0;
+  for (const q of qs) {
+    if (q.exam !== exam || q.dropped || (q.pending_figures?.length ?? 0) > 0) continue;
+    const needs = q.status === 'needs_answer';
+    if (needs) selfCheckCount++;
+    if (needs && !selfCheck) continue;
+    total++;
+    const c = q.tax?.chapter;
+    if (c) byChapter.set(c, (byChapter.get(c) ?? 0) + 1);
+  }
+  return { total, byChapter, selfCheckCount };
 }
 
 const BANDS: { id: Band; label: string }[] = [
@@ -41,7 +65,7 @@ function Toggle({ on, onClick, children }: { on: boolean; onClick(): void; child
   );
 }
 
-export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAIN', resumeLink }: PickerViewProps) {
+export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAIN', resumeLink, myQuestions = [] }: PickerViewProps) {
   const [exam, setExam] = useState<ExamId>(initialExam);
   const [query, setQuery] = useState('');
   const [bands, setBands] = useState<Band[]>([]);
@@ -50,6 +74,7 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
   const [size, setSize] = useState<number>(10);
   const [mode, setMode] = useState<'timed' | 'relaxed'>('relaxed');
   const [mix, setMix] = useState<string[]>([]);
+  const [selfCheck, setSelfCheck] = useState(false);
 
   const subjects = useMemo(() => buildChapterRows(tax, manifest, exam), [tax, manifest, exam]);
   const q = query.trim().toLowerCase();
@@ -62,6 +87,11 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
   };
   const toggleBand = (b: Band) => setBands((x) => (x.includes(b) ? x.filter((y) => y !== b) : [...x, b]));
   const toggleMix = (id: string) => setMix((x) => (x.includes(id) ? x.filter((y) => y !== id) : [...x, id]));
+
+  const mine = useMemo(() => countMine(myQuestions, exam, selfCheck), [myQuestions, exam, selfCheck]);
+  const chapterNames = useMemo(() => new Map(tax.subjects.flatMap((s) => s.chapters.map((c) => [c.id, c.name] as const))), [tax]);
+  const myParams = (extra: Record<string, string> = {}) => params({ my: 'only', ...(selfCheck ? { selfcheck: '1' } : {}), ...extra });
+  const hasMine = myQuestions.some((x) => x.exam === exam && !x.dropped);
 
   const allWithQuestions = subjects.flatMap((s) => s.chapters.filter((c) => c.count > 0).map((c) => c.id));
   const mixIds = mix.filter((id) => allWithQuestions.includes(id));
@@ -159,6 +189,53 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
         </div>
       </Card>
 
+      {hasMine && (
+        <Section
+          title="My questions"
+          aside={<span className="text-small text-slate tabular">{mine.total} ready to practise</span>}
+        >
+          <Card>
+            <div className="stack gap-s4">
+              <div className="row justify-between gap-s4">
+                <p className="min-w-0 flex-1 basis-48 text-small text-slate">
+                  Questions you uploaded. Ones with an answer behave like any other and update your mastery.
+                </p>
+                {mine.total > 0 ? (
+                  <LinkButton to={`/practice/${exam}/mixed?${myParams()}`}>Practise my questions</LinkButton>
+                ) : (
+                  <Chip>Nothing ready yet</Chip>
+                )}
+              </div>
+              {mine.selfCheckCount > 0 && (
+                <div className="stack gap-s2">
+                  <label className="row min-h-s7 items-start gap-s2 text-small">
+                    <input type="checkbox" checked={selfCheck} onChange={() => setSelfCheck(!selfCheck)} className="mt-s1 size-s5 shrink-0 accent-primary" />
+                    <span className="min-w-0">Include questions without answers (self-check)</span>
+                  </label>
+                  <span className="text-caption text-slate">
+                    {mine.selfCheckCount} without an answer key. You grade them yourself and they never change your mastery.
+                  </span>
+                </div>
+              )}
+              {mine.byChapter.size > 0 && (
+                <ul className="grid gap-s3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                  {[...mine.byChapter].map(([id, n]) => (
+                    <li key={id} className="rounded-card bg-surface-2 p-s4">
+                      <Link to={`/practice/${exam}/${id}?${myParams()}`} className="stack min-h-s7 gap-s1 text-ink no-underline">
+                        <span className="text-body font-semibold">{chapterNames.get(id) ?? id}</span>
+                        <span className="text-small text-slate tabular">
+                          {n} of your question{n === 1 ? '' : 's'}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </Card>
+        </Section>
+      )}
+
       {subjects.map((s) => {
         let rows = s.chapters.filter((c) => !q || c.name.toLowerCase().includes(q) || c.id.toLowerCase().includes(q));
         if (weak) rows = weakFirst(rows, mastery);
@@ -222,6 +299,8 @@ export function PracticePicker() {
   const [err, setErr] = useState(false);
   const [doc, setDoc] = useState<Record<string, never> | null>(null);
   const [resume, setResume] = useState<PickerViewProps['resumeLink']>(null);
+  const bank = useContext(BankContext)?.store ?? null;
+  const [mine, setMine] = useState<UserQuestion[]>([]);
 
   useEffect(() => {
     loadTaxonomy().then(setTax, () => setErr(true));
@@ -230,10 +309,13 @@ export function PracticePicker() {
       .load()
       .then((s) => {
         if (isResumable(s, Date.now()))
-          setResume({ to: `/practice/${s.exam}/${s.chapter}?${s.chapter === 'mixed' ? `chapters=${s.chapters.join(',')}&` : ''}size=${s.size}&mode=${s.mode}`, label: 'Resume session' });
+          setResume({ to: `/practice/${s.exam}/${s.chapter}?${s.chapter === 'mixed' ? `chapters=${s.chapters.join(',')}&` : ''}size=${s.size}&mode=${s.mode}${s.my ? `&my=${s.my}${s.selfCheck ? '&selfcheck=1' : ''}` : ''}`, label: 'Resume session' });
       })
       .catch(() => {});
   }, [store]);
+  useEffect(() => {
+    if (bank) bank.listQuestions().then(setMine, () => {});
+  }, [bank]);
 
   const mastery = useMemo(() => (tax ? chapterMastery(doc, tax) : {}), [tax, doc]);
 
@@ -250,5 +332,5 @@ export function PracticePicker() {
         <Skeleton className="h-s8 w-full" />
       </Page>
     );
-  return <PickerView tax={tax} manifest={m.data.manifest} mastery={mastery} resumeLink={resume} />;
+  return <PickerView tax={tax} manifest={m.data.manifest} mastery={mastery} resumeLink={resume} myQuestions={mine} />;
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import type { KairosEvent, Question, SessionSummary } from '@kairos/core';
 import { getLatestVersion, getQuestionsByIds } from '../bank/client';
@@ -6,7 +6,9 @@ import { QuestionView } from '../components/QuestionView';
 import { CheckIcon, CloseIcon } from '../components/icons';
 import { Button, Card, Chip, EmptyState, LinkButton, Page, PageHeader, Section, Skeleton, Stat } from '../components/ui';
 import { useStore, type SessionDoc } from '../store';
-import { LABEL_WORDS, buildReview, correctAnswerText, takeaway, type ReviewRow } from './finish';
+import { toPracticeQuestion } from '../store/bank';
+import { BankContext } from '../store/bankHooks';
+import { LABEL_WORDS, buildReview, correctAnswerText, isMine, takeaway, type ReviewRow } from './finish';
 
 const fmt = (ms: number) => {
   const s = Math.round(ms / 1000);
@@ -41,10 +43,15 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
   const rows = buildReview((session.events ?? []) as KairosEvent[], questions, (session.reasons ?? {}) as Record<string, string>);
   const wrong = rows.filter((r) => r.outcome === 'wrong');
   const chapter = String(session.chapter ?? 'mixed');
+  const stats = summary as unknown as { selfChecked?: number; selfRight?: number; fromMine?: number };
+  const selfChecked = stats.selfChecked ?? 0;
+  const fromMine = stats.fromMine ?? 0;
+  const my = session.my === 'only' || session.my === '1' ? String(session.my) : '';
+  const tail = my ? `my=${my}${session.selfCheck ? '&selfcheck=1' : ''}` : '';
   const again =
     chapter === 'mixed'
-      ? `/practice/${session.exam}/mixed?chapters=${((session.chapters as string[]) ?? []).join(',')}`
-      : `/practice/${session.exam}/${chapter}`;
+      ? `/practice/${session.exam}/mixed?chapters=${((session.chapters as string[]) ?? []).join(',')}${tail ? `&${tail}` : ''}`
+      : `/practice/${session.exam}/${chapter}${tail ? `?${tail}` : ''}`;
 
   if (reviewing)
     return (
@@ -72,7 +79,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
 
   return (
     <Page width="app">
-      <PageHeader title="Session summary" subtitle={takeaway(summary)} />
+      <PageHeader title="Session summary" subtitle={summary.n === 0 && selfChecked > 0 ? 'Self-check session logged. These questions do not change your mastery.' : takeaway(summary)} />
       <div className="grid gap-s6 xl:grid-cols-3">
         <div className="stack gap-s6 xl:col-span-1">
           <Card tone="primary">
@@ -84,6 +91,21 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
               </div>
             </div>
           </Card>
+          {fromMine > 0 && (
+            <Card>
+              <div className="stack gap-s2">
+                <span className="text-h3">From your questions</span>
+                <p className="text-small text-slate">
+                  {fromMine} question{fromMine === 1 ? '' : 's'} in this session came from your uploads.
+                  {selfChecked > 0 && (
+                    <>
+                      {' '}Self-checked: {stats.selfRight ?? 0} of {selfChecked} marked right. Those are not part of your accuracy or mastery.
+                    </>
+                  )}
+                </p>
+              </div>
+            </Card>
+          )}
           <div className="stack gap-s3">
             {wrong.length > 0 && <Button onClick={() => setReviewing(true)}>Review mistakes ({wrong.length})</Button>}
             <LinkButton to={again} variant={wrong.length > 0 ? 'secondary' : 'primary'}>Practice this chapter again</LinkButton>
@@ -111,7 +133,10 @@ function RowItem({ r, n }: { r: ReviewRow; n: number }) {
           {ok ? <CheckIcon width={20} height={20} className="text-primary" /> : <CloseIcon width={20} height={20} className="text-accent-ink" />}
           Question {n}: {ok ? 'correct' : r.outcome === 'skipped' ? 'skipped' : 'not quite'}
         </span>
-        <span className="text-small text-slate tabular">{fmt(r.attempt.timeMs)}</span>
+        <span className="row gap-s2 text-small text-slate tabular">
+          {isMine(r.q) && <Chip>Your question</Chip>}
+          {fmt(r.attempt.timeMs)}
+        </span>
       </div>
       <p className="text-small text-slate">
         Your answer: {r.given || 'none'}
@@ -129,6 +154,7 @@ function RowItem({ r, n }: { r: ReviewRow; n: number }) {
 export function SummaryScreen() {
   const { sessionId = '' } = useParams();
   const store = useStore();
+  const bank = useContext(BankContext)?.store ?? null;
   const [state, setState] = useState<{ session: SessionDoc; questions: Question[] } | 'missing' | 'error' | null>(null);
 
   useEffect(() => {
@@ -139,14 +165,17 @@ export function SummaryScreen() {
         if (!session || !session.summary) return live && setState('missing');
         const version = await getLatestVersion();
         const ids = Array.isArray(session.qids) ? (session.qids as string[]) : [];
-        const questions = await getQuestionsByIds(version, String(session.exam), ids);
+        const bankQs = await getQuestionsByIds(version, String(session.exam), ids.filter((id) => !id.startsWith('u_')));
+        const own = ids.some((id) => id.startsWith('u_')) && bank ? await bank.listQuestions().catch(() => []) : [];
+        const byId = new Map([...bankQs, ...own.map(toPracticeQuestion)].map((q) => [q.id, q]));
+        const questions = ids.map((id) => byId.get(id)).filter((q): q is Question => !!q);
         if (live) setState({ session, questions });
       } catch {
         if (live) setState('error');
       }
     })();
     return () => { live = false; };
-  }, [store, sessionId]);
+  }, [store, bank, sessionId]);
 
   const back = <LinkButton to="/practice" variant="secondary">Back to chapters</LinkButton>;
   if (state === null) return <Page width="app"><Skeleton className="h-s8 w-full" /></Page>;

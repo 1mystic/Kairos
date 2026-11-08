@@ -16,11 +16,15 @@ export function bandOf(q: Question): Band {
   return b < -0.5 ? 'E' : b > 0.5 ? 'H' : 'M';
 }
 
+/** True when there is no answer key: the student self-grades and the result never feeds mastery. */
+export const isSelfCheck = (q: Question): boolean => !q.answer;
+
 /** Item difficulty b (logit scale). */
 export function bOf(q: Question): number {
   const d = q.difficulty;
   if (d?.b !== undefined) return d.b;
   if (d?.p_correct !== undefined) return bFromPCorrect(d.p_correct);
+  if (!d?.label) return 0; // no calibration at all (e.g. your own upload): neutral prior
   return { E: -0.9, M: 0.1, H: 1.1 }[bandOf(q)];
 }
 
@@ -32,6 +36,8 @@ export interface QueueOptions {
   /** learner ability for the topic mix; undefined = no data, use an E->M->H spread */
   theta?: number;
   bands?: ReadonlySet<Band>;
+  /** keep questions without an answer key (your own uploads, self-check only) */
+  selfCheck?: boolean;
 }
 
 export interface Queue {
@@ -41,14 +47,15 @@ export interface Queue {
 }
 
 /**
- * Practice queue. Questions without an answer key cannot be checked, so they are dropped.
+ * Practice queue. Questions without an answer key cannot be checked, so they are dropped
+ * unless `selfCheck` is on (then the student grades themselves).
  * Recently seen questions are excluded unless that would leave fewer than `size`
  * (then the shortfall is filled from them and counted in `repeats`).
  */
 export function buildQueue(pool: readonly Question[], o: QueueOptions): Queue {
   const rng = mulberry32(o.seed);
   const usable = pool.filter(
-    (q) => !!q.answer && (!o.bands || o.bands.size === 0 || o.bands.has(bandOf(q))),
+    (q) => (!!q.answer || !!o.selfCheck) && (!o.bands || o.bands.size === 0 || o.bands.has(bandOf(q))),
   );
   const seen = o.seen ?? new Set<string>();
   const fresh = usable.filter((q) => !seen.has(q.id));
