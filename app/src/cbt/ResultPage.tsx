@@ -1,17 +1,43 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import type { PublicQuestion, Question } from '@kairos/core';
 import { useStore, type MockDoc } from '../store';
-import { EmptyState, LinkButton, Page, PageHeader, Skeleton } from '../components/ui';
+import { Button, EmptyState, LinkButton, Page, PageHeader, PageSkeleton, Tabs } from '../components/ui';
+import { MockReport } from '../analysis';
 import { MockResultSummary } from './MockResultSummary';
 import { MockReview } from './MockReview';
 import { useExamData } from './loader';
 import { readAnalysis } from './model';
+import { exitFullscreen } from './fullscreen';
+import './result.css';
+
+type Tab = 'summary' | 'answers' | 'report';
 
 /** `/exam/:paperId/result/:mockId` */
 export function ResultPage() {
   const { mockId = '' } = useParams();
   const store = useStore();
+  const [tab, setTab] = useState<Tab>('summary');
+  // arriving here always means the exam is over: normal page, top of the page, full screen off
+  useEffect(() => {
+    exitFullscreen();
+    try {
+      window.scrollTo(0, 0);
+    } catch {
+      /* jsdom */
+    }
+    const h = document.querySelector<HTMLElement>('main h1');
+    h?.setAttribute('tabindex', '-1');
+    h?.focus({ preventScroll: true, focusVisible: false } as FocusOptions);
+  }, [mockId]);
+  const go = (t: Tab) => {
+    setTab(t);
+    try {
+      window.scrollTo(0, 0);
+    } catch {
+      /* jsdom */
+    }
+  };
   const [mock, setMock] = useState<MockDoc | null | undefined>();
   useEffect(() => {
     let live = true;
@@ -38,11 +64,12 @@ export function ResultPage() {
   }, [answers, exam.data]);
 
   if (mock === undefined) {
-    return <Page><Skeleton className="h-s8 w-full" /></Page>;
+    return <PageSkeleton />;
   }
   if (mock === null) {
     return (
       <Page>
+        <PageHeader title="Mock result" actions={<LinkButton variant="secondary" to="/mocks">All mock tests</LinkButton>} />
         <EmptyState title="We could not find that attempt" action={<LinkButton to="/mocks">See your mock tests</LinkButton>}>
           It may have been saved on another device.
         </EmptyState>
@@ -52,15 +79,29 @@ export function ResultPage() {
   const a = readAnalysis(mock);
   return (
     <Page>
-      <div className="stack gap-section">
-        <PageHeader
-          title={a?.title ?? 'Mock result'}
-          subtitle={mock.submittedAt ? new Date(mock.submittedAt).toLocaleString() : undefined}
-          actions={<LinkButton variant="secondary" to="/mocks">All mock tests</LinkButton>}
+      <PageHeader title={a?.title ?? 'Mock result'} subtitle={mock.submittedAt ? new Date(mock.submittedAt).toLocaleString() : undefined} />
+      <div className="stack-section">
+        <nav aria-label="Next steps" className="result-bar" data-testid="result-actions">
+          <div className="result-actions">
+            <Button onClick={() => go('report')}>View full report</Button>
+            <Button variant="secondary" onClick={() => go('answers')}>Review answers</Button>
+            <LinkButton variant="secondary" to={`/exam/${mock.paperId}`}>Retake</LinkButton>
+            <LinkButton variant="ghost" to="/mocks">All mocks</LinkButton>
+          </div>
+        </nav>
+        <Tabs
+          label="Result views"
+          value={tab}
+          onChange={(id) => setTab(id as Tab)}
+          tabs={[
+            { id: 'summary', label: 'Summary' },
+            { id: 'answers', label: 'Answers' },
+            { id: 'report', label: 'Full report' },
+          ]}
         />
-        <MockResultSummary mock={mock} />
-        <MockReview mock={mock} questions={questions} />
-        <Link to="/" className="text-primary">Back to home</Link>
+        {tab === 'summary' && <MockResultSummary mock={mock} />}
+        {tab === 'answers' && <MockReview mock={mock} questions={questions} />}
+        {tab === 'report' && <MockReport mock={mock} questions={questions as never} />}
       </div>
     </Page>
   );

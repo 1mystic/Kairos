@@ -121,3 +121,6 @@
   .cbt-header-right { gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .cbt-side { transition: none; } }
+
+.cbt-fs-banner { display: flex; align-items: center; gap: 12px; padding: 6px 16px; background: #fff4d6; color: #3a2e00; font-size: 14px; }
+.cbt-fs-banner span { flex: 1; }

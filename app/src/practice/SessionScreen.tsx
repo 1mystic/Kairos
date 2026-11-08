@@ -14,7 +14,7 @@ import { bankShardSource, mergeSources, type QuestionSource } from './sources';
 
 type Phase =
   | { kind: 'loading' }
-  | { kind: 'error'; message: string }
+  | { kind: 'error'; message: string; retry?: () => void }
   | { kind: 'empty' }
   | { kind: 'resume'; saved: BufferedSession; pool: Question[] }
   | { kind: 'run'; questions: Question[]; base: RunBase; initial: BufferedSession | null; repeats: number }
@@ -137,7 +137,7 @@ export function SessionScreen() {
       navigate(`/practice/summary/${base.id}`, { replace: true });
     } catch (e) {
       // the buffer is kept, so nothing is lost; the student can retry
-      setPhase({ kind: 'error', message: e instanceof Error ? e.message : String(e) });
+      setPhase({ kind: 'error', message: e instanceof Error ? e.message : String(e), retry: () => void finish(run, r) });
     }
   };
 
@@ -165,7 +165,16 @@ export function SessionScreen() {
         </Page>
       );
     case 'error':
-      return <Page width="reading"><EmptyState title="Something went wrong" action={back}>{phase.message}</EmptyState></Page>;
+      return (
+        <Page width="reading">
+          <EmptyState
+            title={phase.retry ? 'We could not save your session yet' : 'Something went wrong'}
+            action={<>{phase.retry && <Button onClick={phase.retry}>Try again</Button>} {back}</>}
+          >
+            {phase.retry ? 'Your answers are safe on this device. Check your connection and try again.' : phase.message}
+          </EmptyState>
+        </Page>
+      );
     case 'empty':
       return <Page width="reading"><EmptyState title="No questions to practise here" action={back}>This chapter has no questions yet, or none match your filters.</EmptyState></Page>;
     case 'resume':
@@ -196,6 +205,7 @@ export function SessionScreen() {
             initial={phase.initial}
             buffer={buffer}
             onFinish={(r) => void finish(phase, r)}
+            onLeave={() => navigate('/practice')}
           />
         </Page>
       );

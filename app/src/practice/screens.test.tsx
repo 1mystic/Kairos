@@ -120,7 +120,7 @@ describe('summary', () => {
     await commitSession(store, { id: 's', startedAt: 0, endedAt: 1, exam: 'JEE_MAIN', chapter: 'PHY.LOM', chapters: ['PHY.LOM'], mode: 'relaxed' }, { events: events as never, questions: qs, reasons: {} });
     render(<MemoryRouter><SummaryView session={sessions[0]!} questions={qs} /></MemoryRouter>);
     expect(screen.getByText('Careless guess')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Practice this chapter again' })).toHaveAttribute('href', '/practice/JEE_MAIN/PHY.LOM');
+    expect(screen.getByRole('link', { name: 'Practise this chapter again' })).toHaveAttribute('href', '/practice/JEE_MAIN/PHY.LOM');
     await userEvent.click(screen.getByRole('button', { name: /Review mistakes/ }));
     expect(screen.getByText('solution q1')).toBeInTheDocument();
     expect(within(document.body).queryByText('solution q2')).toBeNull();

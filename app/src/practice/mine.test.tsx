@@ -103,7 +103,7 @@ describe('finishSession with self-check', () => {
     render(<MemoryRouter><SummaryView session={sessions[0]!} questions={qs} /></MemoryRouter>);
     expect(screen.getByText('From your questions')).toBeInTheDocument();
     expect(screen.getByText(/Self-checked: 0 of 1 marked right/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Practice this chapter again' }).getAttribute('href')).toBe('/practice/JEE_MAIN/mixed?chapters=&my=only&selfcheck=1');
+    expect(screen.getByRole('link', { name: 'Practise this chapter again' }).getAttribute('href')).toBe('/practice/JEE_MAIN/mixed?chapters=&my=only&selfcheck=1');
   });
 });
 

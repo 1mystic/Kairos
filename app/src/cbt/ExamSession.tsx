@@ -4,6 +4,7 @@ import { ContentHtml } from '../components/QuestionView';
 import { Keypad } from './Keypad';
 import { formatClock, type Attempt, type ExamModel, type FocusEntry, type Lang } from './model';
 import type { AttemptStore } from './attemptStore';
+import { enterFullscreen, isFullscreen } from './fullscreen';
 import './cbt.css';
 
 type Act = PaletteAction extends infer A ? (A extends { now: number } ? Omit<A, 'now'> : never) : never;
@@ -184,6 +185,24 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
     };
   }, [clock, startedAt]);
 
+  // ---- Esc out of full screen: keep the exam running, offer a way back in
+  const [leftFs, setLeftFs] = useState(false);
+  useEffect(() => {
+    let was = isFullscreen();
+    const onChange = () => {
+      const now = isFullscreen();
+      if (was && !now) setLeftFs(true);
+      if (now) setLeftFs(false);
+      was = now;
+    };
+    document.addEventListener('fullscreenchange', onChange);
+    document.addEventListener('webkitfullscreenchange', onChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', onChange);
+      document.removeEventListener('webkitfullscreenchange', onChange);
+    };
+  }, []);
+
   // ---- submit hand-off
   const handed = useRef(false);
   useEffect(() => {
@@ -261,6 +280,13 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
 
   return (
     <div className="cbt-root" data-testid="exam-screen">
+      {leftFs && (
+        <div className="cbt-fs-banner" role="status">
+          <span>You left full screen. You can go back in.</span>
+          <button type="button" className="cbt-btn" onClick={enterFullscreen}>Go full screen</button>
+          <button type="button" className="cbt-btn" onClick={() => setLeftFs(false)}>Dismiss</button>
+        </div>
+      )}
       <header className="cbt-header">
         <div className="cbt-header-id">
           <span className="cbt-avatar" aria-hidden="true" />

@@ -1,8 +1,7 @@
 import type { MockDoc } from '../store';
-import { Card, Chip, Section, Stat } from '../components/ui';
+import { Card, CardGrid, Chip, Section, Stat } from '../components/ui';
 import { formatClock, isPaperScore, readAnalysis } from './model';
 
-const GRID = 'grid gap-s4 grid-cols-[repeat(auto-fit,minmax(min(100%,14rem),1fr))]';
 const SUBJECT_NAME: Record<string, string> = { PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BOT: 'Botany', ZOO: 'Zoology' };
 
 /**
@@ -22,8 +21,8 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
   const attempted = a.counts.correct + a.counts.wrong + a.counts.partial;
   const name = (c: string) => SUBJECT_NAME[c] ?? c;
   return (
-    <div className="stack gap-section" data-testid="mock-summary">
-      <div className={GRID}>
+    <div className="stack-section" data-testid="mock-summary">
+      <CardGrid cols={3}>
         <Card tone="primary">
           {score ? (
             <Stat label="Score" value={<span data-testid="score">{score.marks} / {score.max}</span>} hint={a.submitReason === 'auto' ? 'Submitted when time ran out' : 'Submitted by you'} />
@@ -37,7 +36,7 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
         <Card>
           <Stat label="Attempted" value={`${attempted} / ${a.questions.length}`} hint={score ? `${a.counts.correct} correct, ${a.counts.wrong} wrong, ${a.counts.blank} blank` : `${a.counts.answered + a.counts.answered_marked} answered`} />
         </Card>
-      </div>
+      </CardGrid>
 
       {a.lostUnsaved > 0 && (
         <Card tone="primary" role="note">
@@ -49,20 +48,20 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
 
       {score && (
         <Section title="By subject and section">
-          <div className={GRID}>
+          <CardGrid cols={3}>
             {Object.entries(a.subjectScores).map(([code, t]) => (
               <Card key={code}>
-                <div className="stack gap-tight">
-                  <div className="flex items-baseline justify-between gap-s4">
+                <div className="stack-label">
+                  <div className="row-between">
                     <h3 className="text-h3">{name(code)}</h3>
                     <span className="tabular text-h3">{t.marks} / {a.maxBySubject[code]}</span>
                   </div>
                   <p className="text-small text-slate">{t.correct} correct, {t.wrong} wrong, {t.blank} blank</p>
-                  <ul className="stack gap-tight text-small">
+                  <ul className="stack-label text-small">
                     {Object.entries(a.sectionScores)
                       .filter(([k]) => k.startsWith(`${code}.`))
                       .map(([k, s]) => (
-                        <li key={k} className="flex justify-between gap-s4">
+                        <li key={k} className="row-between">
                           <span>Section {k.split('.')[1]}</span>
                           <span className="tabular">{s.marks} / {a.maxBySection[k]}</span>
                         </li>
@@ -71,7 +70,7 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
                 </div>
               </Card>
             ))}
-          </div>
+          </CardGrid>
         </Section>
       )}
 
@@ -81,7 +80,7 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
         ) : (
           <>
             <p className="text-slate">Times you left or came back to the exam tab. This is only for you, nothing is penalised.</p>
-            <ul className="stack gap-tight text-small">
+            <ul className="stack-label text-small">
               {a.focusLog.map((f, i) => (
                 <li key={i} className="tabular">{formatClock(f.t)}: {f.type === 'leave' ? 'left the exam tab' : 'came back'}</li>
               ))}

@@ -8,6 +8,7 @@ import {
   buildMockDoc, expireAttempt, gradeAttempt, mockIdFor, newAttempt, resolveAttempt,
   type Attempt, type AttemptResolution, type ExamModel, type FocusEntry, type Lang,
 } from './model';
+import { enterFullscreen, exitFullscreen } from './fullscreen';
 import './cbt.css';
 
 export interface ExamFlowProps {
@@ -32,13 +33,7 @@ type Phase =
   | { k: 'running'; attempt: Attempt }
   | { k: 'saving'; error?: string };
 
-const defaultFullscreen = () => {
-  try {
-    void document.documentElement.requestFullscreen?.().catch(() => {});
-  } catch {
-    /* denied: fine */
-  }
-};
+const defaultFullscreen = enterFullscreen;
 
 export function ExamFlow(p: ExamFlowProps) {
   const { model, attempts, store } = p;
@@ -51,6 +46,7 @@ export function ExamFlow(p: ExamFlowProps) {
 
   const finish = useCallback(
     async (attempt: Attempt, state: PaletteState, focusLog: FocusEntry[]) => {
+      exitFullscreen(); // leave full screen as soon as the exam ends, so the result page is a normal page
       setPhase({ k: 'saving' });
       pending.current = { attempt, state, focusLog };
       try {
@@ -62,6 +58,7 @@ export function ExamFlow(p: ExamFlowProps) {
         await store.putMock(id, doc); // single write
         await attempts.delete(model.paperId);
         p.onNudge?.();
+        exitFullscreen();
         p.onFinished(id);
       } catch (e) {
         setPhase({ k: 'saving', error: e instanceof Error ? e.message : 'Could not save your attempt.' });
@@ -70,6 +67,9 @@ export function ExamFlow(p: ExamFlowProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [model, attempts, store, clock],
   );
+
+  // never leave the student stuck in full screen if they navigate away mid-exam
+  useEffect(() => () => exitFullscreen(), []);
 
   // decide where to start
   useEffect(() => {

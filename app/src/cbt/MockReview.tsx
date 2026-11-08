@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import type { PublicQuestion, Question, Response } from '@kairos/core';
 import type { MockDoc } from '../store';
-import { Button, Card, Chip, Section } from '../components/ui';
+import { Button, Chip, Section, Tabs } from '../components/ui';
 import { QuestionView } from '../components/QuestionView';
-import { describeResponse, readAnalysis } from './model';
+import { describeResponse, formatClock, readAnalysis } from './model';
 
 const VERDICT: Record<string, string> = { correct: 'Correct', wrong: 'Wrong', blank: 'Not answered', partial: 'Partly correct' };
 
@@ -15,46 +15,61 @@ function correctText(q: Question | PublicQuestion | undefined): string {
   return String(a.value);
 }
 
-/** Per-question review: your answer vs correct, with the solution on demand. */
+type Filter = 'all' | 'wrong' | 'skipped';
+
+/** Per-question review as full-width rows (same anatomy as the practice log): your answer vs correct, solution on demand. */
 export function MockReview({ mock, questions }: { mock: MockDoc; questions: ReadonlyMap<string, Question | PublicQuestion> | undefined }) {
   const a = readAnalysis(mock);
   const responses = (mock.responses as { qid: string; answer: Response | null }[] | undefined) ?? [];
   const [open, setOpen] = useState<string | null>(null);
+  const [filter, setFilter] = useState<Filter>('all');
   if (!a) return null;
+  const rows = a.questions.map((o, i) => ({ o, i }));
+  const count = (f: Filter) => rows.filter(({ o }) => (f === 'wrong' ? o.verdict === 'wrong' : f === 'skipped' ? o.verdict === 'blank' : true)).length;
+  const shown = rows.filter(({ o }) => (filter === 'wrong' ? o.verdict === 'wrong' : filter === 'skipped' ? o.verdict === 'blank' : true));
   return (
     <Section title="Review your answers">
-      <div className="grid gap-s4 grid-cols-[repeat(auto-fit,minmax(min(100%,24rem),1fr))] items-start">
-        {a.questions.map((o, i) => {
-          const q = questions?.get(o.qid);
-          const mine = responses[i]?.answer ?? null;
-          const keys = mine && 'keys' in mine ? mine.keys : [];
-          const showing = open === o.qid;
-          return (
-            <Card key={o.qid} as="article" data-testid="review-item">
-              <div className="stack gap-base">
-                <div className="flex flex-wrap items-center justify-between gap-s2">
-                  <h3 className="text-h3">Q{i + 1}{" "}<span className="text-small text-slate">{o.subject} · Section {o.sectionId}</span></h3>
-                  <div className="row gap-tight">
-                    {o.verdict && <Chip tone={o.verdict === 'correct' ? 'primary' : 'neutral'}>{VERDICT[o.verdict]}</Chip>}
+      <div className="stack-section">
+        <Tabs
+          label="Filter answers"
+          value={filter}
+          onChange={(id) => setFilter(id as Filter)}
+          tabs={[
+            { id: 'all', label: `All ${count('all')}` },
+            { id: 'wrong', label: `Wrong ${count('wrong')}` },
+            { id: 'skipped', label: `Skipped ${count('skipped')}` },
+          ]}
+        />
+        {shown.length === 0 && <p className="text-slate" role="status">Nothing here. Try another filter.</p>}
+        <ul className="mock-log">
+          {shown.map(({ o, i }) => {
+            const q = questions?.get(o.qid);
+            const mine = responses[i]?.answer ?? null;
+            const keys = mine && 'keys' in mine ? mine.keys : [];
+            const showing = open === o.qid;
+            const good = o.verdict === 'correct';
+            return (
+              <li key={o.qid} data-testid="review-item" className={`mock-row${good ? ' mock-row-ok' : o.verdict === 'wrong' ? ' mock-row-bad' : ''}`}>
+                <div className="mock-row-head">
+                  <span className="mock-row-id">Q{i + 1} <span className="text-small text-slate">{o.subject} · Section {o.sectionId}</span></span>
+                  <span className="mock-cell"><span className="mock-cell-label">Your answer</span><b>{describeResponse(mine)}</b></span>
+                  <span className="mock-cell"><span className="mock-cell-label">Correct answer</span><b>{correctText(q)}</b></span>
+                  <span className="mock-cell"><span className="mock-cell-label">Time</span><b className="tabular">{formatClock(o.timeMs)}</b></span>
+                  <span className="row-inline">
+                    {o.verdict && <Chip tone={good ? 'primary' : 'neutral'}>{VERDICT[o.verdict]}</Chip>}
                     {o.marks !== undefined && <span className="tabular text-small">{o.marks > 0 ? `+${o.marks}` : o.marks}</span>}
-                  </div>
-                </div>
-                <dl className="grid gap-s2 text-small sm:grid-cols-2">
-                  <div><dt className="text-slate">Your answer</dt><dd className="font-semibold">{describeResponse(mine)}</dd></div>
-                  <div><dt className="text-slate">Correct answer</dt><dd className="font-semibold">{correctText(q)}</dd></div>
-                </dl>
-                {q && (
-                  <>
-                    <Button variant="ghost" size="sm" className="self-start" onClick={() => setOpen(showing ? null : o.qid)} aria-expanded={showing}>
+                  </span>
+                  {q && (
+                    <Button variant="ghost" size="sm" onClick={() => setOpen(showing ? null : o.qid)} aria-expanded={showing}>
                       {showing ? 'Hide solution' : 'Show solution'}
                     </Button>
-                    {showing && <QuestionView question={q} variant="review" showSolution selected={keys} />}
-                  </>
-                )}
-              </div>
-            </Card>
-          );
-        })}
+                  )}
+                </div>
+                {q && showing && <div className="mock-row-body"><QuestionView question={q} variant="review" showSolution selected={keys} /></div>}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </Section>
   );

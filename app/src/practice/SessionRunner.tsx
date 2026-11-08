@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Question } from '@kairos/core';
 import { QuestionView } from '../components/QuestionView';
 import { CheckIcon, CloseIcon, ClockIcon } from '../components/icons';
-import { Banner, Button, Card, Chip, Input, ProgressBar } from '../components/ui';
+import { Banner, Button, Card, Chip, Input, Modal, ProgressBar } from '../components/ui';
 import { saveQuietly, type BufferedSession, type SessionBuffer } from './buffer';
 import {
   REASON_CHIPS,
@@ -27,6 +27,8 @@ export interface RunnerProps {
   clock?: () => number;
   /** called exactly once, when the student finishes or ends the session */
   onFinish(r: { events: KairosEvent[]; reasons: Record<string, string>; endedAt: number }): void;
+  /** leave now and resume later: progress is already in the buffer */
+  onLeave?(): void;
 }
 
 const fmt = (ms: number) => {
@@ -40,7 +42,8 @@ export function timeLimitMs(q: Question): number {
   return Math.min(240_000, Math.max(60_000, m));
 }
 
-export function SessionRunner({ questions, base, initial, buffer, clock = Date.now, onFinish }: RunnerProps) {
+export function SessionRunner({ questions, base, initial, buffer, clock = Date.now, onFinish, onLeave }: RunnerProps) {
+  const [confirmEnd, setConfirmEnd] = useState(false);
   const timed = base.mode === 'timed';
   const rec = useRef<SessionRecorder | null>(null);
   rec.current ??= new SessionRecorder(clock, initial?.events ?? []);
@@ -284,10 +287,23 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
           </div>
         </div>
       </Card>
-      <Button variant="ghost" onClick={finish}>
+      <Button variant="ghost" onClick={() => setConfirmEnd(true)}>
         End session
       </Button>
     </aside>
+  );
+
+  const endDialog = confirmEnd && (
+    <Modal title="Save your progress and leave?" onClose={() => setConfirmEnd(false)} dismissLabel="Keep practising">
+      <div className="stack gap-s4">
+        <p className="text-slate">Your answers so far are saved on this device. You can finish now and see your summary, or leave and pick this session up later.</p>
+        <div className="stack gap-s2">
+          <Button onClick={() => { setConfirmEnd(false); finish(); }}>Finish and see summary</Button>
+          {onLeave && <Button variant="secondary" onClick={onLeave}>Resume later</Button>}
+          <Button variant="ghost" onClick={() => setConfirmEnd(false)}>Keep practising</Button>
+        </div>
+      </div>
+    </Modal>
   );
 
   return (
@@ -436,12 +452,13 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
         )}
         <p className="hidden text-caption text-slate xl:block">Keys: 1 to 4 pick an option, Enter checks or moves on.</p>
         <div className="xl:hidden">
-          <Button variant="ghost" onClick={finish}>
+          <Button variant="ghost" onClick={() => setConfirmEnd(true)}>
             End session
           </Button>
         </div>
       </div>
       <div className="hidden xl:block">{side}</div>
+      {endDialog}
     </div>
   );
 }
