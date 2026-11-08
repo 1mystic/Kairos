@@ -1,0 +1,148 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- helpers ----------
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function hasField(k) {
+      return k in request.resource.data;
+    }
+
+    function notServerGraded() {
+      return !hasField('gradedBy') || incoming().gradedBy != 'server';
+    }
+
+    // ---------- users/{uid} ----------
+    function validProfileCreate() {
+      let d = incoming();
+      return d.keys().hasOnly(['schemaVersion', 'displayName', 'email', 'dob', 'isMinor',
+                               'consent', 'onboarded', 'createdAt', 'updatedAt'])
+        && d.keys().hasAll(['schemaVersion', 'displayName', 'email', 'dob', 'isMinor',
+                            'consent', 'onboarded', 'createdAt', 'updatedAt'])
+        && d.schemaVersion == 1
+        && d.displayName is string && d.displayName.size() >= 1 && d.displayName.size() <= 80
+        && d.email is string
+        && (!('email' in request.auth.token) || d.email == request.auth.token.email)
+        && d.dob is string && d.dob.matches('^\\d{4}-\\d{2}-\\d{2}$')
+        && d.isMinor is bool
+        && d.consent is map
+        && d.consent.keys().hasOnly(['status'])
+        && d.consent.keys().hasAll(['status'])
+        && d.consent.status in ['not_required', 'pending']
+        && d.onboarded == false
+        && d.createdAt == request.time
+        && d.updatedAt == request.time;
+    }
+
+    function validProfileUpdate() {
+      let d = incoming();
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'displayName', 'onboarded', 'updatedAt', 'exam', 'examDate', 'ambition',
+          'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang'])
+        && d.updatedAt == request.time
+        && (!hasField('displayName') || (d.displayName is string && d.displayName.size() >= 1
+                                    && d.displayName.size() <= 80))
+        && (!hasField('onboarded') || d.onboarded is bool)
+        && (!hasField('exam') || (d.exam is string && d.exam.size() <= 40))
+        && (!hasField('examDate') || d.examDate == null
+            || (d.examDate is string && d.examDate.matches('^\\d{4}-\\d{2}-\\d{2}$')))
+        && (!hasField('ambition') || d.ambition in ['comfortable', 'competitive', 'top'])
+        && (!hasField('minutesPerWeekday') || d.minutesPerWeekday is map)
+        && (!hasField('offDay') || d.offDay == null || (d.offDay is int && d.offDay >= 0 && d.offDay <= 6))
+        && (!hasField('chaptersDone') || (d.chaptersDone is list && d.chaptersDone.size() <= 400))
+        && (!hasField('lang') || d.lang in ['en', 'hi']);
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid) && validProfileCreate();
+      allow update: if isOwner(uid) && validProfileUpdate();
+      allow delete: if false;
+
+      // Per-user state: pace/mastery docs only (~60KB mastery map fits well under 1MiB).
+      match /state/{doc} {
+        allow read: if isOwner(uid);
+        allow write: if isOwner(uid) && doc in ['mastery', 'pace'];
+      }
+
+      match /pace_log/{date} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /sessions/{sid} {
+        allow read: if isOwner(uid);
+        allow write: if isOwner(uid)
+          && (request.method == 'delete'
+              || !hasField('events')
+              || (incoming().events is list && incoming().events.size() <= 2000));
+      }
+
+      match /plans/{date} {
+        allow read, write: if isOwner(uid)
+          && (request.method == 'delete'
+              || !hasField('tasks')
+              || (incoming().tasks is list && incoming().tasks.size() <= 200));
+      }
+
+      // score/analysis become server-only once a grading function exists;
+      // until then the client may write them but never claim server grading.
+      match /mocks/{mid} {
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid) && notServerGraded();
+        allow update: if isOwner(uid) && notServerGraded()
+          && (!('gradedBy' in resource.data) || resource.data.gradedBy != 'server');
+        allow delete: if isOwner(uid);
+      }
+
+      match /bank/{qid} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // ---------- shared, read-only for clients ----------
+    match /exam_calendar/{id} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /papers/{id} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /leaderboards/{paperId}/shards/{k} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    // ---------- community uploads: create-only ----------
+    match /uploads/{id} {
+      allow create: if signedIn()
+        && incoming().ownerUid == request.auth.uid
+        && incoming().status == 'pending'
+        && incoming().keys().size() <= 20
+        && (!hasField('payload')
+            || (incoming().payload is string && incoming().payload.size() <= 20000)
+            || (incoming().payload is map && incoming().payload.size() <= 50));
+      allow read: if signedIn() && resource.data.ownerUid == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    // default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

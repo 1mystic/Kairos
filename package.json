@@ -12,7 +12,7 @@
     "build": "pnpm -r build",
     "test": "pnpm --filter @kairos/core --filter @kairos/app test",
     "test:coverage": "pnpm --filter @kairos/core test:coverage",
-    "test:rules": "firebase emulators:exec --only firestore \"pnpm --filter @kairos/firestore-tests test\"",
+    "test:rules": "firebase emulators:exec --only firestore --project demo-kairos \"pnpm --filter @kairos/firestore-tests test\"",
     "e2e": "pnpm --filter @kairos/app e2e",
     "lint": "eslint .",
     "format": "prettier --write .",
