@@ -233,7 +233,7 @@ describe('users/{uid} subcollections', () => {
     ['users', 'sessions', 's1'],
     ['users', 'plans', '2026-11-08'],
     ['users', 'mocks', 'm1'],
-    ['users', 'bank', 'q1'],
+    ['users', 'bank', 'u_0123456789ab'],
   ];
   it.each(paths)('%s/%s/%s owner-only', async (_u, sub, id) => {
     await assertSucceeds(setDoc(doc(alice(), 'users', ALICE, sub, id), { x: 1 }));
@@ -323,5 +323,85 @@ describe('uploads', () => {
     await assertSucceeds(setDoc(doc(alice(), 'uploads', 'u1'), up()));
     await assertFails(updateDoc(doc(alice(), 'uploads', 'u1'), { status: 'approved' }));
     await assertFails(deleteDoc(doc(alice(), 'uploads', 'u1')));
+  });
+});
+
+describe('users/{uid}/bank', () => {
+  const bankDoc = (c: ReturnType<typeof alice>, id: string) => doc(c, 'users', ALICE, 'bank', id);
+  const QID = 'u_0123456789ab';
+  it('accepts valid ids and statuses', async () => {
+    await assertSucceeds(setDoc(bankDoc(alice(), QID), { stem: 'x', status: 'user_ok' }));
+    await assertSucceeds(setDoc(bankDoc(alice(), 'u_ffffffffffff'), { status: 'needs_answer' }));
+    await assertSucceeds(setDoc(bankDoc(alice(), 'u_000000000000'), { stem: 'no status' }));
+  });
+  it('rejects bad id patterns', async () => {
+    for (const id of ['q1', 'u_0123456789a', 'u_0123456789abc', 'u_0123456789AB', 'x_0123456789ab'])
+      await assertFails(setDoc(bankDoc(alice(), id), { stem: 'x' }));
+  });
+  it('rejects bad status', async () => {
+    await assertFails(setDoc(bankDoc(alice(), QID), { status: 'verified' }));
+  });
+  it('caps large fields so docs stay under 50KB', async () => {
+    await assertSucceeds(setDoc(bankDoc(alice(), QID), { stem: 'a'.repeat(12000) }));
+    await assertFails(setDoc(bankDoc(alice(), 'u_ffffffffffff'), { stem: 'a'.repeat(12001) }));
+  });
+  it('owner can update and delete, others cannot read or write', async () => {
+    await assertSucceeds(setDoc(bankDoc(alice(), QID), { status: 'needs_answer' }));
+    await assertSucceeds(updateDoc(bankDoc(alice(), QID), { status: 'user_ok' }));
+    await assertFails(updateDoc(bankDoc(alice(), QID), { status: 'bogus' }));
+    await assertFails(getDoc(bankDoc(bob(), QID)));
+    await assertFails(deleteDoc(bankDoc(bob(), QID)));
+    await assertSucceeds(deleteDoc(bankDoc(alice(), QID)));
+  });
+});
+
+describe('users/{uid}/media', () => {
+  const ID = '0123456789abcdef';
+  const mdoc = (c: ReturnType<typeof alice>, id = ID, uid = ALICE) =>
+    doc(c, 'users', uid, 'media', id);
+  const img = (over: Record<string, unknown> = {}) => ({
+    b64: 'AAAA',
+    w: 960,
+    h: 540,
+    mime: 'image/webp',
+    createdAt: serverTimestamp(),
+    ...over,
+  });
+  it('owner creates a valid image and reads it', async () => {
+    await assertSucceeds(setDoc(mdoc(alice()), img()));
+    await assertSucceeds(getDoc(mdoc(alice())));
+    await assertFails(getDoc(mdoc(bob())));
+  });
+  it('accepts b64 of exactly 120000 chars, rejects 120001', async () => {
+    await assertSucceeds(setDoc(mdoc(alice()), img({ b64: 'a'.repeat(120000) })));
+    await assertFails(setDoc(mdoc(alice(), 'fedcba9876543210'), img({ b64: 'a'.repeat(120001) })));
+  });
+  it('rejects bad ids', async () => {
+    for (const id of ['abc', '0123456789ABCDEF', '0123456789abcde', '0123456789abcdef0'])
+      await assertFails(setDoc(mdoc(alice(), id), img()));
+  });
+  it('rejects wrong mime, dims, createdAt, types and extra/missing fields', async () => {
+    await assertFails(setDoc(mdoc(alice()), img({ mime: 'image/png' })));
+    await assertFails(setDoc(mdoc(alice()), img({ w: 0 })));
+    await assertFails(setDoc(mdoc(alice()), img({ w: 4001 })));
+    await assertFails(setDoc(mdoc(alice()), img({ h: 0 })));
+    await assertFails(setDoc(mdoc(alice()), img({ h: 4001 })));
+    await assertFails(setDoc(mdoc(alice()), img({ w: 10.5 })));
+    await assertFails(setDoc(mdoc(alice()), img({ b64: 5 })));
+    await assertFails(setDoc(mdoc(alice()), img({ createdAt: new Date(0) })));
+    await assertFails(setDoc(mdoc(alice()), img({ extra: 1 })));
+    const m: Record<string, unknown> = img();
+    delete m.h;
+    await assertFails(setDoc(mdoc(alice()), m));
+  });
+  it("rejects writing into another user's media", async () => {
+    await assertFails(setDoc(mdoc(bob(), ID, ALICE), img()));
+  });
+  it('update is denied, delete is allowed for owner only', async () => {
+    await assertSucceeds(setDoc(mdoc(alice()), img()));
+    await assertFails(updateDoc(mdoc(alice()), { w: 100 }));
+    await assertFails(setDoc(mdoc(alice()), img({ b64: 'BBBB' })));
+    await assertFails(deleteDoc(mdoc(bob())));
+    await assertSucceeds(deleteDoc(mdoc(alice())));
   });
 });

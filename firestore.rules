@@ -107,8 +107,44 @@ service cloud.firestore {
         allow delete: if isOwner(uid);
       }
 
+      // Uploaded (BYO) questions: one doc per question, id u_<12 hex>, <50KB.
+      // Rules cannot measure total document bytes (request.resource.size() is not a
+      // document-size check), so we cap the large fields; the client enforces 50KB exactly
+      // (core byo/quota.ts docSizeBytes).
+      function cappedText(k, n) {
+        return !hasField(k) || incoming()[k] == null
+          || (incoming()[k] is string && incoming()[k].size() <= n);
+      }
+      function validBankDoc(qid) {
+        return qid.matches('^u_[0-9a-f]{12}$')
+          && (!hasField('status') || incoming().status in ['user_ok', 'needs_answer'])
+          && incoming().keys().size() <= 30
+          && cappedText('stem', 12000) && cappedText('solution', 12000)
+          && cappedText('passage', 12000)
+          && (!hasField('options') || (incoming().options is list && incoming().options.size() <= 10))
+          && (!hasField('images') || (incoming().images is list && incoming().images.size() <= 12));
+      }
+
       match /bank/{qid} {
-        allow read, write: if isOwner(uid);
+        allow read: if isOwner(uid);
+        allow create, update: if isOwner(uid) && validBankDoc(qid);
+        allow delete: if isOwner(uid);
+      }
+
+      // Cropped figures as base64 webp (Spark has no Cloud Storage). Immutable; deletable.
+      match /media/{imgId} {
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid)
+          && imgId.matches('^[0-9a-f]{16}$')
+          && incoming().keys().hasOnly(['b64', 'w', 'h', 'mime', 'createdAt'])
+          && incoming().keys().hasAll(['b64', 'w', 'h', 'mime', 'createdAt'])
+          && incoming().b64 is string && incoming().b64.size() <= 120000
+          && incoming().w is int && incoming().w >= 1 && incoming().w <= 4000
+          && incoming().h is int && incoming().h >= 1 && incoming().h <= 4000
+          && incoming().mime == 'image/webp'
+          && incoming().createdAt == request.time;
+        allow update: if false;
+        allow delete: if isOwner(uid);
       }
     }
 
