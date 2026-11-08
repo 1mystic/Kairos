@@ -45,7 +45,7 @@ describe('protected route', () => {
   it('lets a guest reach home, practice and settings after Continue as guest', async () => {
     renderAt('/signin');
     await userEvent.click(screen.getByRole('button', { name: 'Continue as guest' }));
-    expect(await screen.findByRole('heading', { name: 'Today' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: 'Hi.' })).toBeInTheDocument();
     expect(screen.getByText(/saved on this device only/)).toBeInTheDocument();
     await userEvent.click(screen.getByRole('link', { name: /Practice/ }));
     expect(await screen.findByRole('heading', { name: 'Practice' })).toBeInTheDocument();
@@ -67,7 +67,7 @@ describe('protected route', () => {
       user: { uid: 'u', email: 'a@b.co', emailVerified: true } as never,
       profile: { displayName: 'Asha Rao', isMinor: true, consent: { status: 'pending' } } as never,
     });
-    expect(screen.getByRole('heading', { name: 'Today' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Hi, Asha.' })).toBeInTheDocument();
     expect(screen.getByText(/parents and guardians/)).toBeInTheDocument();
   });
   it('shows loading while auth resolves', () => {
