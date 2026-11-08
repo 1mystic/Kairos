@@ -1,1 +1,61 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/space-grotesk/600.css';
+@import './styles/tokens.css';
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-slate: var(--slate);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-50: var(--primary-50);
+  --color-accent: var(--accent);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --radius-card: var(--radius-card);
+  --radius-btn: var(--radius-btn);
+  --font-sans: var(--font-ui);
+  --font-display: var(--font-display);
+}
+
+@layer base {
+  html { color-scheme: light; }
+  html[data-theme='dark'] { color-scheme: dark; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-ui);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 0 16px; border-radius: var(--radius-btn);
+    font-weight: 500; cursor: pointer; border: 1px solid transparent;
+  }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover:not(:disabled) { background: var(--primary-hover); }
+  .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
+  .btn-secondary:hover:not(:disabled) { background: var(--primary-50); }
+  .input {
+    width: 100%; min-height: 44px; padding: 0 12px; border-radius: var(--radius-btn);
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 24px; }
+}
