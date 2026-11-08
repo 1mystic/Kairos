@@ -13,6 +13,7 @@ import { PublicEntry } from './pages/PublicEntry';
 import { Settings } from './pages/Settings';
 import { practiceRoutes } from './practice/routes';
 import { cbtExamRoutes, cbtPageRoutes } from './cbt/routes';
+import { uploadRoutes } from './upload/routes';
 import { StoreProvider } from './store/StoreProvider';
 import { NudgeProvider } from './store/NudgeProvider';
 import { firebaseConfigError } from './lib/firebase';
@@ -34,6 +35,9 @@ export function AppRoutes() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
           {practiceRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {uploadRoutes.map((r) => (
             <Route key={r.path} path={r.path} element={r.element} />
           ))}
           {cbtPageRoutes.map((r) => (

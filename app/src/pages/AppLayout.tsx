@@ -15,8 +15,8 @@ interface NavEntry { to: string; label: string; icon: IconC; built: boolean; tab
 export const NAV: NavEntry[] = [
   { to: '/', label: 'Home', icon: HomeIcon, built: true, tab: true },
   { to: '/practice', label: 'Practice', icon: PracticeIcon, built: true, tab: true },
-  { to: '/mocks', label: 'Mocks', icon: MockIcon, built: false, tab: true },
-  { to: '/upload', label: 'Upload', icon: UploadIcon, built: false },
+  { to: '/mocks', label: 'Mocks', icon: MockIcon, built: true, tab: true },
+  { to: '/upload', label: 'Upload', icon: UploadIcon, built: true },
   { to: '/analysis', label: 'Analysis', icon: ChartIcon, built: false },
   { to: '/plan', label: 'Plan', icon: PlanIcon, built: false },
   { to: '/settings', label: 'Settings', icon: SettingsIcon, built: true, tab: true },
