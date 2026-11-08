@@ -24,6 +24,21 @@ service cloud.firestore {
       return !hasField('gradedBy') || incoming().gradedBy != 'server';
     }
 
+
+    // ---------- admin (Spark: no custom claims / functions) ----------
+    // Admin = existence of admins/{uid}. Clients can never write admins/*; the owner
+    // creates those docs by hand in the Firebase console. Each isAdmin() is one extra
+    // document read (billed) and counts toward the 10-lookups-per-request limit, so it
+    // is only evaluated after cheaper checks where possible.
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function isDay(s) {
+      return s is string && s.matches('^\\d{4}-\\d{2}-\\d{2}$');
+    }
+
     // ---------- users/{uid} ----------
     function validProfileCreate() {
       let d = incoming();
@@ -67,14 +82,18 @@ service cloud.firestore {
 
     match /users/{uid} {
       allow read: if isOwner(uid);
+      // Admin dashboards count sign-ups / exam mix from profile docs only. This does NOT
+      // cascade to subcollections (state, sessions, mocks, plans, pace_log, bank, media
+      // stay owner-only) and admins get no write access to any user data.
+      allow get, list: if isAdmin();
       allow create: if isOwner(uid) && validProfileCreate();
       allow update: if isOwner(uid) && validProfileUpdate();
       allow delete: if false;
 
-      // Per-user state: pace/mastery docs only (~60KB mastery map fits well under 1MiB).
+      // Per-user state: mastery/pace/roadmap docs only (~60KB mastery map fits well under 1MiB).
       match /state/{doc} {
         allow read: if isOwner(uid);
-        allow write: if isOwner(uid) && doc in ['mastery', 'pace'];
+        allow write: if isOwner(uid) && doc in ['mastery', 'pace', 'roadmap'];
       }
 
       match /pace_log/{date} {
@@ -148,7 +167,190 @@ service cloud.firestore {
       }
     }
 
+    // ---------- admins/{uid} ----------
+    // A signed-in user may get only their own doc (so the app can ask "am I admin?").
+    // No list, and no client write for anyone (including existing admins and the owner):
+    // admin docs are bootstrapped in the console, so there is no escalation path.
+    match /admins/{uid} {
+      allow get: if isOwner(uid);
+      allow list: if false;
+      allow write: if false;
+    }
+
+    // ---------- config/{docId}: public read, admin write ----------
+    // Readable without auth (guests have none). Only the three known doc ids exist.
+    // Rules cannot loop over lists, so exam_calendar.entries is checked only for
+    // list-ness and size (<= 40); the per-entry shape (id, exam, session, date, window,
+    // status, source, last_checked, note) is validated client-side by the admin UI.
+    function configStamp() {
+      return incoming().updatedAt == request.time
+        && incoming().updatedBy == request.auth.uid;
+    }
+
+    function validExamCalendar() {
+      let d = incoming();
+      return d.keys().hasOnly(['v', 'entries', 'updatedAt', 'updatedBy'])
+        && d.keys().hasAll(['v', 'entries', 'updatedAt', 'updatedBy'])
+        && d.v == 1
+        && d.entries is list && d.entries.size() <= 40;
+    }
+
+    function validAnnouncement() {
+      let d = incoming();
+      return d.keys().hasOnly(['active', 'title', 'body', 'link', 'tone', 'expiresAt',
+                               'updatedAt', 'updatedBy'])
+        && d.keys().hasAll(['active', 'title', 'body', 'link', 'tone', 'expiresAt',
+                            'updatedAt', 'updatedBy'])
+        && d.active is bool
+        && d.title is string && d.title.size() <= 80
+        && d.body is string && d.body.size() <= 400
+        && (d.link == null || (d.link is string && d.link.size() <= 300))
+        && d.tone in ['info', 'important']
+        && (d.expiresAt == null || d.expiresAt is timestamp);
+    }
+
+    function optInt(m, k, lo, hi) {
+      return !(k in m) || (m[k] is int && m[k] >= lo && m[k] <= hi);
+    }
+
+    function validRoadmapDefaults() {
+      let d = incoming();
+      return d.keys().hasOnly(['v', 'taperDays', 'sprintDays', 'workDaysPerBuffer',
+                               'mockMinCapacityMin', 'phases', 'updatedAt', 'updatedBy'])
+        && d.keys().hasAll(['v', 'taperDays', 'sprintDays', 'workDaysPerBuffer',
+                            'mockMinCapacityMin', 'phases', 'updatedAt', 'updatedBy'])
+        && d.v == 1
+        && d.taperDays is int && d.taperDays >= 0 && d.taperDays <= 7
+        && d.sprintDays is int && d.sprintDays >= 5 && d.sprintDays <= 30
+        && d.workDaysPerBuffer is int && d.workDaysPerBuffer >= 3 && d.workDaysPerBuffer <= 14
+        && d.mockMinCapacityMin is int && d.mockMinCapacityMin >= 60 && d.mockMinCapacityMin <= 300
+        && d.phases is map
+        && d.phases.keys().hasOnly(['build', 'strengthen', 'consolidate', 'exam_mode',
+                                    'final_sprint', 'taper'])
+        && optInt(d.phases, 'build', 0, 400)
+        && optInt(d.phases, 'strengthen', 0, 400)
+        && optInt(d.phases, 'consolidate', 0, 400)
+        && optInt(d.phases, 'exam_mode', 0, 400)
+        && optInt(d.phases, 'final_sprint', 0, 400)
+        && optInt(d.phases, 'taper', 0, 400);
+    }
+
+    function validConfig(docId) {
+      return configStamp()
+        && ((docId == 'exam_calendar' && validExamCalendar())
+            || (docId == 'announcement' && validAnnouncement())
+            || (docId == 'roadmap_defaults' && validRoadmapDefaults()));
+    }
+
+    match /config/{docId} {
+      allow get: if docId in ['exam_calendar', 'announcement', 'roadmap_defaults'];
+      allow list: if false;
+      allow create, update: if signedIn()
+        && docId in ['exam_calendar', 'announcement', 'roadmap_defaults']
+        && validConfig(docId)
+        && isAdmin();
+      allow delete: if false;
+    }
+
+    // ---------- stats/{day}: anonymous aggregate counters ----------
+    // Flat non-negative int counters, no user identifiers. Clients increment directly
+    // (no Cloud Functions on Spark). ABUSE BOUND: a malicious signed-in client can inflate
+    // a counter by up to its cap per write (500 questions/correct, 50 others, `active`
+    // only by 1 per uid per day thanks to the seen marker). Accepted: stats are indicative.
+    // Only admins can read.
+    function statKeys() {
+      return ['signups', 'sessions', 'questions', 'correct', 'mocks', 'diagnostics',
+              'uploads', 'active', 'onboarded', 'sessions_JEE_MAIN', 'sessions_NEET_UG',
+              'sessions_IAT', 'updatedAt'];
+    }
+
+    function markerPath(day) {
+      return /databases/$(database)/documents/stats/$(day)/seen/$(request.auth.uid);
+    }
+
+    // The caller's own seen marker is created by this very write batch (and did not exist).
+    function markerNew(day) {
+      return !exists(markerPath(day)) && existsAfter(markerPath(day));
+    }
+
+    function statCreateOk(d, k, cap) {
+      return !(k in d) || (d[k] is int && d[k] >= 0 && d[k] <= cap);
+    }
+
+    // Affected counter must grow by an int delta in [1, cap]; a removed key fails (error => deny).
+    function statIncOk(aff, o, k, cap) {
+      let prev = (k in o) ? o[k] : 0;
+      return !(k in aff)
+        || (incoming()[k] is int && prev is int
+            && incoming()[k] - prev >= 1 && incoming()[k] - prev <= cap);
+    }
+
+    function statsCommon(d) {
+      return d.keys().hasOnly(statKeys())
+        && d.updatedAt == request.time
+        && (!('correct' in d) || !('questions' in d) || d.correct <= d.questions);
+    }
+
+    function validStatCreate(day) {
+      let d = incoming();
+      return statsCommon(d)
+        && statCreateOk(d, 'signups', 50)
+        && statCreateOk(d, 'sessions', 50)
+        && statCreateOk(d, 'questions', 500)
+        && statCreateOk(d, 'correct', 500)
+        && statCreateOk(d, 'mocks', 50)
+        && statCreateOk(d, 'diagnostics', 50)
+        && statCreateOk(d, 'uploads', 50)
+        && statCreateOk(d, 'onboarded', 50)
+        && statCreateOk(d, 'sessions_JEE_MAIN', 50)
+        && statCreateOk(d, 'sessions_NEET_UG', 50)
+        && statCreateOk(d, 'sessions_IAT', 50)
+        && (!('active' in d) || d.active == 0 || (d.active == 1 && markerNew(day)));
+    }
+
+    function validStatUpdate(day) {
+      let d = incoming();
+      let aff = d.diff(resource.data).affectedKeys();
+      let o = resource.data;
+      return statsCommon(d)
+        && aff.hasOnly(statKeys())
+        && statIncOk(aff, o, 'signups', 50)
+        && statIncOk(aff, o, 'sessions', 50)
+        && statIncOk(aff, o, 'questions', 500)
+        && statIncOk(aff, o, 'correct', 500)
+        && statIncOk(aff, o, 'mocks', 50)
+        && statIncOk(aff, o, 'diagnostics', 50)
+        && statIncOk(aff, o, 'uploads', 50)
+        && statIncOk(aff, o, 'onboarded', 50)
+        && statIncOk(aff, o, 'sessions_JEE_MAIN', 50)
+        && statIncOk(aff, o, 'sessions_NEET_UG', 50)
+        && statIncOk(aff, o, 'sessions_IAT', 50)
+        && statIncOk(aff, o, 'active', 1)
+        && (!('active' in aff) || markerNew(day));
+    }
+
+    match /stats/{day} {
+      allow read: if isAdmin();
+      allow create: if signedIn() && isDay(day) && validStatCreate(day);
+      allow update: if signedIn() && isDay(day) && validStatUpdate(day);
+      allow delete: if false;
+
+      // One marker per uid per day: dedupes the `active` counter without storing it twice.
+      // Immutable once written. Users may get only their own (cheap "already counted?" check).
+      match /seen/{mid} {
+        allow read: if isAdmin();
+        allow get: if isOwner(mid);
+        allow create: if signedIn() && isDay(day) && mid == request.auth.uid
+          && incoming().keys().hasOnly(['at'])
+          && incoming().keys().hasAll(['at'])
+          && incoming().at == request.time;
+        allow update, delete: if false;
+      }
+    }
+
     // ---------- shared, read-only for clients ----------
+    // (exam_calendar/papers/leaderboards unchanged: no admin write added; admins edit the
+    // public config/exam_calendar doc instead.)
     match /exam_calendar/{id} {
       allow read: if signedIn();
       allow write: if false;
