@@ -1,0 +1,4 @@
+[{"id":"JEE_MAIN_2027_S1","exam":"JEE_MAIN","session":1,"date":null,"window":null,"status":"expected","source":null,"_note":"fill from NTA when announced"},
+ {"id":"JEE_MAIN_2027_S2","exam":"JEE_MAIN","session":2,"date":null,"status":"expected","source":null},
+ {"id":"NEET_UG_2027","exam":"NEET_UG","session":1,"date":null,"status":"expected","source":null},
+ {"id":"IAT_2027","exam":"IAT","session":1,"date":null,"status":"expected","source":null}]

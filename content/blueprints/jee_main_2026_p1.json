@@ -1,0 +1,6 @@
+{"id":"jee_main_2026_p1","exam":"JEE_MAIN","mode":"CBT","duration_min":180,"ui_skin":"nta_cbt_v1",
+ "subjects":[
+  {"code":"PHY","sections":[{"id":"A","type":"SCQ","count":20,"marks":{"correct":4,"wrong":-1,"blank":0}},{"id":"B","type":"NVQ","count":5,"marks":{"correct":4,"wrong":-1,"blank":0},"answer_format":"integer","_verify":"NVQ negative marking per NTA bulletin"}]},
+  {"code":"CHE","sections":[{"id":"A","type":"SCQ","count":20,"marks":{"correct":4,"wrong":-1,"blank":0}},{"id":"B","type":"NVQ","count":5,"marks":{"correct":4,"wrong":-1,"blank":0},"answer_format":"integer"}]},
+  {"code":"MAT","sections":[{"id":"A","type":"SCQ","count":20,"marks":{"correct":4,"wrong":-1,"blank":0}},{"id":"B","type":"NVQ","count":5,"marks":{"correct":4,"wrong":-1,"blank":0},"answer_format":"integer"}]}],
+ "chapter_weights":"weights/jee_main_last5y.json","difficulty_target":{"p_correct_hist":[0.12,0.18,0.25,0.25,0.20]},"time_slots":["09:00","15:00"]}
