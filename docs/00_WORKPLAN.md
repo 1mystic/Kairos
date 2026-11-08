@@ -88,7 +88,9 @@ W1 scaffold · W2a core · W2b app shell/auth · W2c firebase+rules (55 rules te
 - W4a mock exam mode (app/src/cbt/**, app/e2e/exam.spec.ts). Had type errors in cbt/loader.ts + cbt/model.ts at last check.
 - W4d-ui upload screens (app/src/upload/**, app/src/store/bank*.ts, adds pdfjs-dist).
 - W5c planner engine + 1,000-student sim gate (core/src/plan/planner.ts, backlog.ts, core/src/sim/**). Had 1 lint error (unused `tmin`, planner.ts:~327).
-- W7a question bank v2 from JEEBench (pipeline/ingest, tagging, content/sources, app/public/bank/v2, ci.yml version bump to 2).
+- W7a question bank v2 from JEEBench: DONE + committed (519 questions, bank v2 live in repo).
+- W5d customisable Home dashboard (app/src/dashboard/**, spec docs/11_DASHBOARD.md; layout reference from owner: Daily/Week/Month control, readiness ring hero, trend bars, stat tiles, top chapters, plan ring, activity feed, tip card; customise sheet to show/hide/reorder/resize cards). Orchestrator mounts `<Dashboard/>` inside Home.
+- W4a mock exam: DONE + committed (routes NOT mounted; guests must reach /exam/:paperId outside AppLayout).
 If an agent is gone: re-launch it with the same task text from this plan (model sonnet), telling it to continue from the files already in the tree/wip-snapshot rather than starting over.
 
 ### Next, in order
