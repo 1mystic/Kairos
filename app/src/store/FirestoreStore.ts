@@ -1,5 +1,5 @@
 import {
-  collection, doc, getDoc, getDocs, limit as fsLimit, query, serverTimestamp, setDoc, updateDoc, writeBatch,
+  collection, doc, getDoc, getDocs, limit as fsLimit, orderBy, query, serverTimestamp, setDoc, updateDoc, where, writeBatch,
   type Firestore,
 } from 'firebase/firestore';
 import type { ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
@@ -13,9 +13,19 @@ export interface FsAdapter {
   /** profile update: the adapter must stamp updatedAt (firestore.rules require it) */
   updateProfile(path: string, fields: Data): Promise<void>;
   list(collectionPath: string, opts?: { limit?: number }): Promise<Array<{ id: string; data: Data }>>;
+  /**
+   * Recent-first query on one numeric field: orderBy(field,'desc') + optional where(field,'>=',since) + limit.
+   * Same field for filter and order, so no composite index is needed. Billed per document returned.
+   */
+  listRecent(collectionPath: string, q: { field: string; since?: number; limit: number }): Promise<Array<{ id: string; data: Data }>>;
   /** one atomic batch; callers keep it <= 400 ops */
   batchSet(ops: Array<{ path: string; data: Data }>): Promise<void>;
 }
+
+/** Sessions returned by FirestoreStore.listSessions when the caller passes no limit (reads are billed per doc). */
+export const DEFAULT_SESSION_LIMIT = 60;
+/** Pass as `limit` to read every session (export only). */
+export const ALL_SESSIONS = Number.POSITIVE_INFINITY;
 
 export function createFirestoreAdapter(db: Firestore): FsAdapter {
   const ref = (p: string) => doc(db, p);
@@ -33,6 +43,15 @@ export function createFirestoreAdapter(db: Firestore): FsAdapter {
     async list(path, opts) {
       const c = collection(db, path);
       const snap = await getDocs(opts?.limit ? query(c, fsLimit(opts.limit)) : c);
+      return snap.docs.map((d) => ({ id: d.id, data: d.data() as Data }));
+    },
+    async listRecent(path, q) {
+      const cons = [
+        ...(q.since !== undefined ? [where(q.field, '>=', q.since)] : []),
+        orderBy(q.field, 'desc'),
+        ...(Number.isFinite(q.limit) ? [fsLimit(q.limit)] : []),
+      ];
+      const snap = await getDocs(query(collection(db, path), ...cons));
       return snap.docs.map((d) => ({ id: d.id, data: d.data() as Data }));
     },
     async batchSet(ops) {
@@ -67,11 +86,14 @@ export class FirestoreStore implements UserStore {
   addSession(s: SessionDoc) {
     return this.fs.set(this.p(`sessions/${s.id}`), s);
   }
+  /**
+   * A real query (newest first), so only the returned docs are billed. Default limit 60; pass
+   * ALL_SESSIONS to read everything. `since` and ordering use startedAt (single-field index, automatic).
+   */
   async listSessions(opts: ListSessionsOpts = {}) {
-    let all = (await this.fs.list(this.p('sessions'))).map((r) => ({ ...r.data, id: r.id }) as SessionDoc);
-    if (opts.since !== undefined) all = all.filter((s) => s.startedAt >= opts.since!);
-    all.sort((a, b) => b.startedAt - a.startedAt);
-    return opts.limit ? all.slice(0, opts.limit) : all;
+    const limit = opts.limit && opts.limit > 0 ? opts.limit : DEFAULT_SESSION_LIMIT;
+    const rows = await this.fs.listRecent(this.p('sessions'), { field: 'startedAt', limit, ...(opts.since !== undefined ? { since: opts.since } : {}) });
+    return rows.map((r) => ({ ...r.data, id: r.id }) as SessionDoc);
   }
   putPlan(date: string, plan: PlanDoc) {
     return this.fs.set(this.p(`plans/${date}`), plan);

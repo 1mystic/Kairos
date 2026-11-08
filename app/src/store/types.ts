@@ -67,7 +67,7 @@ export type StateDocName = 'mastery' | 'pace';
 export interface ListSessionsOpts {
   /** only sessions with startedAt >= since (epoch ms) */
   since?: number;
-  /** newest first, at most this many */
+  /** newest first, at most this many. Cloud store: defaults to 60 when omitted; Infinity = all (export). Local: no default. */
   limit?: number;
 }
 

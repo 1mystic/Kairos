@@ -233,7 +233,7 @@ export function useTodayPlan(): TodayPlan {
         const setup: PlanSetup = { exams, ambition: profile.ambition, minutesPerWeekday: profile.minutesPerWeekday, offDay: profile.offDay, chaptersDone: profile.chaptersDone };
         const dates = Array.from({ length: 8 }, (_, i) => addDays(today, -i));
         const [sessions, planDocs, available] = await Promise.all([
-          store.listSessions({ since: now.getTime() - 22 * DAY_MS }).catch((): SessionDoc[] => []),
+          store.listSessions({ since: now.getTime() - 22 * DAY_MS, limit: 40 }).catch((): SessionDoc[] => []),
           Promise.all(dates.map((d) => store.getPlan(d).catch(() => null))),
           env.loadAvailable([...new Set(exams.map((e) => e.exam))]),
         ]);

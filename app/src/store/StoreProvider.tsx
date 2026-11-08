@@ -2,6 +2,9 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { useAuth } from '../auth/AuthProvider';
 import { getServices } from '../lib/firebase';
 import { FirestoreStore, createFirestoreAdapter, type FsAdapter } from './FirestoreStore';
+import type { KvDb } from './bankDb';
+import { CloudBankStore, createBankFirestoreAdapter, type BankFsAdapter } from './bankCloud';
+import { LocalBankStore, createBankIdb } from './bankLocal';
 import { LocalStore } from './LocalStore';
 import { createIdbLocalDb, type LocalDb } from './localDb';
 import { discardLocal, inspectMigration, runMigration, type MigrationPlan, type MigrationResult } from './migrate';
@@ -50,6 +53,11 @@ export function useGuest() {
 export function useStartGuest(): () => Promise<void> {
   return useCtx().startGuest;
 }
+/** For a Settings row "Add this device's progress": `retry()` re-checks and reopens the prompt. */
+export function useMigration() {
+  const { migration, retryMigration } = useCtx();
+  return { migration, retry: retryMigration };
+}
 export function useLocalStore(): LocalStore {
   return useCtx().local;
 }
@@ -60,10 +68,14 @@ export interface StoreProviderProps {
   localDb?: LocalDb;
   /** inject for tests; default is the real Firestore */
   fsAdapter?: FsAdapter;
+  /** inject for tests; default is IndexedDB `kairos-bank-user` */
+  bankDb?: KvDb;
+  /** inject for tests; default is the real Firestore */
+  bankAdapter?: BankFsAdapter;
   now?: () => number;
 }
 
-export function StoreProvider({ children, localDb, fsAdapter, now = Date.now }: StoreProviderProps) {
+export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapter, now = Date.now }: StoreProviderProps) {
   const { user, profile, loading, signOut } = useAuth();
   const local = useMemo(() => new LocalStore(localDb ?? createIdbLocalDb()), [localDb]);
   const [guestFlag, setGuestFlag] = useState(() => {
@@ -71,6 +83,9 @@ export function StoreProvider({ children, localDb, fsAdapter, now = Date.now }: 
   });
   const [migration, setMigration] = useState<MigrationState>({ phase: 'idle' });
 
+  const kv = useMemo(() => bankDb ?? createBankIdb(), [bankDb]);
+  const localBank = useMemo(() => new LocalBankStore(kv), [kv]);
+  const bankFs = useRef<BankFsAdapter | null>(bankAdapter ?? null);
   const adapter = useRef<FsAdapter | null>(fsAdapter ?? null);
   const uid = user && profile ? user.uid : null;
   const cloud = useMemo(() => {
@@ -79,6 +94,10 @@ export function StoreProvider({ children, localDb, fsAdapter, now = Date.now }: 
     return new FirestoreStore(uid, adapter.current);
   }, [uid]);
   const store: UserStore = cloud ?? local;
+  const bankDeps = useCallback((c: FirestoreStore) => {
+    bankFs.current ??= createBankFirestoreAdapter(getServices().db);
+    return { bank: { local: localBank, cloud: new CloudBankStore(c.uid, bankFs.current, kv, now) } };
+  }, [localBank, kv, now]);
 
   const ensureGuestProfile = useCallback(async () => {
     const existing = await local.getProfile();
@@ -103,24 +122,25 @@ export function StoreProvider({ children, localDb, fsAdapter, now = Date.now }: 
   const signOutToGuest = useCallback(async () => {
     await signOut();
     await local.clearAll();
+    await localBank.clearAll().catch(() => {});
     setMigration({ phase: 'idle' });
     await startGuest();
-  }, [signOut, local, startGuest]);
+  }, [signOut, local, localBank, startGuest]);
 
   // migration after sign-in / sign-up, once the profile exists
   const attempted = useRef<string | null>(null);
   const migrate = useCallback(async (c: FirestoreStore) => {
     let plan: MigrationPlan | undefined;
     try {
-      plan = await inspectMigration(local, c, now());
+      plan = await inspectMigration(local, c, now(), bankDeps(c));
       if (plan.status === 'none') return;
       if (plan.status === 'ask') { setMigration({ phase: 'ask', plan }); return; }
       setMigration({ phase: 'running' });
-      setMigration({ phase: 'done', result: await runMigration(local, c, c.uid, 'new', now()) });
+      setMigration({ phase: 'done', result: await runMigration(local, c, c.uid, 'new', now(), bankDeps(c)) });
     } catch {
       setMigration({ phase: 'error', plan });
     }
-  }, [local, now]);
+  }, [local, now, bankDeps]);
 
   useEffect(() => {
     if (!cloud || attempted.current === cloud.uid) return;
@@ -134,12 +154,12 @@ export function StoreProvider({ children, localDb, fsAdapter, now = Date.now }: 
     if (!cloud) return;
     setMigration({ phase: 'running' });
     try {
-      if (add) setMigration({ phase: 'done', result: await runMigration(local, cloud, cloud.uid, 'merge', now()) });
-      else { await discardLocal(local); setMigration({ phase: 'idle' }); }
+      if (add) setMigration({ phase: 'done', result: await runMigration(local, cloud, cloud.uid, 'merge', now(), bankDeps(cloud)) });
+      else { await discardLocal(local, localBank); setMigration({ phase: 'idle' }); }
     } catch {
       setMigration({ phase: 'error' });
     }
-  }, [cloud, local, now]);
+  }, [cloud, local, localBank, now, bankDeps]);
 
   const value = useMemo<StoreCtx>(
     () => ({ store, local, isGuest: guestFlag && !user, startGuest, signOutToGuest, migration, retryMigration }),
@@ -149,7 +169,7 @@ export function StoreProvider({ children, localDb, fsAdapter, now = Date.now }: 
   return (
     <Ctx.Provider value={value}>
       {children}
-      <MigrationDialog state={migration} onAdd={() => void answer(true)} onDiscard={() => void answer(false)} onRetry={retryMigration} onClose={() => setMigration({ phase: 'idle' })} />
+      <MigrationDialog state={migration} onAdd={() => void answer(true)} onDiscard={() => void answer(false)} onRetry={retryMigration} onClose={() => setMigration({ phase: 'idle' })} onLater={() => setMigration({ phase: 'idle' })} />
     </Ctx.Provider>
   );
 }

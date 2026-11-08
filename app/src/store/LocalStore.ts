@@ -1,6 +1,8 @@
 import { DATA_STORES, LOCAL_STORES, type LocalDb, type LocalStoreName } from './localDb';
 import type { GuestProfile, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
+export const ONBOARDING_KEYS = ['exam', 'examDate', 'ambition', 'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang', 'onboarded'] as const;
+
 export interface LocalMeta {
   /** ids already uploaded, keyed "sessions/<id>" etc. Makes migration retries idempotent. */
   migratedIds: Record<string, true>;
@@ -73,6 +75,13 @@ export class LocalStore implements UserStore {
   async clearData(): Promise<void> {
     for (const s of DATA_STORES) await this.db.clear(s);
     await this.db.clear('meta');
+  }
+  /** Remove the onboarding fields from the guest profile once they were copied to an account. */
+  async clearOnboardingFields(): Promise<void> {
+    const cur = (await this.getProfile()) as Record<string, unknown> | null;
+    if (!cur) return;
+    for (const k of ONBOARDING_KEYS) delete cur[k];
+    await this.db.put('profile', 'me', cur);
   }
   /** Delete everything, including the guest profile. */
   async clearAll(): Promise<void> {
