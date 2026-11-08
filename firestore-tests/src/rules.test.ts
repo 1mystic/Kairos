@@ -175,7 +175,10 @@ describe('users/{uid} read/update/delete', () => {
   it('rejects stale updatedAt', async () => {
     await seedProfile();
     await assertFails(
-      updateDoc(doc(alice(), 'users', ALICE), { displayName: 'Z', updatedAt: new Date('2020-01-01') }),
+      updateDoc(doc(alice(), 'users', ALICE), {
+        displayName: 'Z',
+        updatedAt: new Date('2020-01-01'),
+      }),
     );
   });
   it('rejects invalid values', async () => {
@@ -188,7 +191,10 @@ describe('users/{uid} read/update/delete', () => {
     await assertFails(updateDoc(ref(), { exam: 'x'.repeat(41), updatedAt: t }));
     await assertFails(updateDoc(ref(), { onboarded: 'yes', updatedAt: t }));
     await assertFails(
-      updateDoc(ref(), { chaptersDone: Array.from({ length: 401 }, (_, i) => `c${i}`), updatedAt: t }),
+      updateDoc(ref(), {
+        chaptersDone: Array.from({ length: 401 }, (_, i) => `c${i}`),
+        updatedAt: t,
+      }),
     );
   });
   it("rejects updating another user's profile", async () => {
@@ -240,7 +246,9 @@ describe('users/{uid} subcollections', () => {
   });
   it('caps session events at 2000', async () => {
     const ev = (n: number) => Array.from({ length: n }, (_, i) => ({ t: i }));
-    await assertSucceeds(setDoc(doc(alice(), 'users', ALICE, 'sessions', 's1'), { events: ev(2000) }));
+    await assertSucceeds(
+      setDoc(doc(alice(), 'users', ALICE, 'sessions', 's1'), { events: ev(2000) }),
+    );
     await assertFails(setDoc(doc(alice(), 'users', ALICE, 'sessions', 's2'), { events: ev(2001) }));
   });
 });
@@ -309,9 +317,7 @@ describe('uploads', () => {
     await assertFails(setDoc(doc(alice(), 'uploads', 'u1'), up({ status: 'approved' })));
   });
   it('rejects oversized payload', async () => {
-    await assertFails(
-      setDoc(doc(alice(), 'uploads', 'u1'), up({ payload: 'x'.repeat(20001) })),
-    );
+    await assertFails(setDoc(doc(alice(), 'uploads', 'u1'), up({ payload: 'x'.repeat(20001) })));
   });
   it('rejects update and delete', async () => {
     await assertSucceeds(setDoc(doc(alice(), 'uploads', 'u1'), up()));
