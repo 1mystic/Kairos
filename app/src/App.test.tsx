@@ -43,7 +43,7 @@ describe('protected route', () => {
     expect(await screen.findByRole('heading', { name: 'Today' })).toBeInTheDocument();
     expect(screen.getByText(/saved on this device only/)).toBeInTheDocument();
     await userEvent.click(screen.getByRole('link', { name: /Practice/ }));
-    expect(await screen.findByText('Coming soon')).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Practice' })).toBeInTheDocument();
   });
   it('guest without the flag is not let in to /practice', () => {
     renderAt('/practice');

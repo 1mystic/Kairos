@@ -11,6 +11,8 @@ import { Placeholder } from './pages/Placeholder';
 import { Privacy, Terms } from './pages/Legal';
 import { PublicEntry } from './pages/PublicEntry';
 import { Settings } from './pages/Settings';
+import { practiceRoutes } from './practice/routes';
+import { cbtExamRoutes, cbtPageRoutes } from './cbt/routes';
 import { StoreProvider } from './store/StoreProvider';
 import { NudgeProvider } from './store/NudgeProvider';
 import { firebaseConfigError } from './lib/firebase';
@@ -31,11 +33,19 @@ export function AppRoutes() {
       </Route>
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
-          <Route path="/practice" element={<Placeholder title="Practice" />} />
+          {practiceRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {cbtPageRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
           <Route path="/onboarding" element={<Placeholder title="Set your exam date">Exam date and daily time setup is on its way.</Placeholder>} />
           <Route path="/settings" element={<Settings />} />
         </Route>
-        <Route path="/exam/:paperId" element={<Placeholder title="Exam" />} />
+        {/* Full-screen exam runner: no app chrome. Guests allowed (ProtectedRoute admits them). */}
+        {cbtExamRoutes.map((r) => (
+          <Route key={r.path} path={r.path} element={r.element} />
+        ))}
       </Route>
     </Routes>
   );
