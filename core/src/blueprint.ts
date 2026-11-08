@@ -1,0 +1,83 @@
+import { z } from 'zod';
+import { questionTypeSchema, type QuestionType } from './question';
+
+const marksSchema = z.object({ correct: z.number(), wrong: z.number(), blank: z.number() });
+
+export const sectionSchema = z.looseObject({
+  id: z.string().min(1),
+  type: questionTypeSchema,
+  count: z.number().int().positive(),
+  marks: marksSchema,
+  answer_format: z.string().optional(),
+});
+
+export const subjectSchema = z.looseObject({
+  code: z.string().min(1),
+  sections: z.array(sectionSchema).min(1),
+});
+
+export const blueprintSchema = z.looseObject({
+  id: z.string().min(1),
+  exam: z.string().min(1),
+  mode: z.string(),
+  duration_min: z.number().positive(),
+  ui_skin: z.string(),
+  subjects: z.array(subjectSchema).min(1),
+  chapter_weights: z.string().optional(),
+  difficulty_target: z.object({ p_correct_hist: z.array(z.number()) }).optional(),
+  time_slots: z.array(z.string()),
+});
+
+export type Marks = z.infer<typeof marksSchema>;
+export type Section = z.infer<typeof sectionSchema>;
+export type Blueprint = z.infer<typeof blueprintSchema>;
+
+export interface Slot {
+  subject: string;
+  sectionId: string;
+  type: QuestionType;
+  /** global 0-based position in the paper */
+  index: number;
+  /** 0-based position within its section */
+  sectionIndex: number;
+  marks: Marks;
+}
+
+export function parseBlueprint(json: unknown): Blueprint {
+  return blueprintSchema.parse(json);
+}
+
+export function totalQuestions(b: Blueprint): number {
+  return b.subjects.reduce((n, s) => n + s.sections.reduce((m, sec) => m + sec.count, 0), 0);
+}
+
+export function maxMarks(b: Blueprint): number {
+  return b.subjects.reduce(
+    (n, s) => n + s.sections.reduce((m, sec) => m + sec.count * sec.marks.correct, 0),
+    0,
+  );
+}
+
+export function sectionFor(b: Blueprint, subject: string, sectionId: string): Section | undefined {
+  return b.subjects.find((s) => s.code === subject)?.sections.find((sec) => sec.id === sectionId);
+}
+
+/** Ordered slots: subjects in file order, sections in file order within each subject. */
+export function flattenSlots(b: Blueprint): Slot[] {
+  const out: Slot[] = [];
+  for (const s of b.subjects) {
+    for (const sec of s.sections) {
+      for (let i = 0; i < sec.count; i++) {
+        out.push({
+          subject: s.code,
+          sectionId: sec.id,
+          type: sec.type,
+          index: out.length,
+          sectionIndex: i,
+          marks: sec.marks,
+        });
+      }
+    }
+  }
+  return out;
+}
