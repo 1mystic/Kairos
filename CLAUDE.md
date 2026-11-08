@@ -12,7 +12,8 @@
 7. `brand/BRAND.md` + `brand/tokens.css` — name, colours, type, logo
 8. `docs/07_FREE_TIER.md` — **Spark-only constraints. overrides 02 where they conflict.**
 9. `docs/08_GUEST_MODE.md` — guest (no sign-in, local-only) mode + migration
-10. `docs/00_WORKPLAN.md` — current task breakdown + status
+10. `docs/09_UPLOAD.md` + `prompts/extract_questions_v2.md` — upload-your-questions flow
+11. `docs/00_WORKPLAN.md` — current task breakdown + status
 
 ## non-negotiables
 - **exam patterns are config.** never hard-code counts/marks. read `content/blueprints/*.json`.

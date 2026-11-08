@@ -39,20 +39,41 @@ Every prompt must say: read CLAUDE.md + docs/07 + brand/BRAND.md; own only liste
 
 - [ ] **W3f landing page** (`app/src/landing/**`) — animated, 3-colour, no fake stats/competitor names; exports `Landing({onStartGuest})`. Orchestrator mounts it at `/` for signed-out visitors via `app/src/pages/PublicEntry.tsx`.
 
-## Phase 1–3 waves (pre-planned; start when wave 3 is green)
-### Wave 4
-- [ ] **W4a CBT UI** — see W3c above (exam screen + result screen + IndexedDB resume + playwright e2e). Saves via `useStore().putMock` + `nudge('first_session')`.
-- [ ] **W4b core measure** (`/core`) — `elo.ts` (θ/rd update per docs/05 5.1, chapter/subject aggregation with shrinkage), `fsrs.ts` (ts-fsrs wrapper per topic, R threshold 0.85/0.9), `labels.ts` (behaviour labels 5.3 from events + item median time), `sessionSummary.ts` (events → summary). ≥90% coverage.
-- [ ] **W4c practice mode** (`app/src/practice/**`) — pick exam/subject/chapter from manifest+taxonomy, practise with QuestionView: instant check, solution reveal, 1-tap "why wrong" reason, timer per question, event log buffered in IndexedDB, one batched `addSession` at session end (CLAUDE.md write budget). Guest + signed-in.
-### Wave 5
-- [ ] **W5a analytics** (`app/src/analytics/**`) — mastery heatmap (weight × mastery), mock report v1: score, marks-lost waterfall, attempt×accuracy quadrant, time map, "lost N unsaved answers". 3-colour charts (hand-rolled SVG, no chart lib).
-- [ ] **W5b onboarding + pace** (`app/src/onboarding/**`, core `pace.ts`, `schedule.ts`) — exam + session from exam_calendar or custom date, minutes per weekday, off-day, chapters done, ambition; reverse schedule (taper → sprint → mock days → buffers 1/7 → work days); ρ + status; today card wired to real data. `nudge('exam_date_set')`.
-- [ ] **W5c planner v1** (core `planner.ts`, `backlog.ts`, `sim/`) — plan_day per 5.5, backlog carry/spread/shed 5.6, capacity f_u, ±15%/day, never exceed capacity; `core/sim` 1,000 synthetic students vs random practice (gate).
-### Wave 6
-- [ ] **W6a diagnostic + generator** — 40-min CAT diagnostic (5.9), paper generator greedy+anneal (5.4) producing personalised mocks from practice shards.
-- [ ] **W6b daily plan UI** — Home today card + task list from planner, tick tasks, replan on open, pace_log snapshot once/day.
-- [ ] **W6c BYO upload** — copy-prompt (prompts/extract_questions_v1.md) + paste JSON → validator (core questionSchema + checkMath) → fix-up UI → `users/{uid}/bank` (signed-in) or local (guest). Text/JSON only (no image uploads on Spark).
-Phase 4 (server grading / all-India mocks / FCM digest) needs `/worker` on Cloudflare — plan separately.
+## Feature map (every user-facing feature → owner task)
+| feature | user view / route | spec | task |
+|---|---|---|---|
+| landing page | `/` (signed-out) | BRAND, 01 | W3f |
+| auth + guest + settings | `/signin` `/signup` `/settings` | 08 | W3a |
+| question rendering (math, mhchem, webp) | component | BRAND media, 03 | W3b/e |
+| **mock exam mode** (CBT, PYQ replay, sample mock, result) | `/exam/:paperId`, `/exam/:paperId/result/:mockId`, `/mocks` | 04 | W4a |
+| **practice mode** (chapter practice, instant check, solutions, why-wrong) | `/practice`, `/practice/:exam/:chapter` | 01, 05.3 | W4c |
+| **upload your questions** (copy prompt, paste JSON, crop figures, review, private bank) | `/upload`, `/bank` | 09, prompts/v2 | W4d |
+| measurement engine (elo, rd, FSRS, behaviour labels, session summary) | core only | 05.1–5.3 | W4b |
+| **analysis** (mastery heatmap, mock report: waterfall, quadrant, time map, fatigue, unsaved nudge) | `/analysis`, mock result tabs | 04 report, 05 | W5a |
+| onboarding + exam date + pace ρ + today card | `/onboarding`, Home | 01, 05.7 | W5b |
+| **auto-adaptive planner** (plan_day, backlog carry/spread/shed, capacity, sim gate) | core + Home task list | 05.5–5.6, 05.11 | W5c (engine) + W6b (UI) |
+| diagnostic (cold start) + personalised mock generator | `/diagnostic`, "Make me a mock" | 05.4, 05.9 | W6a |
+| predicted score band | Home + analysis | 05.10 | W6c |
+| deploy + smoke test | — | 07 | orchestrator |
+
+**Routing convention (wave 4+):** each feature agent creates `app/src/<feature>/routes.tsx` exporting `export const featureRoutes: RouteObject[]` (or JSX `<Route>` fragments, matching whatever App.tsx uses after W3a). The orchestrator mounts them in App.tsx. Feature agents never edit App.tsx. Shared core index: each agent adds only its own export lines to `core/src/index.ts`.
+
+## Wave 4 (start when wave 3 is merged + green) — 4 parallel agents
+- [ ] **W4a mock exam mode** (`app/src/cbt/**`) — exam screen per docs/04 on `core/cbt/palette`; `--cbt-*` tokens only; instructions + "I have read"; timer + auto-submit at 00:00; no pause in exam mode; NVQ on-screen keypad (physical keys disabled); palette drawer at 360px; fullscreen request; tab-switch logging; IndexedDB resume (refresh/crash resumes same second); graded in browser via bank answers (PYQ/practice-shard answers; mocks with no public answers show "result pending" — phase 4); result screen (score, per subject/section, "lost N unsaved answers"); `/mocks` list (sample + PYQ papers from manifest + past attempts via `useStore().listMocks`); save via `useStore().putMock` + `nudge('first_session')`. Playwright e2e: answer → refresh → resume → submit.
+- [ ] **W4b core measure** (`core/src/measure/**`) — elo.ts, fsrs.ts (ts-fsrs), labels.ts, sessionSummary.ts, mastery state shape matching docs/03 `state/mastery`. ≥90% coverage.
+- [ ] **W4c practice mode** (`app/src/practice/**`) — pick exam → subject → chapter (manifest + taxonomy, counts), session of N questions with QuestionView, check → solution → 1-tap reason when wrong, per-question timer, events buffered in IndexedDB, one `addSession` at end with summary; includes user's own bank questions (from W4d store API if present, else skip). After W4b lands, a follow-up wires mastery updates.
+- [ ] **W4d upload** (`app/src/upload/**`, `core/src/byo.ts`, `firestore.rules` media block + tests, ALLOWED install: `pdfjs-dist`) — per docs/09 + prompts/extract_questions_v2.md: prompt copy page, page drop (pdf.js render), paste/parse (multi-block, fenced-block extraction), review cards with QuestionView preview + editor, bbox crop tool → webp → media store, quotas, save to bank via store (extend UserStore with `putBankQuestions/listBankQuestions/putMedia/getMedia` in a new file `app/src/store/bank.ts` — coordinate: W3a owns store; W4d may ADD files to app/src/store but not rewrite existing ones), `/bank` list view. Rules: `users/{uid}/media/{id}` owner create-only, b64 ≤120000, immutable; tests.
+
+## Wave 5
+- [ ] **W5a analysis** (`app/src/analysis/**`) — heatmap, mock report v1 per docs/04 (waterfall, quadrant, time map, fatigue curve, chapter heatmap, fix list), hand-rolled SVG, 3-colour; mount as tabs in W4a's result screen via an exported `<MockReport/>`.
+- [ ] **W5b onboarding + pace** (`app/src/onboarding/**`, `core/src/plan/schedule.ts`, `pace.ts`) — as before.
+- [ ] **W5c planner engine** (`core/src/plan/planner.ts`, `backlog.ts`, `core/src/sim/**`) — as before, sim gate.
+
+## Wave 6
+- [ ] **W6a diagnostic + generator** (`core/src/gen/**`, `app/src/diagnostic/**`)
+- [ ] **W6b daily plan UI** (Home task list, replan on open, pace_log 1/day)
+- [ ] **W6c predicted score** (core monte-carlo + UI band)
+Phase 4 (server grading / all-India mocks / FCM digest / community uploads) needs `/worker` on Cloudflare — plan separately.
 
 ## Later phases
 1 exam engine → 2 measure → 3 plan per docs/06, each broken into waves here before starting. Phase 4 server work goes to `/worker` (Cloudflare), see 07.
