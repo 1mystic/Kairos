@@ -2,6 +2,7 @@
 @import '@fontsource-variable/plus-jakarta-sans';
 @import './styles/tokens.css';
 @import './styles/interactions.css';
+@import './styles/semantic.css';
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
@@ -22,8 +23,14 @@
   --color-accent-ink: var(--accent-ink);
   --color-accent-50: var(--accent-50);
   --color-good: var(--good);
+  --color-good-50: var(--good-50);
+  --color-good-ink: var(--good-ink);
+  --color-on-good: var(--on-good);
   --color-warn: var(--warn);
   --color-bad: var(--bad);
+  --color-bad-50: var(--bad-50);
+  --color-bad-ink: var(--bad-ink);
+  --color-on-bad: var(--on-bad);
   /* the ONE spacing scale: p-s4, gap-s3, mt-s6 ... (numeric spacing utilities are banned by consistency.test.ts) */
   --spacing-s1: var(--space-1);
   --spacing-s2: var(--space-2);

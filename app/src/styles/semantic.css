@@ -1,0 +1,49 @@
+/* Semantic status colours (owner decision: the 3-colour limit was for UI consistency; meaningful green/red are allowed).
+   Use them ONLY to carry meaning, always together with an icon or words (never colour alone):
+     good  (green) = correct, success, on track, saved, improved
+     warn  (saffron) = needs attention, slightly behind, expiring
+     bad   (red)   = wrong, error, behind, destructive, failed
+   Brand/interactive colour stays indigo. Flat system: tints + solid fills, no borders, no shadows, no gradients. */
+@layer components {
+  /* chips */
+  .chip-good { background: var(--good-50); color: var(--good-ink); }
+  .chip-bad { background: var(--bad-50); color: var(--bad-ink); }
+  .chip-warn { background: var(--accent-50); color: var(--accent-ink); }
+
+  /* banners / inline notices */
+  .banner-good { background: var(--good-50); color: var(--good-ink); }
+  .banner-bad { background: var(--bad-50); color: var(--bad-ink); }
+
+  /* cards that report a state (feedback panels, result tiles) */
+  .card-good { --card-bg: var(--good-50); }
+  .card-bad { --card-bg: var(--bad-50); }
+
+  /* text */
+  .text-status-good { color: var(--good-ink); }
+  .text-status-bad { color: var(--bad-ink); }
+  .text-status-warn { color: var(--accent-ink); }
+
+  /* solid buttons */
+  .btn-success { background: var(--good); color: var(--on-good); }
+  .btn-danger { background: var(--bad); color: var(--on-bad); }
+  .btn-danger-ghost { background: transparent; color: var(--bad-ink); }
+
+  /* option rows in review / instant feedback */
+  .opt-right { background: var(--good-50); }
+  .opt-wrong { background: var(--bad-50); }
+  .opt-right .opt-key { background: var(--good); color: var(--on-good); }
+  .opt-wrong .opt-key { background: var(--bad); color: var(--on-bad); }
+
+  /* progress / meters */
+  .progress-good > span { background: var(--good); }
+  .progress-bad > span { background: var(--bad); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-success:hover { background: color-mix(in srgb, var(--good), var(--ink) 12%); }
+    .btn-danger:hover { background: color-mix(in srgb, var(--bad), var(--ink) 12%); }
+    .btn-danger-ghost:hover { background: var(--bad-50); }
+  }
+  .btn-success:active { background: color-mix(in srgb, var(--good), var(--ink) 20%); }
+  .btn-danger:active { background: color-mix(in srgb, var(--bad), var(--ink) 20%); }
+  .btn-danger-ghost:active { background: var(--bad-50); }
+}

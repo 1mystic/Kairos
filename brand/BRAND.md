@@ -4,7 +4,7 @@
 **tagline:** the right question, at the right time.
 **voice:** calm senior who's done it. direct, warm, no hype, no guilt. "you're 2 days behind — here are two ways to fix it." never "you failed!". hindi-english code-mix ok in tips.
 
-## colour — 3 colours max (owner decision 2026-11-08)
+## colour — brand palette = 3 colours; plus semantic status colours (owner decision 2026-11-08, updated)
 neutrals (ink → paper greys) + **indigo** + **saffron**. nothing else in the product UI.
 | token | hex | use |
 |---|---|---|
@@ -16,7 +16,13 @@ neutrals (ink → paper greys) + **indigo** + **saffron**. nothing else in the p
 | primary-50 | #EEF0FF | tints, selected rows |
 | accent (saffron) | #F5A524 | countdown, streaks, highlights, **slightly behind** (tint) / **behind** (solid) |
 | accent-ink | #9A5B00 | saffron for TEXT on light bg (contrast ≥4.5:1): form errors, warnings |
-status = good→primary, warn→accent tint, bad→accent solid + plain words. no green/red in product UI.
+**semantic status colours (allowed, to indicate meaning better; the 3-colour limit was for UI consistency, not a ban on green/red):**
+| token | use |
+|---|---|
+| good (green) `--good` / `--good-50` / `--good-ink` / `--on-good` | correct, success, saved, on track, improved |
+| warn (saffron) = accent | needs attention, slightly behind, expiring |
+| bad (red) `--bad` / `--bad-50` / `--bad-ink` / `--on-bad` | wrong, error, behind, failed, destructive actions |
+Rules: semantic colours carry MEANING only (never decoration); always paired with an icon or words (accessibility: never colour alone); brand/interactive stays indigo; text on tints uses the `-ink` variants (≥4.5:1); classes live in `app/src/styles/semantic.css` (`chip-good/bad/warn`, `banner-good/bad`, `card-good/bad`, `btn-success`, `btn-danger`, `btn-danger-ghost`, `opt-right/wrong`, `progress-good/bad`, `text-status-*`).
 **CBT exam screen is the only exception** — `--cbt-*` tokens mimic NTA exactly (realism > brand).
 
 ## type

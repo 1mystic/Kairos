@@ -13,7 +13,9 @@
   /* interaction model: hover = one tint step up, active = one step darker (pressed tint = surface-3 + 8% ink) */
   --tint-active:color-mix(in srgb,var(--surface-3),var(--ink) 8%);
   /* status maps onto the 3 colours (no green/red in product UI) */
-  --good:var(--primary); --warn:var(--accent); --bad:var(--accent);
+  --good:#16885A; --good-50:#E6F5EE; --good-ink:#0F6B46; --on-good:#FFFFFF;
+  --warn:var(--accent);
+  --bad:#C73737; --bad-50:#FBE9E9; --bad-ink:#A12626; --on-bad:#FFFFFF;
 
   /* spacing scale: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 only */
   --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem;
@@ -55,6 +57,8 @@
   --ink:#ECEEF8; --paper:#0B0F24; --surface:#141936; --slate:#A3A8C3;
   --surface-2:#1A2046; --surface-3:#262D5C; --line:#262C4D;
   --primary:#7B80FF; --primary-hover:#9599FF; --primary-active:#B3B6FF; --primary-50:#1D2250;
+  --good:#3CC48D; --good-50:#10302A; --good-ink:#5FE0A9; --on-good:#06281B;
+  --bad:#FF7B7B; --bad-50:#3A1A24; --bad-ink:#FF9C9C; --on-bad:#3A0A0A;
   --accent-ink:#F5A524; --accent-50:#2A2210;
   --scrim:rgba(4,6,18,.62);
 }

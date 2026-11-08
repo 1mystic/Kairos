@@ -93,3 +93,7 @@ Checklist before you ship a screen:
 - Do separate with tint layers; do use `Divider` only when whitespace is not enough; do pair status colour with a word and icon.
 - Don't add a border "just for contrast"; pick the next tint. Don't add `shadow`. Don't hard-code px, hex or one-off margins. Don't use red/green.
 - Diagram images keep a white backing (`--img-backing`) in dark mode (deliberate, borderless).
+
+
+## Semantic status colours (owner update)
+Brand palette stays neutrals + indigo + saffron. **Green (good) and red (bad) are now allowed for status** to communicate meaning faster: correct/wrong answers, success/error states, on-track/behind, saved/failed, improved/declined, destructive buttons. Always pair colour with an icon or words; text on tinted backgrounds uses `--good-ink`/`--bad-ink`; solid buttons use `btn-success`/`btn-danger` with `--on-good`/`--on-bad`. Tokens: `brand/tokens.css` (`--good*`, `--bad*`, light + dark); classes: `app/src/styles/semantic.css`; Tailwind utilities `bg-good-50`, `text-good-ink`, `bg-bad`, `text-on-bad`, etc. Flat rules still apply (no borders, shadows, gradients). Do not use green/red for decoration or for brand/interactive elements (those stay indigo).
