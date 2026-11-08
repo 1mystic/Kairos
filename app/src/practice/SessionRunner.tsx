@@ -1,0 +1,398 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { Question } from '@kairos/core';
+import { QuestionView } from '../components/QuestionView';
+import { CheckIcon, CloseIcon, ClockIcon } from '../components/icons';
+import { Banner, Button, Card, Chip, Input, ProgressBar } from '../components/ui';
+import { saveQuietly, type BufferedSession, type SessionBuffer } from './buffer';
+import {
+  REASON_CHIPS,
+  checkAnswer,
+  correctAnswerText,
+  valueToResponse,
+} from './finish';
+import { SessionRecorder, isMarked, lastAnswer } from './recorder';
+import type { KairosEvent } from '@kairos/core';
+
+export interface RunnerProps {
+  questions: Question[];
+  /** session identity + config (written to the buffer on every step) */
+  base: Omit<BufferedSession, 'index' | 'events' | 'reasons' | 'checked' | 'qids' | 'updatedAt'>;
+  /** resume from a buffered session */
+  initial?: BufferedSession | null;
+  buffer: SessionBuffer;
+  clock?: () => number;
+  /** called exactly once, when the student finishes or ends the session */
+  onFinish(r: { events: KairosEvent[]; reasons: Record<string, string>; endedAt: number }): void;
+}
+
+const fmt = (ms: number) => {
+  const s = Math.max(0, Math.floor(ms / 1000));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+};
+
+/** Per-question time limit in timed mode: twice the median, kept between 1 and 4 minutes. */
+export function timeLimitMs(q: Question): number {
+  const m = (q.difficulty?.median_time_s ?? 60) * 2000;
+  return Math.min(240_000, Math.max(60_000, m));
+}
+
+export function SessionRunner({ questions, base, initial, buffer, clock = Date.now, onFinish }: RunnerProps) {
+  const timed = base.mode === 'timed';
+  const rec = useRef<SessionRecorder | null>(null);
+  rec.current ??= new SessionRecorder(clock, initial?.events ?? []);
+  const r = rec.current;
+
+  const [index, setIndex] = useState(initial?.index ?? 0);
+  const [reasons, setReasons] = useState<Record<string, string>>(initial?.reasons ?? {});
+  const [checked, setChecked] = useState<string[]>(initial?.checked ?? []);
+  const [answer, setAnswer] = useState('');
+  const [paused, setPaused] = useState(false);
+  const [, force] = useState(0);
+  const [elapsed, setElapsed] = useState(0);
+  const [timedOut, setTimedOut] = useState(false);
+  const done = useRef(false);
+  const visited = useRef<string | null>(null);
+  // time spent on the open question: accumulated before `since`, plus the running span
+  const acc = useRef(0);
+  const since = useRef<number | null>(null);
+
+  const q = questions[index];
+  const isChecked = !!q && checked.includes(q.id);
+  const verdict = q && isChecked ? checkAnswer(q, answer === '' ? null : valueToResponse(q, answer)) : null;
+  const isNumeric = q?.type === 'NVQ' || q?.type === 'INT';
+  const selected = useMemo(() => (q && !isNumeric && answer ? answer.split(',') : []), [q, isNumeric, answer]);
+  const flagged = q ? isMarked(r.events, q.id) : false;
+
+  const persist = useCallback(
+    (over: Partial<BufferedSession> = {}) => {
+      saveQuietly(buffer, {
+        ...base,
+        qids: questions.map((x) => x.id),
+        index,
+        events: r.events,
+        reasons,
+        checked,
+        updatedAt: clock(),
+        ...over,
+      });
+    },
+    [buffer, base, questions, index, reasons, checked, r, clock],
+  );
+
+  // entering a question: derive its answer, open its time span
+  useEffect(() => {
+    if (!q || visited.current === q.id) return;
+    visited.current = q.id;
+    setAnswer(lastAnswer(r.events, q.id));
+    setTimedOut(false);
+    acc.current = 0;
+    if (!checked.includes(q.id)) {
+      r.visit(q.id);
+      since.current = clock();
+    } else since.current = null;
+    persist();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [q?.id]);
+
+  // ticking clock
+  useEffect(() => {
+    const t = setInterval(() => {
+      setElapsed(acc.current + (since.current === null ? 0 : clock() - since.current));
+    }, 250);
+    return () => clearInterval(t);
+  }, [clock]);
+
+  const stopClock = () => {
+    if (since.current !== null) acc.current += clock() - since.current;
+    since.current = null;
+    setElapsed(acc.current);
+  };
+
+  const finish = useCallback(() => {
+    if (done.current) return;
+    done.current = true;
+    if (q && !checked.includes(q.id) && !paused) r.leave(q.id);
+    onFinish({ events: [...r.events], reasons, endedAt: Date.now() });
+  }, [q, checked, paused, r, reasons, onFinish]);
+
+  const setValue = (v: string) => {
+    if (!q || isChecked) return;
+    setAnswer(v);
+    if (v === '') r.clear(q.id);
+    else r.select(q.id, v);
+    persist();
+    force((n) => n + 1);
+  };
+
+  const check = useCallback(
+    (auto = false) => {
+      if (!q || checked.includes(q.id) || paused) return;
+      const v = answer.trim();
+      if (v !== '') {
+        r.save(q.id, v);
+        r.submit(q.id);
+      } else r.leave(q.id);
+      stopClock();
+      const nextChecked = [...checked, q.id];
+      setChecked(nextChecked);
+      let nextReasons = reasons;
+      if (auto) {
+        setTimedOut(true);
+        nextReasons = { ...reasons, [q.id]: 'time' };
+        setReasons(nextReasons);
+      }
+      persist({ checked: nextChecked, reasons: nextReasons });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [q, checked, paused, answer, reasons, persist],
+  );
+
+  // timed mode: time is up
+  useEffect(() => {
+    if (timed && q && !isChecked && !paused && elapsed >= timeLimitMs(q)) check(true);
+  }, [timed, q, isChecked, paused, elapsed, check]);
+
+  const goNext = useCallback(() => {
+    if (!q) return;
+    if (!checked.includes(q.id) && !paused) r.leave(q.id);
+    if (index + 1 >= questions.length) {
+      finish();
+      return;
+    }
+    setIndex(index + 1);
+    persist({ index: index + 1 });
+  }, [q, checked, paused, r, index, questions.length, finish, persist]);
+
+  const toggleFlag = () => {
+    if (!q) return;
+    if (flagged) r.unmark(q.id);
+    else r.mark(q.id);
+    persist();
+    force((n) => n + 1);
+  };
+
+  const togglePause = () => {
+    if (!q || isChecked || timed) return;
+    if (!paused) {
+      r.leave(q.id);
+      stopClock();
+    } else {
+      r.visit(q.id);
+      since.current = clock();
+    }
+    setPaused(!paused);
+    persist();
+  };
+
+  const pickReason = (id: string) => {
+    if (!q) return;
+    (document.activeElement as HTMLElement | null)?.blur(); // so Enter moves on instead of re-pressing
+    const next = { ...reasons, [q.id]: id };
+    setReasons(next);
+    persist({ reasons: next });
+  };
+
+  // keyboard: 1-4 select, Enter check / next
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (!q || paused || e.metaKey || e.ctrlKey || e.altKey) return;
+      const el = e.target as HTMLElement | null;
+      const typing = el?.tagName === 'INPUT' && (el as HTMLInputElement).type === 'text';
+      if (e.key === 'Enter') {
+        if (el?.tagName === 'BUTTON') return; // let the focused button act
+        e.preventDefault();
+        if (isChecked) goNext();
+        else if (answer.trim() !== '') check();
+        return;
+      }
+      if (typing || isChecked || isNumeric) return;
+      const i = Number(e.key) - 1;
+      const opt = q.options?.[i];
+      if (opt && i >= 0 && i < 4) {
+        if (q.type === 'MSQ') {
+          const cur = answer ? answer.split(',') : [];
+          const nxt = cur.includes(opt.key) ? cur.filter((k) => k !== opt.key) : [...cur, opt.key];
+          setValue([...nxt].sort().join(','));
+        } else setValue(opt.key);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
+  if (!q) return null;
+  const limit = timeLimitMs(q);
+  const shown = timed ? limit - elapsed : elapsed;
+  const last = index + 1 >= questions.length;
+  const answered = checked.length;
+
+  const side = (
+    <aside className="stack gap-s4" aria-label="Session progress">
+      <Card>
+        <div className="stack gap-s3">
+          <span className="row gap-s2 text-small text-slate">
+            <ClockIcon width={16} height={16} />
+            {timed ? 'Time left' : 'Time on this question'}
+          </span>
+          <span className="text-h1 tabular" aria-live="off" data-testid="timer">
+            {fmt(shown)}
+          </span>
+          {!timed && (
+            <Button variant="secondary" onClick={togglePause} disabled={isChecked}>
+              {paused ? 'Resume' : 'Pause'}
+            </Button>
+          )}
+          {timed && <span className="text-small text-slate">Timed mode: no pausing.</span>}
+        </div>
+      </Card>
+      <Card>
+        <div className="stack gap-s3">
+          <span className="text-small text-slate">Questions</span>
+          <div className="row gap-s2">
+            {questions.map((x, i) => (
+              <span
+                key={x.id}
+                aria-label={`Question ${i + 1}${checked.includes(x.id) ? ', checked' : i === index ? ', current' : ''}`}
+                className={`grid size-s6 place-items-center rounded-pill text-caption font-semibold tabular ${
+                  i === index ? 'bg-primary text-surface' : checked.includes(x.id) ? 'bg-primary-50 text-primary' : 'bg-surface-3 text-slate'
+                }`}
+              >
+                {i + 1}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Card>
+      <Button variant="ghost" onClick={finish}>
+        End session
+      </Button>
+    </aside>
+  );
+
+  return (
+    <div className="mx-auto grid w-full max-w-reading gap-s5 xl:max-w-app xl:grid-cols-3 xl:gap-s6 3xl:max-w-app">
+      <div className="stack gap-s4 xl:col-span-2">
+        <div className="row justify-between gap-s3">
+          <Chip tone="primary">
+            Question {index + 1} of {questions.length}
+          </Chip>
+          <span className="row gap-s2 text-small text-slate xl:hidden">
+            <ClockIcon width={16} height={16} />
+            <span className="tabular" data-testid="timer-compact">
+              {fmt(shown)}
+            </span>
+            {!timed && (
+              <Button size="sm" variant="ghost" onClick={togglePause} disabled={isChecked}>
+                {paused ? 'Resume' : 'Pause'}
+              </Button>
+            )}
+          </span>
+        </div>
+        <ProgressBar value={answered} max={questions.length} label="Session progress" />
+
+        {paused ? (
+          <Card>
+            <div className="stack items-center gap-s4 py-s6 text-center">
+              <h2 className="text-h2">Paused</h2>
+              <p className="text-slate">Take your time. The question is hidden until you resume.</p>
+              <Button onClick={togglePause}>Resume</Button>
+            </div>
+          </Card>
+        ) : (
+          <Card>
+            <div className="stack gap-s4">
+              <QuestionView
+                question={q}
+                selected={selected}
+                onSelect={isChecked || isNumeric ? undefined : (keys) => setValue([...keys].sort().join(','))}
+                showSolution={isChecked}
+              />
+              {isNumeric && (
+                <div className="stack gap-s2">
+                  <label htmlFor="numeric-answer" className="text-small font-semibold">
+                    Your answer
+                  </label>
+                  <Input
+                    id="numeric-answer"
+                    type="text"
+                    inputMode="decimal"
+                    autoComplete="off"
+                    value={answer}
+                    disabled={isChecked}
+                    onChange={(e) => setValue(e.target.value.replace(/[^0-9eE+\-.]/g, ''))}
+                    placeholder="Type a number"
+                  />
+                </div>
+              )}
+            </div>
+          </Card>
+        )}
+
+        {isChecked && (
+          <div className="stack gap-s3" data-testid="feedback">
+            <Banner
+              tone={verdict === 'correct' ? 'primary' : 'accent'}
+              icon={verdict === 'correct' ? <CheckIcon className="shrink-0" /> : <CloseIcon className="shrink-0" />}
+              role="status"
+            >
+              {verdict === 'correct'
+                ? 'Correct.'
+                : timedOut
+                  ? `Time is up. The answer is ${correctAnswerText(q)}.`
+                  : verdict === 'blank'
+                    ? `No answer given. The answer is ${correctAnswerText(q)}.`
+                    : `Not quite. The answer is ${correctAnswerText(q)}.`}
+            </Banner>
+            {verdict !== 'correct' && (
+              <div className="stack gap-s2" role="group" aria-label="Why did this go wrong?">
+                <span className="text-small text-slate">What happened? One tap, no pressure.</span>
+                <div className="row gap-s2">
+                  {REASON_CHIPS.map((c) => (
+                    <Button
+                      key={c.id}
+                      size="sm"
+                      variant={reasons[q.id] === c.id ? 'primary' : 'secondary'}
+                      aria-pressed={reasons[q.id] === c.id}
+                      onClick={() => pickReason(c.id)}
+                    >
+                      {c.label}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {!paused && (
+          <div className="row justify-between gap-s3">
+            <div className="row gap-s2">
+              <Button variant="ghost" onClick={toggleFlag} aria-pressed={flagged}>
+                {flagged ? 'Unflag' : 'Flag'}
+              </Button>
+              {!isChecked && (
+                <Button variant="ghost" onClick={goNext}>
+                  Skip
+                </Button>
+              )}
+            </div>
+            {isChecked ? (
+              <Button onClick={goNext}>{last ? 'Finish' : 'Next'}</Button>
+            ) : (
+              <Button onClick={() => check()} disabled={answer.trim() === ''}>
+                Check
+              </Button>
+            )}
+          </div>
+        )}
+        <p className="hidden text-caption text-slate xl:block">Keys: 1 to 4 pick an option, Enter checks or moves on.</p>
+        <div className="xl:hidden">
+          <Button variant="ghost" onClick={finish}>
+            End session
+          </Button>
+        </div>
+      </div>
+      <div className="hidden xl:block">{side}</div>
+    </div>
+  );
+}
