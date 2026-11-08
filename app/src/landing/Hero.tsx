@@ -1,9 +1,10 @@
-import { Button, LinkButton } from '../components/ui';
+import { Button, LinkButton, TwoPane } from '../components/ui';
 import { CountdownRing } from './CountdownRing';
 
 export function Hero({ onStartGuest }: { onStartGuest: () => void }) {
   return (
     <section className="ld-hero ld-wrap" aria-labelledby="ld-h1">
+      <TwoPane>
       <div className="ld-hero-copy">
         <p className="ld-eyebrow">JEE Main · NEET UG · IAT</p>
         <h1 id="ld-h1">
@@ -22,6 +23,7 @@ export function Hero({ onStartGuest }: { onStartGuest: () => void }) {
       <div className="ld-hero-visual">
         <CountdownRing />
       </div>
+      </TwoPane>
     </section>
   );
 }

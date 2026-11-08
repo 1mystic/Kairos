@@ -35,7 +35,7 @@ export function Forgot() {
       {sent ? (
         <Banner role="status">If an account exists for {email.trim()}, a reset link is on its way. Check your spam folder too.</Banner>
       ) : (
-        <form onSubmit={submit} noValidate className="stack gap-base">
+        <form onSubmit={submit} noValidate className="stack-field">
           <FormError>{formError}</FormError>
           <Field label="Email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} error={error} />
           <Button type="submit" block loading={busy}>{busy ? 'Sending…' : 'Send reset link'}</Button>

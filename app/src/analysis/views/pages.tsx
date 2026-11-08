@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router';
-import { EmptyState, LinkButton, Page, PageHeader, Skeleton, Tabs } from '../../components/ui';
+import { EmptyState, LinkButton, Page, PageHeader, Tabs, SkeletonRows, PageSkeleton } from '../../components/ui';
 import { readAnalysis } from '../../cbt/model';
 import { useStore, type MockDoc } from '../../store';
 import { useAnalysisData, type AnalysisData } from '../hooks';
@@ -24,7 +24,7 @@ export function AnalysisView({ data, tab, onTab, now }: { data: AnalysisData; ta
         <PageHeader title="Analysis" subtitle="What you know, how your mocks went, and what to fix next." />
         <Tabs label="Analysis" tabs={TABS} value={tab} onChange={onTab} />
         {data.loading ? (
-          <div className="stack gap-base"><Skeleton className="h-s8 w-full" /><Skeleton className="h-s8 w-full" /></div>
+          <SkeletonRows count={2} />
         ) : tab === 'mastery' ? (
           <MasteryTab tax={data.taxonomy} mastery={data.mastery} sessions={data.sessions} exam={data.exam} now={now} />
         ) : tab === 'mocks' ? (
@@ -56,7 +56,7 @@ export function MockReportPage() {
     store.listMocks().then((all) => live && setMock(all.find((m) => m.id === mockId) ?? null), () => live && setMock(null));
     return () => { live = false; };
   }, [store, mockId]);
-  if (mock === undefined) return <Page><Skeleton className="h-s8 w-full" /></Page>;
+  if (mock === undefined) return <PageSkeleton />;
   if (mock === null) {
     return (
       <Page>

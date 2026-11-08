@@ -92,9 +92,9 @@ export function Settings() {
       {confirm && (
         <Modal title="Clear all data on this device?" onClose={() => setConfirm(false)} dismissLabel="Keep my data">
           <p className="text-slate">This removes your sessions, mocks and plans from this device. It cannot be undone.</p>
-          <div className="stack gap-tight sm:flex-row-reverse">
-            <Button onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</Button>
+          <div className="row-actions justify-end">
             <Button variant="secondary" onClick={() => setConfirm(false)}>Keep my data</Button>
+            <Button onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</Button>
           </div>
         </Modal>
       )}

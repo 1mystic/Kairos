@@ -36,7 +36,7 @@ export function InfoNote({ label, children }: { label: string; children: ReactNo
   const id = useId();
   return (
     <div className="stack gap-s2">
-      <button type="button" aria-expanded={open} aria-controls={id} onClick={() => setOpen((o) => !o)} className="row min-h-11 w-fit gap-s2 rounded-btn text-small font-semibold text-primary">
+      <button type="button" aria-expanded={open} aria-controls={id} onClick={() => setOpen((o) => !o)} className="text-link row-inline min-h-11 w-fit text-small">
         <InfoIcon2 size={18} />{label}
       </button>
       {open && <div id={id} role="note" className="rounded-btn bg-surface p-s4 text-small text-slate">{children}</div>}

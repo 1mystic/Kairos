@@ -21,7 +21,7 @@ export function Readiness({ size, options, ctx }: WidgetProps) {
   const px = size === 'l' ? 200 : 168;
   return (
     <div className="stack gap-s5">
-      <div className="flex flex-wrap items-center gap-x-s6 gap-y-s5">
+      <div className="row gap-loose">
         <Ring size={px} value={band ? band.p50 / band.max : enough ? r.pct / 100 : null} label={band ? `Predicted score ${band.p25} to ${band.p75} out of ${band.max}` : enough ? `Mastery ${r.pct} percent` : 'Mastery: not enough data yet'}>
           {band ? (
             <div className="stack gap-s1"><span className="text-h1 font-bold tabular">{band.p50}</span><span className="text-caption text-slate">of {band.max}</span></div>

@@ -16,7 +16,7 @@ export function GoogleButton({ onError }: { onError(msg: string): void }) {
 }
 
 export function OrDivider() {
-  return <div className="row gap-s3 text-small text-slate" role="separator"><span className="flex-1"><Divider /></span>or<span className="flex-1"><Divider /></span></div>;
+  return <div className="row-inline text-small text-slate" role="separator"><span className="flex-1"><Divider /></span>or<span className="flex-1"><Divider /></span></div>;
 }
 
 export function SignIn() {
@@ -51,7 +51,7 @@ export function SignIn() {
       subtitle="Pick up where you left off."
       footer={<>New here? <Link className="font-semibold" to="/signup">Create an account</Link></>}
     >
-      <form onSubmit={submit} noValidate className="stack gap-base">
+      <form onSubmit={submit} noValidate className="stack-field">
         <FormError>{formError}</FormError>
         <Field label="Email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} error={errors.email} />
         <Field label="Password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} error={errors.password} />

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
-import { Banner, Button, Card, IconButton, Input, Skeleton } from '../components/ui';
+import { Banner, Button, Card, Columns, IconButton, Input, Skeleton, SpanGrid, spanClass } from '../components/ui';
 import './dashboard.css';
 import { CardMenu } from './CardMenu';
 import { Customize } from './Customize';
@@ -48,7 +48,7 @@ function RangeControl({ value, onChange }: { value: RangeKind; onChange(k: Range
     <div role="radiogroup" aria-label="Date range" className="tabs">
       {RANGE_KINDS.map((k, i) => (
         <button key={k} ref={(el) => { refs.current[i] = el; }} type="button" role="radio" aria-checked={k === value} tabIndex={k === value ? 0 : -1} onClick={() => onChange(k)} onKeyDown={(e) => key(e, i)}
-          className={`tab ${k === value ? 'bg-primary-50 text-primary' : ''}`}>{RANGE_LABEL[k]}</button>
+          className="tab">{RANGE_LABEL[k]}</button>
       ))}
     </div>
   );
@@ -61,8 +61,8 @@ function Frame({ w, ctx, className, onHide, onSize, onOptions }: { w: WidgetStat
   return (
     <div className={className} data-widget={w.id} data-size={w.size}>
       <Card as="section" tone={meta.tone === 'primary' ? 'primary' : 'default'} aria-labelledby={hid} className={`h-full ${meta.tone === 'accent' ? 'bg-accent-50' : ''}`}>
-        <div className="stack h-full gap-s4">
-          <header className="flex items-center justify-between gap-s2">
+        <div className="stack-card h-full">
+          <header className="row-between flex-nowrap">
             <h2 id={hid} className="text-h3">{meta.title}</h2>
             <CardMenu meta={meta} size={w.size} onHide={onHide} onSize={onSize} onOptions={onOptions} />
           </header>
@@ -75,15 +75,13 @@ function Frame({ w, ctx, className, onHide, onSize, onOptions }: { w: WidgetStat
 
 function Loading({ layout }: { layout: Layout }) {
   return (
-    <div className="grid grid-cols-12 gap-s5" aria-busy="true" aria-label="Loading your dashboard">
+    <SpanGrid aria-busy="true" aria-label="Loading your dashboard">
       {layout.widgets.filter((w) => w.visible).slice(0, 6).map((w) => (
-        <div key={w.id} className={w.size === 'l' || w.id === 'readiness' ? 'col-span-12' : 'col-span-12 md:col-span-6'}><Skeleton className="h-48 w-full !rounded-card" /></div>
+        <div key={w.id} className={spanClass(w.size === 'l' || w.id === 'readiness' ? 12 : 6)}><Skeleton className="skeleton-card" /></div>
       ))}
-    </div>
+    </SpanGrid>
   );
 }
-
-const span = (n: 6 | 12) => (n === 6 ? 'col-span-12 md:col-span-6' : 'col-span-12');
 
 /** The Home dashboard. Mount inside Home; it needs a StoreProvider. `now` is for tests. */
 export function Dashboard({ now = Date.now }: { now?: () => number }) {
@@ -109,7 +107,7 @@ export function Dashboard({ now = Date.now }: { now?: () => number }) {
 
   const frames = (list: WidgetState[], spans: (6 | 12)[]) =>
     list.map((w, i) => (
-      <Frame key={w.id} w={w} ctx={ctx} className={span(spans[i]!)} onHide={() => hide(w.id)} onSize={(s) => setLayout((l) => patchWidget(l, w.id, { size: s }))} onOptions={() => setCustom({ focus: w.id })} />
+      <Frame key={w.id} w={w} ctx={ctx} className={spanClass(spans[i]!)} onHide={() => hide(w.id)} onSize={(s) => setLayout((l) => patchWidget(l, w.id, { size: s }))} onOptions={() => setCustom({ focus: w.id })} />
     ));
   const base = (w: WidgetState, columns: boolean, zone: 'main' | 'side'): 6 | 12 => (columns ? (zone === 'main' && w.size === 's' ? 6 : 12) : w.size === 'l' ? 12 : 6);
   const main = visible.filter((w) => metaOf(w.id)!.zone === 'main');
@@ -117,8 +115,9 @@ export function Dashboard({ now = Date.now }: { now?: () => number }) {
   const columns = wide && main.length > 0 && side.length > 0;
 
   return (
-    <section aria-label="Dashboard" className="stack gap-loose">
-      <div className="flex flex-wrap items-center gap-x-s5 gap-y-s3">
+    <section aria-label="Dashboard" className="stack-grid">
+      <div className="row-between">
+        <div className="row-actions">
         <RangeControl value={layout.range} onChange={(k) => setLayout((l) => ({ ...l, range: setKind({ kind: l.range, end }, k).kind }))} />
         <div className="row gap-s1">
           <IconButton label={`Previous ${PREVIOUS_WORD[range.kind].replace('previous ', '')}`} variant="ghost" onClick={() => setRange(shiftRange(range, -1, today))}><ChevronLeftIcon /></IconButton>
@@ -127,7 +126,8 @@ export function Dashboard({ now = Date.now }: { now?: () => number }) {
           <IconButton label="Pick a date" variant="ghost" aria-expanded={picker} onClick={() => setPicker((p) => !p)}><CalendarIcon2 /></IconButton>
           {range.end !== today && <Button size="sm" variant="ghost" onClick={() => setEnd(today)}>Today</Button>}
         </div>
-        <div className="row ml-auto gap-s2">
+        </div>
+        <div className="row-actions">
           <Button size="sm" variant="secondary" role="switch" aria-checked={sample} onClick={() => setSample((s) => !s)}>{sample ? 'Sample data: on' : 'Preview with sample data'}</Button>
           <Button size="sm" variant="secondary" onClick={() => setCustom({ focus: null })}><SlidersIcon size={18} />Customise</Button>
         </div>
@@ -139,14 +139,13 @@ export function Dashboard({ now = Date.now }: { now?: () => number }) {
       {error && !sample && <Banner tone="accent" role="status">We could not load your data just now. The cards below are empty; try reloading.</Banner>}
 
       {loading && !sample ? <Loading layout={layout} /> : visible.length === 0 ? (
-        <Card><div className="stack items-start gap-s3"><p className="text-body">All cards are hidden.</p><Button size="sm" onClick={() => setCustom({ focus: null })}>Customise</Button></div></Card>
+        <Card><div className="stack-card items-start"><p className="text-body">All cards are hidden.</p><Button size="sm" onClick={() => setCustom({ focus: null })}>Customise</Button></div></Card>
       ) : columns ? (
-        <div className="grid grid-cols-3 gap-s5">
-          <div className="col-span-2 grid grid-cols-12 content-start gap-s5">{frames(main, packSpans(main.map((w) => base(w, true, 'main'))))}</div>
-          <div className="col-span-1 grid grid-cols-12 content-start gap-s5">{frames(side, side.map(() => 12))}</div>
-        </div>
+        <Columns ratio="main-side" sticky={false} side={frames(side, side.map(() => 12))}>
+          <SpanGrid>{frames(main, packSpans(main.map((w) => base(w, true, 'main'))))}</SpanGrid>
+        </Columns>
       ) : (
-        <div className="grid grid-cols-12 gap-s4 md:gap-s5">{frames(visible, packSpans(visible.map((w) => base(w, false, metaOf(w.id)!.zone))))}</div>
+        <SpanGrid>{frames(visible, packSpans(visible.map((w) => base(w, false, metaOf(w.id)!.zone))))}</SpanGrid>
       )}
 
       {custom && <Customize layout={layout} onChange={setLayout} onReset={reset} onClose={() => setCustom(null)} focusId={custom.focus} />}

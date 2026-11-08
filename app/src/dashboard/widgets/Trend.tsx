@@ -32,7 +32,7 @@ export function Trend({ size, options, ctx }: WidgetProps) {
   const head = metric === 'questions' ? `${total.questions} questions` : metric === 'minutes' ? `${total.minutes} minutes` : metric === 'accuracy' ? (total.accuracy === null ? 'No answers' : `${total.accuracy}% accuracy`) : null;
   return (
     <div className="stack gap-s4">
-      <div className="flex flex-wrap items-center justify-between gap-s3">
+      <div className="row-between">
         <div className="stack gap-s1">
           {head && <span className="text-h2 font-bold tabular">{head}</span>}
           <div><DeltaChip delta={delta} range={ctx.range} /></div>

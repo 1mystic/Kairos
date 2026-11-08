@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { daysLeft, type MasteryDoc } from '@kairos/core';
 import { AlertIcon, CalendarIcon, CheckIcon, ClockIcon } from '../components/icons';
-import { Banner, Button, Card, Chip, Field, Page, PageHeader, ProgressBar, SelectField, Skeleton, Stat } from '../components/ui';
+import { Banner, Button, Card, Chip, Field, Page, PageHeader, ProgressBar, SelectField, Skeleton, Stat, SkeletonRows, PageSkeleton } from '../components/ui';
 import { buildPreview, rhoWords, type PlanPreview } from './preview';
 import { fmtMin } from '../plan/format';
 import { StatusChip } from '../plan/PlanScreens';
@@ -179,7 +179,7 @@ function StepChapters({ d, set, tax }: { d: Draft; set(p: Partial<Draft>): void;
     return tax.subjects.map((s) => ({ id: s.id, name: s.name, chapters: s.chapters.filter((c) => ids.has(c.id)) })).filter((s) => s.chapters.length > 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tax, exams.join(',')]);
-  if (!tax) return <div className="stack gap-base"><Skeleton className="h-s8 w-full" /><Skeleton className="h-s8 w-full" /></div>;
+  if (!tax) return <SkeletonRows count={2} />;
   const done = new Set(d.done);
   const toggle = (ids: string[], on: boolean) => set({ done: on ? [...new Set([...d.done, ...ids])] : d.done.filter((x) => !ids.includes(x)) });
   return (
@@ -301,7 +301,7 @@ export function OnboardingPage(props: OnboardingProps = {}) {
   const nav = useNavigate();
   const { nudge } = useSignInNudge();
   const { loading, profile, onboarded } = useOnboardingProfile();
-  if (loading) return <Page width="form"><Skeleton className="h-s8 w-full" /><Skeleton className="h-s8 w-full" /></Page>;
+  if (loading) return <PageSkeleton width="form" cards={2} cols={1} />;
   return <Wizard key={onboarded ? 'edit' : 'new'} {...props} profile={profile} edit={onboarded} store={store} nudge={nudge} go={() => (props.onDone ? props.onDone() : nav('/plan'))} />;
 }
 

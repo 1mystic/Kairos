@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import type { Task } from '@kairos/core';
 import { AlertIcon, CalendarIcon, CheckIcon, ClockIcon, SparkIcon } from '../components/icons';
-import { Banner, Button, Card, Chip, EmptyState, Field, LinkButton, Modal, Page, PageHeader, ProgressBar, Section, Skeleton } from '../components/ui';
+import { Banner, Button, Card, Chip, EmptyState, Field, LinkButton, Modal, Page, PageHeader, ProgressBar, Section, PageSkeleton } from '../components/ui';
 import { prettyDate, shortDate } from '../onboarding/calendarData';
 import { planDate } from '../onboarding/profileModel';
 import { useStore } from '../store';
@@ -271,11 +271,7 @@ function Passed({ label }: { label: string }) {
 
 function PlanSkeleton() {
   return (
-    <Page>
-      <Skeleton className="h-s7 w-full" />
-      <Skeleton className="h-s8 w-full" />
-      <Skeleton className="h-s8 w-full" />
-    </Page>
+    <PageSkeleton cards={3} cols={3} />
   );
 }
 

@@ -1,8 +1,6 @@
 /* Upload + My questions. Tint layers and spacing only: no borders, shadows or gradients. */
 .u-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2); }
 .u-step { display: flex; align-items: center; gap: var(--space-3); min-height: 44px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-btn); background: var(--surface-2); color: var(--slate); font: 600 var(--fs-small)/1.3 var(--font-ui); text-align: left; cursor: pointer; transition: background-color var(--dur) var(--ease); }
-.u-step:disabled { cursor: not-allowed; opacity: 0.55; }
-.u-step:hover:not(:disabled) { background: var(--surface-3); }
 .u-step[aria-current='step'] { background: var(--primary-50); color: var(--primary); }
 .u-step-num { display: grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: var(--radius-pill); background: var(--surface-3); color: var(--slate); font-size: var(--fs-small); }
 .u-step[aria-current='step'] .u-step-num, .u-step[data-done='true'] .u-step-num { background: var(--primary); color: var(--on-primary); }
@@ -11,12 +9,9 @@
 @media (max-width: 479px) { .u-step { justify-content: center; padding-inline: var(--space-2); } .u-step[aria-current='step'] .u-step-label { display: none; } }
 @media (min-width: 768px) { .u-step-label { display: block; } .u-step { padding-inline: var(--space-4); } }
 
-.u-panes { display: grid; gap: var(--space-5); align-items: start; }
-@media (min-width: 1024px) { .u-panes { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); } .u-pane-sticky { position: sticky; top: calc(var(--topbar-h) + var(--space-4)); } }
 
-.u-exam { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+.u-exam { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
 .u-exam-opt { display: flex; flex-direction: column; gap: var(--space-1); min-height: 64px; padding: var(--space-4); border-radius: var(--radius-card); background: var(--surface); text-align: left; cursor: pointer; transition: background-color var(--dur) var(--ease); }
-.u-exam-opt:hover { background: var(--surface-3); }
 .u-exam-opt[aria-pressed='true'] { background: var(--primary); color: var(--on-primary); }
 .u-exam-opt[aria-pressed='true'] .u-sub { color: var(--on-primary); }
 .u-sub { font-size: var(--fs-small); color: var(--slate); font-weight: 500; }
@@ -27,7 +22,7 @@
 .u-steps-list > li::before { content: counter(u); display: grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: var(--radius-pill); background: var(--primary); color: var(--on-primary); font-size: var(--fs-small); font-weight: 700; }
 
 .u-drop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-3); min-height: 12rem; padding: var(--space-5); border-radius: var(--radius-card); background: var(--surface); text-align: center; cursor: pointer; transition: background-color var(--dur) var(--ease); }
-.u-drop:hover, .u-drop[data-over='true'] { background: var(--primary-50); }
+.u-drop[data-over='true'] { background: var(--primary-50); }
 .u-thumbs { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); }
 .u-thumb { position: relative; display: block; border-radius: var(--radius-btn); overflow: hidden; background: var(--surface); }
 .u-thumb img { display: block; width: 100%; height: auto; }
@@ -36,7 +31,7 @@
 .u-paste { min-height: 14rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--fs-small); }
 .u-problem { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-4); border-radius: var(--radius-card); background: var(--accent-50); color: var(--ink); }
 
-.u-sumbar { position: sticky; top: var(--topbar-h); z-index: 15; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-4); padding: var(--space-3) var(--space-4); border-radius: var(--radius-card); background: var(--primary-50); }
+.u-sumbar { position: sticky; top: var(--sticky-top); z-index: 15; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-4); padding: var(--space-3) var(--space-4); border-radius: var(--radius-card); background: var(--primary-50); }
 .u-chip-error { display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); background: var(--accent); color: var(--ink); font: 700 var(--fs-caption)/1.4 var(--font-ui); white-space: nowrap; }
 
 .u-qcard { display: grid; gap: var(--space-4); }
@@ -57,6 +52,6 @@
 .u-crop-h::after { content: ''; width: 14px; height: 14px; border-radius: var(--radius-pill); background: var(--accent); }
 .u-crop-h[data-h='n'], .u-crop-h[data-h='s'] { cursor: ns-resize; } .u-crop-h[data-h='e'], .u-crop-h[data-h='w'] { cursor: ew-resize; }
 .u-crop-h[data-h='nw'], .u-crop-h[data-h='se'] { cursor: nwse-resize; } .u-crop-h[data-h='ne'], .u-crop-h[data-h='sw'] { cursor: nesw-resize; }
-.u-meter { display: grid; gap: var(--space-2); }
+.u-meter { display: grid; gap: var(--space-4); }
 .u-bank-row { display: grid; gap: var(--space-4); }
-.u-filters { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); align-items: end; }
+.u-filters { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); align-items: end; }

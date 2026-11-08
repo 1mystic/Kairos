@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { LinkButton, PageHeader, Button, ProgressBar, Page, Toast } from '../components/ui';
+import { Columns, LinkButton, PageHeader, Button, ProgressBar, Page, Toast } from '../components/ui';
 import { ArrowRightIcon } from '../components/icons';
 import type { KvDb } from '../store/bankDb';
 import { useBankEnv } from '../store/bankHooks';
@@ -103,7 +103,7 @@ export function Wizard({ pagesKv, rasterizer, cropToWebp = canvasCropToWebp, now
     return (
       <Page>
         {header}
-        <div className="u-panes">
+        <Columns ratio="main-side" side={<HowItWorks />}>
           <DoneCard
             saved={outcome.saved}
             selfCheck={outcome.selfCheck}
@@ -111,7 +111,7 @@ export function Wizard({ pagesKv, rasterizer, cropToWebp = canvasCropToWebp, now
             onMore={reset}
             bankLink={<LinkButton to="/bank">See my questions<ArrowRightIcon width={20} height={20} /></LinkButton>}
           />
-        </div>
+        </Columns>
       </Page>
     );
   }
@@ -151,7 +151,7 @@ export function Wizard({ pagesKv, rasterizer, cropToWebp = canvasCropToWebp, now
   return (
     <Page>
       {header}
-      <nav aria-label="Steps" className="stack gap-tight">
+      <nav aria-label="Steps" className="stack-card">
         <ol className="u-steps">
           {STEPS.map((label, i) => {
             const n = i + 1;
@@ -176,10 +176,10 @@ export function Wizard({ pagesKv, rasterizer, cropToWebp = canvasCropToWebp, now
         <ProgressBar value={step} max={STEPS.length} label={`Step ${step} of ${STEPS.length}`} />
       </nav>
 
-      <div className="u-panes">
-        <div className="stack gap-base">
+      <Columns ratio="main-side" side={right}>
+        <div className="stack-card">
           {left}
-          <div className="row justify-between gap-base">
+          <div className="row-between">
             <Button variant="ghost" disabled={step === 1} onClick={() => goStep(step - 1)}>Back</Button>
             {step < 4 && (
               <Button disabled={step === 1 && !exam} onClick={() => goStep(step + 1)}>
@@ -189,8 +189,7 @@ export function Wizard({ pagesKv, rasterizer, cropToWebp = canvasCropToWebp, now
             )}
           </div>
         </div>
-        <div className="u-pane-sticky stack gap-base">{right}</div>
-      </div>
+      </Columns>
       {copied && <Toast onClose={() => setCopied(false)}>Copied. Now paste it into your AI chat.</Toast>}
     </Page>
   );

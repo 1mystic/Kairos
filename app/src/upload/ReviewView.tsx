@@ -97,15 +97,15 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
   };
 
   return (
-    <div className="stack gap-loose">
+    <div className="stack-section">
       <div className="u-sumbar" role="region" aria-label="Review summary">
-        <div className="stack">
+        <div className="stack-text">
           <p className="text-body font-semibold" data-testid="summary">{summaryText(sum)}</p>
           <p className="text-small text-slate">
             {selected.size} selected{selfCheck > 0 ? ` · ${selfCheck} saved as self-check only` : ''}
           </p>
         </div>
-        <div className="row gap-tight">
+        <div className="row-actions">
           <Button variant="secondary" onClick={onBack}>Back to paste</Button>
           <Button onClick={() => void save()} loading={saving} disabled={selected.size === 0 || blocked > 0}>
             Save {selected.size || ''} to my bank
@@ -126,7 +126,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
         </Banner>
       )}
 
-      <Card className="stack gap-base">
+      <Card>
         <h2 className="text-h3">Bulk actions</h2>
         <div className="u-filters">
           <Button variant="secondary" onClick={review.selectOk}><CheckIcon width={20} height={20} />Accept all that are ok</Button>
@@ -159,7 +159,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
         ]}
       />
 
-      <div className="stack gap-loose">
+      <div className="stack-grid">
         {page.map((it) => (
           <QuestionCard
             key={it.q.id}

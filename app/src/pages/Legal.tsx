@@ -8,7 +8,7 @@ function LegalPage({ title, intro, sections }: { title: string; intro: string; s
   return (
     <>
       <header className="topbar">
-        <Link to="/" aria-label="Kairos home" className="row gap-s2"><LogoMark /><span className="text-h3 font-bold text-ink">Kairos</span></Link>
+        <Link to="/" aria-label="Kairos home" className="row-inline"><LogoMark /><span className="text-h3 font-bold text-ink">Kairos</span></Link>
         <LinkButton to="/" variant="ghost" size="sm">Back to home</LinkButton>
       </header>
       <Page>
@@ -16,10 +16,8 @@ function LegalPage({ title, intro, sections }: { title: string; intro: string; s
         <TwoColumnPage nav={<StickySideNav label="On this page" items={sections.map(({ id, title: t }) => ({ id, label: t }))} />}>
           {sections.map((s) => (
             <Card as="section" key={s.id} id={s.id} aria-labelledby={`${s.id}-h`}>
-              <div className="stack gap-base">
-                <h2 id={`${s.id}-h`} className="text-h2">{s.title}</h2>
-                <div className="stack gap-base max-w-measure text-slate">{s.body}</div>
-              </div>
+              <h2 id={`${s.id}-h`} className="text-h2">{s.title}</h2>
+              <div className="stack-card max-w-measure text-slate">{s.body}</div>
             </Card>
           ))}
         </TwoColumnPage>

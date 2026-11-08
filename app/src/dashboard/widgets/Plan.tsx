@@ -18,7 +18,7 @@ export function Plan({ size, ctx }: WidgetProps) {
   const Icon = pace ? (pace.status === 'ahead' || pace.status === 'on_track' ? ArrowUpIcon : ArrowDownIcon) : MinusIcon;
   return (
     <div className="stack gap-s4">
-      <div className="flex flex-wrap items-center gap-x-s5 gap-y-s4">
+      <div className="row gap-loose">
         <Ring size={size === 's' ? 112 : 144} stroke={12} value={Math.min(1, p.daysLeft / 180)} label={`${p.daysLeft} days to your exam`}>
           <div className="stack gap-s1"><span className="text-h1 font-bold tabular">{p.daysLeft}</span><span className="text-caption text-slate">days left</span></div>
         </Ring>

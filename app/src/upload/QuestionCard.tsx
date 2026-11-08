@@ -43,7 +43,7 @@ function QuestionCardBase({ item, exam, selected, urls, pages, cropToWebp, onTog
           <input type="checkbox" checked={selected} onChange={() => onToggle(q.id)} aria-label={`Select question ${q.n}`} />
         </label>
         <h3 className="text-h3">Q{q.n}</h3>
-        <div className="row gap-tight min-w-0 flex-1">
+        <div className="row-inline min-w-0 flex-1">
           {chipsFor(issues).map((c) => <IssueChip key={c.code + c.level} chip={c} />)}
           {selfCheck && <Chip>Self-check only</Chip>}
         </div>
@@ -53,8 +53,8 @@ function QuestionCardBase({ item, exam, selected, urls, pages, cropToWebp, onTog
       </div>
 
       {errors.length > 0 && (
-        <ul className="stack gap-tight text-small" aria-label="Problems to fix">
-          {errors.slice(0, 3).map((e, i) => <li key={i} className="row gap-tight"><AlertIcon width={16} height={16} className="shrink-0 text-accent-ink" />{e.message}</li>)}
+        <ul className="stack-label text-small" aria-label="Problems to fix">
+          {errors.slice(0, 3).map((e, i) => <li key={i} className="row-inline"><AlertIcon width={16} height={16} className="shrink-0 text-accent-ink" />{e.message}</li>)}
         </ul>
       )}
 
@@ -64,8 +64,8 @@ function QuestionCardBase({ item, exam, selected, urls, pages, cropToWebp, onTog
       </div>
 
       {q.pending_figures.length > 0 && (
-        <div className="stack gap-base">
-          <div className="row gap-tight">
+        <div className="stack-card">
+          <div className="row-inline">
             {q.pending_figures.map((f) => (
               <Button key={f.k} size="sm" variant={cropK === f.k ? 'primary' : 'secondary'} onClick={() => setCropK(cropK === f.k ? null : f.k)}>
                 Crop figure {f.k}

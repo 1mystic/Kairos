@@ -7,7 +7,7 @@ import { PaletteDemo } from './PaletteDemo';
 import { NotationCard } from './NotationCard';
 import { BacklogDemo } from './BacklogDemo';
 import { useReveal } from './useReveal';
-import { Banner, Button, LinkButton, LogoMark } from '../components/ui';
+import { Banner, Button, CardGrid, LinkButton, LogoMark, TwoPane } from '../components/ui';
 import { CalendarIcon, ChevronDownIcon, LockIcon, SparkIcon, UserIcon } from '../components/icons';
 import './landing.css';
 
@@ -37,12 +37,14 @@ function Block({ id, title, intro, children, tone, flip }: { id: string; title: 
   const [ref, shown] = useReveal<HTMLElement>(0.15);
   return (
     <section ref={ref} id={id} className={`ld-section${tone === 'alt' ? ' ld-alt' : ''}`} data-shown={shown} aria-labelledby={`${id}-h`}>
-      <div className={`ld-wrap ld-feature${flip ? ' ld-flip' : ''}`}>
-        <div className="ld-head">
-          <h2 id={`${id}-h`}>{title}</h2>
-          <p>{intro}</p>
-        </div>
-        <div className="ld-visual">{children}</div>
+      <div className="ld-wrap">
+        <TwoPane reverse={flip} className="ld-twopane">
+          <div className="ld-head">
+            <h2 id={`${id}-h`}>{title}</h2>
+            <p>{intro}</p>
+          </div>
+          <div className="ld-visual">{children}</div>
+        </TwoPane>
       </div>
     </section>
   );
@@ -109,18 +111,18 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
         </Block>
 
         <Centered id="exams" tone="alt" title="Exams" intro="Built from each exam's published pattern, not a one-size paper.">
-          <ul className="ld-exams">
+          <CardGrid as="ul" cols={3}>
             {EXAMS.map((e) => (
               <li key={e.name} className="card">
                 <h3>{e.name}</h3>
                 <p>{e.pattern}</p>
               </li>
             ))}
-          </ul>
+          </CardGrid>
         </Centered>
 
         <Centered id="private" title="Free and private" intro="Start without signing in. Sign in later and your progress comes with you.">
-          <ul className="ld-exams">
+          <CardGrid as="ul" cols={3}>
             {PROMISES.map(({ icon: I, title, body }) => (
               <li key={title} className="card">
                 <span className="tile-icon"><I /></span>
@@ -128,7 +130,7 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
                 <p>{body}</p>
               </li>
             ))}
-          </ul>
+          </CardGrid>
           <div className="ld-tip"><Banner tone="accent" icon={<CalendarIcon className="shrink-0" />}>Tip: roz thoda, but roz. A steady 2 hours beats one 9-hour Sunday.</Banner></div>
         </Centered>
 

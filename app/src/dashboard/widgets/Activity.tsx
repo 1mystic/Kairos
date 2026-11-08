@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { dayNumber } from '@kairos/core';
+import { ListRow } from '../../components/ui';
 import { InboxIcon } from '../icons';
 import type { ActivityKind } from '../data';
 import { formatDay, localDate } from '../range';
@@ -24,20 +25,21 @@ export function Activity({ size, ctx }: WidgetProps) {
   const shown = all.filter((e) => f === 'all' || e.kind === f).slice(0, COUNT[size]);
   const present = new Set(all.map((e) => e.kind));
   return (
-    <div className="stack gap-s4">
-      <div role="group" aria-label="Filter activity" className="flex flex-wrap gap-s2">
+    <div className="stack-card">
+      <div role="group" aria-label="Filter activity" className="row-inline">
         {FILTERS.filter((x) => x.id === 'all' || present.has(x.id)).map((x) => (
-          <button key={x.id} type="button" aria-pressed={f === x.id} onClick={() => setF(x.id)} className={`min-h-11 rounded-pill px-s4 text-small font-semibold ${f === x.id ? 'bg-primary-50 text-primary' : 'bg-surface text-slate hover:bg-surface-3'}`}>{x.label}</button>
+          <button key={x.id} type="button" aria-pressed={f === x.id} onClick={() => setF(x.id)} className="pill-btn">{x.label}</button>
         ))}
       </div>
-      <ul className="stack gap-s3" aria-live="polite">
+      <ul className="stack-text" aria-live="polite">
         {shown.map((e) => (
-          <li key={e.id} className="flex items-start gap-s3">
-            <span aria-hidden="true" className={`mt-s2 size-s2 shrink-0 rounded-pill ${e.tone === 'accent' ? 'bg-accent' : e.tone === 'primary' ? 'bg-primary' : 'bg-slate'}`} />
-            <span className="stack min-w-0 gap-s1">
-              <span className={`text-body ${e.tone === 'accent' ? 'text-accent-ink font-semibold' : ''}`}>{e.title}</span>
-              <span className="text-small text-slate tabular">{[e.detail, formatDay(localDate(e.at), false)].filter(Boolean).join(' · ')}</span>
-            </span>
+          <li key={e.id}>
+            <ListRow
+              lead={<span aria-hidden="true" className={`size-s2 rounded-pill ${e.tone === 'accent' ? 'bg-accent' : e.tone === 'primary' ? 'bg-primary' : 'bg-slate'}`} />}
+              title={e.title}
+              titleClass={`text-body ${e.tone === 'accent' ? 'font-semibold text-accent-ink' : ''}`}
+              description={<span className="tabular">{[e.detail, formatDay(localDate(e.at), false)].filter(Boolean).join(' · ')}</span>}
+            />
           </li>
         ))}
         {!shown.length && <li className="text-small text-slate">Nothing of this kind in the window.</li>}

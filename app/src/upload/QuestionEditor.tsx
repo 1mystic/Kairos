@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { QUESTION_TYPES, type Issue, type UserQuestion } from '@kairos/core';
-import { Button, Input, IconButton, SelectField, TextareaField, Field } from '../components/ui';
+import { Button, CardGrid, Input, IconButton, SelectField, TextareaField, Field } from '../components/ui';
 import { CloseIcon } from '../components/icons';
 import { chapterGroups } from './taxonomy';
 import { patchQuestion } from './review';
@@ -46,7 +46,7 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
   };
 
   return (
-    <div className="stack gap-base" aria-label="Edit question">
+    <div className="stack-card" aria-label="Edit question">
       <SelectField label="Type" value={q.type} onChange={(e) => onChange({ type: e.target.value as UserQuestion['type'] })}>
         {QUESTION_TYPES.map((t) => <option key={t} value={t}>{TYPE_LABEL[t] ?? t}</option>)}
       </SelectField>
@@ -54,7 +54,7 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
       <TextareaField label="Question" value={q.stem} error={err('stem')} onChange={(e) => onChange({ stem: e.target.value })} rows={5} />
 
       {!numeric && (
-        <fieldset className="stack gap-tight">
+        <fieldset className="stack-label">
           <legend className="text-small font-semibold">Options</legend>
           {options.map((o, i) => (
             <div key={i} className="u-opt-row">
@@ -75,16 +75,16 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
         </fieldset>
       )}
 
-      <fieldset className="stack gap-tight">
+      <fieldset className="stack-label">
         <legend className="text-small font-semibold">Answer (from your key)</legend>
         {numeric ? (
-          <div className="grid gap-s3 xs:grid-cols-2">
+          <CardGrid cols={2}>
             <Field label="Value" inputMode="decimal" value={valueText} error={err('answer')} onChange={(e) => setNumeric(e.target.value, tolText)} />
             {q.type === 'NVQ' && <Field label="Tolerance (optional)" inputMode="decimal" value={tolText} onChange={(e) => setNumeric(valueText, e.target.value)} />}
-          </div>
+          </CardGrid>
         ) : (
           <>
-            <div className="row gap-tight">
+            <div className="row-inline">
               {options.map((o) => (
                 <label key={o.key} className="u-pick">
                   <input type={q.type === 'MSQ' ? 'checkbox' : 'radio'} name={`ans-${q.id}`} checked={keys.includes(o.key)} onChange={() => pick(o.key)} />

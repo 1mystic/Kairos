@@ -36,7 +36,7 @@ export function SignUp() {
       subtitle="Takes a minute. We will set up your plan next."
       footer={<>Already have an account? <Link className="font-semibold" to="/signin">Sign in</Link></>}
     >
-      <form onSubmit={submit} noValidate className="stack gap-base">
+      <form onSubmit={submit} noValidate className="stack-field">
         <FormError>{formError}</FormError>
         <Field label="Name" autoComplete="name" value={v.name} onChange={set('name')} error={errors.name} />
         <Field label="Email" type="email" autoComplete="email" value={v.email} onChange={set('email')} error={errors.email} />

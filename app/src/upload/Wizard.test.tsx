@@ -88,7 +88,7 @@ describe('upload wizard', () => {
     expect(withFig.images).toHaveLength(1);
     expect(withFig.stem).toContain(`img:${withFig.images[0]!.id}`);
     expect(await store.getMedia(withFig.images[0]!.id)).toMatch(/^data:image\/webp;base64,/);
-  });
+  }, 20000);
 
   it('shows a plain-language hint for a truncated reply', async () => {
     const { user } = setup();

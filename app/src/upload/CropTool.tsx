@@ -45,7 +45,7 @@ export function CropTool({ figure, pages, cropToWebp, onSave, onNeedPages }: Cro
 
   if (!page || !rect) {
     return (
-      <div className="stack gap-tight">
+      <div className="stack-label">
         <p className="text-small">
           {pages.length === 0
             ? `This figure is on page ${figure.page} of your paper. Add your pages in step 3 to crop it.`
@@ -92,7 +92,7 @@ export function CropTool({ figure, pages, cropToWebp, onSave, onNeedPages }: Cro
   };
 
   return (
-    <div className="stack gap-base">
+    <div className="stack-card">
       <p className="text-small text-slate">Drag the box over the figure, or pull its handles. Figure: {figure.alt}</p>
       <div ref={box} className="u-crop" data-testid="crop-area" onPointerMove={move} onPointerUp={up} onPointerCancel={up}>
         {url ? <img src={url} alt={`Page ${page.n} of your paper`} width={page.w} height={page.h} /> : <div style={{ aspectRatio: `${page.w} / ${page.h}` }} />}
@@ -109,7 +109,7 @@ export function CropTool({ figure, pages, cropToWebp, onSave, onNeedPages }: Cro
           ))}
         </div>
       </div>
-      <div className="row gap-base">
+      <div className="row-actions">
         {pages.length > 1 && (
           <SelectField label="Page" value={String(pageN)} onChange={(e) => setPageN(Number(e.target.value))}>
             {pages.map((p) => <option key={p.n} value={p.n}>Page {p.n}</option>)}

@@ -43,9 +43,9 @@ export function CompleteProfile() {
     <AuthShell
       title="One last thing"
       subtitle="We need your date of birth to finish setting up your account."
-      footer={<button type="button" className="font-semibold text-primary underline" onClick={() => void signOut()}>Sign out</button>}
+      footer={<button type="button" className="text-link" onClick={() => void signOut()}>Sign out</button>}
     >
-      <form onSubmit={submit} noValidate className="stack gap-base">
+      <form onSubmit={submit} noValidate className="stack-field">
         <FormError>{formError}</FormError>
         <Field label="Name" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} error={errors.name} />
         <Field label="Date of birth" type="date" autoComplete="bday" hint="We ask so we can look after students under 18 properly." value={dob} onChange={(e) => setDob(e.target.value)} error={errors.dob} />

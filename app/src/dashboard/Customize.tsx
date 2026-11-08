@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
-import { Button, IconButton, Select } from '../components/ui';
+import { Button, CardGrid, IconButton, Select } from '../components/ui';
 import { CloseIcon2, ChevronDownIcon2, ChevronUpIcon, GripIcon } from './icons';
 import { applyPreset, moveWidget, patchWidget, PRESETS, type Layout, type WidgetState } from './layout';
 import { metaOf, SIZE_LABEL, type OptionSpec, type OptionValue, type WidgetId, type WidgetMeta } from './registry';
@@ -36,18 +36,18 @@ function OptionControl({ spec, value, onChange }: { spec: OptionSpec; value: Opt
   return (
     <fieldset className="stack gap-s1">
       <legend className="text-small font-semibold">{spec.label}</legend>
-      <div className="grid gap-s1 sm:grid-cols-2">
+      <CardGrid cols={2} gap="tight">
         {spec.choices.map((c) => {
           const on = sel.includes(c.value);
           const full = !on && sel.length >= (spec.max ?? Infinity);
           return (
-            <label key={c.value} className={`flex min-h-11 items-center gap-s3 rounded-btn px-s3 text-small ${full ? 'text-slate' : ''}`}>
-              <input type="checkbox" className="size-s4 accent-primary" checked={on} disabled={full || (on && sel.length === 1)} onChange={() => onChange(on ? sel.filter((x) => x !== c.value) : [...sel, c.value])} />
+            <label key={c.value} className={`check-row ${full ? 'text-slate' : ''}`}>
+              <input type="checkbox" checked={on} disabled={full || (on && sel.length === 1)} onChange={() => onChange(on ? sel.filter((x) => x !== c.value) : [...sel, c.value])} />
               {c.label}
             </label>
           );
         })}
-      </div>
+      </CardGrid>
     </fieldset>
   );
 }
@@ -117,7 +117,7 @@ export function Customize({ layout, onChange, onReset, onClose, focusId }: { lay
               <div role="radiogroup" aria-label={`${meta.title} size`} className="row gap-s2">
                 <span className="text-small font-semibold">Size</span>
                 {meta.sizes.map((s) => (
-                  <button key={s} type="button" role="radio" aria-checked={w.size === s} aria-label={`${SIZE_LABEL[s]} ${meta.title}`} onClick={() => onChange(patchWidget(layout, w.id, { size: s }))} className={`min-h-11 min-w-11 rounded-btn px-s3 text-small font-semibold ${w.size === s ? 'bg-primary-50 text-primary' : 'bg-surface text-slate hover:bg-surface-3'}`}>{s.toUpperCase()}</button>
+                  <button key={s} type="button" role="radio" aria-checked={w.size === s} aria-label={`${SIZE_LABEL[s]} ${meta.title}`} onClick={() => onChange(patchWidget(layout, w.id, { size: s }))} className="pill-btn">{s.toUpperCase()}</button>
                 ))}
               </div>
             )}
@@ -132,14 +132,14 @@ export function Customize({ layout, onChange, onReset, onClose, focusId }: { lay
 
   return (
     <div className="dpanel-scrim" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div ref={panel} role="dialog" aria-modal="true" aria-labelledby={titleId} tabIndex={-1} className="dpanel stack gap-loose" onKeyDown={onKey}>
+      <div ref={panel} role="dialog" aria-modal="true" aria-labelledby={titleId} tabIndex={-1} className="dpanel stack-grid" onKeyDown={onKey}>
         <div className="flex items-start justify-between gap-s3">
           <h2 id={titleId} className="text-h2">Customise dashboard</h2>
           <IconButton label="Close customise" variant="ghost" onClick={onClose}><CloseIcon2 /></IconButton>
         </div>
         <div className="stack gap-s3">
           <p className="text-small font-semibold">Presets</p>
-          <div className="flex flex-wrap gap-s2">
+          <div className="row-inline">
             {PRESETS.map((p) => <Button key={p.id} size="sm" variant="secondary" onClick={() => { onChange(applyPreset(layout, p.id)); setSay(`${p.label} layout applied`); }}>{p.label}</Button>)}
             <Button size="sm" variant="ghost" onClick={() => { onReset(); setSay('Layout reset to default'); }}>Reset to default</Button>
           </div>

@@ -26,9 +26,9 @@ export function Chapters({ size, ctx }: WidgetProps) {
           return (
             <li key={c.id}>
               {c.exam ? (
-                <Link to={`/practice/${c.exam}/${encodeURIComponent(c.id)}`} className="flex min-h-14 items-center gap-s3 rounded-btn bg-surface p-s3 text-ink no-underline hover:bg-surface-3">{body}</Link>
+                <Link to={`/practice/${c.exam}/${encodeURIComponent(c.id)}`} className="link-row">{body}</Link>
               ) : (
-                <div className="flex min-h-14 items-center gap-s3 rounded-btn bg-surface p-s3">{body}</div>
+                <div className="link-row">{body}</div>
               )}
             </li>
           );
