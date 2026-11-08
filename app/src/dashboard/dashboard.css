@@ -1,0 +1,19 @@
+/* Dashboard-only helpers. Tokens only; no borders, shadows or gradients. Animations run once on mount (transform / opacity). */
+@keyframes dash-grow-y { from { transform: scaleY(0); } }
+@keyframes dash-grow-x { from { transform: scaleX(0); } }
+@keyframes dash-fade { from { opacity: 0; } }
+.dash-grow-y { transform-box: fill-box; transform-origin: bottom; animation: dash-grow-y 400ms var(--ease) both; }
+.dash-grow-x { transform-origin: left; animation: dash-grow-x 400ms var(--ease) both; }
+.dash-ring { animation: dash-fade 400ms var(--ease) both; }
+
+/* customise panel: bottom sheet below 1024, right-hand panel from 1024 */
+.dpanel-scrim { position: fixed; inset: 0; z-index: 50; display: flex; align-items: flex-end; justify-content: center; background: var(--scrim); animation: dash-fade var(--dur) var(--ease); }
+.dpanel { --field: var(--surface-2); width: 100%; max-height: 90dvh; overflow-y: auto; background: var(--surface); color: var(--ink); padding: var(--space-5) max(var(--space-5), var(--safe-r)) calc(var(--space-5) + var(--safe-b)) max(var(--space-5), var(--safe-l)); border-radius: var(--radius-card) var(--radius-card) 0 0; animation: dpanel-rise var(--dur) var(--ease); }
+@keyframes dpanel-rise { from { opacity: 0; transform: translateY(var(--space-4)); } }
+@keyframes dpanel-slide { from { opacity: 0; transform: translateX(var(--space-5)); } }
+@media (min-width: 640px) { .dpanel { max-width: var(--w-form); } }
+@media (min-width: 1024px) {
+  .dpanel-scrim { align-items: stretch; justify-content: flex-end; }
+  .dpanel { max-width: calc(var(--w-form) + var(--space-6)); max-height: none; height: 100%; border-radius: var(--radius-card) 0 0 var(--radius-card); animation-name: dpanel-slide; padding-bottom: var(--space-5); }
+}
+.drow-drag { background: var(--primary-50); }
