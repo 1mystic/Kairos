@@ -13,6 +13,11 @@ import { createMemoryLocalDb } from './store/localDb';
 import { fakeFs } from './store/testUtils';
 
 vi.mock('./lib/firebase', () => ({ firebaseConfigError: null, getServices: () => ({}) }));
+// Guest routing is what's under test here; the real picker has its own tests and needs the bank.
+vi.mock('./practice/routes', async () => {
+  const React = await import('react');
+  return { practiceRoutes: [{ path: '/practice', element: React.createElement('h1', null, 'Practice') }] };
+});
 
 const base: AuthContextValue = {
   user: null, profile: null, loading: false,
