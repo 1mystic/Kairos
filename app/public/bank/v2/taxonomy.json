@@ -1,0 +1,1386 @@
+{
+ "version": 1,
+ "_verify": "VERIFY: chapter lists are based on the rationalised NCERT class 11/12 books and must be checked against the official 2026 NTA syllabi (JEE Main, NEET UG) and the IAT syllabus before launch. Equilibrium is split into CHE.CHEQ/CHE.IONEQ for practice granularity. Topics are intentionally sparse in v1. W7a additions (JEE Advanced coverage): CHE.GAS, CHE.SBLK, CHE.PBLK, CHE.SOLID, CHE.SURF, CHE.METAL, CHE.POLY. Flags for the six non-PBLK chapters (JEE_MAIN/NEET_UG false) reflect the rationalised 2024-26 syllabi as best known and are Advanced-only content; VERIFY against the official NTA syllabi.",
+ "iat_subject_map": {
+  "BIO": [
+   "BOT",
+   "ZOO"
+  ],
+  "CHE": [
+   "CHE"
+  ],
+  "MAT": [
+   "MAT"
+  ],
+  "PHY": [
+   "PHY"
+  ]
+ },
+ "subjects": [
+  {
+   "id": "PHY",
+   "name": "Physics",
+   "chapters": [
+    {
+     "id": "PHY.UNT",
+     "name": "Units and Measurements",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.KIN1D",
+     "name": "Motion in a Straight Line",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.KIN2D",
+     "name": "Motion in a Plane",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.LOM",
+     "name": "Laws of Motion",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.WEP",
+     "name": "Work, Energy and Power",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ROT",
+     "name": "System of Particles and Rotational Motion",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "PHY.ROT.MOI",
+       "name": "Moment of inertia"
+      },
+      {
+       "id": "PHY.ROT.TORQ",
+       "name": "Torque and angular momentum"
+      },
+      {
+       "id": "PHY.ROT.RIGID",
+       "name": "Rolling and rigid body equilibrium"
+      }
+     ]
+    },
+    {
+     "id": "PHY.GRAV",
+     "name": "Gravitation",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.SOL",
+     "name": "Mechanical Properties of Solids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.FLU",
+     "name": "Mechanical Properties of Fluids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.THP",
+     "name": "Thermal Properties of Matter",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.THD",
+     "name": "Thermodynamics",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.KTG",
+     "name": "Kinetic Theory",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.OSC",
+     "name": "Oscillations",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.WAV",
+     "name": "Waves",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ELE",
+     "name": "Electric Charges and Fields",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.CAP",
+     "name": "Electrostatic Potential and Capacitance",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.CUR",
+     "name": "Current Electricity",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.MAG",
+     "name": "Moving Charges and Magnetism",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.MAGM",
+     "name": "Magnetism and Matter",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.EMI",
+     "name": "Electromagnetic Induction",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.AC",
+     "name": "Alternating Current",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.EMW",
+     "name": "Electromagnetic Waves",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ROP",
+     "name": "Ray Optics and Optical Instruments",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.WOP",
+     "name": "Wave Optics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.DUAL",
+     "name": "Dual Nature of Radiation and Matter",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ATM",
+     "name": "Atoms",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.NUC",
+     "name": "Nuclei",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.SEM",
+     "name": "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "CHE",
+   "name": "Chemistry",
+   "chapters": [
+    {
+     "id": "CHE.MOLE",
+     "name": "Some Basic Concepts of Chemistry",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.ATOM",
+     "name": "Structure of Atom",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.PERIO",
+     "name": "Classification of Elements and Periodicity in Properties",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.BOND",
+     "name": "Chemical Bonding and Molecular Structure",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.THERMO",
+     "name": "Thermodynamics",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.CHEQ",
+     "name": "Equilibrium: Chemical Equilibrium",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.IONEQ",
+     "name": "Equilibrium: Ionic Equilibrium",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "CHE.IONEQ.PH",
+       "name": "pH and pOH"
+      },
+      {
+       "id": "CHE.IONEQ.BUFF",
+       "name": "Buffer solutions"
+      },
+      {
+       "id": "CHE.IONEQ.KSP",
+       "name": "Solubility product"
+      }
+     ]
+    },
+    {
+     "id": "CHE.REDOX",
+     "name": "Redox Reactions",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.GOC",
+     "name": "Organic Chemistry: Some Basic Principles and Techniques",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.HC",
+     "name": "Hydrocarbons",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.GAS",
+     "name": "States of Matter: Gases and Liquids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SBLK",
+     "name": "s-Block Elements (Hydrogen, Alkali and Alkaline Earth Metals)",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SOLN",
+     "name": "Solutions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.ELEC",
+     "name": "Electrochemistry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.KIN",
+     "name": "Chemical Kinetics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.DF",
+     "name": "The d- and f-Block Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.COORD",
+     "name": "Coordination Compounds",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.HALO",
+     "name": "Haloalkanes and Haloarenes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.ALC",
+     "name": "Alcohols, Phenols and Ethers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.CARB",
+     "name": "Aldehydes, Ketones and Carboxylic Acids",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.AMN",
+     "name": "Amines",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.BIOM",
+     "name": "Biomolecules",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.PBLK",
+     "name": "The p-Block Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SOLID",
+     "name": "The Solid State",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SURF",
+     "name": "Surface Chemistry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.METAL",
+     "name": "General Principles and Processes of Isolation of Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.POLY",
+     "name": "Polymers and Chemistry in Everyday Life",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "MAT",
+   "name": "Mathematics",
+   "chapters": [
+    {
+     "id": "MAT.SET",
+     "name": "Sets",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.FUN",
+     "name": "Relations and Functions",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.TRIG",
+     "name": "Trigonometric Functions",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.CPLX",
+     "name": "Complex Numbers and Quadratic Equations",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.INEQ",
+     "name": "Linear Inequalities",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.PNC",
+     "name": "Permutations and Combinations",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.BINO",
+     "name": "Binomial Theorem",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.SEQ",
+     "name": "Sequences and Series",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.LINE",
+     "name": "Straight Lines",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.CONIC",
+     "name": "Conic Sections",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.TDI",
+     "name": "Introduction to Three Dimensional Geometry",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.LIM",
+     "name": "Limits and Derivatives",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "MAT.LIM.STD",
+       "name": "Standard limits"
+      },
+      {
+       "id": "MAT.LIM.DERIV",
+       "name": "Derivative from first principles"
+      }
+     ]
+    },
+    {
+     "id": "MAT.STAT",
+     "name": "Statistics",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.PROB",
+     "name": "Probability",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.RELF",
+     "name": "Relations and Functions (Class 12)",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.ITF",
+     "name": "Inverse Trigonometric Functions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.MATX",
+     "name": "Matrices",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.DET",
+     "name": "Determinants",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.CD",
+     "name": "Continuity and Differentiability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.AOD",
+     "name": "Application of Derivatives",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.INTG",
+     "name": "Integrals",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.AOI",
+     "name": "Application of Integrals",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.DE",
+     "name": "Differential Equations",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.VEC",
+     "name": "Vector Algebra",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.TDG",
+     "name": "Three Dimensional Geometry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.LP",
+     "name": "Linear Programming",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.PROB2",
+     "name": "Probability (Class 12)",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "BOT",
+   "name": "Botany",
+   "chapters": [
+    {
+     "id": "BOT.LIV",
+     "name": "The Living World",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BCL",
+     "name": "Biological Classification",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.PKG",
+     "name": "Plant Kingdom",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.MORPH",
+     "name": "Morphology of Flowering Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.ANAT",
+     "name": "Anatomy of Flowering Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.CELL",
+     "name": "Cell: The Unit of Life",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.CCD",
+     "name": "Cell Cycle and Cell Division",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.TRN",
+     "name": "Transport in Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.MIN",
+     "name": "Mineral Nutrition",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.PHS",
+     "name": "Photosynthesis in Higher Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.RESP",
+     "name": "Respiration in Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.PGD",
+     "name": "Plant Growth and Development",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.SRP",
+     "name": "Sexual Reproduction in Flowering Plants",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.GEN",
+     "name": "Principles of Inheritance and Variation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "BOT.GEN.MENDEL",
+       "name": "Mendelian inheritance"
+      },
+      {
+       "id": "BOT.GEN.MENDEL.DIHYBRID",
+       "name": "Dihybrid cross"
+      },
+      {
+       "id": "BOT.GEN.LINK",
+       "name": "Linkage and recombination"
+      }
+     ]
+    },
+    {
+     "id": "BOT.MOL",
+     "name": "Molecular Basis of Inheritance",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.MIC",
+     "name": "Microbes in Human Welfare",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BTP",
+     "name": "Biotechnology: Principles and Processes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BTA",
+     "name": "Biotechnology and its Applications",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.ORG",
+     "name": "Organisms and Populations",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.ECOS",
+     "name": "Ecosystem",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BIOD",
+     "name": "Biodiversity and Conservation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "ZOO",
+   "name": "Zoology",
+   "chapters": [
+    {
+     "id": "ZOO.ANK",
+     "name": "Animal Kingdom",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.STR",
+     "name": "Structural Organisation in Animals",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.BMOL",
+     "name": "Biomolecules",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.DIG",
+     "name": "Digestion and Absorption",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.BRE",
+     "name": "Breathing and Exchange of Gases",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.CIR",
+     "name": "Body Fluids and Circulation",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.EXC",
+     "name": "Excretory Products and their Elimination",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.LOC",
+     "name": "Locomotion and Movement",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.NEU",
+     "name": "Neural Control and Coordination",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.CHC",
+     "name": "Chemical Coordination and Integration",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.HRP",
+     "name": "Human Reproduction",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.RPH",
+     "name": "Reproductive Health",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.EVO",
+     "name": "Evolution",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.HHD",
+     "name": "Human Health and Disease",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  }
+ ]
+}

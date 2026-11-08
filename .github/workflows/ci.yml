@@ -76,12 +76,12 @@ jobs:
       - run: python -m pipeline.validate pipeline/fixtures/questions
       - name: Published bank is up to date (determinism check)
         run: |
-          # Re-publish v1 into a temp dir and compare file hashes with the
+          # Re-publish v2 into a temp dir and compare file hashes with the
           # committed manifest. Images are written to <out>/../img, so the
           # temp tree never touches app/public.
           out="$RUNNER_TEMP/bank-check/bank"
-          python -m pipeline.publish --version 1 --out "$out"
-          python - "$out/v1/manifest.json" app/public/bank/v1/manifest.json <<'PY'
+          python -m pipeline.publish --version 2 --out "$out"
+          python - "$out/v2/manifest.json" app/public/bank/v2/manifest.json <<'PY'
           import json, sys
           fresh, committed = (json.load(open(p)) for p in sys.argv[1:3])
           def hashes(m, key):
@@ -94,7 +94,7 @@ jobs:
                       bad = True
                       print(f"STALE {key}: {path}: committed={b.get(path)} fresh={a.get(path)}")
           if bad:
-              sys.exit("Published bank differs from pipeline output. Re-run `python -m pipeline.publish --version 1 --force` and commit.")
+              sys.exit("Published bank differs from pipeline output. Re-run `python -m pipeline.publish --version 2 --force` and commit.")
           print("published bank matches pipeline output")
           PY
 
