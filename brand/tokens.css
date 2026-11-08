@@ -5,11 +5,13 @@
   --ink:#0E1330; --paper:#FAFAF7; --surface:#FFFFFF; --slate:#5B6178;
   --surface-2:#F1F2F7; --surface-3:#E5E7F0;   /* tint layers: cards / fields+hover / tracks+pressed */
   --line:#E3E5EC;                              /* 1px tinted rule (dividers only, used sparingly) */
-  --primary:#3A3FD9; --primary-hover:#2F33B8; --primary-50:#EEF0FF;
+  --primary:#3A3FD9; --primary-hover:#2F33B8; --primary-active:#25299A; --primary-50:#EEF0FF;
   --accent:#F5A524;
   --accent-ink:#9A5B00; --accent-50:#FEF4E2;
   --img-backing:#FFFFFF;                       /* diagrams are drawn on white: backing card in both themes */
   --scrim:rgba(14,19,48,.45);
+  /* interaction model: hover = one tint step up, active = one step darker (pressed tint = surface-3 + 8% ink) */
+  --tint-active:color-mix(in srgb,var(--surface-3),var(--ink) 8%);
   /* status maps onto the 3 colours (no green/red in product UI) */
   --good:var(--primary); --warn:var(--accent); --bad:var(--accent);
 
@@ -20,7 +22,9 @@
   --gutter:16px;                       /* page side padding: 16 mobile / 24 tablet / 32 desktop */
   --card-pad:16px;                     /* 16 mobile / 24 desktop */
   --w-app:1120px; --w-landing:1120px; --w-reading:720px; --w-form:440px; --measure:68ch;
-  --gap-card:var(--space-6); --gap-section:var(--space-7);   /* card rhythm / landing section rhythm (64 from lg) */
+  --gap-card:var(--space-6); --gap-section:var(--space-7);   /* block rhythm on a page (32) / landing section rhythm (64 from lg) */
+  --gap-grid:var(--space-5);           /* between cards in one row/grid: ALWAYS 24 */
+  --sticky-top:calc(var(--topbar-h) + var(--space-4));   /* every sticky nav / pane / bar: under the top bar on phones, 24 on desktop */
   --sidebar-w:72px; --topbar-h:64px;
   --safe-b:env(safe-area-inset-bottom,0px); --safe-t:env(safe-area-inset-top,0px);
   --safe-l:env(safe-area-inset-left,0px); --safe-r:env(safe-area-inset-right,0px);
@@ -40,7 +44,7 @@
 }
 /* breakpoints (defined once; mirrored in index.css @theme): xs 480, sm 640, md 768, lg 1024, xl 1280, 2xl 1536, 3xl 1920 */
 @media(min-width:768px){:root{--gutter:24px;--card-pad:24px}}
-@media(min-width:1024px){:root{--gutter:32px;--gap-section:var(--space-8)}}
+@media(min-width:1024px){:root{--gutter:32px;--gap-section:var(--space-8);--sticky-top:var(--space-6)}}
 @media(min-width:1280px){:root{--sidebar-w:240px}}
 @media(min-width:1536px){:root{--w-app:1280px}}
 @media(min-width:1920px){:root{--w-landing:1360px;--w-app:1360px}}
@@ -50,7 +54,7 @@
 [data-theme="dark"]{
   --ink:#ECEEF8; --paper:#0B0F24; --surface:#141936; --slate:#A3A8C3;
   --surface-2:#1A2046; --surface-3:#262D5C; --line:#262C4D;
-  --primary:#7B80FF; --primary-hover:#9599FF; --primary-50:#1D2250;
+  --primary:#7B80FF; --primary-hover:#9599FF; --primary-active:#B3B6FF; --primary-50:#1D2250;
   --accent-ink:#F5A524; --accent-50:#2A2210;
   --scrim:rgba(4,6,18,.62);
 }
