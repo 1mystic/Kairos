@@ -1,0 +1,425 @@
+[
+ {
+  "id": "q_che001",
+  "type": "NVQ",
+  "stem": "The number of moles of oxygen atoms present in $2$ moles of sulphuric acid ($\\mathrm{H_2SO_4}$) is",
+  "images": [],
+  "answer": {
+   "value": 8,
+   "tol": 0
+  },
+  "solution": "Each $\\mathrm{H_2SO_4}$ molecule contains $4$ O atoms, so $2\\times4=8$ moles of O atoms.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.MOLE",
+   "topics": [],
+   "concepts": [
+    "mole_concept"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_che002",
+  "type": "SCQ",
+  "stem": "The pH of a $1\\times10^{-3}$ M aqueous solution of HCl at $25^\\circ$C is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$2$"
+   },
+   {
+    "key": "C",
+    "text": "$3$"
+   },
+   {
+    "key": "D",
+    "text": "$11$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "HCl is a strong acid, so $[\\mathrm{H^+}]=10^{-3}$ M and $\\mathrm{pH}=-\\log(10^{-3})=3$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.IONEQ",
+   "topics": [
+    "CHE.IONEQ.PH"
+   ],
+   "concepts": [
+    "ph_strong_acid"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_che003",
+  "type": "SCQ",
+  "stem": "The number of unpaired electrons in $\\mathrm{Fe^{3+}}$ ($Z=26$) in its ground state is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$3$"
+   },
+   {
+    "key": "B",
+    "text": "$4$"
+   },
+   {
+    "key": "C",
+    "text": "$6$"
+   },
+   {
+    "key": "D",
+    "text": "$5$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Fe: $[\\mathrm{Ar}]\\,3d^6 4s^2$. Removing three electrons (two $4s$, one $3d$) gives $3d^5$, with five unpaired electrons (Hund's rule).",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.ATOM",
+   "topics": [],
+   "concepts": [
+    "electronic_configuration",
+    "hunds_rule"
+   ]
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_che004",
+  "type": "SCQ",
+  "stem": "The hybridisation of the central nitrogen atom in the ammonium ion $\\mathrm{NH_4^+}$ is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$sp^3$"
+   },
+   {
+    "key": "B",
+    "text": "$sp^2$"
+   },
+   {
+    "key": "C",
+    "text": "$sp$"
+   },
+   {
+    "key": "D",
+    "text": "$sp^3d$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Nitrogen has four bonding pairs and no lone pair, so it has four electron domains arranged tetrahedrally: $sp^3$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.BOND",
+   "topics": [],
+   "concepts": [
+    "hybridisation"
+   ]
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_che005",
+  "type": "NVQ",
+  "stem": "A first-order reaction has a half-life of $20$ minutes. The time, in minutes, required for $87.5\\%$ of the reactant to be consumed is",
+  "images": [],
+  "answer": {
+   "value": 60,
+   "tol": 0
+  },
+  "solution": "$87.5\\%$ consumed leaves $12.5\\%=\\tfrac18=(\\tfrac12)^3$, i.e. $3$ half-lives. Time $=3\\times20=60$ min.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.KIN",
+   "topics": [],
+   "concepts": [
+    "first_order_half_life"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_che006",
+  "type": "SCQ",
+  "stem": "For the equilibrium $\\ce{N2(g) + 3H2(g) <=> 2NH3(g)}$, the equilibrium constants are related by",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$K_p=K_c(RT)^{2}$"
+   },
+   {
+    "key": "B",
+    "text": "$K_p=K_c(RT)^{-2}$"
+   },
+   {
+    "key": "C",
+    "text": "$K_p=K_c$"
+   },
+   {
+    "key": "D",
+    "text": "$K_p=K_c(RT)^{-4}$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$K_p=K_c(RT)^{\\Delta n_g}$ with $\\Delta n_g=2-(1+3)=-2$, so $K_p=K_c(RT)^{-2}$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.CHEQ",
+   "topics": [],
+   "concepts": [
+    "kp_kc"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_che007",
+  "type": "NVQ",
+  "stem": "In acidic medium, permanganate oxidises iron(II) as $\\ce{MnO4^- + 8H+ + 5Fe^2+ -> Mn^2+ + 5Fe^3+ + 4H2O}$. The number of moles of $\\ce{Fe^2+}$ oxidised by $\\pu{1 mol}$ of $\\ce{MnO4^-}$ is",
+  "images": [],
+  "answer": {
+   "value": 5,
+   "tol": 0
+  },
+  "solution": "Mn goes from $+7$ to $+2$, gaining $5$ electrons per $\\ce{MnO4^-}$. Each $\\ce{Fe^2+}\\to\\ce{Fe^3+}$ loses one electron, so $5$ mol of $\\ce{Fe^2+}$ are oxidised.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.REDOX",
+   "topics": [],
+   "concepts": [
+    "redox_stoichiometry"
+   ]
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]

@@ -1,0 +1,591 @@
+[
+ {
+  "id": "q_badscqtwokeys",
+  "type": "SCQ",
+  "stem": "A uniform solid disc of mass $M$ and radius $R$ rotates about an axis through a point on its rim, perpendicular to its plane. Its moment of inertia about this axis is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "A",
+    "C"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badnotinoptions",
+  "type": "SCQ",
+  "stem": "A uniform solid disc of mass $M$ and radius $R$ rotates about an axis through a point on its rim, perpendicular to its plane. Its moment of inertia about this axis is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "E"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badchapter",
+  "type": "SCQ",
+  "stem": "A uniform solid disc of mass $M$ and radius $R$ rotates about an axis through a point on its rim, perpendicular to its plane. Its moment of inertia about this axis is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.NOPE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_baddollar",
+  "type": "SCQ",
+  "stem": "Find $I about the rim of a disc of mass $M$.",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badbraces",
+  "type": "SCQ",
+  "stem": "Evaluate $\\frac{1{2}$ for the disc.",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badhtml",
+  "type": "SCQ",
+  "stem": "A disc <b>rotates</b> about its rim.",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badnvqkeys",
+  "type": "INT",
+  "stem": "A car starts from rest and moves along a straight road with a constant acceleration of $2\\ \\text{m s}^{-2}$. The distance, in metres, covered in the first $6$ s is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Starting from rest, $s=\\tfrac12 a t^2=\\tfrac12(2)(6)^2=36$ m.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": [
+    "kinematic_equations"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badintfraction",
+  "type": "INT",
+  "stem": "A car starts from rest and moves along a straight road with a constant acceleration of $2\\ \\text{m s}^{-2}$. The distance, in metres, covered in the first $6$ s is",
+  "images": [],
+  "answer": {
+   "value": 2.5,
+   "tol": 0.01
+  },
+  "solution": "Starting from rest, $s=\\tfrac12 a t^2=\\tfrac12(2)(6)^2=36$ m.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": [
+    "kinematic_equations"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badmissinganswer",
+  "type": "SCQ",
+  "stem": "A uniform solid disc of mass $M$ and radius $R$ rotates about an axis through a point on its rim, perpendicular to its plane. Its moment of inertia about this axis is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": null,
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]

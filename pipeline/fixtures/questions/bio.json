@@ -1,0 +1,226 @@
+[
+ {
+  "id": "q_bot001",
+  "type": "SCQ",
+  "stem": "In a dihybrid cross $\\mathrm{AaBb}\\times\\mathrm{AaBb}$ with independent assortment and complete dominance, the phenotypic ratio of the offspring is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$3:1$"
+   },
+   {
+    "key": "B",
+    "text": "$1:2:1$"
+   },
+   {
+    "key": "C",
+    "text": "$9:3:3:1$"
+   },
+   {
+    "key": "D",
+    "text": "$1:1:1:1$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Each gene gives a $3:1$ ratio independently, so the combined ratio is $(3:1)\\times(3:1)=9:3:3:1$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [
+    "BOT.GEN.MENDEL.DIHYBRID"
+   ],
+   "concepts": [
+    "dihybrid_ratio"
+   ]
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_bot002",
+  "type": "SCQ",
+  "stem": "In C$_3$ plants, the Calvin cycle (dark reaction) takes place in the",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "thylakoid membrane"
+   },
+   {
+    "key": "B",
+    "text": "stroma of the chloroplast"
+   },
+   {
+    "key": "C",
+    "text": "cytoplasm"
+   },
+   {
+    "key": "D",
+    "text": "mitochondrial matrix"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The enzymes of carbon fixation, including RuBisCO, are located in the stroma of the chloroplast; the light reactions occur in the thylakoid membranes.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": [
+    "calvin_cycle_location"
+   ]
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_zoo001",
+  "type": "NVQ",
+  "stem": "The number of chambers in the heart of a human is",
+  "images": [],
+  "answer": {
+   "value": 4,
+   "tol": 0
+  },
+  "solution": "The human heart has two atria and two ventricles: $2+2=4$ chambers.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": [
+    "human_heart"
+   ]
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_bot003",
+  "type": "NVQ",
+  "stem": "A diploid cell of an organism has $2n=16$ chromosomes. The number of bivalents visible at metaphase I of meiosis is",
+  "images": [],
+  "answer": {
+   "value": 8,
+   "tol": 0
+  },
+  "solution": "Homologous chromosomes pair during prophase I. With $2n=16$ there are $n=8$ homologous pairs, hence $8$ bivalents.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": [
+    "meiosis_bivalents"
+   ]
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]

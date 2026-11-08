@@ -1,0 +1,291 @@
+[
+ {
+  "id": "q_mat001",
+  "type": "SCQ",
+  "stem": "The value of $\\displaystyle\\lim_{x\\to0}\\frac{\\sin 3x}{x}$ is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac13$"
+   },
+   {
+    "key": "B",
+    "text": "$0$"
+   },
+   {
+    "key": "C",
+    "text": "$1$"
+   },
+   {
+    "key": "D",
+    "text": "$3$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Write $\\dfrac{\\sin3x}{x}=3\\cdot\\dfrac{\\sin3x}{3x}\\to3\\cdot1=3$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.LIM",
+   "topics": [
+    "MAT.LIM.STD"
+   ],
+   "concepts": [
+    "standard_limit"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_mat002",
+  "type": "NVQ",
+  "stem": "The modulus of the complex number $(1+i)^8$ is",
+  "images": [],
+  "answer": {
+   "value": 16,
+   "tol": 0
+  },
+  "solution": "$|1+i|=\\sqrt2$, so $|(1+i)^8|=(\\sqrt2)^8=2^4=16$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.CPLX",
+   "topics": [],
+   "concepts": [
+    "modulus_properties"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_mat003",
+  "type": "SCQ",
+  "stem": "The number of distinct arrangements of all the letters of the word LEVEL is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$20$"
+   },
+   {
+    "key": "B",
+    "text": "$30$"
+   },
+   {
+    "key": "C",
+    "text": "$60$"
+   },
+   {
+    "key": "D",
+    "text": "$120$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "There are $5$ letters with L repeated twice and E repeated twice:\n\n$$\\frac{5!}{2!\\,2!}=\\frac{120}{4}=30.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.PNC",
+   "topics": [],
+   "concepts": [
+    "permutations_repeated"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_mat004",
+  "type": "SCQ",
+  "stem": "The value of $\\displaystyle\\int_0^1 (3x^2+2x)\\,dx$ is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$2$"
+   },
+   {
+    "key": "B",
+    "text": "$3$"
+   },
+   {
+    "key": "C",
+    "text": "$4$"
+   },
+   {
+    "key": "D",
+    "text": "$5$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$$\\int_0^1(3x^2+2x)\\,dx=\\left[x^3+x^2\\right]_0^1=1+1=2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.INTG",
+   "topics": [],
+   "concepts": [
+    "definite_integral"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_mat005",
+  "type": "INT",
+  "stem": "The sum of the first $10$ terms of an arithmetic progression with first term $3$ and common difference $2$ is",
+  "images": [],
+  "answer": {
+   "value": 120,
+   "tol": 0
+  },
+  "solution": "$S_n=\\tfrac n2\\left[2a+(n-1)d\\right]$, so $S_{10}=5\\,[6+18]=120$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.SEQ",
+   "topics": [],
+   "concepts": [
+    "ap_sum"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]

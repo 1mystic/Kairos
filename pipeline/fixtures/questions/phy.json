@@ -1,0 +1,517 @@
+[
+ {
+  "id": "q_phy001",
+  "type": "SCQ",
+  "stem": "A uniform solid disc of mass $M$ and radius $R$ rotates about an axis through a point on its rim, perpendicular to its plane. Its moment of inertia about this axis is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac12 MR^2$"
+   },
+   {
+    "key": "B",
+    "text": "$MR^2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\tfrac32 MR^2$"
+   },
+   {
+    "key": "D",
+    "text": "$2MR^2$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "About the centre, $I_{cm}=\\tfrac12 MR^2$. The rim axis is parallel and at distance $R$, so by the parallel axis theorem\n\n$$I = I_{cm} + MR^2 = \\tfrac12 MR^2 + MR^2 = \\tfrac32 MR^2.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [
+    "PHY.ROT.MOI"
+   ],
+   "concepts": [
+    "parallel_axis"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "formula"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy002",
+  "type": "INT",
+  "stem": "A car starts from rest and moves along a straight road with a constant acceleration of $2\\ \\text{m s}^{-2}$. The distance, in metres, covered in the first $6$ s is",
+  "images": [],
+  "answer": {
+   "value": 36,
+   "tol": 0
+  },
+  "solution": "Starting from rest, $s=\\tfrac12 a t^2=\\tfrac12(2)(6)^2=36$ m.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": [
+    "kinematic_equations"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy003",
+  "type": "SCQ",
+  "stem": "A block of mass $2$ kg is lifted vertically through $3$ m at constant speed. Taking $g=10\\ \\text{m s}^{-2}$, the work done by the lifting force is",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$20$ J"
+   },
+   {
+    "key": "B",
+    "text": "$30$ J"
+   },
+   {
+    "key": "C",
+    "text": "$60$ J"
+   },
+   {
+    "key": "D",
+    "text": "$120$ J"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At constant speed the net force is zero, so the lifting force equals the weight $mg=20$ N. Work $=Fd=20\\times 3=60$ J.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": [
+    "work_by_force"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy004",
+  "type": "SCQ",
+  "stem": "A planet has the same mass as Earth but $4$ times the radius of Earth. Its escape speed is what fraction of Earth's escape speed?",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\tfrac14$"
+   },
+   {
+    "key": "B",
+    "text": "$\\tfrac12$"
+   },
+   {
+    "key": "C",
+    "text": "$2$"
+   },
+   {
+    "key": "D",
+    "text": "$4$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Escape speed $v_e=\\sqrt{2GM/R}$. With $M$ unchanged and $R\\to 4R$,\n\n$$\\frac{v_e'}{v_e}=\\sqrt{\\frac{1}{4}}=\\frac12.$$",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.GRAV",
+   "topics": [],
+   "concepts": [
+    "escape_speed"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy005",
+  "type": "NVQ",
+  "stem": "A $6\\ \\Omega$ and a $3\\ \\Omega$ resistor are connected in parallel, and this combination is connected in series with a $2\\ \\Omega$ resistor across an ideal $8$ V battery. The current drawn from the battery, in amperes, is",
+  "images": [],
+  "answer": {
+   "value": 2,
+   "tol": 0
+  },
+  "solution": "Parallel part: $\\dfrac{6\\times3}{6+3}=2\\ \\Omega$. Total resistance $=2+2=4\\ \\Omega$.\n\n$I=V/R=8/4=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "series_parallel"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy006",
+  "type": "SCQ",
+  "stem": "The length of a simple pendulum is made four times. Its time period then becomes",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$T/2$"
+   },
+   {
+    "key": "B",
+    "text": "$T$"
+   },
+   {
+    "key": "C",
+    "text": "$4T$"
+   },
+   {
+    "key": "D",
+    "text": "$2T$"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$T=2\\pi\\sqrt{L/g}\\propto\\sqrt L$. For $L\\to4L$, $T\\to\\sqrt4\\,T=2T$.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.OSC",
+   "topics": [],
+   "concepts": [
+    "pendulum_period"
+   ]
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy007",
+  "type": "NVQ",
+  "stem": "A block of mass $2$ kg slides down the smooth plane inclined at $30^\\circ$ shown below. Taking $g=10\\ \\text{m s}^{-2}$, its acceleration down the plane, in $\\text{m s}^{-2}$, is\n\n![block on a smooth incline](img:72da92e3bd83a053)",
+  "images": [
+   {
+    "id": "72da92e3bd83a053",
+    "w": 659,
+    "h": 448,
+    "alt": "A block of mass m on a smooth plane inclined at 30 degrees to the horizontal",
+    "variants": [
+     480,
+     659
+    ]
+   }
+  ],
+  "answer": {
+   "value": 5,
+   "tol": 0
+  },
+  "solution": "With no friction the only component of gravity along the plane gives $ma=mg\\sin30^\\circ$, so $a=10\\times\\tfrac12=5\\ \\text{m s}^{-2}$. The mass cancels.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.LOM",
+   "topics": [],
+   "concepts": [
+    "inclined_plane"
+   ]
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "a": 1.1,
+   "p_correct": 0.5,
+   "median_time_s": 100,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_phy008",
+  "type": "SCQ",
+  "stem": "In the circuit shown, an ideal $12$ V battery is connected in series with resistors of $4\\ \\Omega$ and $2\\ \\Omega$. The current in the circuit is\n\n![series circuit with 12 V battery](img:3533f734625d29de)",
+  "images": [
+   {
+    "id": "3533f734625d29de",
+    "w": 763,
+    "h": 391,
+    "alt": "A 12 V battery connected in series with a 4 ohm resistor and a 2 ohm resistor",
+    "variants": [
+     480,
+     763
+    ]
+   }
+  ],
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.5$ A"
+   },
+   {
+    "key": "B",
+    "text": "$1$ A"
+   },
+   {
+    "key": "C",
+    "text": "$2$ A"
+   },
+   {
+    "key": "D",
+    "text": "$3$ A"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Resistors in series add: $R=4+2=6\\ \\Omega$. By Ohm's law $I=V/R=12/6=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "ohms_law"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]

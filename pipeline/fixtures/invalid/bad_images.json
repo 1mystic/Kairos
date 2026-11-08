@@ -1,0 +1,375 @@
+[
+ {
+  "id": "q_badimgundeclared",
+  "type": "SCQ",
+  "stem": "In the circuit shown, an ideal $12$ V battery is connected in series with resistors of $4\\ \\Omega$ and $2\\ \\Omega$. The current in the circuit is\n\n![series circuit with 12 V battery](img:3533f734625d29de)",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.5$ A"
+   },
+   {
+    "key": "B",
+    "text": "$1$ A"
+   },
+   {
+    "key": "C",
+    "text": "$2$ A"
+   },
+   {
+    "key": "D",
+    "text": "$3$ A"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Resistors in series add: $R=4+2=6\\ \\Omega$. By Ohm's law $I=V/R=12/6=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "ohms_law"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badimgunused",
+  "type": "SCQ",
+  "stem": "Current in the circuit with 12 V across 6 ohm?",
+  "images": [
+   {
+    "id": "3533f734625d29de",
+    "w": 763,
+    "h": 391,
+    "alt": "A 12 V battery connected in series with a 4 ohm resistor and a 2 ohm resistor",
+    "variants": [
+     480,
+     763
+    ]
+   }
+  ],
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.5$ A"
+   },
+   {
+    "key": "B",
+    "text": "$1$ A"
+   },
+   {
+    "key": "C",
+    "text": "$2$ A"
+   },
+   {
+    "key": "D",
+    "text": "$3$ A"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Resistors in series add: $R=4+2=6\\ \\Omega$. By Ohm's law $I=V/R=12/6=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "ohms_law"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badimgurl",
+  "type": "SCQ",
+  "stem": "See ![fig](https://example.com/a.png)",
+  "images": [],
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.5$ A"
+   },
+   {
+    "key": "B",
+    "text": "$1$ A"
+   },
+   {
+    "key": "C",
+    "text": "$2$ A"
+   },
+   {
+    "key": "D",
+    "text": "$3$ A"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Resistors in series add: $R=4+2=6\\ \\Omega$. By Ohm's law $I=V/R=12/6=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "ohms_law"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badimgalt",
+  "type": "SCQ",
+  "stem": "In the circuit shown, an ideal $12$ V battery is connected in series with resistors of $4\\ \\Omega$ and $2\\ \\Omega$. The current in the circuit is\n\n![series circuit with 12 V battery](img:3533f734625d29de)",
+  "images": [
+   {
+    "id": "3533f734625d29de",
+    "w": 763,
+    "h": 391,
+    "alt": "",
+    "variants": [
+     480,
+     763
+    ]
+   }
+  ],
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.5$ A"
+   },
+   {
+    "key": "B",
+    "text": "$1$ A"
+   },
+   {
+    "key": "C",
+    "text": "$2$ A"
+   },
+   {
+    "key": "D",
+    "text": "$3$ A"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Resistors in series add: $R=4+2=6\\ \\Omega$. By Ohm's law $I=V/R=12/6=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "ohms_law"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_badimgsize",
+  "type": "SCQ",
+  "stem": "In the circuit shown, an ideal $12$ V battery is connected in series with resistors of $4\\ \\Omega$ and $2\\ \\Omega$. The current in the circuit is\n\n![series circuit with 12 V battery](img:3533f734625d29de)",
+  "images": [
+   {
+    "id": "3533f734625d29de",
+    "w": 999,
+    "h": 391,
+    "alt": "A 12 V battery connected in series with a 4 ohm resistor and a 2 ohm resistor",
+    "variants": [
+     480,
+     763
+    ]
+   }
+  ],
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.5$ A"
+   },
+   {
+    "key": "B",
+    "text": "$1$ A"
+   },
+   {
+    "key": "C",
+    "text": "$2$ A"
+   },
+   {
+    "key": "D",
+    "text": "$3$ A"
+   }
+  ],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Resistors in series add: $R=4+2=6\\ \\Omega$. By Ohm's law $I=V/R=12/6=2$ A.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": [
+    "ohms_law"
+   ]
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "a": 0.9,
+   "p_correct": 0.78,
+   "median_time_s": 55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Kairos original content"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]

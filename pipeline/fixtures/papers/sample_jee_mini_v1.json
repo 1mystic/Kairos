@@ -1,0 +1,17 @@
+{
+ "paperId": "sample_jee_mini_v1",
+ "blueprint": "jee_main_2026_p1",
+ "mini": true,
+ "title": "Sample JEE Main mini mock (9 questions)",
+ "slots": [
+  "q_phy001",
+  "q_phy003",
+  "q_phy005",
+  "q_che002",
+  "q_che003",
+  "q_che005",
+  "q_mat001",
+  "q_mat003",
+  "q_mat002"
+ ]
+}

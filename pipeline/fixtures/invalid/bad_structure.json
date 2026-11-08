@@ -1,0 +1,20 @@
+[
+ {
+  "id": "q_badstruct",
+  "type": "SCQ",
+  "status": "verified"
+ },
+ {
+  "id": "q_badtype",
+  "type": "ESSAY",
+  "stem": "x",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT"
+  },
+  "source": {
+   "kind": "authored"
+  },
+  "status": "verified"
+ }
+]
