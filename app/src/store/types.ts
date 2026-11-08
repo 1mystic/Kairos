@@ -50,8 +50,15 @@ export interface GuestProfile {
   kind: 'guest';
   displayName: string;
   createdAt: number;
+  /** Onboarding fields, same shapes as the cloud profile (firestore.rules). All optional for guests. */
   examDate?: string | null;
   exam?: string;
+  ambition?: 'comfortable' | 'competitive' | 'top';
+  minutesPerWeekday?: Record<string, number>;
+  offDay?: number | null;
+  chaptersDone?: string[];
+  lang?: 'en' | 'hi';
+  onboarded?: boolean;
 }
 
 export type Profile = UserProfile | GuestProfile;
