@@ -6,7 +6,7 @@ Each agent: read CLAUDE.md + docs it needs, do its task, run its tests, commit w
 ## Phase 0 — foundations
 
 ### Wave 1 (single agent, blocks everything)
-- [ ] **W1 scaffold** — pnpm workspace (`app`, `core`, `firestore-tests`), `tsconfig.base.json` strict, eslint flat config + prettier, vitest workspace, root scripts (`dev test e2e build lint`). Install ALL deps for every package up front (so wave 2 agents never run concurrent installs). Empty compiling entry points.
+- [x] **W1 scaffold** — pnpm workspace (`app`, `core`, `firestore-tests`), `tsconfig.base.json` strict, eslint flat config + prettier, vitest workspace, root scripts (`dev test e2e build lint`). Install ALL deps for every package up front (so wave 2 agents never run concurrent installs). Empty compiling entry points.
 
 ### Wave 2 (parallel, disjoint dirs)
 - [ ] **W2a core domain** (`/core`) — `blueprint.ts` (zod + loader for `content/blueprints/*.json`), `question.ts` (zod from docs/03, all answer variants), `scoring.ts` (score responses vs blueprint, MSQ partial hook), `katex.ts` render-check util (`trust:false`), `cbt/palette.ts` pure reducer for the 5 palette states + all button semantics from docs/04 (palette click does NOT save). ≥90% coverage.
