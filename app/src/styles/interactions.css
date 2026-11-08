@@ -1,0 +1,69 @@
+/* Interaction model (docs/10_DESIGN_SYSTEM.md): every clickable thing looks clickable and answers the pointer.
+   - cursor: pointer on everything interactive (not-allowed when disabled)
+   - hover  = one tint step up (filled buttons: primary-hover), only on devices that really hover
+   - active = one step darker (pressed)
+   - focus  = the 2px ring from the base layer
+   Flat system: colour/background changes only. No borders, no shadows, no gradients. */
+@layer components {
+  :root {
+    --tint-hover: color-mix(in srgb, var(--surface-3), var(--ink) 5%);
+    --tint-hover-soft: color-mix(in srgb, var(--surface-2), var(--ink) 4%);
+  }
+
+  /* ---- classes used across the app that need a base look ---- */
+  .pill-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1);
+    min-height: 44px; padding: 0 var(--space-4); border-radius: var(--radius-pill);
+    background: var(--surface-3); color: var(--ink); font: 600 var(--fs-small)/1 var(--font-ui);
+    white-space: nowrap;
+  }
+  .pill-btn[aria-pressed='true'], .pill-btn[aria-checked='true'] { background: var(--primary-50); color: var(--primary); }
+  .check-row {
+    display: flex; align-items: center; gap: var(--space-3); min-height: 44px;
+    padding: var(--space-2) var(--space-3); border-radius: var(--radius-btn);
+  }
+  .text-link { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; }
+
+  /* ---- clickable cursor ---- */
+  button:not(:disabled), [role='button'], [role='tab'], [role='radio'], [role='checkbox'], [role='option'], [role='menuitem'],
+  a[href], summary, select, input[type='checkbox'], input[type='radio'], input[type='range'], input[type='file'],
+  label:has(input[type='checkbox']), label:has(input[type='radio']),
+  .tile, .link-row, .nav-item, .pill-btn, .check-row, .text-link, .tab, .menu-item, .sel-trigger, .sel-opt, .opt-live, .brand {
+    cursor: pointer;
+  }
+  button:disabled, [disabled], [aria-disabled='true'], .btn:disabled { cursor: not-allowed; }
+
+  /* ---- smooth, quiet transitions (colour only) ---- */
+  .btn, .tab, .link-row, .nav-item, .pill-btn, .check-row, .menu-item, .sel-trigger, .sel-opt, .opt, .brand, .text-link {
+    transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+
+  /* ---- hover: only on devices with a real hovering pointer (no sticky hover on touch) ---- */
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary:hover { background: var(--tint-hover); }
+    .btn-ghost:hover { background: var(--primary-50); }
+    .tab:not([aria-selected='true']):not([aria-checked='true']):hover { background: var(--tint-hover); color: var(--ink); }
+    .tile:hover, .link-row:hover { background: var(--tint-hover); }
+    .nav-item:not([aria-current='page']):not([aria-disabled='true']):hover { background: var(--tint-hover); }
+    .brand:hover { background: var(--tint-hover); }
+    .menu-item:hover { background: var(--primary-50); color: var(--primary); }
+    .sel-opt:not([aria-disabled='true']):hover { background: var(--primary-50); color: var(--primary); }
+    .sel-trigger:hover { background: var(--tint-hover); }
+    .pill-btn:not([aria-pressed='true']):not([aria-checked='true']):hover { background: var(--tint-hover); }
+    .check-row:hover { background: var(--tint-hover-soft); }
+    .opt-live:not(.opt-on):hover { background: var(--tint-hover); }
+    .text-link:hover, a:not([class]):hover { color: var(--primary-hover); }
+    summary:hover { color: var(--primary); }
+  }
+
+  /* ---- pressed ---- */
+  .btn-primary:active { background: var(--primary-active); }
+  .btn-secondary:active, .tab:active, .tile:active, .link-row:active, .nav-item:active, .pill-btn:active,
+  .check-row:active, .menu-item:active, .sel-trigger:active, .opt-live:active { background: var(--tint-active); }
+  .btn-ghost:active { background: var(--primary-50); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn, .tab, .link-row, .nav-item, .pill-btn, .check-row, .menu-item, .sel-trigger, .sel-opt, .opt, .brand, .text-link { transition: none; }
+  }
+}
