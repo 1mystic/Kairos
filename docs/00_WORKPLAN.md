@@ -93,6 +93,12 @@ W1 scaffold · W2a core · W2b app shell/auth · W2c firebase+rules (55 rules te
 - W5d customisable dashboard: app/src/dashboard/** (spec docs/11_DASHBOARD.md). Mount `<Dashboard/>` inside pages/Home.tsx when done.
 To recover: `git fetch origin wip-snapshot && git diff main origin/wip-snapshot --stat`; either check out the files you need from that branch (`git checkout origin/wip-snapshot -- <paths>`) or re-launch the task text from this plan with model sonnet, telling the agent to continue from existing files. Check each agent's tests/lint before committing.
 
+### Launched after the first handoff (also in flight; check git log/status/wip-snapshot)
+- W5b-ui + W6b: onboarding (exam date, minutes/day, off-day, chapters done, ambition, plan preview) + daily plan UI (today card, tasks, week view, pace, backlog/triage). Owns app/src/onboarding/**, app/src/plan/**; exports `useTodayPlan()`, `useOnboardingProfile()`. Routes: /onboarding, /plan, /plan/:date.
+- W5a analysis: app/src/analysis/** (mastery heatmap, mistakes, full mock report: waterfall, quadrant, time map, fatigue, fix list). Routes /analysis, /analysis/mock/:mockId; exports `<MockReport/>` to mount as tabs in the cbt ResultPage.
+- W6a-ui + W6c: app/src/diagnostic/** (diagnostic test, personalised mock generator -> `gen_` papers opened by the cbt runner via a small additive edit in cbt/loader.ts, predicted score band). Routes /diagnostic, /mocks/new; exports `usePredictedScore()`, `<PredictedBand/>`.
+Orchestrator mounting checklist when they land: add their `*Routes` in App.tsx (inside AppLayout), mark nav items `built: true` in pages/AppLayout.tsx (Plan, Analysis, Upload...), mount `<MockReport/>` in cbt ResultPage tabs, embed `<PredictedBand/>` + `useTodayPlan()` in Home/dashboard, `<Dashboard/>` in Home, then run the verify block, e2e smoke (landing -> guest -> onboarding -> plan -> practice -> mock -> analysis), and deploy hosting.
+
 ### Next, in order
 0. Fix the failing App.test.tsx case above, then:
 1. Finish/recover in-flight agents (W4d-ui, W5c, W5d); run the verify block (pnpm lint, typecheck, core test:coverage, app test, build, test:rules if rules changed, pipeline pytest); commit; push main.
