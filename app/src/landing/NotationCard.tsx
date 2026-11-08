@@ -11,7 +11,7 @@ const ITEMS: [string, string][] = [
 export function NotationCard() {
   const html = useMemo(() => ITEMS.map(([, src]) => renderMath(src)), []);
   return (
-    <div className="ld-card ld-notation">
+    <div className="card ld-notation">
       {ITEMS.map(([label], i) => (
         <div key={label} className="ld-formula">
           <span className="ld-cap">{label}</span>

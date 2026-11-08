@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import { useAuth } from './AuthProvider';
 import { friendlyAuthError } from './errors';
 import { validateSignUp } from './validation';
-import { AuthShell, Field, FormError } from '../components/ui';
-import { GoogleButton } from './SignIn';
+import { AuthShell, Button, Field, FormError } from '../components/ui';
+import { GoogleButton, OrDivider } from './SignIn';
 
 export function SignUp() {
   const { signUp } = useAuth();
@@ -34,17 +34,17 @@ export function SignUp() {
     <AuthShell
       title="Create your account"
       subtitle="Takes a minute. We will set up your plan next."
-      footer={<>Already have an account? <Link className="text-primary underline" to="/signin">Sign in</Link></>}
+      footer={<>Already have an account? <Link className="font-semibold" to="/signin">Sign in</Link></>}
     >
-      <form onSubmit={submit} noValidate className="space-y-4">
+      <form onSubmit={submit} noValidate className="stack gap-base">
         <FormError>{formError}</FormError>
         <Field label="Name" autoComplete="name" value={v.name} onChange={set('name')} error={errors.name} />
         <Field label="Email" type="email" autoComplete="email" value={v.email} onChange={set('email')} error={errors.email} />
         <Field label="Password" type="password" autoComplete="new-password" hint="At least 8 characters." value={v.password} onChange={set('password')} error={errors.password} />
         <Field label="Date of birth" type="date" autoComplete="bday" hint="We ask so we can look after students under 18 properly." value={v.dob} onChange={set('dob')} error={errors.dob} />
-        <button type="submit" className="btn btn-primary w-full" disabled={busy}>{busy ? 'Creating account…' : 'Create account'}</button>
+        <Button type="submit" block loading={busy}>{busy ? 'Creating account…' : 'Create account'}</Button>
       </form>
-      <div className="flex items-center gap-3 text-sm text-slate"><hr className="flex-1 border-line" />or<hr className="flex-1 border-line" /></div>
+      <OrDivider />
       <GoogleButton onError={setFormError} />
     </AuthShell>
   );

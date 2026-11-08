@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useManifest, useShard } from './hooks';
 import { QuestionView } from '../components/QuestionView';
+import { Banner, Card, Page, PageHeader, SelectField } from '../components/ui';
 
 /** Dev tool: pick a manifest chapter and render all its questions (with solutions). */
 export function BankPreview() {
@@ -12,37 +13,32 @@ export function BankPreview() {
   const shards = (m.data?.manifest.files ?? []).filter((f) => f.kind === 'shard');
 
   return (
-    <main className="mx-auto max-w-3xl space-y-6 p-4">
-      <h1 className="text-2xl">Bank preview{m.data ? ` · v${m.data.version}` : ''}</h1>
+    <Page width="reading">
+      <PageHeader title={`Bank preview${m.data ? ` · v${m.data.version}` : ''}`} />
       {m.loading && <p role="status" className="text-slate">Loading manifest…</p>}
-      {m.error && <p role="alert" className="text-ink">Could not load the bank: {m.error.message}</p>}
+      {m.error && <Banner tone="accent" role="alert">Could not load the bank: {m.error.message}</Banner>}
       {m.data && (
-        <label className="block text-sm">
-          <span className="mb-1 block font-medium">Chapter</span>
-          <select
-            className="w-full rounded-btn border border-line bg-surface p-2 text-ink"
-            value={pick}
-            onChange={(e) => setPick(e.target.value)}
-          >
-            <option value="">Select a chapter…</option>
-            {shards.map((f) => (
-              <option key={f.path} value={`${f.exam}|${f.subject}|${f.chapter}`}>
-                {f.exam} · {f.chapter} ({f.count ?? '?'})
-              </option>
-            ))}
-          </select>
-        </label>
+        <SelectField label="Chapter" value={pick} onChange={(e) => setPick(e.target.value)}>
+          <option value="">Select a chapter…</option>
+          {shards.map((f) => (
+            <option key={f.path} value={`${f.exam}|${f.subject}|${f.chapter}`}>
+              {f.exam} · {f.chapter} ({f.count ?? '?'})
+            </option>
+          ))}
+        </SelectField>
       )}
       {shard.loading && <p role="status" className="text-slate">Loading questions…</p>}
-      {shard.error && <p role="alert">Could not load shard: {shard.error.message}</p>}
+      {shard.error && <Banner tone="accent" role="alert">Could not load shard: {shard.error.message}</Banner>}
       {shard.data?.questions.map((q, i) => (
-        <section key={q.id} className="space-y-2 rounded-card border border-line bg-surface p-4">
-          <p className="text-xs text-slate">
-            {i + 1}. {q.id} · {q.type}
-          </p>
-          <QuestionView question={q} variant="review" showSolution />
-        </section>
+        <Card key={q.id} as="section">
+          <div className="stack gap-tight">
+            <p className="text-caption text-slate">
+              {i + 1}. {q.id} · {q.type}
+            </p>
+            <QuestionView question={q} variant="review" showSolution />
+          </div>
+        </Card>
       ))}
-    </main>
+    </Page>
   );
 }

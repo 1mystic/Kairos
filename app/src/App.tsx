@@ -5,8 +5,10 @@ import { SignIn } from './auth/SignIn';
 import { SignUp } from './auth/SignUp';
 import { Forgot } from './auth/Forgot';
 import { CompleteProfile } from './auth/CompleteProfile';
-import { AppLayout, Home } from './pages/Home';
+import { AppLayout } from './pages/AppLayout';
+import { Home } from './pages/Home';
 import { Placeholder } from './pages/Placeholder';
+import { Privacy, Terms } from './pages/Legal';
 import { PublicEntry } from './pages/PublicEntry';
 import { Settings } from './pages/Settings';
 import { StoreProvider } from './store/StoreProvider';
@@ -21,6 +23,8 @@ export function AppRoutes() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot" element={<Forgot />} />
       </Route>
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
       <Route path="/complete-profile" element={<CompleteProfile />} />
       <Route path="/" element={<HomeGate app={<AppLayout />} fallback={<PublicEntry />} />}>
         <Route index element={<Home />} />
@@ -40,8 +44,8 @@ export function AppRoutes() {
 export function App() {
   if (firebaseConfigError) {
     return (
-      <main className="mx-auto max-w-xl space-y-3 p-8">
-        <h1 className="text-2xl">Firebase is not configured</h1>
+      <main className="mx-auto max-w-reading stack gap-base p-s6">
+        <h1 className="text-h1">Firebase is not configured</h1>
         <p className="text-slate">{firebaseConfigError}</p>
       </main>
     );

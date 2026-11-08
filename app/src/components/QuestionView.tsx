@@ -2,6 +2,7 @@ import { useId, useMemo } from 'react';
 import { escapeHtml, renderContentHtml, type ImageRef, type PublicQuestion, type Question } from '@kairos/core';
 import 'katex/dist/katex.min.css';
 import './QuestionView.css';
+import { CheckIcon } from './icons';
 import { IMG_BASE, imageUrl } from '../bank/config';
 
 const MAX_SRC_WIDTH = 960;
@@ -12,9 +13,9 @@ export function imageHtml(im: ImageRef, imgBase: string = IMG_BASE): string {
   const src = [...variants].reverse().find((v) => v <= MAX_SRC_WIDTH) ?? variants[0]!;
   const srcset = variants.map((v) => `${imageUrl(im.id, v, imgBase)} ${v}w`).join(', ');
   return (
-    `<figure class="kc-fig" style="margin:0.5rem 0"><img src="${imageUrl(im.id, src, imgBase)}" srcset="${srcset}" ` +
+    `<figure class="kc-fig"><img src="${imageUrl(im.id, src, imgBase)}" srcset="${srcset}" ` +
     `sizes="(max-width: 640px) 100vw, 640px" width="${im.w}" height="${im.h}" loading="lazy" ` +
-    `decoding="async" alt="${escapeHtml(im.alt)}" style="max-width:100%;height:auto"></figure>`
+    `decoding="async" alt="${escapeHtml(im.alt)}"></figure>`
   );
 }
 
@@ -69,7 +70,6 @@ export function QuestionView({
   const answer = full.answer;
   const correct = new Set(showSolution && answer && 'keys' in answer ? answer.keys : []);
   const interactive = variant === 'practice' && !!onSelect;
-  const pad = variant === 'review' ? 'p-3' : 'p-4';
 
   const toggle = (key: string) => {
     if (!onSelect) return;
@@ -78,21 +78,21 @@ export function QuestionView({
   };
 
   return (
-    <article className="space-y-4 text-ink" data-qid={q.id}>
+    <article className="stack gap-base text-ink" data-qid={q.id}>
       {q.passage ? (
         <ContentHtml
           markdown={q.passage}
           images={q.images}
-          className="rounded-card border border-line bg-surface p-4 text-slate"
+          className="rounded-card bg-surface-2 p-s4 text-slate"
         />
       ) : null}
-      <ContentHtml markdown={q.stem} images={q.images} className="text-base leading-relaxed" />
+      <ContentHtml markdown={q.stem} images={q.images} className="text-body leading-relaxed" />
 
       {options.length > 0 && (
         <div
           role={multi ? 'group' : 'radiogroup'}
           aria-label={multi ? 'Select all that apply' : 'Choose one answer'}
-          className="space-y-2"
+          className="stack gap-tight"
         >
           {options.map((o) => {
             const on = selected.includes(o.key);
@@ -100,9 +100,7 @@ export function QuestionView({
             return (
               <label
                 key={o.key}
-                className={`flex items-start gap-3 rounded-card border bg-surface ${pad} ${
-                  interactive ? 'cursor-pointer hover:border-primary' : ''
-                } ${on ? 'border-primary bg-primary-50' : isCorrect ? 'border-accent' : 'border-line'} focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-primary`}
+                className={`opt${variant === 'review' ? ' opt-review' : ''}${interactive ? ' opt-live' : ''}${on ? ' opt-on' : isCorrect ? ' opt-correct' : ''}`}
               >
                 <input
                   type={multi ? 'checkbox' : 'radio'}
@@ -113,16 +111,9 @@ export function QuestionView({
                   onChange={() => toggle(o.key)}
                   className="sr-only"
                 />
-                <span
-                  aria-hidden="true"
-                  className={`grid h-7 w-7 shrink-0 place-items-center border text-sm font-medium ${
-                    multi ? 'rounded-md' : 'rounded-full'
-                  } ${on ? 'border-primary bg-primary text-surface' : 'border-line text-slate'}`}
-                >
-                  {o.key}
-                </span>
-                <ContentHtml markdown={o.text} images={q.images} className="min-w-0 flex-1 pt-0.5" />
-                {isCorrect && <span className="shrink-0 rounded-md border border-accent px-2 py-0.5 text-xs font-medium text-accent-ink">Correct</span>}
+                <span aria-hidden="true" className={`opt-key${multi ? ' opt-key-sq' : ''}`}>{o.key}</span>
+                <ContentHtml markdown={o.text} images={q.images} className="min-w-0 flex-1 pt-s1" />
+                {isCorrect && <span className="chip chip-accent shrink-0"><CheckIcon width={14} height={14} />Correct</span>}
               </label>
             );
           })}
@@ -130,10 +121,10 @@ export function QuestionView({
       )}
 
       {showSolution && (full.solution || (answer && !('keys' in answer))) && (
-        <section aria-label="Solution" className="rounded-card border border-line bg-surface p-4">
-          <h3 className="mb-2 text-sm font-semibold text-slate">Solution</h3>
+        <section aria-label="Solution" className="rounded-card bg-surface-2 p-s4">
+          <h3 className="mb-s2 text-small font-semibold text-slate">Solution</h3>
           {answer && !('keys' in answer) && (
-            <p className="mb-2 text-sm">
+            <p className="mb-s2 text-small">
               Answer:{' '}
               <strong>
                 {'value' in answer

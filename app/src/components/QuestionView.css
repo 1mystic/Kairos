@@ -1,11 +1,11 @@
-/* Question content: math overflow + image cards. Colours come from brand tokens. */
+/* Question content: math overflow + image cards. Flat: tint fills only. */
 .kc { overflow-wrap: anywhere; }
-.kc .kc-p { margin: 0 0 0.5rem; }
+.kc .kc-p { margin: 0 0 var(--space-2); }
 .kc .kc-p:last-child { margin-bottom: 0; }
-.kc ul { margin: 0.25rem 0 0.5rem 1.25rem; list-style: disc; }
-.kc code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; background: var(--primary-50); padding: 0.05em 0.3em; border-radius: 4px; }
-.kc .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 0.25rem 0; }
+.kc ul { margin: var(--space-1) 0 var(--space-2) var(--space-5); list-style: disc; }
+.kc code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; background: var(--primary-50); padding: 0 var(--space-1); border-radius: var(--space-1); }
+.kc .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: var(--space-1) 0; }
 .kc .katex { max-width: 100%; }
-/* diagrams are drawn on white: keep a white backing card in dark mode too, never invert */
-.kc .kc-fig { display: block; margin: 0.5rem 0; padding: 0.5rem; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-card, 10px); max-width: 100%; width: fit-content; }
+/* diagrams are drawn on white: keep a white backing card in dark mode too, never invert (deliberate exception, borderless) */
+.kc .kc-fig { display: block; margin: var(--space-2) 0; padding: var(--space-2); background: var(--img-backing); border-radius: var(--radius-btn); max-width: 100%; width: fit-content; }
 .kc .kc-fig img { display: block; max-width: 100%; height: auto; }

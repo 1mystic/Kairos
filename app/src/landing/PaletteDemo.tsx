@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './cbtDemo.css';
 import { prefersReducedMotion, useInView } from './useReveal';
 
 const N = 30;

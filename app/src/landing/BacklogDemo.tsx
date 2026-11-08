@@ -9,7 +9,7 @@ const PARTS = [
 export function BacklogDemo() {
   const [ref, shown] = useReveal<HTMLDivElement>(0.3);
   return (
-    <div ref={ref} className="ld-card ld-backlog" data-shown={shown}>
+    <div ref={ref} className="card ld-backlog" data-shown={shown}>
       <div className="ld-stack" aria-hidden="true">
         <span className="ld-pile">missed</span>
         {PARTS.map((p, i) => (

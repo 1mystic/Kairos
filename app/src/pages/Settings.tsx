@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import { useAuth } from '../auth/AuthProvider';
 import { ThemeToggle } from '../components/ThemeToggle';
-import { Modal } from '../components/ui';
+import { Button, Chip, LinkButton, Modal, Page, PageHeader, SettingRow, SettingsSection, StickySideNav, TwoColumnPage, type SideNavItem } from '../components/ui';
 import { exportStore } from '../store/exportData';
 import { useGuest, useLocalStore, useStore } from '../store/StoreProvider';
 
+const SECTIONS: SideNavItem[] = [
+  { id: 'account', label: 'Account' },
+  { id: 'appearance', label: 'Appearance' },
+  { id: 'data', label: 'Storage and data' },
+  { id: 'notifications', label: 'Notifications', soon: true },
+  { id: 'about', label: 'About' },
+];
+
 export function Settings() {
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
+  const [tab, setTab] = useState('account');
   const { isGuest, signOutToGuest } = useGuest();
   const store = useStore();
   const local = useLocalStore();
@@ -25,45 +34,70 @@ export function Settings() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl space-y-6 px-4 py-8">
-      <h1 className="text-2xl">Settings</h1>
-      <section className="card space-y-3" aria-labelledby="st-h">
-        <h2 id="st-h" className="text-lg">Where your progress is stored</h2>
-        <p><strong>{store.kind === 'local' ? 'This device' : 'Your account'}</strong></p>
-        <p className="text-sm text-slate">
-          {store.kind === 'local'
-            ? 'Your progress stays in this browser. Clearing browser data or switching device would lose it, so sign in whenever you like to keep it safe.'
-            : 'Your progress is saved to your account and is there on any device you sign in on.'}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <button type="button" className="btn btn-secondary" onClick={() => void download()}>
-            {store.kind === 'local' ? 'Export local data (JSON)' : 'Export my data (JSON)'}
-          </button>
-          {isGuest && <button type="button" className="btn btn-secondary" onClick={() => setConfirm(true)}>Clear local data</button>}
-        </div>
-        {msg && <p role="status" className="text-sm text-slate">{msg}</p>}
-      </section>
-      <section className="card flex items-center justify-between gap-3" aria-labelledby="th-h">
-        <h2 id="th-h" className="text-lg">Theme</h2>
-        <ThemeToggle />
-      </section>
-      <section className="card space-y-3" aria-labelledby="ac-h">
-        <h2 id="ac-h" className="text-lg">Account</h2>
-        {user ? (
-          <button type="button" className="btn btn-secondary" onClick={() => void signOutToGuest()}>Sign out</button>
-        ) : (
-          <p className="text-sm text-slate">You are using Kairos as a guest.</p>
-        )}
-      </section>
+    <Page>
+      <PageHeader title="Settings" subtitle="Your account, look and data." />
+      <TwoColumnPage nav={<StickySideNav label="Settings sections" items={SECTIONS} active={tab} onSelect={setTab} />}>
+        <SettingsSection id="account" title="Account" description="Who you are on Kairos." active={tab === 'account'}>
+          <SettingRow label="Name" description={isGuest ? 'Guest' : (profile?.displayName ?? '')} />
+          <SettingRow label="Email" description={user?.email ?? 'No email: you are using Kairos as a guest.'} />
+          {user ? (
+            <SettingRow label="Sign out" description="You can keep practising as a guest afterwards.">
+              <Button variant="secondary" onClick={() => void signOutToGuest()}>Sign out</Button>
+            </SettingRow>
+          ) : (
+            <SettingRow label="Save your progress" description="Create an account to keep it safe and reach it from any device.">
+              <LinkButton to="/signup">Create account</LinkButton>
+            </SettingRow>
+          )}
+        </SettingsSection>
+
+        <SettingsSection id="appearance" title="Appearance" description="Kairos works in light and dark." active={tab === 'appearance'}>
+          <SettingRow label="Theme" description="Dark is easier on the eyes at night."><ThemeToggle /></SettingRow>
+        </SettingsSection>
+
+        <SettingsSection id="data" title="Storage and data" description="Where your progress lives." active={tab === 'data'}>
+          <SettingRow
+            label="Stored on"
+            description={store.kind === 'local'
+              ? 'Your progress stays in this browser. Clearing browser data or switching device would lose it, so sign in whenever you like to keep it safe.'
+              : 'Your progress is saved to your account and is there on any device you sign in on.'}
+          >
+            <Chip tone="primary">{store.kind === 'local' ? 'This device' : 'Your account'}</Chip>
+          </SettingRow>
+          <SettingRow label="Export" description="Download everything we hold for you as a JSON file.">
+            <Button variant="secondary" onClick={() => void download()}>
+              {store.kind === 'local' ? 'Export local data (JSON)' : 'Export my data (JSON)'}
+            </Button>
+          </SettingRow>
+          {isGuest && (
+            <SettingRow label="Clear local data" description="Removes sessions, mocks and plans from this device.">
+              <Button variant="secondary" onClick={() => setConfirm(true)}>Clear local data</Button>
+            </SettingRow>
+          )}
+          {msg && <p role="status" className="text-small text-slate">{msg}</p>}
+        </SettingsSection>
+
+        <SettingsSection id="notifications" title="Notifications" description="Daily reminders are not built yet." active={tab === 'notifications'}>
+          <SettingRow label="Daily reminder" description="A nudge at the time you choose."><Chip>soon</Chip></SettingRow>
+        </SettingsSection>
+
+        <SettingsSection id="about" title="About" active={tab === 'about'}>
+          <SettingRow label="Kairos" description="The right question, at the right time." />
+          <SettingRow label="Legal" description="Drafts, to be reviewed before launch.">
+            <LinkButton to="/privacy" variant="ghost" size="sm">Privacy</LinkButton>
+            <LinkButton to="/terms" variant="ghost" size="sm">Terms</LinkButton>
+          </SettingRow>
+        </SettingsSection>
+      </TwoColumnPage>
       {confirm && (
         <Modal title="Clear all data on this device?" onClose={() => setConfirm(false)} dismissLabel="Keep my data">
           <p className="text-slate">This removes your sessions, mocks and plans from this device. It cannot be undone.</p>
-          <div className="flex flex-col gap-2 sm:flex-row-reverse">
-            <button type="button" className="btn btn-primary" onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</button>
-            <button type="button" className="btn btn-secondary" onClick={() => setConfirm(false)}>Keep my data</button>
+          <div className="stack gap-tight sm:flex-row-reverse">
+            <Button onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</Button>
+            <Button variant="secondary" onClick={() => setConfirm(false)}>Keep my data</Button>
           </div>
         </Modal>
       )}
-    </main>
+    </Page>
   );
 }

@@ -33,9 +33,9 @@ function renderAt(path: string, ctx: Partial<AuthContextValue> = {}) {
 beforeEach(() => localStorage.clear());
 
 describe('protected route', () => {
-  it('sends signed-out visitors from / to sign in (public entry)', () => {
+  it('shows the landing page to signed-out visitors at /', () => {
     renderAt('/');
-    expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: /The right question/ })).toBeInTheDocument();
   });
   it('lets a guest reach home, practice and settings after Continue as guest', async () => {
     renderAt('/signin');
@@ -50,7 +50,7 @@ describe('protected route', () => {
     expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
   });
   it('redirects unauthenticated users to sign in', () => {
-    renderAt('/');
+    renderAt('/settings');
     expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
   });
   it('sends users without a profile to complete-profile', () => {

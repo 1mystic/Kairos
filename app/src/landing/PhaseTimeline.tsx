@@ -13,7 +13,7 @@ const PHASES = [
 export function PhaseTimeline() {
   const [ref, shown] = useReveal<HTMLDivElement>(0.3);
   return (
-    <div ref={ref} className="ld-card ld-phases" data-shown={shown}>
+    <div ref={ref} className="card ld-phases" data-shown={shown}>
       <p className="ld-cap">Your days, planned backwards from the exam. Illustrative.</p>
       <div className="ld-bar" aria-hidden="true">
         {PHASES.map((p, i) => (

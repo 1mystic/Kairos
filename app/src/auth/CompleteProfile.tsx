@@ -3,7 +3,7 @@ import { Navigate, useNavigate } from 'react-router';
 import { useAuth } from './AuthProvider';
 import { friendlyAuthError } from './errors';
 import { validateDob } from './validation';
-import { AuthShell, Field, FormError, Spinner } from '../components/ui';
+import { AuthShell, Button, Field, FormError, Spinner } from '../components/ui';
 
 export function CompleteProfile() {
   const { user, profile, loading, completeProfile, signOut } = useAuth();
@@ -43,13 +43,13 @@ export function CompleteProfile() {
     <AuthShell
       title="One last thing"
       subtitle="We need your date of birth to finish setting up your account."
-      footer={<button type="button" className="text-primary underline" onClick={() => void signOut()}>Sign out</button>}
+      footer={<button type="button" className="font-semibold text-primary underline" onClick={() => void signOut()}>Sign out</button>}
     >
-      <form onSubmit={submit} noValidate className="space-y-4">
+      <form onSubmit={submit} noValidate className="stack gap-base">
         <FormError>{formError}</FormError>
         <Field label="Name" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} error={errors.name} />
         <Field label="Date of birth" type="date" autoComplete="bday" hint="We ask so we can look after students under 18 properly." value={dob} onChange={(e) => setDob(e.target.value)} error={errors.dob} />
-        <button type="submit" className="btn btn-primary w-full" disabled={busy}>{busy ? 'Saving…' : 'Continue'}</button>
+        <Button type="submit" block loading={busy}>{busy ? 'Saving…' : 'Continue'}</Button>
       </form>
     </AuthShell>
   );

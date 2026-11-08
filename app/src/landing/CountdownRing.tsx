@@ -7,15 +7,15 @@ const FILL = 0.74;
 export function CountdownRing() {
   const [ref, shown] = useReveal<HTMLDivElement>(0.1);
   return (
-    <div ref={ref} className="ld-ring" data-shown={shown} role="img" aria-label="Countdown ring: 97 days to JEE Main">
+    <div ref={ref} className="ld-ring" data-shown={shown} role="img" aria-label="Countdown dial: 97 days to JEE Main">
       <svg viewBox="0 0 320 320" aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id="ld-ring-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#3A3FD9" />
-            <stop offset="1" stopColor="#F5A524" />
+            <stop offset="0" style={{ stopColor: 'var(--primary)' }} />
+            <stop offset="1" style={{ stopColor: 'var(--accent)' }} />
           </linearGradient>
         </defs>
-        <circle cx="160" cy="160" r={R} fill="none" stroke="var(--line)" strokeWidth="14" />
+        <circle cx="160" cy="160" r={R} fill="none" className="ld-ring-track" strokeWidth="14" />
         <circle
           className="ld-ring-arc"
           cx="160"
@@ -30,7 +30,7 @@ export function CountdownRing() {
           transform="rotate(-90 160 160)"
         />
         <g className="ld-orbit">
-          <circle className="ld-moment" cx="160" cy={160 - R} r="9" fill="#F5A524" />
+          <circle className="ld-moment" cx="160" cy={160 - R} r="9" fill="var(--accent)" />
         </g>
       </svg>
       <div className="ld-ring-text">

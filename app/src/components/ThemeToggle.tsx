@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MoonIcon, SunIcon } from './icons';
+import { IconButton } from './ui';
 
 export type Theme = 'light' | 'dark';
 const KEY = 'kairos-theme';
@@ -18,10 +19,8 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => (document.documentElement.dataset.theme as Theme) || initialTheme());
   const next: Theme = theme === 'dark' ? 'light' : 'dark';
   return (
-    <button
-      type="button"
-      className="btn btn-secondary !min-w-11 !px-0"
-      aria-label={`Switch to ${next} theme`}
+    <IconButton
+      label={`Switch to ${next} theme`}
       onClick={() => {
         localStorage.setItem(KEY, next);
         applyTheme(next);
@@ -29,6 +28,6 @@ export function ThemeToggle() {
       }}
     >
       {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-    </button>
+    </IconButton>
   );
 }

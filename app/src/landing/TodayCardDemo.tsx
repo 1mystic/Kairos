@@ -10,7 +10,7 @@ const LINES: [string, string][] = [
 export function TodayCardDemo() {
   const [ref, shown] = useReveal<HTMLDivElement>(0.3);
   return (
-    <div ref={ref} className="ld-card ld-today" data-shown={shown}>
+    <div ref={ref} className="card ld-today" data-shown={shown}>
       <div className="ld-today-head">
         <strong>97 days to JEE Main S1 (22 Jan)</strong>
         <span className="ld-badge">

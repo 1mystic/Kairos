@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useAuth } from './AuthProvider';
 import { friendlyAuthError } from './errors';
 import { validateEmail } from './validation';
-import { AuthShell, Field, FormError } from '../components/ui';
+import { AuthShell, Banner, Button, Field, FormError } from '../components/ui';
 
 export function Forgot() {
   const { resetPassword } = useAuth();
@@ -31,14 +31,14 @@ export function Forgot() {
   }
 
   return (
-    <AuthShell title="Reset your password" subtitle="We will email you a link." footer={<Link className="text-primary underline" to="/signin">Back to sign in</Link>}>
+    <AuthShell title="Reset your password" subtitle="We will email you a link." footer={<Link className="font-semibold" to="/signin">Back to sign in</Link>}>
       {sent ? (
-        <p role="status">If an account exists for {email.trim()}, a reset link is on its way. Check your spam folder too.</p>
+        <Banner role="status">If an account exists for {email.trim()}, a reset link is on its way. Check your spam folder too.</Banner>
       ) : (
-        <form onSubmit={submit} noValidate className="space-y-4">
+        <form onSubmit={submit} noValidate className="stack gap-base">
           <FormError>{formError}</FormError>
           <Field label="Email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} error={error} />
-          <button type="submit" className="btn btn-primary w-full" disabled={busy}>{busy ? 'Sending…' : 'Send reset link'}</button>
+          <Button type="submit" block loading={busy}>{busy ? 'Sending…' : 'Send reset link'}</Button>
         </form>
       )}
     </AuthShell>

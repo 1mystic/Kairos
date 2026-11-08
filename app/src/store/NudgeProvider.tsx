@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { Link } from 'react-router';
-import { Modal } from '../components/ui';
+import { LinkButton, Button, Modal } from '../components/ui';
 import { useGuest, useLocalStore } from './StoreProvider';
 import {
   MANY_SESSIONS, bannerVisible, flushPending, loadNudge, requestNudge, saveNudge, snoozeBanner, trackActiveDay,
@@ -76,9 +75,9 @@ export function NudgeProvider({ children, kv, now = () => new Date() }: { childr
       {modal && (
         <Modal title="Keep your progress safe" onClose={() => setModal(null)} dismissLabel="Not now">
           <p className="text-slate">{COPY[modal]}</p>
-          <div className="flex flex-col gap-2 sm:flex-row-reverse">
-            <Link to="/signup" className="btn btn-primary" onClick={() => setModal(null)}>Create account</Link>
-            <button type="button" className="btn btn-secondary" onClick={() => setModal(null)}>Not now</button>
+          <div className="stack gap-tight sm:flex-row-reverse">
+            <LinkButton to="/signup" onClick={() => setModal(null)}>Create account</LinkButton>
+            <Button variant="secondary" onClick={() => setModal(null)}>Not now</Button>
           </div>
         </Modal>
       )}

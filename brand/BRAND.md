@@ -9,7 +9,9 @@ neutrals (ink → paper greys) + **indigo** + **saffron**. nothing else in the p
 | token | hex | use |
 |---|---|---|
 | ink | #0E1330 | text, dark bg |
-| slate / line / paper / surface | #5B6178 / #E3E5EC / #FAFAF7 / #FFFFFF | neutral greys |
+| slate / paper / surface | #5B6178 / #FAFAF7 / #FFFFFF | neutral greys |
+| surface-2 / surface-3 | #F1F2F7 / #E5E7F0 (dark #1A2046 / #262D5C) | tint layers replacing borders: cards / fields, hover, tracks |
+| line | #E3E5EC | 1px tinted rule, dividers only, sparingly |
 | primary (indigo) | #3A3FD9 | buttons, links, active, **on track** |
 | primary-50 | #EEF0FF | tints, selected rows |
 | accent (saffron) | #F5A524 | countdown, streaks, highlights, **slightly behind** (tint) / **behind** (solid) |
@@ -29,4 +31,4 @@ status = good→primary, warn→accent tint, bad→accent solid + plain words. n
 `logo.svg` — a K whose diagonal is an hourglass waist; the saffron dot = the moment. mark alone = `logo-mark.svg` (app icon, favicon). min size 20px. clear space = height of the dot.
 
 ## ui feel
-flat, roomy, 8px grid, radius 10 (cards) / 8 (buttons), no gradients except the countdown ring. dark mode first-class (students study at night).
+**flat.** no borders, no outlines, no box-shadows, no gradients (sole exception: the landing countdown ring, indigo to saffron). layers are made of tints: paper > surface > surface-2 (cards) > surface-3 (fields, hover, tracks); primary-50 for selected/hero. one spacing scale (4/8/12/16/24/32/48/64), radius 16 cards / 12 buttons + inputs / pill chips, 8px grid, big tap targets (>=44px), dark mode first-class (students study at night). focus = 2px primary ring (focus-visible only). full rules: `docs/10_DESIGN_SYSTEM.md`.
