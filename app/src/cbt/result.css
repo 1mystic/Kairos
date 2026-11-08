@@ -6,11 +6,11 @@
 .mock-row { border-radius: var(--radius-card); background: var(--surface-2); }
 .mock-row-ok { background: var(--primary-50); }
 .mock-row-bad { background: var(--accent-50); }
-.mock-row-head { display: grid; gap: var(--space-2); padding: var(--space-4); align-items: center; }
+.mock-row-head { display: grid; gap: var(--space-2); min-height: 56px; padding: var(--card-pad); align-items: center; }
 .mock-row-id { font-weight: 600; }
 .mock-cell { display: grid; }
 .mock-cell-label { color: var(--slate); font-size: var(--fs-caption); }
-.mock-row-body { padding: 0 var(--space-4) var(--space-4); }
+.mock-row-body { padding: 0 var(--card-pad) var(--card-pad); }
 @media (min-width: 640px) {
   .result-bar { position: sticky; top: var(--sticky-top); z-index: 10; }
   .result-actions { grid-template-columns: repeat(4, minmax(0, 1fr)); }

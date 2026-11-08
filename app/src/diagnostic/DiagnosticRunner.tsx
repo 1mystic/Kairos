@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { DIAG_TIME_BUDGET_S, type KairosEvent, type Question } from '@kairos/core';
 import { QuestionView } from '../components/QuestionView';
 import { ClockIcon } from '../components/icons';
-import { Button, Card, Chip, Input, ProgressBar } from '../components/ui';
+import { Button, Card, Chip, Columns, Input, ProgressBar } from '../components/ui';
 import { SessionRecorder, lastAnswer } from '../practice/recorder';
 import type { DiagBuffer } from './diagnosticBuffer';
 import { DIAG_ITEMS_PER_CHAPTER, gradeOne, nextItem, type DiagAnswer, type DiagBuffered } from './diagnosticCore';
@@ -202,8 +202,8 @@ export function DiagnosticRunner({ bank, chapters, base, initial, buffer, clock 
 
   const timerCard = (
     <Card>
-      <div className="stack gap-s3">
-        <span className="row gap-s2 text-small text-slate">
+      <div className="stack-card">
+        <span className="row-inline text-small text-slate">
           <ClockIcon width={16} height={16} />
           Time left
         </span>
@@ -213,12 +213,19 @@ export function DiagnosticRunner({ bank, chapters, base, initial, buffer, clock 
     </Card>
   );
 
+  const side = (
+    <div className="stack-grid" role="group" aria-label="Diagnostic progress">
+      {timerCard}
+      <Button variant="ghost" onClick={() => finish(q)}>Finish early</Button>
+    </div>
+  );
+
   return (
-    <div className="mx-auto grid w-full max-w-reading gap-s5 xl:max-w-app xl:grid-cols-3 xl:gap-s6">
-      <div className="stack gap-s4 xl:col-span-2">
-        <div className="row justify-between gap-s3">
+    <Columns ratio="main-side" sideFrom="lg" side={side}>
+      <div className="stack-card">
+        <div className="row-between">
           <Chip tone="primary">Question {num} of about {Math.max(target, num)}</Chip>
-          <span className="row gap-s2 text-small text-slate xl:hidden">
+          <span className="row-inline text-small text-slate lg:hidden">
             <ClockIcon width={16} height={16} />
             <span className="tabular" data-testid="timer-compact">{fmt(left)}</span>
             <Button size="sm" variant="ghost" onClick={togglePause}>{paused ? 'Resume' : 'Pause'}</Button>
@@ -228,7 +235,7 @@ export function DiagnosticRunner({ bank, chapters, base, initial, buffer, clock 
 
         {paused ? (
           <Card>
-            <div className="stack items-center gap-s4 py-s6 text-center">
+            <div className="stack-card items-center text-center">
               <h2 className="text-h2">Paused</h2>
               <p className="text-slate">Take your time. The question is hidden until you resume.</p>
               <Button onClick={togglePause}>Resume</Button>
@@ -236,10 +243,10 @@ export function DiagnosticRunner({ bank, chapters, base, initial, buffer, clock 
           </Card>
         ) : (
           <Card>
-            <div className="stack gap-s4">
+            <div className="stack-card">
               <QuestionView question={q} selected={selected} onSelect={isNumeric ? undefined : (keys) => setValue([...keys].sort().join(','))} />
               {isNumeric && (
-                <div className="stack gap-s2">
+                <div className="stack-label">
                   <label htmlFor="diag-numeric" className="text-small font-semibold">Your answer</label>
                   <Input
                     id="diag-numeric"
@@ -257,22 +264,16 @@ export function DiagnosticRunner({ bank, chapters, base, initial, buffer, clock 
         )}
 
         {!paused && (
-          <div className="row justify-between gap-s3">
+          <div className="row-between">
             <Button variant="ghost" onClick={() => advance(true)}>Not sure, skip</Button>
             <Button onClick={() => advance(false)} disabled={answer.trim() === ''}>Next</Button>
           </div>
         )}
-        <p className="hidden text-caption text-slate xl:block">Keys: 1 to 4 pick an option, Enter moves on. No answers are shown until the end.</p>
-        <div className="xl:hidden">
+        <p className="hidden text-caption text-slate lg:block">Keys: 1 to 4 pick an option, Enter moves on. No answers are shown until the end.</p>
+        <div className="lg:hidden">
           <Button variant="ghost" onClick={() => finish(q)}>Finish early</Button>
         </div>
       </div>
-      <aside className="hidden xl:block" aria-label="Diagnostic progress">
-        <div className="stack gap-s4">
-          {timerCard}
-          <Button variant="ghost" onClick={() => finish(q)}>Finish early</Button>
-        </div>
-      </aside>
-    </div>
+    </Columns>
   );
 }

@@ -2,7 +2,7 @@ import { useContext, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import type { Aggregate, Manifest, UserQuestion } from '@kairos/core';
 import { useManifest } from '../bank/hooks';
-import { Button, Card, Chip, EmptyState, Input, LinkButton, Page, PageHeader, Section, Skeleton, Tabs } from '../components/ui';
+import { Button, Card, CardGrid, Chip, EmptyState, Input, LinkButton, Page, PageHeader, PageSkeleton, Section, Tabs } from '../components/ui';
 import { useStore } from '../store';
 import { BankContext } from '../store/bankHooks';
 import { getSessionBuffer, isResumable } from './buffer';
@@ -102,7 +102,7 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
       <PageHeader title="Practice" subtitle="Pick a chapter, or mix a few. We choose questions that suit you right now." />
       {resumeLink && (
         <Card tone="primary">
-          <div className="row justify-between gap-s4">
+          <div className="row-between">
             <span>You have an unfinished session.</span>
             <LinkButton to={resumeLink.to}>{resumeLink.label}</LinkButton>
           </div>
@@ -120,11 +120,11 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
       />
 
       <Card>
-        <div className="stack gap-s4">
-          <div className="grid gap-s4 md:grid-cols-2 xl:grid-cols-3">
-            <div className="stack gap-s2">
+        <div className="stack-card">
+          <CardGrid cols={3}>
+            <div className="stack-label">
               <span className="text-small font-semibold">Questions per session</span>
-              <div className="row gap-s2" role="group" aria-label="Session size">
+              <div className="row-inline" role="group" aria-label="Session size">
                 {SESSION_SIZES.map((n) => (
                   <Toggle key={n} on={size === n} onClick={() => setSize(n)}>
                     {String(n)}
@@ -132,9 +132,9 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                 ))}
               </div>
             </div>
-            <div className="stack gap-s2">
+            <div className="stack-label">
               <span className="text-small font-semibold">Mode</span>
-              <div className="row gap-s2" role="group" aria-label="Mode">
+              <div className="row-inline" role="group" aria-label="Mode">
                 <Toggle on={mode === 'relaxed'} onClick={() => setMode('relaxed')}>Relaxed</Toggle>
                 <Toggle on={mode === 'timed'} onClick={() => setMode('timed')}>Timed</Toggle>
               </div>
@@ -142,16 +142,16 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                 {mode === 'timed' ? 'Each question has a countdown. No pausing.' : 'Pause whenever you need.'}
               </span>
             </div>
-            <div className="stack gap-s2">
+            <div className="stack-label">
               <span className="text-small font-semibold">Difficulty</span>
-              <div className="row gap-s2" role="group" aria-label="Difficulty">
+              <div className="row-inline" role="group" aria-label="Difficulty">
                 {BANDS.map((b) => (
                   <Toggle key={b.id} on={bands.includes(b.id)} onClick={() => toggleBand(b.id)}>{b.label}</Toggle>
                 ))}
               </div>
             </div>
-          </div>
-          <div className="row gap-s4">
+          </CardGrid>
+          <div className="row-between">
             <div className="min-w-0 flex-1 basis-48">
               <Input
                 type="search"
@@ -161,7 +161,7 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                 onChange={(e) => setQuery(e.target.value)}
               />
             </div>
-            <div className="row gap-s2">
+            <div className="row-inline">
               <Toggle on={unseen} onClick={() => setUnseen(!unseen)}>Only unseen</Toggle>
               <Toggle on={weak} onClick={() => setWeak(!weak)}>Weak first</Toggle>
             </div>
@@ -170,8 +170,8 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
       </Card>
 
       <Card tone="primary">
-        <div className="row justify-between gap-s4">
-          <div className="stack gap-s1">
+        <div className="row-between">
+          <div className="stack-text">
             <span className="text-h3">Mixed practice</span>
             <span className="text-small text-slate">
               {mixIds.length
@@ -195,8 +195,8 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
           aside={<span className="text-small text-slate tabular">{mine.total} ready to practise</span>}
         >
           <Card>
-            <div className="stack gap-s4">
-              <div className="row justify-between gap-s4">
+            <div className="stack-card">
+              <div className="row-between">
                 <p className="min-w-0 flex-1 basis-48 text-small text-slate">
                   Questions you uploaded. Ones with an answer behave like any other and update your mastery.
                 </p>
@@ -207,9 +207,9 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                 )}
               </div>
               {mine.selfCheckCount > 0 && (
-                <div className="stack gap-s2">
-                  <label className="row min-h-s7 items-start gap-s2 text-small">
-                    <input type="checkbox" checked={selfCheck} onChange={() => setSelfCheck(!selfCheck)} className="mt-s1 size-s5 shrink-0 accent-primary" />
+                <div className="stack-label">
+                  <label className="check-row row-inline items-start text-small">
+                    <input type="checkbox" checked={selfCheck} onChange={() => setSelfCheck(!selfCheck)} className="size-s5 shrink-0 accent-primary" />
                     <span className="min-w-0">Include questions without answers (self-check)</span>
                   </label>
                   <span className="text-caption text-slate">
@@ -218,10 +218,10 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                 </div>
               )}
               {mine.byChapter.size > 0 && (
-                <ul className="grid gap-s3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                <CardGrid as="ul" cols="auto" gap="tight">
                   {[...mine.byChapter].map(([id, n]) => (
-                    <li key={id} className="rounded-card bg-surface-2 p-s4">
-                      <Link to={`/practice/${exam}/${id}?${myParams()}`} className="stack min-h-s7 gap-s1 text-ink no-underline">
+                    <li key={id} className="card">
+                      <Link to={`/practice/${exam}/${id}?${myParams()}`} className="stack-text text-ink no-underline">
                         <span className="text-body font-semibold">{chapterNames.get(id) ?? id}</span>
                         <span className="text-small text-slate tabular">
                           {n} of your question{n === 1 ? '' : 's'}
@@ -229,7 +229,7 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                       </Link>
                     </li>
                   ))}
-                </ul>
+                </CardGrid>
               )}
             </div>
           </Card>
@@ -242,16 +242,16 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
         if (rows.length === 0) return null;
         return (
           <Section key={s.id} title={s.name} aside={<span className="text-small text-slate tabular">{rows.length} chapters</span>}>
-            <ul className="grid gap-s3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+            <CardGrid as="ul" cols="auto" gap="tight">
               {rows.map((c) => {
                 const words = masteryWords(mastery[c.id]);
                 const has = c.count > 0;
                 return (
-                  <li key={c.id} className={`stack gap-s2 rounded-card bg-surface-2 p-s4 ${has ? '' : 'opacity-70'}`}>
+                  <li key={c.id} className={`card ${has ? '' : 'opacity-70'}`}>
                     {has ? (
                       <Link
                         to={`/practice/${exam}/${c.id}?${params()}`}
-                        className="stack min-h-s7 gap-s1 text-ink no-underline"
+                        className="stack-text text-ink no-underline"
                       >
                         <span className="text-body font-semibold">{c.name}</span>
                         <span className="text-small text-slate tabular">
@@ -259,15 +259,15 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                         </span>
                       </Link>
                     ) : (
-                      <div className="stack min-h-s7 gap-s1">
+                      <div className="stack-text">
                         <span className="text-body font-semibold text-slate">{c.name}</span>
                         <span className="text-small text-slate">No questions yet</span>
                       </div>
                     )}
-                    <div className="row justify-between gap-s2">
+                    <div className="row-between card-footer">
                       {words ? <Chip tone={words.tone}>{words.text}</Chip> : <span />}
                       {has && (
-                        <label className="row min-h-s7 gap-s2 text-small text-slate">
+                        <label className="check-row row-inline text-small text-slate">
                           <input
                             type="checkbox"
                             checked={mix.includes(c.id)}
@@ -281,7 +281,7 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
                   </li>
                 );
               })}
-            </ul>
+            </CardGrid>
           </Section>
         );
       })}
@@ -327,10 +327,7 @@ export function PracticePicker() {
     );
   if (!m.data || !tax)
     return (
-      <Page width="app">
-        <Skeleton className="h-s7 w-full" />
-        <Skeleton className="h-s8 w-full" />
-      </Page>
+      <PageSkeleton cards={6} />
     );
   return <PickerView tax={tax} manifest={m.data.manifest} mastery={mastery} resumeLink={resume} myQuestions={mine} />;
 }

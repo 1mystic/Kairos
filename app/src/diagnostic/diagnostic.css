@@ -1,0 +1,5 @@
+/* Diagnostic screens. Mobile: the "What to expect" side card comes first; from lg the side column is the right-hand 1fr. */
+.diag-first > .cols > .cols-side { order: -1; }
+@media (min-width: 1024px) {
+  .diag-first > .cols > .cols-side { order: 0; }
+}

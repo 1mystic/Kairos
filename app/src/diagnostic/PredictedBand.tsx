@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InfoIcon } from '../components/icons';
-import { Chip, IconButton, LinkButton, Modal, Skeleton } from '../components/ui';
+import { Chip, IconButton, LinkButton, Modal, SkeletonCards } from '../components/ui';
 import { usePredictedScore, type PredictedScore } from './usePredictedScore';
 
 /** "168–196 · target 180 · based on 214 questions" */
@@ -33,7 +33,7 @@ export function RangeBar({ p25, p50, p75, max, target }: { p25: number; p50: num
 function Explain({ p, onClose }: { p: PredictedScore; onClose(): void }) {
   return (
     <Modal title="How this is worked out" onClose={onClose}>
-      <div className="stack gap-s3 text-small">
+      <div className="stack-card text-small">
         <p>
           We build 500 practice papers in the real exam's format, answer each one the way your current ability suggests, and mark them with the real
           scheme, including negative marks. The bar shows the middle half of those results (25th to 75th percentile). The line inside is the median.
@@ -52,24 +52,24 @@ function Explain({ p, onClose }: { p: PredictedScore; onClose(): void }) {
 /** Presentational part, so tests and storybook-style callers can pass a state directly. */
 export function PredictedBandView({ p }: { p: PredictedScore }) {
   const [open, setOpen] = useState(false);
-  if (p.loading) return <Skeleton className="h-s8 w-full" />;
+  if (p.loading) return <SkeletonCards count={1} cols={1} />;
   if (!p.band || p.max === undefined) {
     return (
-      <div className="stack gap-s3 rounded-card bg-surface-2 p-s4" data-testid="predicted-empty">
+      <div className="card" data-testid="predicted-empty">
         <span className="text-small font-semibold">Predicted score</span>
         <p className="text-small text-slate">
           Not enough data yet. After about 40 practice questions across 10 or more topics, a likely score range shows up here.
         </p>
-        <div className="row gap-s2">
+        <div className="row-inline">
           <LinkButton to="/diagnostic" size="sm" variant="secondary">Find your starting point</LinkButton>
         </div>
       </div>
     );
   }
   return (
-    <div className="stack gap-s3 rounded-card bg-surface-2 p-s4" data-testid="predicted-band">
-      <div className="row justify-between gap-s2">
-        <span className="row gap-s2 text-small font-semibold">
+    <div className="card" data-testid="predicted-band">
+      <div className="row-between">
+        <span className="row-inline text-small font-semibold">
           Predicted score
           {p.confidence === 'rough' && <Chip tone="accent">Rough estimate</Chip>}
         </span>

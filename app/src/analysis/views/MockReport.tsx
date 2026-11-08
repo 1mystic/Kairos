@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import { masteryByChapter, type MasteryDoc } from '@kairos/core';
-import { Banner, Card, Chip, EmptyState, LinkButton, Skeleton, Stat } from '../../components/ui';
+import { Banner, Card, CardGrid, Chip, EmptyState, LinkButton, ListRow, SkeletonRows, Stat } from '../../components/ui';
 import { ClockIcon } from '../../components/icons';
 import { readAnalysis } from '../../cbt/model';
 import { loadTaxonomy, topicMeta, type Taxonomy } from '../../practice/taxonomy';
@@ -30,13 +30,13 @@ export interface MockReportProps {
   benchmarks?: Benchmarks | null;
 }
 
-function Part({ n, title, wide, children }: { n: number; title: string; wide?: boolean; children: ReactNode }) {
+function Part({ n, title, children }: { n: number; title: string; children: ReactNode }) {
   return (
-    <Card as="section" className={`min-w-0 ${wide ? 'lg:col-span-2' : ''}`} aria-label={`Part ${n}: ${title}`}>
-      <div className="stack gap-loose">
-        <div className="flex items-center gap-s3">
+    <Card as="section" aria-label={`Part ${n}: ${title}`}>
+      <div className="stack-card">
+        <div className="row-inline">
           <span className="grid size-s6 shrink-0 place-items-center rounded-pill bg-primary-50 text-small font-semibold tabular text-primary" aria-hidden="true">{n}</span>
-          <h2 className="text-h2">{title}</h2>
+          <h2 className="text-h3">{title}</h2>
         </div>
         {children}
       </div>
@@ -127,16 +127,16 @@ export function MockReport(props: MockReportProps) {
   const lostTime = a.durationMs - a.usedMs;
 
   return (
-    <div className="grid grid-cols-1 gap-s6 lg:grid-cols-2" data-testid="mock-report">
-      <Part n={1} title="Score and trend" wide>
-        <div className="grid grid-cols-1 gap-s6 md:grid-cols-2 lg:grid-cols-4">
+    <div className="stack-grid" data-testid="mock-report">
+      <Part n={1} title="Score and trend">
+        <CardGrid cols={4} dense>
           <Stat label="Score" value={<span className="tabular">{marksText(wf.actual)} / {marksText(wf.max)}</span>} hint={curPct === null ? undefined : `${pct(curPct)} of the paper`} />
           <Stat label="Percentile" value="—" hint="Available with all-India mocks" />
           <Stat label="Rank band" value="—" hint="Available with all-India mocks" />
           <Stat label="Time used" value={clock(a.usedMs / 60_000)} hint={lostTime > 60_000 ? `${Math.round(lostTime / 60_000)} min left unused` : 'Nearly all of the 3 hours'} />
-        </div>
+        </CardGrid>
         {attempts.length >= 2 ? (
-          <div className="stack gap-tight">
+          <div className="stack-label">
             <p className="text-body">
               {lastPrev !== null && curPct !== null
                 ? `${curPct >= lastPrev ? 'Up' : 'Down'} ${Math.abs(Math.round((curPct - lastPrev) * 100))} points on your previous mock (${pct(lastPrev)} then, ${pct(curPct)} now).`
@@ -157,15 +157,16 @@ export function MockReport(props: MockReportProps) {
         )}
       </Part>
 
+      <CardGrid cols={2}>
       <Part n={2} title="Where the marks went">
         <p className="text-body">{lostLine}</p>
         <WaterfallChart w={wf} selected={sel?.id} onSelect={(b) => setSel(sel?.id === b.id ? null : b)} />
         {sel ? (
           <Card tone="primary" role="region" aria-label={`${sel.label} questions`}>
-            <div className="stack gap-tight">
+            <div className="stack-label">
               <h3 className="text-h3">{sel.label}: {marksText(sel.marks)} marks</h3>
               <p className="text-small">{sel.hint}</p>
-              <ul className="stack gap-s1 text-small">{sel.qids.map((q) => <li key={q}>{nameOf(q)}</li>)}</ul>
+              <ul className="stack-text text-small">{sel.qids.map((q) => <li key={q}>{nameOf(q)}</li>)}</ul>
             </div>
           </Card>
         ) : (
@@ -181,14 +182,15 @@ export function MockReport(props: MockReportProps) {
         {quad && quad.subjects.length > 0 ? (
           <>
             <QuadrantPlot cells={quad.subjects} />
-            <ul className="stack gap-s2">
+            <ul className="stack-label">
               {quad.subjects.map((c) => (
-                <li key={c.key} className="stack gap-s1 rounded-btn bg-surface p-s3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-s2">
-                    <span className="font-semibold">{c.label}</span>
+                <li key={c.key}>
+                  <ListRow
+                    title={c.label}
+                    description={<><Chip tone={c.quadrant === 'steady' || c.quadrant === 'cautious' ? 'primary' : 'accent'}>{QUAD_NAME[c.quadrant]}</Chip> {c.advice}</>}
+                  >
                     <span className="tabular text-small text-slate">attempted {pct(c.attemptRate)} · accuracy {pct(c.accuracy)}</span>
-                  </div>
-                  <p className="text-small"><Chip tone={c.quadrant === 'steady' || c.quadrant === 'cautious' ? 'primary' : 'accent'}>{QUAD_NAME[c.quadrant]}</Chip> {c.advice}</p>
+                  </ListRow>
                 </li>
               ))}
             </ul>
@@ -198,15 +200,17 @@ export function MockReport(props: MockReportProps) {
           </>
         ) : <p className="text-slate">Nothing attempted, so there is nothing to compare yet.</p>}
       </Part>
+      </CardGrid>
 
+      <CardGrid cols={2}>
       <Part n={4} title="Where the 3 hours went">
         {tm && tm.totalMs > 0 ? (
           <>
             <TimeBars tm={tm} />
             {tm.slowest.length > 0 ? (
-              <div className="stack gap-s1">
+              <div className="stack-text">
                 <p className="text-small font-semibold">Questions that ran long against their usual time</p>
-                <ul className="stack gap-s1 text-small">
+                <ul className="stack-text text-small">
                   {tm.slowest.map((q) => <li key={q.qid} className="tabular">{nameOf(q.qid)}: {mmss(q.timeMs)} against about {mmss(q.medianMs!)}</li>)}
                 </ul>
               </div>
@@ -219,7 +223,7 @@ export function MockReport(props: MockReportProps) {
         {fat ? (
           <>
             <p className="text-body">{fat.text}</p>
-            <div className="stack gap-s2">
+            <div className="stack-label">
               <p className="text-small font-semibold">Accuracy</p>
               <LineChart
                 points={fat.points.map((p) => ({ x: p.centreMin, y: p.accuracy }))}
@@ -245,20 +249,22 @@ export function MockReport(props: MockReportProps) {
           </>
         ) : <p className="text-slate">Not enough answers to draw a curve.</p>}
       </Part>
+      </CardGrid>
 
-      <Part n={6} title="Chapters by weight and mastery" wide>
-        {tax === undefined ? <Skeleton className="h-s8 w-full" /> : tax === null ? (
+      <Part n={6} title="Chapters by weight and mastery">
+        {tax === undefined ? <SkeletonRows count={1} /> : tax === null ? (
           <p className="text-slate">The chapter list is not available offline yet. Open this report once while online and it will be kept.</p>
         ) : (
           <Heatmap cells={heat ?? []} exam={exam} empty="Chapter data for this paper is not available yet." />
         )}
       </Part>
 
+      <CardGrid cols={2}>
       <Part n={7} title="Against the top 10%">
         {top ? (
-          <div className="stack gap-tight">
+          <div className="stack-label">
             <p className="text-body">The top 10% scored {marksText(top.top.marks)} of {marksText(top.top.max)} on this paper: {top.marksGap > 0 ? `${marksText(top.marksGap)} marks ahead of you.` : 'you are at or above that line.'}</p>
-            <ul className="stack gap-s1 text-small">{top.subjectGaps.map((g) => <li key={g.subject} className="tabular">{subjectName(g.subject)}: you {marksText(g.you)}, top 10% {marksText(g.top)}</li>)}</ul>
+            <ul className="stack-text text-small">{top.subjectGaps.map((g) => <li key={g.subject} className="tabular">{subjectName(g.subject)}: you {marksText(g.you)}, top 10% {marksText(g.top)}</li>)}</ul>
           </div>
         ) : (
           <Banner>
@@ -269,23 +275,24 @@ export function MockReport(props: MockReportProps) {
 
       <Part n={8} title="What to fix first">
         {fix.length > 0 ? (
-          <ol className="stack gap-s2">
+          <ol className="stack-label">
             {fix.map((f, i) => (
-              <li key={f.id} className="flex flex-wrap items-center justify-between gap-s3 rounded-btn bg-surface p-s3">
-                <div className="flex min-w-0 flex-1 basis-60 gap-s3">
-                  <span className="tabular font-semibold text-primary">{i + 1}</span>
-                  <div className="stack gap-s1">
-                    <p className="text-body">{f.text}</p>
-                    <p className="text-small text-slate">{f.marksAtStake > 0 ? `About ${marksText(f.marksAtStake)} marks at stake` : 'Worth fixing before the next mock'}</p>
-                  </div>
-                </div>
-                <Link to={f.link} className="inline-flex min-h-s7 items-center font-semibold text-primary">{f.link.startsWith('/practice') ? 'Practise' : f.link === '/mocks' ? 'Mock tests' : 'Review'}</Link>
+              <li key={f.id}>
+                <ListRow
+                  lead={<span className="tabular font-semibold text-primary">{i + 1}</span>}
+                  title={f.text}
+                  titleClass="text-body"
+                  description={f.marksAtStake > 0 ? `About ${marksText(f.marksAtStake)} marks at stake` : 'Worth fixing before the next mock'}
+                >
+                  <Link to={f.link} className="inline-flex min-h-s7 items-center font-semibold text-primary">{f.link.startsWith('/practice') ? 'Practise' : f.link === '/mocks' ? 'Mock tests' : 'Review'}</Link>
+                </ListRow>
               </li>
             ))}
           </ol>
         ) : <p className="text-slate">Nothing stands out to fix on this paper. Keep your routine going.</p>}
         <p className="text-small text-slate">These feed your daily plan, so the next sessions already lean toward them.</p>
       </Part>
+      </CardGrid>
     </div>
   );
 }

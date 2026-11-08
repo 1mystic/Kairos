@@ -125,10 +125,10 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
       <Page width="reading">
         <PageHeader title="Review mistakes" subtitle={`${wrong.length} to look at`} actions={<Button variant="secondary" onClick={() => setReviewing(false)}>Back to summary</Button>} />
         {wrong.length === 0 && <EmptyState title="Nothing to review">No wrong answers in this session.</EmptyState>}
-        <div className="stack gap-s6">
+        <div className="stack-grid">
           {wrong.map((r, i) => (
             <Card key={r.q.id}>
-              <div className="stack gap-s4">
+              <div className="stack-card">
                 <Chip tone="accent">Mistake {i + 1} of {wrong.length}</Chip>
                 <QuestionView
                   question={r.q}
@@ -157,13 +157,13 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
 
   return (
     <Page width="app">
-      <div className="stack gap-s6">
+      <>
         <div ref={headRef} className="sum-head" data-testid="summary-head">
           <PageHeader title="Session summary" subtitle={summary.n === 0 && selfChecked > 0 ? 'Self-check session logged. These questions do not change your mastery.' : takeaway(summary)} />
           <Card tone="primary">
             <div className="sum-score">
               <div className="grid place-items-center"><AccuracyRing value={summary.accuracy} /></div>
-              <div className="stack gap-s4">
+              <div className="stack-card">
                 <div className="sum-stats">
                   <Stat label="Score" value={`${summary.correct}/${summary.n}`} />
                   <Stat label="Accuracy" value={pct} />
@@ -175,7 +175,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
           </Card>
           {fromMine > 0 && (
             <Card>
-              <div className="stack gap-s2">
+              <div className="stack-text">
                 <span className="text-h3">From your questions</span>
                 <p className="text-small text-slate">
                   {fromMine} question{fromMine === 1 ? '' : 's'} in this session came from your uploads.
@@ -207,7 +207,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
         </nav>
 
         <Section title="Question by question" aside={<Chip>{rows.length} questions</Chip>}>
-          <div className="stack gap-s4">
+          <div className="stack-card">
             <Tabs
               label="Filter questions"
               value={filter}
@@ -229,7 +229,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
             )}
           </div>
         </Section>
-      </div>
+      </>
     </Page>
   );
 }

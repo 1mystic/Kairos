@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router';
 import type { Question } from '@kairos/core';
 import { useManifest } from '../bank/hooks';
-import { Banner, Button, EmptyState, LinkButton, Page, Skeleton, Stack } from '../components/ui';
+import { Banner, Button, EmptyState, LinkButton, Page, PageSkeleton } from '../components/ui';
 import { useSignInNudge, useStore } from '../store';
 import { userBankSource } from '../store/bank';
 import { BankContext } from '../store/bankHooks';
@@ -150,14 +150,7 @@ export function SessionScreen() {
   if (manifest.error) return <Page width="reading"><EmptyState title="Could not load questions" action={back}>Check your connection and try again.</EmptyState></Page>;
   switch (phase.kind) {
     case 'loading':
-      return (
-        <Page width="reading">
-          <Stack gap="base">
-            <Skeleton className="h-s5 w-full" />
-            <Skeleton className="h-s8 w-full" />
-          </Stack>
-        </Page>
-      );
+      return <PageSkeleton width="reading" cards={2} cols={1} />;
     case 'saving':
       return (
         <Page width="reading">

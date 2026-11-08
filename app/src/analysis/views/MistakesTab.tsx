@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router';
 import type { BehaviourLabel, MasteryDoc } from '@kairos/core';
-import { Card, EmptyState, LinkButton, Section, Skeleton } from '../../components/ui';
+import { Card, CardGrid, EmptyState, LinkButton, ListRow, Section, SkeletonRows } from '../../components/ui';
 import { LABEL_WORDS } from '../../practice/finish';
 import type { Taxonomy } from '../../practice/taxonomy';
 import { topicMeta } from '../../practice/taxonomy';
@@ -36,36 +36,38 @@ export function MistakesTab({ mastery, tax, sessions, exam }: { mastery: Mastery
   }
   return (
     <Section title="Your most repeated mistakes">
-      <div className="grid-auto">
+      <CardGrid cols={2}>
         {groups.map((g) => {
           const top = g.chapters[0]!;
           const ex = examples.get(g.label) ?? [];
           const e = exam ?? 'JEE_MAIN';
           return (
-            <Card key={g.label}>
-              <div className="stack gap-base">
-                <div className="flex items-baseline justify-between gap-s3">
+            <Card key={g.label} footer={<Link to={`/practice/${e}/${top.chapter}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">Practise these in {names[top.chapter] ?? top.chapter}</Link>}>
+              <div className="stack-card">
+                <div className="row-between">
                   <h3 className="text-h3">{LABEL_WORDS[g.label]}</h3>
                   <span className="tabular text-small text-slate">{g.count} times</span>
                 </div>
                 <p className="text-small">{EXPLAIN[g.label]}</p>
                 <p className="text-small text-slate">Mostly in {g.chapters.slice(0, 3).map((c) => `${names[c.chapter] ?? c.chapter} (${c.count})`).join(', ')}.</p>
-                {loading ? <Skeleton className="h-s6 w-full" /> : ex.length > 0 && (
-                  <ul className="stack gap-s2">
+                {loading ? <SkeletonRows count={1} /> : ex.length > 0 && (
+                  <ul className="stack-label">
                     {ex.map((x) => (
-                      <li key={x.qid} className="stack gap-s1 rounded-btn bg-surface p-s3 text-small">
-                        <span className="text-slate">{x.chapter ? (names[x.chapter] ?? x.chapter) : 'Question'} · {mmss(x.timeMs)}</span>
-                        <span>{x.stem}</span>
+                      <li key={x.qid}>
+                        <ListRow
+                          title={x.stem}
+                          titleClass="text-small"
+                          description={`${x.chapter ? (names[x.chapter] ?? x.chapter) : 'Question'} · ${mmss(x.timeMs)}`}
+                        />
                       </li>
                     ))}
                   </ul>
                 )}
-                <Link to={`/practice/${e}/${top.chapter}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">Practise these in {names[top.chapter] ?? top.chapter}</Link>
               </div>
             </Card>
           );
         })}
-      </div>
+      </CardGrid>
     </Section>
   );
 }

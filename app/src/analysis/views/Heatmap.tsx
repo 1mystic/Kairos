@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { Button, Card, Chip } from '../../components/ui';
+import { Button, Card, CardGrid, Chip } from '../../components/ui';
 import { AlertIcon } from '../../components/icons';
 import { marksText, subjectName, type HeatCell, type MasteryBand } from '../compute';
 import { Chart, pct } from '../charts/primitives';
@@ -24,18 +24,18 @@ export function Heatmap({ cells, exam, empty }: { cells: HeatCell[]; exam: strin
   const picked = cells.find((c) => c.id === sel);
   const summary = `Chapter heatmap with ${cells.length} chapters. ${flagged.length} high-weight chapters need work${flagged.length ? `: ${flagged.slice(0, 5).map((c) => c.name).join(', ')}` : ''}.`;
   return (
-    <div className="stack gap-loose">
+    <div className="stack-grid">
       <Chart
         summary={summary}
         table={{ caption: 'Chapters by weight and mastery', head: ['Chapter', 'Subject', 'Weight', 'Mastery', 'Status'], rows: cells.map((c) => [c.name, subjectName(c.subject), pct(c.weight), pct(c.mastery), c.flagged ? `${BAND_WORD[c.band]}, focus` : BAND_WORD[c.band]]) }}
       >
         <span className="sr-only">Chapter grid, details below.</span>
       </Chart>
-      <div className="stack gap-loose" role="group" aria-label="Chapter heatmap">
+      <div className="stack-grid" role="group" aria-label="Chapter heatmap">
         {subjects.map((s) => (
-          <div key={s} className="stack gap-tight">
+          <div key={s} className="stack-label">
             <h3 className="text-h3">{subjectName(s)}</h3>
-            <ul className="grid grid-cols-1 gap-s2 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+            <CardGrid as="ul" cols="auto" gap="tight">
               {shown.filter((c) => c.subject === s).map((c) => (
                 <li key={c.id}>
                   <button
@@ -45,14 +45,14 @@ export function Heatmap({ cells, exam, empty }: { cells: HeatCell[]; exam: strin
                     className={`stack h-full min-h-s8 w-full gap-s1 rounded-btn p-s3 text-left ${BAND_BG[c.band]} ${sel === c.id ? 'opacity-80' : ''}`}
                   >
                     <span className="text-small font-semibold">{c.name}</span>
-                    <span className="flex flex-wrap items-center justify-between gap-s1 text-caption">
+                    <span className="row-between text-caption">
                       <span className="tabular font-semibold">{c.mastery === null ? BAND_WORD.unknown : `${pct(c.mastery)} · ${BAND_WORD[c.band]}`}</span>
                       {c.flagged && <span className="inline-flex items-center gap-s1 rounded-pill bg-accent px-s2 font-semibold text-ink"><AlertIcon width={14} height={14} aria-hidden="true" />Focus</span>}
                     </span>
                   </button>
                 </li>
               ))}
-            </ul>
+            </CardGrid>
           </div>
         ))}
       </div>
@@ -60,8 +60,8 @@ export function Heatmap({ cells, exam, empty }: { cells: HeatCell[]; exam: strin
       <p className="text-small text-slate">Sorted by what would help most: how much of the exam a chapter covers, and how well you know it. Chapters marked Not enough data are not called weak: we have not seen enough of your answers yet.</p>
       {picked && (
         <Card tone="primary" role="region" aria-label={`${picked.name} details`}>
-          <div className="stack gap-tight">
-            <div className="flex flex-wrap items-baseline justify-between gap-s2">
+          <div className="stack-label">
+            <div className="row-between">
               <h3 className="text-h3">{picked.name}</h3>
               <Chip tone={picked.flagged ? 'accent' : 'neutral'}>{picked.flagged ? 'High weight, needs work' : BAND_WORD[picked.band]}</Chip>
             </div>

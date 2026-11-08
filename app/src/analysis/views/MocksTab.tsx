@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Card, EmptyState, LinkButton, Section } from '../../components/ui';
+import { Card, CardGrid, EmptyState, LinkButton, Section } from '../../components/ui';
 import { readAnalysis } from '../../cbt/model';
 import type { MockDoc } from '../../store';
 import { LineChart } from '../charts/LineChart';
@@ -25,7 +25,7 @@ export function MocksTab({ mocks }: { mocks: MockDoc[] }) {
   const shares = sorted.map(share);
   const graded = shares.filter((x) => x !== null).length;
   return (
-    <div className="stack gap-section">
+    <div className="stack-section">
       {graded >= 2 && (
         <Section title="Score trend">
           <Card>
@@ -42,26 +42,25 @@ export function MocksTab({ mocks }: { mocks: MockDoc[] }) {
         </Section>
       )}
       <Section title="Your attempts">
-        <div className="grid-auto">
+        <CardGrid cols={3}>
           {[...sorted].reverse().map((m) => {
             const a = readAnalysis(m)!;
             const s = m.score as { marks?: number; max?: number } | null;
             const attempted = a.counts.correct + a.counts.wrong + a.counts.partial;
             return (
-              <Card key={m.id}>
-                <div className="stack gap-base">
-                  <div className="stack gap-s1">
-                    <h3 className="text-h3">{a.title}</h3>
+              <Card key={m.id} footer={<Link to={`/analysis/mock/${m.id}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">Open the full report</Link>}>
+                <div className="stack-card">
+                  <div className="stack-text">
+                    <h3 className="text-h3 card-title-clamp">{a.title}</h3>
                     <p className="text-small text-slate">{when(m.submittedAt)}</p>
                   </div>
                   <p className="tabular text-h1">{s && typeof s.marks === 'number' ? `${marksText(s.marks)} / ${marksText(s.max ?? 0)}` : 'Result pending'}</p>
                   <p className="text-small text-slate">{attempted} of {a.questions.length} attempted · {a.counts.correct} right, {a.counts.wrong} wrong</p>
-                  <Link to={`/analysis/mock/${m.id}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">Open the full report</Link>
                 </div>
               </Card>
             );
           })}
-        </div>
+        </CardGrid>
       </Section>
     </div>
   );

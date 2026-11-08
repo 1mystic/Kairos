@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import type { Blueprint, Manifest, MasteryDoc, Question } from '@kairos/core';
 import { ArrowRightIcon } from '../components/icons';
-import { Banner, Button, Card, Chip, LinkButton, Page, PageHeader, ProgressBar, Section, Select, Stack, Tabs } from '../components/ui';
+import { Banner, Button, Card, CardGrid, Chip, LinkButton, Page, PageHeader, ProgressBar, Columns, Section, Select, Stack, Tabs } from '../components/ui';
 import { EXAMS, isExamId, loadTaxonomy, type ExamId, type Taxonomy } from '../practice/taxonomy';
 import { useStore, type MockDoc, type SessionDoc, type UserStore } from '../store';
 import { blueprintsForExam, loadExamBank } from './examBank';
@@ -221,134 +221,26 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
   const loading = !bank && !loadError;
   const weakCount = used && weak ? Math.round(WEAK_TILT * (summary?.total ?? 0)) : 0;
 
-  return (
-    <Page width="app">
-      <PageHeader title="Make me a mock" subtitle="A fresh paper with the real exam's structure, built from questions you have not met lately." />
-      <div className="grid gap-s6 lg:grid-cols-3">
-        <div className="stack gap-s5 lg:col-span-2">
-          <Card>
-            <div className="stack gap-s5">
-              <div className="stack gap-s2">
-                <span className="text-small font-semibold">Exam</span>
-                <Tabs<ExamId> label="Exam" value={exam} onChange={setExam} tabs={EXAMS.map((e) => ({ id: e.id, label: e.label }))} />
-              </div>
-              {blueprints.length > 1 && (
-                <div className="stack gap-s2">
-                  <label htmlFor="bp" className="text-small font-semibold">Paper format</label>
-                  <Select id="bp" value={bpId} onChange={(e) => setBpId(e.target.value)}>
-                    {blueprints.map((b) => (
-                      <option key={b.id} value={b.id}>{b.id}</option>
-                    ))}
-                  </Select>
-                </div>
-              )}
-              <div className="stack gap-s2">
-                <span className="text-small font-semibold">Length</span>
-                <Tabs<'full' | 'mini'>
-                  label="Length"
-                  value={length}
-                  onChange={setLength}
-                  tabs={[
-                    { id: 'full', label: 'Full length' },
-                    { id: 'mini', label: 'Mini' },
-                  ]}
-                />
-              </div>
-              <div className="stack gap-s2">
-                <span className="text-small font-semibold">Question mix</span>
-                <Tabs<'weak' | 'balanced'>
-                  label="Question mix"
-                  value={tilt}
-                  onChange={setTilt}
-                  tabs={[
-                    { id: 'weak', label: 'Tilt to my weak chapters' },
-                    { id: 'balanced', label: 'Balanced' },
-                  ]}
-                />
-                <p className="text-small text-slate">
-                  Question counts always match the real exam. Tilting moves about a quarter of the questions to chapters that need more work.
-                </p>
-              </div>
-            </div>
-          </Card>
-
-          <Card>
-            <div className="stack gap-s4">
-              <h2 className="text-h2">Structure</h2>
-              {loading || !summary ? (
-                <p className="text-slate">Loading the exam format.</p>
-              ) : summary.total === 0 ? (
-                <p className="text-slate">Nothing to show yet.</p>
-              ) : (
-                <div className="grid-auto">
-                  {summary.subjects.map((s) => (
-                    <div key={s.code} className="stack gap-s2 rounded-card bg-surface-3 p-s4">
-                      <div className="row justify-between gap-s2">
-                        <h3 className="text-body font-semibold">{subjectName(s.code)}</h3>
-                        <span className="text-small text-slate tabular">{s.count} questions</span>
-                      </div>
-                      <ul className="stack gap-s1 text-small text-slate">
-                        {s.sections.map((x) => (
-                          <li key={x.id}>
-                            Section {x.id}: {x.count} {TYPE_WORDS[x.type]}, +{x.correct}
-                            {x.wrong !== 0 ? ` / ${x.wrong}` : ''}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </Card>
-
-          <Card>
-            <div className="stack gap-s3">
-              <h2 className="text-h2">Chapter mix</h2>
-              {tilt === 'balanced' || !weak || weak.chapters.length === 0 ? (
-                <p className="text-slate">
-                  Chapters follow the exam's usual spread{weights?.source === 'equal' ? ' (equal across chapters until multi-year weights are published)' : ''}.
-                </p>
-              ) : (
-                <>
-                  <p className="text-slate">
-                    About {Math.round(WEAK_TILT * 100)}% ({weakCount} questions) come from these chapters. The rest follow the usual spread.
-                    {weak.unseen.length > 0 && ' Chapters you have not tried yet are included, because we do not know your level there.'}
-                  </p>
-                  <div className="row gap-s2">
-                    {weak.chapters.map((c) => (
-                      <Chip key={c} tone={weak.unseen.includes(c) ? 'neutral' : 'accent'}>
-                        {chapterName(c)}
-                        {weak.unseen.includes(c) ? ' (new)' : ''}
-                      </Chip>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </Card>
-        </div>
-
-        <aside className="lg:col-span-1 lg:sticky lg:top-s6 lg:self-start">
+  const side = (
           <Card tone="primary">
-            <div className="stack gap-s4">
-              <div className="stack gap-s1">
+            <div className="stack-card">
+              <div className="stack-text">
                 <span className="text-caption font-semibold uppercase tracking-wide text-slate">Paper number</span>
-                <div className="row justify-between gap-s3">
+                <div className="row-between">
                   <span className="text-h1 tabular">#{code}</span>
                   <Button variant="ghost" size="sm" onClick={newSeed} disabled={gen.kind === 'working'}>New number</Button>
                 </div>
                 <span className="text-small text-slate">The same number gives the same paper.</span>
               </div>
               {summary && summary.total > 0 && (
-                <div className="grid grid-cols-3 gap-s3">
+                <CardGrid cols={3} dense gap="tight">
                   <div className="stack"><span className="text-h2 tabular">{summary.total}</span><span className="text-caption text-slate">questions</span></div>
                   <div className="stack"><span className="text-h2 tabular">{summary.marks}</span><span className="text-caption text-slate">marks</span></div>
                   <div className="stack"><span className="text-h2 tabular">{summary.durationMin}</span><span className="text-caption text-slate">minutes</span></div>
-                </div>
+                </CardGrid>
               )}
               {loading && (
-                <div className="stack gap-s2">
+                <div className="stack-label">
                   <ProgressBar value={progress[0]} max={progress[1]} label="Loading questions" />
                   <span className="text-small text-slate tabular">Loading questions, {progress[0]} of {progress[1]}</span>
                 </div>
@@ -399,18 +291,126 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
               )}
             </div>
           </Card>
-        </aside>
-      </div>
+  );
+
+  return (
+    <Page width="app">
+      <PageHeader title="Make me a mock" subtitle="A fresh paper with the real exam's structure, built from questions you have not met lately." />
+      <Columns ratio="main-side" side={side}>
+        <div className="stack-grid">
+          <Card>
+            <div className="stack-field">
+              <div className="stack-label">
+                <span className="text-small font-semibold">Exam</span>
+                <Tabs<ExamId> label="Exam" value={exam} onChange={setExam} tabs={EXAMS.map((e) => ({ id: e.id, label: e.label }))} />
+              </div>
+              {blueprints.length > 1 && (
+                <div className="stack-label">
+                  <label htmlFor="bp" className="text-small font-semibold">Paper format</label>
+                  <Select id="bp" value={bpId} onChange={(e) => setBpId(e.target.value)}>
+                    {blueprints.map((b) => (
+                      <option key={b.id} value={b.id}>{b.id}</option>
+                    ))}
+                  </Select>
+                </div>
+              )}
+              <div className="stack-label">
+                <span className="text-small font-semibold">Length</span>
+                <Tabs<'full' | 'mini'>
+                  label="Length"
+                  value={length}
+                  onChange={setLength}
+                  tabs={[
+                    { id: 'full', label: 'Full length' },
+                    { id: 'mini', label: 'Mini' },
+                  ]}
+                />
+              </div>
+              <div className="stack-label">
+                <span className="text-small font-semibold">Question mix</span>
+                <Tabs<'weak' | 'balanced'>
+                  label="Question mix"
+                  value={tilt}
+                  onChange={setTilt}
+                  tabs={[
+                    { id: 'weak', label: 'Tilt to my weak chapters' },
+                    { id: 'balanced', label: 'Balanced' },
+                  ]}
+                />
+                <p className="text-small text-slate">
+                  Question counts always match the real exam. Tilting moves about a quarter of the questions to chapters that need more work.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card>
+            <div className="stack-card">
+              <h2 className="text-h3">Structure</h2>
+              {loading || !summary ? (
+                <p className="text-slate">Loading the exam format.</p>
+              ) : summary.total === 0 ? (
+                <p className="text-slate">Nothing to show yet.</p>
+              ) : (
+                <CardGrid cols="auto" gap="tight">
+                  {summary.subjects.map((s) => (
+                    <div key={s.code} className="stack-label rounded-card bg-surface-3 p-s4">
+                      <div className="row-between">
+                        <h3 className="text-body font-semibold">{subjectName(s.code)}</h3>
+                        <span className="text-small text-slate tabular">{s.count} questions</span>
+                      </div>
+                      <ul className="stack-text text-small text-slate">
+                        {s.sections.map((x) => (
+                          <li key={x.id}>
+                            Section {x.id}: {x.count} {TYPE_WORDS[x.type]}, +{x.correct}
+                            {x.wrong !== 0 ? ` / ${x.wrong}` : ''}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </CardGrid>
+              )}
+            </div>
+          </Card>
+
+          <Card>
+            <div className="stack-card">
+              <h2 className="text-h3">Chapter mix</h2>
+              {tilt === 'balanced' || !weak || weak.chapters.length === 0 ? (
+                <p className="text-slate">
+                  Chapters follow the exam's usual spread{weights?.source === 'equal' ? ' (equal across chapters until multi-year weights are published)' : ''}.
+                </p>
+              ) : (
+                <>
+                  <p className="text-slate">
+                    About {Math.round(WEAK_TILT * 100)}% ({weakCount} questions) come from these chapters. The rest follow the usual spread.
+                    {weak.unseen.length > 0 && ' Chapters you have not tried yet are included, because we do not know your level there.'}
+                  </p>
+                  <div className="row-inline">
+                    {weak.chapters.map((c) => (
+                      <Chip key={c} tone={weak.unseen.includes(c) ? 'neutral' : 'accent'}>
+                        {chapterName(c)}
+                        {weak.unseen.includes(c) ? ' (new)' : ''}
+                      </Chip>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </Card>
+        </div>
+      </Columns>
 
       <Section title="Your generated papers" aside={<span className="text-small text-slate">Saved on this device</span>}>
         {past.length === 0 ? (
           <p className="text-slate">Papers you generate appear here, so you can take them again.</p>
         ) : (
-          <div className="grid-auto">
+          <CardGrid cols={3}>
             {past.map((p) => (
               <Card key={p.paperId}>
-                <div className="stack gap-s3">
-                  <div className="stack gap-s1">
+                <div className="stack-card">
+                  <div className="stack-text">
                     <h3 className="text-h3">Paper #{paperCode(p.paperId)}</h3>
                     <span className="text-small text-slate">
                       {EXAMS.find((e) => e.id === p.exam)?.label ?? p.exam}
@@ -418,14 +418,14 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
                     </span>
                     {!!p.weakShare && <span className="text-small text-slate">{Math.round(p.weakShare * 100)}% from chapters to strengthen</span>}
                   </div>
-                  <div className="row gap-s2">
+                  <div className="row-actions">
                     <LinkButton to={`/exam/${p.paperId}`} variant="secondary">Re-take</LinkButton>
                     <Button variant="ghost" onClick={() => void remove(p.paperId)} aria-label={`Remove paper ${paperCode(p.paperId)}`}>Remove</Button>
                   </div>
                 </div>
               </Card>
             ))}
-          </div>
+          </CardGrid>
         )}
       </Section>
     </Page>

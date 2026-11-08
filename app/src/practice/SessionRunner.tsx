@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Question } from '@kairos/core';
 import { QuestionView } from '../components/QuestionView';
 import { CheckIcon, CloseIcon, ClockIcon } from '../components/icons';
-import { Banner, Button, Card, Chip, Input, Modal, ProgressBar } from '../components/ui';
+import { Banner, Button, Card, Chip, Columns, Input, Modal, ProgressBar } from '../components/ui';
 import { saveQuietly, type BufferedSession, type SessionBuffer } from './buffer';
 import {
   REASON_CHIPS,
@@ -251,10 +251,10 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
 
   const mine = isMine(q);
   const side = (
-    <aside className="stack gap-s4" aria-label="Session progress">
+    <div className="stack-grid" role="group" aria-label="Session progress">
       <Card>
-        <div className="stack gap-s3">
-          <span className="row gap-s2 text-small text-slate">
+        <div className="stack-card">
+          <span className="row-inline text-small text-slate">
             <ClockIcon width={16} height={16} />
             {timed ? 'Time left' : 'Time on this question'}
           </span>
@@ -270,9 +270,9 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
         </div>
       </Card>
       <Card>
-        <div className="stack gap-s3">
+        <div className="stack-card">
           <span className="text-small text-slate">Questions</span>
-          <div className="row gap-s2">
+          <div className="row-inline">
             {questions.map((x, i) => (
               <span
                 key={x.id}
@@ -290,14 +290,14 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
       <Button variant="ghost" onClick={() => setConfirmEnd(true)}>
         End session
       </Button>
-    </aside>
+    </div>
   );
 
   const endDialog = confirmEnd && (
     <Modal title="Save your progress and leave?" onClose={() => setConfirmEnd(false)} dismissLabel="Keep practising">
-      <div className="stack gap-s4">
+      <div className="stack-card">
         <p className="text-slate">Your answers so far are saved on this device. You can finish now and see your summary, or leave and pick this session up later.</p>
-        <div className="stack gap-s2">
+        <div className="stack-label">
           <Button onClick={() => { setConfirmEnd(false); finish(); }}>Finish and see summary</Button>
           {onLeave && <Button variant="secondary" onClick={onLeave}>Resume later</Button>}
           <Button variant="ghost" onClick={() => setConfirmEnd(false)}>Keep practising</Button>
@@ -307,16 +307,17 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
   );
 
   return (
-    <div className="mx-auto grid w-full max-w-reading gap-s5 xl:max-w-app xl:grid-cols-3 xl:gap-s6 3xl:max-w-app">
-      <div className="stack gap-s4 xl:col-span-2">
-        <div className="row justify-between gap-s3">
-          <span className="row gap-s2">
+    <>
+      <Columns ratio="main-side" sideFrom="lg" side={side}>
+        <div className="stack-card">
+        <div className="row-between">
+          <span className="row-inline">
             <Chip tone="primary">
               Question {index + 1} of {questions.length}
             </Chip>
             {mine && <Chip>{selfCheck ? 'Your question, self-check' : 'Your question'}</Chip>}
           </span>
-          <span className="row gap-s2 text-small text-slate xl:hidden">
+          <span className="row-inline text-small text-slate lg:hidden">
             <ClockIcon width={16} height={16} />
             <span className="tabular" data-testid="timer-compact">
               {fmt(shown)}
@@ -332,7 +333,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
 
         {paused ? (
           <Card>
-            <div className="stack items-center gap-s4 py-s6 text-center">
+            <div className="stack-card items-center text-center">
               <h2 className="text-h2">Paused</h2>
               <p className="text-slate">Take your time. The question is hidden until you resume.</p>
               <Button onClick={togglePause}>Resume</Button>
@@ -340,7 +341,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
           </Card>
         ) : (
           <Card>
-            <div className="stack gap-s4">
+            <div className="stack-card">
               <QuestionView
                 question={q}
                 selected={selected}
@@ -351,7 +352,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
                 <p className="text-small text-slate">No solution saved for this question. Work it out and grade yourself honestly.</p>
               )}
               {isNumeric && !selfCheck && (
-                <div className="stack gap-s2">
+                <div className="stack-label">
                   <label htmlFor="numeric-answer" className="text-small font-semibold">
                     Your answer
                   </label>
@@ -379,7 +380,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
           </div>
         )}
         {isChecked && !selfCheck && (
-          <div className="stack gap-s3" data-testid="feedback">
+          <div className="stack-card" data-testid="feedback">
             <Banner
               tone={verdict === 'correct' ? 'primary' : 'accent'}
               icon={verdict === 'correct' ? <CheckIcon className="shrink-0" /> : <CloseIcon className="shrink-0" />}
@@ -394,9 +395,9 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
                     : `Not quite. The answer is ${correctAnswerText(q)}.`}
             </Banner>
             {verdict !== 'correct' && (
-              <div className="stack gap-s2" role="group" aria-label="Why did this go wrong?">
+              <div className="stack-label" role="group" aria-label="Why did this go wrong?">
                 <span className="text-small text-slate">What happened? One tap, no pressure.</span>
-                <div className="row gap-s2">
+                <div className="row-inline">
                   {REASON_CHIPS.map((c) => (
                     <Button
                       key={c.id}
@@ -415,19 +416,19 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
         )}
 
         {!paused && selfCheck && !isChecked && (
-          <div className="stack gap-s2" role="group" aria-label="Grade yourself">
+          <div className="stack-label" role="group" aria-label="Grade yourself">
             <span className="text-small text-slate">
               This question has no answer key, so you grade it. It will not change your mastery.
             </span>
-            <div className="row gap-s2">
+            <div className="row-inline">
               <Button size="sm" variant="secondary" onClick={() => selfGrade(true)}>I got it right</Button>
               <Button size="sm" variant="secondary" onClick={() => selfGrade(false)}>I got it wrong</Button>
             </div>
           </div>
         )}
         {!paused && (
-          <div className="row justify-between gap-s3">
-            <div className="row gap-s2">
+          <div className="row-between">
+            <div className="row-inline">
               <Button variant="ghost" onClick={toggleFlag} aria-pressed={flagged}>
                 {flagged ? 'Unflag' : 'Flag'}
               </Button>
@@ -450,15 +451,15 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
             )}
           </div>
         )}
-        <p className="hidden text-caption text-slate xl:block">Keys: 1 to 4 pick an option, Enter checks or moves on.</p>
-        <div className="xl:hidden">
+        <p className="hidden text-caption text-slate lg:block">Keys: 1 to 4 pick an option, Enter checks or moves on.</p>
+        <div className="lg:hidden">
           <Button variant="ghost" onClick={() => setConfirmEnd(true)}>
             End session
           </Button>
         </div>
-      </div>
-      <div className="hidden xl:block">{side}</div>
+        </div>
+      </Columns>
       {endDialog}
-    </div>
+    </>
   );
 }

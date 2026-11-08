@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import { masteryBySubject, attemptsFromEvents, type KairosEvent, type MasteryDoc } from '@kairos/core';
-import { Card, Chip, EmptyState, LinkButton, ProgressBar, Section, Skeleton, Tabs } from '../../components/ui';
+import { Card, CardGrid, Chip, EmptyState, LinkButton, ProgressBar, Section, SkeletonRows, Tabs } from '../../components/ui';
 import { EXAMS, chapterMastery, masteryWords, topicMeta, type Taxonomy } from '../../practice/taxonomy';
+import type { ReactNode } from 'react';
 import type { SessionDoc } from '../../store';
 import { HBars } from '../charts/HBars';
 import { LabelMix } from '../charts/LabelMix';
@@ -10,6 +11,19 @@ import { pct } from '../charts/primitives';
 import { accuracyTrend, chapterHeatmap, difficultyBands, labelMixByWeek, studyTimeBySubject, subjectName, type ChapterRef } from '../compute';
 import { chapterIndex, useSessionQuestions } from '../hooks';
 import { Heatmap } from './Heatmap';
+
+/** Card with its own title row, so chart cards in a CardGrid row share one padding and stretch to one height. */
+function ChartCard({ title, aside, children }: { title: string; aside?: ReactNode; children: ReactNode }) {
+  return (
+    <Card as="section" aria-label={title}>
+      <div className="row-between">
+        <h2 className="text-h3">{title}</h2>
+        {aside}
+      </div>
+      {children}
+    </Card>
+  );
+}
 
 /** Mastery tab: subject cards with trend, chapter heatmap, mistake mix, accuracy by difficulty, study time. */
 export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: { tax: Taxonomy | null; mastery: MasteryDoc | null; sessions: SessionDoc[]; exam?: string; now: number }) {
@@ -50,18 +64,23 @@ export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: {
   const hasLabels = weeks.some((w) => w.careless + w.conceptGap + w.timeSink > 0);
   const maxTime = Math.max(1, ...time.map((t) => t.ms));
   return (
-    <div className="stack gap-section">
+    <div className="stack-section">
       <Tabs label="Exam" tabs={EXAMS.map((e) => ({ id: e.id, label: e.label }))} value={exam as (typeof EXAMS)[number]['id']} onChange={setExam} />
       <Section title="Subjects">
-        <div className="grid-auto">
+        <CardGrid cols={3}>
           {examSubjects.map((s) => {
             const agg = subjAgg[s];
             const words = masteryWords(agg);
             const tr = trends.find((t) => t.subject === s);
             return (
-              <Card key={s}>
-                <div className="stack gap-base">
-                  <div className="flex items-baseline justify-between gap-s3">
+              <Card
+                key={s}
+                footer={<p className="text-small text-slate">
+                    {tr?.delta === null || !tr ? 'Not enough recent practice to show a trend.' : tr.delta === 0 ? 'Accuracy level with the 3 weeks before.' : `Accuracy ${tr.delta > 0 ? 'up' : 'down'} ${Math.abs(tr.delta)} points over the last 7 days, against the 23 before.`}
+                  </p>}
+              >
+                <div className="stack-card">
+                  <div className="row-between">
                     <h3 className="text-h3">{subjectName(s)}</h3>
                     {words && <Chip tone={words.tone}>{words.text}</Chip>}
                   </div>
@@ -71,39 +90,31 @@ export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: {
                       <ProgressBar value={1 / (1 + Math.exp(-agg.theta))} label={`${subjectName(s)} mastery`} />
                     </>
                   ) : <p className="text-slate">Not enough data yet. A few more answers in {subjectName(s)} and this fills in.</p>}
-                  <p className="text-small text-slate">
-                    {tr?.delta === null || !tr ? 'Not enough recent practice to show a trend.' : tr.delta === 0 ? 'Accuracy level with the 3 weeks before.' : `Accuracy ${tr.delta > 0 ? 'up' : 'down'} ${Math.abs(tr.delta)} points over the last 7 days, against the 23 before.`}
-                  </p>
                 </div>
               </Card>
             );
           })}
-        </div>
+        </CardGrid>
       </Section>
 
       <Section title="Chapters by priority" aside={<span className="text-small text-slate">{cells.filter((c) => c.flagged).length} to focus on</span>}>
         <Card><Heatmap cells={cells} exam={exam} /></Card>
       </Section>
 
-      <div className="grid grid-cols-1 gap-s6 lg:grid-cols-2">
-        <Section title="What kind of mistakes">
-          <Card>
+      <CardGrid cols={2}>
+          <ChartCard title="What kind of mistakes">
             {hasLabels ? <LabelMix weeks={weeks} /> : <p className="text-slate">Mistake types appear after a few practice sessions where you review your answers.</p>}
-          </Card>
-        </Section>
-        <Section title="Accuracy by difficulty" aside={<span className="text-small text-slate">last 30 days</span>}>
-          <Card>
-            {qLoading ? <Skeleton className="h-s8 w-full" /> : bands.some((b) => b.attempted > 0) ? (
+          </ChartCard>
+          <ChartCard title="Accuracy by difficulty" aside={<span className="text-small text-slate">last 30 days</span>}>
+            {qLoading ? <SkeletonRows count={1} /> : bands.some((b) => b.attempted > 0) ? (
               <HBars
                 caption="Accuracy by question difficulty"
                 summary={`Accuracy by difficulty: ${bands.map((b) => `${b.label} ${pct(b.accuracy)}`).join(', ')}.`}
                 rows={bands.map((b) => ({ key: b.id, label: b.label, value: b.accuracy, text: b.accuracy === null ? 'No answers' : `${pct(b.accuracy)} of ${b.attempted}`, tone: b.id === 'easy' && b.accuracy !== null && b.accuracy < 0.7 ? 'accent' : 'primary' }))}
               />
             ) : <p className="text-slate">Needs the question bank. It fills in when you are online and have practised recently.</p>}
-          </Card>
-        </Section>
-        <Section title="Study time by subject" aside={<span className="text-small text-slate">last 30 days</span>}>
-          <Card>
+          </ChartCard>
+          <ChartCard title="Study time by subject" aside={<span className="text-small text-slate">last 30 days</span>}>
             {time.length ? (
               <HBars
                 caption="Minutes of practice by subject"
@@ -111,9 +122,8 @@ export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: {
                 rows={time.map((t) => ({ key: t.subject, label: subjectName(t.subject), value: t.ms / maxTime, text: `${Math.round(t.ms / 60_000)} min` }))}
               />
             ) : <p className="text-slate">No practice time in the last 30 days.</p>}
-          </Card>
-        </Section>
-      </div>
+          </ChartCard>
+        </CardGrid>
       <p className="text-small text-slate">Want the full picture of a mock? <Link to="/analysis?tab=mocks" className="font-semibold text-primary">See your mock reports</Link>.</p>
     </div>
   );

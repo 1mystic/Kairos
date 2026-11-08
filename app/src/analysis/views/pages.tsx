@@ -20,7 +20,7 @@ type TabId = (typeof TABS)[number]['id'];
 export function AnalysisView({ data, tab, onTab, now }: { data: AnalysisData; tab: TabId; onTab(t: TabId): void; now: number }) {
   return (
     <Page>
-      <div className="stack gap-section">
+      <div className="stack-section">
         <PageHeader title="Analysis" subtitle="What you know, how your mocks went, and what to fix next." />
         <Tabs label="Analysis" tabs={TABS} value={tab} onChange={onTab} />
         {data.loading ? (
@@ -67,7 +67,7 @@ export function MockReportPage() {
   const a = readAnalysis(mock);
   return (
     <Page>
-      <div className="stack gap-section">
+      <div className="stack-section">
         <PageHeader
           title={a?.title ?? 'Mock report'}
           subtitle={mock.submittedAt ? new Date(mock.submittedAt).toLocaleString() : undefined}

@@ -122,12 +122,12 @@ export function QuestionView({
   };
 
   return (
-    <article className="stack gap-base text-ink" data-qid={q.id}>
+    <article className="stack-card text-ink" data-qid={q.id}>
       {q.passage ? (
         <ContentHtml
           markdown={q.passage}
           images={q.images} {...img}
-          className="rounded-card bg-surface-2 p-s4 text-slate"
+          className="card text-slate"
         />
       ) : null}
       <ContentHtml markdown={q.stem} images={q.images} {...img} className="text-body leading-relaxed" />
@@ -136,7 +136,7 @@ export function QuestionView({
         <div
           role={multi ? 'group' : 'radiogroup'}
           aria-label={multi ? 'Select all that apply' : 'Choose one answer'}
-          className="stack gap-tight"
+          className="stack-label"
         >
           {options.map((o) => {
             const on = selected.includes(o.key);
@@ -156,7 +156,7 @@ export function QuestionView({
                   className="sr-only"
                 />
                 <span aria-hidden="true" className={`opt-key${multi ? ' opt-key-sq' : ''}`}>{o.key}</span>
-                <ContentHtml markdown={o.text} images={q.images} {...img} className="min-w-0 flex-1 pt-s1" />
+                <ContentHtml markdown={o.text} images={q.images} {...img} className="min-w-0 flex-1" />
                 {isCorrect && <span className="chip chip-accent shrink-0"><CheckIcon width={14} height={14} />Correct</span>}
               </label>
             );
@@ -165,10 +165,10 @@ export function QuestionView({
       )}
 
       {showSolution && (full.solution || (answer && !('keys' in answer))) && (
-        <section aria-label="Solution" className="rounded-card bg-surface-2 p-s4">
-          <h3 className="mb-s2 text-small font-semibold text-slate">Solution</h3>
+        <section aria-label="Solution" className="card">
+          <h3 className="text-h3">Solution</h3>
           {answer && !('keys' in answer) && (
-            <p className="mb-s2 text-small">
+            <p className="text-small">
               Answer:{' '}
               <strong>
                 {'value' in answer

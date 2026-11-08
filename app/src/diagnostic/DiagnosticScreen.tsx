@@ -2,9 +2,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Manifest, Question } from '@kairos/core';
 import { getLatestVersion, getManifest } from '../bank/client';
 import { CheckIcon } from '../components/icons';
-import { Banner, Button, Card, Chip, EmptyState, LinkButton, Page, PageHeader, ProgressBar, Skeleton, Stack, Tabs } from '../components/ui';
+import { Banner, Button, Card, CardGrid, Chip, EmptyState, LinkButton, Columns, ListRow, Page, PageHeader, PageSkeleton, ProgressBar, Tabs } from '../components/ui';
 import { EXAMS, buildChapterRows, isExamId, loadTaxonomy, type ExamId, type SubjectRows, type Taxonomy } from '../practice/taxonomy';
 import { isGuestProfile, useSignInNudge, useStore, type UserStore } from '../store';
+import './diagnostic.css';
 import { DiagnosticRunner, type DiagFinish } from './DiagnosticRunner';
 import { getDiagBuffer, isDiagResumable, type DiagBuffer } from './diagnosticBuffer';
 import { commitDiagnostic, buildResult, estimateMinutes, newDiagId, usableChapters, type DiagBuffered, type DiagnosticResult } from './diagnosticCore';
@@ -127,12 +128,7 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
   switch (phase.kind) {
     case 'setup':
       return (
-        <Page width="reading">
-          <Stack gap="base">
-            <Skeleton className="h-s5 w-full" />
-            <Skeleton className="h-s8 w-full" />
-          </Stack>
-        </Page>
+        <PageSkeleton width="reading" cards={2} cols={1} />
       );
     case 'error':
       return (
@@ -155,8 +151,8 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
       return (
         <Page width="reading">
           <Card>
-            <div className="stack gap-s4">
-              <h2 className="text-h2">Getting your questions ready</h2>
+            <div className="stack-card">
+              <h2 className="text-h3">Getting your questions ready</h2>
               <ProgressBar value={phase.done} max={Math.max(1, phase.total)} label="Loading questions" />
               <p className="text-small text-slate tabular">{phase.done} of {phase.total} chapters loaded. They stay on this device after the first time.</p>
             </div>
@@ -194,6 +190,23 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
     else n.add(id);
     setPicked(n);
   };
+  const side = (
+          <Card tone="primary">
+            <div className="stack-card">
+              <h2 className="text-h3">What to expect</h2>
+              <ul className="stack-label text-small">
+                <li>About {estimateMinutes(count || 1)} minutes, at most 40.</li>
+                <li>Two questions per chapter, chosen as you go.</li>
+                <li>No answers shown until the end. Pause whenever you like.</li>
+                <li>Only the chapters you tick. Unsure? Skip the question.</li>
+              </ul>
+              <Button size="lg" block disabled={count === 0} onClick={() => void start(null)}>
+                {count === 0 ? 'Pick at least one chapter' : `Start with ${count} chapter${count === 1 ? '' : 's'}`}
+              </Button>
+              <p className="text-caption text-slate">Works without signing in. Your answers stay on this device until you sign in.</p>
+            </div>
+          </Card>
+  );
   return (
     <Page width="app">
       <PageHeader title="Find your starting point" subtitle="A short, adaptive check on the chapters you have studied. No grade, no pressure." />
@@ -217,8 +230,9 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
           You have an unfinished diagnostic ({saved.answered.length} answered).
         </Banner>
       )}
-      <div className="grid gap-s6 lg:grid-cols-3">
-        <div className="stack gap-s5 lg:col-span-2">
+      <div className="diag-first">
+      <Columns ratio="main-side" side={side}>
+        <div className="stack-card">
           <Tabs<ExamId>
             label="Exam"
             value={exam}
@@ -229,11 +243,12 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
             tabs={EXAMS.map((e) => ({ id: e.id, label: e.label }))}
           />
           <p className="text-slate">Tick the chapters you have already studied. We only ask about those.</p>
+        </div>
           {rows.length === 0 && <EmptyState title="No chapters yet">There are no questions for this exam yet.</EmptyState>}
           {rows.map((s) => (
-            <section key={s.id} className="stack gap-s3" aria-label={s.name}>
+            <section key={s.id} className="stack-card" aria-label={s.name}>
               <h2 className="text-h3">{s.name}</h2>
-              <div className="grid-auto">
+              <CardGrid cols="auto" gap="tight">
                 {s.chapters.map((c) => {
                   const on = selection.has(c.id);
                   const off = c.count === 0;
@@ -245,7 +260,7 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
                       aria-checked={on}
                       disabled={off}
                       onClick={() => toggle(c.id)}
-                      className={`row min-h-s7 justify-between gap-s3 rounded-btn px-s4 py-s2 text-left text-small ${
+                      className={`check-row row-between rounded-btn px-s4 py-s2 text-left text-small ${
                         on ? 'bg-primary-50 font-semibold text-primary' : 'bg-surface-3'
                       } ${off ? 'opacity-60' : ''}`}
                     >
@@ -257,27 +272,10 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
                     </button>
                   );
                 })}
-              </div>
+              </CardGrid>
             </section>
           ))}
-        </div>
-        <aside className="order-first lg:order-last lg:col-span-1 lg:sticky lg:top-s6 lg:self-start">
-          <Card tone="primary">
-            <div className="stack gap-s4">
-              <h2 className="text-h2">What to expect</h2>
-              <ul className="stack gap-s3 text-small">
-                <li>About {estimateMinutes(count || 1)} minutes, at most 40.</li>
-                <li>Two questions per chapter, chosen as you go.</li>
-                <li>No answers shown until the end. Pause whenever you like.</li>
-                <li>Only the chapters you tick. Unsure? Skip the question.</li>
-              </ul>
-              <Button size="lg" block disabled={count === 0} onClick={() => void start(null)}>
-                {count === 0 ? 'Pick at least one chapter' : `Start with ${count} chapter${count === 1 ? '' : 's'}`}
-              </Button>
-              <p className="text-caption text-slate">Works without signing in. Your answers stay on this device until you sign in.</p>
-            </div>
-          </Card>
-        </aside>
+      </Columns>
       </div>
     </Page>
   );
@@ -285,13 +283,14 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
 
 function ChapterList({ rows, names }: { rows: DiagnosticResult['chapters']; names: Record<string, string> }) {
   return (
-    <ul className="stack gap-s2">
+    <ul className="stack-label">
       {rows.map((c) => (
-        <li key={c.chapter} className="row justify-between gap-s3 rounded-btn bg-surface-3 px-s4 py-s3">
-          <span className="min-w-0 text-small font-semibold">{names[c.chapter] ?? c.chapter}</span>
-          <Chip tone={c.n > 0 ? 'primary' : 'neutral'}>
-            {c.n > 0 ? `Rough read: ${c.correct} of ${c.n} right` : 'No read yet'}
-          </Chip>
+        <li key={c.chapter}>
+          <ListRow title={names[c.chapter] ?? c.chapter} titleClass="text-small font-semibold">
+            <Chip tone={c.n > 0 ? 'primary' : 'neutral'}>
+              {c.n > 0 ? `Rough read: ${c.correct} of ${c.n} right` : 'No read yet'}
+            </Chip>
+          </ListRow>
         </li>
       ))}
     </ul>
@@ -300,50 +299,10 @@ function ChapterList({ rows, names }: { rows: DiagnosticResult['chapters']; name
 
 function Results({ result, names, masteryError }: { result: DiagnosticResult; names: Record<string, string>; masteryError: boolean }) {
   const mins = Math.max(1, Math.round(result.activeMs / 60_000));
-  return (
-    <Page width="app">
-      <PageHeader title="Your starting point is set" subtitle="This is a first look, not a grade. It sharpens every time you practise." />
-      {masteryError && (
-        <Banner tone="accent">Your answers are saved, but we could not update your progress profile. Practising will rebuild it.</Banner>
-      )}
-      <Banner>
-        Each chapter had about two questions, so every read here is rough. "Needs attention" only means where to look first, not a verdict on a chapter.
-      </Banner>
-      <div className="grid gap-s6 lg:grid-cols-3">
-        <div className="stack gap-s5 lg:col-span-2">
-          <div className="grid-auto">
-            <Card>
-              <div className="stack gap-s3">
-                <h2 className="text-h3">Looks stronger</h2>
-                {result.strongest.length === 0 ? (
-                  <p className="text-small text-slate">Nothing stands out yet. That is normal after a short check.</p>
-                ) : (
-                  <ChapterList rows={result.strongest} names={names} />
-                )}
-              </div>
-            </Card>
-            <Card>
-              <div className="stack gap-s3">
-                <h2 className="text-h3">Needs attention</h2>
-                {result.needsAttention.length === 0 ? (
-                  <p className="text-small text-slate">Nothing stands out yet. That is normal after a short check.</p>
-                ) : (
-                  <ChapterList rows={result.needsAttention} names={names} />
-                )}
-              </div>
-            </Card>
-          </div>
-          <Card>
-            <div className="stack gap-s3">
-              <h2 className="text-h3">All chapters</h2>
-              <ChapterList rows={result.chapters} names={names} />
-            </div>
-          </Card>
-        </div>
-        <aside className="lg:col-span-1">
+  const side = (
           <Card tone="primary">
-            <div className="stack gap-s4">
-              <div className="stack gap-s1">
+            <div className="stack-card">
+              <div className="stack-text">
                 <span className="text-h1 tabular">{result.answered - result.skipped}</span>
                 <span className="text-small text-slate">
                   questions answered{result.skipped > 0 ? `, ${result.skipped} skipped` : ''} in about {mins} min
@@ -353,8 +312,48 @@ function Results({ result, names, masteryError }: { result: DiagnosticResult; na
               <LinkButton to="/onboarding" variant="secondary" size="lg" block>Set exam date</LinkButton>
             </div>
           </Card>
-        </aside>
-      </div>
+  );
+  return (
+    <Page width="app">
+      <PageHeader title="Your starting point is set" subtitle="This is a first look, not a grade. It sharpens every time you practise." />
+      {masteryError && (
+        <Banner tone="accent">Your answers are saved, but we could not update your progress profile. Practising will rebuild it.</Banner>
+      )}
+      <Banner>
+        Each chapter had about two questions, so every read here is rough. "Needs attention" only means where to look first, not a verdict on a chapter.
+      </Banner>
+      <Columns ratio="main-side" side={side}>
+        <div className="stack-grid">
+          <CardGrid cols={2}>
+            <Card>
+              <div className="stack-card">
+                <h2 className="text-h3">Looks stronger</h2>
+                {result.strongest.length === 0 ? (
+                  <p className="text-small text-slate">Nothing stands out yet. That is normal after a short check.</p>
+                ) : (
+                  <ChapterList rows={result.strongest} names={names} />
+                )}
+              </div>
+            </Card>
+            <Card>
+              <div className="stack-card">
+                <h2 className="text-h3">Needs attention</h2>
+                {result.needsAttention.length === 0 ? (
+                  <p className="text-small text-slate">Nothing stands out yet. That is normal after a short check.</p>
+                ) : (
+                  <ChapterList rows={result.needsAttention} names={names} />
+                )}
+              </div>
+            </Card>
+          </CardGrid>
+          <Card>
+            <div className="stack-card">
+              <h2 className="text-h3">All chapters</h2>
+              <ChapterList rows={result.chapters} names={names} />
+            </div>
+          </Card>
+        </div>
+      </Columns>
     </Page>
   );
 }
