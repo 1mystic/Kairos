@@ -10,6 +10,8 @@
 5. `docs/05_ALGORITHMS.md` — mastery, FSRS, paper generator, planner, backlog, pace
 6. `docs/06_ROADMAP.md` — build order + done criteria. **work phase by phase**
 7. `brand/BRAND.md` + `brand/tokens.css` — name, colours, type, logo
+8. `docs/07_FREE_TIER.md` — **Spark-only constraints. overrides 02 where they conflict.**
+9. `docs/00_WORKPLAN.md` — current task breakdown + status
 
 ## non-negotiables
 - **exam patterns are config.** never hard-code counts/marks. read `content/blueprints/*.json`.
@@ -24,13 +26,15 @@
 - CBT UI must not use NTA / TCS logos or names. copy behaviour, not branding.
 
 ## stack
-React + TypeScript + Vite (PWA via vite-plugin-pwa/Workbox) · Tailwind using `brand/tokens.css` vars · KaTeX · Firebase Auth (Google + email link) · Firestore (offline persistence on) · Firebase Hosting · Cloud Functions 2nd gen (Node 20, TS) · `ts-fsrs` · zod · vitest + playwright · Python 3.11 pipeline in `/pipeline` (GitHub Actions cron).
+**firebase project `kairos-43000`, Spark plan only — never add anything that requires billing.**
+
+React + TypeScript + Vite (PWA via vite-plugin-pwa/Workbox) · Tailwind using `brand/tokens.css` vars · KaTeX · Firebase Auth (Google + email/password) · Firestore (offline persistence on) · Firebase Hosting · Cloudflare Workers for server logic (no Cloud Functions: Spark plan only, see 07) · `ts-fsrs` · zod · vitest + playwright · Python 3.11 pipeline in `/pipeline` (GitHub Actions cron).
 
 ## repo layout
 ```
 /app        React PWA: cbt/ practice/ planner/ analytics/ upload/ onboarding/
 /core       pure TS domain logic (+ __tests__)
-/functions  grade, moderate, leaderboard, budget-killswitch, daily-digest
+/worker     cloudflare worker (phase 4+): grade, moderate, leaderboard, daily-digest
 /pipeline   python: acquire extract validate dedupe tag calibrate publish
 /content    blueprints/ taxonomy/ weights/ exam_calendar.json
 /docs /brand /prompts
