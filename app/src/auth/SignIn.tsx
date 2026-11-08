@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { useStartGuest } from '../store/StoreProvider';
 import { useAuth } from './AuthProvider';
 import { friendlyAuthError } from './errors';
 import { validateSignIn } from './validation';
@@ -16,6 +17,8 @@ export function GoogleButton({ onError }: { onError(msg: string): void }) {
 
 export function SignIn() {
   const { signIn } = useAuth();
+  const startGuest = useStartGuest();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<ReturnType<typeof validateSignIn>>({});
@@ -53,6 +56,8 @@ export function SignIn() {
       </form>
       <div className="flex items-center gap-3 text-sm text-slate"><hr className="flex-1 border-line" />or<hr className="flex-1 border-line" /></div>
       <GoogleButton onError={setFormError} />
+      <button type="button" className="btn w-full text-primary" onClick={() => void startGuest().then(() => navigate('/', { replace: true }))}>Continue as guest</button>
+      <p className="text-center text-sm text-slate">No account needed. Your progress stays on this device.</p>
     </AuthShell>
   );
 }

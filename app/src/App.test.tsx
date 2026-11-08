@@ -7,6 +7,10 @@ import { SignUp } from './auth/SignUp';
 import userEvent from '@testing-library/user-event';
 import { validateSignUp, validateSignIn } from './auth/validation';
 import { friendlyAuthError } from './auth/errors';
+import { StoreProvider } from './store/StoreProvider';
+import { NudgeProvider } from './store/NudgeProvider';
+import { createMemoryLocalDb } from './store/localDb';
+import { fakeFs } from './store/testUtils';
 
 vi.mock('./lib/firebase', () => ({ firebaseConfigError: null, getServices: () => ({}) }));
 
@@ -19,12 +23,32 @@ const base: AuthContextValue = {
 function renderAt(path: string, ctx: Partial<AuthContextValue> = {}) {
   return render(
     <AuthContext.Provider value={{ ...base, ...ctx }}>
-      <MemoryRouter initialEntries={[path]}><AppRoutes /></MemoryRouter>
+      <StoreProvider localDb={createMemoryLocalDb()} fsAdapter={fakeFs().adapter}>
+        <MemoryRouter initialEntries={[path]}><NudgeProvider><AppRoutes /></NudgeProvider></MemoryRouter>
+      </StoreProvider>
     </AuthContext.Provider>,
   );
 }
 
+beforeEach(() => localStorage.clear());
+
 describe('protected route', () => {
+  it('sends signed-out visitors from / to sign in (public entry)', () => {
+    renderAt('/');
+    expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
+  });
+  it('lets a guest reach home, practice and settings after Continue as guest', async () => {
+    renderAt('/signin');
+    await userEvent.click(screen.getByRole('button', { name: 'Continue as guest' }));
+    expect(await screen.findByRole('heading', { name: 'Today' })).toBeInTheDocument();
+    expect(screen.getByText(/saved on this device only/)).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('link', { name: /Practice/ }));
+    expect(await screen.findByText('Coming soon')).toBeInTheDocument();
+  });
+  it('guest without the flag is not let in to /practice', () => {
+    renderAt('/practice');
+    expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
+  });
   it('redirects unauthenticated users to sign in', () => {
     renderAt('/');
     expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
@@ -66,7 +90,7 @@ describe('validation', () => {
 describe('forms', () => {
   it('sign in blocks empty submit and does not call signIn', async () => {
     const signIn = vi.fn();
-    render(<AuthContext.Provider value={{ ...base, signIn }}><MemoryRouter><SignIn /></MemoryRouter></AuthContext.Provider>);
+    render(<AuthContext.Provider value={{ ...base, signIn }}><StoreProvider localDb={createMemoryLocalDb()} fsAdapter={fakeFs().adapter}><MemoryRouter><SignIn /></MemoryRouter></StoreProvider></AuthContext.Provider>);
     await userEvent.click(screen.getByRole('button', { name: 'Sign in' }));
     expect(screen.getByText('Enter your email address.')).toBeInTheDocument();
     expect(signIn).not.toHaveBeenCalled();

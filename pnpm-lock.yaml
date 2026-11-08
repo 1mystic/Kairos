@@ -190,6 +190,9 @@ importers:
 
   app:
     dependencies:
+      '@fontsource-variable/plus-jakarta-sans':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@kairos/core':
         specifier: workspace:*
         version: link:../core
@@ -212,12 +215,6 @@ importers:
         specifier: ^7
         version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
-      '@fontsource-variable/inter':
-        specifier: ^5
-        version: 5.3.0
-      '@fontsource/space-grotesk':
-        specifier: ^5
-        version: 5.3.0
       '@playwright/test':
         specifier: ^1
         version: 1.65.0
@@ -1318,11 +1315,8 @@ packages:
   '@firebase/webchannel-wrapper@1.0.7':
     resolution: {integrity: sha512-phBFwieDLvkZGYN9CE9ZFNEIoBVksprzsnCzQejCmCHtgwCXReeuRpoEGN9C4EbhONztv8NRV1tau6Rb9pONwQ==}
 
-  '@fontsource-variable/inter@5.3.0':
-    resolution: {integrity: sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA==}
-
-  '@fontsource/space-grotesk@5.3.0':
-    resolution: {integrity: sha512-ksnGizDPXIDuvqcTYTSrmZ+evx9sDlS8rp7+42BQ7wU+spt3twEoXfbJz672C+5CLg6VeUQwRy5RXshWb67LcQ==}
+  '@fontsource-variable/plus-jakarta-sans@5.3.0':
+    resolution: {integrity: sha512-/l/4r0yyWK9JzAlmA0LiYgGgmJe/Gswt4jTJEzr5QhJfwMbvJZDmYWyW0M4X7yCK69BajMVlV/Lx8g7WDc1+sw==}
 
   '@grpc/grpc-js@1.9.16':
     resolution: {integrity: sha512-wE4Ut/olIzfKqp631XrG+wbF0v1vWFN4YL9FyXC2LJiG33DsV7PLzURjrCvY/6je2ntdRkeLpPDluzSRGaVltQ==}
@@ -4865,9 +4859,7 @@ snapshots:
 
   '@firebase/webchannel-wrapper@1.0.7': {}
 
-  '@fontsource-variable/inter@5.3.0': {}
-
-  '@fontsource/space-grotesk@5.3.0': {}
+  '@fontsource-variable/plus-jakarta-sans@5.3.0': {}
 
   '@grpc/grpc-js@1.9.16':
     dependencies:

@@ -1,6 +1,5 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/inter';
-@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource-variable/plus-jakarta-sans';
 @import './styles/tokens.css';
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
@@ -15,6 +14,8 @@
   --color-primary-hover: var(--primary-hover);
   --color-primary-50: var(--primary-50);
   --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-50: var(--accent-50);
   --color-good: var(--good);
   --color-warn: var(--warn);
   --color-bad: var(--bad);
@@ -25,8 +26,8 @@
 }
 
 @layer base {
-  html { color-scheme: light; }
-  html[data-theme='dark'] { color-scheme: dark; }
+  html { color-scheme: light; --on-primary: var(--surface); }
+  html[data-theme='dark'] { color-scheme: dark; --on-primary: var(--paper); }
   body {
     background: var(--paper);
     color: var(--ink);
@@ -34,7 +35,8 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
+  h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+  h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
   :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 }
 
@@ -49,13 +51,18 @@
     font-weight: 500; cursor: pointer; border: 1px solid transparent;
   }
   .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary { background: var(--primary); color: var(--on-primary); }
   .btn-primary:hover:not(:disabled) { background: var(--primary-hover); }
   .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
   .btn-secondary:hover:not(:disabled) { background: var(--primary-50); }
+  .input:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; border-color: var(--primary); }
+  .input[aria-invalid='true'] { border-color: var(--accent); }
+  .tile { display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--surface); }
+  a.tile:hover { border-color: var(--primary); background: var(--primary-50); }
   .input {
     width: 100%; min-height: 44px; padding: 0 12px; border-radius: var(--radius-btn);
     border: 1px solid var(--line); background: var(--surface); color: var(--ink);
   }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 24px; }
+  @media (max-width: 400px) { .card { padding: 16px; } }
 }
