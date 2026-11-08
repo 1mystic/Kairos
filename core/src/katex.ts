@@ -1,4 +1,5 @@
 import katex from 'katex';
+import 'katex/contrib/mhchem';
 
 export interface MathSegment {
   kind: 'text' | 'inline' | 'display';
@@ -83,18 +84,21 @@ export function escapeHtml(s: string): string {
     .replace(/'/g, '&#39;');
 }
 
+/** Render one TeX fragment to KaTeX HTML (never throws, trust:false). */
+export function renderTex(tex: string, display: boolean): string {
+  return katex.renderToString(tex, {
+    displayMode: display,
+    throwOnError: false,
+    trust: false,
+    strict: 'ignore',
+  });
+}
+
 /** Replace math with KaTeX HTML; all other text is escaped (no raw HTML passthrough). */
 export function renderMath(markdown: string): string {
   return splitMath(markdown)
     .map((seg) =>
-      seg.kind === 'text'
-        ? escapeHtml(seg.content)
-        : katex.renderToString(seg.content, {
-            displayMode: seg.kind === 'display',
-            throwOnError: false,
-            trust: false,
-            strict: 'ignore',
-          }),
+      seg.kind === 'text' ? escapeHtml(seg.content) : renderTex(seg.content, seg.kind === 'display'),
     )
     .join('');
 }

@@ -49,3 +49,56 @@ describe('question schema', () => {
     expect(ok({ type: 'MATCH', answer: { keys: ['A'] } })).toBe(true);
   });
 });
+
+describe('image schema', () => {
+  const id = '0123456789abcdef';
+  const id2 = 'fedcba9876543210';
+  const im = (o: object = {}) => ({ id, w: 659, h: 300, alt: 'a diagram', variants: [480, 659], ...o });
+  const img = (alt = 'a diagram', i = id) => `![${alt}](img:${i})`;
+  const withImg = (o: object = {}) => ({ type: 'SCQ', stem: `see ${img()}`, images: [im()], ...o });
+  it('accepts real variant widths (not just 960)', () => {
+    expect(ok(withImg())).toBe(true);
+    expect(ok(withImg({ images: [im({ w: 480, variants: [480] })] }))).toBe(true);
+  });
+  it('rejects bad image entries', () => {
+    for (const bad of [
+      { id: 'XYZ' },
+      { w: 960 },
+      { w: 0, variants: [0] },
+      { h: 0 },
+      { alt: '' },
+      { alt: '  ' },
+      { variants: [] },
+      { variants: [480, 480, 659] },
+      { variants: [-1, 659] },
+      { extra: 1 },
+    ])
+      expect(ok(withImg({ images: [im(bad)] }))).toBe(false);
+    expect(ok(withImg({ images: ['0123456789abcdef'] }))).toBe(false);
+  });
+  it('requires refs and declarations to agree (stem, options, solution)', () => {
+    expect(ok(withImg({ images: [] }))).toBe(false); // referenced, undeclared
+    expect(ok(withImg({ stem: 'no image' }))).toBe(false); // declared, unreferenced
+    expect(ok(withImg({ stem: 's', solution: img() }))).toBe(true);
+    expect(
+      ok(withImg({ stem: 's', options: [{ key: 'A', text: img() }, { key: 'B', text: 'x' }] })),
+    ).toBe(true);
+    expect(ok(withImg({ images: [im(), im({ id: id2 })] }))).toBe(false);
+    expect(ok(withImg({ images: [im(), im()] }))).toBe(false); // duplicate
+    expect(ok(withImg({ stem: 's', passage: img() }))).toBe(true);
+  });
+  it('rejects other image syntaxes and blank markdown alt', () => {
+    for (const stem of [
+      '![x](http://e.com/a.png)',
+      '![x](/img/a.png)',
+      '![x](img:ABC)',
+      '![x][ref]',
+      `![](img:${id})`,
+    ])
+      expect(ok({ type: 'SCQ', stem, images: [im()] })).toBe(false);
+  });
+  it('public questions are checked too', () => {
+    expect(publicQuestionSchema.safeParse({ ...base, ...withImg() }).success).toBe(true);
+    expect(publicQuestionSchema.safeParse({ ...base, ...withImg({ images: [] }) }).success).toBe(false);
+  });
+});

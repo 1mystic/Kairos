@@ -4,3 +4,5 @@ export * from './question';
 export * from './scoring';
 export * from './katex';
 export * from './cbt/palette';
+export * from './markdown';
+export * from './bank';

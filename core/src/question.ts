@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { IMG_TARGET_RE, MD_IMAGE_REF_RE, MD_IMAGE_RE } from './markdown';
 
 export const QUESTION_TYPES = [
   'SCQ',
@@ -21,12 +22,66 @@ export type Answer = z.infer<typeof answerSchema>;
 
 const optionSchema = z.object({ key: z.string().min(1), text: z.string() });
 
+/**
+ * Mirrors pipeline/schema.py `ImageRef`. id = sha256(source bytes)[:16]; `variants` are the
+ * actually generated widths (e.g. [480, 659]) and w = max(variants). Never assume 960.
+ */
+export const imageRefSchema = z
+  .object({
+    id: z.string().regex(/^[0-9a-f]{16}$/),
+    w: z.number().int().positive(),
+    h: z.number().int().positive(),
+    alt: z.string().min(1).refine((a) => a.trim().length > 0, 'alt must not be blank'),
+    variants: z.array(z.number().int().positive()).min(1),
+  })
+  .strict()
+  .superRefine((im, ctx) => {
+    if (new Set(im.variants).size !== im.variants.length)
+      ctx.addIssue({ code: 'custom', message: 'variants must be unique', path: ['variants'] });
+    if (Math.max(...im.variants) !== im.w)
+      ctx.addIssue({ code: 'custom', message: 'w must equal the largest variant width', path: ['w'] });
+  });
+export type ImageRef = z.infer<typeof imageRefSchema>;
+
+/** Every `![alt](img:<id>)` is declared, every declared image referenced, no other image syntax. */
+function checkImages(
+  q: {
+    stem: string;
+    solution?: string | null;
+    passage?: string | null;
+    options?: { text: string }[];
+    images?: { id: string }[];
+  },
+  ctx: z.RefinementCtx,
+): void {
+  const issue = (message: string) => ctx.addIssue({ code: 'custom', message, path: ['images'] });
+  const texts = [q.stem, q.solution ?? '', q.passage ?? '', ...(q.options ?? []).map((o) => o.text)];
+  const used = new Set<string>();
+  for (const t of texts) {
+    for (const m of t.matchAll(MD_IMAGE_RE)) {
+      const t2 = IMG_TARGET_RE.exec(m[2]!.trim());
+      if (!t2) issue(`image target '${m[2]}' not allowed (use ![alt](img:<id>))`);
+      else {
+        used.add(t2[1]!);
+        if (!m[1]!.trim()) issue(`image img:${t2[1]} has empty alt text in markdown`);
+      }
+    }
+    if (MD_IMAGE_REF_RE.test(t)) issue('reference-style images not allowed (use ![alt](img:<id>))');
+  }
+  const declared = (q.images ?? []).map((i) => i.id);
+  if (new Set(declared).size !== declared.length) issue('duplicate image ids');
+  for (const u of [...used].sort()) if (!declared.includes(u)) issue(`img:${u} referenced but not declared in images`);
+  for (const d of [...new Set(declared)].sort()) if (!used.has(d)) issue(`${d} declared but never referenced`);
+}
+
 /** Base (unrefined) object so it can be `.omit`ted for the public shape. */
 export const baseQuestionSchema = z.object({
   id: z.string().min(1),
   type: questionTypeSchema,
   stem: z.string(),
-  images: z.array(z.string()).optional(),
+  images: z.array(imageRefSchema).optional(),
+  passage_id: z.string().optional(),
+  passage: z.string().nullable().optional(),
   options: z.array(optionSchema).optional(),
   answer: answerSchema.nullable().optional(),
   solution: z.string().nullable().optional(),
@@ -80,6 +135,7 @@ export const baseQuestionSchema = z.object({
 });
 
 export const questionSchema = baseQuestionSchema.superRefine((q, ctx) => {
+  checkImages(q, ctx);
   const a = q.answer;
   if (!a) return;
   const issue = (message: string) => ctx.addIssue({ code: 'custom', message, path: ['answer'] });
@@ -97,11 +153,9 @@ export const questionSchema = baseQuestionSchema.superRefine((q, ctx) => {
 });
 export type Question = z.infer<typeof questionSchema>;
 
-export const publicQuestionSchema = baseQuestionSchema.omit({
-  answer: true,
-  solution: true,
-  solution_source: true,
-});
+export const publicQuestionSchema = baseQuestionSchema
+  .omit({ answer: true, solution: true, solution_source: true })
+  .superRefine(checkImages);
 export type PublicQuestion = Omit<Question, 'answer' | 'solution' | 'solution_source'>;
 
 export function parseQuestion(json: unknown): Question {

@@ -58,3 +58,28 @@ describe('renderMath', () => {
     expect(escapeHtml('<&>"\'')).toBe('&lt;&amp;&gt;&quot;&#39;');
   });
 });
+
+describe('mhchem', () => {
+  const chem = [
+    '$\\ce{2H2 + O2 -> 2H2O}$',
+    '$\\ce{N2 + 3H2 <=> 2NH3}$',
+    '$\\ce{SO4^2-}$ and $\\ce{Fe^3+}$',
+    '$\\pu{1.5 mol L-1}$',
+    '$$\\ce{CO2 + C -> 2CO}$$',
+  ];
+  it('checkMath accepts \\ce and \\pu', () => {
+    for (const c of chem) expect(checkMath(c)).toEqual({ ok: true, errors: [] });
+  });
+  it('checkMath rejects bad chemistry', () => {
+    expect(checkMath('$\\ce{A ->> }$ $\\pu{$').ok).toBe(false);
+  });
+  it('renderMath renders without error markup', () => {
+    for (const c of chem) {
+      const h = renderMath(c);
+      expect(h).toContain('katex');
+      expect(h).not.toContain('katex-error');
+    }
+    expect(renderMath(chem[0]!)).toContain('mrel'); // reaction arrow
+    expect(renderMath(chem[1]!)).toContain('NH');
+  });
+});
