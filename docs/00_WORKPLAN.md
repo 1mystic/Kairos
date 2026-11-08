@@ -75,17 +75,36 @@ Every prompt must say: read CLAUDE.md + docs/07 + brand/BRAND.md; own only liste
 - [ ] **W6c predicted score** (core monte-carlo + UI band)
 Phase 4 (server grading / all-India mocks / FCM digest / community uploads) needs `/worker` on Cloudflare — plan separately.
 
-## Live status (orchestrator log, 2026-11-08)
-- DONE: W1, W2a–d, W3a, W3b/e, W3d, W3f, W4b. Deployed to kairos-76a0d: firestore rules + indexes + auth providers. Hosting NOT yet deployed.
-- RUNNING: W3g design system (owner: app styles/ui/pages/auth/landing/QuestionView), W4a mock exam (app/src/cbt), W4c practice (app/src/practice), W5b-core schedule+pace (core/src/plan), W6a-core generator (core/src/gen), W4d-core upload data+rules (core/src/byo, rules), W7a question bank curation (JEEBench -> bank v2).
-- NEXT, in order:
-  1. W4d-ui upload screens (after W4d-core commits; allowed install pdfjs-dist; routes /upload, /bank).
-  2. W5c planner engine (core/src/plan/planner.ts, backlog.ts, sim/) after W5b-core commits.
-  3. Integration pass (orchestrator): mount cbtRoutes + practiceRoutes + upload routes + landing in App.tsx, mount BankPreview at /dev/bank (DEV only), run verify block, deploy hosting.
-  4. W5a analysis, W5b-ui onboarding + today card, W6b daily plan UI, W6c predicted-score UI.
-  5. Decide on NEET/JEE Main content source (official NTA PYQs via vision extraction, or authored + cross-checked).
-- OWNER DECISIONS PENDING: closing the migration modal should not delete local data (proposed); NEET/JEE Main question source.
-- Doc fixes owed: docs/03 mastery doc gets `reps`, `lapses`, `st` fields; TS core needs JEE_ADV exam enum if W7a reports it.
+## Live status (orchestrator log, updated 2026-11-08, for session handoff)
+Repo: https://github.com/1mystic/Kairos (`main` = committed work; branch `wip-snapshot` = full working-tree snapshot incl. UNFINISHED agent work, force-pushed, never merge blindly — diff it against main to recover work if a session dies).
+Firebase `kairos-76a0d` (Spark): Firestore (asia-south1) + rules + indexes + email/password + Google auth DEPLOYED. Hosting NOT deployed. `app/.env.local` holds the web config (owner pasted it; never read it).
+Tools: firebase CLI + gh logged in; Java for emulators at `~/.local/jre/jdk-21.0.13+9-jre/bin` (prepend to PATH before `pnpm test:rules`); pipeline venv `pipeline/.venv`.
+
+### Done and committed on main
+W1 scaffold · W2a core · W2b app shell/auth · W2c firebase+rules (55 rules tests) · W2d pipeline · W3a design v1 + guest mode · W3b/e core media + bank client + QuestionView · W3d CI · W3f landing · W4b measurement engine · W4c practice mode (routes NOT mounted) · W4d-core upload data layer + media rules · W5b-core schedule/pace · W6a-core generator/diagnostic/predict. Core: 261 tests, ~99% coverage.
+
+### In flight when this was written (check `git status` / `git log` / wip-snapshot to see how far they got)
+- W3g design-system redesign (flat, no borders/shadows, consistent spacing tokens, responsive 320→2560, production landing page with FAQ/footer/privacy/terms, pro Settings/Home layouts on big screens, shared primitives documented in docs/10_DESIGN_SYSTEM.md). Touches app/src/{index.css,styles,components/ui.tsx,icons,pages,auth,landing,QuestionView*,bank/BankPreview}. Uncommitted at snapshot time.
+- W4a mock exam mode (app/src/cbt/**, app/e2e/exam.spec.ts). Had type errors in cbt/loader.ts + cbt/model.ts at last check.
+- W4d-ui upload screens (app/src/upload/**, app/src/store/bank*.ts, adds pdfjs-dist).
+- W5c planner engine + 1,000-student sim gate (core/src/plan/planner.ts, backlog.ts, core/src/sim/**). Had 1 lint error (unused `tmin`, planner.ts:~327).
+- W7a question bank v2 from JEEBench (pipeline/ingest, tagging, content/sources, app/public/bank/v2, ci.yml version bump to 2).
+If an agent is gone: re-launch it with the same task text from this plan (model sonnet), telling it to continue from the files already in the tree/wip-snapshot rather than starting over.
+
+### Next, in order
+1. Let in-flight agents finish; run the verify block (pnpm lint, typecheck, core test:coverage, app test, build, test:rules if rules changed, pipeline pytest); commit; push main.
+2. INTEGRATION (orchestrator, tiny edits in app/src/App.tsx): mount practiceRoutes, cbtRoutes, uploadRoutes, landing via PublicEntry (`<Landing onStartGuest={useStartGuest()...}/>`), BankPreview at /dev/bank (DEV only), Settings; replace Placeholder routes. Add missing core exports (JEE_ADV exam enum if W7a reports it). Update docs/03 mastery doc with reps/lapses/st fields.
+3. Deploy hosting: `pnpm build && firebase deploy --only hosting --project kairos-76a0d --non-interactive`; smoke test landing → guest → practice → sample mock → upload → sign up/in.
+4. Remaining features (feature map above): W5a analysis (mock report tabs + heatmap), W5b-ui onboarding + exam date + today card (uses core/plan + nudge('exam_date_set')), W6b daily plan UI (uses planner), W6c predicted-score UI, practice mode: include user bank source (`userBankSource()` from upload) + session screen change, diagnostic UI.
+5. Content: NEET/JEE Main source decision pending (official NTA PYQs via vision extraction vs authored+cross-checked).
+6. Phase 4 later (Cloudflare Worker for server-graded all-India mocks, FCM digest).
+
+### Owner decisions pending
+- Migration modal: closing it (Esc/X) currently discards local data — proposed fix: closing keeps local data and re-asks next time; only an explicit "Discard local" deletes.
+- NEET/JEE Main question source (see 5).
+
+### Conventions that must hold
+Spark only (no billing). 3 colours (neutrals + indigo + saffron), flat (no borders/shadows/gradients except landing ring; CBT screen keeps NTA-style tokens), Plus Jakarta Sans, spacing scale 4/8/12/16/24/32/48/64, responsive 320→2560. All user state through `UserStore` (guest = local only). Sonnet subagents only; one owner per directory; commits by explicit pathspec, trailer `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`; never `git add -A` on main, never stash/reset.
 
 ## Later phases
 1 exam engine → 2 measure → 3 plan per docs/06, each broken into waves here before starting. Phase 4 server work goes to `/worker` (Cloudflare), see 07.
