@@ -2,9 +2,11 @@
   --ink:#0E1330; --paper:#FAFAF7; --surface:#FFFFFF; --slate:#5B6178; --line:#E3E5EC;
   --primary:#3A3FD9; --primary-hover:#2F33B8; --primary-50:#EEF0FF;
   --accent:#F5A524;
-  --good:#1F9D6B; --warn:#E08A00; --bad:#D64545;
+  --accent-ink:#9A5B00; --accent-50:#FEF4E2;
+  /* status maps onto the 3 colours (no green/red in product UI) */
+  --good:var(--primary); --warn:var(--accent); --bad:var(--accent);
   --radius-card:10px; --radius-btn:8px; --space:8px;
-  --font-ui:"Inter",system-ui,sans-serif; --font-display:"Space Grotesk","Inter",sans-serif;
+  --font-ui:"Plus Jakarta Sans Variable","Plus Jakarta Sans",system-ui,sans-serif; --font-display:var(--font-ui);
   /* CBT palette: mimics NTA, never rethemed */
   --cbt-not-visited:#F2F2F2; --cbt-not-visited-border:#9E9E9E;
   --cbt-not-answered:#E4572E; --cbt-answered:#2E9E44;
@@ -14,4 +16,5 @@
 [data-theme="dark"]{
   --ink:#ECEEF8; --paper:#0B0F24; --surface:#141936; --slate:#A3A8C3; --line:#262C4D;
   --primary:#7B80FF; --primary-hover:#9599FF; --primary-50:#1D2250;
+  --accent-ink:#F5A524; --accent-50:#2A2210;
 }
