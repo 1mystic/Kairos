@@ -15,12 +15,16 @@ import { practiceRoutes } from './practice/routes';
 import { cbtExamRoutes, cbtPageRoutes } from './cbt/routes';
 import { uploadRoutes } from './upload/routes';
 import { diagnosticRoutes } from './diagnostic/routes';
+import { analysisRoutes } from './analysis/routes';
+import { ScrollToTop } from './lib/ScrollToTop';
 import { StoreProvider } from './store/StoreProvider';
 import { NudgeProvider } from './store/NudgeProvider';
 import { firebaseConfigError } from './lib/firebase';
 
 export function AppRoutes() {
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route element={<PublicOnlyRoute />}>
         <Route path="/signin" element={<SignIn />} />
@@ -36,6 +40,9 @@ export function AppRoutes() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
           {practiceRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {analysisRoutes.map((r) => (
             <Route key={r.path} path={r.path} element={r.element} />
           ))}
           {diagnosticRoutes.map((r) => (
@@ -56,6 +63,7 @@ export function AppRoutes() {
         ))}
       </Route>
     </Routes>
+    </>
   );
 }
 
