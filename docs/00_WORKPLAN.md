@@ -80,22 +80,23 @@ Repo: https://github.com/1mystic/Kairos (`main` = committed work; branch `wip-sn
 Firebase `kairos-76a0d` (Spark): Firestore (asia-south1) + rules + indexes + email/password + Google auth DEPLOYED. Hosting NOT deployed. `app/.env.local` holds the web config (owner pasted it; never read it).
 Tools: firebase CLI + gh logged in; Java for emulators at `~/.local/jre/jdk-21.0.13+9-jre/bin` (prepend to PATH before `pnpm test:rules`); pipeline venv `pipeline/.venv`.
 
-### Done and committed on main
-W1 scaffold · W2a core · W2b app shell/auth · W2c firebase+rules (55 rules tests) · W2d pipeline · W3a design v1 + guest mode · W3b/e core media + bank client + QuestionView · W3d CI · W3f landing · W4b measurement engine · W4c practice mode (routes NOT mounted) · W4d-core upload data layer + media rules · W5b-core schedule/pace · W6a-core generator/diagnostic/predict. Core: 261 tests, ~99% coverage.
+### Done and committed on main (as of the end of session 1)
+W1 scaffold · W2a core · W2b app shell/auth · W2c firebase+rules (55 rules tests) · W2d pipeline · W3a guest mode + store · W3b/e core media + bank client + QuestionView · W3d CI · W3f landing · **W3g flat design system + responsive + production landing/FAQ/legal/settings (docs/10_DESIGN_SYSTEM.md, consistency test)** · W4a mock exam (CBT) · W4b measurement engine · W4c practice mode · W4d-core upload data layer + media rules · W5b-core schedule/pace · W6a-core generator/diagnostic/predict · **W7a question bank v2 (519 Qs: 495 JEEBench JEE-Adv + 24 authored; bank v2 live)**. Core: 261 tests ~99% coverage. Routes MOUNTED in App.tsx: landing (/), auth, settings, privacy/terms, practice (picker/session/summary), mocks list + result, full-screen /exam/:paperId (guests allowed).
 
-### In flight when this was written (check `git status` / `git log` / wip-snapshot to see how far they got)
-- W3g design-system redesign (flat, no borders/shadows, consistent spacing tokens, responsive 320→2560, production landing page with FAQ/footer/privacy/terms, pro Settings/Home layouts on big screens, shared primitives documented in docs/10_DESIGN_SYSTEM.md). Touches app/src/{index.css,styles,components/ui.tsx,icons,pages,auth,landing,QuestionView*,bank/BankPreview}. Uncommitted at snapshot time.
-- W4a mock exam mode (app/src/cbt/**, app/e2e/exam.spec.ts). Had type errors in cbt/loader.ts + cbt/model.ts at last check.
-- W4d-ui upload screens (app/src/upload/**, app/src/store/bank*.ts, adds pdfjs-dist).
-- W5c planner engine + 1,000-student sim gate (core/src/plan/planner.ts, backlog.ts, core/src/sim/**). Had 1 lint error (unused `tmin`, planner.ts:~327).
-- W7a question bank v2 from JEEBench: DONE + committed (519 questions, bank v2 live in repo).
-- W5d customisable Home dashboard (app/src/dashboard/**, spec docs/11_DASHBOARD.md; layout reference from owner: Daily/Week/Month control, readiness ring hero, trend bars, stat tiles, top chapters, plan ring, activity feed, tip card; customise sheet to show/hide/reorder/resize cards). Orchestrator mounts `<Dashboard/>` inside Home.
-- W4a mock exam: DONE + committed (routes NOT mounted; guests must reach /exam/:paperId outside AppLayout).
-If an agent is gone: re-launch it with the same task text from this plan (model sonnet), telling it to continue from the files already in the tree/wip-snapshot rather than starting over.
+### KNOWN BROKEN RIGHT NOW (fix first next session)
+- `app/src/App.test.tsx` > "lets a guest reach home, practice and settings after Continue as guest" FAILS (1 of 107 app tests). I changed its last assertion to expect the real Practice heading (`findByRole('heading', {name:'Practice'})`) after mounting practiceRoutes; it still fails, probably because the real picker needs bank fetches / providers under the test harness (mock `fetch`/the bank hooks like the practice tests do, or assert on a stable element). I committed + pushed with this red test by mistake.
+- `pnpm lint` failures from unfinished agent work (store/bank.ts unused vars, core/src/plan/planner.ts unused `tmin`) and `tsc` error src/upload/raster.ts(63) `PDFDocumentProxy.destroy` — these live in the in-flight W4d-ui / W5c work.
+
+### IN FLIGHT when session 1 ended (uncommitted in working tree; saved on branch `wip-snapshot`)
+- W4d-ui upload screens: app/src/upload/**, app/src/store/bank*.ts, app/scripts/sync-prompt.mjs, adds pdfjs-dist (package.json/pnpm-lock changed). Routes `/upload`, `/bank` not mounted yet.
+- W5c planner engine + sim gate: core/src/plan/planner.ts, backlog.ts, core/src/sim/**, core/package.json `sim` script. Sim result vs random/chapter-order NOT yet reported.
+- W5d customisable dashboard: app/src/dashboard/** (spec docs/11_DASHBOARD.md). Mount `<Dashboard/>` inside pages/Home.tsx when done.
+To recover: `git fetch origin wip-snapshot && git diff main origin/wip-snapshot --stat`; either check out the files you need from that branch (`git checkout origin/wip-snapshot -- <paths>`) or re-launch the task text from this plan with model sonnet, telling the agent to continue from existing files. Check each agent's tests/lint before committing.
 
 ### Next, in order
-1. Let in-flight agents finish; run the verify block (pnpm lint, typecheck, core test:coverage, app test, build, test:rules if rules changed, pipeline pytest); commit; push main.
-2. INTEGRATION (orchestrator, tiny edits in app/src/App.tsx): mount practiceRoutes, cbtRoutes, uploadRoutes, landing via PublicEntry (`<Landing onStartGuest={useStartGuest()...}/>`), BankPreview at /dev/bank (DEV only), Settings; replace Placeholder routes. Add missing core exports (JEE_ADV exam enum if W7a reports it). Update docs/03 mastery doc with reps/lapses/st fields.
+0. Fix the failing App.test.tsx case above, then:
+1. Finish/recover in-flight agents (W4d-ui, W5c, W5d); run the verify block (pnpm lint, typecheck, core test:coverage, app test, build, test:rules if rules changed, pipeline pytest); commit; push main.
+2. INTEGRATION (orchestrator, tiny edits in app/src/App.tsx): practice + mocks + exam + landing + settings are DONE. Still to mount: uploadRoutes (/upload, /bank), `<Dashboard/>` in Home, BankPreview at /dev/bank (DEV only), and add 'My questions' source into practice (`userBankSource()`). Add missing core exports (JEE_ADV exam enum if W7a reports it). Update docs/03 mastery doc with reps/lapses/st fields.
 3. Deploy hosting: `pnpm build && firebase deploy --only hosting --project kairos-76a0d --non-interactive`; smoke test landing → guest → practice → sample mock → upload → sign up/in.
 4. Remaining features (feature map above): W5a analysis (mock report tabs + heatmap), W5b-ui onboarding + exam date + today card (uses core/plan + nudge('exam_date_set')), W6b daily plan UI (uses planner), W6c predicted-score UI, practice mode: include user bank source (`userBankSource()` from upload) + session screen change, diagnostic UI.
 5. Content: NEET/JEE Main source decision pending (official NTA PYQs via vision extraction vs authored+cross-checked).
