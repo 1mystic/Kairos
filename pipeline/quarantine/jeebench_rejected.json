@@ -1,0 +1,262 @@
+[
+ {
+  "id": "q_035f450e947c",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2022 Paper 2",
+   "gold": "BC",
+   "index": 45,
+   "question": "To check the principle of multiple proportions, a series of pure binary compounds $\\left(\\mathrm{P}_{\\mathrm{m}} \\mathrm{Q}_{\\mathrm{n}}\\right)$ were analyzed and their composition is tabulated below. The correct option(s) is(are)\n\n\\begin{center}\n\n\\begin{tabular}{|l|l|l|}\n\n\\hline\n\nCompound & Weight \\% of P & Weight \\% of Q \\\\\n\n\\hline\n\n$\\mathbf{1}$ & 50 & 50 \\\\\n\n\\hline\n\n$\\mathbf{2}$ & 44.4 & 55.6 \\\\\n\n\\hline\n\n$\\mathbf{3}$ & 40 & 60 \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}\n\n(A) If empirical formula of compound 3 is $\\mathrm{P}_{3} \\mathrm{Q}_{4}$, then the empirical formula of compound 2 is $\\mathrm{P}_{3} \\mathrm{Q}_{5}$.\n\n(B) If empirical formula of compound 3 is $\\mathrm{P}_{3} \\mathrm{Q}_{2}$ and atomic weight of element $\\mathrm{P}$ is 20 , then the atomic weight of $\\mathrm{Q}$ is 45 .\n\n(C) If empirical formula of compound 2 is $\\mathrm{PQ}$, then the empirical formula of the compound $\\mathbf{1}$ is $\\mathrm{P}_{5} \\mathrm{Q}_{4}$.\n\n(D) If atomic weight of $\\mathrm{P}$ and $\\mathrm{Q}$ are 70 and 35 , respectively, then the empirical formula of compound 1 is $\\mathrm{P}_{2} \\mathrm{Q}$.",
+   "subject": "chem",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2022 Paper 2 / chem #45"
+ },
+ {
+  "id": "q_2e2dcb842ce6",
+  "reason": "latex_command_outside_math",
+  "record": {
+   "description": "JEE Adv 2017 Paper 1",
+   "gold": "AB",
+   "index": 43,
+   "question": "Let $X$ and $Y$ be two events such that $P(X)=\\frac{1}{3}, P(X \\mid Y)=\\frac{1}{2}$ and $P(Y \\mid X)=\\frac{2}{5}$. Then\n\n[A] $P(Y)=\\frac{4}{15}$\n\n[B] $P\\left(X^{\\prime} \\mid Y\\right)=\\frac{1}{2}$\n\n[C] \\quad P(X \\cap Y)=\\frac{1}{5}$\n\n[D] $P(X \\cup Y)=\\frac{2}{5}$",
+   "subject": "math",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2017 Paper 1 / math #43"
+ },
+ {
+  "id": "q_33c5cef44178",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2019 Paper 1",
+   "gold": "6.75",
+   "index": 35,
+   "question": "Consider the kinetic data given in the following table for the reaction $\\mathrm{A}+\\mathrm{B}+\\mathrm{C} \\rightarrow$ Product.\n\n\\begin{center}\n\n\\begin{tabular}{|c|c|c|c|c|}\n\n\\hline\n\nExperiment No. & $\\begin{array}{c}{[\\mathrm{A}]} \\\\ \\left(\\mathrm{mol} \\mathrm{dm}^{-3}\\right)\\end{array}$ & $\\begin{array}{c}{[\\mathrm{B}]} \\\\ \\left(\\mathrm{mol} \\mathrm{dm}^{-3}\\right)\\end{array}$ & $\\begin{array}{c}{[\\mathrm{C}]} \\\\ \\left(\\mathrm{mol} \\mathrm{dm}^{-3}\\right)\\end{array}$ & $\\begin{array}{c}\\text { Rate of reaction } \\\\ \\left(\\mathrm{mol} \\mathrm{dm}^{-3} \\mathrm{~s}^{-1}\\right)\\end{array}$ \\\\\n\n\\hline\n\n1 & 0.2 & 0.1 & 0.1 & $6.0 \\times 10^{-5}$ \\\\\n\n\\hline\n\n2 & 0.2 & 0.2 & 0.1 & $6.0 \\times 10^{-5}$ \\\\\n\n\\hline\n\n3 & 0.2 & 0.1 & 0.2 & $1.2 \\times 10^{-4}$ \\\\\n\n\\hline\n\n4 & 0.3 & 0.1 & 0.1 & $9.0 \\times 10^{-5}$ \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}\n\nThe rate of the reaction for $[\\mathrm{A}]=0.15 \\mathrm{~mol} \\mathrm{dm}^{-3},[\\mathrm{~B}]=0.25 \\mathrm{~mol} \\mathrm{dm}^{-3}$ and $[\\mathrm{C}]=0.15 \\mathrm{~mol} \\mathrm{dm}^{-3}$ is found to be $\\mathbf{Y} \\times 10^{-5} \\mathrm{~mol} \\mathrm{dm}^{-3} \\mathrm{~s}^{-1}$. What is the value of $\\mathbf{Y}$?",
+   "subject": "chem",
+   "type": "Numeric"
+  },
+  "source_id": "JEE Adv 2019 Paper 1 / chem #35"
+ },
+ {
+  "id": "q_4211ae6fba96",
+  "reason": "latex_command_outside_math",
+  "record": {
+   "description": "JEE Adv 2018 Paper 1",
+   "gold": "ABD",
+   "index": 37,
+   "question": "For a non-zero complex number $z$, let $\\arg (z)$ denote the principal argument with $-\\pi<\\arg (z) \\leq \\pi$. Then, which of the following statement(s) is (are) FALSE?\n\n\\end{itemize}\n\n(A) $\\arg (-1-i)=\\frac{\\pi}{4}$, where $i=\\sqrt{-1}$\n\n(B) The function $f: \\mathbb{R} \\rightarrow(-\\pi, \\pi]$, defined by $f(t)=\\arg (-1+i t)$ for all $t \\in \\mathbb{R}$, is continuous at all points of $\\mathbb{R}$, where $i=\\sqrt{-1}$\n\n(C) For any two non-zero complex numbers $z_{1}$ and $z_{2}$,\n\n\\[\n\\arg \\left(\\frac{z_{1}}{z_{2}}\\right)-\\arg \\left(z_{1}\\right)+\\arg \\left(z_{2}\\right)\n\\]\n\nis an integer multiple of $2 \\pi$\n\n(D) For any three given distinct complex numbers $z_{1}, z_{2}$ and $z_{3}$, the locus of the point $z$ satisfying the condition\n\n\\[\n\\arg \\left(\\frac{\\left(z-z_{1}\\right)\\left(z_{2}-z_{3}\\right)}{\\left(z-z_{3}\\right)\\left(z_{2}-z_{1}\\right)}\\right)=\\pi\n\\]\n\nlies on a straight line",
+   "subject": "math",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2018 Paper 1 / math #37"
+ },
+ {
+  "id": "q_4fbb5a34c6c4",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2020 Paper 2",
+   "gold": "9",
+   "index": 19,
+   "question": "The $1^{\\text {st }}, 2^{\\text {nd }}$, and the $3^{\\text {rd }}$ ionization enthalpies, $I_{1}, I_{2}$, and $I_{3}$, of four atoms with atomic numbers $n, n+$ 1, $n+2$, and $n+3$, where $n<10$, are tabulated below. What is the value of $n$ ?\n\n\\begin{center}\n\n\\begin{tabular}{|c|c|c|c|}\n\n\\hline\n\n{$\\begin{array}{c}\\text { Atomic } \\\\\n\n\\text { number }\\end{array}$} & \\multicolumn{3}{|c|}{Ionization Enthalpy $(\\mathrm{kJ} / \\mathrm{mol})$} \\\\\n\n\\cline { 2 - 4 }\n\n & $I_{1}$ & $I_{2}$ & $I_{3}$ \\\\\n\n\\hline\n\n$n$ & 1681 & 3374 & 6050 \\\\\n\n\\hline\n\n$n+1$ & 2081 & 3952 & 6122 \\\\\n\n\\hline\n\n$n+2$ & 496 & 4562 & 6910 \\\\\n\n\\hline\n\n$n+3$ & 738 & 1451 & 7733 \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}",
+   "subject": "chem",
+   "type": "Integer"
+  },
+  "source_id": "JEE Adv 2020 Paper 2 / chem #19"
+ },
+ {
+  "id": "q_5058af649587",
+  "reason": "options_not_parsed",
+  "record": {
+   "description": "JEE Adv 2016 Paper 1",
+   "gold": "BCD",
+   "index": 24,
+   "question": "According to the Arrhenius equation,\n\n(A) a high activation energy usually implies a fast reaction.\n\n(B) rate constant increases with increase in temperature. This is due to a greater number of collisions whose energy exceeds the activation energy. (C) higher the magnitude of activation energy, stronger is the temperature dependence of\n\nthe rate constant.\n\n(D) the pre-exponential factor is a measure of the rate at which collisions occur, irrespective of their energy.",
+   "subject": "chem",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2016 Paper 1 / chem #24"
+ },
+ {
+  "id": "q_520726419287",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2016 Paper 1",
+   "gold": "B",
+   "index": 1,
+   "question": "In a historical experiment to determine Planck's constant, a metal surface was irradiated with light of different wavelengths. The emitted photoelectron energies were measured by applying a stopping potential. The relevant data for the wavelength $(\\lambda)$ of incident light and the corresponding stopping potential $\\left(V_{0}\\right)$ are given below :\n\n\\begin{center}\n\n\\begin{tabular}{cc}\n\n\\hline\n\n$\\lambda(\\mu \\mathrm{m})$ & $V_{0}($ Volt $)$ \\\\\n\n\\hline\n\n0.3 & 2.0 \\\\\n\n0.4 & 1.0 \\\\\n\n0.5 & 0.4 \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}\n\nGiven that $c=3 \\times 10^{8} \\mathrm{~m} \\mathrm{~s}^{-1}$ and $e=1.6 \\times 10^{-19} \\mathrm{C}$, Planck's constant (in units of $J \\mathrm{~s}$ ) found from such an experiment is\n\n(A) $6.0 \\times 10^{-34}$\n\n(B) $6.4 \\times 10^{-34}$\n\n(C) $6.6 \\times 10^{-34}$\n\n(D) $6.8 \\times 10^{-34}$",
+   "subject": "phy",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2016 Paper 1 / phy #1"
+ },
+ {
+  "id": "q_5385c69d3d9f",
+  "reason": "options_not_parsed",
+  "record": {
+   "description": "JEE Adv 2017 Paper 2",
+   "gold": "D",
+   "index": 3,
+   "question": "A photoelectric material having work-function $\\phi_{0}$ is illuminated with light of wavelength $\\lambda\\left(\\lambda<\\frac{h c}{\\phi_{0}}\\right)$. The fastest photoelectron has a de Broglie wavelength $\\lambda_{d}$. A change in wavelength of the incident light by $\\Delta \\lambda$ results in a change $\\Delta \\lambda_{d}$ in $\\lambda_{d}$. Then the ratio $\\Delta \\lambda_{d} / \\Delta \\lambda$ is proportional to\n\n$[\\mathrm{A}] \\quad \\lambda_{d} / \\lambda$\n\n$[\\mathrm{B}] \\quad \\lambda_{d}^{2} / \\lambda^{2}$\n\n$[\\mathrm{C}] \\lambda_{d}^{3} / \\lambda$\n\n$[\\mathrm{D}] \\lambda_{d}^{3} / \\lambda^{2}$",
+   "subject": "phy",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2017 Paper 2 / phy #3"
+ },
+ {
+  "id": "q_545d01fbac0a",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2022 Paper 2",
+   "gold": "C",
+   "index": 35,
+   "question": "Area of the cross-section of a wire is measured using a screw gauge. The pitch of the main scale is $0.5 \\mathrm{~mm}$. The circular scale has 100 divisions and for one full rotation of the circular scale, the main scale shifts by two divisions. The measured readings are listed below.\n\n\\begin{center}\n\n\\begin{tabular}{|l|l|l|}\n\n\\hline\n\nMeasurement condition & Main scale reading & Circular scale reading \\\\\n\n\\hline\n\n$\\begin{array}{l}\\text { Two arms of gauge touching } \\\\ \\text { each other without wire }\\end{array}$ & 0 division & 4 divisions \\\\\n\n\\hline\n\nAttempt-1: With wire & 4 divisions & 20 divisions \\\\\n\n\\hline\n\nAttempt-2: With wire & 4 divisions & 16 divisions \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}\n\nWhat are the diameter and cross-sectional area of the wire measured using the screw gauge?\n\n(A) $2.22 \\pm 0.02 \\mathrm{~mm}, \\pi(1.23 \\pm 0.02) \\mathrm{mm}^{2}$\n\n(B) $2.22 \\pm 0.01 \\mathrm{~mm}, \\pi(1.23 \\pm 0.01) \\mathrm{mm}^{2}$\n\n(C) $2.14 \\pm 0.02 \\mathrm{~mm}, \\pi(1.14 \\pm 0.02) \\mathrm{mm}^{2}$\n\n(D) $2.14 \\pm 0.01 \\mathrm{~mm}, \\pi(1.14 \\pm 0.01) \\mathrm{mm}^{2}$",
+   "subject": "phy",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2022 Paper 2 / phy #35"
+ },
+ {
+  "id": "q_60e04a3555a2",
+  "reason": "latex_command_outside_math",
+  "record": {
+   "description": "JEE Adv 2017 Paper 1",
+   "gold": "AB",
+   "index": 40,
+   "question": "Let $f: \\mathbb{R} \\rightarrow(0,1)$ be a continuous function. Then, which of the following function(s) has(have) the value zero at some point in the interval $(0,1)$ ?\n\n[A] $x^{9}-f(x)$\n\n[B] $x-\\int_{0}^{\\frac{\\pi}{2}-x} f(t) \\cos t d t$\n\n[C] e^{x}-\\int_{0}^{x} f(t) \\sin t d t$\n\n[D] f(x)+\\int_{0}^{\\frac{\\pi}{2}} f(t) \\sin t d t$",
+   "subject": "math",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2017 Paper 1 / math #40"
+ },
+ {
+  "id": "q_9826c0a89ae0",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2020 Paper 1",
+   "gold": "0.11",
+   "index": 31,
+   "question": "$5.00 \\mathrm{~mL}$ of $0.10 \\mathrm{M}$ oxalic acid solution taken in a conical flask is titrated against $\\mathrm{NaOH}$ from a burette using phenolphthalein indicator. The volume of $\\mathrm{NaOH}$ required for the appearance of permanent faint pink color is tabulated below for five experiments. What is the concentration, in molarity, of the $\\mathrm{NaOH}$ solution?\n\n\\begin{center}\n\n\\begin{tabular}{|c|c|}\n\n\\hline\n\nExp. No. & Vol. of NaOH (mL) \\\\\n\n\\hline\n\n$\\mathbf{1}$ & 12.5 \\\\\n\n\\hline\n\n$\\mathbf{2}$ & 10.5 \\\\\n\n\\hline\n\n$\\mathbf{3}$ & 9.0 \\\\\n\n\\hline\n\n$\\mathbf{4}$ & 9.0 \\\\\n\n\\hline\n\n$\\mathbf{5}$ & 9.0 \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}",
+   "subject": "chem",
+   "type": "Numeric"
+  },
+  "source_id": "JEE Adv 2020 Paper 1 / chem #31"
+ },
+ {
+  "id": "q_9bc0754cf584",
+  "reason": "text_sanity: option B: unbalanced braces in math '\\varepsilon_{av}}'",
+  "record": {
+   "description": "JEE Adv 2019 Paper 1",
+   "gold": "ACD",
+   "index": 26,
+   "question": "Which of the following statement(s) is(are) correct regarding the root mean square speed ( $\\left.u_{rms}\\right)$ and average translational kinetic energy ( $\\left.\\varepsilon_{\\text {av }}\\right)$ of a molecule in a gas at equilibrium?\n\n(A) $u_{rms}$ is doubled when its temperature is increased four times\n\n(B) $\\varepsilon_{av}}$ is doubled when its temperature is increased four times\n\n(C) $\\varepsilon_{av}$ at a given temperature does not depend on its molecular mass\n\n(D) $u_{rms}$ is inversely proportional to the square root of its molecular mass",
+   "subject": "chem",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2019 Paper 1 / chem #26"
+ },
+ {
+  "id": "q_a6467f2d884c",
+  "reason": "text_sanity: option A: unbalanced '$' delimiter; option C: unbalanced '$' delimiter",
+  "record": {
+   "description": "JEE Adv 2017 Paper 1",
+   "gold": "BD",
+   "index": 41,
+   "question": "Which of the following is(are) NOT the square of a $3 \\times 3$ matrix with real entries?\n\n[A]$\\left[\\begin{array}{lll}1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1\\end{array}\\right]\n\n[B]$\\left[\\begin{array}{ccc}1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & -1\\end{array}\\right]$\n\n[C]$\\left[\\begin{array}{ccc}1 & 0 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & -1\\end{array}\\right]\n\n[D]$\\left[\\begin{array}{ccc}-1 & 0 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & -1\\end{array}\\right]$",
+   "subject": "math",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2017 Paper 1 / math #41"
+ },
+ {
+  "id": "q_acea9abad42a",
+  "reason": "latex_command_outside_math",
+  "record": {
+   "description": "JEE Adv 2022 Paper 1",
+   "gold": "D",
+   "index": 52,
+   "question": "LIST-I contains compounds and LIST-II contains reactions\n\n\nLIST-I\n(I) $\\mathrm{H}_2 \\mathrm{O}_2$\n(II) $\\mathrm{Mg}(\\mathrm{OH})_2$\n(III) $\\mathrm{BaCl}_2$\n(IV) $\\mathrm{CaCO}_3$\n\nLIST-II\n(P) $\\mathrm{Mg}\\left(\\mathrm{HCO}_{3}\\right)_{2}+\\mathrm{Ca}(\\mathrm{OH})_{2} \\rightarrow$\n(Q) $\\mathrm{BaO}_{2}+\\mathrm{H}_{2} \\mathrm{SO}_{4} \\rightarrow$\n(R) $\\mathrm{Ca}(\\mathrm{OH})_{2}+\\mathrm{MgCl}_{2} \\rightarrow$\n(S) $\\mathrm{BaO}_{2}+\\mathrm{HCl} \\rightarrow$\n(T) $\\mathrm{Ca}\\left(\\mathrm{HCO}_{3}\\right)_{2}+\\mathrm{Ca}(\\mathrm{OH})_{2} \\rightarrow$\n\nMatch each compound in LIST-I with its formation reaction(s) in LIST-II, and choose the correct option\\\n(A) I $\\rightarrow$ Q; II $\\rightarrow$ P; III $\\rightarrow \\mathrm{S}$; IV $\\rightarrow$ R\n\n(B) I $\\rightarrow$ T; II $\\rightarrow$ P; III $\\rightarrow$ Q; IV $\\rightarrow \\mathrm{R}$\n\n(C) I $\\rightarrow$ T; II $\\rightarrow$ R; III $\\rightarrow$ Q; IV $\\rightarrow$ P\n\n(D) I $\\rightarrow$ Q; II $\\rightarrow$ R; III $\\rightarrow \\mathrm{S}$; IV $\\rightarrow \\mathrm{P}$",
+   "subject": "chem",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2022 Paper 1 / chem #52"
+ },
+ {
+  "id": "q_c286fff5f15d",
+  "reason": "latex_table_or_environment_unsupported",
+  "record": {
+   "description": "JEE Adv 2021 Paper 2",
+   "gold": "A",
+   "index": 31,
+   "question": "Correct match of the $\\mathbf{C}-\\mathbf{H}$ bonds (shown in bold) in Column $\\mathbf{J}$ with their BDE in Column $\\mathbf{K}$ is\n\n\\begin{center}\n\n\\begin{tabular}{|c|c|}\n\n\\hline\n\n$\\begin{array}{l}\\text { Column J } \\\\ \\text { Molecule }\\end{array}$ & $\\begin{array}{c}\\text { Column K } \\\\ \\text { BDE }\\left(\\text { kcal mol }^{-1}\\right)\\end{array}$ \\\\\n\n\\hline\n\n(P) $\\mathbf{H}-\\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$ & (i) 132 \\\\\n\n\\hline\n\n(Q) $\\mathbf{H}-\\mathrm{CH}_{2} \\mathrm{Ph}$ & (ii) 110 \\\\\n\n\\hline\n\n(R) $\\mathbf{H}-\\mathrm{CH}=\\mathrm{CH}_{2}$ & (iii) 95 \\\\\n\n\\hline\n\n(S) $\\mathrm{H}-\\mathrm{C} \\equiv \\mathrm{CH}$ & (iv) 88 \\\\\n\n\\hline\n\n\\end{tabular}\n\n\\end{center}\n\n(A) $P$ - iii, $Q$ - iv, R - ii, S - i\n\n(B) $P-i, Q-i i, R-$ iii, S - iv\n\n(C) P - iii, Q - ii, R - i, S - iv\n\n(D) $P-i i, Q-i, R-i v, S-i i i$",
+   "subject": "chem",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2021 Paper 2 / chem #31"
+ },
+ {
+  "id": "q_c39a513e5330",
+  "reason": "latex_command_outside_math",
+  "record": {
+   "description": "JEE Adv 2017 Paper 2",
+   "gold": "B",
+   "index": 20,
+   "question": "For the following cell,\n\n\\[\n\\mathrm{Zn}(s)\\left|\\mathrm{ZnSO}_{4}(a q) \\| \\mathrm{CuSO}_{4}(a q)\\right| \\mathrm{Cu}(s)\n\\]\n\nwhen the concentration of $\\mathrm{Zn}^{2+}$ is 10 times the concentration of $\\mathrm{Cu}^{2+}$, the expression for $\\Delta G\\left(\\right.$ in $\\left.\\mathrm{J} \\mathrm{mol}^{-1}\\right)$ is\n\n[ $\\mathrm{F}$ is Faraday constant; $\\mathrm{R}$ is gas constant; $\\mathrm{T}$ is temperature; $E^{o}($ cell $)=1.1 \\mathrm{~V}$ ]\n\n[A] $1.1 \\mathrm{~F}$\n\n[B] $2.303 \\mathrm{RT}-2.2 \\mathrm{~F}$\n\n[C] $2.303 \\mathrm{RT}+1.1 \\mathrm{~F}$\n\n[D]-2.2 \\mathrm{~F}$",
+   "subject": "chem",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2017 Paper 2 / chem #20"
+ },
+ {
+  "id": "q_c68e9344a460",
+  "reason": "options_not_parsed",
+  "record": {
+   "description": "JEE Adv 2017 Paper 2",
+   "gold": "B",
+   "index": 6,
+   "question": "A rocket is launched normal to the surface of the Earth, away from the Sun, along the line joining the Sun and the Earth. The Sun is $3 \\times 10^{5}$ times heavier than the Earth and is at a distance $2.5 \\times 10^{4}$ times larger than the radius of the Earth. The escape velocity from Earth's gravitational field is $v_{e}=11.2 \\mathrm{~km} \\mathrm{~s}^{-1}$. The minimum initial velocity $\\left(v_{S}\\right)$ required for the rocket to be able to leave the Sun-Earth system is closest to\n\n(Ignore the rotation and revolution of the Earth and the presence of any other planet)\n\n$[\\mathrm{A}] \\quad v_{S}=22 \\mathrm{~km} \\mathrm{~s}^{-1}$\n\n$[\\mathrm{B}] v_{S}=42 \\mathrm{~km} \\mathrm{~s}^{-1}$\n\n$[\\mathrm{C}] \\quad v_{S}=62 \\mathrm{~km} \\mathrm{~s}^{-1}$\n\n[D] $v_{S}=72 \\mathrm{~km} \\mathrm{~s}^{-1}$",
+   "subject": "phy",
+   "type": "MCQ"
+  },
+  "source_id": "JEE Adv 2017 Paper 2 / phy #6"
+ },
+ {
+  "id": "q_cfead80d62d2",
+  "reason": "options_not_parsed",
+  "record": {
+   "description": "JEE Adv 2021 Paper 2",
+   "gold": "ABD",
+   "index": 24,
+   "question": "The correct statement(s) related to oxoacids of phosphorous is(are) (A) Upon heating, $\\mathrm{H}_{3} \\mathrm{PO}_{3}$ undergoes disproportionation reaction to produce $\\mathrm{H}_{3} \\mathrm{PO}_{4}$ and $\\mathrm{PH}_{3}$.\n\n(B) While $\\mathrm{H}_{3} \\mathrm{PO}_{3}$ can act as reducing agent, $\\mathrm{H}_{3} \\mathrm{PO}_{4}$ cannot.\n\n(C) $\\mathrm{H}_{3} \\mathrm{PO}_{3}$ is a monobasic acid.\n\n(D) The $\\mathrm{H}$ atom of $\\mathrm{P}-\\mathrm{H}$ bond in $\\mathrm{H}_{3} \\mathrm{PO}_{3}$ is not ionizable in water.",
+   "subject": "chem",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2021 Paper 2 / chem #24"
+ },
+ {
+  "id": "q_d34fb7dd44db",
+  "reason": "references_figure_not_present",
+  "record": {
+   "description": "JEE Adv 2016 Paper 1",
+   "gold": "BD",
+   "index": 25,
+   "question": "A plot of the number of neutrons $(N)$ against the number of protons $(P)$ of stable nuclei exhibits upward deviation from linearity for atomic number, $Z>20$. For an unstable nucleus having $N / P$ ratio less than 1 , the possible mode(s) of decay is(are)\n\n(A) $\\beta^{-}$-decay $(\\beta$ emission)\n\n(B) orbital or $K$-electron capture\n\n(C) neutron emission\n\n(D) $\\beta^{+}$-decay (positron emission)",
+   "subject": "chem",
+   "type": "MCQ(multiple)"
+  },
+  "source_id": "JEE Adv 2016 Paper 1 / chem #25"
+ },
+ {
+  "id": "q_f26305742ff2",
+  "reason": "text_sanity: stem: unbalanced '$' delimiter",
+  "record": {
+   "description": "JEE Adv 2023 Paper 2",
+   "gold": "512",
+   "index": 11,
+   "question": "Let $A_{1}, A_{2}, A_{3}, \\ldots, A_{8}$ be the vertices of a regular octagon that lie on a circle of radius 2. Let $P$ be a point on the circle and let $P A_{i}$ denote the distance between the points $P$ and $A_{i}$ for $i=1,2, \\ldots, 8$. If $P$ varies over the circle, then what is the maximum value of the product $P A_{1} \\cdot P A_{2} \\cdots P A_{8}?",
+   "subject": "math",
+   "type": "Integer"
+  },
+  "source_id": "JEE Adv 2023 Paper 2 / math #11"
+ }
+]

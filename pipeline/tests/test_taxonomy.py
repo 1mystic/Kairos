@@ -20,6 +20,9 @@ def test_loads_and_ids_unique_and_prefixed():
             assert all(tp.id.startswith(c.id + ".") for tp in c.topics)
 
 
+ADV_ONLY = {"CHE.GAS", "CHE.SBLK", "CHE.SOLID", "CHE.SURF", "CHE.METAL", "CHE.POLY"}
+
+
 def test_exam_flags():
     t = load_taxonomy()
     for s in t.subjects:
@@ -30,8 +33,10 @@ def test_exam_flags():
                 assert c.exams.JEE_MAIN and not c.exams.NEET_UG
             if s.id in ("BOT", "ZOO"):
                 assert c.exams.NEET_UG and not c.exams.JEE_MAIN
-            if s.id in ("PHY", "CHE"):
+            if s.id in ("PHY", "CHE") and c.id not in ADV_ONLY:
                 assert c.exams.JEE_MAIN and c.exams.NEET_UG
+            if c.id in ADV_ONLY:  # W7a: chapters kept for JEE Advanced coverage only (VERIFY vs 2026 syllabi)
+                assert not c.exams.JEE_MAIN and not c.exams.NEET_UG
     assert t.iat_subject_map["BIO"] == ["BOT", "ZOO"]
 
 

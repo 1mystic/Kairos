@@ -1,6 +1,6 @@
 {
  "version": 1,
- "_verify": "VERIFY: chapter lists are based on the rationalised NCERT class 11/12 books and must be checked against the official 2026 NTA syllabi (JEE Main, NEET UG) and the IAT syllabus before launch. Equilibrium is split into CHE.CHEQ/CHE.IONEQ for practice granularity. Topics are intentionally sparse in v1.",
+ "_verify": "VERIFY: chapter lists are based on the rationalised NCERT class 11/12 books and must be checked against the official 2026 NTA syllabi (JEE Main, NEET UG) and the IAT syllabus before launch. Equilibrium is split into CHE.CHEQ/CHE.IONEQ for practice granularity. Topics are intentionally sparse in v1. W7a additions (JEE Advanced coverage): CHE.GAS, CHE.SBLK, CHE.PBLK, CHE.SOLID, CHE.SURF, CHE.METAL, CHE.POLY. Flags for the six non-PBLK chapters (JEE_MAIN/NEET_UG false) reflect the rationalised 2024-26 syllabi as best known and are Advanced-only content; VERIFY against the official NTA syllabi.",
  "iat_subject_map": {
   "BIO": [
    "BOT",
@@ -472,6 +472,28 @@
      "topics": []
     },
     {
+     "id": "CHE.GAS",
+     "name": "States of Matter: Gases and Liquids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SBLK",
+     "name": "s-Block Elements (Hydrogen, Alkali and Alkaline Earth Metals)",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
      "id": "CHE.SOLN",
      "name": "Solutions",
      "class": 12,
@@ -577,6 +599,61 @@
      "exams": {
       "JEE_MAIN": true,
       "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.PBLK",
+     "name": "The p-Block Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SOLID",
+     "name": "The Solid State",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SURF",
+     "name": "Surface Chemistry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.METAL",
+     "name": "General Principles and Processes of Isolation of Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.POLY",
+     "name": "Polymers and Chemistry in Everyday Life",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
       "IAT": true
      },
      "topics": []
