@@ -1,5 +1,6 @@
 import { flattenSlots, type Blueprint } from '../blueprint';
 import type { Question } from '../question';
+import { roundMarks } from '../scoring';
 import { generatePaper } from './select';
 import { mulberry32, subSeed } from './rng';
 
@@ -60,7 +61,7 @@ export function predictScore(opts: {
       const threshold = (m.blank - m.wrong) / (m.correct - m.wrong);
       total += p > threshold ? (rng() < p ? m.correct : m.wrong) : m.blank;
     });
-    scores.push(total);
+    scores.push(roundMarks(total));
   }
   scores.sort((a, b) => a - b);
   return {

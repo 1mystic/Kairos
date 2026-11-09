@@ -29,6 +29,9 @@ due when R < 0.85 (0.9 in last 60 days). same question never returns soon; a **t
 4 validate test characteristic curve: expected avg within ±5% of real paper, else redraw
 5 order NTA-style; shuffle within section for shared mocks
 
+
+**Virtual subjects and mark rounding (G1).** A blueprint may carry a top-level `subject_map` (`{ "DA": ["PRS","LA",...] }`). `resolveSubjects(blueprint, slotSubject)` returns the mapped taxonomy subjects, or `[slotSubject]` when unmapped. The generator draws a slot's candidates from every question whose `tax.subject` is in that set, so chapter quotas span all mapped subjects' chapters (weights from the chapter-weights file, floor-equal when missing). Section ids are free-form (`GA1`, `T1M-MCQ`); order is file order. `scorePaper` accumulates raw marks and rounds totals (paper, subject, section) with `roundMarks` (2 d.p., no -0), so GATE's -1/3 and -2/3 (stored as -0.333333 / -0.666667) never surface as 99.999999.
+
 ## 5.5 planner (rolling horizon: plan 7 days, commit today, replan every open)
 phases by N days left (configurable):
 | phase | N | mix new/weak/review/mixed | mocks | target P |

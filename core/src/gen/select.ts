@@ -1,4 +1,4 @@
-import { flattenSlots, type Blueprint, type Slot } from '../blueprint';
+import { flattenSlots, resolveSubjects, type Blueprint, type Slot } from '../blueprint';
 import { stripAnswer, type Answer, type PublicQuestion, type Question } from '../question';
 import { chapterQuotas, quotaKey } from './quotas';
 import { mulberry32, shuffle, softmaxSample, subSeed, type Rng } from './rng';
@@ -140,8 +140,11 @@ function buildSections(
   const out: Section[] = [];
   for (const [key, ss] of groups) {
     const first = ss[0]!;
+    // a blueprint subject may be virtual (subject_map): draw across all its mapped taxonomy subjects
+    const subjects = new Set(resolveSubjects(input.blueprint, first.subject));
     const typed = input.bank.filter(
-      (q) => q.status !== 'quarantined' && q.type === first.type && q.tax?.subject === first.subject,
+      (q) =>
+        q.status !== 'quarantined' && q.type === first.type && q.tax?.subject !== undefined && subjects.has(q.tax.subject),
     );
     const all = typed.map(toCand);
     const strict = all.filter((c) => {

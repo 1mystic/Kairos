@@ -3,13 +3,13 @@
  "subject_map":{"DA":["PRS","LA","CO","PDS","DBW","ML","AI"],"GA":["GA"]},
  "subjects":[
   {"code":"GA","sections":[
-   {"id":"GA1","type":"SCQ","count":5,"marks":{"correct":1,"wrong":-0.3333,"blank":0}},
-   {"id":"GA2","type":"SCQ","count":5,"marks":{"correct":2,"wrong":-0.6667,"blank":0}}]},
+   {"id":"GA1","type":"SCQ","count":5,"marks":{"correct":1,"wrong":-0.333333,"blank":0}},
+   {"id":"GA2","type":"SCQ","count":5,"marks":{"correct":2,"wrong":-0.666667,"blank":0}}]},
   {"code":"DA","sections":[
-   {"id":"T1M-MCQ","type":"SCQ","count":12,"marks":{"correct":1,"wrong":-0.3333,"blank":0}},
+   {"id":"T1M-MCQ","type":"SCQ","count":12,"marks":{"correct":1,"wrong":-0.333333,"blank":0}},
    {"id":"T1M-MSQ","type":"MSQ","count":6,"marks":{"correct":1,"wrong":0,"blank":0}},
    {"id":"T1M-NAT","type":"NVQ","count":7,"marks":{"correct":1,"wrong":0,"blank":0},"answer_format":"numeric, integer or decimal; graded against official range"},
-   {"id":"T2M-MCQ","type":"SCQ","count":11,"marks":{"correct":2,"wrong":-0.6667,"blank":0}},
+   {"id":"T2M-MCQ","type":"SCQ","count":11,"marks":{"correct":2,"wrong":-0.666667,"blank":0}},
    {"id":"T2M-MSQ","type":"MSQ","count":8,"marks":{"correct":2,"wrong":0,"blank":0}},
    {"id":"T2M-NAT","type":"NVQ","count":11,"marks":{"correct":2,"wrong":0,"blank":0},"answer_format":"numeric, integer or decimal; graded against official range"}]}],
  "time_slots":["09:30","14:30"]}

@@ -24,6 +24,8 @@ export const blueprintSchema = z.looseObject({
   ui_skin: z.string(),
   subjects: z.array(subjectSchema).min(1),
   chapter_weights: z.string().optional(),
+  /** virtual blueprint subject code -> real taxonomy subjects (e.g. GATE DA -> PRS, LA, ...). */
+  subject_map: z.record(z.string(), z.array(z.string().min(1))).optional(),
   difficulty_target: z.object({ p_correct_hist: z.array(z.number()) }).optional(),
   time_slots: z.array(z.string()),
 });
@@ -45,6 +47,15 @@ export interface Slot {
 
 export function parseBlueprint(json: unknown): Blueprint {
   return blueprintSchema.parse(json);
+}
+
+/**
+ * Taxonomy subjects whose questions may fill a slot of blueprint subject `slotSubject`.
+ * `[slotSubject]` when the blueprint has no (non-empty) mapping for it.
+ */
+export function resolveSubjects(b: Blueprint, slotSubject: string): string[] {
+  const m = b.subject_map?.[slotSubject];
+  return m && m.length > 0 ? [...m] : [slotSubject];
 }
 
 export function totalQuestions(b: Blueprint): number {

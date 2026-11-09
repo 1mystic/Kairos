@@ -107,6 +107,14 @@ export interface PaperScore extends Tally {
   bySection: Record<string, Tally>;
 }
 
+/** Round marks to 2 decimals deterministically (never -0), so 99.999999 shows as 100. */
+export function roundMarks(x: number): number {
+  const r = Math.round((x + Math.sign(x) * 1e-9) * 100) / 100;
+  return r + 0;
+}
+
+const roundTally = (t: Tally): Tally => ({ ...t, marks: roundMarks(t.marks) });
+
 const emptyTally = (): Tally => ({ marks: 0, correct: 0, wrong: 0, blank: 0, partial: 0 });
 
 function award(marks: Marks, e: Evaluation): number {
@@ -156,5 +164,6 @@ export function scorePaper(
       t[e.verdict]++;
     }
   }
-  return { ...total, max, bySubject, bySection };
+  for (const m of [bySubject, bySection]) for (const k of Object.keys(m)) m[k] = roundTally(m[k]!);
+  return { ...roundTally(total), max: roundMarks(max), bySubject, bySection };
 }
