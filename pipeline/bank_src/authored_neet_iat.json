@@ -189,6 +189,69 @@
   ]
  },
  {
+  "id": "q_022aa9d8f477",
+  "type": "SCQ",
+  "stem": "The organ of Corti, containing hair cells that convert sound vibrations into nerve impulses, is located in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The organ of Corti rests on the basilar membrane inside the cochlea; the vestibular apparatus (semicircular canals, otolith organs) is for balance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "utricle"
+   },
+   {
+    "key": "B",
+    "text": "semicircular canals"
+   },
+   {
+    "key": "C",
+    "text": "cochlea"
+   },
+   {
+    "key": "D",
+    "text": "Eustachian tube"
+   }
+  ]
+ },
+ {
   "id": "q_02cb1afe2a25",
   "type": "INT",
   "stem": "A cell with $2n=20$ is at metaphase of mitosis. The number of chromatids it contains is ______.",
@@ -355,6 +418,69 @@
    {
     "key": "D",
     "text": "*Saccharomyces cerevisiae*"
+   }
+  ]
+ },
+ {
+  "id": "q_0442feb4e65d",
+  "type": "SCQ",
+  "stem": "The infective stage of *Plasmodium* that enters the human body with the bite of an infected mosquito is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Sporozoites from the salivary glands of the mosquito enter the human liver; gametocytes in the human blood are taken up by a mosquito to continue the cycle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "trophozoite in blood cells"
+   },
+   {
+    "key": "B",
+    "text": "merozoite in the mosquito gut"
+   },
+   {
+    "key": "C",
+    "text": "gametocyte"
+   },
+   {
+    "key": "D",
+    "text": "sporozoite"
    }
   ]
  },
@@ -970,6 +1096,69 @@
   "version": 1
  },
  {
+  "id": "q_08be5cf9fe7e",
+  "type": "SCQ",
+  "stem": "The forelimbs of whales, bats, cheetahs and humans are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "They share the same basic bone pattern (humerus, radius-ulna, carpals, metacarpals, phalanges) but are modified for different functions.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "convergent structures"
+   },
+   {
+    "key": "B",
+    "text": "homologous, showing adaptive radiation (divergent evolution)"
+   },
+   {
+    "key": "C",
+    "text": "analogous organs"
+   },
+   {
+    "key": "D",
+    "text": "vestigial organs"
+   }
+  ]
+ },
+ {
   "id": "q_08cfcce38637",
   "type": "SCQ",
   "stem": "In sewage treatment, BOD (biochemical oxygen demand) measures",
@@ -1033,6 +1222,69 @@
   ]
  },
  {
+  "id": "q_0900940779d7",
+  "type": "SCQ",
+  "stem": "Which gland secretes thymosins that promote the differentiation of T-lymphocytes?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The thymus plays a major role in immunity; it degenerates in old age, so cell-mediated immunity weakens.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "adrenal"
+   },
+   {
+    "key": "B",
+    "text": "thyroid"
+   },
+   {
+    "key": "C",
+    "text": "thymus"
+   },
+   {
+    "key": "D",
+    "text": "pineal"
+   }
+  ]
+ },
+ {
   "id": "q_0ae3961bd253",
   "type": "SCQ",
   "stem": "A cross between an F$_1$ plant and its homozygous recessive parent is called a",
@@ -1092,6 +1344,69 @@
    {
     "key": "D",
     "text": "reciprocal cross"
+   }
+  ]
+ },
+ {
+  "id": "q_0b396ad26062",
+  "type": "SCQ",
+  "stem": "Ringworm is a disease caused by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Dry, scaly lesions with intense itching appear on the skin, nails and scalp; heat and moisture help the fungus grow.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bacteria like *Salmonella*"
+   },
+   {
+    "key": "B",
+    "text": "protozoans such as *Giardia*"
+   },
+   {
+    "key": "C",
+    "text": "viruses"
+   },
+   {
+    "key": "D",
+    "text": "fungi such as *Trichophyton*, *Microsporum* and *Epidermophyton*"
    }
   ]
  },
@@ -1581,6 +1896,69 @@
   ]
  },
  {
+  "id": "q_0f13f1720cc2",
+  "type": "SCQ",
+  "stem": "HIV mainly infects",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "HIV is a retrovirus with RNA; reverse transcriptase makes viral DNA which integrates into the host genome; the loss of helper T cells leads to AIDS.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "neurons only"
+   },
+   {
+    "key": "B",
+    "text": "helper T-lymphocytes (TH cells), causing a decline in the immune system"
+   },
+   {
+    "key": "C",
+    "text": "red blood cells"
+   },
+   {
+    "key": "D",
+    "text": "osteoblasts"
+   }
+  ]
+ },
+ {
   "id": "q_0f14cdb36675",
   "type": "SCQ",
   "stem": "Erythroblastosis foetalis can occur when",
@@ -1940,6 +2318,69 @@
   "version": 1
  },
  {
+  "id": "q_15016317ae1d",
+  "type": "SCQ",
+  "stem": "Centres controlling cardiovascular reflexes, respiration and gastric secretions are located in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The medulla is part of the hindbrain and connects to the spinal cord.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cerebrum"
+   },
+   {
+    "key": "B",
+    "text": "thalamus"
+   },
+   {
+    "key": "C",
+    "text": "cerebellum"
+   },
+   {
+    "key": "D",
+    "text": "medulla oblongata"
+   }
+  ]
+ },
+ {
   "id": "q_1533aa71c5c4",
   "type": "INT",
   "stem": "Of the 64 possible codons, the number that code for amino acids is ______.",
@@ -1974,6 +2415,113 @@
    "label": "E",
    "b": -0.9,
    "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_15f5449d5712",
+  "type": "SCQ",
+  "stem": "The primary lymphoid organs, where B and T lymphocytes mature, are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Lymphocytes originate in the bone marrow; B cells mature there while T cells migrate to the thymus; the spleen, lymph nodes and MALT are secondary lymphoid organs.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "liver and kidney"
+   },
+   {
+    "key": "B",
+    "text": "lymph nodes and Peyer's patches"
+   },
+   {
+    "key": "C",
+    "text": "spleen and tonsils"
+   },
+   {
+    "key": "D",
+    "text": "bone marrow and thymus"
+   }
+  ]
+ },
+ {
+  "id": "q_16687ac717a6",
+  "type": "INT",
+  "stem": "In the population above ($q^2=0.04$), the number of heterozygous carriers in a population of 10,000 is ______.",
+  "images": [],
+  "answer": {
+   "value": 3200.0,
+   "tol": 0.0
+  },
+  "solution": "$2pq=2\\times0.8\\times0.2=0.32$, so $0.32\\times10000=3200$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
    "n": 0
   },
   "source": {
@@ -2299,6 +2847,69 @@
   ]
  },
  {
+  "id": "q_19ca68736b9c",
+  "type": "SCQ",
+  "stem": "Medical termination of pregnancy (MTP) is generally considered safest during",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "MTPs are legal in India with regulations under the MTP Act, 1971; they are safest in the first trimester, and the later stages have greater risks.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the first trimester"
+   },
+   {
+    "key": "B",
+    "text": "any time without risk"
+   },
+   {
+    "key": "C",
+    "text": "the third trimester"
+   },
+   {
+    "key": "D",
+    "text": "the last week of pregnancy"
+   }
+  ]
+ },
+ {
   "id": "q_19ef55aab9e8",
   "type": "SCQ",
   "stem": "Which of the following features is found in all chordates at some stage of their life?",
@@ -2467,6 +3078,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_1c326cd6e68d",
+  "type": "SCQ",
+  "stem": "Copper-releasing IUDs prevent pregnancy mainly because Cu$^{2+}$ ions",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Copper-releasing IUDs (Cu-T, Cu-7, Multiload 375) are ideal for women who want to delay pregnancy or space children.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "kill the ovum before ovulation"
+   },
+   {
+    "key": "B",
+    "text": "increase FSH secretion"
+   },
+   {
+    "key": "C",
+    "text": "block the fallopian tube permanently"
+   },
+   {
+    "key": "D",
+    "text": "suppress sperm motility and the fertilising capacity of sperm"
+   }
+  ]
  },
  {
   "id": "q_1cfd4a2ed56b",
@@ -2639,6 +3313,69 @@
   "version": 1
  },
  {
+  "id": "q_1d4213d2c34f",
+  "type": "SCQ",
+  "stem": "The hormone secreted by the corpus luteum to maintain the endometrium for implantation and pregnancy is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "After ovulation, the ruptured follicle becomes the corpus luteum, which secretes large amounts of progesterone.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "testosterone"
+   },
+   {
+    "key": "B",
+    "text": "progesterone"
+   },
+   {
+    "key": "C",
+    "text": "FSH"
+   },
+   {
+    "key": "D",
+    "text": "oxytocin"
+   }
+  ]
+ },
+ {
   "id": "q_1e74e625e603",
   "type": "SCQ",
   "stem": "Which of the following mammals lays eggs?",
@@ -2698,6 +3435,69 @@
    {
     "key": "D",
     "text": "*Macropus* (kangaroo)"
+   }
+  ]
+ },
+ {
+  "id": "q_1eaf9d42ca7f",
+  "type": "SCQ",
+  "stem": "Fertilisation in humans normally takes place in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Sperm and ovum meet in the ampulla region of the oviduct; the zygote then divides as it moves to the uterus.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ovary"
+   },
+   {
+    "key": "B",
+    "text": "vagina"
+   },
+   {
+    "key": "C",
+    "text": "ampullary-isthmic junction of the fallopian tube"
+   },
+   {
+    "key": "D",
+    "text": "uterus"
    }
   ]
  },
@@ -2809,6 +3609,69 @@
   ]
  },
  {
+  "id": "q_1f700db59e92",
+  "type": "SCQ",
+  "stem": "The 'fight or flight' response is mediated by the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The sympathetic system increases heart rate and prepares the body for emergency; the parasympathetic system does the opposite (rest and digest).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sympathetic nervous system"
+   },
+   {
+    "key": "B",
+    "text": "parasympathetic nervous system"
+   },
+   {
+    "key": "C",
+    "text": "enteric nervous system only"
+   },
+   {
+    "key": "D",
+    "text": "somatic nervous system"
+   }
+  ]
+ },
+ {
   "id": "q_1fb74cf8dc53",
   "type": "NVQ",
   "stem": "For $S=CA^{Z}$ with $Z=0.2$, by what factor does the species richness $S$ increase when the area $A$ increases tenfold? (answer to two decimals) ______",
@@ -2851,6 +3714,132 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_1fe5e676fb38",
+  "type": "SCQ",
+  "stem": "Red muscle fibres, such as those used for sustained activity, have",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Myoglobin gives red fibres their colour and stores oxygen; white fibres have less myoglobin, fewer mitochondria and rely on anaerobic glycolysis.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "no mitochondria"
+   },
+   {
+    "key": "B",
+    "text": "only anaerobic respiration"
+   },
+   {
+    "key": "C",
+    "text": "very little myoglobin and few mitochondria"
+   },
+   {
+    "key": "D",
+    "text": "plenty of myoglobin and mitochondria and use aerobic respiration"
+   }
+  ]
+ },
+ {
+  "id": "q_2089ad64df63",
+  "type": "SCQ",
+  "stem": "Amniocentesis is a prenatal diagnostic technique used to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The test is banned for sex determination in India because of its misuse for female foeticide.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "increase fertility"
+   },
+   {
+    "key": "B",
+    "text": "detect genetic and developmental disorders in the foetus by testing the amniotic fluid"
+   },
+   {
+    "key": "C",
+    "text": "determine the sex for selection"
+   },
+   {
+    "key": "D",
+    "text": "terminate pregnancy"
+   }
+  ]
  },
  {
   "id": "q_20b38f623d38",
@@ -3334,6 +4323,69 @@
    {
     "key": "D",
     "text": "new cells arise from pre-existing cells"
+   }
+  ]
+ },
+ {
+  "id": "q_293decdc6600",
+  "type": "SCQ",
+  "stem": "The hormone secreted by the kidney that stimulates the formation of red blood cells is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Juxtaglomerular cells of the kidney secrete erythropoietin, which stimulates erythropoiesis in the bone marrow.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "erythropoietin"
+   },
+   {
+    "key": "B",
+    "text": "aldosterone"
+   },
+   {
+    "key": "C",
+    "text": "calcitonin"
+   },
+   {
+    "key": "D",
+    "text": "renin"
    }
   ]
  },
@@ -3842,6 +4894,132 @@
   ]
  },
  {
+  "id": "q_2c790064b776",
+  "type": "SCQ",
+  "stem": "Impulse conduction is faster in myelinated axons because the impulse",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Myelin insulates the axon, so depolarisation occurs only at the nodes, increasing the speed of conduction.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "jumps from one node of Ranvier to the next (saltatory conduction)"
+   },
+   {
+    "key": "B",
+    "text": "is carried by blood"
+   },
+   {
+    "key": "C",
+    "text": "moves through the myelin sheath"
+   },
+   {
+    "key": "D",
+    "text": "moves along the dendrites"
+   }
+  ]
+ },
+ {
+  "id": "q_2cbddd3c18c8",
+  "type": "SCQ",
+  "stem": "Rapid, uncontrolled muscle spasms due to low Ca$^{2+}$ in body fluids is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Tetany: rapid spasms from low Ca$^{2+}$. Myasthenia gravis is an autoimmune disorder affecting neuromuscular junctions; gout is inflammation of joints from uric acid crystals.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "tetany"
+   },
+   {
+    "key": "B",
+    "text": "gout"
+   },
+   {
+    "key": "C",
+    "text": "muscular dystrophy"
+   },
+   {
+    "key": "D",
+    "text": "myasthenia gravis"
+   }
+  ]
+ },
+ {
   "id": "q_2e55211365ba",
   "type": "SCQ",
   "stem": "A distinct feature of the phosphorus cycle compared with the carbon cycle is that",
@@ -4027,6 +5205,69 @@
    {
     "key": "D",
     "text": "simple squamous epithelium"
+   }
+  ]
+ },
+ {
+  "id": "q_321de69da8fa",
+  "type": "SCQ",
+  "stem": "The testes are located outside the abdominal cavity in the scrotum because",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The scrotum acts as a thermoregulator for the testes, keeping them slightly below body temperature.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sperm need a higher temperature"
+   },
+   {
+    "key": "B",
+    "text": "the abdominal cavity lacks blood"
+   },
+   {
+    "key": "C",
+    "text": "spermatogenesis requires a temperature 2-2.5 °C lower than the normal internal body temperature"
+   },
+   {
+    "key": "D",
+    "text": "the scrotum secretes hormones"
    }
   ]
  },
@@ -4516,6 +5757,69 @@
   ]
  },
  {
+  "id": "q_352fa678748c",
+  "type": "SCQ",
+  "stem": "FSH acts on Sertoli cells and LH acts on",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "GnRH from the hypothalamus acts on the anterior pituitary to secrete LH and FSH; LH acts on Leydig cells and FSH on Sertoli cells.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "spermatids directly"
+   },
+   {
+    "key": "B",
+    "text": "Sertoli cells again to make androgens"
+   },
+   {
+    "key": "C",
+    "text": "Leydig cells, stimulating the synthesis and secretion of androgens"
+   },
+   {
+    "key": "D",
+    "text": "the epididymis only"
+   }
+  ]
+ },
+ {
   "id": "q_353e2d20657d",
   "type": "SCQ",
   "stem": "Vascular bundles that are scattered in the ground tissue and have no cambium (closed) are characteristic of the",
@@ -4705,6 +6009,69 @@
   ]
  },
  {
+  "id": "q_35e3a2dd804a",
+  "type": "SCQ",
+  "stem": "Decreased bone mass and increased chances of fractures, common after menopause owing to decreased oestrogen, is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Osteoporosis is an age-related disorder with decreased bone mass; oestrogen deficiency is a common cause.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "arthritis"
+   },
+   {
+    "key": "B",
+    "text": "tetany"
+   },
+   {
+    "key": "C",
+    "text": "osteoporosis"
+   },
+   {
+    "key": "D",
+    "text": "gout"
+   }
+  ]
+ },
+ {
   "id": "q_35e402df0c55",
   "type": "SCQ",
   "stem": "Genes located close together on the same chromosome show",
@@ -4764,6 +6131,69 @@
    {
     "key": "D",
     "text": "fewer recombinants, because tight linkage reduces crossing over between them"
+   }
+  ]
+ },
+ {
+  "id": "q_3613d4c1dc0c",
+  "type": "SCQ",
+  "stem": "Which of the following is a viral sexually transmitted infection?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Genital herpes, genital warts, hepatitis-B and HIV infection are viral; syphilis and gonorrhoea are bacterial and trichomoniasis is caused by a protozoan.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "trichomoniasis"
+   },
+   {
+    "key": "B",
+    "text": "gonorrhoea"
+   },
+   {
+    "key": "C",
+    "text": "syphilis"
+   },
+   {
+    "key": "D",
+    "text": "genital herpes"
    }
   ]
  },
@@ -5083,6 +6513,69 @@
   ]
  },
  {
+  "id": "q_396e4cd7664b",
+  "type": "SCQ",
+  "stem": "Cancer cells differ from normal cells because they",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Normal cells stop dividing when they touch other cells (contact inhibition); cancer cells have lost this property and metastasise.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "do not divide"
+   },
+   {
+    "key": "B",
+    "text": "show strict contact inhibition"
+   },
+   {
+    "key": "C",
+    "text": "are always benign"
+   },
+   {
+    "key": "D",
+    "text": "lose contact inhibition and can spread to other parts (metastasis)"
+   }
+  ]
+ },
+ {
   "id": "q_39759406bb80",
   "type": "SCQ",
   "stem": "ATP synthesis by chemiosmosis in mitochondria takes place by",
@@ -5209,6 +6702,69 @@
   ]
  },
  {
+  "id": "q_39b406e999b6",
+  "type": "SCQ",
+  "stem": "The Z line of a sarcomere",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A sarcomere is the portion between two successive Z lines; the M line lies in the middle of the A band, anchoring thick filaments.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bisects the I band and anchors the thin filaments"
+   },
+   {
+    "key": "B",
+    "text": "bisects the A band"
+   },
+   {
+    "key": "C",
+    "text": "is made of myosin"
+   },
+   {
+    "key": "D",
+    "text": "lies in the centre of the H zone"
+   }
+  ]
+ },
+ {
   "id": "q_3a19e039ecd0",
   "type": "INT",
   "stem": "The glomerular filtration rate is about 125 mL/min. The volume of filtrate formed in a day (litres) is ______.",
@@ -5312,6 +6868,132 @@
    {
     "key": "D",
     "text": "ammonia"
+   }
+  ]
+ },
+ {
+  "id": "q_3aab72950eec",
+  "type": "SCQ",
+  "stem": "A secondary oocyte completes its second meiotic division",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Primary oocytes are arrested at prophase I in the foetus; the secondary oocyte is arrested at metaphase II and completes meiosis II only after sperm entry.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "before ovulation"
+   },
+   {
+    "key": "B",
+    "text": "at puberty regardless of fertilisation"
+   },
+   {
+    "key": "C",
+    "text": "in the foetus"
+   },
+   {
+    "key": "D",
+    "text": "only if it is penetrated by a sperm"
+   }
+  ]
+ },
+ {
+  "id": "q_3acdbd4b5815",
+  "type": "SCQ",
+  "stem": "In embryo transfer, an embryo with more than eight blastomeres is transferred into the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Zygote or early embryos up to eight blastomeres are transferred into the fallopian tube (ZIFT), and those with more than eight blastomeres into the uterus (IUT).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ovary"
+   },
+   {
+    "key": "B",
+    "text": "fallopian tube (ZIFT)"
+   },
+   {
+    "key": "C",
+    "text": "vagina"
+   },
+   {
+    "key": "D",
+    "text": "uterus (IUT)"
    }
   ]
  },
@@ -5782,6 +7464,69 @@
   ]
  },
  {
+  "id": "q_3e3b23a74f15",
+  "type": "SCQ",
+  "stem": "GIFT (gamete intrafallopian transfer) involves the transfer of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In GIFT, the gametes are transferred into the fallopian tube, so fertilisation happens in vivo, unlike IVF or ZIFT.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "an embryo into a male"
+   },
+   {
+    "key": "B",
+    "text": "sperm into the vagina"
+   },
+   {
+    "key": "C",
+    "text": "a zygote into the uterus"
+   },
+   {
+    "key": "D",
+    "text": "an ovum collected from a donor into the fallopian tube of another female who cannot produce ova but can provide suitable conditions for fertilisation"
+   }
+  ]
+ },
+ {
   "id": "q_4019b6d25a97",
   "type": "SCQ",
   "stem": "Trypsinogen of the pancreatic juice is activated by",
@@ -5908,6 +7653,50 @@
   ]
  },
  {
+  "id": "q_41016661e656",
+  "type": "INT",
+  "stem": "The human vertebral column has 7 cervical, 12 thoracic, 5 lumbar, 1 sacral (fused) and 1 coccygeal (fused) vertebrae. The total number of vertebrae counted this way is ______.",
+  "images": [],
+  "answer": {
+   "value": 26.0,
+   "tol": 0.0
+  },
+  "solution": "$7+12+5+1+1=26$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_411c508814e5",
   "type": "SCQ",
   "stem": "A single gene producing multiple, apparently unrelated phenotypic effects, as with the gene for phenylketonuria, is called",
@@ -5967,6 +7756,69 @@
    {
     "key": "D",
     "text": "linkage"
+   }
+  ]
+ },
+ {
+  "id": "q_41f184a28736",
+  "type": "SCQ",
+  "stem": "The early embryo at the 8-16 cell stage, a solid ball of blastomeres, is called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Cleavage divisions of the zygote give a morula, which continues to divide and forms the blastocyst with a cavity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "zygote"
+   },
+   {
+    "key": "B",
+    "text": "gastrula"
+   },
+   {
+    "key": "C",
+    "text": "blastocyst"
+   },
+   {
+    "key": "D",
+    "text": "morula"
    }
   ]
  },
@@ -6456,6 +8308,69 @@
   ]
  },
  {
+  "id": "q_49ec452ed6f6",
+  "type": "SCQ",
+  "stem": "Lactational amenorrhea as a natural contraceptive method is effective",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "During intense lactation the absence of menstrual cycle (and ovulation) provides a natural contraceptive effect, but only for about six months.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "only in the first week after birth"
+   },
+   {
+    "key": "B",
+    "text": "only during pregnancy"
+   },
+   {
+    "key": "C",
+    "text": "for several years after birth in all cases"
+   },
+   {
+    "key": "D",
+    "text": "only up to a maximum period of about six months after parturition, if the mother breastfeeds fully"
+   }
+  ]
+ },
+ {
   "id": "q_4a354fc79320",
   "type": "INT",
   "stem": "In a healthy adult, TV $=500$ mL, IRV $=3000$ mL and ERV $=1100$ mL. The vital capacity in mL is ______.",
@@ -6670,6 +8585,69 @@
   ]
  },
  {
+  "id": "q_4b58732807c9",
+  "type": "SCQ",
+  "stem": "The surgical method of contraception in males is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In vasectomy a small part of the vas deferens is removed or tied; in tubectomy, a small part of the fallopian tube is removed or tied.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "hysterectomy"
+   },
+   {
+    "key": "B",
+    "text": "vasectomy"
+   },
+   {
+    "key": "C",
+    "text": "caesarean section"
+   },
+   {
+    "key": "D",
+    "text": "tubectomy"
+   }
+  ]
+ },
+ {
   "id": "q_4bad52fdb7b0",
   "type": "SCQ",
   "stem": "Deficiency symptoms of calcium appear first in young leaves because calcium",
@@ -6796,6 +8774,69 @@
   ]
  },
  {
+  "id": "q_4d2804b09865",
+  "type": "SCQ",
+  "stem": "Typhoid fever is caused by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "*Salmonella typhi* is a bacterium that spreads through contaminated food and water; the Widal test confirms typhoid.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Salmonella typhi*"
+   },
+   {
+    "key": "B",
+    "text": "*Wuchereria bancrofti*"
+   },
+   {
+    "key": "C",
+    "text": "*Entamoeba histolytica*"
+   },
+   {
+    "key": "D",
+    "text": "*Plasmodium vivax*"
+   }
+  ]
+ },
+ {
   "id": "q_4dc13eb5d675",
   "type": "SCQ",
   "stem": "The radial and tangential walls of endodermal cells in roots have a band-like deposit of",
@@ -6855,6 +8896,195 @@
    {
     "key": "D",
     "text": "pectin and callose"
+   }
+  ]
+ },
+ {
+  "id": "q_4e8e52748030",
+  "type": "SCQ",
+  "stem": "The smallest bone of the human body, found in the middle ear, is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The three ear ossicles are malleus, incus and stapes; the stapes is attached to the oval window.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cochlea"
+   },
+   {
+    "key": "B",
+    "text": "malleus"
+   },
+   {
+    "key": "C",
+    "text": "incus"
+   },
+   {
+    "key": "D",
+    "text": "stapes"
+   }
+  ]
+ },
+ {
+  "id": "q_502af696f8c3",
+  "type": "SCQ",
+  "stem": "The 'emergency hormones' or hormones of 'fight or flight', which increase alertness, heart rate and breathing, are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The adrenal medulla secretes catecholamines that also increase the breakdown of glycogen and lipids.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "insulin and glucagon"
+   },
+   {
+    "key": "B",
+    "text": "adrenaline and noradrenaline from the adrenal medulla"
+   },
+   {
+    "key": "C",
+    "text": "cortisol and aldosterone from the cortex"
+   },
+   {
+    "key": "D",
+    "text": "thyroxine only"
+   }
+  ]
+ },
+ {
+  "id": "q_5145ae4b9c0f",
+  "type": "SCQ",
+  "stem": "In a normal human menstrual cycle of 28 days, ovulation occurs about on day",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The rise in LH (the surge) around the middle of the cycle induces rupture of the Graafian follicle and release of the ovum.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "14"
+   },
+   {
+    "key": "B",
+    "text": "1"
+   },
+   {
+    "key": "C",
+    "text": "7"
+   },
+   {
+    "key": "D",
+    "text": "28"
    }
   ]
  },
@@ -7216,6 +9446,113 @@
     "text": "peptide bonds"
    }
   ]
+ },
+ {
+  "id": "q_54019652f244",
+  "type": "SCQ",
+  "stem": "Which hormone is involved in the initiation of the foetal ejection reflex leading to parturition?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Signals from the fully developed foetus and the placenta induce mild uterine contractions; oxytocin then acts on the uterine muscle, causing stronger contractions.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "prolactin"
+   },
+   {
+    "key": "B",
+    "text": "hCG"
+   },
+   {
+    "key": "C",
+    "text": "oxytocin"
+   },
+   {
+    "key": "D",
+    "text": "progesterone"
+   }
+  ]
+ },
+ {
+  "id": "q_54128c6b5dd6",
+  "type": "INT",
+  "stem": "One primary oocyte forms one functional ovum (plus polar bodies). The number of primary oocytes required to form 100 ova is ______.",
+  "images": [],
+  "answer": {
+   "value": 100.0,
+   "tol": 0.0
+  },
+  "solution": "Each primary oocyte yields a single functional ovum, so 100 are needed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_54ef81b7a7d1",
@@ -8207,6 +10544,69 @@
   ]
  },
  {
+  "id": "q_5a912cc170ab",
+  "type": "SCQ",
+  "stem": "Which hormone is hyperglycaemic, increasing the blood glucose level?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Glucagon stimulates glycogenolysis and gluconeogenesis; insulin is hypoglycaemic, so its deficiency causes diabetes mellitus.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "calcitonin"
+   },
+   {
+    "key": "B",
+    "text": "insulin from the $\\beta$ cells"
+   },
+   {
+    "key": "C",
+    "text": "oxytocin"
+   },
+   {
+    "key": "D",
+    "text": "glucagon from the $\\alpha$ cells of the pancreas"
+   }
+  ]
+ },
+ {
   "id": "q_5b558445df6e",
   "type": "SCQ",
   "stem": "Atrial natriuretic factor (ANF), secreted by the atria of the heart on increased blood pressure, causes",
@@ -8455,6 +10855,69 @@
    {
     "key": "D",
     "text": "peptidoglycan"
+   }
+  ]
+ },
+ {
+  "id": "q_5d5d6038a282",
+  "type": "SCQ",
+  "stem": "Over-secretion of growth hormone in adults causes",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Excess GH in childhood leads to gigantism, while in adults it causes acromegaly (abnormal growth of hands, jaw, etc.); deficiency in childhood causes pituitary dwarfism.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "gigantism"
+   },
+   {
+    "key": "B",
+    "text": "goitre"
+   },
+   {
+    "key": "C",
+    "text": "acromegaly"
+   },
+   {
+    "key": "D",
+    "text": "dwarfism"
    }
   ]
  },
@@ -8818,6 +11281,69 @@
   ]
  },
  {
+  "id": "q_60a503d5e2fc",
+  "type": "SCQ",
+  "stem": "Emergency contraception, which can prevent pregnancy if taken after unprotected coitus, must be taken within",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Administration of progestogens or progestogen-oestrogen combinations or IUDs within 72 hours of coitus is very effective.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "72 hours of coitus"
+   },
+   {
+    "key": "B",
+    "text": "one month of coitus"
+   },
+   {
+    "key": "C",
+    "text": "the first trimester"
+   },
+   {
+    "key": "D",
+    "text": "7 days of coitus"
+   }
+  ]
+ },
+ {
   "id": "q_6146ff4f9644",
   "type": "SCQ",
   "stem": "Organisms that can tolerate and thrive in a wide range of temperatures are called",
@@ -8940,6 +11466,69 @@
    {
     "key": "D",
     "text": "Genus"
+   }
+  ]
+ },
+ {
+  "id": "q_622db01eb2c6",
+  "type": "SCQ",
+  "stem": "The pregnancy hormone whose detection is the basis of pregnancy tests is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "hCG is produced by the placenta (trophoblast) and maintains the corpus luteum early in pregnancy.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "FSH"
+   },
+   {
+    "key": "B",
+    "text": "melatonin"
+   },
+   {
+    "key": "C",
+    "text": "oxytocin"
+   },
+   {
+    "key": "D",
+    "text": "hCG (human chorionic gonadotropin)"
    }
   ]
  },
@@ -9236,6 +11825,132 @@
    {
     "key": "D",
     "text": "uses carrier or channel proteins and moves the solute down its gradient without ATP"
+   }
+  ]
+ },
+ {
+  "id": "q_637936157870",
+  "type": "SCQ",
+  "stem": "Interstitial (Leydig) cells of the testis secrete",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Androgens regulate the development and functions of the male accessory organs and are responsible for muscular growth and the deep voice.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "oestrogen only"
+   },
+   {
+    "key": "B",
+    "text": "FSH"
+   },
+   {
+    "key": "C",
+    "text": "androgens such as testosterone"
+   },
+   {
+    "key": "D",
+    "text": "inhibin only"
+   }
+  ]
+ },
+ {
+  "id": "q_63fb015cd254",
+  "type": "SCQ",
+  "stem": "Immovable joints between the bones of the skull are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Fibrous joints (sutures) do not allow any movement; cartilaginous joints (e.g. between vertebrae) allow limited movement; synovial joints allow considerable movement.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "hinge joints"
+   },
+   {
+    "key": "B",
+    "text": "synovial joints"
+   },
+   {
+    "key": "C",
+    "text": "fibrous joints"
+   },
+   {
+    "key": "D",
+    "text": "cartilaginous joints"
    }
   ]
  },
@@ -9595,6 +12310,69 @@
    {
     "key": "D",
     "text": "genus, but different species"
+   }
+  ]
+ },
+ {
+  "id": "q_69c1800a6a0f",
+  "type": "SCQ",
+  "stem": "Antibodies (immunoglobulins) are made of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Each antibody molecule has four chains, 2 heavy and 2 light.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "four identical light chains"
+   },
+   {
+    "key": "B",
+    "text": "a single polypeptide chain"
+   },
+   {
+    "key": "C",
+    "text": "RNA only"
+   },
+   {
+    "key": "D",
+    "text": "two light and two heavy polypeptide chains, written as H$_2$L$_2$"
    }
   ]
  },
@@ -10002,6 +12780,132 @@
   "version": 1
  },
  {
+  "id": "q_6d7f697ed861",
+  "type": "SCQ",
+  "stem": "'Test tube baby' programme involves",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In IVF, ova and sperm are fused in a laboratory under simulated conditions; the zygote or early embryo is then transferred to the female reproductive tract.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "artificial insemination only"
+   },
+   {
+    "key": "B",
+    "text": "in vitro fertilisation followed by embryo transfer"
+   },
+   {
+    "key": "C",
+    "text": "cloning of the embryo"
+   },
+   {
+    "key": "D",
+    "text": "fertilisation inside the oviduct only"
+   }
+  ]
+ },
+ {
+  "id": "q_6dedf3fb717b",
+  "type": "SCQ",
+  "stem": "The wings of a bird and the wings of a butterfly are examples of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "They perform the same function but have different structure and origin, so they are analogous.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "vestigial organs"
+   },
+   {
+    "key": "B",
+    "text": "homologous organs, evolved by convergent evolution"
+   },
+   {
+    "key": "C",
+    "text": "homologous organs, evolved by divergent evolution"
+   },
+   {
+    "key": "D",
+    "text": "analogous organs, evolved by convergent evolution"
+   }
+  ]
+ },
+ {
   "id": "q_6eafa6b8664d",
   "type": "SCQ",
   "stem": "Mycorrhiza formed by *Glomus* helps the host plant mainly by",
@@ -10254,6 +13158,69 @@
   ]
  },
  {
+  "id": "q_706192504432",
+  "type": "SCQ",
+  "stem": "Cocaine, obtained from the coca plant *Erythroxylum coca*, interferes with the transport of the neurotransmitter",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Cocaine produces a sense of euphoria and increased energy; excessive dosage causes hallucinations.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "dopamine"
+   },
+   {
+    "key": "B",
+    "text": "acetylcholine at the neuromuscular junction"
+   },
+   {
+    "key": "C",
+    "text": "insulin"
+   },
+   {
+    "key": "D",
+    "text": "melatonin"
+   }
+  ]
+ },
+ {
   "id": "q_7073162fac12",
   "type": "NVQ",
   "stem": "In a double-stranded DNA 30% of the bases are adenine. The percentage of guanine is ______.",
@@ -10357,6 +13324,69 @@
    {
     "key": "D",
     "text": "order"
+   }
+  ]
+ },
+ {
+  "id": "q_719524ca9ef8",
+  "type": "SCQ",
+  "stem": "Heroin, commonly called smack, is chemically",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Morphine is extracted from the latex of *Papaver somniferum*; acetylation gives heroin, which depresses the body's functions.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "an alkaloid from the coca plant"
+   },
+   {
+    "key": "B",
+    "text": "diacetylmorphine, obtained by acetylation of morphine"
+   },
+   {
+    "key": "C",
+    "text": "obtained from tobacco"
+   },
+   {
+    "key": "D",
+    "text": "a derivative of cannabinoid"
    }
   ]
  },
@@ -10613,6 +13643,132 @@
   ]
  },
  {
+  "id": "q_735f75757253",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** The neurohypophysis does not synthesise its own hormones.\n\n**Reason (R):** Oxytocin and vasopressin are produced by neurons of the hypothalamus and transported along axons to the posterior pituitary for storage and release.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Because the hormones are made in the hypothalamus and only stored and released by the neurohypophysis, A is true, and R explains it.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_7387f8b10008",
+  "type": "SCQ",
+  "stem": "In humans, the number of pairs of 'true ribs' attached to the sternum directly through hyaline cartilage is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Of the 12 pairs of ribs, the first seven pairs are true ribs; the 8th, 9th and 10th (false ribs) join indirectly, and the 11th and 12th are floating ribs.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "2"
+   },
+   {
+    "key": "B",
+    "text": "12"
+   },
+   {
+    "key": "C",
+    "text": "3"
+   },
+   {
+    "key": "D",
+    "text": "7"
+   }
+  ]
+ },
+ {
   "id": "q_743d0e394859",
   "type": "SCQ",
   "stem": "Insertional inactivation of $\\beta$-galactosidase (lacZ) in a vector is used to select recombinants because, in the presence of a chromogenic substrate, recombinant colonies",
@@ -10802,6 +13958,69 @@
   ]
  },
  {
+  "id": "q_750e10066ced",
+  "type": "SCQ",
+  "stem": "Which of the following would disturb Hardy-Weinberg equilibrium in a population?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The equilibrium holds only if there is no selection, no gene flow, no mutation, no genetic drift (large population) and random mating; any departure, such as selection, means allele frequencies change, i.e. evolution is occurring.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "absence of mutation"
+   },
+   {
+    "key": "B",
+    "text": "natural selection favouring one genotype"
+   },
+   {
+    "key": "C",
+    "text": "a very large population size"
+   },
+   {
+    "key": "D",
+    "text": "random mating"
+   }
+  ]
+ },
+ {
   "id": "q_76afb435c4dc",
   "type": "SCQ",
   "stem": "Salivary amylase begins the digestion of",
@@ -10924,6 +14143,69 @@
    {
     "key": "D",
     "text": "O and AB"
+   }
+  ]
+ },
+ {
+  "id": "q_77d03a5ff2db",
+  "type": "SCQ",
+  "stem": "Oral contraceptive pills prevent pregnancy by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Pills contain progestogens or progestogen-oestrogen combinations; 'Saheli' is a non-steroidal oral contraceptive developed in India.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "causing menstruation continuously"
+   },
+   {
+    "key": "B",
+    "text": "killing sperm in the testis"
+   },
+   {
+    "key": "C",
+    "text": "inhibiting ovulation and implantation and altering cervical mucus to retard sperm entry"
+   },
+   {
+    "key": "D",
+    "text": "increasing LH"
    }
   ]
  },
@@ -11375,6 +14657,69 @@
   ]
  },
  {
+  "id": "q_7c56681dd5c3",
+  "type": "SCQ",
+  "stem": "During muscle contraction according to the sliding filament theory,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Thin filaments slide inward over thick filaments, pulling Z lines closer; the length of each filament remains the same, so the A band stays constant.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the A band becomes shorter"
+   },
+   {
+    "key": "B",
+    "text": "the I band and the H zone become shorter while the A band keeps the same length"
+   },
+   {
+    "key": "C",
+    "text": "the thick filaments shorten"
+   },
+   {
+    "key": "D",
+    "text": "the Z lines move apart"
+   }
+  ]
+ },
+ {
   "id": "q_7c677def2c4a",
   "type": "INT",
   "stem": "In the cross $\\mathrm{AaBb}\\times\\mathrm{AaBb}$ (complete dominance, independent assortment), the number of different genotypes among the progeny is ______.",
@@ -11417,6 +14762,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_7c7b3ab45acb",
+  "type": "SCQ",
+  "stem": "The correct sequence of events in a simple reflex arc is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The stimulus is detected by a receptor, carried by a sensory (afferent) neuron to the CNS, processed, and a motor (efferent) neuron conducts it to an effector.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "receptor, motor neuron, spinal cord, sensory neuron, effector"
+   },
+   {
+    "key": "B",
+    "text": "sensory neuron, receptor, motor neuron, effector"
+   },
+   {
+    "key": "C",
+    "text": "effector, sensory neuron, spinal cord, motor neuron, receptor"
+   },
+   {
+    "key": "D",
+    "text": "receptor, sensory neuron, spinal cord, motor neuron, effector"
+   }
+  ]
  },
  {
   "id": "q_7cdf73e40643",
@@ -11778,6 +15186,69 @@
   ]
  },
  {
+  "id": "q_7f4b4709c21c",
+  "type": "SCQ",
+  "stem": "The 'mutation theory' of evolution, which proposes that large, sudden, heritable changes (saltation) drive speciation, was proposed by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "De Vries, working on evening primrose, proposed that speciation happens by saltation; Darwin's variations were small and directional.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Jean-Baptiste Lamarck"
+   },
+   {
+    "key": "B",
+    "text": "Hugo de Vries"
+   },
+   {
+    "key": "C",
+    "text": "Alfred Wallace"
+   },
+   {
+    "key": "D",
+    "text": "Charles Darwin"
+   }
+  ]
+ },
+ {
   "id": "q_80af90f494b2",
   "type": "SCQ",
   "stem": "A normal-visioned woman whose father was colour-blind (X-linked recessive) marries a normal man. The probability that a son is colour-blind is",
@@ -11837,6 +15308,195 @@
    {
     "key": "D",
     "text": "$1$"
+   }
+  ]
+ },
+ {
+  "id": "q_80ecf907c16b",
+  "type": "SCQ",
+  "stem": "*Archaeopteryx*, a fossil with feathers, a long tail with vertebrae and teeth in the jaws, is regarded as a connecting link between",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "It had reptilian characters (teeth, long bony tail, claws) and bird-like characters (feathers, wings), so it is considered a transitional form.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "birds and mammals"
+   },
+   {
+    "key": "B",
+    "text": "amphibians and reptiles"
+   },
+   {
+    "key": "C",
+    "text": "fishes and amphibians"
+   },
+   {
+    "key": "D",
+    "text": "reptiles and birds"
+   }
+  ]
+ },
+ {
+  "id": "q_80f2d614be0e",
+  "type": "SCQ",
+  "stem": "A sudden change in allele frequencies in a small isolated population founded by a few individuals is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A few individuals that start a new population carry only a part of the gene pool of the original population, so the allele frequencies differ by chance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "natural selection"
+   },
+   {
+    "key": "B",
+    "text": "the founder effect (a type of genetic drift)"
+   },
+   {
+    "key": "C",
+    "text": "stabilising selection"
+   },
+   {
+    "key": "D",
+    "text": "gene flow by migration"
+   }
+  ]
+ },
+ {
+  "id": "q_8106be49b35c",
+  "type": "SCQ",
+  "stem": "During the rising phase of an action potential, the membrane potential is reversed because of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Depolarisation: voltage-gated Na$^+$ channels open and Na$^+$ rush in; repolarisation follows as Na$^+$ channels close and K$^+$ leaves.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "efflux of Na$^+$"
+   },
+   {
+    "key": "B",
+    "text": "influx of Cl$^-$"
+   },
+   {
+    "key": "C",
+    "text": "rapid influx of Na$^+$"
+   },
+   {
+    "key": "D",
+    "text": "efflux of K$^+$"
    }
   ]
  },
@@ -12307,6 +15967,69 @@
   ]
  },
  {
+  "id": "q_893e764113f6",
+  "type": "SCQ",
+  "stem": "Which of the following contraceptive methods also protects against sexually transmitted infections?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Condoms are barrier methods that prevent contact of the sperm and ovum and also reduce the risk of STIs; IUDs and pills do not protect against infections.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.RPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "copper-T"
+   },
+   {
+    "key": "B",
+    "text": "oral pills"
+   },
+   {
+    "key": "C",
+    "text": "tubectomy"
+   },
+   {
+    "key": "D",
+    "text": "condoms"
+   }
+  ]
+ },
+ {
   "id": "q_89765ab95d9f",
   "type": "SCQ",
   "stem": "Haemoglobin, made of four polypeptide chains, is an example of a protein with",
@@ -12496,6 +16219,50 @@
   ]
  },
  {
+  "id": "q_8a34a8ec46d3",
+  "type": "INT",
+  "stem": "One primary spermatocyte forms four sperms. The number of primary spermatocytes required to form 100 sperms is ______.",
+  "images": [],
+  "answer": {
+   "value": 25.0,
+   "tol": 0.0
+  },
+  "solution": "$100/4=25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_8adde396cd5f",
   "type": "SCQ",
   "stem": "Diversity of species between different communities of a region (turnover of species along habitat gradients) is called",
@@ -12622,6 +16389,69 @@
   ]
  },
  {
+  "id": "q_8c316f8e4fd3",
+  "type": "SCQ",
+  "stem": "The hormone that lowers blood calcium level by suppressing bone resorption is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Calcitonin from the thyroid decreases blood Ca$^{2+}$; parathormone (PTH) from the parathyroids raises it by increasing bone resorption and renal reabsorption.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "thyroxine"
+   },
+   {
+    "key": "B",
+    "text": "calcitonin"
+   },
+   {
+    "key": "C",
+    "text": "glucagon"
+   },
+   {
+    "key": "D",
+    "text": "parathyroid hormone"
+   }
+  ]
+ },
+ {
   "id": "q_8c3fc6fdb29b",
   "type": "SCQ",
   "stem": "The nuclear envelope and nucleolus reappear during",
@@ -12681,6 +16511,69 @@
    {
     "key": "D",
     "text": "anaphase"
+   }
+  ]
+ },
+ {
+  "id": "q_8d7ed6560b9a",
+  "type": "SCQ",
+  "stem": "Melatonin from the pineal gland",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Melatonin also influences metabolism, pigmentation and the menstrual cycle, and defence capability.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lowers blood glucose"
+   },
+   {
+    "key": "B",
+    "text": "regulates the 24-hour (diurnal) rhythm, including sleep-wake cycle and body temperature"
+   },
+   {
+    "key": "C",
+    "text": "causes ovulation"
+   },
+   {
+    "key": "D",
+    "text": "stimulates milk ejection"
    }
   ]
  },
@@ -13044,6 +16937,69 @@
   ]
  },
  {
+  "id": "q_913e1651fee9",
+  "type": "SCQ",
+  "stem": "The luteal phase of the menstrual cycle is characterised by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "After ovulation the remaining cells of the follicle become the corpus luteum; if no fertilisation, it degenerates and menstruation follows.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "menstrual bleeding"
+   },
+   {
+    "key": "B",
+    "text": "maximum FSH secretion and follicle growth"
+   },
+   {
+    "key": "C",
+    "text": "the corpus luteum secreting progesterone to prepare the endometrium"
+   },
+   {
+    "key": "D",
+    "text": "the rupture of the follicle"
+   }
+  ]
+ },
+ {
   "id": "q_91f9919ae14f",
   "type": "SCQ",
   "stem": "A man of blood group O marries a woman of blood group AB. Their children can be of blood group(s)",
@@ -13107,6 +17063,69 @@
   ]
  },
  {
+  "id": "q_922499d68aff",
+  "type": "SCQ",
+  "stem": "Cilia and flagella move by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Ciliary movement is seen in the trachea and in the oviduct; amoeboid movement involves pseudopodia formed by microfilaments.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the sliding of microtubules in the 9+2 axoneme, driven by dynein arms and ATP"
+   },
+   {
+    "key": "B",
+    "text": "pseudopodia formation"
+   },
+   {
+    "key": "C",
+    "text": "muscle contraction"
+   },
+   {
+    "key": "D",
+    "text": "sliding of actin and myosin"
+   }
+  ]
+ },
+ {
   "id": "q_92a2c988b28e",
   "type": "SCQ",
   "stem": "The first clinical gene therapy (1990) was given to a four-year-old girl with a deficiency of the enzyme",
@@ -13166,6 +17185,69 @@
    {
     "key": "D",
     "text": "$\\beta$-galactosidase"
+   }
+  ]
+ },
+ {
+  "id": "q_9549f2515a22",
+  "type": "SCQ",
+  "stem": "In a sarcomere, the dark A band is formed mainly by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The A band (anisotropic) contains myosin and the overlapping portion of actin; the I band (isotropic) has only actin filaments and is bisected by the Z line.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "actin only"
+   },
+   {
+    "key": "B",
+    "text": "myosin (thick filaments), partly overlapping with actin"
+   },
+   {
+    "key": "C",
+    "text": "collagen"
+   },
+   {
+    "key": "D",
+    "text": "troponin only"
    }
   ]
  },
@@ -13275,6 +17357,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_96f5fcf982aa",
+  "type": "SCQ",
+  "stem": "The blastocyst becomes implanted in the endometrium through its",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Trophoblast attaches to the endometrium; the inner cell mass develops into the embryo.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "inner cell mass only"
+   },
+   {
+    "key": "B",
+    "text": "zona pellucida"
+   },
+   {
+    "key": "C",
+    "text": "trophoblast cells"
+   },
+   {
+    "key": "D",
+    "text": "amnion"
+   }
+  ]
  },
  {
   "id": "q_978726a0efcf",
@@ -13844,6 +17989,132 @@
   ]
  },
  {
+  "id": "q_9dbeb921b433",
+  "type": "SCQ",
+  "stem": "In allergy, the chemical released by mast cells that causes symptoms such as sneezing and itching is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Allergens induce IgE production; on re-exposure, IgE bound to mast cells triggers the release of histamine and serotonin.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "interferon"
+   },
+   {
+    "key": "B",
+    "text": "insulin"
+   },
+   {
+    "key": "C",
+    "text": "histamine, triggered by IgE antibodies"
+   },
+   {
+    "key": "D",
+    "text": "fibrinogen"
+   }
+  ]
+ },
+ {
+  "id": "q_9e6e2349b54b",
+  "type": "SCQ",
+  "stem": "The acrosome in the head of a sperm contains",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The acrosome is a cap-like structure derived from the Golgi apparatus; mitochondria are in the middle piece, providing energy for the tail.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "RNA polymerase"
+   },
+   {
+    "key": "B",
+    "text": "mitochondria"
+   },
+   {
+    "key": "C",
+    "text": "hydrolytic enzymes that help to penetrate the egg membranes"
+   },
+   {
+    "key": "D",
+    "text": "the centriole"
+   }
+  ]
+ },
+ {
   "id": "q_9e8754c4d85e",
   "type": "SCQ",
   "stem": "DNA replication takes place in which phase of the cell cycle?",
@@ -14073,6 +18344,69 @@
    {
     "key": "D",
     "text": "eosinophil"
+   }
+  ]
+ },
+ {
+  "id": "q_a17b8c53af19",
+  "type": "SCQ",
+  "stem": "Oxytocin and vasopressin are released from the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "They are synthesised by the hypothalamic neurons and transported along axons to the neurohypophysis, from where they are released.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "anterior pituitary"
+   },
+   {
+    "key": "B",
+    "text": "thyroid gland"
+   },
+   {
+    "key": "C",
+    "text": "posterior pituitary (neurohypophysis)"
+   },
+   {
+    "key": "D",
+    "text": "adrenal cortex"
    }
   ]
  },
@@ -14451,6 +18785,69 @@
    {
     "key": "D",
     "text": "bile"
+   }
+  ]
+ },
+ {
+  "id": "q_a73449f58ada",
+  "type": "SCQ",
+  "stem": "Rod cells contain a purple pigment, rhodopsin, derived from",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Rods function in dim light (scotopic vision) and contain rhodopsin, made from opsin and retinal (an aldehyde of vitamin A); cones function in bright light and give colour vision.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "vitamin K"
+   },
+   {
+    "key": "B",
+    "text": "vitamin C"
+   },
+   {
+    "key": "C",
+    "text": "vitamin A"
+   },
+   {
+    "key": "D",
+    "text": "vitamin B$_{12}$"
    }
   ]
  },
@@ -14999,6 +19396,69 @@
    {
     "key": "D",
     "text": "*Marchantia*, a liverwort"
+   }
+  ]
+ },
+ {
+  "id": "q_a9bd42d4590a",
+  "type": "SCQ",
+  "stem": "The sodium-potassium pump maintaining the resting potential moves",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The pump expels three Na$^+$ and takes in two K$^+$ using ATP, keeping the inside of the neuron negative relative to the outside at rest.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "3 Na$^+$ out and 2 K$^+$ in per ATP"
+   },
+   {
+    "key": "B",
+    "text": "3 Na$^+$ in and 2 K$^+$ out"
+   },
+   {
+    "key": "C",
+    "text": "2 Na$^+$ out and 3 K$^+$ in"
+   },
+   {
+    "key": "D",
+    "text": "1 Na$^+$ out and 1 K$^+$ in"
    }
   ]
  },
@@ -15656,6 +20116,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_b13a6a032a3d",
+  "type": "SCQ",
+  "stem": "Sertoli cells of the seminiferous tubules",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Sertoli cells provide nutrition to germ cells; Leydig cells outside the tubules secrete androgens under LH control.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "are the site of meiosis only"
+   },
+   {
+    "key": "B",
+    "text": "nourish the developing sperm and are regulated by FSH"
+   },
+   {
+    "key": "C",
+    "text": "produce LH"
+   },
+   {
+    "key": "D",
+    "text": "secrete androgens"
+   }
+  ]
  },
  {
   "id": "q_b159a19bc2be",
@@ -17787,6 +22310,69 @@
   ]
  },
  {
+  "id": "q_c3a9132c63ac",
+  "type": "SCQ",
+  "stem": "Lamarck's theory of evolution proposed that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Lamarck's 'use and disuse' and inheritance of acquired characters (the giraffe's neck) is not supported by evidence, unlike Darwin's natural selection.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "evolution proceeds by saltation"
+   },
+   {
+    "key": "B",
+    "text": "organisms never change"
+   },
+   {
+    "key": "C",
+    "text": "variations arise by random mutation and the fittest survive"
+   },
+   {
+    "key": "D",
+    "text": "organs used extensively become better developed and the acquired characters are inherited"
+   }
+  ]
+ },
+ {
   "id": "q_c44205581854",
   "type": "SCQ",
   "stem": "A student claims that chloroplasts and mitochondria are 'semi-autonomous organelles'. The best justification is that they",
@@ -18461,6 +23047,69 @@
   ]
  },
  {
+  "id": "q_cbb836eb02eb",
+  "type": "SCQ",
+  "stem": "A neurotransmitter released at a chemical synapse",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Impulse arrival at the axon terminal causes synaptic vesicles to fuse with the pre-synaptic membrane and release neurotransmitter (e.g. acetylcholine), which opens ion channels on the post-synaptic membrane.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "diffuses across the synaptic cleft and binds to receptors on the post-synaptic membrane"
+   },
+   {
+    "key": "B",
+    "text": "passes through gap junctions"
+   },
+   {
+    "key": "C",
+    "text": "is released into the blood only"
+   },
+   {
+    "key": "D",
+    "text": "is always inhibitory"
+   }
+  ]
+ },
+ {
   "id": "q_cbbef71b2482",
   "type": "SCQ",
   "stem": "Cornelius van Niel's work on purple sulphur bacteria, which use H$_2$S instead of water, led to the inference that in green plants the oxygen released comes from",
@@ -18520,6 +23169,69 @@
    {
     "key": "D",
     "text": "chlorophyll"
+   }
+  ]
+ },
+ {
+  "id": "q_cc6c69d5a0d2",
+  "type": "SCQ",
+  "stem": "The retinal region with the highest concentration of cone cells and sharpest vision (the fovea) lies in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The fovea is a thinned-out portion of the macula lutea where only cones are densely packed; at the blind spot no photoreceptors are present.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "blind spot"
+   },
+   {
+    "key": "B",
+    "text": "macula lutea (yellow spot)"
+   },
+   {
+    "key": "C",
+    "text": "ciliary body"
+   },
+   {
+    "key": "D",
+    "text": "choroid"
    }
   ]
  },
@@ -19072,6 +23784,69 @@
   ]
  },
  {
+  "id": "q_ceb4d455227b",
+  "type": "SCQ",
+  "stem": "The joint between the humerus and the pectoral girdle, which allows movement in all directions, is a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Ball and socket joints occur at the shoulder and hip. The knee is a hinge joint and the joint between atlas and axis is a pivot joint.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "hinge joint"
+   },
+   {
+    "key": "B",
+    "text": "pivot joint"
+   },
+   {
+    "key": "C",
+    "text": "fibrous joint"
+   },
+   {
+    "key": "D",
+    "text": "ball and socket joint"
+   }
+  ]
+ },
+ {
   "id": "q_cf677f242a86",
   "type": "SCQ",
   "stem": "Cell A has water potential $-0.5$ MPa and adjacent cell B has $-0.3$ MPa. Water will move",
@@ -19519,6 +24294,69 @@
   "version": 1
  },
  {
+  "id": "q_d33b302215be",
+  "type": "SCQ",
+  "stem": "Which of the following is NOT secreted by the placenta?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The placenta secretes hCG, hPL, oestrogens, progesterone and relaxin; FSH is a pituitary hormone.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "oestrogen"
+   },
+   {
+    "key": "B",
+    "text": "hCG"
+   },
+   {
+    "key": "C",
+    "text": "FSH"
+   },
+   {
+    "key": "D",
+    "text": "human placental lactogen"
+   }
+  ]
+ },
+ {
   "id": "q_d4a331110fb0",
   "type": "SCQ",
   "stem": "Which of the following prokaryotes completely lacks a cell wall and is the smallest living cell known to survive without oxygen?",
@@ -19897,6 +24735,69 @@
   ]
  },
  {
+  "id": "q_d6220d0c612d",
+  "type": "SCQ",
+  "stem": "In the peppered moth (*Biston betularia*) after industrialisation in England, the dark (melanic) form increased because",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "This is natural selection: the dark form was better camouflaged on polluted trees and survived and reproduced more.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "birds preferred dark moths"
+   },
+   {
+    "key": "B",
+    "text": "light moths turned dark individually"
+   },
+   {
+    "key": "C",
+    "text": "the dark form mutated more rapidly because of soot"
+   },
+   {
+    "key": "D",
+    "text": "predatory birds could more easily see the light form on soot-darkened tree trunks, so the dark form had a selective advantage"
+   }
+  ]
+ },
+ {
   "id": "q_d713537f1023",
   "type": "SCQ",
   "stem": "Fatty acids and glycerol absorbed in the intestinal villi are first taken to",
@@ -19956,6 +24857,69 @@
    {
     "key": "D",
     "text": "the portal vein only"
+   }
+  ]
+ },
+ {
+  "id": "q_d72d593cf186",
+  "type": "SCQ",
+  "stem": "The release of Ca$^{2+}$ from the sarcoplasmic reticulum initiates contraction because Ca$^{2+}$",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Ca$^{2+}$ binding to troponin causes a conformational change that moves tropomyosin and unmasks the active sites on actin for cross-bridge formation with myosin heads.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "binds to tropomyosin and digests it"
+   },
+   {
+    "key": "B",
+    "text": "binds to troponin and exposes the myosin-binding sites on actin"
+   },
+   {
+    "key": "C",
+    "text": "binds to myosin and destroys ATP"
+   },
+   {
+    "key": "D",
+    "text": "stops the action of the neurotransmitter"
    }
   ]
  },
@@ -20086,6 +25050,69 @@
   ]
  },
  {
+  "id": "q_d8615045ae0c",
+  "type": "SCQ",
+  "stem": "Steroid hormones differ from peptide hormones in that steroid hormones",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Steroid hormones (cortisol, oestrogen, testosterone) are lipid-soluble and enter cells; peptide hormones bind to cell-surface receptors and use second messengers such as cAMP.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cannot cross the lipid membrane"
+   },
+   {
+    "key": "B",
+    "text": "bind to intracellular receptors and regulate gene expression"
+   },
+   {
+    "key": "C",
+    "text": "are all produced by the pituitary"
+   },
+   {
+    "key": "D",
+    "text": "bind only to membrane receptors and use cAMP"
+   }
+  ]
+ },
+ {
   "id": "q_d9488798b0ba",
   "type": "SCQ",
   "stem": "Which of the following is a secondary metabolite?",
@@ -20145,6 +25172,69 @@
    {
     "key": "D",
     "text": "morphine"
+   }
+  ]
+ },
+ {
+  "id": "q_da152ebda97e",
+  "type": "SCQ",
+  "stem": "Which part of the brain controls body temperature, hunger and thirst?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The hypothalamus contains centres for temperature regulation, hunger and thirst and secretes releasing hormones; the cerebellum controls balance and coordination.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cerebellum"
+   },
+   {
+    "key": "B",
+    "text": "corpus callosum"
+   },
+   {
+    "key": "C",
+    "text": "hypothalamus"
+   },
+   {
+    "key": "D",
+    "text": "medulla oblongata"
    }
   ]
  },
@@ -20552,6 +25642,69 @@
   ]
  },
  {
+  "id": "q_de006151bb3d",
+  "type": "SCQ",
+  "stem": "Muscle fatigue after strenuous exercise is due to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Anaerobic breakdown of glycogen produces lactic acid, which accumulates in muscle and causes fatigue.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.LOC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "excess ATP"
+   },
+   {
+    "key": "B",
+    "text": "accumulation of oxygen"
+   },
+   {
+    "key": "C",
+    "text": "absence of Ca$^{2+}$ in blood"
+   },
+   {
+    "key": "D",
+    "text": "accumulation of lactic acid from anaerobic breakdown of glycogen"
+   }
+  ]
+ },
+ {
   "id": "q_de203fc5e26d",
   "type": "SCQ",
   "stem": "The five-kingdom system of classification was proposed by",
@@ -20678,6 +25831,69 @@
   ]
  },
  {
+  "id": "q_dff409c39a86",
+  "type": "SCQ",
+  "stem": "HIV cannot be transmitted by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "HIV spreads by sexual contact with an infected person, by transfusion of contaminated blood and by sharing needles, and from infected mother to child.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "mosquito bites and casual contact such as hugging"
+   },
+   {
+    "key": "B",
+    "text": "infected mother to child through the placenta"
+   },
+   {
+    "key": "C",
+    "text": "unprotected sexual contact"
+   },
+   {
+    "key": "D",
+    "text": "contaminated needles"
+   }
+  ]
+ },
+ {
   "id": "q_e02f5ad3f1b6",
   "type": "SCQ",
   "stem": "According to the chemiosmotic hypothesis in chloroplasts, ATP is formed when protons",
@@ -20800,6 +26016,69 @@
    {
     "key": "D",
     "text": "*Monascus purpureus*"
+   }
+  ]
+ },
+ {
+  "id": "q_e0f89d05e476",
+  "type": "SCQ",
+  "stem": "Filariasis (elephantiasis) is caused by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Filarial worms live in the lymphatic vessels of the lower limbs, causing chronic inflammation and swelling.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Wuchereria bancrofti* and transmitted by *Culex* mosquitoes"
+   },
+   {
+    "key": "B",
+    "text": "*Ascaris lumbricoides*, via contaminated food"
+   },
+   {
+    "key": "C",
+    "text": "*Trichophyton*, via skin contact"
+   },
+   {
+    "key": "D",
+    "text": "*Salmonella* via water"
    }
   ]
  },
@@ -21052,6 +26331,69 @@
    {
     "key": "D",
     "text": "annelids"
+   }
+  ]
+ },
+ {
+  "id": "q_e3a87d4c4912",
+  "type": "SCQ",
+  "stem": "The first milk produced after child birth, rich in antibodies (IgA), is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Colostrum contains several antibodies absorbed by the infant to build resistance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "whey"
+   },
+   {
+    "key": "B",
+    "text": "lactose"
+   },
+   {
+    "key": "C",
+    "text": "colostrum"
+   },
+   {
+    "key": "D",
+    "text": "pancreatic juice"
    }
   ]
  },
@@ -21667,6 +27009,69 @@
   ]
  },
  {
+  "id": "q_e74cc5508a6d",
+  "type": "SCQ",
+  "stem": "The brain capacity of *Homo habilis* was about",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "*Homo habilis* (about 650-800 cc) was probably the first human-like being and did not eat meat; *Homo erectus* had about 900 cc and Neanderthals about 1400 cc.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "900 cc"
+   },
+   {
+    "key": "B",
+    "text": "350 cc"
+   },
+   {
+    "key": "C",
+    "text": "650-800 cc"
+   },
+   {
+    "key": "D",
+    "text": "1400 cc"
+   }
+  ]
+ },
+ {
   "id": "q_e7f812c8d3f5",
   "type": "SCQ",
   "stem": "The main constituent of biogas is",
@@ -21789,6 +27194,69 @@
    {
     "key": "D",
     "text": "$9:3:3:1$"
+   }
+  ]
+ },
+ {
+  "id": "q_e91c7675efd0",
+  "type": "SCQ",
+  "stem": "The vector of the malarial parasite *Plasmodium* is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The female *Anopheles* transmits the infective sporozoites during a blood meal; the parasite's gametocytes develop in the mosquito's gut.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "female *Culex* mosquito"
+   },
+   {
+    "key": "B",
+    "text": "female *Anopheles* mosquito"
+   },
+   {
+    "key": "C",
+    "text": "female *Aedes* mosquito"
+   },
+   {
+    "key": "D",
+    "text": "tsetse fly"
    }
   ]
  },
@@ -22108,6 +27576,50 @@
   ]
  },
  {
+  "id": "q_eb3f9686f530",
+  "type": "NVQ",
+  "stem": "In a population in Hardy-Weinberg equilibrium, 4% of individuals show a recessive trait ($q^2=0.04$). The frequency of the dominant allele $p$ is ______.",
+  "images": [],
+  "answer": {
+   "value": 0.8,
+   "tol": 0.001
+  },
+  "solution": "$q=\\sqrt{0.04}=0.2$, so $p=1-q=0.8$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_eb4b28bb1a93",
   "type": "SCQ",
   "stem": "Binomial nomenclature, the system of giving each organism a two-part scientific name, was introduced by",
@@ -22339,6 +27851,132 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_eca902ee775f",
+  "type": "SCQ",
+  "stem": "Which of the following provides passive immunity?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Passive immunity means readymade antibodies are given (antivenom, tetanus antitoxin) or passed from the mother (colostrum, placenta).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "recovery after a natural infection"
+   },
+   {
+    "key": "B",
+    "text": "exposure to a mild infection"
+   },
+   {
+    "key": "C",
+    "text": "injection of preformed antibodies, such as antivenom"
+   },
+   {
+    "key": "D",
+    "text": "vaccination with weakened pathogens"
+   }
+  ]
+ },
+ {
+  "id": "q_ecd6b8f98bd0",
+  "type": "SCQ",
+  "stem": "The secondary immune response, compared with the primary response, is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "On second exposure to the same antigen memory cells respond rapidly, producing high levels of antibody; this is the basis of vaccination.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.HHD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "due to innate immunity only"
+   },
+   {
+    "key": "B",
+    "text": "quicker and more intense because of memory B and T cells"
+   },
+   {
+    "key": "C",
+    "text": "absent"
+   },
+   {
+    "key": "D",
+    "text": "slower and weaker"
+   }
+  ]
  },
  {
   "id": "q_ed2b8d503d7d",
@@ -22589,6 +28227,69 @@
    {
     "key": "D",
     "text": "ostium"
+   }
+  ]
+ },
+ {
+  "id": "q_eeca1cfa3a62",
+  "type": "SCQ",
+  "stem": "The Miller-Urey experiment simulated early-Earth conditions and showed the formation of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Miller (1953) used a closed flask with CH$_4$, H$_2$, NH$_3$ and water vapour at 800 °C with electric discharge; amino acids formed, supporting chemical evolution.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "living cells"
+   },
+   {
+    "key": "B",
+    "text": "amino acids from CH$_4$, H$_2$, NH$_3$ and water vapour under electric discharge"
+   },
+   {
+    "key": "C",
+    "text": "oxygen-producing algae"
+   },
+   {
+    "key": "D",
+    "text": "DNA genomes"
    }
   ]
  },
@@ -22967,6 +28668,132 @@
    {
     "key": "D",
     "text": "$1:1$"
+   }
+  ]
+ },
+ {
+  "id": "q_f267303cc56d",
+  "type": "SCQ",
+  "stem": "The part of a neuron that carries impulses away from the cell body is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Dendrites receive impulses and carry them towards the cell body (cyton); the axon transmits the impulse away.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.NEU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "dendrite"
+   },
+   {
+    "key": "B",
+    "text": "axon"
+   },
+   {
+    "key": "C",
+    "text": "Nissl granule"
+   },
+   {
+    "key": "D",
+    "text": "synaptic cleft"
+   }
+  ]
+ },
+ {
+  "id": "q_f35828047db9",
+  "type": "SCQ",
+  "stem": "Simple goitre is caused by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Low iodine reduces thyroxine synthesis; the pituitary then increases TSH, causing thyroid enlargement. Hypothyroidism during pregnancy causes cretinism in the child.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CHC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "excess of insulin"
+   },
+   {
+    "key": "B",
+    "text": "deficiency of iodine in the diet, leading to enlargement of the thyroid"
+   },
+   {
+    "key": "C",
+    "text": "deficiency of calcium"
+   },
+   {
+    "key": "D",
+    "text": "excess iodine only"
    }
   ]
  },
@@ -23519,6 +29346,113 @@
   ]
  },
  {
+  "id": "q_f95e33215d42",
+  "type": "NVQ",
+  "stem": "If the frequency of allele A is $0.6$ in a population at Hardy-Weinberg equilibrium, the frequency of the heterozygote Aa is ______.",
+  "images": [],
+  "answer": {
+   "value": 0.48,
+   "tol": 0.001
+  },
+  "solution": "$2pq=2\\times0.6\\times0.4=0.48$ (AA $=0.36$, aa $=0.16$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_f9c68c524f89",
+  "type": "SCQ",
+  "stem": "The occurrence of Darwin's finches with different beak types in the Galápagos Islands is an example of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A single ancestral seed-eating finch diversified into species with beaks adapted to different foods, an example of adaptive radiation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "genetic drift only"
+   },
+   {
+    "key": "B",
+    "text": "artificial selection"
+   },
+   {
+    "key": "C",
+    "text": "adaptive radiation"
+   },
+   {
+    "key": "D",
+    "text": "convergent evolution"
+   }
+  ]
+ },
+ {
   "id": "q_fa62136c2ade",
   "type": "SCQ",
   "stem": "The pressure-flow (mass flow) hypothesis explains the translocation of food in phloem as flow from",
@@ -23767,6 +29701,69 @@
    {
     "key": "D",
     "text": "RNA polymerase III"
+   }
+  ]
+ },
+ {
+  "id": "q_ffb2fe416531",
+  "type": "SCQ",
+  "stem": "A type of natural selection in which individuals at both extremes of a trait are favoured and the average individuals are selected against is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Disruptive selection produces two peaks in the distribution; stabilising selection favours the average and directional selection one extreme.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EVO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "artificial selection"
+   },
+   {
+    "key": "B",
+    "text": "disruptive selection"
+   },
+   {
+    "key": "C",
+    "text": "directional selection"
+   },
+   {
+    "key": "D",
+    "text": "stabilising selection"
    }
   ]
  }
