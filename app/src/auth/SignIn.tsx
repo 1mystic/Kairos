@@ -8,8 +8,15 @@ import { AuthShell, Button, Divider, Field, FormError, Stack } from '../componen
 
 export function GoogleButton({ onError }: { onError(msg: string): void }) {
   const { signInWithGoogle } = useAuth();
+  const [busy, setBusy] = useState(false);
+  function go() {
+    if (busy) return;
+    setBusy(true);
+    onError('');
+    signInWithGoogle().catch((e) => onError(friendlyAuthError(e))).finally(() => setBusy(false));
+  }
   return (
-    <Button variant="secondary" block onClick={() => signInWithGoogle().catch((e) => onError(friendlyAuthError(e)))}>
+    <Button variant="secondary" block loading={busy} onClick={go}>
       Continue with Google
     </Button>
   );
@@ -61,7 +68,7 @@ export function SignIn() {
       <OrDivider />
       <Stack gap="tight">
         <GoogleButton onError={setFormError} />
-        <Button variant="ghost" block onClick={() => void startGuest().then(() => navigate('/', { replace: true }))}>Continue as guest</Button>
+        <Button variant="ghost" block onClick={() => void startGuest().then(() => navigate('/', { replace: true })).catch(() => setFormError('Could not start guest mode. Please try again.'))}>Continue as guest</Button>
       </Stack>
       <p className="text-center text-small text-slate">No account needed. Your progress stays on this device.</p>
     </AuthShell>

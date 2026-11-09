@@ -1,7 +1,8 @@
 import {
-  collection, doc, getDoc, getDocs, limit as fsLimit, orderBy, query, serverTimestamp, setDoc, updateDoc, where, writeBatch,
+  collection, doc, documentId, getDoc, getDocs, limit as fsLimit, orderBy, query, serverTimestamp, setDoc, updateDoc, where, writeBatch,
   type Firestore,
 } from 'firebase/firestore';
+import { chunkOps } from './batching';
 import type { ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
 type Data = Record<string, unknown>;
@@ -12,7 +13,7 @@ export interface FsAdapter {
   set(path: string, data: Data): Promise<void>;
   /** profile update: the adapter must stamp updatedAt (firestore.rules require it) */
   updateProfile(path: string, fields: Data): Promise<void>;
-  list(collectionPath: string, opts?: { limit?: number }): Promise<Array<{ id: string; data: Data }>>;
+  list(collectionPath: string, opts?: { limit?: number; /** orderBy(documentId(), 'desc'): date-keyed collections, newest first */ newestById?: boolean }): Promise<Array<{ id: string; data: Data }>>;
   /**
    * Recent-first query on one numeric field: orderBy(field,'desc') + optional where(field,'>=',since) + limit.
    * Same field for filter and order, so no composite index is needed. Billed per document returned.
@@ -27,37 +28,74 @@ export const DEFAULT_SESSION_LIMIT = 60;
 /** Pass as `limit` to read every session (export only). */
 export const ALL_SESSIONS = Number.POSITIVE_INFINITY;
 
-export function createFirestoreAdapter(db: Firestore): FsAdapter {
+/** pace_log docs returned by listPaceLog unless `all` (dashboard looks back 120 days). */
+export const PACE_LOG_LIMIT = 130;
+/** Short-lived memo of collection reads (Spark budget: Home -> Practice -> Home would otherwise re-bill the same docs). */
+export const LIST_CACHE_MS = 30_000;
+
+export function createFirestoreAdapter(db: Firestore, now: () => number = Date.now): FsAdapter {
   const ref = (p: string) => doc(db, p);
+  type Rows = Array<{ id: string; data: Data }>;
+  const memo = new Map<string, { at: number; rows: Rows }>();
+  const parentOf = (path: string) => path.slice(0, path.lastIndexOf('/'));
+  /** any write under a collection drops that collection's memoised reads */
+  const forget = (path: string) => {
+    const col = parentOf(path);
+    for (const k of memo.keys()) if (k.startsWith(`${col}\u0000`)) memo.delete(k);
+  };
+  const cached = async (path: string, key: string, load: () => Promise<Rows>): Promise<Rows> => {
+    const k = `${path}\u0000${key}`;
+    const hit = memo.get(k);
+    if (hit && now() - hit.at < LIST_CACHE_MS) return [...hit.rows];
+    const rows = await load();
+    memo.set(k, { at: now(), rows });
+    return [...rows];
+  };
+  const listRecentRaw = async (path: string, q: { field: string; since?: number; limit: number }): Promise<Rows> => {
+    const cons = [
+      ...(q.since !== undefined ? [where(q.field, '>=', q.since)] : []),
+      orderBy(q.field, 'desc'),
+      ...(Number.isFinite(q.limit) ? [fsLimit(q.limit)] : []),
+    ];
+    const snap = await getDocs(query(collection(db, path), ...cons));
+    return snap.docs.map((d) => ({ id: d.id, data: d.data() as Data }));
+  };
   return {
     async get(path) {
       const s = await getDoc(ref(path));
       return s.exists() ? (s.data() as Data) : null;
     },
     async set(path, data) {
-      await setDoc(ref(path), data);
+      forget(path);
+      try {
+        await setDoc(ref(path), data);
+      } finally {
+        forget(path); // offline, setDoc settles only on server ack: reads in between must not be served stale
+      }
     },
     async updateProfile(path, fields) {
       await updateDoc(ref(path), { ...fields, updatedAt: serverTimestamp() });
     },
-    async list(path, opts) {
-      const c = collection(db, path);
-      const snap = await getDocs(opts?.limit ? query(c, fsLimit(opts.limit)) : c);
-      return snap.docs.map((d) => ({ id: d.id, data: d.data() as Data }));
+    list(path, opts) {
+      return cached(path, `list:${opts?.limit ?? ''}:${opts?.newestById ? 'd' : ''}`, async () => {
+        const c = collection(db, path);
+        const cons = [...(opts?.newestById ? [orderBy(documentId(), 'desc')] : []), ...(opts?.limit ? [fsLimit(opts.limit)] : [])];
+        const snap = await getDocs(cons.length ? query(c, ...cons) : c);
+        return snap.docs.map((d) => ({ id: d.id, data: d.data() as Data }));
+      });
     },
-    async listRecent(path, q) {
-      const cons = [
-        ...(q.since !== undefined ? [where(q.field, '>=', q.since)] : []),
-        orderBy(q.field, 'desc'),
-        ...(Number.isFinite(q.limit) ? [fsLimit(q.limit)] : []),
-      ];
-      const snap = await getDocs(query(collection(db, path), ...cons));
-      return snap.docs.map((d) => ({ id: d.id, data: d.data() as Data }));
+    listRecent(path, q) {
+      return cached(path, `recent:${q.field}:${q.since ?? ''}:${q.limit}`, () => listRecentRaw(path, q));
     },
     async batchSet(ops) {
       const b = writeBatch(db);
       for (const o of ops) b.set(ref(o.path), o.data);
-      await b.commit();
+      for (const o of ops) forget(o.path);
+      try {
+        await b.commit();
+      } finally {
+        for (const o of ops) forget(o.path);
+      }
     },
   };
 }
@@ -113,8 +151,9 @@ export class FirestoreStore implements UserStore {
   putPaceLog(date: string, p: PaceLogDoc) {
     return this.fs.set(this.p(`pace_log/${date}`), p);
   }
-  async listPaceLog() {
-    return (await this.fs.list(this.p('pace_log'))).map((r) => ({ ...r.data, date: r.id }) as PaceLogDoc & { date: string });
+  /** Newest PACE_LOG_LIMIT days unless `all` (export). Doc ids are YYYY-MM-DD, so id order is date order. */
+  async listPaceLog(opts?: { all?: boolean }) {
+    return (await this.fs.list(this.p('pace_log'), opts?.all ? undefined : { limit: PACE_LOG_LIMIT, newestById: true })).map((r) => ({ ...r.data, date: r.id }) as PaceLogDoc & { date: string });
   }
 
   // ----- cloud-only helpers used by migration -----
@@ -127,7 +166,7 @@ export class FirestoreStore implements UserStore {
   async existingIds(collectionName: 'sessions' | 'mocks' | 'plans' | 'pace_log'): Promise<Set<string>> {
     return new Set((await this.fs.list(this.p(collectionName))).map((r) => r.id));
   }
-  batchWrite(ops: Array<{ path: string; data: Data }>) {
-    return this.fs.batchSet(ops.map((o) => ({ path: this.p(o.path), data: o.data })));
+  async batchWrite(ops: Array<{ path: string; data: Data }>) {
+    for (const chunk of chunkOps(ops.map((o) => ({ path: this.p(o.path), data: o.data })), 400)) await this.fs.batchSet(chunk);
   }
 }

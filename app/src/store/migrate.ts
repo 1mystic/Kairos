@@ -1,4 +1,5 @@
 import { MAX_IMAGES, MAX_IMAGE_B64_CHARS, MAX_NEW_PER_DAY, MAX_QUESTIONS, checkDocSize, type UserQuestion } from '@kairos/core';
+import { chunkOps } from './batching';
 import { imageIdsOf, startOfLocalDay, toStoredQuestion, type BankStore } from './bank';
 import type { FirestoreStore } from './FirestoreStore';
 import { ONBOARDING_KEYS, type LocalStore } from './LocalStore';
@@ -6,6 +7,9 @@ import { isGuestProfile, type GuestProfile, type UserStore } from './types';
 
 export const SESSION_CAP_DAYS = 60;
 export const BATCH_MAX = 400;
+/** firestore.rules limits */
+const MAX_EVENTS = 2000;
+const MAX_TASKS = 200;
 /** questions per upload round (media for the round goes with it; the cloud bank store splits at 400 ops) */
 export const BANK_CHUNK = 100;
 const DAY_MS = 86_400_000;
@@ -173,7 +177,13 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
   const saveDone = () => local.setMeta({ ...meta, migratedIds: done });
   const onboarding = await onboardingOutcome(local, cloud, meta);
   const ops: Op[] = [];
-  const add = (coll: string, id: string, data: Record<string, unknown>) => ops.push({ key: `${coll}/${id}`, path: `${coll}/${id}`, data: clean(data) });
+  const add = (coll: string, id: string, data: Record<string, unknown>) => {
+    const d = clean(data);
+    // firestore.rules cap sessions.events at 2000 and plans.tasks at 200: one oversize doc would fail the whole batch forever
+    if (coll === 'sessions' && Array.isArray(d.events) && d.events.length > MAX_EVENTS) d.events = d.events.slice(0, MAX_EVENTS);
+    if (coll === 'plans' && Array.isArray(d.tasks) && d.tasks.length > MAX_TASKS) d.tasks = d.tasks.slice(0, MAX_TASKS);
+    ops.push({ key: `${coll}/${id}`, path: `${coll}/${id}`, data: d });
+  };
 
   const existing = mode === 'merge'
     ? { sessions: await cloud.existingIds('sessions'), mocks: await cloud.existingIds('mocks'), plans: await cloud.existingIds('plans'), pace_log: await cloud.existingIds('pace_log') }
@@ -186,8 +196,8 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
   if (!keepAccountPlan) for (const p of g.plans) if (fresh('plans', p.date)) add('plans', p.date, p);
   for (const p of g.paceLog) if (fresh('pace_log', p.date)) add('pace_log', p.date, p);
   if (mode === 'new') {
-    for (const d of ['mastery', 'pace'] as const) {
-      if (d === 'pace' && keepAccountPlan) continue;
+    for (const d of ['mastery', 'pace', 'roadmap'] as const) {
+      if ((d === 'pace' || d === 'roadmap') && keepAccountPlan) continue;
       const st = await local.getState(d);
       if (st) add('state', d, st);
     }
@@ -201,8 +211,7 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
   }
 
   const todo = ops.filter((o) => !done[o.key]);
-  for (let i = 0; i < todo.length; i += BATCH_MAX) {
-    const chunk = todo.slice(i, i + BATCH_MAX);
+  for (const chunk of chunkOps(todo, BATCH_MAX)) {
     await cloud.batchWrite(chunk.map(({ path, data }) => ({ path, data })));
     for (const o of chunk) done[o.key] = true;
     await saveDone();

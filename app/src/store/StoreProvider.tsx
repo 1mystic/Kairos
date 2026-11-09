@@ -108,7 +108,8 @@ export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapte
   }, [local, now]);
 
   const startGuest = useCallback(async () => {
-    await ensureGuestProfile();
+    // IndexedDB can be blocked (private mode, storage denied): guest mode still opens, it just will not persist
+    await ensureGuestProfile().catch(() => {});
     try { await navigator.storage?.persist?.(); } catch { /* unsupported: fine */ }
     try { localStorage.setItem(GUEST_FLAG, '1'); } catch { /* private mode: still works this tab */ }
     setGuestFlag(true);
@@ -120,16 +121,28 @@ export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapte
   }, [guestFlag, user, loading, ensureGuestProfile]);
 
   const signOutToGuest = useCallback(async () => {
+    // Guest data that was never added to the account (prompt postponed / upload failed / over the caps) must not be
+    // wiped silently. Cloud data is never copied back to this device, so nothing here belongs to the account that left.
+    let keep = false;
+    try {
+      const meta = await local.getMeta();
+      keep = ((await local.hasData()) && meta.migratedTo !== user?.uid) || (await localBank.listQuestions()).length > 0;
+    } catch { /* unreadable local store: nothing to protect */ }
     await signOut();
-    await local.clearAll();
-    await localBank.clearAll().catch(() => {});
+    if (!keep) {
+      await local.clearAll().catch(() => {});
+      await localBank.clearAll().catch(() => {});
+    }
     setMigration({ phase: 'idle' });
     await startGuest();
-  }, [signOut, local, localBank, startGuest]);
+  }, [signOut, local, localBank, startGuest, user?.uid]);
 
   // migration after sign-in / sign-up, once the profile exists
   const attempted = useRef<string | null>(null);
+  const migrating = useRef(false);
   const migrate = useCallback(async (c: FirestoreStore) => {
+    if (migrating.current) return; // double click on "Add progress" / effect + retry
+    migrating.current = true;
     let plan: MigrationPlan | undefined;
     try {
       plan = await inspectMigration(local, c, now(), bankDeps(c));
@@ -139,11 +152,14 @@ export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapte
       setMigration({ phase: 'done', result: await runMigration(local, c, c.uid, 'new', now(), bankDeps(c)) });
     } catch {
       setMigration({ phase: 'error', plan });
+    } finally {
+      migrating.current = false;
     }
   }, [local, now, bankDeps]);
 
   useEffect(() => {
-    if (!cloud || attempted.current === cloud.uid) return;
+    if (!cloud) { attempted.current = null; return; } // signed out: a later sign-in (even the same account) is checked again
+    if (attempted.current === cloud.uid) return;
     attempted.current = cloud.uid;
     void migrate(cloud);
   }, [cloud, migrate]);

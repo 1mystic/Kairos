@@ -4,9 +4,10 @@ import { useAuth } from './AuthProvider';
 import { friendlyAuthError } from './errors';
 import { validateDob } from './validation';
 import { AuthShell, Button, Field, FormError, Spinner } from '../components/ui';
+import { ProfileRetry } from './ProtectedRoute';
 
 export function CompleteProfile() {
-  const { user, profile, loading, completeProfile, signOut } = useAuth();
+  const { user, profile, loading, profileError, completeProfile, signOut } = useAuth();
   const navigate = useNavigate();
   const [name, setName] = useState(user?.displayName ?? '');
   const [dob, setDob] = useState('');
@@ -17,6 +18,7 @@ export function CompleteProfile() {
   if (loading) return <Spinner />;
   if (!user) return <Navigate to="/signin" replace />;
   if (profile) return <Navigate to="/" replace />;
+  if (profileError) return <ProfileRetry />;
 
   async function submit(e: FormEvent) {
     e.preventDefault();

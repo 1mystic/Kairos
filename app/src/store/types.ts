@@ -87,7 +87,8 @@ export interface UserStore {
   putMock(id: string, m: MockDoc): Promise<void>;
   listMocks(): Promise<MockDoc[]>;
   putPaceLog(date: string, p: PaceLogDoc): Promise<void>;
-  listPaceLog(): Promise<Array<PaceLogDoc & { date: string }>>;
+  /** Cloud store returns the newest ~130 days unless `all` (export). */
+  listPaceLog(opts?: { all?: boolean }): Promise<Array<PaceLogDoc & { date: string }>>;
 }
 
 export const isGuestProfile = (p: Profile | null | undefined): p is GuestProfile =>

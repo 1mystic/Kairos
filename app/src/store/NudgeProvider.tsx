@@ -27,7 +27,9 @@ const COPY: Record<NudgeKind, string> = {
   many_sessions: 'You have built up a lot of practice here. Sign in to back it up.',
 };
 
-export function NudgeProvider({ children, kv, now = () => new Date() }: { children: ReactNode; kv?: KV; now?: () => Date }) {
+const defaultNow = () => new Date(); // module-level: a fresh arrow per render would re-run the effect below every render
+
+export function NudgeProvider({ children, kv, now = defaultNow }: { children: ReactNode; kv?: KV; now?: () => Date }) {
   const { isGuest } = useGuest();
   const local = useLocalStore();
   const storage: KV = kv ?? localStorage;

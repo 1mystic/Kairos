@@ -22,6 +22,9 @@ export interface AuthContextValue {
   profile: UserProfile | null;
   /** true until auth state and (if signed in) the profile lookup have resolved */
   loading: boolean;
+  /** the profile lookup failed (offline / transient): do NOT treat the account as new; offer a retry */
+  profileError?: boolean;
+  reloadProfile?(): Promise<void>;
   signIn(email: string, password: string): Promise<void>;
   signInWithGoogle(): Promise<void>;
   signUp(input: { name: string; email: string; password: string; dob: string }): Promise<void>;
@@ -51,34 +54,52 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [profileError, setProfileError] = useState(false);
   const busy = useRef(false); // true while signUp is writing the profile
+  const seq = useRef(0); // invalidates in-flight profile lookups (sign-out, another sign-in, unmount)
+
+  const loadProfile = useCallback(async (u: User) => {
+    const my = ++seq.current;
+    setLoading(true);
+    setProfileError(false);
+    try {
+      const snap = await getDoc(doc(getServices().db, 'users', u.uid));
+      if (my !== seq.current || busy.current) return;
+      setProfile(snap.exists() ? (snap.data() as UserProfile) : null);
+    } catch {
+      // a failed lookup is not "no profile": never bounce an existing account to /complete-profile
+      if (my !== seq.current || busy.current) return;
+      setProfile(null);
+      setProfileError(true);
+    } finally {
+      if (my === seq.current && !busy.current) setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const { auth, db } = getServices();
-    let cancelled = false;
-    const unsub = onAuthStateChanged(auth, async (u) => {
+    const { auth } = getServices();
+    const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
       if (!u) {
+        seq.current += 1;
         setProfile(null);
+        setProfileError(false);
         setLoading(false);
         return;
       }
       if (busy.current) return; // signUp will set the profile itself
-      setLoading(true);
-      try {
-        const snap = await getDoc(doc(db, 'users', u.uid));
-        if (!cancelled && !busy.current) setProfile(snap.exists() ? (snap.data() as UserProfile) : null);
-      } catch {
-        if (!cancelled) setProfile(null);
-      } finally {
-        if (!cancelled && !busy.current) setLoading(false);
-      }
+      void loadProfile(u);
     });
     return () => {
-      cancelled = true;
+      seq.current += 1;
       unsub();
     };
-  }, []);
+  }, [loadProfile]);
+
+  const reloadProfile = useCallback(async () => {
+    const u = getServices().auth.currentUser;
+    if (u) await loadProfile(u);
+  }, [loadProfile]);
 
   const signIn = useCallback(async (email: string, password: string) => {
     await signInWithEmailAndPassword(getServices().auth, email.trim(), password);
@@ -107,7 +128,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     try {
       const cred = await createUserWithEmailAndPassword(auth, input.email, password);
-      setProfile(await writeProfile(cred.user.uid, input));
+      // Auth lower-cases the address in the ID token and firestore.rules require profile.email == token.email
+      const email = cred.user.email ?? input.email.toLowerCase();
+      setProfile(await writeProfile(cred.user.uid, { ...input, email }));
       await updateProfile(cred.user, { displayName: input.displayName }).catch(() => {});
       await sendEmailVerification(cred.user).catch(() => {});
     } finally {
@@ -119,7 +142,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const completeProfile: AuthContextValue['completeProfile'] = useCallback(
     async ({ displayName, dob }) => {
       if (!user) throw new Error('Sign in first.');
+      // another tab / an earlier attempt may have created it already: a second setDoc would be an (invalid) update
+      const existing = await getDoc(doc(getServices().db, 'users', user.uid));
+      if (existing.exists()) {
+        setProfile(existing.data() as UserProfile);
+        return;
+      }
       setProfile(await writeProfile(user.uid, { displayName, dob, email: user.email ?? '' }));
+      if (!user.emailVerified && user.providerData.some((p) => p.providerId === 'password')) {
+        await sendEmailVerification(user).catch(() => {});
+      }
     },
     [user],
   );
@@ -138,8 +170,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo<AuthContextValue>(
-    () => ({ user, profile, loading, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut }),
-    [user, profile, loading, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut],
+    () => ({ user, profile, loading, profileError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut }),
+    [user, profile, loading, profileError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut],
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

@@ -1,6 +1,7 @@
 import { doc, collection, deleteDoc, getDoc, getDocs, serverTimestamp, writeBatch, type Firestore } from 'firebase/firestore';
 import { checkDocSize, type UserQuestion } from '@kairos/core';
 import type { KvDb } from './bankDb';
+import { chunkOps } from './batching';
 import { dataUrl, toMediaRecord, toStoredQuestion, usageOf, type BankStore, type MediaInput, type MediaRecord } from './bank';
 
 type Data = Record<string, unknown>;
@@ -83,7 +84,7 @@ export class CloudBankStore implements BankStore {
     return ops;
   }
   private async commit(ops: Array<{ path: string; data: Data }>) {
-    for (let i = 0; i < ops.length; i += BATCH_MAX) await this.fs.batchSet(ops.slice(i, i + BATCH_MAX));
+    for (const chunk of chunkOps(ops, BATCH_MAX)) await this.fs.batchSet(chunk);
     this.cache = null;
     for (const [id, rec] of this.pendingCache) await this.cacheDb.put('media_cache', this.ck(id), rec);
     this.pendingCache.clear();

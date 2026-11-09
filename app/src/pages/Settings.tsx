@@ -38,14 +38,18 @@ export function Settings() {
   }, [uid, migration.phase, local]);
 
   async function download() {
-    const data = await exportStore(store);
-    const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'kairos-data.json';
-    a.click();
-    URL.revokeObjectURL(url);
-    setMsg('Your data has been downloaded.');
+    try {
+      const data = await exportStore(store);
+      const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'kairos-data.json';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 10_000); // revoking at once cancels the download in some browsers
+      setMsg('Your data has been downloaded.');
+    } catch {
+      setMsg('We could not prepare the download. Check your connection and try again.');
+    }
   }
 
   return (
@@ -124,7 +128,7 @@ export function Settings() {
           <p className="text-slate">This removes your sessions, mocks and plans from this device. It cannot be undone.</p>
           <div className="row-actions justify-end">
             <Button variant="secondary" onClick={() => setConfirm(false)}>Keep my data</Button>
-            <Button variant="danger" onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</Button>
+            <Button variant="danger" onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); }, () => { setConfirm(false); setMsg('We could not clear local data. Try again.'); })}>Clear data</Button>
           </div>
         </Modal>
       )}

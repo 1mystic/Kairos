@@ -38,3 +38,10 @@ export function validateSignUp(
   if (d) e.dob = d;
   return e;
 }
+
+/** A path we may send a user back to after sign-in: same-origin, not an auth page. */
+export function safeReturnPath(from: unknown): string | null {
+  if (typeof from !== 'string' || !from.startsWith('/') || from.startsWith('//')) return null;
+  if (/^\/(signin|signup|forgot|complete-profile)(\/|$)/.test(from)) return null;
+  return from;
+}
