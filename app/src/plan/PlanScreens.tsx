@@ -252,7 +252,8 @@ export function ParkedCard({ t, view }: { t: TodayPlan; view: PlanView }) {
 
 function NoExam() {
   return (
-    <Page width="reading" className="page-center">
+    <Page>
+      <PageHeader title="Your plan" subtitle="A plan counted back from your exam date." />
       <EmptyState icon={CalendarIcon} title="When is your exam?" action={<LinkButton to="/onboarding">Set your exam date</LinkButton>}>
         Tell us the date and how much time you have. We count backwards from it and plan each day for you.
       </EmptyState>
