@@ -1,5 +1,5 @@
-[{"id":"JEE_MAIN_2027_S1","exam":"JEE_MAIN","session":1,"date":null,"window":null,"status":"expected","source":null,"_note":"fill from NTA when announced"},
- {"id":"JEE_MAIN_2027_S2","exam":"JEE_MAIN","session":2,"date":null,"status":"expected","source":null},
- {"id":"NEET_UG_2027","exam":"NEET_UG","session":1,"date":null,"status":"expected","source":null},
- {"id":"IAT_2027","exam":"IAT","session":1,"date":null,"status":"expected","source":null},
- {"id":"GATE_DA_2027","exam":"GATE_DA","session":1,"date":null,"window":"2027-02-06/2027-02-21","status":"expected","source":null,"_note":"GATE 2027 (IIT Madras) runs Feb 6,7,13,14,20,21 2027 per official brochure; the DA paper date is not announced yet. VERIFY"}]
+[{"id": "JEE_MAIN_2027_S1", "exam": "JEE_MAIN", "session": 1, "date": null, "window": null, "status": "expected", "source": null, "_note": "fill from NTA when announced"},
+ {"id": "JEE_MAIN_2027_S2", "exam": "JEE_MAIN", "session": 2, "date": null, "status": "expected", "source": null},
+ {"id": "NEET_UG_2027", "exam": "NEET_UG", "session": 1, "date": null, "status": "expected", "source": null},
+ {"id": "IAT_2027", "exam": "IAT", "session": 1, "date": null, "status": "expected", "source": null},
+ {"id": "GATE_DA_2027", "exam": "GATE_DA", "session": 1, "date": null, "window": {"start": "2027-02-06", "end": "2027-02-21"}, "status": "expected", "source": null, "_note": "GATE 2027 (IIT Madras) runs Feb 6,7,13,14,20,21 2027 per official brochure; the DA paper date is not announced yet. VERIFY"}]
