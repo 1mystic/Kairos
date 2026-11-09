@@ -39,7 +39,7 @@ def test_tabular_to_pipe_table_and_pipe_in_math():
     out, issues = _conv("\\begin{tabular}{c|cc}\\toprule\n & $a$ & $|x|$\\\\\\midrule\n1 & 2 & NULL\\\\\n3 & -- & 4\\\\\\bottomrule\n\\end{tabular}")
     assert not issues
     lines = out.strip().split("\n")
-    assert lines[0] == "|  | $a$ | $\\vert x\\vert$ |" and lines[1] == "| --- | --- | --- |"
+    assert lines[0] == "|  | $a$ | $\\vert x\\vert $ |" and lines[1] == "| --- | --- | --- |"
     assert lines[3] == "| 3 | – | 4 |"
     assert len({l.count("|") for l in lines}) == 1
 
