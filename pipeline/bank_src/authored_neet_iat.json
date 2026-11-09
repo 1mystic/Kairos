@@ -1,0 +1,5596 @@
+[
+ {
+  "id": "q_01a16d04e3c3",
+  "type": "SCQ",
+  "stem": "Instead of a cell wall, euglenoids have a protein-rich, flexible layer called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Euglenoids are covered by a protein-rich pellicle that makes the body flexible; they have two flagella, one short and one long.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "theca of cellulose"
+   },
+   {
+    "key": "B",
+    "text": "peptidoglycan layer"
+   },
+   {
+    "key": "C",
+    "text": "capsule"
+   },
+   {
+    "key": "D",
+    "text": "pellicle"
+   }
+  ]
+ },
+ {
+  "id": "q_02cb1afe2a25",
+  "type": "INT",
+  "stem": "A cell with $2n=20$ is at metaphase of mitosis. The number of chromatids it contains is ______.",
+  "images": [],
+  "answer": {
+   "value": 40.0,
+   "tol": 0.0
+  },
+  "solution": "Each of the 20 chromosomes has replicated into two sister chromatids, so $20\\times2=40$ chromatids are present at metaphase.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_05a25ec08b9a",
+  "type": "SCQ",
+  "stem": "Lenticels in woody stems are meant for",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Lenticels are lens-shaped openings in the periderm where loosely arranged cells allow exchange of gases.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "gaseous exchange through the bark"
+   },
+   {
+    "key": "B",
+    "text": "water storage"
+   },
+   {
+    "key": "C",
+    "text": "photosynthesis"
+   },
+   {
+    "key": "D",
+    "text": "secretion of resins"
+   }
+  ]
+ },
+ {
+  "id": "q_0702be8c4344",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Meiosis I is called a reductional division.\n\n**Reason (R):** In anaphase I, homologous chromosomes (not sister chromatids) separate and move to opposite poles.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Because whole homologues segregate in anaphase I, the chromosome number per cell halves from 2n to n; this explains why meiosis I is reductional. Both statements are true and R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_0794d889641f",
+  "type": "SCQ",
+  "stem": "Ribosomal RNA is synthesised mainly in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The nucleolus is a non-membrane-bound region of the nucleus where rRNA is transcribed and ribosomal subunits begin assembly.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "smooth endoplasmic reticulum"
+   },
+   {
+    "key": "B",
+    "text": "nucleolus"
+   },
+   {
+    "key": "C",
+    "text": "plasma membrane"
+   },
+   {
+    "key": "D",
+    "text": "Golgi body"
+   }
+  ]
+ },
+ {
+  "id": "q_0b65952977b2",
+  "type": "SCQ",
+  "stem": "A taxonomic key is based on",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Keys use pairs of contrasting characters (a couplet, each statement a lead); the user picks one statement at each step until the taxon is identified.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "contrasting characters, presented in pairs called couplets"
+   },
+   {
+    "key": "B",
+    "text": "only molecular sequences"
+   },
+   {
+    "key": "C",
+    "text": "the economic value of species"
+   },
+   {
+    "key": "D",
+    "text": "geographical distribution only"
+   }
+  ]
+ },
+ {
+  "id": "q_1828f1994644",
+  "type": "SCQ",
+  "stem": "'Diatomaceous earth', used for filtration and polishing, consists of the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Diatom walls are made of two overlapping silica shells that do not decay, so deposits of them accumulate as diatomaceous earth.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "silica-containing cell walls of dead diatoms"
+   },
+   {
+    "key": "B",
+    "text": "chitinous walls of fungi"
+   },
+   {
+    "key": "C",
+    "text": "cellulose walls of green algae"
+   },
+   {
+    "key": "D",
+    "text": "calcium carbonate shells of foraminiferans"
+   }
+  ]
+ },
+ {
+  "id": "q_1a640cc2c6de",
+  "type": "SCQ",
+  "stem": "In a typical dicot leaf, the mesophyll is differentiated into",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A dorsiventral (dicot) leaf has columnar palisade cells below the upper epidermis and loosely arranged spongy cells below; an isobilateral monocot leaf has undifferentiated mesophyll.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "collenchyma and sclerenchyma"
+   },
+   {
+    "key": "B",
+    "text": "palisade parenchyma and spongy parenchyma"
+   },
+   {
+    "key": "C",
+    "text": "only palisade parenchyma"
+   },
+   {
+    "key": "D",
+    "text": "only spongy parenchyma"
+   }
+  ]
+ },
+ {
+  "id": "q_21df044beeb9",
+  "type": "SCQ",
+  "stem": "Which of the following is the correct way of writing a scientific name in print?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "By convention the genus name begins with a capital letter and the species epithet with a small letter, and both are italicised in print (underlined separately when handwritten).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Mangifera Indica*"
+   },
+   {
+    "key": "B",
+    "text": "*Mangifera indica*"
+   },
+   {
+    "key": "C",
+    "text": "*mangifera indica*"
+   },
+   {
+    "key": "D",
+    "text": "*mangifera Indica*"
+   }
+  ]
+ },
+ {
+  "id": "q_2614678dc30c",
+  "type": "SCQ",
+  "stem": "In the five-kingdom system, all bacteria are placed in kingdom",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Kingdom Monera holds all prokaryotes: bacteria, cyanobacteria, archaebacteria and mycoplasma.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Fungi"
+   },
+   {
+    "key": "B",
+    "text": "Monera"
+   },
+   {
+    "key": "C",
+    "text": "Plantae"
+   },
+   {
+    "key": "D",
+    "text": "Protista"
+   }
+  ]
+ },
+ {
+  "id": "q_28d3d2d9d3de",
+  "type": "SCQ",
+  "stem": "Rudolf Virchow's addition to the cell theory was that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Virchow stated omnis cellula-e cellula: cells divide and new cells form from pre-existing cells. Schleiden and Schwann had proposed that plants and animals are made of cells.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "all plants are made of cells"
+   },
+   {
+    "key": "B",
+    "text": "cells can arise from non-living matter"
+   },
+   {
+    "key": "C",
+    "text": "all animals are made of cells"
+   },
+   {
+    "key": "D",
+    "text": "new cells arise from pre-existing cells"
+   }
+  ]
+ },
+ {
+  "id": "q_2a67a7a2f8ed",
+  "type": "SCQ",
+  "stem": "Starch is stored in the colourless plastids called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Leucoplasts store nutrients: amyloplasts store starch, elaioplasts store oils and fats, and aleuroplasts store proteins. Chromoplasts hold carotenoid pigments.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "aleuroplasts"
+   },
+   {
+    "key": "B",
+    "text": "amyloplasts"
+   },
+   {
+    "key": "C",
+    "text": "chromoplasts"
+   },
+   {
+    "key": "D",
+    "text": "elaioplasts"
+   }
+  ]
+ },
+ {
+  "id": "q_2a99bf6a09a5",
+  "type": "SCQ",
+  "stem": "Which of the following is present in both prokaryotic and eukaryotic cells?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Ribosomes (70S in prokaryotes, 80S in eukaryotes) are present in all cells; prokaryotes lack membrane-bound organelles.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ribosomes"
+   },
+   {
+    "key": "B",
+    "text": "Golgi apparatus"
+   },
+   {
+    "key": "C",
+    "text": "mitochondria"
+   },
+   {
+    "key": "D",
+    "text": "endoplasmic reticulum"
+   }
+  ]
+ },
+ {
+  "id": "q_32294706d9be",
+  "type": "SCQ",
+  "stem": "In the grass family, the single cotyledon of the embryo is represented by the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The scutellum is the shield-shaped cotyledon next to the endosperm; the coleoptile covers the plumule and the coleorhiza covers the radicle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "scutellum"
+   },
+   {
+    "key": "B",
+    "text": "plumule"
+   },
+   {
+    "key": "C",
+    "text": "coleorhiza"
+   },
+   {
+    "key": "D",
+    "text": "coleoptile"
+   }
+  ]
+ },
+ {
+  "id": "q_353e2d20657d",
+  "type": "SCQ",
+  "stem": "Vascular bundles that are scattered in the ground tissue and have no cambium (closed) are characteristic of the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A monocot stem shows scattered, conjoint, closed vascular bundles surrounded by sclerenchymatous sheaths; a dicot stem shows an open ring of bundles.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "monocot stem"
+   },
+   {
+    "key": "B",
+    "text": "dicot root only"
+   },
+   {
+    "key": "C",
+    "text": "gymnosperm stem"
+   },
+   {
+    "key": "D",
+    "text": "dicot stem"
+   }
+  ]
+ },
+ {
+  "id": "q_363c2775e709",
+  "type": "SCQ",
+  "stem": "Which pair correctly matches the plant group with its typical root system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "In dicots the radicle persists as a tap root; in monocots the primary root is short-lived and replaced by fibrous roots arising from the base of the stem.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Dicots: tap root; monocots: fibrous roots"
+   },
+   {
+    "key": "B",
+    "text": "Dicots and monocots: tap root"
+   },
+   {
+    "key": "C",
+    "text": "Dicots: fibrous roots; monocots: tap root"
+   },
+   {
+    "key": "D",
+    "text": "Dicots: adventitious only; monocots: tap root"
+   }
+  ]
+ },
+ {
+  "id": "q_3659ee9be8a8",
+  "type": "SCQ",
+  "stem": "In the filamentous cyanobacterium *Nostoc*, atmospheric nitrogen is fixed in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Heterocysts are specialised thick-walled cells that lack photosystem II activity and house nitrogenase, so nitrogen fixation can proceed in an oxygen-poor environment.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "hormogonia only"
+   },
+   {
+    "key": "B",
+    "text": "the sheath"
+   },
+   {
+    "key": "C",
+    "text": "akinetes only"
+   },
+   {
+    "key": "D",
+    "text": "heterocysts"
+   }
+  ]
+ },
+ {
+  "id": "q_3b2848f7a040",
+  "type": "SCQ",
+  "stem": "The characteristic pigment of brown algae (Phaeophyceae) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Brown algae contain chlorophyll a, c and the xanthophyll fucoxanthin, which gives them the brown colour. Phycoerythrin characterises red algae.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "phycoerythrin"
+   },
+   {
+    "key": "B",
+    "text": "chlorophyll b"
+   },
+   {
+    "key": "C",
+    "text": "fucoxanthin"
+   },
+   {
+    "key": "D",
+    "text": "phycocyanin"
+   }
+  ]
+ },
+ {
+  "id": "q_3c5333d8dec3",
+  "type": "SCQ",
+  "stem": "Dumb-bell-shaped guard cells are characteristic of the epidermis of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Guard cells are bean-shaped in dicots and dumb-bell-shaped in grasses. Bulliform cells in grass leaves help the leaf roll in water stress.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "dicot leaves"
+   },
+   {
+    "key": "B",
+    "text": "grasses (monocots)"
+   },
+   {
+    "key": "C",
+    "text": "submerged aquatic roots"
+   },
+   {
+    "key": "D",
+    "text": "gymnosperm roots"
+   }
+  ]
+ },
+ {
+  "id": "q_3c8623671644",
+  "type": "INT",
+  "stem": "A diploid cell has $2\\mathrm{C}$ amount of DNA in G1. Its DNA amount (in units of C) in G2 is ______.",
+  "images": [],
+  "answer": {
+   "value": 4.0,
+   "tol": 0.0
+  },
+  "solution": "DNA doubles in S phase, so $2\\mathrm{C}\\to4\\mathrm{C}$ in G2, while the chromosome number stays $2n$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3dc5cda4c446",
+  "type": "SCQ",
+  "stem": "A mule is a sterile hybrid and worker honeybees are sterile. These examples show that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Reproduction is not all-inclusive: sterile mules, worker bees and infertile human couples are alive though they do not reproduce. Metabolism, by contrast, is shown by every living organism.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sterile organisms are non-living"
+   },
+   {
+    "key": "B",
+    "text": "reproduction cannot be taken as a defining property of all living organisms"
+   },
+   {
+    "key": "C",
+    "text": "growth cannot be taken as a defining property of living organisms"
+   },
+   {
+    "key": "D",
+    "text": "metabolism is not a feature of living organisms"
+   }
+  ]
+ },
+ {
+  "id": "q_4632567ed305",
+  "type": "SCQ",
+  "stem": "The fluid mosaic model of the plasma membrane was proposed by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Singer and Nicolson (1972) described a quasi-fluid lipid bilayer with proteins embedded or attached, free to move laterally.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Watson and Crick"
+   },
+   {
+    "key": "B",
+    "text": "Robertson and Danielli"
+   },
+   {
+    "key": "C",
+    "text": "Schleiden and Schwann"
+   },
+   {
+    "key": "D",
+    "text": "Singer and Nicolson"
+   }
+  ]
+ },
+ {
+  "id": "q_4698ba5edd5d",
+  "type": "SCQ",
+  "stem": "Viroids differ from viruses in that viroids",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Viroids are infectious RNA molecules of low molecular weight and lack the capsid (protein coat) found in viruses; the potato spindle tuber disease agent is an example.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "have a lipid envelope and protein spikes"
+   },
+   {
+    "key": "B",
+    "text": "consist of free RNA without a protein coat"
+   },
+   {
+    "key": "C",
+    "text": "have DNA surrounded by a capsid"
+   },
+   {
+    "key": "D",
+    "text": "are made of protein only"
+   }
+  ]
+ },
+ {
+  "id": "q_48fb80e37cc3",
+  "type": "SCQ",
+  "stem": "The edible part of a mango, a drupe, is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In a mango the epicarp is the skin, the fleshy mesocarp is eaten, and the stony endocarp encloses the seed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "endosperm"
+   },
+   {
+    "key": "B",
+    "text": "endocarp"
+   },
+   {
+    "key": "C",
+    "text": "epicarp"
+   },
+   {
+    "key": "D",
+    "text": "mesocarp"
+   }
+  ]
+ },
+ {
+  "id": "q_4a50669b6fda",
+  "type": "SCQ",
+  "stem": "The vegetative body of a slime mould under favourable conditions is a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Slime moulds are saprophytic protists; their feeding stage is a plasmodium that may grow to several feet. Under unfavourable conditions it forms spore-bearing fruiting bodies.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "filament of cells with chitin walls"
+   },
+   {
+    "key": "B",
+    "text": "mycelium of septate hyphae"
+   },
+   {
+    "key": "C",
+    "text": "colony of unicellular flagellates"
+   },
+   {
+    "key": "D",
+    "text": "plasmodium, a multinucleate mass of protoplasm that creeps over decaying organic matter"
+   }
+  ]
+ },
+ {
+  "id": "q_4c0265480cbe",
+  "type": "SCQ",
+  "stem": "Chromosomes are most easily counted and studied at",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At metaphase the chromosomes are maximally condensed and held at the metaphase plate, so their morphology is clearest.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "telophase, when they decondense"
+   },
+   {
+    "key": "B",
+    "text": "interphase, when they replicate"
+   },
+   {
+    "key": "C",
+    "text": "metaphase, when they are fully condensed and aligned on the equatorial plate"
+   },
+   {
+    "key": "D",
+    "text": "prophase, when nucleoli are visible"
+   }
+  ]
+ },
+ {
+  "id": "q_4dc13eb5d675",
+  "type": "SCQ",
+  "stem": "The radial and tangential walls of endodermal cells in roots have a band-like deposit of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The Casparian strip of suberin blocks the apoplastic path so that water and ions must pass through the cell membranes of endodermal cells.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lignin and cutin"
+   },
+   {
+    "key": "B",
+    "text": "suberin (the Casparian strip)"
+   },
+   {
+    "key": "C",
+    "text": "cellulose and starch"
+   },
+   {
+    "key": "D",
+    "text": "pectin and callose"
+   }
+  ]
+ },
+ {
+  "id": "q_520698d4619f",
+  "type": "SCQ",
+  "stem": "Which group is described as the first terrestrial plants to possess vascular tissues (xylem and phloem)?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Pteridophytes (ferns and their allies) have well-differentiated xylem and phloem, unlike bryophytes, which are non-vascular.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Algae"
+   },
+   {
+    "key": "B",
+    "text": "Bryophytes"
+   },
+   {
+    "key": "C",
+    "text": "Fungi"
+   },
+   {
+    "key": "D",
+    "text": "Pteridophytes"
+   }
+  ]
+ },
+ {
+  "id": "q_54ef81b7a7d1",
+  "type": "SCQ",
+  "stem": "Water and minerals are absorbed from the soil mainly through",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Root hairs are thin, unicellular outgrowths of epidermal cells in the region of maturation and greatly increase the surface for absorption.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "root hairs, in the region of maturation"
+   },
+   {
+    "key": "B",
+    "text": "the root's endodermis surface"
+   },
+   {
+    "key": "C",
+    "text": "the root cap"
+   },
+   {
+    "key": "D",
+    "text": "the region of cell division only"
+   }
+  ]
+ },
+ {
+  "id": "q_56ad12f296e1",
+  "type": "SCQ",
+  "stem": "Lysosomes are called 'suicide bags' because they contain",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Lysosomes carry acid hydrolases capable of digesting carbohydrates, proteins, lipids and nucleic acids; rupture releases these enzymes and digests the cell.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "respiratory enzymes for the Krebs cycle"
+   },
+   {
+    "key": "B",
+    "text": "photosynthetic pigments"
+   },
+   {
+    "key": "C",
+    "text": "hydrolytic enzymes active in acidic pH, which can digest the cell itself if released"
+   },
+   {
+    "key": "D",
+    "text": "DNA and RNA polymerases"
+   }
+  ]
+ },
+ {
+  "id": "q_57fb93fd32a6",
+  "type": "SCQ",
+  "stem": "The root tip is protected by a thimble-like structure called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The root cap covers and protects the delicate meristematic tip as the root pushes through soil.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "root hair zone"
+   },
+   {
+    "key": "B",
+    "text": "pericycle"
+   },
+   {
+    "key": "C",
+    "text": "coleorhiza"
+   },
+   {
+    "key": "D",
+    "text": "root cap"
+   }
+  ]
+ },
+ {
+  "id": "q_5812e5b31ca2",
+  "type": "SCQ",
+  "stem": "Heartwood is dark and non-conducting because its cells are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The inner secondary xylem becomes heartwood: deposits of organic compounds make it dark, hard and durable, but it no longer conducts water.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "living and actively dividing"
+   },
+   {
+    "key": "B",
+    "text": "filled with starch and thin-walled"
+   },
+   {
+    "key": "C",
+    "text": "filled with tannins, resins, oils and gums and have lost their water-conducting function"
+   },
+   {
+    "key": "D",
+    "text": "rich in chlorophyll"
+   }
+  ]
+ },
+ {
+  "id": "q_594d4669e0c9",
+  "type": "SCQ",
+  "stem": "Asexual reproduction in *Marchantia* occurs by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "*Marchantia* (a liverwort) produces green multicellular, asexual buds called gemmae in cup-like structures; they detach and grow into new thalli.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "conidia in chains"
+   },
+   {
+    "key": "B",
+    "text": "gemmae formed in gemma cups"
+   },
+   {
+    "key": "C",
+    "text": "zoospores"
+   },
+   {
+    "key": "D",
+    "text": "fragmentation of the sporophyte"
+   }
+  ]
+ },
+ {
+  "id": "q_5bdfcea478c7",
+  "type": "SCQ",
+  "stem": "Crossing over between non-sister chromatids of homologous chromosomes takes place in which substage of meiosis I?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Synapsis occurs in zygotene, and recombination nodules appear in pachytene where crossing over occurs; chiasmata become visible in diplotene and terminalise in diakinesis.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pachytene"
+   },
+   {
+    "key": "B",
+    "text": "diakinesis"
+   },
+   {
+    "key": "C",
+    "text": "zygotene"
+   },
+   {
+    "key": "D",
+    "text": "leptotene"
+   }
+  ]
+ },
+ {
+  "id": "q_5c678d47bdf6",
+  "type": "SCQ",
+  "stem": "The cell wall of fungi is mainly composed of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Fungal cell walls contain chitin, a nitrogen-containing polysaccharide; plant walls are cellulosic and bacterial walls contain peptidoglycan.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pectin and lignin"
+   },
+   {
+    "key": "B",
+    "text": "chitin and other polysaccharides"
+   },
+   {
+    "key": "C",
+    "text": "cellulose only"
+   },
+   {
+    "key": "D",
+    "text": "peptidoglycan"
+   }
+  ]
+ },
+ {
+  "id": "q_6223291d3018",
+  "type": "SCQ",
+  "stem": "What is the lowest taxonomic category shared by a cat (*Felis*, family Felidae) and a dog (*Canis*, family Canidae)?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Cats and dogs are placed in different families (Felidae, Canidae) and different genera, so the first rank they share is the order Carnivora.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Order (Carnivora)"
+   },
+   {
+    "key": "B",
+    "text": "Species"
+   },
+   {
+    "key": "C",
+    "text": "Family"
+   },
+   {
+    "key": "D",
+    "text": "Genus"
+   }
+  ]
+ },
+ {
+  "id": "q_644e4ce5bf36",
+  "type": "SCQ",
+  "stem": "A flower that can be divided into two equal halves by any vertical plane passing through the centre is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Actinomorphic flowers such as mustard and datura show radial symmetry; zygomorphic flowers such as pea and *Cassia* divide into equal halves in only one plane.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "asymmetric"
+   },
+   {
+    "key": "B",
+    "text": "actinomorphic (radially symmetrical)"
+   },
+   {
+    "key": "C",
+    "text": "zygomorphic"
+   },
+   {
+    "key": "D",
+    "text": "bilaterally symmetrical only"
+   }
+  ]
+ },
+ {
+  "id": "q_682fc345105c",
+  "type": "SCQ",
+  "stem": "Vexillary aestivation, with a large standard petal overlapping the two wing petals, which overlap the two keel petals, is characteristic of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The papilionaceous corolla of Fabaceae, with standard, wings and keel, shows vexillary aestivation. *Calotropis* is valvate, China rose twisted and *Cassia* imbricate.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "China rose"
+   },
+   {
+    "key": "B",
+    "text": "*Calotropis*"
+   },
+   {
+    "key": "C",
+    "text": "pea (family Fabaceae)"
+   },
+   {
+    "key": "D",
+    "text": "*Cassia*"
+   }
+  ]
+ },
+ {
+  "id": "q_6991f7de1bdb",
+  "type": "SCQ",
+  "stem": "The lion (*Panthera leo*) and the tiger (*Panthera tigris*) are placed in the same",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Both share the generic name *Panthera* so they are in the same genus; their specific epithets differ, so they are separate species. (They also share higher ranks, but genus is the lowest rank shared.)\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "genus and the same species"
+   },
+   {
+    "key": "B",
+    "text": "family, but different genera"
+   },
+   {
+    "key": "C",
+    "text": "species, but different genera"
+   },
+   {
+    "key": "D",
+    "text": "genus, but different species"
+   }
+  ]
+ },
+ {
+  "id": "q_6b81555b6eeb",
+  "type": "SCQ",
+  "stem": "Which of the following is a modified stem and NOT a modified root?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Potato tuber is a swollen underground stem with eyes (nodes) bearing buds. Sweet potato, carrot and radish are storage roots.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Carrot"
+   },
+   {
+    "key": "B",
+    "text": "Radish"
+   },
+   {
+    "key": "C",
+    "text": "Sweet potato"
+   },
+   {
+    "key": "D",
+    "text": "Potato tuber"
+   }
+  ]
+ },
+ {
+  "id": "q_6f103de746f2",
+  "type": "SCQ",
+  "stem": "A centriole shows a cartwheel arrangement of nine peripheral fibrils, each a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Centrioles are 9+0: nine triplets and no central tubule. Cilia and flagella are 9+2 with nine doublets and two central singlets.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "singlet of microfilaments"
+   },
+   {
+    "key": "B",
+    "text": "doublet of microfilaments with no central tubule"
+   },
+   {
+    "key": "C",
+    "text": "doublet of microtubules with two central tubules"
+   },
+   {
+    "key": "D",
+    "text": "triplet of microtubules, with no central tubule"
+   }
+  ]
+ },
+ {
+  "id": "q_6f806e950cd9",
+  "type": "SCQ",
+  "stem": "Growth in living organisms differs from the increase in mass of non-living objects because living growth is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Living organisms grow from within by cell division and enlargement, while non-living objects such as a mountain or a sand pile grow only by external accumulation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "limited to the early embryonic period only"
+   },
+   {
+    "key": "B",
+    "text": "possible only in plants"
+   },
+   {
+    "key": "C",
+    "text": "from inside (intrinsic), by cell division and enlargement"
+   },
+   {
+    "key": "D",
+    "text": "from outside, by accumulation of material on the surface"
+   }
+  ]
+ },
+ {
+  "id": "q_70aa8b54132e",
+  "type": "SCQ",
+  "stem": "The taxonomic category that lies immediately above the family is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Order of ranks: species < genus < family < order < class < phylum < kingdom, so order is directly above family.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "class"
+   },
+   {
+    "key": "B",
+    "text": "species"
+   },
+   {
+    "key": "C",
+    "text": "genus"
+   },
+   {
+    "key": "D",
+    "text": "order"
+   }
+  ]
+ },
+ {
+  "id": "q_7359203be852",
+  "type": "SCQ",
+  "stem": "The coralloid roots of *Cycas* are associated with",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "In *Cycas*, special coralloid roots grow upward and harbour nitrogen-fixing cyanobacteria (such as *Anabaena*); *Rhizobium* nodules are characteristic of legumes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "nitrogen-fixing cyanobacteria"
+   },
+   {
+    "key": "B",
+    "text": "*Rhizobium* bacteria"
+   },
+   {
+    "key": "C",
+    "text": "red algae"
+   },
+   {
+    "key": "D",
+    "text": "mycorrhizal fungi that fix nitrogen"
+   }
+  ]
+ },
+ {
+  "id": "q_749ef7150928",
+  "type": "SCQ",
+  "stem": "Which of the following has a diplontic life cycle?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In a diplontic cycle the diploid sporophyte is the dominant phase and the haploid phase is limited to the gametes. *Fucus* (and all seed plants) is diplontic; *Spirogyra* is haplontic; *Funaria* and *Polysiphonia* are haplo-diplontic.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Funaria*"
+   },
+   {
+    "key": "B",
+    "text": "*Fucus*"
+   },
+   {
+    "key": "C",
+    "text": "*Polysiphonia*"
+   },
+   {
+    "key": "D",
+    "text": "*Spirogyra*"
+   }
+  ]
+ },
+ {
+  "id": "q_7bda192c093d",
+  "type": "SCQ",
+  "stem": "In a lichen, the fungal partner is called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Lichens are symbiotic associations of an alga or cyanobacterium (phycobiont) with a fungus (mycobiont); lichens are also good pollution indicators.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "rhizobiont"
+   },
+   {
+    "key": "B",
+    "text": "mycobiont"
+   },
+   {
+    "key": "C",
+    "text": "phycobiont"
+   },
+   {
+    "key": "D",
+    "text": "symbiont of the root"
+   }
+  ]
+ },
+ {
+  "id": "q_7d7e9c2fa1e3",
+  "type": "SCQ",
+  "stem": "Pneumatophores, the roots that grow upward out of the mud for gaseous exchange, occur in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In swampy places mangroves such as *Rhizophora* develop negatively geotropic pneumatophores with pores to take up oxygen. Banyan has prop roots and maize has stilt roots.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "banyan"
+   },
+   {
+    "key": "B",
+    "text": "*Monstera*"
+   },
+   {
+    "key": "C",
+    "text": "maize"
+   },
+   {
+    "key": "D",
+    "text": "*Rhizophora*, a mangrove"
+   }
+  ]
+ },
+ {
+  "id": "q_816f7dfe9a20",
+  "type": "SCQ",
+  "stem": "Microtubules are made up of the protein",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Microtubules are polymers of tubulin dimers and form spindle fibres, cilia, flagella and centrioles; actin forms microfilaments.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "histone"
+   },
+   {
+    "key": "B",
+    "text": "actin"
+   },
+   {
+    "key": "C",
+    "text": "myosin"
+   },
+   {
+    "key": "D",
+    "text": "tubulin"
+   }
+  ]
+ },
+ {
+  "id": "q_8c3fc6fdb29b",
+  "type": "SCQ",
+  "stem": "The nuclear envelope and nucleolus reappear during",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At telophase the chromosomes decondense, the nuclear envelope reassembles around each set and the nucleolus reforms.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "metaphase"
+   },
+   {
+    "key": "B",
+    "text": "prophase"
+   },
+   {
+    "key": "C",
+    "text": "telophase"
+   },
+   {
+    "key": "D",
+    "text": "anaphase"
+   }
+  ]
+ },
+ {
+  "id": "q_8e2a84e1e36a",
+  "type": "SCQ",
+  "stem": "Opposite phyllotaxy, with a pair of leaves at each node on opposite sides, is seen in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "*Calotropis* has opposite phyllotaxy; mustard and sunflower have alternate leaves, and *Alstonia* has whorled leaves.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "mustard"
+   },
+   {
+    "key": "B",
+    "text": "*Calotropis*"
+   },
+   {
+    "key": "C",
+    "text": "sunflower"
+   },
+   {
+    "key": "D",
+    "text": "*Alstonia*"
+   }
+  ]
+ },
+ {
+  "id": "q_9863f0811075",
+  "type": "SCQ",
+  "stem": "The stored food in brown algae is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Brown algae store food as complex carbohydrates called laminarin or mannitol; green algae store starch and red algae store floridean starch.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "laminarin or mannitol"
+   },
+   {
+    "key": "B",
+    "text": "floridean starch"
+   },
+   {
+    "key": "C",
+    "text": "starch only"
+   },
+   {
+    "key": "D",
+    "text": "glycogen"
+   }
+  ]
+ },
+ {
+  "id": "q_999d3edc504c",
+  "type": "SCQ",
+  "stem": "Which tissue provides mechanical support to growing parts of a plant, such as young stems, and has cell walls thickened at the corners?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Collenchyma cells are living, with corner thickenings of cellulose, hemicellulose and pectin, giving flexible support to growing organs; sclerenchyma is dead and lignified.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sclerenchyma"
+   },
+   {
+    "key": "B",
+    "text": "aerenchyma"
+   },
+   {
+    "key": "C",
+    "text": "xylem"
+   },
+   {
+    "key": "D",
+    "text": "collenchyma"
+   }
+  ]
+ },
+ {
+  "id": "q_9a3e4dd1f965",
+  "type": "SCQ",
+  "stem": "Lipid synthesis and detoxification of drugs are chiefly the function of the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The SER lacks ribosomes and is the site for lipid and steroid synthesis; the RER bears ribosomes and is involved in protein synthesis and secretion.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "nucleolus"
+   },
+   {
+    "key": "B",
+    "text": "lysosome"
+   },
+   {
+    "key": "C",
+    "text": "rough endoplasmic reticulum"
+   },
+   {
+    "key": "D",
+    "text": "smooth endoplasmic reticulum"
+   }
+  ]
+ },
+ {
+  "id": "q_9e8754c4d85e",
+  "type": "SCQ",
+  "stem": "DNA replication takes place in which phase of the cell cycle?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The interphase has G1 (growth), S (DNA synthesis) and G2 (preparation for division). Replication is confined to the S phase.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "G2 phase"
+   },
+   {
+    "key": "B",
+    "text": "G1 phase"
+   },
+   {
+    "key": "C",
+    "text": "S phase"
+   },
+   {
+    "key": "D",
+    "text": "M phase"
+   }
+  ]
+ },
+ {
+  "id": "q_a99e5bf0b1eb",
+  "type": "SCQ",
+  "stem": "Peat, used as fuel and as packing material for transporting living material, is obtained from",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "*Sphagnum* moss accumulates as compressed peat, used as fuel and for its water-holding capacity as a packing material.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Pinus*, a conifer"
+   },
+   {
+    "key": "B",
+    "text": "*Sphagnum*, a moss"
+   },
+   {
+    "key": "C",
+    "text": "*Cycas*, a gymnosperm"
+   },
+   {
+    "key": "D",
+    "text": "*Marchantia*, a liverwort"
+   }
+  ]
+ },
+ {
+  "id": "q_aa2032fc76da",
+  "type": "INT",
+  "stem": "Each spore mother cell undergoes meiosis to produce four haploid spores. The number of spore mother cells required to produce 80 spores is ______.",
+  "images": [],
+  "answer": {
+   "value": 20.0,
+   "tol": 0.0
+  },
+  "solution": "One meiocyte gives 4 spores, so $80/4=20$ mother cells.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ac3110495347",
+  "type": "SCQ",
+  "stem": "In bryophytes the male sex organ is the antheridium and the female sex organ is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The antheridium produces biflagellate antherozoids; the flask-shaped archegonium bears a single egg.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "protonema"
+   },
+   {
+    "key": "B",
+    "text": "archegonium"
+   },
+   {
+    "key": "C",
+    "text": "sporangium"
+   },
+   {
+    "key": "D",
+    "text": "gemma"
+   }
+  ]
+ },
+ {
+  "id": "q_ae8fb2e47823",
+  "type": "SCQ",
+  "stem": "Which cell organelle is the site of packaging, modification and secretion of proteins?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The Golgi apparatus, a stack of flattened cisternae, receives vesicles from the ER on its cis face, modifies them, and dispatches them from its trans face.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "peroxisome"
+   },
+   {
+    "key": "B",
+    "text": "nucleolus"
+   },
+   {
+    "key": "C",
+    "text": "chloroplast"
+   },
+   {
+    "key": "D",
+    "text": "Golgi apparatus"
+   }
+  ]
+ },
+ {
+  "id": "q_aec7f1d57728",
+  "type": "SCQ",
+  "stem": "Cells that leave the cell cycle and remain metabolically active but do not divide are said to be in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "G0 is a quiescent stage entered from G1; many cells in the adult animal body, such as heart cells, remain in it.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "G0 (quiescent) stage"
+   },
+   {
+    "key": "B",
+    "text": "telophase"
+   },
+   {
+    "key": "C",
+    "text": "S phase"
+   },
+   {
+    "key": "D",
+    "text": "prophase"
+   }
+  ]
+ },
+ {
+  "id": "q_b18fbff3ffa4",
+  "type": "SCQ",
+  "stem": "The 'powerhouse of the cell', where aerobic respiration yields most ATP, is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Mitochondria have an outer membrane and an inner folded membrane (cristae) bearing ATP synthase; the Krebs cycle takes place in the matrix.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ribosome"
+   },
+   {
+    "key": "B",
+    "text": "lysosome"
+   },
+   {
+    "key": "C",
+    "text": "Golgi apparatus"
+   },
+   {
+    "key": "D",
+    "text": "mitochondrion"
+   }
+  ]
+ },
+ {
+  "id": "q_b192767cce91",
+  "type": "SCQ",
+  "stem": "Arrange the following taxonomic categories in the correct ascending order (lowest to highest): family, genus, order, species.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The hierarchy from lowest to highest is species, genus, family, order, class, phylum (division in plants), kingdom.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "genus, species, family, order"
+   },
+   {
+    "key": "B",
+    "text": "order, family, genus, species"
+   },
+   {
+    "key": "C",
+    "text": "species, genus, family, order"
+   },
+   {
+    "key": "D",
+    "text": "species, family, genus, order"
+   }
+  ]
+ },
+ {
+  "id": "q_b38ac090fce0",
+  "type": "SCQ",
+  "stem": "Agar, used to grow microbes and prepare jellies, is obtained from",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Agar comes from the cell walls of the red algae *Gelidium* and *Gracilaria*. Algin comes from brown algae and carrageen from red algae.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Volvox*"
+   },
+   {
+    "key": "B",
+    "text": "*Gelidium* and *Gracilaria*, which are red algae"
+   },
+   {
+    "key": "C",
+    "text": "*Chlamydomonas*"
+   },
+   {
+    "key": "D",
+    "text": "*Laminaria*, a brown alga"
+   }
+  ]
+ },
+ {
+  "id": "q_b5bb579dbd5a",
+  "type": "SCQ",
+  "stem": "Axile placentation, in which the placenta lies at the centre of a multilocular ovary, is seen in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Tomato, lemon and China rose have axile placentation. Pea has marginal, mustard parietal, and sunflower basal placentation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "mustard"
+   },
+   {
+    "key": "B",
+    "text": "tomato"
+   },
+   {
+    "key": "C",
+    "text": "sunflower"
+   },
+   {
+    "key": "D",
+    "text": "pea"
+   }
+  ]
+ },
+ {
+  "id": "q_b9a4a23a8011",
+  "type": "SCQ",
+  "stem": "The cork cambium (phellogen) cuts off",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Phellogen forms phellem toward the outside and phelloderm toward the inside; the three together constitute the periderm.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cork inwards and secondary cortex outwards"
+   },
+   {
+    "key": "B",
+    "text": "xylem outwards and phloem inwards"
+   },
+   {
+    "key": "C",
+    "text": "phloem outwards and xylem inwards"
+   },
+   {
+    "key": "D",
+    "text": "phellem (cork) outwards and secondary cortex (phelloderm) inwards"
+   }
+  ]
+ },
+ {
+  "id": "q_bad20ac2ae2b",
+  "type": "SCQ",
+  "stem": "Companion cells are absent in the phloem of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Gymnosperms have sieve cells in the phloem (and albuminous cells), with no companion cells; companion cells and sieve tubes are features of angiosperm phloem.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "monocotyledons"
+   },
+   {
+    "key": "B",
+    "text": "dicotyledons"
+   },
+   {
+    "key": "C",
+    "text": "all angiosperms"
+   },
+   {
+    "key": "D",
+    "text": "gymnosperms"
+   }
+  ]
+ },
+ {
+  "id": "q_c09f2fe8bf42",
+  "type": "SCQ",
+  "stem": "A herbarium is best described as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Herbaria hold dried, pressed plant specimens on sheets with data on place and date of collection; living collections are botanical gardens and preserved animal collections are museums.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a garden where living plants are grown for study"
+   },
+   {
+    "key": "B",
+    "text": "a store house of dried, pressed and preserved plant specimens mounted on sheets"
+   },
+   {
+    "key": "C",
+    "text": "a place where live animals are kept for study"
+   },
+   {
+    "key": "D",
+    "text": "a collection of preserved animal specimens"
+   }
+  ]
+ },
+ {
+  "id": "q_c44205581854",
+  "type": "SCQ",
+  "stem": "A student claims that chloroplasts and mitochondria are 'semi-autonomous organelles'. The best justification is that they",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Both organelles carry a small circular DNA and 70S ribosomes and divide by fission, but still depend on nuclear genes for many proteins, hence semi-autonomous.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "contain no DNA and rely entirely on nuclear genes"
+   },
+   {
+    "key": "B",
+    "text": "contain their own circular DNA and 70S ribosomes and can make some of their own proteins"
+   },
+   {
+    "key": "C",
+    "text": "are formed only by the Golgi apparatus"
+   },
+   {
+    "key": "D",
+    "text": "are not bounded by a membrane"
+   }
+  ]
+ },
+ {
+  "id": "q_c4d0c4c75a9b",
+  "type": "SCQ",
+  "stem": "Which cells are the only living elements of xylem?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Tracheids, vessels and xylem fibres are dead at maturity (lignified, empty lumen); xylem parenchyma is living and stores food.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "xylem fibres"
+   },
+   {
+    "key": "B",
+    "text": "xylem parenchyma"
+   },
+   {
+    "key": "C",
+    "text": "tracheids"
+   },
+   {
+    "key": "D",
+    "text": "vessels"
+   }
+  ]
+ },
+ {
+  "id": "q_c573800e2aa2",
+  "type": "SCQ",
+  "stem": "Sieve tube elements have no nucleus at maturity. Their functioning is controlled by the nucleus of the adjacent",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Companion cells are living, nucleated cells connected to sieve tube elements by plasmodesmata and maintain the pressure gradient for phloem transport.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "phloem parenchyma"
+   },
+   {
+    "key": "B",
+    "text": "companion cells"
+   },
+   {
+    "key": "C",
+    "text": "xylem parenchyma"
+   },
+   {
+    "key": "D",
+    "text": "phloem fibres"
+   }
+  ]
+ },
+ {
+  "id": "q_c88fc92bb99b",
+  "type": "SCQ",
+  "stem": "'Red tides' in the sea are caused by the rapid multiplication of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Red dinoflagellates like *Gonyaulax* multiply so rapidly that the sea appears red; their toxins can kill fish.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "blue-green algae of fresh water"
+   },
+   {
+    "key": "B",
+    "text": "slime moulds"
+   },
+   {
+    "key": "C",
+    "text": "diatoms"
+   },
+   {
+    "key": "D",
+    "text": "dinoflagellates such as *Gonyaulax*"
+   }
+  ]
+ },
+ {
+  "id": "q_ccc8103df325",
+  "type": "SCQ",
+  "stem": "The middle lamella of the plant cell wall is made mainly of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The middle lamella cements neighbouring cells and consists mostly of calcium pectate; primary and secondary walls are cellulosic.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "calcium pectate"
+   },
+   {
+    "key": "B",
+    "text": "cellulose microfibrils"
+   },
+   {
+    "key": "C",
+    "text": "lignin"
+   },
+   {
+    "key": "D",
+    "text": "chitin"
+   }
+  ]
+ },
+ {
+  "id": "q_cd2964988ede",
+  "type": "SCQ",
+  "stem": "The naming of animals is governed by the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "ICZN regulates animal names; plant names are under the botanical code (ICBN, now ICN), and bacteria and viruses have their own codes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "International Code of Botanical Nomenclature (ICBN)"
+   },
+   {
+    "key": "B",
+    "text": "International Code of Viral Classification"
+   },
+   {
+    "key": "C",
+    "text": "International Code of Nomenclature of Bacteria"
+   },
+   {
+    "key": "D",
+    "text": "International Code of Zoological Nomenclature (ICZN)"
+   }
+  ]
+ },
+ {
+  "id": "q_cdfc23e7f7d0",
+  "type": "SCQ",
+  "stem": "Cytokinesis in a plant cell occurs by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Plant cells have walls, so a cell plate grows centrifugally from the phragmoplast; animal cells divide by a constricting cleavage furrow.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "budding"
+   },
+   {
+    "key": "B",
+    "text": "a cleavage furrow from the periphery inwards"
+   },
+   {
+    "key": "C",
+    "text": "fragmentation of the nucleus"
+   },
+   {
+    "key": "D",
+    "text": "formation of a cell plate from the centre outwards"
+   }
+  ]
+ },
+ {
+  "id": "q_ce4e847b9e6f",
+  "type": "SCQ",
+  "stem": "Heterospory, the production of two kinds of spores (micro- and megaspores), is seen in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "*Selaginella* and *Salvinia* are heterosporous pteridophytes. Retention of the megaspore and young embryo on the parent sporophyte is a precursor to the seed habit.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Spirogyra* and *Volvox*"
+   },
+   {
+    "key": "B",
+    "text": "*Funaria* and *Marchantia*"
+   },
+   {
+    "key": "C",
+    "text": "*Selaginella* and *Salvinia*"
+   },
+   {
+    "key": "D",
+    "text": "*Dryopteris* and *Pteris*"
+   }
+  ]
+ },
+ {
+  "id": "q_d4a331110fb0",
+  "type": "SCQ",
+  "stem": "Which of the following prokaryotes completely lacks a cell wall and is the smallest living cell known to survive without oxygen?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Mycoplasmas have no cell wall, are the smallest living cells and can survive without oxygen; Nostoc and Anabaena are cyanobacteria with walls.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Nostoc"
+   },
+   {
+    "key": "B",
+    "text": "Anabaena"
+   },
+   {
+    "key": "C",
+    "text": "Halobacterium"
+   },
+   {
+    "key": "D",
+    "text": "Mycoplasma"
+   }
+  ]
+ },
+ {
+  "id": "q_d4e34b1f3b75",
+  "type": "SCQ",
+  "stem": "In roots the protoxylem lies towards the periphery and the metaxylem towards the centre. This arrangement is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Roots have exarch xylem, while stems have endarch xylem (protoxylem towards the pith).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "exarch"
+   },
+   {
+    "key": "B",
+    "text": "collateral"
+   },
+   {
+    "key": "C",
+    "text": "mesarch"
+   },
+   {
+    "key": "D",
+    "text": "endarch"
+   }
+  ]
+ },
+ {
+  "id": "q_d58fc4deff76",
+  "type": "SCQ",
+  "stem": "Separation of sister chromatids following the splitting of the centromere occurs in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "At anaphase the centromeres split and the chromatids, now daughter chromosomes, move to opposite poles.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "prophase"
+   },
+   {
+    "key": "B",
+    "text": "anaphase"
+   },
+   {
+    "key": "C",
+    "text": "metaphase"
+   },
+   {
+    "key": "D",
+    "text": "telophase"
+   }
+  ]
+ },
+ {
+  "id": "q_d7d241792fe4",
+  "type": "SCQ",
+  "stem": "Which publication gives the actual account of the habitat and distribution of the plants of a given area?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A flora provides an account of the habitat and distribution of plants of a particular area, while a monograph treats a single taxon and a key is an identification aid.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Monograph"
+   },
+   {
+    "key": "B",
+    "text": "Taxonomic key"
+   },
+   {
+    "key": "C",
+    "text": "Herbarium sheet"
+   },
+   {
+    "key": "D",
+    "text": "Flora"
+   }
+  ]
+ },
+ {
+  "id": "q_da76e501ea88",
+  "type": "SCQ",
+  "stem": "Archaebacteria that live in the guts of ruminant animals and produce methane from dung are the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Methanogens are strict anaerobic archaebacteria found in ruminant guts and in marsh sediment, and are responsible for biogas production from dung.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "thermoacidophiles"
+   },
+   {
+    "key": "B",
+    "text": "halophiles"
+   },
+   {
+    "key": "C",
+    "text": "methanogens"
+   },
+   {
+    "key": "D",
+    "text": "nitrifying bacteria"
+   }
+  ]
+ },
+ {
+  "id": "q_db31242490f7",
+  "type": "INT",
+  "stem": "Starting from a single cell, the number of mitotic divisions needed (with every cell dividing each round) to produce 64 cells is ______.",
+  "images": [],
+  "answer": {
+   "value": 6.0,
+   "tol": 0.0
+  },
+  "solution": "After $n$ rounds the number of cells is $2^n$; $2^n=64$ gives $n=6$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_de203fc5e26d",
+  "type": "SCQ",
+  "stem": "The five-kingdom system of classification was proposed by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Whittaker (1969) proposed Monera, Protista, Fungi, Plantae and Animalia, based on cell structure, body organisation, mode of nutrition, reproduction and phylogeny.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BCL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Ernst Haeckel"
+   },
+   {
+    "key": "B",
+    "text": "R. H. Whittaker"
+   },
+   {
+    "key": "C",
+    "text": "Carl Woese"
+   },
+   {
+    "key": "D",
+    "text": "Carolus Linnaeus"
+   }
+  ]
+ },
+ {
+  "id": "q_e2b8b3ba7f07",
+  "type": "SCQ",
+  "stem": "The 80S ribosome of eukaryotes is made of subunits of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Eukaryotic 80S ribosomes have 60S and 40S subunits. Prokaryotic 70S ribosomes have 50S and 30S subunits. S values are sedimentation coefficients and are not additive.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CELL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "60S and 40S"
+   },
+   {
+    "key": "B",
+    "text": "60S and 20S"
+   },
+   {
+    "key": "C",
+    "text": "50S and 30S"
+   },
+   {
+    "key": "D",
+    "text": "70S and 10S"
+   }
+  ]
+ },
+ {
+  "id": "q_e3361c50db17",
+  "type": "SCQ",
+  "stem": "The significance of meiosis in sexually reproducing organisms is that it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Halving the chromosome number offsets the doubling at fertilisation, and crossing over plus independent assortment provide variation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "doubles the chromosome number of each gamete"
+   },
+   {
+    "key": "B",
+    "text": "occurs only in somatic cells"
+   },
+   {
+    "key": "C",
+    "text": "produces genetically identical gametes"
+   },
+   {
+    "key": "D",
+    "text": "keeps the chromosome number constant across generations and creates genetic variation"
+   }
+  ]
+ },
+ {
+  "id": "q_e4a57e8a36c6",
+  "type": "SCQ",
+  "stem": "In a flower with 10 stamens in which nine filaments are fused into a bundle and one is free, the stamens are described as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Two bundles of fused filaments make a diadelphous condition (9 + 1 in pea). Monadelphous means one bundle (China rose), polyadelphous many (citrus) and syngenesious refers to fused anthers (sunflower).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "syngenesious"
+   },
+   {
+    "key": "B",
+    "text": "diadelphous"
+   },
+   {
+    "key": "C",
+    "text": "polyadelphous"
+   },
+   {
+    "key": "D",
+    "text": "monadelphous"
+   }
+  ]
+ },
+ {
+  "id": "q_e5e5e096babe",
+  "type": "SCQ",
+  "stem": "Grasses regenerate quickly after being grazed by herbivores because of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Intercalary meristems, located between mature tissues at the nodes or internode bases, allow regrowth of leaves and internodes after cutting or grazing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "secondary meristems such as cork cambium"
+   },
+   {
+    "key": "B",
+    "text": "apical meristems of the root"
+   },
+   {
+    "key": "C",
+    "text": "intercalary meristems at the bases of internodes"
+   },
+   {
+    "key": "D",
+    "text": "xylem parenchyma"
+   }
+  ]
+ },
+ {
+  "id": "q_e66962cc87a3",
+  "type": "SCQ",
+  "stem": "The age of a tree growing in a temperate region can be estimated by counting its",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In temperate climates the cambium is active in spring and slows in autumn; each pair of early and late wood forms one annual ring.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ANAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "number of lenticels"
+   },
+   {
+    "key": "B",
+    "text": "annual rings, each formed by one season of activity of the vascular cambium"
+   },
+   {
+    "key": "C",
+    "text": "number of branches"
+   },
+   {
+    "key": "D",
+    "text": "leaf scars only"
+   }
+  ]
+ },
+ {
+  "id": "q_e95e0a8c67d0",
+  "type": "SCQ",
+  "stem": "Terminalisation of chiasmata occurs during",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "In diakinesis the chiasmata slide towards the ends of the bivalents (terminalisation), and the nucleolus and nuclear envelope disappear.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.CCD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "diakinesis"
+   },
+   {
+    "key": "B",
+    "text": "pachytene"
+   },
+   {
+    "key": "C",
+    "text": "zygotene"
+   },
+   {
+    "key": "D",
+    "text": "anaphase II"
+   }
+  ]
+ },
+ {
+  "id": "q_eb4b28bb1a93",
+  "type": "SCQ",
+  "stem": "Binomial nomenclature, the system of giving each organism a two-part scientific name, was introduced by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Binomial nomenclature was standardised by Carolus Linnaeus: each species gets a generic name followed by a specific epithet. Whittaker is known for the five-kingdom scheme and Darwin for natural selection.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.LIV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Aristotle"
+   },
+   {
+    "key": "B",
+    "text": "Charles Darwin"
+   },
+   {
+    "key": "C",
+    "text": "R. H. Whittaker"
+   },
+   {
+    "key": "D",
+    "text": "Carolus Linnaeus"
+   }
+  ]
+ },
+ {
+  "id": "q_f06c3bd11a43",
+  "type": "SCQ",
+  "stem": "Reticulate venation is typical of the leaves of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Dicot leaves show a net-like (reticulate) vein pattern while monocot leaves show parallel venation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MORPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "all algae"
+   },
+   {
+    "key": "B",
+    "text": "monocotyledonous plants"
+   },
+   {
+    "key": "C",
+    "text": "dicotyledonous plants"
+   },
+   {
+    "key": "D",
+    "text": "mosses"
+   }
+  ]
+ },
+ {
+  "id": "q_f90707a907c6",
+  "type": "SCQ",
+  "stem": "In bryophytes (for example a moss), the dominant, independent plant body is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In bryophytes the gametophyte is the main photosynthetic, free-living phase; the sporophyte is partially or wholly dependent on it for nutrition.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PKG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "haploid sporophyte"
+   },
+   {
+    "key": "B",
+    "text": "haploid gametophyte"
+   },
+   {
+    "key": "C",
+    "text": "diploid sporophyte"
+   },
+   {
+    "key": "D",
+    "text": "diploid gametophyte"
+   }
+  ]
+ }
+]
