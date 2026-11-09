@@ -191,6 +191,176 @@
   ]
  },
  {
+  "id": "q_11ca386465e0",
+  "type": "SCQ",
+  "stem": "At a place the horizontal component of the Earth's field is $0.3\\ \\mathrm{G}$ and the angle of dip is $60^\\circ$. The total field (in gauss) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$H=B\\cos\\delta\\Rightarrow B=\\dfrac{H}{\\cos60^\\circ}=0.6\\ \\mathrm{G}$ (vertical component $V=B\\sin\\delta=0.52\\ \\mathrm{G}$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAGM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.26$"
+   },
+   {
+    "key": "B",
+    "text": "$0.6$"
+   },
+   {
+    "key": "C",
+    "text": "$0.346$"
+   },
+   {
+    "key": "D",
+    "text": "$0.52$"
+   }
+  ]
+ },
+ {
+  "id": "q_13e5a2b192a7",
+  "type": "NVQ",
+  "stem": "A coil of $50$ turns, area $0.02\\ \\mathrm{m^2}$ and current $2\\ \\mathrm{A}$ is in a uniform field of $0.3\\ \\mathrm{T}$. The normal to the coil makes $60^\\circ$ with the field. The torque on the coil, in N m, is approximately",
+  "images": [],
+  "answer": {
+   "value": 0.52,
+   "tol": 0.005
+  },
+  "solution": "$\\tau=NIAB\\sin\\theta=50\\times2\\times0.02\\times0.3\\times\\sin60^\\circ=0.6\\times0.866=0.52\\ \\mathrm{N\\,m}$ ($\\theta$ is the angle between the area normal and $\\vec B$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_18051cfbc309",
+  "type": "SCQ",
+  "stem": "A series LCR circuit has $L=1\\ \\mathrm{mH}$ and $C=10\\ \\mu\\mathrm{F}$. Its resonant frequency is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$f_0=\\dfrac{1}{2\\pi\\sqrt{LC}}=\\dfrac{1}{2\\pi\\sqrt{10^{-3}\\times10^{-5}}}=\\dfrac{10^4}{2\\pi}=1.59\\times10^3\\ \\mathrm{Hz}$ ($\\omega_0=10^4\\ \\mathrm{rad/s}$; do not forget the $2\\pi$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.AC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$10\\ \\mathrm{kHz}$"
+   },
+   {
+    "key": "B",
+    "text": "$0.16\\ \\mathrm{kHz}$"
+   },
+   {
+    "key": "C",
+    "text": "$1.59\\ \\mathrm{kHz}$"
+   },
+   {
+    "key": "D",
+    "text": "$15.9\\ \\mathrm{kHz}$"
+   }
+  ]
+ },
+ {
   "id": "q_1c0029febaca",
   "type": "INT",
   "stem": "A force $F=(3x^2+2x)\\ \\mathrm{N}$ acts on a particle along the $x$-axis. The work done by the force in moving the particle from $x=0$ to $x=4\\ \\mathrm{m}$ is, in joule,",
@@ -203,6 +373,49 @@
   "tax": {
    "subject": "PHY",
    "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1d214e7f3973",
+  "type": "INT",
+  "stem": "Two coils have a mutual inductance of $0.5\\ \\mathrm{H}$. The current in the primary falls uniformly from $4\\ \\mathrm{A}$ to zero in $0.1\\ \\mathrm{s}$. The emf induced in the secondary in volt is",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "$|\\varepsilon|=M\\left|\\dfrac{dI}{dt}\\right|=0.5\\times\\dfrac{4}{0.1}=20\\ \\mathrm{V}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMI",
    "topics": [],
    "concepts": []
   },
@@ -275,6 +488,175 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_1fd4de66e9a4",
+  "type": "SCQ",
+  "stem": "A conducting rod of length $0.5\\ \\mathrm{m}$ moves at $4\\ \\mathrm{m/s}$ perpendicular to a uniform field of $0.3\\ \\mathrm{T}$ and perpendicular to its own length. The motional emf across its ends (in volt) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\varepsilon=Blv=0.3\\times0.5\\times4=0.6\\ \\mathrm{V}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMI",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2.4$"
+   },
+   {
+    "key": "B",
+    "text": "$1.2$"
+   },
+   {
+    "key": "C",
+    "text": "$0.15$"
+   },
+   {
+    "key": "D",
+    "text": "$0.6$"
+   }
+  ]
+ },
+ {
+  "id": "q_209226e35a10",
+  "type": "INT",
+  "stem": "A cell sends a current of $2\\ \\mathrm{A}$ through an external resistance of $5\\ \\Omega$ and $1.2\\ \\mathrm{A}$ through $9\\ \\Omega$. The emf of the cell in volt is",
+  "images": [],
+  "answer": {
+   "value": 12.0
+  },
+  "solution": "$\\varepsilon=2(5+r)=1.2(9+r)\\Rightarrow 10+2r=10.8+1.2r\\Rightarrow r=1\\ \\Omega$, so $\\varepsilon=2\\times6=12\\ \\mathrm{V}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_2c368ef11848",
+  "type": "SCQ",
+  "stem": "A circular coil of $20$ turns and radius $10\\ \\mathrm{cm}$ carries a current of $5\\ \\mathrm{A}$. The magnetic field at its centre is ($\\mu_0=4\\pi\\times10^{-7}\\ \\mathrm{T\\,m/A}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$B=\\dfrac{\\mu_0NI}{2R}=\\dfrac{4\\pi\\times10^{-7}\\times20\\times5}{0.2}=6.28\\times10^{-4}\\ \\mathrm{T}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1.26\\times10^{-3}$$\\ \\mathrm{T}$"
+   },
+   {
+    "key": "B",
+    "text": "$6.28\\times10^{-4}$$\\ \\mathrm{T}$"
+   },
+   {
+    "key": "C",
+    "text": "$3.14\\times10^{-5}$$\\ \\mathrm{T}$"
+   },
+   {
+    "key": "D",
+    "text": "$2\\times10^{-4}$$\\ \\mathrm{T}$"
+   }
+  ]
  },
  {
   "id": "q_31a0a9a1c796",
@@ -365,6 +747,157 @@
   "version": 1
  },
  {
+  "id": "q_3529fc651618",
+  "type": "NVQ",
+  "stem": "Four charges of $+2\\ \\mu\\mathrm{C}$ each are placed at the corners of a square of side $0.5\\ \\mathrm{m}$. The electric potential at the centre of the square, in kV, is approximately ($k=9\\times10^9$ SI)",
+  "images": [],
+  "answer": {
+   "value": 203.6,
+   "tol": 2.0
+  },
+  "solution": "Distance of each corner from the centre $r=\\dfrac{0.5}{\\sqrt2}=0.3536\\ \\mathrm{m}$. Potential is a scalar so it adds: $V=4\\times\\dfrac{9\\times10^9\\times2\\times10^{-6}}{0.3536}=2.04\\times10^5\\ \\mathrm{V}\\approx204\\ \\mathrm{kV}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_381846a10db2",
+  "type": "NVQ",
+  "stem": "An FM station transmits at $90\\ \\mathrm{MHz}$. The wavelength of the wave in metres is approximately",
+  "images": [],
+  "answer": {
+   "value": 3.33,
+   "tol": 0.02
+  },
+  "solution": "$\\lambda=\\dfrac{c}{f}=\\dfrac{3\\times10^8}{90\\times10^6}=3.33\\ \\mathrm{m}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMW",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3eda41816939",
+  "type": "SCQ",
+  "stem": "A step-down transformer converts $220\\ \\mathrm{V}$ to $11\\ \\mathrm{V}$ and its secondary supplies $4\\ \\mathrm{A}$ to a load. If its efficiency is $90\\%$, the primary current (in ampere) is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Output power $=11\\times4=44\\ \\mathrm{W}$; input $=44/0.9=48.9\\ \\mathrm{W}$; $I_p=\\dfrac{48.9}{220}=0.222\\ \\mathrm{A}$. (Ideal transformer would give $0.2$ A.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.AC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.2$"
+   },
+   {
+    "key": "B",
+    "text": "$80$"
+   },
+   {
+    "key": "C",
+    "text": "$0.18$"
+   },
+   {
+    "key": "D",
+    "text": "$0.222$"
+   }
+  ]
+ },
+ {
   "id": "q_3ee0daaad86d",
   "type": "SCQ",
   "stem": "A mixture of $2$ mol of a monatomic ideal gas and $3$ mol of a rigid diatomic ideal gas is kept at moderate temperature. The ratio $C_p/C_v$ of the mixture is",
@@ -429,6 +962,69 @@
   ]
  },
  {
+  "id": "q_432ad493a1a7",
+  "type": "SCQ",
+  "stem": "A point charge $q$ is placed at one corner of a cube. The electric flux through a face of the cube that does NOT contain that corner is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Surround the charge with $8$ identical cubes so it sits at their common centre. Total flux $q/\\varepsilon_0$ passes through $24$ equal outer faces, so each gets $\\dfrac{q}{24\\varepsilon_0}$. The three faces touching the charge are parallel to the field lines there and carry zero flux.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ELE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{q}{24\\varepsilon_0}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{q}{6\\varepsilon_0}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{q}{8\\varepsilon_0}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{q}{4\\varepsilon_0}$"
+   }
+  ]
+ },
+ {
   "id": "q_4613af1a40b0",
   "type": "SCQ",
   "stem": "A car travelling at $72\\ \\mathrm{km\\,h^{-1}}$ brakes with a uniform retardation of $4\\ \\mathrm{m\\,s^{-2}}$. The distance it covers before stopping is (in metres)",
@@ -488,6 +1084,75 @@
    {
     "key": "D",
     "text": "$25$"
+   }
+  ]
+ },
+ {
+  "id": "q_484860385ff0",
+  "type": "MSQ",
+  "stem": "Select all correct statements about magnetic materials.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "A, B, C are standard results. D is false: permanent magnets need high coercivity and retentivity (steel), soft iron has low coercivity so it is used in electromagnets and transformer cores. E is false: a superconductor expels the field (Meissner effect), $\\chi=-1$, so $\\mu_r=1+\\chi=0$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAGM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Diamagnetic substances have a small negative susceptibility."
+   },
+   {
+    "key": "B",
+    "text": "A ferromagnetic substance behaves as a paramagnet above its Curie temperature."
+   },
+   {
+    "key": "C",
+    "text": "The susceptibility of a paramagnetic substance is proportional to $1/T$ (Curie law)."
+   },
+   {
+    "key": "D",
+    "text": "Soft iron is preferred for permanent magnets because of its large coercivity."
+   },
+   {
+    "key": "E",
+    "text": "A superconductor has relative permeability $\\mu_r=1$."
    }
   ]
  },
@@ -704,6 +1369,50 @@
   ]
  },
  {
+  "id": "q_59ef9ce66577",
+  "type": "NVQ",
+  "stem": "A proton, starting from rest, is accelerated through $800\\ \\mathrm{V}$ and enters a uniform magnetic field of $0.2\\ \\mathrm{T}$ perpendicular to its velocity. Its orbit radius in cm is approximately ($m_p=1.67\\times10^{-27}\\ \\mathrm{kg}$, $e=1.6\\times10^{-19}\\ \\mathrm{C}$)",
+  "images": [],
+  "answer": {
+   "value": 2.04,
+   "tol": 0.03
+  },
+  "solution": "$qV=\\tfrac12mv^2\\Rightarrow v=\\sqrt{2qV/m}=1.24\\times10^{5}\\ \\mathrm{m/s}$. $r=\\dfrac{mv}{qB}=\\dfrac{\\sqrt{2mV/q}}{B}=\\dfrac{4.09\\times10^{-3}}{0.2}=2.04\\times10^{-2}\\ \\mathrm{m}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_5fb3a4f67350",
   "type": "MSQ",
   "stem": "Helium and argon gases (atomic masses $4.0$ and $39.95$) are in thermal equilibrium at the same temperature. Select all correct statements.",
@@ -773,6 +1482,69 @@
   ]
  },
  {
+  "id": "q_625ea29e3633",
+  "type": "SCQ",
+  "stem": "In a plane electromagnetic wave in vacuum the electric field amplitude is $60\\ \\mathrm{V/m}$. The magnetic field amplitude is ($c=3\\times10^8\\ \\mathrm{m/s}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$E_0=cB_0\\Rightarrow B_0=60/(3\\times10^8)=2\\times10^{-7}\\ \\mathrm{T}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMW",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2\\times10^{-7}\\ \\mathrm{T}$"
+   },
+   {
+    "key": "B",
+    "text": "$5\\times10^{6}\\ \\mathrm{T}$"
+   },
+   {
+    "key": "C",
+    "text": "$1.8\\times10^{10}\\ \\mathrm{T}$"
+   },
+   {
+    "key": "D",
+    "text": "$2\\times10^{-9}\\ \\mathrm{T}$"
+   }
+  ]
+ },
+ {
   "id": "q_65082f9ee5b1",
   "type": "INT",
   "stem": "A particle in SHM has amplitude $24\\ \\mathrm{cm}$. At a displacement of $x$ cm from the mean position its kinetic energy is three times its potential energy. The value of $x$ is",
@@ -814,6 +1586,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_671622877fe3",
+  "type": "SCQ",
+  "stem": "Two point charges of $4\\ \\mu\\mathrm{C}$ each are placed $30\\ \\mathrm{cm}$ apart in air ($k=9\\times10^9\\ \\mathrm{N\\,m^2/C^2}$). The force of repulsion between them (in newton) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$F=\\dfrac{kq_1q_2}{r^2}=\\dfrac{9\\times10^9\\times16\\times10^{-12}}{0.09}=1.6\\ \\mathrm{N}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ELE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.144$"
+   },
+   {
+    "key": "B",
+    "text": "$800000$"
+   },
+   {
+    "key": "C",
+    "text": "$1.6$"
+   },
+   {
+    "key": "D",
+    "text": "$0.48$"
+   }
+  ]
  },
  {
   "id": "q_7060e527a139",
@@ -871,6 +1706,135 @@
   "tax": {
    "subject": "PHY",
    "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_726fd9d204fe",
+  "type": "INT",
+  "stem": "A coil of resistance $6\\ \\Omega$ and inductive reactance $8\\ \\Omega$ is connected to a $20\\ \\mathrm{V}$ (rms) AC source. The average power consumed in watt is",
+  "images": [],
+  "answer": {
+   "value": 24.0
+  },
+  "solution": "$Z=\\sqrt{36+64}=10\\ \\Omega$, $I_{rms}=2\\ \\mathrm{A}$, $\\cos\\phi=R/Z=0.6$. $P=V_{rms}I_{rms}\\cos\\phi=20\\times2\\times0.6=24\\ \\mathrm{W}$ (equivalently $I^2R=4\\times6$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.AC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_73ab6f9f80f8",
+  "type": "INT",
+  "stem": "Capacitors of $6\\ \\mu\\mathrm{F}$ and $3\\ \\mu\\mathrm{F}$ are connected in series across a $12\\ \\mathrm{V}$ battery. The potential difference across the $3\\ \\mu\\mathrm{F}$ capacitor in volt is",
+  "images": [],
+  "answer": {
+   "value": 8.0
+  },
+  "solution": "$C_{eq}=\\dfrac{6\\times3}{9}=2\\ \\mu\\mathrm{F}$, charge on each $=2\\times12=24\\ \\mu\\mathrm{C}$, so $V_3=\\dfrac{24}{3}=8\\ \\mathrm{V}$ (and $V_6=4\\ \\mathrm{V}$; $8+4=12$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_747170fd439a",
+  "type": "INT",
+  "stem": "A $4\\ \\mu\\mathrm{F}$ capacitor charged to $100\\ \\mathrm{V}$ is connected across an uncharged $6\\ \\mu\\mathrm{F}$ capacitor. The energy lost (in millijoule) in the process is",
+  "images": [],
+  "answer": {
+   "value": 12.0
+  },
+  "solution": "Common potential $V=\\dfrac{4\\times100}{10}=40\\ \\mathrm{V}$. $U_i=\\tfrac12(4\\times10^{-6})(100)^2=20\\ \\mathrm{mJ}$, $U_f=\\tfrac12(10\\times10^{-6})(40)^2=8\\ \\mathrm{mJ}$. Loss $=12\\ \\mathrm{mJ}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CAP",
    "topics": [],
    "concepts": []
   },
@@ -1029,6 +1993,132 @@
   ]
  },
  {
+  "id": "q_8547b2ac0da5",
+  "type": "SCQ",
+  "stem": "A long air-core solenoid has $1000$ turns, length $0.5\\ \\mathrm{m}$ and cross-sectional area $2\\times10^{-4}\\ \\mathrm{m^2}$. Its self-inductance is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$L=\\dfrac{\\mu_0N^2A}{l}=\\dfrac{4\\pi\\times10^{-7}\\times10^6\\times2\\times10^{-4}}{0.5}=5.03\\times10^{-4}\\ \\mathrm{H}=0.50\\ \\mathrm{mH}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMI",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.25\\ \\mathrm{mH}$"
+   },
+   {
+    "key": "B",
+    "text": "$5.0\\ \\mathrm{mH}$"
+   },
+   {
+    "key": "C",
+    "text": "$0.50\\ \\mathrm{mH}$"
+   },
+   {
+    "key": "D",
+    "text": "$0.050\\ \\mathrm{mH}$"
+   }
+  ]
+ },
+ {
+  "id": "q_86b269a0ef72",
+  "type": "SCQ",
+  "stem": "A parallel-plate capacitor has capacitance $C_0$ in air. A dielectric slab of constant $3$ and thickness $d/2$ (half the plate separation $d$, covering the full plate area) is inserted. The new capacitance is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Treat as two capacitors in series: $\\dfrac1C=\\dfrac{d/2}{K\\varepsilon_0A}+\\dfrac{d/2}{\\varepsilon_0A}=\\dfrac{d}{\\varepsilon_0A}\\left(\\dfrac16+\\dfrac12\\right)=\\dfrac{2}{3C_0}$, so $C=\\tfrac32C_0$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2C_0$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{3}{2}C_0$"
+   },
+   {
+    "key": "C",
+    "text": "$3C_0$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{2}{3}C_0$"
+   }
+  ]
+ },
+ {
   "id": "q_873f390843a3",
   "type": "SCQ",
   "stem": "Masses $3\\ \\mathrm{kg}$ and $5\\ \\mathrm{kg}$ hang from the two ends of a light string passing over a smooth light pulley. Taking $g=10\\ \\mathrm{m/s^2}$, the tension in the string (in newton) is",
@@ -1090,6 +2180,155 @@
     "text": "$30$"
    }
   ]
+ },
+ {
+  "id": "q_897e3130fe59",
+  "type": "INT",
+  "stem": "A uniform wire of resistance $8\\ \\Omega$ is uniformly stretched to three times its original length (volume constant). The new resistance in ohm is",
+  "images": [],
+  "answer": {
+   "value": 72.0
+  },
+  "solution": "$R=\\rho L/A$ with $AL$ constant: $R\\propto L^2$, so $R'=8\\times3^2=72\\ \\Omega$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8ba43defd2d7",
+  "type": "SCQ",
+  "stem": "A short bar magnet of magnetic moment $2\\ \\mathrm{A\\,m^2}$ lies in air. The magnitude of its field at a point on its axis $10\\ \\mathrm{cm}$ from the centre is ($\\mu_0/4\\pi=10^{-7}\\ \\mathrm{T\\,m/A}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Axial field $B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{2m}{r^3}=10^{-7}\\times\\dfrac{4}{10^{-3}}=4\\times10^{-4}\\ \\mathrm{T}$ (the equatorial value would be half of this: $2\\times10^{-4}$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAGM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$4\\times10^{-4}\\ \\mathrm{T}$"
+   },
+   {
+    "key": "B",
+    "text": "$8\\times10^{-4}\\ \\mathrm{T}$"
+   },
+   {
+    "key": "C",
+    "text": "$4\\times10^{-5}\\ \\mathrm{T}$"
+   },
+   {
+    "key": "D",
+    "text": "$2\\times10^{-4}\\ \\mathrm{T}$"
+   }
+  ]
+ },
+ {
+  "id": "q_8ce9113a5222",
+  "type": "INT",
+  "stem": "A bar magnet oscillating in a horizontal magnetic field completes $10$ oscillations in $20\\ \\mathrm{s}$. When the field is made four times as strong, the time (in seconds) taken for $10$ oscillations is",
+  "images": [],
+  "answer": {
+   "value": 10.0
+  },
+  "solution": "$T=2\\pi\\sqrt{I/(mB)}\\propto B^{-1/2}$. Quadrupling $B$ halves the period: $T=2\\to1\\ \\mathrm{s}$, so $10$ oscillations take $10\\ \\mathrm{s}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAGM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_8daa81680e9c",
@@ -1198,6 +2437,92 @@
   "version": 1
  },
  {
+  "id": "q_95a117809657",
+  "type": "INT",
+  "stem": "A coil of $100$ turns and area $0.01\\ \\mathrm{m^2}$ has its plane perpendicular to a field that grows uniformly from $0$ to $0.5\\ \\mathrm{T}$ in $0.05\\ \\mathrm{s}$. The induced emf in volt is",
+  "images": [],
+  "answer": {
+   "value": 10.0
+  },
+  "solution": "$|\\varepsilon|=N\\dfrac{\\Delta\\Phi}{\\Delta t}=100\\times\\dfrac{0.5\\times0.01}{0.05}=10\\ \\mathrm{V}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMI",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_98352c0490b7",
+  "type": "INT",
+  "stem": "A series circuit has $R=30\\ \\Omega$, $L=80\\ \\mathrm{mH}$ and $C=25\\ \\mu\\mathrm{F}$ driven at $\\omega=1000\\ \\mathrm{rad/s}$. The impedance in ohm is",
+  "images": [],
+  "answer": {
+   "value": 50.0
+  },
+  "solution": "$X_L=\\omega L=80\\ \\Omega$, $X_C=\\dfrac{1}{\\omega C}=40\\ \\Omega$. $Z=\\sqrt{R^2+(X_L-X_C)^2}=\\sqrt{900+1600}=50\\ \\Omega$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.AC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_995ec58947dd",
   "type": "NVQ",
   "stem": "A wire of radius $0.5\\ \\mathrm{mm}$ has a breaking stress of $3.0\\times10^{8}\\ \\mathrm{N/m^2}$. Taking $g=10\\ \\mathrm{m/s^2}$, the maximum mass (in kg) that can be hung from it without breaking is approximately",
@@ -1240,6 +2565,560 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_a0f0136c540e",
+  "type": "SCQ",
+  "stem": "A plane electromagnetic wave in vacuum has electric field amplitude $100\\ \\mathrm{V/m}$. Its intensity (in $\\mathrm{W/m^2}$) is approximately ($\\varepsilon_0=8.85\\times10^{-12}$ SI, $c=3\\times10^8\\ \\mathrm{m/s}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$I=\\tfrac12\\varepsilon_0cE_0^2=0.5\\times8.85\\times10^{-12}\\times3\\times10^8\\times10^4=13.3\\ \\mathrm{W/m^2}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMW",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.133$"
+   },
+   {
+    "key": "B",
+    "text": "$13.3$"
+   },
+   {
+    "key": "C",
+    "text": "$26.6$"
+   },
+   {
+    "key": "D",
+    "text": "$4.43e-08$"
+   }
+  ]
+ },
+ {
+  "id": "q_a4644978dd98",
+  "type": "SCQ",
+  "stem": "A rectangular coil of $200$ turns and area $0.05\\ \\mathrm{m^2}$ rotates at $50$ revolutions per second in a uniform field of $0.4\\ \\mathrm{T}$ about an axis perpendicular to the field. The peak emf generated is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$\\varepsilon_0=NAB\\omega$ with $\\omega=2\\pi\\times50=314\\ \\mathrm{rad/s}$: $200\\times0.05\\times0.4\\times314=1257\\ \\mathrm{V}$. (Using $\\omega=50$ instead of $2\\pi f$ is a common slip: it gives $200$ V.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMI",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$628\\ \\mathrm{V}$"
+   },
+   {
+    "key": "B",
+    "text": "$1257\\ \\mathrm{V}$"
+   },
+   {
+    "key": "C",
+    "text": "$200\\ \\mathrm{V}$"
+   },
+   {
+    "key": "D",
+    "text": "$4\\ \\mathrm{V}$"
+   }
+  ]
+ },
+ {
+  "id": "q_a5285aff8743",
+  "type": "SCQ",
+  "stem": "A current $i=3+4\\sin\\omega t$ (in ampere) flows through a resistor. Its rms value (in ampere) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$i_{rms}^2=\\overline{(3+4\\sin\\omega t)^2}=9+24\\,\\overline{\\sin\\omega t}+16\\,\\overline{\\sin^2\\omega t}=9+0+8=17$, so $i_{rms}=\\sqrt{17}=4.12\\ \\mathrm{A}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.AC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$7$"
+   },
+   {
+    "key": "B",
+    "text": "$5$"
+   },
+   {
+    "key": "C",
+    "text": "$3.61$"
+   },
+   {
+    "key": "D",
+    "text": "$4.12$"
+   }
+  ]
+ },
+ {
+  "id": "q_aa5bd4ec1f8b",
+  "type": "SCQ",
+  "stem": "Four point charges $+q,+q,-q,-q$ are placed in that order at the corners of a square of side $a$ (going around the square, so each charge has one neighbour of the same sign and one of opposite sign). The magnitude of the electric field at the centre of the square is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Each charge is at distance $a/\\sqrt2$ from the centre, so each contributes $E_0=\\dfrac{kq}{a^2/2}=\\dfrac{2kq}{a^2}$ (away from $+q$, towards $-q$). The two $+q$ fields and the two $-q$ fields all have a component along the same side direction; the components perpendicular to it cancel in pairs. Each contributes $E_0\\cos45^\\circ$ along it, so $E=4E_0/\\sqrt2=\\dfrac{4\\sqrt2\\,kq}{a^2}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ELE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{8kq}{a^2}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{4kq}{a^2}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{4\\sqrt2\\,kq}{a^2}$"
+   },
+   {
+    "key": "D",
+    "text": "$0$"
+   }
+  ]
+ },
+ {
+  "id": "q_acab0a08f86d",
+  "type": "INT",
+  "stem": "The magnetic susceptibility of a paramagnetic sample at $300\\ \\mathrm{K}$ is $6\\times10^{-5}$. Assuming Curie's law, its susceptibility at $200\\ \\mathrm{K}$ is $x\\times10^{-5}$. The value of $x$ is",
+  "images": [],
+  "answer": {
+   "value": 9.0
+  },
+  "solution": "Curie's law: $\\chi\\propto1/T\\Rightarrow\\chi_{200}=6\\times10^{-5}\\times\\dfrac{300}{200}=9\\times10^{-5}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAGM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ad8ce6a46785",
+  "type": "MSQ",
+  "stem": "Select all correct statements about a plane electromagnetic wave in vacuum.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C",
+    "E"
+   ]
+  },
+  "solution": "Transverse, $\\vec E\\perp\\vec B\\perp\\vec k$ (A true). $E$ and $B$ are in phase (B false). $u_E=\\tfrac12\\varepsilon_0E^2$ and $u_B=\\dfrac{B^2}{2\\mu_0}=\\dfrac{E^2}{2\\mu_0c^2}=\\tfrac12\\varepsilon_0E^2$ (C true). In vacuum $c=1/\\sqrt{\\mu_0\\varepsilon_0}$ for all frequencies (D false). $p=U/c$ (E true).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMW",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\vec E$ and $\\vec B$ are perpendicular to each other and to the direction of propagation."
+   },
+   {
+    "key": "B",
+    "text": "$\\vec E$ and $\\vec B$ oscillate $90^\\circ$ out of phase."
+   },
+   {
+    "key": "C",
+    "text": "The average energy density of the electric field equals that of the magnetic field."
+   },
+   {
+    "key": "D",
+    "text": "The speed of the wave depends on its frequency."
+   },
+   {
+    "key": "E",
+    "text": "The wave carries momentum equal to energy divided by $c$."
+   }
+  ]
+ },
+ {
+  "id": "q_af144b3b530c",
+  "type": "SCQ",
+  "stem": "A magnet of moment $5\\ \\mathrm{A\\,m^2}$ is held at $30^\\circ$ to a uniform field of $0.2\\ \\mathrm{T}$. The torque on it (in N m) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$\\tau=mB\\sin\\theta=5\\times0.2\\times\\tfrac12=0.5\\ \\mathrm{N\\,m}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAGM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.866$"
+   },
+   {
+    "key": "B",
+    "text": "$0.5$"
+   },
+   {
+    "key": "C",
+    "text": "$6$"
+   },
+   {
+    "key": "D",
+    "text": "$1$"
+   }
+  ]
+ },
+ {
+  "id": "q_b0b063027068",
+  "type": "SCQ",
+  "stem": "A $2\\ \\mu\\mathrm{F}$ parallel-plate capacitor is charged to $200\\ \\mathrm{V}$, disconnected from the battery, and the space between the plates is completely filled with a dielectric of constant $5$. The energy stored afterwards (in mJ) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Isolated capacitor: $Q$ is fixed, $C\\to KC$. $U=\\dfrac{Q^2}{2C}$ falls by factor $K$: $U_0=\\tfrac12(2\\times10^{-6})(200)^2=40\\ \\mathrm{mJ}$, so $U=40/5=8\\ \\mathrm{mJ}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$40$"
+   },
+   {
+    "key": "B",
+    "text": "$8$"
+   },
+   {
+    "key": "C",
+    "text": "$1.6$"
+   },
+   {
+    "key": "D",
+    "text": "$200$"
+   }
+  ]
+ },
+ {
+  "id": "q_b1dbd51cdcf2",
+  "type": "SCQ",
+  "stem": "Sunlight of intensity $300\\ \\mathrm{W/m^2}$ falls normally on a perfectly reflecting surface. The radiation pressure is ($c=3\\times10^8\\ \\mathrm{m/s}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A perfect absorber feels $p=I/c=10^{-6}\\ \\mathrm{Pa}$; reflection reverses the momentum so $p=2I/c=2\\times10^{-6}\\ \\mathrm{Pa}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMW",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2\\times10^{-6}\\ \\mathrm{Pa}$"
+   },
+   {
+    "key": "B",
+    "text": "$9\\times10^{10}\\ \\mathrm{Pa}$"
+   },
+   {
+    "key": "C",
+    "text": "$4\\times10^{-6}\\ \\mathrm{Pa}$"
+   },
+   {
+    "key": "D",
+    "text": "$1\\times10^{-6}\\ \\mathrm{Pa}$"
+   }
+  ]
  },
  {
   "id": "q_be304687d520",
@@ -1368,6 +3247,195 @@
   ]
  },
  {
+  "id": "q_c4ad78a53719",
+  "type": "SCQ",
+  "stem": "A $2\\ \\mathrm{H}$ inductor in series with a $10\\ \\Omega$ resistor is connected at $t=0$ to a $20\\ \\mathrm{V}$ battery. The current (in ampere) at $t=0.2\\ \\mathrm{s}$ is ($e=2.718$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$\\tau=L/R=0.2\\ \\mathrm{s}$ so $t=\\tau$. $I=I_0(1-e^{-t/\\tau})=2(1-0.368)=1.26\\ \\mathrm{A}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.EMI",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2$"
+   },
+   {
+    "key": "B",
+    "text": "$1.26$"
+   },
+   {
+    "key": "C",
+    "text": "$0.632$"
+   },
+   {
+    "key": "D",
+    "text": "$0.736$"
+   }
+  ]
+ },
+ {
+  "id": "q_cecd6a076bb2",
+  "type": "SCQ",
+  "stem": "A $0.5\\ \\mathrm{m}$ long straight wire carrying $4\\ \\mathrm{A}$ is placed in a uniform field of $0.2\\ \\mathrm{T}$ making an angle of $30^\\circ$ with the field. The magnetic force on the wire (in newton) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$F=BIl\\sin\\theta=0.2\\times4\\times0.5\\times\\sin30^\\circ=0.2\\ \\mathrm{N}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.4$"
+   },
+   {
+    "key": "B",
+    "text": "$0.346$"
+   },
+   {
+    "key": "C",
+    "text": "$0.8$"
+   },
+   {
+    "key": "D",
+    "text": "$0.2$"
+   }
+  ]
+ },
+ {
+  "id": "q_ceda7f2fe07f",
+  "type": "SCQ",
+  "stem": "A $60\\ \\mathrm{W}$, $220\\ \\mathrm{V}$ bulb and a $100\\ \\mathrm{W}$, $220\\ \\mathrm{V}$ bulb are connected in series across a $220\\ \\mathrm{V}$ supply (resistances assumed constant). The power dissipated in the $60\\ \\mathrm{W}$ bulb (in watt) is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$R_{60}=\\dfrac{220^2}{60}=806.7\\ \\Omega$, $R_{100}=484\\ \\Omega$. $I=\\dfrac{220}{1290.7}=0.1704\\ \\mathrm{A}$. $P_{60}=I^2R=23.4\\ \\mathrm{W}$ (the $100\\ \\mathrm{W}$ bulb gets $14.1\\ \\mathrm{W}$; total $37.5\\ \\mathrm{W}$). In series the larger-resistance (lower-rated) bulb glows brighter.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$60$"
+   },
+   {
+    "key": "B",
+    "text": "$14.1$"
+   },
+   {
+    "key": "C",
+    "text": "$23.4$"
+   },
+   {
+    "key": "D",
+    "text": "$37.5$"
+   }
+  ]
+ },
+ {
   "id": "q_cf33d78ebb2c",
   "type": "SCQ",
   "stem": "Treating molecules as hard spheres of diameter $3.0\\times10^{-10}\\ \\mathrm{m}$, the mean free path of a gas at $300\\ \\mathrm{K}$ and $1.013\\times10^5\\ \\mathrm{Pa}$ is ($k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$)",
@@ -1429,6 +3497,112 @@
     "text": "$1.02\\times10^{-7}$"
    }
   ]
+ },
+ {
+  "id": "q_d0be6ad83bf4",
+  "type": "SCQ",
+  "stem": "In a potentiometer experiment a standard cell of emf $1.5\\ \\mathrm{V}$ balances at $75\\ \\mathrm{cm}$ of the wire. A second cell balances at $50\\ \\mathrm{cm}$ under the same driver-cell conditions. The emf of the second cell (in volt) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Potential gradient is constant, so $\\varepsilon\\propto l$: $\\varepsilon_2=1.5\\times\\dfrac{50}{75}=1.0\\ \\mathrm{V}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.CUR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$1.25$"
+   },
+   {
+    "key": "C",
+    "text": "$2.25$"
+   },
+   {
+    "key": "D",
+    "text": "$0.75$"
+   }
+  ]
+ },
+ {
+  "id": "q_dd1578ab4bba",
+  "type": "INT",
+  "stem": "Two long parallel wires $5\\ \\mathrm{cm}$ apart carry currents of $10\\ \\mathrm{A}$ and $15\\ \\mathrm{A}$ in the same direction. The force per unit length between them is $x\\times10^{-5}\\ \\mathrm{N/m}$. The value of $x$ is",
+  "images": [],
+  "answer": {
+   "value": 60.0
+  },
+  "solution": "$\\dfrac{F}{L}=\\dfrac{\\mu_0I_1I_2}{2\\pi d}=\\dfrac{2\\times10^{-7}\\times10\\times15}{0.05}=6\\times10^{-4}=60\\times10^{-5}\\ \\mathrm{N/m}$ (attractive).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.MAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_dda44a851a88",
@@ -1633,6 +3807,49 @@
   "tax": {
    "subject": "PHY",
    "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_fc695b22534f",
+  "type": "INT",
+  "stem": "A series LCR circuit with $L=1\\ \\mathrm{mH}$, $C=10\\ \\mu\\mathrm{F}$ and $R=0.5\\ \\Omega$ is at resonance. Its quality factor is",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "$\\omega_0=\\dfrac{1}{\\sqrt{LC}}=10^4\\ \\mathrm{rad/s}$, $Q=\\dfrac{\\omega_0L}{R}=\\dfrac{10^4\\times10^{-3}}{0.5}=20$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.AC",
    "topics": [],
    "concepts": []
   },
