@@ -80,6 +80,14 @@ describe('context', () => {
     expect(plan.tasks.some((t) => t.carried_from)).toBe(true);
     expect(plan.backlogNote).toBeTruthy();
   });
+  it('the exam\'s paper shape (blueprint minutes / questions) reaches the mock tasks; omitted = JEE shape', () => {
+    const gate = ctxOf({ mockMinutes: 180, mockQuestions: 65 });
+    expect(gate).toMatchObject({ mockMinutes: 180, mockQuestions: 65 });
+    for (const d of todayPlan(gate).horizon) for (const t of d.tasks) if (t.kind === 'mock') expect(t.items).toBe(65);
+    const jee = ctxOf();
+    expect(jee.mockMinutes).toBeUndefined();
+    for (const d of todayPlan(jee).horizon) for (const t of d.tasks) if (t.kind === 'mock') expect(t.items).toBe(75);
+  });
   it('prevLoadMin comes from yesterday\'s plan', () => {
     const c = ctxOf({ recentPlans: [{ date: '2026-11-07', tasks: [], loadMin: 100 } as never] });
     expect(c.prevLoadMin).toBe(100);

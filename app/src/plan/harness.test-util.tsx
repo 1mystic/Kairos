@@ -32,6 +32,7 @@ export const testEnv = (over: Partial<PlanEnv> = {}): Partial<PlanEnv> => {
     calendar: [],
     loadTax: async () => TAX,
     loadAvailable: async () => null,
+    loadMockShape: async () => null,
     getPlanWrites: (d) => writes[d] ?? 0,
     bumpPlanWrites: (d) => void (writes[d] = (writes[d] ?? 0) + 1),
     ...over,

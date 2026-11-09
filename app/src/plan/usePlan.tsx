@@ -10,9 +10,11 @@ import {
   type MasteryDoc,
   type PaceResult,
   type PaceStatus,
+  totalQuestions,
   type Task,
 } from '@kairos/core';
 import { getLatestVersion, getManifest } from '../bank/client';
+import { blueprintsForExam } from '../diagnostic/examBank';
 import { useExamCalendar, useRoadmapDefaults } from '../config';
 import { CALENDAR, findEntry, prettyDate } from '../onboarding/calendarData';
 import { parseRoadmapState, resolveRoadmap } from '../roadmap/model';
@@ -54,6 +56,8 @@ export interface PlanEnv {
   loadTax(): Promise<Taxonomy>;
   /** chapter ids that have practice questions, or null when unknown (offline, no manifest) */
   loadAvailable(exams: readonly string[]): Promise<Set<string> | null>;
+  /** the exam's paper shape from its blueprint, or null when unknown (offline): the planner then uses the JEE shape */
+  loadMockShape?(exam: string): Promise<{ minutes: number; questions: number } | null>;
   /** replan-driven plan writes already made today */
   getPlanWrites(date: string): number;
   bumpPlanWrites(date: string): void;
@@ -70,6 +74,14 @@ export const defaultEnv: PlanEnv = {
       const set = new Set<string>();
       for (const f of m.files) if (f.kind === 'shard' && f.chapter && exams.includes(f.exam ?? '')) set.add(f.chapter);
       return set;
+    } catch {
+      return null;
+    }
+  },
+  async loadMockShape(exam) {
+    try {
+      const b = (await blueprintsForExam(exam)).blueprints[0];
+      return b ? { minutes: b.duration_min, questions: totalQuestions(b) } : null;
     } catch {
       return null;
     }
@@ -244,12 +256,13 @@ export function useTodayPlan(): TodayPlan {
           Promise.all(dates.map((d) => store.getPlan(d).catch(() => null))),
           env.loadAvailable([...new Set(exams.map((e) => e.exam))]),
         ]);
+        const mockShape = await (env.loadMockShape?.(es.exam.exam) ?? Promise.resolve(null)).catch(() => null);
         const plans = planDocs.map((p, i) => (p ? { ...p, date: dates[i]! } : null)).filter((p): p is PlanDoc & { date: string } => p !== null);
         const stored = (plans.find((p) => p.date === today) ?? null) as StoredPlan | null;
         const yesterday = yesterdayStats(plans, today);
         const due = snapshotDue(pace, today);
         const fuState = due ? advanceFu(pace.ewma, yesterday) : { ewma: pace.ewma ?? null, fu: pace.fu ?? 1 };
-        const ctx = buildPlanContext({ setup, tax, today, mastery: mastery as MasteryDoc | null, sessions, recentPlans: plans, pace, fu: fuState.fu, scheduleConfig, ...(available ? { available } : {}) }, now.getTime());
+        const ctx = buildPlanContext({ setup, tax, today, mastery: mastery as MasteryDoc | null, sessions, recentPlans: plans, pace, fu: fuState.fu, scheduleConfig, ...(available ? { available } : {}), ...(mockShape ? { mockMinutes: mockShape.minutes, mockQuestions: mockShape.questions } : {}) }, now.getTime());
         if (!ctx) return live && setState({ kind: 'passed', exam: es.exam });
         const bundle = computeTodayPace(ctx);
         const res = todayPlan(ctx, { stored, sessions });

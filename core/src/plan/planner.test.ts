@@ -292,6 +292,17 @@ describe('plan composition', () => {
     expect(total(planDay(input({ schedule: sc, date: mock.date, fu: 0.5 })))).toBeLessThanOrEqual(300);
   });
 
+  it('mock shape follows the exam: mockMinutes/mockQuestions override the JEE defaults, which stay unchanged', () => {
+    const sc = sched(60, { 0: 300, 1: 300, 2: 300, 3: 300, 4: 300, 5: 300, 6: 300 }, null);
+    const mock = sc.find((d) => d.kind === 'mock')!;
+    const jee = planDay(input({ schedule: sc, date: mock.date, fu: 1 }));
+    expect(jee.tasks[0]).toMatchObject({ kind: 'mock', items: 75, est_min: 180 });
+    const gate = planDay(input({ schedule: sc, date: mock.date, fu: 1, mockMinutes: 150, mockQuestions: 65 }));
+    expect(gate.tasks[0]).toMatchObject({ kind: 'mock', items: 65, est_min: 150 });
+    expect(gate.tasks[0]!.est_min + gate.tasks[1]!.est_min).toBe(180);
+    expect(total(gate)).toBeLessThanOrEqual(300);
+  });
+
   it('sprint day with under 210 minutes gets no mock and says so', () => {
     const sc = sched(8, { 0: 150, 1: 150, 2: 150, 3: 150, 4: 150, 5: 150, 6: 150 }, null);
     const p = planDay(input({ schedule: sc, date: sc.find((d) => d.kind === 'sprint_mock')!.date }));

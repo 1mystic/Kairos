@@ -146,6 +146,9 @@ export interface ContextInput {
   available?: ReadonlySet<string>;
   /** the student's / admin's roadmap (src/roadmap); core defaults when omitted */
   scheduleConfig?: ScheduleConfig;
+  /** the primary exam's paper (blueprint duration_min / totalQuestions); the JEE shape (180 min, 75) when omitted */
+  mockMinutes?: number;
+  mockQuestions?: number;
 }
 
 export interface PlanContext {
@@ -174,6 +177,8 @@ export interface PlanContext {
   dropped: string[];
   chaptersDone: readonly string[];
   paperMarks: number;
+  mockMinutes?: number;
+  mockQuestions?: number;
 }
 
 export type ExamPhaseState = { kind: 'none' } | { kind: 'passed'; exam: ExamSel } | { kind: 'ok'; exam: ExamSel };
@@ -291,6 +296,8 @@ export function buildPlanContext(input: ContextInput, nowMs?: number): PlanConte
     dropped: [...dropped],
     chaptersDone: input.setup.chaptersDone,
     paperMarks: PAPER_MARKS[exam.exam] ?? 300,
+    ...(input.mockMinutes ? { mockMinutes: input.mockMinutes } : {}),
+    ...(input.mockQuestions ? { mockQuestions: input.mockQuestions } : {}),
   };
 }
 
@@ -385,6 +392,8 @@ export function todayPlan(ctx: PlanContext, opts: { stored?: StoredPlan | null; 
     examsTopics: ctx.planChapters,
     seed: opts.seed ?? ctx.examId,
     unskipped: ctx.unskipped,
+    ...(ctx.mockMinutes ? { mockMinutes: ctx.mockMinutes } : {}),
+    ...(ctx.mockQuestions ? { mockQuestions: ctx.mockQuestions } : {}),
     ...(ctx.prevLoadMin !== undefined ? { prevLoadMin: ctx.prevLoadMin } : {}),
     ...(ctx.backlogResult?.miniDiagnostic ? { miniDiagnostic: true } : {}),
   };

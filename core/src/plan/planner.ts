@@ -126,6 +126,10 @@ export interface PlanInput {
   capacityMin?: number;
   seed: number | string;
   config?: Partial<PlannerConfig>;
+  /** The exam's paper length in minutes (blueprint duration_min). Mock tasks and the capacity a mock needs follow it (+ analysis). Default: the JEE shape, 180 min. */
+  mockMinutes?: number;
+  /** The exam's paper question count (blueprint totalQuestions). Default 75 (JEE). */
+  mockQuestions?: number;
   /** Load (minutes) of the previous comparable work day, for the +/-15% rule. */
   prevLoadMin?: number;
   /** Topics the student has asked to bring back from triage. */
@@ -315,6 +319,8 @@ function emptyPlan(input: PlanInput, day: ScheduleDay, cap: number, extra: Parti
 
 export function planDay(input: PlanInput): DayPlan {
   const cfg: PlannerConfig = { ...DEFAULT_PLANNER_CONFIG, ...input.config };
+  if (input.mockMinutes !== undefined && input.mockMinutes > 0) cfg.mockMin = Math.round(input.mockMinutes) + cfg.mockAnalysisMin;
+  if (input.mockQuestions !== undefined && input.mockQuestions > 0) cfg.mockItems = Math.round(input.mockQuestions);
   const day = findDay(input);
   const cap = Math.max(0, Math.floor(input.capacityMin ?? day.capacityMin));
   const warnings: string[] = day.warning ? [day.warning] : [];
