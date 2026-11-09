@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { parseBlueprint, type MasteryDoc } from '@kairos/core';
 import { PredictedBandView, bandLine } from './PredictedBand';
 import type { ReactElement } from 'react';
-import { AMBITION_FRACTION, cacheFresh, confidenceOf, dataStats, readCache, targetFor, PREDICT_KEY, type KV, type PredictedCache, type PredictInput } from './predicted';
+import { AMBITION_FRACTION, cacheFresh, confidenceOf, dataStats, readCache, writeCache, targetFor, PREDICT_KEY, type KV, type PredictedCache, type PredictInput } from './predicted';
 import { usePredictedScoreFor, type PredictedScore } from './usePredictedScore';
 import { storeWith, synthBank, synthTaxonomy } from './testkit.test-util';
 
@@ -104,6 +104,15 @@ describe('usePredictedScore', () => {
     expect(cacheFresh(c, 'd', 'F', { topics: 10, attempts: 100, avgRd: 1 })).toBe(false);
     expect(cacheFresh(c, 'x', 'E', { topics: 10, attempts: 100, avgRd: 1 })).toBe(false);
     expect(PREDICT_KEY).toBe('kairos-predicted');
+  });
+
+  it('keeps the cache per account: another uid (or the guest) never reads it', () => {
+    const kv = memKv();
+    const c: PredictedCache = { v: 1, date: 'd', exam: 'E', blueprintId: 'b', band: { p25: 1, p50: 2, p75: 3, mean: 2 }, confidence: 'rough', max: 10, topics: 10, attempts: 100, updatedAt: 1 };
+    writeCache(kv, c, 'u1');
+    expect(readCache(kv, 'u1')?.date).toBe('d');
+    expect(readCache(kv, 'u2')).toBeNull();
+    expect(readCache(kv)).toBeNull();
   });
 });
 

@@ -18,7 +18,18 @@ export interface BankFsAdapter {
   delete(path: string): Promise<void>;
 }
 
+const adapters = new WeakMap<Firestore, BankFsAdapter>();
+
+/** One adapter per Firestore instance, so every CloudBankStore (one per route mount) shares the same list cache. */
 export function createBankFirestoreAdapter(db: Firestore): BankFsAdapter {
+  const known = adapters.get(db);
+  if (known) return known;
+  const a = makeBankFirestoreAdapter(db);
+  adapters.set(db, a);
+  return a;
+}
+
+function makeBankFirestoreAdapter(db: Firestore): BankFsAdapter {
   const ref = (p: string) => doc(db, p);
   return {
     async get(path) {
@@ -46,10 +57,22 @@ export function createBankFirestoreAdapter(db: Firestore): BankFsAdapter {
 
 export const BATCH_MAX = 400;
 
+/** How long a shared question-list read stays fresh. Every write/delete/migration drops it sooner. */
+export const BANK_CACHE_MS = 5 * 60_000;
+
+/**
+ * Module-level list cache, shared by every CloudBankStore for the same (adapter, uid). BankProvider is mounted
+ * per route, so a per-instance cache re-read up to 2000 docs on every route change. Keyed by the adapter object
+ * so tests that inject their own adapter stay isolated; resetBankCache() clears everything.
+ */
+let listCaches = new WeakMap<BankFsAdapter, Map<string, { at: number; rows: Promise<UserQuestion[]> }>>();
+export function resetBankCache(): void {
+  listCaches = new WeakMap();
+}
+
 /** Signed-in bank: Firestore users/{uid}/bank + users/{uid}/media, blobs cached in IndexedDB. */
 export class CloudBankStore implements BankStore {
   readonly kind = 'cloud' as const;
-  private cache: UserQuestion[] | null = null;
   private pendingCache = new Map<string, MediaRecord>();
   constructor(readonly uid: string, private fs: BankFsAdapter, private cacheDb: KvDb, private now: () => number = Date.now) {}
 
@@ -57,14 +80,26 @@ export class CloudBankStore implements BankStore {
   private media = (id: string) => `users/${this.uid}/media/${id}`;
   private ck = (id: string) => `${this.uid}/${id}`;
 
+  private shared() {
+    let m = listCaches.get(this.fs);
+    if (!m) listCaches.set(this.fs, (m = new Map()));
+    return m;
+  }
+  private forget() {
+    this.shared().delete(this.uid);
+  }
+
   async listQuestions() {
-    if (!this.cache) {
-      const rows = await this.fs.list(this.bank());
-      this.cache = rows
-        .map((r) => ({ solution: null, pending_figures: [], images: [], ...r.data, id: r.id }) as unknown as UserQuestion)
-        .sort((a, b) => a.created_at - b.created_at || a.n - b.n);
-    }
-    return [...this.cache];
+    const m = this.shared();
+    const hit = m.get(this.uid);
+    if (hit && this.now() - hit.at < BANK_CACHE_MS) return [...(await hit.rows)];
+    const rows = this.fs.list(this.bank()).then((r) => r
+      .map((x) => ({ solution: null, pending_figures: [], images: [], ...x.data, id: x.id }) as unknown as UserQuestion)
+      .sort((a, b) => a.created_at - b.created_at || a.n - b.n));
+    const entry = { at: this.now(), rows };
+    m.set(this.uid, entry);
+    rows.catch(() => { if (m.get(this.uid) === entry) m.delete(this.uid); }); // never cache a failed read
+    return [...(await rows)];
   }
   private questionOps(qs: UserQuestion[]) {
     return qs.map((q) => {
@@ -84,8 +119,11 @@ export class CloudBankStore implements BankStore {
     return ops;
   }
   private async commit(ops: Array<{ path: string; data: Data }>) {
-    for (const chunk of chunkOps(ops, BATCH_MAX)) await this.fs.batchSet(chunk);
-    this.cache = null;
+    try {
+      for (const chunk of chunkOps(ops, BATCH_MAX)) await this.fs.batchSet(chunk);
+    } finally {
+      this.forget(); // earlier chunks may have landed even when a later one failed
+    }
     for (const [id, rec] of this.pendingCache) await this.cacheDb.put('media_cache', this.ck(id), rec);
     this.pendingCache.clear();
   }
@@ -99,8 +137,11 @@ export class CloudBankStore implements BankStore {
     await this.commit([...(await this.mediaOps(media)), ...this.questionOps(qs)]);
   }
   async deleteQuestion(id: string) {
-    await this.fs.delete(this.bank(id));
-    this.cache = null;
+    try {
+      await this.fs.delete(this.bank(id));
+    } finally {
+      this.forget();
+    }
   }
   async getMediaRecord(id: string): Promise<MediaRecord | null> {
     const hit = (await this.cacheDb.get('media_cache', this.ck(id))) as MediaRecord | undefined;

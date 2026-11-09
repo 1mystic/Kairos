@@ -85,7 +85,7 @@ const EMPTY: PredictedScore = { loading: false, band: null, confidence: 'not_eno
 
 /**
  * Predicted score band (5.10), computed on app open at most once a day: cached in localStorage
- * `kairos-predicted` with its date, recomputed early only if mastery changed materially or the exam changed.
+ * `kairos-predicted:<uid | guest>` with its date, recomputed early only if mastery changed materially or the exam changed.
  * The cheap data-sufficiency check runs first, so a new student never triggers the bank download.
  */
 export function usePredictedScore(deps: PredictDeps = {}): PredictedScore {
@@ -96,6 +96,7 @@ export function usePredictedScore(deps: PredictDeps = {}): PredictedScore {
 export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): PredictedScore {
   const [s, setS] = useState<PredictedScore>({ ...EMPTY, loading: true });
   const enabled = deps.enabled !== false;
+  const owner = store.kind === 'cloud' ? (store as { uid?: string }).uid ?? 'guest' : 'guest';
   useEffect(() => {
     if (!enabled) {
       setS({ ...EMPTY, loading: false });
@@ -117,7 +118,7 @@ export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): 
           return;
         }
         const today = toYmd(new Date(now()));
-        const cached = readCache(kv);
+        const cached = readCache(kv, owner);
         if (cacheFresh(cached, today, exam, stats)) {
           if (live) setS({ loading: false, band: cached.band, confidence, target: targetFor(ambition, cached.max), updatedAt: cached.updatedAt, max: cached.max, attempts: stats.attempts, exam });
           return;
@@ -144,7 +145,7 @@ export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): 
         const band = await (deps.predict ?? defaultPredict)(input);
         const max = maxOf(blueprint);
         const c = { v: 1 as const, date: today, exam, blueprintId: blueprint.id, band, confidence, max, topics: stats.topics, attempts: stats.attempts, updatedAt: now() };
-        writeCache(kv, c);
+        writeCache(kv, c, owner);
         if (live) setS({ loading: false, band, confidence, target: targetFor(ambition, max), updatedAt: c.updatedAt, max, attempts: stats.attempts, exam });
       } catch {
         // a missing bank or blueprint just means no band; never an error screen on Home
@@ -155,6 +156,6 @@ export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): 
       live = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [store, enabled]);
+  }, [store, enabled, owner]);
   return s;
 }

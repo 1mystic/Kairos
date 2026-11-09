@@ -11,6 +11,8 @@ import {
   getMockPaper,
   getQuestionsByIds,
   getShard,
+  LATEST_MEMO_MS,
+  resetBankMemo,
   sha256Hex,
 } from './client';
 import { deriveImgBase, imageUrl } from './config';
@@ -77,8 +79,23 @@ describe('bank client', () => {
     expect((fetch as ReturnType<typeof vi.fn>).mock.calls[0]![1]).toMatchObject({ cache: 'no-store' });
   });
 
+  it('memoises latest.json for 60 s, then asks the network again', async () => {
+    const count = () => hits.filter((u) => u.endsWith('latest.json')).length;
+    const t0 = Date.now();
+    const now = vi.spyOn(Date, 'now');
+    now.mockReturnValue(t0);
+    await Promise.all([getLatestVersion(), getLatestVersion()]);
+    await getLatestVersion();
+    expect(count()).toBe(1);
+    now.mockReturnValue(t0 + LATEST_MEMO_MS + 1);
+    await getLatestVersion();
+    expect(count()).toBe(2);
+    now.mockRestore();
+  });
+
   it('falls back to the last seen version offline, else throws', async () => {
     await getLatestVersion();
+    resetBankMemo(); // skip the 60 s memo so the offline path is what answers
     (fetch as ReturnType<typeof vi.fn>).mockRejectedValueOnce(new Error('offline'));
     expect(await getLatestVersion()).toBe(3);
     configureBank({ cache: createMemoryCache() });

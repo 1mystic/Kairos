@@ -108,17 +108,20 @@ export interface KV {
   setItem(k: string, v: string): void;
 }
 
-export function readCache(kv: KV): PredictedCache | null {
+/** Per-account cache key (guests: 'guest'), so a second account on the same device never sees the first one's band. */
+export const predictKey = (owner = 'guest'): string => `${PREDICT_KEY}:${owner}`;
+
+export function readCache(kv: KV, owner = 'guest'): PredictedCache | null {
   try {
-    const c = JSON.parse(kv.getItem(PREDICT_KEY) ?? 'null') as PredictedCache | null;
+    const c = JSON.parse(kv.getItem(predictKey(owner)) ?? 'null') as PredictedCache | null;
     return c && c.v === 1 && c.band ? c : null;
   } catch {
     return null;
   }
 }
-export function writeCache(kv: KV, c: PredictedCache): void {
+export function writeCache(kv: KV, c: PredictedCache, owner = 'guest'): void {
   try {
-    kv.setItem(PREDICT_KEY, JSON.stringify(c));
+    kv.setItem(predictKey(owner), JSON.stringify(c));
   } catch {
     /* private mode: recompute next time */
   }

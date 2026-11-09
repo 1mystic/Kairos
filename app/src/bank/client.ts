@@ -124,6 +124,9 @@ export function createMemoryCache(): BankCache & { entries: Map<string, { v: num
 let cache: BankCache | null | undefined; // undefined = lazily create the IDB cache
 let base = BANK_BASE;
 const memo = new Map<string, Promise<unknown>>();
+/** In-memory memo of the latest.json lookup (see getLatestVersion). */
+export const LATEST_MEMO_MS = 60_000;
+let latestMemo: { at: number; p: Promise<number> } | null = null;
 const qindexMemo = new Map<string, Promise<Map<string, Question>>>();
 
 /** Test hook / config override. Pass `null` to disable caching. */
@@ -135,6 +138,7 @@ export function configureBank(opts: { cache?: BankCache | null; base?: string })
 export function resetBankMemo(): void {
   memo.clear();
   qindexMemo.clear();
+  latestMemo = null;
 }
 function getCache(): BankCache | null {
   if (cache === undefined) cache = createIdbCache();
@@ -227,8 +231,20 @@ async function loadFile<T>(
 
 // ---------------------------------------------------------------- public API
 
-/** Latest published bank version. Network-first (never HTTP-cached); falls back to the last seen version offline. */
-export async function getLatestVersion(): Promise<number> {
+/**
+ * Latest published bank version. Network-first (never HTTP-cached); falls back to the last seen version offline.
+ * Memoised in memory for 60 s so several hooks starting together do not each refetch latest.json.
+ */
+export function getLatestVersion(): Promise<number> {
+  const now = Date.now();
+  if (latestMemo && now - latestMemo.at < LATEST_MEMO_MS) return latestMemo.p;
+  const entry = { at: now, p: fetchLatestVersion() };
+  latestMemo = entry;
+  entry.p.catch(() => { if (latestMemo === entry) latestMemo = null; }); // a failure is retried by the next caller
+  return entry.p;
+}
+
+async function fetchLatestVersion(): Promise<number> {
   const c = getCache();
   let v: number;
   try {

@@ -9,7 +9,7 @@ import { PROMPT_TEMPLATE, renderPrompt } from './prompt';
 import { categorize, chipsFor, patchQuestion, summarize, summaryText, validateItem } from './review';
 import { chaptersForExam } from './taxonomy';
 import { LocalBankStore } from '../store/bankLocal';
-import { CloudBankStore, SERVER_TIME, BATCH_MAX, type BankFsAdapter } from '../store/bankCloud';
+import { CloudBankStore, SERVER_TIME, BATCH_MAX, BANK_CACHE_MS, resetBankCache, type BankFsAdapter } from '../store/bankCloud';
 import { createMemoryKv } from '../store/bankDb';
 import { checkSaveQuota, deleteQuestionsAndOrphans, replaceImageTargets, resolveUserImages, userBankSource, usageOf } from '../store/bank';
 
@@ -198,6 +198,31 @@ describe('CloudBankStore', () => {
     expect(await s.getMedia(IMG)).toBe('data:image/webp;base64,QUJD');
     f.docs.clear();
     expect(await s.getMedia(IMG)).toBe('data:image/webp;base64,QUJD');
+  });
+  it('shares one list read across store instances (route remounts), drops it on write/delete, expires after 5 min', async () => {
+    const f = fakeFs();
+    let lists = 0;
+    const adapter = { ...f.adapter, list: (c: string) => { lists++; return f.adapter.list(c); } };
+    let t = NOW;
+    const mk = () => new CloudBankStore('u1', adapter, createMemoryKv(), () => t);
+    await mk().putQuestions([mkq('u_000000000001')]);
+    expect(await mk().listQuestions()).toHaveLength(1);
+    expect(await mk().listQuestions()).toHaveLength(1);
+    expect(lists).toBe(1);
+    await mk().putQuestions([mkq('u_000000000002')]);
+    expect(await mk().listQuestions()).toHaveLength(2);
+    expect(lists).toBe(2);
+    await mk().deleteQuestion('u_000000000002');
+    expect(await mk().listQuestions()).toHaveLength(1);
+    expect(lists).toBe(3);
+    t += BANK_CACHE_MS + 1;
+    await mk().listQuestions();
+    expect(lists).toBe(4);
+    resetBankCache();
+    await mk().listQuestions();
+    expect(lists).toBe(5);
+    await new CloudBankStore('u2', adapter, createMemoryKv(), () => t).listQuestions(); // another uid never shares
+    expect(lists).toBe(6);
   });
   it('lists, deletes and refuses 50KB+ docs', async () => {
     const f = fakeFs();
