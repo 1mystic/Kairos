@@ -35,7 +35,7 @@ Owner request (2026-11-09): prepare the site for public launch, sync to Firebase
 1. `git status` clean on main; all agents finished; push.
 2. `firebase deploy --only firestore:rules --dry-run --project kairos-76a0d` (compile) then **`pnpm test:rules`** (security gate), then
    `firebase deploy --only firestore:rules,firestore:indexes --project kairos-76a0d --non-interactive`.
-3. `pnpm --filter @kairos/app build` (one build) → inspect `app/dist` size → `firebase deploy --only hosting --project kairos-76a0d --non-interactive`.
+3. **Build with emulators OFF**: `VITE_USE_EMULATORS=false pnpm --filter @kairos/app exec vite build` (the local `app/.env.local` has `VITE_USE_EMULATORS=true`, which would make the live site try to reach localhost; a shell env var overrides the .env file; run `pnpm --filter @kairos/app exec tsc --noEmit` separately) (one build) → inspect `app/dist` size → `firebase deploy --only hosting --project kairos-76a0d --non-interactive`.
 4. Smoke test on the live URL (temporary headless screenshots + manual): landing → guest → onboarding → plan → practice → mock → upload; sign-up/sign-in/Google/reset; `/admin` gate; 404 page.
 5. Owner creates `admins/<uid>`; publishes the announcement + exam dates from `/admin`.
 6. Tag the release: `git tag v1.0-launch && git push origin v1.0-launch`.
@@ -43,3 +43,10 @@ Owner request (2026-11-09): prepare the site for public launch, sync to Firebase
 ## E. Rollback
 - Hosting: Firebase console → Hosting → Release history → Roll back to the previous release (instant).
 - Rules: redeploy the previous `firestore.rules` from git (`git show <old-commit>:firestore.rules > firestore.rules`) and deploy.
+
+
+## F. Status after the final static audit + screenshot round (2026-11-09)
+- Static audits A1–A4 + cleanup C1 done (docs/audit/). One production build succeeded; 28 pages rendered (public + guest, desktop dark 1440 + mobile light 390): no blank pages, no horizontal overflow, no failed requests; only console noise was Firestore trying the local emulator (see D3).
+- Visuals checked by screenshot: landing (all sections after scroll-reveal), sign-up, guest dashboard, practice picker, exam instructions (GATE DA mock A), upload, onboarding, plan empty state, settings (mobile). Not yet looked at: sign-in, forgot, privacy/terms, 404, analysis, roadmap, diagnostic, mocks/new, admin gate, light-mode desktop, tablet widths, an active exam/practice session, result/report pages (need data).
+- Precache trimmed to the shell (1.7 MB); lazy chunks are runtime-cached.
+- **Still open for the owner:** run the tests/type-check; supply legal placeholders; minors/DPDP decision; permissions for held official papers; IAT host decision; rights confirmation for the GATE DA workbook; biology facts spot-check; Google OAuth consent branding + authorised domains; `admins/<uid>` doc after rules deploy.
