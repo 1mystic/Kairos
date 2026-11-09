@@ -8,11 +8,36 @@ import { escapeHtml } from '@kairos/core';
 const FENCE_RE = /^ {0,3}```[^\n`]*\n([\s\S]*?)\n {0,3}```[ \t]*$/gm;
 const SEP_CELL_RE = /^\s*:?-{1,}:?\s*$/;
 
+/**
+ * Splits a table row on `|`, except inside `code` spans, `$math$` (e.g. `$|x|$`) and after a
+ * backslash (`\|` is a literal pipe). Leading/trailing pipes are optional.
+ */
 function splitRow(line: string): string[] {
   let s = line.trim();
   if (s.startsWith('|')) s = s.slice(1);
-  if (s.endsWith('|')) s = s.slice(0, -1);
-  return s.split('|').map((c) => c.trim());
+  if (s.endsWith('|') && !s.endsWith('\\|')) s = s.slice(0, -1);
+  const cells: string[] = [];
+  let cur = '';
+  let code = false;
+  let math = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i]!;
+    if (c === '\\' && s[i + 1] === '|' && !code && !math) {
+      cur += '|';
+      i++;
+    } else if (c === '\\' && i + 1 < s.length) {
+      cur += c + s[++i]!;
+    } else {
+      if (c === '`' && !math) code = !code;
+      else if (c === '$' && !code) math = !math;
+      if (c === '|' && !code && !math) {
+        cells.push(cur.trim());
+        cur = '';
+      } else cur += c;
+    }
+  }
+  cells.push(cur.trim());
+  return cells;
 }
 
 const isSep = (line: string | undefined): boolean => {
@@ -40,12 +65,15 @@ function tablesOf(text: string, cell: (md: string) => string): Chunk[] {
       const rows: string[][] = [];
       let j = i + 2;
       while (j < lines.length && lines[j]!.includes('|') && lines[j]!.trim() !== '') rows.push(splitRow(lines[j++]!));
+      // ragged rows: never drop data, widen the table to the longest row
+      const cols = Math.max(head.length, ...rows.map((r) => r.length));
+      const pad = (r: string[]) => Array.from({ length: cols }, (_x, k) => r[k] ?? '');
       const td = (tag: string, c: string) => `<${tag}>${cell(c)}</${tag}>`;
       out.push({
         kind: 'html',
         html:
-          `<div class="kc-table-wrap"><table class="kc-table"><thead><tr>${head.map((c) => td('th', c)).join('')}</tr></thead>` +
-          `<tbody>${rows.map((r) => `<tr>${head.map((_h, k) => td('td', r[k] ?? '')).join('')}</tr>`).join('')}</tbody></table></div>`,
+          `<div class="kc-table-wrap"><table class="kc-table"><thead><tr>${pad(head).map((c) => td('th', c)).join('')}</tr></thead>` +
+          `<tbody>${rows.map((r) => `<tr>${pad(r).map((c) => td('td', c)).join('')}</tr>`).join('')}</tbody></table></div>`,
       });
       i = j - 1;
     } else buf.push(line);

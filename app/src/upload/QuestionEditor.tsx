@@ -38,6 +38,17 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
     const kept = keys.filter((k) => live.has(k));
     onChange({ options: next, ...(kept.length !== keys.length ? { answer: kept.length ? { keys: kept } : null } : {}) });
   };
+  /** Removing option i re-letters the rest, so the answer keys must follow: drop the removed one, shift later ones down. */
+  const removeOption = (i: number) => {
+    const letter = (j: number) => String.fromCharCode(65 + j);
+    const rekeyed = options.filter((_x, j) => j !== i).map((x, j) => ({ ...x, key: letter(j) }));
+    const idx = new Map(options.map((o, j) => [o.key, j]));
+    const mapped = keys.flatMap((k) => {
+      const j = idx.get(k);
+      return j === undefined || j === i ? [] : [letter(j > i ? j - 1 : j)];
+    });
+    onChange({ options: rekeyed, ...(keys.length ? { answer: mapped.length ? { keys: mapped } : null } : {}) });
+  };
   const pick = (k: string) => {
     if (q.type === 'MSQ') {
       const next = keys.includes(k) ? keys.filter((x) => x !== k) : [...keys, k];
@@ -65,7 +76,7 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
                 invalid={issues.some((x) => x.field === `options.${i}` && x.severity === 'error')}
                 onChange={(e) => setOptions(options.map((x, j) => (j === i ? { ...x, text: e.target.value } : x)))}
               />
-              <IconButton label={`Remove option ${o.key}`} variant="ghost" onClick={() => setOptions(options.filter((_, j) => j !== i).map((x, j) => ({ ...x, key: String.fromCharCode(65 + j) })))}>
+              <IconButton label={`Remove option ${o.key}`} variant="ghost" onClick={() => removeOption(i)}>
                 <CloseIcon width={20} height={20} />
               </IconButton>
             </div>
