@@ -70,3 +70,8 @@ export function bannerVisible(s: NudgeState, now: number): boolean {
 export function snoozeBanner(s: NudgeState, now: number): NudgeState {
   return { ...s, bannerSnoozedUntil: now + BANNER_SNOOZE_MS };
 }
+
+/** Full-screen runners (exam, not its result page; diagnostic) must never get a modal on top. */
+export function isFullScreenRoute(pathname: string): boolean {
+  return (/^\/exam(\/|$)/.test(pathname) && !/\/result(\/|$)/.test(pathname)) || /^\/diagnostic(\/|$)/.test(pathname);
+}

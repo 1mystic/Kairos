@@ -1,8 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useLocation } from 'react-router';
 import { LinkButton, Button, Modal } from '../components/ui';
 import { useGuest, useLocalStore } from './StoreProvider';
 import {
-  MANY_SESSIONS, bannerVisible, flushPending, loadNudge, requestNudge, saveNudge, snoozeBanner, trackActiveDay,
+  MANY_SESSIONS, bannerVisible, isFullScreenRoute, flushPending, loadNudge, requestNudge, saveNudge, snoozeBanner, trackActiveDay,
   type KV, type NudgeKind,
 } from './nudgeLogic';
 
@@ -35,6 +36,8 @@ export function NudgeProvider({ children, kv, now = defaultNow }: { children: Re
   const storage: KV = kv ?? localStorage;
   const [modal, setModal] = useState<NudgeKind | null>(null);
   const [tick, setTick] = useState(0);
+  const { pathname } = useLocation();
+  const quiet = isFullScreenRoute(pathname);
 
   const nudge = useCallback((kind: NudgeKind) => {
     if (!isGuest) return;
@@ -74,7 +77,7 @@ export function NudgeProvider({ children, kv, now = defaultNow }: { children: Re
   return (
     <Ctx.Provider value={api}>
       {children}
-      {modal && (
+      {modal && !quiet && (  // a modal requested on a runner stays queued in state and opens once the student leaves it
         <Modal title="Keep your progress safe" onClose={() => setModal(null)} dismissLabel="Not now">
           <p className="text-slate">{COPY[modal]}</p>
           <div className="stack gap-tight sm:flex-row-reverse">

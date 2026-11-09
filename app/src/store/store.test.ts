@@ -3,7 +3,7 @@ import { LocalStore } from './LocalStore';
 import { createMemoryLocalDb } from './localDb';
 import { BATCH_MAX, SESSION_CAP_DAYS, discardLocal, inspectMigration, runMigration } from './migrate';
 import { fakeFs } from './testUtils';
-import { bannerVisible, flushPending, loadNudge, requestNudge, saveNudge, snoozeBanner, trackActiveDay, type KV } from './nudgeLogic';
+import { bannerVisible, isFullScreenRoute, flushPending, loadNudge, requestNudge, saveNudge, snoozeBanner, trackActiveDay, type KV } from './nudgeLogic';
 
 const NOW = Date.UTC(2026, 10, 8, 12);
 const DAY = 86_400_000;
@@ -145,3 +145,13 @@ function mem(): KV {
   const m = new Map<string, string>();
   return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => void m.set(k, v) };
 }
+
+describe('nudge routes', () => {
+  it('treats exam runners and the diagnostic as full screen, not results or other pages', () => {
+    expect(isFullScreenRoute('/exam/jee_main_mock_a')).toBe(true);
+    expect(isFullScreenRoute('/diagnostic')).toBe(true);
+    expect(isFullScreenRoute('/exam/jee_main_mock_a/result/m1')).toBe(false);
+    expect(isFullScreenRoute('/mocks')).toBe(false);
+    expect(isFullScreenRoute('/')).toBe(false);
+  });
+});

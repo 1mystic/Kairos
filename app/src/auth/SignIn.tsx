@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useStartGuest } from '../store/StoreProvider';
 import { useAuth } from './AuthProvider';
@@ -7,8 +7,10 @@ import { validateSignIn } from './validation';
 import { AuthShell, Button, Divider, Field, FormError, Stack } from '../components/ui';
 
 export function GoogleButton({ onError }: { onError(msg: string): void }) {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, redirectError } = useAuth();
   const [busy, setBusy] = useState(false);
+  // a Google redirect that came back with an error (e.g. email registered with another method)
+  useEffect(() => { if (redirectError) onError(redirectError); }, [redirectError, onError]);
   function go() {
     if (busy) return;
     setBusy(true);

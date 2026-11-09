@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ComponentType, type MouseEvent as ReactMouseEvent, type ReactNode, type SVGProps } from 'react';
 import { Link, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
+import { friendlyAuthError } from '../auth/errors';
 import { Banner, LogoMark } from '../components/ui';
 import { ThemeToggle } from '../components/ThemeToggle';
 import {
@@ -111,6 +112,7 @@ function TabBar() {
 export function AppLayout() {
   const { user, resendVerification } = useAuth();
   const [resent, setResent] = useState(false);
+  const [resendError, setResendError] = useState('');
   const wide = useWide();
   const { pathname } = useLocation();
   const main = useRef<HTMLDivElement>(null);
@@ -144,8 +146,9 @@ export function AppLayout() {
       <div className="shell-main" id="main" tabIndex={-1} ref={main}>
         {user && !user.emailVerified && (
           <div className="page page-app page-lead">
-            <Banner role="status" actions={resent ? undefined : <button type="button" className="btn btn-ghost btn-sm" onClick={() => void resendVerification().then(() => setResent(true))}>Resend</button>}>
+            <Banner role="status" actions={resent ? undefined : <button type="button" className="btn btn-ghost btn-sm" onClick={() => { setResendError(''); resendVerification().then(() => setResent(true), (e) => setResendError(friendlyAuthError(e))); }}>Resend</button>}>
               Please verify your email. We sent a link to {user.email}. {resent && 'Sent again.'}
+              {resendError && <span role="alert" className="block text-small text-status-bad">{resendError}</span>}
             </Banner>
           </div>
         )}

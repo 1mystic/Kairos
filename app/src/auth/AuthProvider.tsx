@@ -7,6 +7,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
+  getRedirectResult,
   signInWithRedirect,
   signOut as fbSignOut,
   updateProfile,
@@ -16,6 +17,7 @@ import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firest
 import { getServices } from '../lib/firebase';
 import { buildNewProfile, type ProfileInput, type UserProfile } from '../lib/profile';
 import { reportSignup } from '../telemetry';
+import { friendlyAuthError } from './errors';
 
 export interface AuthContextValue {
   user: User | null;
@@ -24,6 +26,8 @@ export interface AuthContextValue {
   loading: boolean;
   /** the profile lookup failed (offline / transient): do NOT treat the account as new; offer a retry */
   profileError?: boolean;
+  /** friendly message when a Google redirect sign-in came back with an error (shown by the Google button) */
+  redirectError?: string;
   reloadProfile?(): Promise<void>;
   signIn(email: string, password: string): Promise<void>;
   signInWithGoogle(): Promise<void>;
@@ -55,6 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [profileError, setProfileError] = useState(false);
+  const [redirectError, setRedirectError] = useState('');
   const busy = useRef(false); // true while signUp is writing the profile
   const seq = useRef(0); // invalidates in-flight profile lookups (sign-out, another sign-in, unmount)
 
@@ -95,6 +100,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       unsub();
     };
   }, [loadProfile]);
+
+  // Google redirect fallback: the result is only available once, right after the page reloads
+  useEffect(() => {
+    let live = true;
+    const { auth } = getServices();
+    getRedirectResult(auth).catch((e) => {
+      // no redirect pending resolves to null, not an error; real failures get the usual friendly text
+      if (live) setRedirectError(friendlyAuthError(e));
+    });
+    return () => { live = false; };
+  }, []);
 
   const reloadProfile = useCallback(async () => {
     const u = getServices().auth.currentUser;
@@ -170,8 +186,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo<AuthContextValue>(
-    () => ({ user, profile, loading, profileError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut }),
-    [user, profile, loading, profileError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut],
+    () => ({ user, profile, loading, profileError, redirectError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut }),
+    [user, profile, loading, profileError, redirectError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut],
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
