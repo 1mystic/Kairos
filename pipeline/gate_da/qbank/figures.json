@@ -1,0 +1,22 @@
+{
+ "C16_2_f1_6c1c33d7": "Directed graph H with vertices S, A, B, C, D; weighted edges S to A 4, S to B 1, B to A 2, A to C 1, B to C 5, C to D 3, B to D 8.",
+ "C22_1_f1_3b5ea421": "Scatter plot on a 5 by 5 grid: five plus-class points at (3,3), (0,0), (5,2), (1,5), (4,5), three minus-class squares at (2,1), (2,4), (4,3), and a diamond query point at (2,2).",
+ "C25_2_f1_8b14883c": "Undirected graph with edge costs S-A 2, S-B 5, A-C 2, A-D 6, B-D 1, C-E 4, D-G 3, E-G 2, B-G 9 and heuristic values h(S)=8, h(A)=6, h(B)=4, h(C)=4, h(D)=3, h(E)=2, h(G)=0.",
+ "C26_4_f1_adc8401d": "Game tree with a MAX root and three MIN children; the leaf utilities are 4, 9, 6 under the first MIN node, 3, 7, 8 under the second and 5, 10, 7 under the third.",
+ "C28_5_f1_aec52b81": "Bayesian network with four nodes: Cloudy points to Sprinkler and to Rain, and both Sprinkler and Rain point to Wet.",
+ "C28_6_f1_4fa44163": "Directed acyclic graph on nodes A to F with edges A to C, B to C, C to D, D to E and B to F.",
+ "Q1_20_s_f1_aab91558": "A 60 by 60 square with X horizontal and Y vertical; the diagonal band |X-Y| at most 15 is shaded as the meeting region and the two corner triangles with legs 45 are labelled no.",
+ "Q1_21_s_f1_8ef05d10": "Unit square with U horizontal, V vertical and the diagonal U=V; two shaded triangles, one with vertices (0,1/2), (1/2,1/2), (1/2,1) and one with vertices (1/2,0), (1,1/2), (1/2,1/2), mark where the three pieces form a triangle.",
+ "Q1_30_s_f1_96a013ee": "Probability tree for 10,000 people: 9,900 without the disease split into 8,910 negative (0.90) and 990 positive (0.10); 100 with the disease split into 5 negative (0.05) and 95 positive (0.95).",
+ "Q3_29_s_f1_d4f138d9": "Unit square with x horizontal and y vertical; the triangle above the diagonal y=x is shaded as the support where the joint density equals 2, with a horizontal segment at a fixed y running from x=0 to x=y.",
+ "Q4_25_s_f1_094b68ca": "Two normal curves of equal spread, H0 centred at 50 and H1 centred at 55, with a dashed critical value c=53.29 between them; the H1 area left of c is shaded as beta and the H0 area right of c as alpha.",
+ "Q8_01_s_f1_6c1ffbd7": "A vector b and the line spanned by a; p is the projection of b onto the line and the dashed segment e joins b to p as the error vector.",
+ "Q11_01_s_f1_fd8706e1": "Graph of f(x) = x^4/4 - x^3 + x^2 with marked points (0,0), (1,0.25) and (2,0): local minima at x=0 and x=2 and a local maximum at x=1.",
+ "Q14_19_s_f1_3de576d0": "Binary tree with root F; F has children B and G; B has children A and D; D has children C and E; G has only a right child I, which has a left child H.",
+ "Q16_11_q_f1_ff5bef33": "Undirected graph G on vertices A to G with edges A-B, A-C, B-D, B-E, C-F, E-F and F-G.",
+ "Q17_05_q_f1_ac17ecd9": "ER diagram: entity Author (key aid, attribute aname) and entity Book (key isbn, attribute title) joined by the relationship Writes, with M on the Author side and N on the Book side; Writes has the attribute royalty.",
+ "Q23_07_q_f1_e1df7a80": "Two networks. Network 1: inputs x1 and x2 feed hidden units h1 and h2 (weights x1 to h1 2, x2 to h1 3, x1 to h2 4, x2 to h2 1), which feed output y (weights h1 to y 3, h2 to y 2). Network 2: x1 and x2 feed y directly with weights p and q.",
+ "Q25_36_q_f1_dc8f952e": "Directed graph with edge costs S to A 3, S to E 1, A to B 2, E to B 3, B to C 2, B to D 6, C to D 1, D to G 2 and heuristic values h(S)=6, h(A)=5, h(E)=6, h(B)=3, h(C)=3, h(D)=2, h(G)=0.",
+ "Q26_08_q_f1_8c066a57": "Game tree with MAX at the root, three MIN children, two MAX nodes under each, and leaves (2,7), (9,1) under the first MIN node, (6,3), (4,8) under the second and (5,5), (1,0) under the third.",
+ "Q26_15_q_f1_d165b8db": "Game tree with a MAX root, two MIN children, two MAX nodes under each, and leaves (3,5), (6,9) under the first MIN node and (1,2), (0,-1) under the second."
+}

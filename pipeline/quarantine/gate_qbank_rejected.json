@@ -1,0 +1,17 @@
+[
+ {
+  "id": "Q7.02",
+  "reason": "duplicate",
+  "detail": "same normalised stem+options as q_0f1a09d26cb3 in an existing bank file"
+ },
+ {
+  "id": "Q30.12",
+  "reason": "duplicate",
+  "detail": "same normalised stem+options as workbook record Q8.21"
+ },
+ {
+  "id": "Q30.15",
+  "reason": "duplicate",
+  "detail": "same normalised stem+options as workbook record Q9.02"
+ }
+]
