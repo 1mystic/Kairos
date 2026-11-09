@@ -16,6 +16,12 @@ function correctText(q: Question | PublicQuestion | undefined): string {
   return String(a.value);
 }
 
+/** +1, -0.33, 0: per-question marks are stored unrounded (thirds). */
+const fmtDelta = (m: number): string => {
+  const r = Math.round(m * 100) / 100 + 0;
+  return r > 0 ? `+${r}` : String(r);
+};
+
 type Filter = 'all' | 'wrong' | 'skipped';
 
 /** Per-question review as full-width rows (same anatomy as the practice log): your answer vs correct, solution on demand. */
@@ -58,7 +64,7 @@ export function MockReview({ mock, questions }: { mock: MockDoc; questions: Read
                   <span className="mock-cell"><span className="mock-cell-label">Time</span><b className="tabular">{formatClock(o.timeMs)}</b></span>
                   <span className="row-inline">
                     {o.verdict && <Chip tone={good ? 'good' : o.verdict === 'wrong' ? 'bad' : 'neutral'} icon={good ? <CheckIcon width={14} height={14} /> : o.verdict === 'wrong' ? <CloseIcon width={14} height={14} /> : undefined}>{VERDICT[o.verdict]}</Chip>}
-                    {o.marks !== undefined && <span className="tabular text-small">{o.marks > 0 ? `+${o.marks}` : o.marks}</span>}
+                    {o.marks !== undefined && <span className="tabular text-small">{fmtDelta(o.marks)}</span>}
                   </span>
                   {q && (
                     <Button variant="ghost" size="sm" onClick={() => setOpen(showing ? null : o.qid)} aria-expanded={showing}>

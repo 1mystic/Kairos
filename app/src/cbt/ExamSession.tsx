@@ -57,9 +57,40 @@ function Countdown({ startedAt, durationMs, clock, onExpire }: { startedAt: numb
 }
 
 function CbtModal({ title, onClose, children, actions }: { title: string; onClose(): void; children: ReactNode; actions?: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  // modal a11y: focus moves in, Tab stays inside, Esc closes, focus returns to the opener
+  useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
+    const box = ref.current;
+    box?.querySelector<HTMLElement>('button')?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      } else if (e.key === 'Tab' && box) {
+        const f = [...box.querySelectorAll<HTMLElement>('button:not([disabled]), input, select, a[href]')];
+        if (f.length === 0) return;
+        const first = f[0]!;
+        const last = f[f.length - 1]!;
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      opener?.focus?.();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="cbt-modal-back" role="presentation">
-      <div className="cbt-modal" role="dialog" aria-modal="true" aria-label={title}>
+      <div ref={ref} className="cbt-modal" role="dialog" aria-modal="true" aria-label={title}>
         <div className="cbt-modal-head">
           <h2>{title}</h2>
           <button type="button" className="cbt-btn" onClick={onClose}>Close</button>
@@ -148,7 +179,7 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
   const flush = useCallback(() => {
     if (!dirty.current || snap.current.state.submitted) return; // submit is persisted by the flow
     dirty.current = false;
-    void attempts.put({ ...snap.current, savedAtEpoch: clock() });
+    void attempts.put({ ...snap.current, savedAtEpoch: clock() }).catch(() => {});
   }, [attempts, clock]);
   useEffect(() => {
     dirty.current = true;

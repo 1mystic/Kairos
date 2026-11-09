@@ -19,8 +19,9 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
       </Card>
     );
   }
-  const negMarks = a.questions.reduce((n, q) => n + (typeof q.marks === 'number' && q.marks < 0 ? q.marks : 0), 0);
+  const negMarks = Math.round(a.questions.reduce((n, q) => n + (typeof q.marks === 'number' && q.marks < 0 ? q.marks : 0), 0) * 100) / 100; // thirds: -0.333333 x 7 must not show 2.333331
   const attempted = a.counts.correct + a.counts.wrong + a.counts.partial;
+  const sectionLabel = (id: string) => (/^[A-Z]$/.test(id) ? `Section ${id}` : id);
   const name = (c: string) => SUBJECT_NAME[c] ?? c;
   return (
     <div className="stack-section" data-testid="mock-summary">
@@ -72,7 +73,7 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
                       .filter(([k]) => k.startsWith(`${code}.`))
                       .map(([k, s]) => (
                         <li key={k} className="row-between">
-                          <span>Section {k.split('.')[1]}</span>
+                          <span>{sectionLabel(k.split('.').slice(1).join('.'))}</span>
                           <span className="tabular">{s.marks} / {a.maxBySection[k]}</span>
                         </li>
                       ))}

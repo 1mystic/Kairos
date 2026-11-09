@@ -44,6 +44,8 @@ export function ExamFlow(p: ExamFlowProps) {
   const [read, setRead] = useState(false);
   const pending = useRef<{ attempt: Attempt; state: PaletteState; focusLog: FocusEntry[] } | null>(null);
   const done = useRef(false);
+  const phaseKind = useRef<Phase['k']>('loading');
+  phaseKind.current = phase.k;
 
   const finish = useCallback(
     async (attempt: Attempt, state: PaletteState, focusLog: FocusEntry[]) => {
@@ -58,7 +60,7 @@ export function ExamFlow(p: ExamFlowProps) {
         const doc = buildMockDoc({ id, model, state, focusLog, score, answers, submittedAt: clock(), usedMs });
         await store.putMock(id, doc); // single write
         try { reportMock(); } catch { /* telemetry never blocks */ }
-        await attempts.delete(model.paperId);
+        await attempts.delete(model.paperId).catch(() => {}); // a stale attempt is finalised by resolveAttempt next time
         p.onNudge?.();
         exitFullscreen();
         p.onFinished(id);
@@ -77,14 +79,19 @@ export function ExamFlow(p: ExamFlowProps) {
   useEffect(() => {
     let live = true;
     void attempts.get(model.paperId).then((a) => {
-      if (!live) return;
+      // decide only while loading: a changed dependency (store/clock identity) must never kick a running exam back to "resume"
+      if (!live || phaseKind.current !== 'loading') return;
       const r: AttemptResolution = resolveAttempt(a, clock(), model.durationMs);
       if (!a || r === 'none') setPhase({ k: 'instructions' });
       else if (r === 'resume') setPhase({ k: 'resume', attempt: a });
       else {
         const closed = r === 'expired' ? expireAttempt(a, model.durationMs) : a;
-        void attempts.put(closed).then(() => live && void finish(closed, closed.state, closed.focusLog));
+        const go = () => live && void finish(closed, closed.state, closed.focusLog);
+        void attempts.put(closed).then(go, go); // a failed local write must not block marking
       }
+    }, () => {
+      // IndexedDB unavailable (private mode): run without resume support
+      if (live && phaseKind.current === 'loading') setPhase({ k: 'instructions' });
     });
     return () => {
       live = false;
@@ -95,7 +102,8 @@ export function ExamFlow(p: ExamFlowProps) {
     (state: PaletteState, focusLog: FocusEntry[]) => {
       if (done.current || phase.k !== 'running') return;
       done.current = true;
-      void attempts.put({ ...phase.attempt, state, focusLog }).then(() => finish(phase.attempt, state, focusLog));
+      const go = () => finish(phase.attempt, state, focusLog);
+      void attempts.put({ ...phase.attempt, state, focusLog }).then(go, go);
     },
     [phase, attempts, finish],
   );
@@ -171,7 +179,7 @@ export function ExamFlow(p: ExamFlowProps) {
             onClick={() => {
               (p.requestFullscreen ?? defaultFullscreen)();
               const a = newAttempt(model, clock(), lang);
-              void attempts.put(a);
+              void attempts.put(a).catch(() => {});
               setPhase({ k: 'running', attempt: a });
             }}
           >
