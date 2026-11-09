@@ -34,6 +34,11 @@ YEARS = {
     2025: {"session": 5, "paper": BASE + "2025/DA2025.pdf", "key": BASE + "2025_Key/DA_Keys.pdf", "rawkey": "2025_Key_DA_Keys.txt"},
     2026: {"session": 8, "paper": BASE + "2026/QPs/DA.pdf", "key": BASE + "2026/Keys/DA_Keys.pdf", "rawkey": "2026_Keys_DA_Keys.txt"},
 }
+# The official GATE portal footer reads "(c) 2027 Indian Institute of Technology Madras. All Rights Reserved." with no
+# reuse grant (see content/sources/gate_da/licences.md). Until the organising institutes give permission, every
+# converted official question is held back: status "needs_review" => pipeline.publish skips it (publish only ships
+# status "verified"). Set to False (and re-run `convert`) once permission is recorded.
+HOLD_PENDING_PERMISSION = True
 LICENSE = "Public exam paper published by the organising institute; used per project source policy"
 TYPE_MAP = {"MCQ": "SCQ", "MSQ": "MSQ", "NAT": "NVQ"}
 DIFF = {1: ("E", -0.9), 2: ("M", 0.1)}
@@ -114,6 +119,8 @@ def convert_year(year: int) -> tuple[list[dict], list[dict], list[str]]:
             answer = {"range": k["range"]}
         else:
             status, extra = "needs_review", f"official key: {k.get('special')} (question cancelled or marks to all); no answer"
+        if HOLD_PENDING_PERMISSION:
+            status = "needs_review"
         label, b = DIFF[k["marks"]]
         d = {
             "id": qid(year, meta["session"], q.qno),

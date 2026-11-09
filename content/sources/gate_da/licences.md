@@ -25,3 +25,13 @@ Policy: official papers + official keys, permissively licensed datasets (MIT / A
 | AQuA-RAT / MathQA | Apache-2.0 on GitHub (google-deepmind/AQuA); not downloaded | REJECTED for now | Gold labels are known to be noisy and cannot be verified at scale; rationales not reusable. Re-evaluate with a verification pass. |
 | TheoremQA, SciBench, LogiQA, BIG-bench | not fetched (distributed as HF parquet / mixed per-task licences; no stdlib parquet reader allowed under the no-install rule; LogiQA licence unclear) | NOT USED | Licence not verified by us: treated as unavailable per policy. |
 | econometrics / logical_fallacies (MMLU subjects) | same MIT licence | EXCLUDED | off-syllabus (jargon-heavy, no GATE DA topic match) |
+
+## Official GATE papers: copyright notice and decision (HELD BACK)
+
+Notice read on the official portal (gate2027.iitm.ac.in home, Download and Question Paper Pattern pages, footer, retrieved 2026-11-09):
+
+> "(c) 2027 Indian Institute of Technology Madras. All Rights Reserved."
+
+The papers (IISc Bengaluru 2024, IIT Roorkee 2025, IIT Guwahati 2026) carry only an "Organizing Institute" footer; no reuse licence or permission statement was found on the portal, in the 2027 Information Brochure (grep for copyright / reproduce / rights: no relevant hit) or in the papers. An "All Rights Reserved" notice without a reuse grant is treated as requiring permission.
+
+Decision: the 175 extracted official questions stay in `pipeline/bank_src/gate_da_official.json` but every item has `status: needs_review`, so `pipeline.publish` (which ships only `verified` questions) does NOT publish them. They are listed as "extracted, held back pending permission". To release: obtain written permission from the organising institutes, record it here, set `HOLD_PENDING_PERMISSION = False` in `pipeline/ingest/gate_convert.py`, re-run `python -m pipeline.ingest.gate_convert convert`.
