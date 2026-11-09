@@ -1,26 +1,42 @@
-import { useEffect, useRef, useState, type ComponentType, type SVGProps } from 'react';
-import { Link, NavLink, Outlet } from 'react-router';
+import { useEffect, useRef, useState, type ComponentType, type MouseEvent as ReactMouseEvent, type ReactNode, type SVGProps } from 'react';
+import { Link, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
-import { Banner, Chip, LogoMark } from '../components/ui';
+import { Banner, LogoMark } from '../components/ui';
 import { ThemeToggle } from '../components/ThemeToggle';
 import {
-  ChartIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon,
+  CalendarIcon, ChartIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon,
 } from '../components/icons';
 import { useGuest } from '../store/StoreProvider';
+import { SITE_NAME } from '../shell/useDocumentTitle';
 
 type IconC = ComponentType<SVGProps<SVGSVGElement>>;
-interface NavEntry { to: string; label: string; icon: IconC; built: boolean; tab?: boolean }
+interface NavEntry { to: string; label: string; icon: IconC; tab?: boolean; /** extra path prefixes that keep this entry active */ also?: string[] }
 
-/** `built: false` entries are shown muted with a "soon" pill and are not links. */
+/** Every built route. `tab` entries go in the mobile tab bar (4 slots); the rest are in the sidebar and, on phones, the account menu. */
 export const NAV: NavEntry[] = [
-  { to: '/', label: 'Home', icon: HomeIcon, built: true, tab: true },
-  { to: '/practice', label: 'Practice', icon: PracticeIcon, built: true, tab: true },
-  { to: '/mocks', label: 'Mocks', icon: MockIcon, built: true, tab: true },
-  { to: '/upload', label: 'Upload', icon: UploadIcon, built: true },
-  { to: '/analysis', label: 'Analysis', icon: ChartIcon, built: true },
-  { to: '/plan', label: 'Plan', icon: PlanIcon, built: true },
-  { to: '/settings', label: 'Settings', icon: SettingsIcon, built: true, tab: true },
+  { to: '/', label: 'Home', icon: HomeIcon, tab: true },
+  { to: '/practice', label: 'Practice', icon: PracticeIcon, tab: true },
+  { to: '/mocks', label: 'Mocks', icon: MockIcon, tab: true, also: ['/exam'] },
+  { to: '/upload', label: 'Upload', icon: UploadIcon },
+  { to: '/analysis', label: 'Analysis', icon: ChartIcon },
+  { to: '/plan', label: 'Plan', icon: PlanIcon },
+  { to: '/roadmap', label: 'Roadmap', icon: CalendarIcon },
+  { to: '/settings', label: 'Settings', icon: SettingsIcon, tab: true },
 ];
+
+function isActive(entry: NavEntry, pathname: string): boolean {
+  const under = (p: string) => pathname === p || pathname.startsWith(`${p}/`);
+  return entry.to === '/' ? pathname === '/' : under(entry.to) || !!entry.also?.some(under);
+}
+
+function NavItem({ entry, className, children }: { entry: NavEntry; className: string; children: ReactNode }) {
+  const { pathname } = useLocation();
+  return (
+    <Link to={entry.to} className={className} aria-current={isActive(entry, pathname) ? 'page' : undefined} title={entry.label} aria-label={entry.label}>
+      {children}
+    </Link>
+  );
+}
 
 function useWide(): boolean {
   const q = '(min-width: 1024px)';
@@ -60,6 +76,9 @@ function AccountMenu({ up }: { up?: boolean }) {
         <div role="menu" className={`menu ${up ? 'bottom-full left-0 mb-s2' : 'right-0 mt-s2'}`}>
           <p className="menu-note truncate text-small text-slate">{isGuest ? 'Saved on this device only' : user?.email}</p>
           {isGuest && <Link role="menuitem" to="/signin" className="menu-item text-primary" onClick={() => setOpen(false)}><UserIcon width={20} height={20} />Sign in to save progress</Link>}
+          {up ? null : NAV.filter((n) => !n.tab).map(({ to, label, icon: I }) => (
+            <Link key={to} role="menuitem" to={to} className="menu-item" onClick={() => setOpen(false)}><I width={20} height={20} />{label}</Link>
+          ))}
           <Link role="menuitem" to="/settings" className="menu-item" onClick={() => setOpen(false)}><SettingsIcon width={20} height={20} />Settings</Link>
           {!isGuest && <button role="menuitem" type="button" className="menu-item" onClick={() => void signOutToGuest()}><LogOutIcon width={20} height={20} />Sign out</button>}
         </div>
@@ -71,13 +90,9 @@ function AccountMenu({ up }: { up?: boolean }) {
 function SidebarNav() {
   return (
     <nav aria-label="Main" className="stack-text">
-      {NAV.map(({ to, label, icon: I, built }) =>
-        built ? (
-          <NavLink key={to} to={to} end={to === '/'} className="nav-item" title={label} aria-label={label}><I /><span className="nav-label">{label}</span></NavLink>
-        ) : (
-          <span key={to} className="nav-item" aria-disabled="true" title={`${label} (soon)`}><I /><span className="nav-label">{label}</span><span className="side-only-wide ml-auto"><Chip>soon</Chip></span></span>
-        ),
-      )}
+      {NAV.map((entry) => (
+        <NavItem key={entry.to} entry={entry} className="nav-item"><entry.icon /><span className="nav-label">{entry.label}</span></NavItem>
+      ))}
     </nav>
   );
 }
@@ -85,13 +100,9 @@ function SidebarNav() {
 function TabBar() {
   return (
     <nav aria-label="Main" className="tabbar">
-      {NAV.filter((n) => n.tab).map(({ to, label, icon: I, built }) =>
-        built ? (
-          <NavLink key={to} to={to} end={to === '/'} className="tabbar-item"><I />{label}</NavLink>
-        ) : (
-          <span key={to} className="tabbar-item" aria-disabled="true"><I />{label}</span>
-        ),
-      )}
+      {NAV.filter((n) => n.tab).map((entry) => (
+        <NavItem key={entry.to} entry={entry} className="tabbar-item"><entry.icon />{entry.label}</NavItem>
+      ))}
     </nav>
   );
 }
@@ -101,8 +112,23 @@ export function AppLayout() {
   const { user, resendVerification } = useAuth();
   const [resent, setResent] = useState(false);
   const wide = useWide();
+  const { pathname } = useLocation();
+  const main = useRef<HTMLDivElement>(null);
+  const first = useRef(true);
+  // Move focus to the page heading (or the content area) after navigating, for keyboard and screen-reader users.
+  useEffect(() => {
+    if (first.current) { first.current = false; return; }
+    const target = main.current?.querySelector<HTMLElement>('h1') ?? main.current;
+    if (!target) return;
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  }, [pathname]);
+  // Pages set their own title with useDocumentTitle; this is the fallback for those that do not.
+  useEffect(() => { if (!document.title) document.title = SITE_NAME; }, [pathname]);
+  const skip = (e: ReactMouseEvent<HTMLAnchorElement>) => { e.preventDefault(); main.current?.focus(); };
   return (
     <div className={`shell${wide ? ' shell-wide' : ''}`}>
+      <a href="#main" onClick={skip} className="btn btn-primary sr-only focus:not-sr-only focus:fixed focus:left-s3 focus:top-s3 focus:z-50">Skip to content</a>
       {wide ? (
         <aside className="sidebar">
           <Link to="/" aria-label="Kairos home" className="brand"><LogoMark /><span className="brand-text"><span className="text-h3 font-bold">Kairos</span><span className="text-caption text-slate">The right question, at the right time</span></span></Link>
@@ -115,7 +141,7 @@ export function AppLayout() {
           <div className="row-inline"><ThemeToggle /><AccountMenu /></div>
         </header>
       )}
-      <div className="shell-main">
+      <div className="shell-main" id="main" tabIndex={-1} ref={main}>
         {user && !user.emailVerified && (
           <div className="page page-app page-lead">
             <Banner role="status" actions={resent ? undefined : <button type="button" className="btn btn-ghost btn-sm" onClick={() => void resendVerification().then(() => setResent(true))}>Resend</button>}>
