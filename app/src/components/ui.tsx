@@ -687,7 +687,7 @@ export function AuthShell({ title, subtitle, children, footer }: { title: string
           {footer && <p className="text-center text-small text-slate">{footer}</p>}
         </div>
       </main>
-      <aside className="auth-brand" aria-hidden="true">
+      <aside className="auth-brand">
         <div className="auth-col auth-brand-col">
           <Link to="/" tabIndex={-1}><Brand /></Link>
           <p className="auth-headline text-display font-bold">The right question, at the right time.</p>
