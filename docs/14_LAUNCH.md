@@ -19,7 +19,13 @@ Owner request (2026-11-09): prepare the site for public launch, sync to Firebase
 9. **Admin access**: after rules are deployed the owner signs in, opens `/admin`, copies the UID, and creates the `admins/<uid>` document in the Firestore console.
 
 ## C. Strongly recommended (not blockers)
-- 404 page + error boundary (no white screen), `robots.txt`, `sitemap.xml` (landing, privacy, terms), correct `<title>`/OG tags (done in index.html), PNG app icons 192/512 + maskable for PWA installability, Hosting headers/caching (in firebase.json), offline fallback page.
+- [x] 404 page (`app/src/shell/NotFound.tsx`) + error boundary with chunk-load recovery (`shell/ErrorBoundary.tsx`): no white screen. (A4)
+- [x] `robots.txt`, `sitemap.xml` (landing, privacy, terms), canonical + OG/Twitter tags, light/dark `theme-color`. (A4)
+- [x] PNG app icons 192/512 + maskable + apple-touch-icon, wired into the PWA manifest. (A4)
+- [x] Hosting headers/caching in firebase.json: immutable hashed assets/bank/img, no-cache index.html/sw.js, nosniff, referrer, permissions, X-Frame-Options on app pages. CSP ships as **Report-Only**: after the first deploy, test Google sign-in and a full session with DevTools console open, and if there are no violations rename `Content-Security-Policy-Report-Only` to `Content-Security-Policy`. (A4)
+- [x] Offline: service worker precaches the app shell and serves it for SPA routes (not /bank, /img, /__/); bank and images are cached at runtime. A dedicated offline page is not needed. (A4)
+- [x] Heavy routes code-split (`shell/lazyRoutes.tsx`). Check `app/dist` size after the next build. (A4)
+- [ ] Legal pages rewritten (A4) but OWNER must fill `[CONTACT EMAIL]`, `[GRIEVANCE OFFICER NAME/EMAIL]`, `[LEGAL ENTITY / ADDRESS]`, `[CITY / JURISDICTION]`, deletion time frame, and pick the minors variant (see JSX comment in `app/src/pages/Legal.tsx`).
 - App Check (reCAPTCHA v3) once the owner creates a site key (Firebase console → App Check).
 - Spark quota watch: Firestore 50k reads / 20k writes per day; Hosting ~360 MB/day transfer (first visit ≈ 0.5–1.5 MB; the service worker caches the rest); set a calendar reminder to check the Usage tab weekly. If quotas are hit the app degrades gracefully (local-first); there is no billing risk on Spark.
 - Fill real exam dates in `/admin → Exam dates` when NTA/NTA-like bodies announce them (JEE Main 2027, NEET UG 2027, IAT 2027, GATE 2027 DA session).
