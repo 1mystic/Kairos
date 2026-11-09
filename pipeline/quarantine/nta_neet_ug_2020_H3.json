@@ -1,0 +1,332 @@
+[
+ {
+  "detail": "",
+  "id": "q_50970a716dee",
+  "official_answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$470\\ \\Omega$, 5%"
+   },
+   {
+    "key": "B",
+    "text": "$470\\ \\text{k}\\Omega$, 5%"
+   },
+   {
+    "key": "C",
+    "text": "$47\\ \\text{k}\\Omega$, 10%"
+   },
+   {
+    "key": "D",
+    "text": "$4.7\\ \\text{k}\\Omega$, 5%"
+   }
+  ],
+  "qno": 1,
+  "reason": "needs_figure",
+  "stem": "The color code of a resistance is given below : [figure: resistor with four colour bands]\n\nThe values of resistance and tolerance, respectively, are :"
+ },
+ {
+  "detail": "",
+  "id": "q_79586952223e",
+  "official_answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[graph 1]"
+   },
+   {
+    "key": "B",
+    "text": "[graph 2]"
+   },
+   {
+    "key": "C",
+    "text": "[graph 3]"
+   },
+   {
+    "key": "D",
+    "text": "[graph 4]"
+   }
+  ],
+  "qno": 38,
+  "reason": "needs_figure",
+  "stem": "Which of the following graph represents the variation of resistivity ($\\rho$) with temperature ($T$) for copper ? [figure: four graphs of resistivity versus temperature]"
+ },
+ {
+  "detail": "",
+  "id": "q_7e591925179d",
+  "official_answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$g/10$"
+   },
+   {
+    "key": "B",
+    "text": "$g$"
+   },
+   {
+    "key": "C",
+    "text": "$g/2$"
+   },
+   {
+    "key": "D",
+    "text": "$g/5$"
+   }
+  ],
+  "qno": 39,
+  "reason": "needs_figure",
+  "stem": "Two bodies of mass $4$ kg and $6$ kg are tied to the ends of a massless string. The string passes over a pulley which is frictionless (see figure). The acceleration of the system in terms of acceleration due to gravity ($g$) is : [figure: pulley with 4 kg and 6 kg masses]"
+ },
+ {
+  "detail": "",
+  "id": "q_bba853390a27",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[truth table 1]"
+   },
+   {
+    "key": "B",
+    "text": "[truth table 2]"
+   },
+   {
+    "key": "C",
+    "text": "[truth table 3]"
+   },
+   {
+    "key": "D",
+    "text": "[truth table 4]"
+   }
+  ],
+  "qno": 42,
+  "reason": "needs_figure",
+  "stem": "For the logic circuit shown, the truth table is : [figure: logic circuit with two NOT gates feeding an OR-type gate; four candidate truth tables]"
+ },
+ {
+  "detail": "",
+  "id": "q_04338b0bd118",
+  "official_answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Inbreeding"
+   },
+   {
+    "key": "B",
+    "text": "Out crossing"
+   },
+   {
+    "key": "C",
+    "text": "Mutational breeding"
+   },
+   {
+    "key": "D",
+    "text": "Cross breeding"
+   }
+  ],
+  "qno": 94,
+  "reason": "no_chapter",
+  "stem": "By which method was a new breed ‘Hisardale’ of sheep formed by using Bikaneri ewes and Marino rams ?"
+ },
+ {
+  "detail": "",
+  "id": "q_bc938261ff9b",
+  "official_answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Disposal of e-wastes"
+   },
+   {
+    "key": "B",
+    "text": "Transport of Genetically modified organisms from one country to another"
+   },
+   {
+    "key": "C",
+    "text": "Emission of ozone depleting substances"
+   },
+   {
+    "key": "D",
+    "text": "Release of Green House gases"
+   }
+  ],
+  "qno": 101,
+  "reason": "no_chapter",
+  "stem": "Montreal protocol was signed in 1987 for control of :"
+ },
+ {
+  "detail": "",
+  "id": "q_552b5a52c2f3",
+  "official_answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Damage to retina caused by infra-red rays"
+   },
+   {
+    "key": "B",
+    "text": "Freezing of fluids in the eye by low temperature"
+   },
+   {
+    "key": "C",
+    "text": "Inflammation of cornea due to high dose of UV-B radiation"
+   },
+   {
+    "key": "D",
+    "text": "High reflection of light from snow"
+   }
+  ],
+  "qno": 117,
+  "reason": "no_chapter",
+  "stem": "Snow-blindness in Antarctic region is due to :"
+ },
+ {
+  "detail": "",
+  "id": "q_8f6c73abe66c",
+  "official_answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[structure 1]"
+   },
+   {
+    "key": "B",
+    "text": "[structure 2]"
+   },
+   {
+    "key": "C",
+    "text": "[structure 3]"
+   },
+   {
+    "key": "D",
+    "text": "[structure 4]"
+   }
+  ],
+  "qno": 152,
+  "reason": "needs_figure",
+  "stem": "Identify compound X in the following sequence of reactions : [figure: reaction scheme with structures]"
+ },
+ {
+  "detail": "",
+  "id": "q_e8fd132da29b",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[structure 1]"
+   },
+   {
+    "key": "B",
+    "text": "[structure 2]"
+   },
+   {
+    "key": "C",
+    "text": "[structure 3]"
+   },
+   {
+    "key": "D",
+    "text": "[structure 4]"
+   }
+  ],
+  "qno": 166,
+  "reason": "needs_figure",
+  "stem": "Which of the following amine will give the carbylamine test ? [figure: four amine structures]"
+ },
+ {
+  "detail": "",
+  "id": "q_36caf1b7d8ec",
+  "official_answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[structure 1]"
+   },
+   {
+    "key": "B",
+    "text": "[structure 2]"
+   },
+   {
+    "key": "C",
+    "text": "[structure 3]"
+   },
+   {
+    "key": "D",
+    "text": "[structure 4]"
+   }
+  ],
+  "qno": 167,
+  "reason": "needs_figure",
+  "stem": "An alkene on ozonolysis gives methanal as one of the product. Its structure is : [figure: four alkene structures]"
+ },
+ {
+  "detail": "",
+  "id": "q_262e141ef4c5",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[structure 1]"
+   },
+   {
+    "key": "B",
+    "text": "[structure 2]"
+   },
+   {
+    "key": "C",
+    "text": "[structure 3]"
+   },
+   {
+    "key": "D",
+    "text": "[structure 4]"
+   }
+  ],
+  "qno": 168,
+  "reason": "needs_figure",
+  "stem": "Anisole on cleavage with HI gives : [figure: four product pairs]"
+ }
+]

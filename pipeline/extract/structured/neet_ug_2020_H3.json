@@ -1,0 +1,5417 @@
+{
+ "prompt_version": 2,
+ "meta": {
+  "title": "NEET_UG 2020",
+  "language": "en",
+  "source": {
+   "exam": "NEET_UG",
+   "year": 2020,
+   "session": null,
+   "shift": "H3"
+  },
+  "has_answer_key": false,
+  "has_solutions": false
+ },
+ "questions": [
+  {
+   "n": 1,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The color code of a resistance is given below : [figure: resistor with four colour bands]\n\nThe values of resistance and tolerance, respectively, are :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$470\\ \\Omega$, 5%"
+    },
+    {
+     "key": "B",
+     "text": "$470\\ \\text{k}\\Omega$, 5%"
+    },
+    {
+     "key": "C",
+     "text": "$47\\ \\text{k}\\Omega$, 10%"
+    },
+    {
+     "key": "D",
+     "text": "$4.7\\ \\text{k}\\Omega$, 5%"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 2,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Find the torque about the origin when a force of $3\\hat{j}$ N acts on a particle whose position vector is $2\\hat{k}$ m.",
+   "options": [
+    {
+     "key": "A",
+     "text": "$6\\hat{k}$ N m"
+    },
+    {
+     "key": "B",
+     "text": "$6\\hat{i}$ N m"
+    },
+    {
+     "key": "C",
+     "text": "$6\\hat{j}$ N m"
+    },
+    {
+     "key": "D",
+     "text": "$-6\\hat{i}$ N m"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 3,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A cylinder contains hydrogen gas at pressure of $249$ kPa and temperature $27^\\circ$C.\n\nIts density is : ($R=8.3$ J mol$^{-1}$ K$^{-1}$)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$0.02$ kg/m$^3$"
+    },
+    {
+     "key": "B",
+     "text": "$0.5$ kg/m$^3$"
+    },
+    {
+     "key": "C",
+     "text": "$0.2$ kg/m$^3$"
+    },
+    {
+     "key": "D",
+     "text": "$0.1$ kg/m$^3$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 4,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Two cylinders A and B of equal capacity are connected to each other via a stop cock. A contains an ideal gas at standard temperature and pressure. B is completely evacuated. The entire system is thermally insulated. The stop cock is suddenly opened. The process is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "isobaric"
+    },
+    {
+     "key": "B",
+     "text": "isothermal"
+    },
+    {
+     "key": "C",
+     "text": "adiabatic"
+    },
+    {
+     "key": "D",
+     "text": "isochoric"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 5,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Two particles of mass $5$ kg and $10$ kg respectively are attached to the two ends of a rigid rod of length $1$ m with negligible mass.\n\nThe centre of mass of the system from the $5$ kg particle is nearly at a distance of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "80 cm"
+    },
+    {
+     "key": "B",
+     "text": "33 cm"
+    },
+    {
+     "key": "C",
+     "text": "50 cm"
+    },
+    {
+     "key": "D",
+     "text": "67 cm"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 6,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A ray is incident at an angle of incidence $i$ on one surface of a small angle prism (with angle of prism $A$) and emerges normally from the opposite surface. If the refractive index of the material of the prism is $\\mu$, then the angle of incidence is nearly equal to :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\frac{\\mu A}{2}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\frac{A}{2\\mu}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{2A}{\\mu}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\mu A$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 7,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A body weighs 72 N on the surface of the earth. What is the gravitational force on it, at a height equal to half the radius of the earth ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "24 N"
+    },
+    {
+     "key": "B",
+     "text": "48 N"
+    },
+    {
+     "key": "C",
+     "text": "32 N"
+    },
+    {
+     "key": "D",
+     "text": "30 N"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 8,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "An iron rod of susceptibility $599$ is subjected to a magnetising field of $1200$ A m$^{-1}$. The permeability of the material of the rod is :\n\n($\\mu_0=4\\pi\\times10^{-7}$ T m A$^{-1}$)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$2.4\\pi\\times10^{-7}$ T m A$^{-1}$"
+    },
+    {
+     "key": "B",
+     "text": "$2.4\\pi\\times10^{-4}$ T m A$^{-1}$"
+    },
+    {
+     "key": "C",
+     "text": "$8.0\\times10^{-5}$ T m A$^{-1}$"
+    },
+    {
+     "key": "D",
+     "text": "$2.4\\pi\\times10^{-5}$ T m A$^{-1}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 9,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "For transistor action, which of the following statements is correct ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "The base region must be very thin and lightly doped."
+    },
+    {
+     "key": "B",
+     "text": "Base, emitter and collector regions should have same doping concentrations."
+    },
+    {
+     "key": "C",
+     "text": "Base, emitter and collector regions should have same size."
+    },
+    {
+     "key": "D",
+     "text": "Both emitter junction as well as the collector junction are forward biased."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 10,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Light with an average flux of $20$ W/cm$^2$ falls on a non-reflecting surface at normal incidence having surface area $20$ cm$^2$. The energy received by the surface during time span of $1$ minute is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$48\\times10^{3}$ J"
+    },
+    {
+     "key": "B",
+     "text": "$10\\times10^{3}$ J"
+    },
+    {
+     "key": "C",
+     "text": "$12\\times10^{3}$ J"
+    },
+    {
+     "key": "D",
+     "text": "$24\\times10^{3}$ J"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 11,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A short electric dipole has a dipole moment of $16\\times10^{-9}$ C m. The electric potential due to the dipole at a point at a distance of $0.6$ m from the centre of the dipole, situated on a line making an angle of $60^\\circ$ with the dipole axis is :\n\n$\\left(\\frac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2/\\text{C}^2\\right)$",
+   "options": [
+    {
+     "key": "A",
+     "text": "zero"
+    },
+    {
+     "key": "B",
+     "text": "$50$ V"
+    },
+    {
+     "key": "C",
+     "text": "$200$ V"
+    },
+    {
+     "key": "D",
+     "text": "$400$ V"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 12,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A ball is thrown vertically downward with a velocity of $20$ m/s from the top of a tower. It hits the ground after some time with a velocity of $80$ m/s. The height of the tower is : ($g=10$ m/s$^2$)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$300$ m"
+    },
+    {
+     "key": "B",
+     "text": "$360$ m"
+    },
+    {
+     "key": "C",
+     "text": "$340$ m"
+    },
+    {
+     "key": "D",
+     "text": "$320$ m"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 13,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A resistance wire connected in the left gap of a metre bridge balances a $10\\ \\Omega$ resistance in the right gap at a point which divides the bridge wire in the ratio $3:2$. If the length of the resistance wire is $1.5$ m, then the length of $1\\ \\Omega$ of the resistance wire is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$1.5\\times10^{-2}$ m"
+    },
+    {
+     "key": "B",
+     "text": "$1.0\\times10^{-2}$ m"
+    },
+    {
+     "key": "C",
+     "text": "$1.0\\times10^{-1}$ m"
+    },
+    {
+     "key": "D",
+     "text": "$1.5\\times10^{-1}$ m"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 14,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "When a uranium isotope ${}^{235}_{92}\\text{U}$ is bombarded with a neutron, it generates ${}^{89}_{36}\\text{Kr}$, three neutrons and :",
+   "options": [
+    {
+     "key": "A",
+     "text": "${}^{103}_{36}\\text{Kr}$"
+    },
+    {
+     "key": "B",
+     "text": "${}^{144}_{56}\\text{Ba}$"
+    },
+    {
+     "key": "C",
+     "text": "${}^{91}_{40}\\text{Zr}$"
+    },
+    {
+     "key": "D",
+     "text": "${}^{101}_{36}\\text{Kr}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 15,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A long solenoid of $50$ cm length having $100$ turns carries a current of $2.5$ A. The magnetic field at the centre of the solenoid is :\n\n($\\mu_0=4\\pi\\times10^{-7}$ T m A$^{-1}$)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$3.14\\times10^{-5}$ T"
+    },
+    {
+     "key": "B",
+     "text": "$6.28\\times10^{-4}$ T"
+    },
+    {
+     "key": "C",
+     "text": "$3.14\\times10^{-4}$ T"
+    },
+    {
+     "key": "D",
+     "text": "$6.28\\times10^{-5}$ T"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 16,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The average thermal energy for a mono-atomic gas is : ($k_B$ is Boltzmann constant and $T$, absolute temperature)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\frac{7}{2}k_BT$"
+    },
+    {
+     "key": "B",
+     "text": "$\\frac{1}{2}k_BT$"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{3}{2}k_BT$"
+    },
+    {
+     "key": "D",
+     "text": "$\\frac{5}{2}k_BT$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 17,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A capillary tube of radius $r$ is immersed in water and water rises in it to a height $h$. The mass of the water in the capillary is $5$ g. Another capillary tube of radius $2r$ is immersed in water. The mass of water that will rise in this tube is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$20.0$ g"
+    },
+    {
+     "key": "B",
+     "text": "$2.5$ g"
+    },
+    {
+     "key": "C",
+     "text": "$5.0$ g"
+    },
+    {
+     "key": "D",
+     "text": "$10.0$ g"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 18,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The ratio of contributions made by the electric field and magnetic field components to the intensity of an electromagnetic wave is : ($c$ = speed of electromagnetic waves)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$1:c^2$"
+    },
+    {
+     "key": "B",
+     "text": "$c:1$"
+    },
+    {
+     "key": "C",
+     "text": "$1:1$"
+    },
+    {
+     "key": "D",
+     "text": "$1:c$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 19,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Assume that light of wavelength $600$ nm is coming from a star. The limit of resolution of telescope whose objective has a diameter of $2$ m is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$6.00\\times10^{-7}$ rad"
+    },
+    {
+     "key": "B",
+     "text": "$3.66\\times10^{-7}$ rad"
+    },
+    {
+     "key": "C",
+     "text": "$1.83\\times10^{-7}$ rad"
+    },
+    {
+     "key": "D",
+     "text": "$7.32\\times10^{-7}$ rad"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 20,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A wire of length $L$, area of cross section $A$ is hanging from a fixed support. The length of the wire changes to $L_1$ when mass $M$ is suspended from its free end. The expression for Young's modulus is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\frac{MgL}{A(L_1-L)}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\frac{MgL_1}{AL}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{Mg(L_1-L)}{AL}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\frac{MgL}{AL_1}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 21,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The energy required to break one bond in DNA is $10^{-20}$ J. This value in eV is nearly :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$0.006$"
+    },
+    {
+     "key": "B",
+     "text": "$6$"
+    },
+    {
+     "key": "C",
+     "text": "$0.6$"
+    },
+    {
+     "key": "D",
+     "text": "$0.06$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 22,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "In a certain region of space with volume $0.2$ m$^3$, the electric potential is found to be $5$ V throughout. The magnitude of electric field in this region is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$5$ N/C"
+    },
+    {
+     "key": "B",
+     "text": "zero"
+    },
+    {
+     "key": "C",
+     "text": "$0.5$ N/C"
+    },
+    {
+     "key": "D",
+     "text": "$1$ N/C"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 23,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The mean free path for a gas, with molecular diameter $d$ and number density $n$ can be expressed as :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\frac{1}{\\sqrt{2}\\,n^2\\pi^2d^2}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\frac{1}{\\sqrt{2}\\,n\\pi d}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{1}{\\sqrt{2}\\,n\\pi d^2}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\frac{1}{\\sqrt{2}\\,n^2\\pi d^2}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 24,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "An electron is accelerated from rest through a potential difference of $V$ volt. If the de Broglie wavelength of the electron is $1.227\\times10^{-2}$ nm, the potential difference is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$10^4$ V"
+    },
+    {
+     "key": "B",
+     "text": "$10$ V"
+    },
+    {
+     "key": "C",
+     "text": "$10^2$ V"
+    },
+    {
+     "key": "D",
+     "text": "$10^3$ V"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 25,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "In a guitar, two strings A and B made of same material are slightly out of tune and produce beats of frequency 6 Hz. When tension in B is slightly decreased, the beat frequency increases to 7 Hz. If the frequency of A is 530 Hz, the original frequency of B will be :",
+   "options": [
+    {
+     "key": "A",
+     "text": "537 Hz"
+    },
+    {
+     "key": "B",
+     "text": "523 Hz"
+    },
+    {
+     "key": "C",
+     "text": "524 Hz"
+    },
+    {
+     "key": "D",
+     "text": "536 Hz"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 26,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A $40\\ \\mu$F capacitor is connected to a $200$ V, $50$ Hz ac supply. The rms value of the current in the circuit is, nearly :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$25.1$ A"
+    },
+    {
+     "key": "B",
+     "text": "$1.7$ A"
+    },
+    {
+     "key": "C",
+     "text": "$2.05$ A"
+    },
+    {
+     "key": "D",
+     "text": "$2.5$ A"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 27,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The increase in the width of the depletion region in a p-n junction diode is due to :",
+   "options": [
+    {
+     "key": "A",
+     "text": "increase in forward current"
+    },
+    {
+     "key": "B",
+     "text": "forward bias only"
+    },
+    {
+     "key": "C",
+     "text": "reverse bias only"
+    },
+    {
+     "key": "D",
+     "text": "both forward bias and reverse bias"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 28,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The Brewsters angle $i_b$ for an interface should be :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$i_b=90^\\circ$"
+    },
+    {
+     "key": "B",
+     "text": "$0^\\circ<i_b<30^\\circ$"
+    },
+    {
+     "key": "C",
+     "text": "$30^\\circ<i_b<45^\\circ$"
+    },
+    {
+     "key": "D",
+     "text": "$45^\\circ<i_b<90^\\circ$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 29,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The phase difference between displacement and acceleration of a particle in a simple harmonic motion is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "zero"
+    },
+    {
+     "key": "B",
+     "text": "$\\pi$ rad"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{3\\pi}{2}$ rad"
+    },
+    {
+     "key": "D",
+     "text": "$\\frac{\\pi}{2}$ rad"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 30,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A spherical conductor of radius $10$ cm has a charge of $3.2\\times10^{-7}$ C distributed uniformly. What is the magnitude of electric field at a point $15$ cm from the centre of the sphere ?\n\n$\\left(\\frac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2/\\text{C}^2\\right)$",
+   "options": [
+    {
+     "key": "A",
+     "text": "$1.28\\times10^{7}$ N/C"
+    },
+    {
+     "key": "B",
+     "text": "$1.28\\times10^{4}$ N/C"
+    },
+    {
+     "key": "C",
+     "text": "$1.28\\times10^{5}$ N/C"
+    },
+    {
+     "key": "D",
+     "text": "$1.28\\times10^{6}$ N/C"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 31,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The capacitance of a parallel plate capacitor with air as medium is $6\\ \\mu$F. With the introduction of a dielectric medium, the capacitance becomes $30\\ \\mu$F. The permittivity of the medium is :\n\n($\\epsilon_0=8.85\\times10^{-12}$ C$^2$ N$^{-1}$ m$^{-2}$)",
+   "options": [
+    {
+     "key": "A",
+     "text": "$5.00$ C$^2$ N$^{-1}$ m$^{-2}$"
+    },
+    {
+     "key": "B",
+     "text": "$0.44\\times10^{-13}$ C$^2$ N$^{-1}$ m$^{-2}$"
+    },
+    {
+     "key": "C",
+     "text": "$1.77\\times10^{-12}$ C$^2$ N$^{-1}$ m$^{-2}$"
+    },
+    {
+     "key": "D",
+     "text": "$0.44\\times10^{-10}$ C$^2$ N$^{-1}$ m$^{-2}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 32,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Taking into account of the significant figures, what is the value of $9.99$ m $-$ $0.0099$ m ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "$9.9$ m"
+    },
+    {
+     "key": "B",
+     "text": "$9.9801$ m"
+    },
+    {
+     "key": "C",
+     "text": "$9.98$ m"
+    },
+    {
+     "key": "D",
+     "text": "$9.980$ m"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 33,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A series LCR circuit is connected to an ac voltage source. When $L$ is removed from the circuit, the phase difference between current and voltage is $\\frac{\\pi}{3}$. If instead $C$ is removed from the circuit, the phase difference is again $\\frac{\\pi}{3}$ between current and voltage. The power factor of the circuit is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$-1.0$"
+    },
+    {
+     "key": "B",
+     "text": "zero"
+    },
+    {
+     "key": "C",
+     "text": "$0.5$"
+    },
+    {
+     "key": "D",
+     "text": "$1.0$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 34,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Dimensions of stress are :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$[ML^{-1}T^{-2}]$"
+    },
+    {
+     "key": "B",
+     "text": "$[MLT^{-2}]$"
+    },
+    {
+     "key": "C",
+     "text": "$[ML^2T^{-2}]$"
+    },
+    {
+     "key": "D",
+     "text": "$[ML^0T^{-2}]$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 35,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Light of frequency 1.5 times the threshold frequency is incident on a photosensitive material. What will be the photoelectric current if the frequency is halved and intensity is doubled ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "zero"
+    },
+    {
+     "key": "B",
+     "text": "doubled"
+    },
+    {
+     "key": "C",
+     "text": "four times"
+    },
+    {
+     "key": "D",
+     "text": "one-fourth"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 36,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The solids which have the negative temperature coefficient of resistance are :",
+   "options": [
+    {
+     "key": "A",
+     "text": "insulators and semiconductors"
+    },
+    {
+     "key": "B",
+     "text": "metals"
+    },
+    {
+     "key": "C",
+     "text": "insulators only"
+    },
+    {
+     "key": "D",
+     "text": "semiconductors only"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 37,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A charged particle having drift velocity of $7.5\\times10^{-4}$ m s$^{-1}$ in an electric field of $3\\times10^{-10}$ V m$^{-1}$, has a mobility in m$^2$ V$^{-1}$ s$^{-1}$ of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$2.25\\times10^{-15}$"
+    },
+    {
+     "key": "B",
+     "text": "$2.25\\times10^{15}$"
+    },
+    {
+     "key": "C",
+     "text": "$2.5\\times10^{6}$"
+    },
+    {
+     "key": "D",
+     "text": "$2.5\\times10^{-6}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 38,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Which of the following graph represents the variation of resistivity ($\\rho$) with temperature ($T$) for copper ? [figure: four graphs of resistivity versus temperature]",
+   "options": [
+    {
+     "key": "A",
+     "text": "[graph 1]"
+    },
+    {
+     "key": "B",
+     "text": "[graph 2]"
+    },
+    {
+     "key": "C",
+     "text": "[graph 3]"
+    },
+    {
+     "key": "D",
+     "text": "[graph 4]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 39,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "Two bodies of mass $4$ kg and $6$ kg are tied to the ends of a massless string. The string passes over a pulley which is frictionless (see figure). The acceleration of the system in terms of acceleration due to gravity ($g$) is : [figure: pulley with 4 kg and 6 kg masses]",
+   "options": [
+    {
+     "key": "A",
+     "text": "$g/10$"
+    },
+    {
+     "key": "B",
+     "text": "$g$"
+    },
+    {
+     "key": "C",
+     "text": "$g/2$"
+    },
+    {
+     "key": "D",
+     "text": "$g/5$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 40,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "A screw gauge has least count of $0.01$ mm and there are $50$ divisions in its circular scale.\n\nThe pitch of the screw gauge is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "1.0 mm"
+    },
+    {
+     "key": "B",
+     "text": "0.01 mm"
+    },
+    {
+     "key": "C",
+     "text": "0.25 mm"
+    },
+    {
+     "key": "D",
+     "text": "0.5 mm"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 41,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "In Young’s double slit experiment, if the separation between coherent sources is halved and the distance of the screen from the coherent sources is doubled, then the fringe width becomes :",
+   "options": [
+    {
+     "key": "A",
+     "text": "one-fourth"
+    },
+    {
+     "key": "B",
+     "text": "double"
+    },
+    {
+     "key": "C",
+     "text": "half"
+    },
+    {
+     "key": "D",
+     "text": "four times"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 42,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "For the logic circuit shown, the truth table is : [figure: logic circuit with two NOT gates feeding an OR-type gate; four candidate truth tables]",
+   "options": [
+    {
+     "key": "A",
+     "text": "[truth table 1]"
+    },
+    {
+     "key": "B",
+     "text": "[truth table 2]"
+    },
+    {
+     "key": "C",
+     "text": "[truth table 3]"
+    },
+    {
+     "key": "D",
+     "text": "[truth table 4]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 43,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The energy equivalent of $0.5$ g of a substance is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$0.5\\times10^{13}$ J"
+    },
+    {
+     "key": "B",
+     "text": "$4.5\\times10^{16}$ J"
+    },
+    {
+     "key": "C",
+     "text": "$4.5\\times10^{13}$ J"
+    },
+    {
+     "key": "D",
+     "text": "$1.5\\times10^{13}$ J"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 44,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "For which one of the following, Bohr model is not valid ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Singly ionised neon atom (Ne+)"
+    },
+    {
+     "key": "B",
+     "text": "Hydrogen atom"
+    },
+    {
+     "key": "C",
+     "text": "Singly ionised helium atom (He+)"
+    },
+    {
+     "key": "D",
+     "text": "Deuteron atom"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 45,
+   "type": "SCQ",
+   "subject": "PHY",
+   "stem": "The quantities of heat required to raise the temperature of two solid copper spheres of radii $r_1$ and $r_2$ ($r_1=1.5\\,r_2$) through $1$ K are in the ratio :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\frac{5}{3}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\frac{27}{8}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{9}{4}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\frac{3}{2}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 46,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The transverse section of a plant shows following anatomical features : (a)   Large number of scattered vascular bundles surrounded by bundle sheath. (b)   Large conspicuous parenchymatous ground tissue. (c)   Vascular bundles conjoint and closed. (d)   Phloem parenchyma absent. Identify the category of plant and its part :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Dicotyledonous root"
+    },
+    {
+     "key": "B",
+     "text": "Monocotyledonous stem"
+    },
+    {
+     "key": "C",
+     "text": "Monocotyledonous root"
+    },
+    {
+     "key": "D",
+     "text": "Dicotyledonous stem"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 47,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following would help in prevention of diuresis ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Decrease in secretion of renin by JG cells"
+    },
+    {
+     "key": "B",
+     "text": "More water reabsorption due to undersecretion of ADH"
+    },
+    {
+     "key": "C",
+     "text": "Reabsorption of $\\ce{Na+}$ and water from renal tubules due to aldosterone"
+    },
+    {
+     "key": "D",
+     "text": "Atrial natriuretic factor causes vasoconstriction"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 48,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following statements is not correct ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Genetically engineered insulin is produced in E-Coli."
+    },
+    {
+     "key": "B",
+     "text": "In man insulin is synthesised as a proinsulin."
+    },
+    {
+     "key": "C",
+     "text": "The proinsulin has an extra peptide called C-peptide."
+    },
+    {
+     "key": "D",
+     "text": "The functional insulin has A and B chains linked together by hydrogen bonds."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 49,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Embryological support for evolution was disapproved by :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Oparin"
+    },
+    {
+     "key": "B",
+     "text": "Karl Ernst von Baer"
+    },
+    {
+     "key": "C",
+     "text": "Alfred Wallace"
+    },
+    {
+     "key": "D",
+     "text": "Charles Darwin"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 50,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Goblet cells of alimentary canal are modified from :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Compound epithelial cells"
+    },
+    {
+     "key": "B",
+     "text": "Squamous epithelial cells"
+    },
+    {
+     "key": "C",
+     "text": "Columnar epithelial cells"
+    },
+    {
+     "key": "D",
+     "text": "Chondrocytes"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 51,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The QRS complex in a standard ECG represents :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Repolarisation of ventricles"
+    },
+    {
+     "key": "B",
+     "text": "Repolarisation of auricles"
+    },
+    {
+     "key": "C",
+     "text": "Depolarisation of auricles"
+    },
+    {
+     "key": "D",
+     "text": "Depolarisation of ventricles"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 52,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "In light reaction, plastoquinone facilitates the transfer of electrons from :",
+   "options": [
+    {
+     "key": "A",
+     "text": "PS-I to ATP synthase"
+    },
+    {
+     "key": "B",
+     "text": "PS-II to Cytb6f complex"
+    },
+    {
+     "key": "C",
+     "text": "Cytb6f complex to PS-I"
+    },
+    {
+     "key": "D",
+     "text": "PS-I to NADP+"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 53,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The product(s) of reaction catalyzed by nitrogenase in root nodules of leguminous plants is/are :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Ammonia and hydrogen"
+    },
+    {
+     "key": "B",
+     "text": "Ammonia alone"
+    },
+    {
+     "key": "C",
+     "text": "Nitrate alone"
+    },
+    {
+     "key": "D",
+     "text": "Ammonia and oxygen"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 54,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following with respect to meiosis :\n\n- (a) Zygotene - (i) Terminalization\n- (b) Pachytene - (ii) Chiasmata\n- (c) Diplotene - (iii) Crossing over\n- (d) Diakinesis - (iv) Synapsis\n\nSelect the correct option from the following :",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 55,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) 6 - 15 pairs of gill slits - (i) Trygon\n- (b) Heterocercal caudal fin - (ii) Cyclostomes\n- (c) Air Bladder - (iii) Chondrichthyes\n- (d) Poison sting - (iv) Osteichthyes",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(i), (b)-(iv), (c)-(iii), (d)-(ii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iv), (b)-(ii), (c)-(iii), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 56,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which is the important site of formation of glycoproteins and glycolipids in eukaryotic cells ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Polysomes"
+    },
+    {
+     "key": "B",
+     "text": "Endoplasmic reticulum"
+    },
+    {
+     "key": "C",
+     "text": "Peroxisomes"
+    },
+    {
+     "key": "D",
+     "text": "Golgi bodies"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 57,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the organism with its use in biotechnology.\n\n- (a) Bacillus thuringiensis - (i) Cloning vector\n- (b) Thermus aquaticus - (ii) Construction of first rDNA molecule\n- (c) Agrobacterium tumefaciens - (iii) DNA polymerase\n- (d) Salmonella typhimurium - (iv) Cry proteins\n\nSelect the correct option from the following :",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(ii), (c)-(iv), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 58,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Experimental verification of the chromosomal theory of inheritance was done by :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Morgan"
+    },
+    {
+     "key": "B",
+     "text": "Mendel"
+    },
+    {
+     "key": "C",
+     "text": "Sutton"
+    },
+    {
+     "key": "D",
+     "text": "Boveri"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 59,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following :\n\n- (a) Inhibitor of catalytic activity - (i) Ricin\n- (b) Possess peptide bonds - (ii) Malonate\n- (c) Cell wall material in fungi - (iii) Chitin\n- (d) Secondary metabolite - (iv) Collagen\n\nChoose the correct option from the following :",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(ii), (b)-(iii), (c)-(i), (d)-(iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(i), (c)-(iv), (d)-(ii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 60,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Bilaterally symmetrical and acoelomate animals are exemplified by :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Annelida"
+    },
+    {
+     "key": "B",
+     "text": "Ctenophora"
+    },
+    {
+     "key": "C",
+     "text": "Platyhelminthes"
+    },
+    {
+     "key": "D",
+     "text": "Aschelminthes"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 61,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Floridean starch has structure similar to :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Laminarin and cellulose"
+    },
+    {
+     "key": "B",
+     "text": "Starch and cellulose"
+    },
+    {
+     "key": "C",
+     "text": "Amylopectin and glycogen"
+    },
+    {
+     "key": "D",
+     "text": "Mannitol and algin"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 62,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the correct statement with regard to G1 phase (Gap 1) of interphase.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Nuclear Division takes place."
+    },
+    {
+     "key": "B",
+     "text": "DNA synthesis or replication takes place."
+    },
+    {
+     "key": "C",
+     "text": "Reorganisation of all cell components takes place."
+    },
+    {
+     "key": "D",
+     "text": "Cell is metabolically active, grows but does not replicate its DNA."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 63,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "If the head of cockroach is removed, it may live for few days because :",
+   "options": [
+    {
+     "key": "A",
+     "text": "the head holds a 1/3rd of a nervous system while the rest is situated along the dorsal part of its body."
+    },
+    {
+     "key": "B",
+     "text": "the supra-oesophageal ganglia of the cockroach are situated in ventral part of abdomen."
+    },
+    {
+     "key": "C",
+     "text": "the cockroach does not have nervous system."
+    },
+    {
+     "key": "D",
+     "text": "the head holds a small proportion of a nervous system while the rest is situated along the ventral part of its body."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 64,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The enzyme enterokinase helps in conversion of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "pepsinogen into pepsin"
+    },
+    {
+     "key": "B",
+     "text": "protein into polypeptides"
+    },
+    {
+     "key": "C",
+     "text": "trypsinogen into trypsin"
+    },
+    {
+     "key": "D",
+     "text": "caseinogen into casein"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 65,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Organ of Corti - (i) Connects middle ear and pharynx\n- (b) Cochlea - (ii) Coiled part of the labyrinth\n- (c) Eustachian tube - (iii) Attached to the oval window\n- (d) Stapes - (iv) Located on the basilar membrane",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(iii), (c)-(i), (d)-(iv)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(i), (c)-(iv), (d)-(ii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iv), (b)-(ii), (c)-(i), (d)-(iii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 66,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the wrong statement with reference to transport of oxygen.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Low pCO2 in alveoli favours the formation of oxyhaemoglobin."
+    },
+    {
+     "key": "B",
+     "text": "Binding of oxygen with haemoglobin is mainly related to partial pressure of O2."
+    },
+    {
+     "key": "C",
+     "text": "Partial pressure of CO2 can interfere with O2 binding with haemoglobin."
+    },
+    {
+     "key": "D",
+     "text": "Higher H+ conc. in alveoli favours the formation of oxyhaemoglobin."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 67,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "In water hyacinth and water lily, pollination takes place by :",
+   "options": [
+    {
+     "key": "A",
+     "text": "insects and water"
+    },
+    {
+     "key": "B",
+     "text": "insects or wind"
+    },
+    {
+     "key": "C",
+     "text": "water currents only"
+    },
+    {
+     "key": "D",
+     "text": "wind and water"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 68,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Bt cotton variety that was developed by the introduction of toxin gene of Bacillus thuringiensis (Bt) is resistant to :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Insect predators"
+    },
+    {
+     "key": "B",
+     "text": "Insect pests"
+    },
+    {
+     "key": "C",
+     "text": "Fungal diseases"
+    },
+    {
+     "key": "D",
+     "text": "Plant nematodes"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 69,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Select the correct statement.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Insulin is associated with hyperglycemia."
+    },
+    {
+     "key": "B",
+     "text": "Glucocorticoids stimulate gluconeogenesis."
+    },
+    {
+     "key": "C",
+     "text": "Glucagon is associated with hypoglycemia."
+    },
+    {
+     "key": "D",
+     "text": "Insulin acts on pancreatic cells and adipocytes."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 70,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the basic amino acid from the following.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Valine"
+    },
+    {
+     "key": "B",
+     "text": "Tyrosine"
+    },
+    {
+     "key": "C",
+     "text": "Glutamic Acid"
+    },
+    {
+     "key": "D",
+     "text": "Lysine"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 71,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Flippers of Penguins and Dolphins are examples of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Natural selection"
+    },
+    {
+     "key": "B",
+     "text": "Adaptive radiation"
+    },
+    {
+     "key": "C",
+     "text": "Convergent evolution"
+    },
+    {
+     "key": "D",
+     "text": "Industrial melanism"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 72,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "From his experiments, S.L. Miller produced amino acids by mixing the following in a closed flask :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{CH3}$, $\\ce{H2}$, $\\ce{NH3}$ and water vapor at $600^\\circ$C"
+    },
+    {
+     "key": "B",
+     "text": "$\\ce{CH4}$, $\\ce{H2}$, $\\ce{NH3}$ and water vapor at $800^\\circ$C"
+    },
+    {
+     "key": "C",
+     "text": "$\\ce{CH3}$, $\\ce{H2}$, $\\ce{NH4}$ and water vapor at $800^\\circ$C"
+    },
+    {
+     "key": "D",
+     "text": "$\\ce{CH4}$, $\\ce{H2}$, $\\ce{NH3}$ and water vapor at $600^\\circ$C"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 73,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The specific palindromic sequence which is recognized by EcoRI is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "5' - GGATCC - 3' 3' - CCTAGG - 5'"
+    },
+    {
+     "key": "B",
+     "text": "5' - GAATTC - 3' 3' - CTTAAG - 5'"
+    },
+    {
+     "key": "C",
+     "text": "5' - GGAACC - 3' 3' - CCTTGG - 5'"
+    },
+    {
+     "key": "D",
+     "text": "5' - CTTAAG - 3' 3' - GAATTC - 5'"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 74,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Secondary metabolites such as nicotine, strychnine and caffeine are produced by plants for their :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Effect on reproduction"
+    },
+    {
+     "key": "B",
+     "text": "Nutritive value"
+    },
+    {
+     "key": "C",
+     "text": "Growth response"
+    },
+    {
+     "key": "D",
+     "text": "Defence action"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 75,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Presence of which of the following conditions in urine are indicative of Diabetes Mellitus ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Renal calculi and Hyperglycaemia"
+    },
+    {
+     "key": "B",
+     "text": "Uremia and Ketonuria"
+    },
+    {
+     "key": "C",
+     "text": "Uremia and Renal Calculi"
+    },
+    {
+     "key": "D",
+     "text": "Ketonuria and Glycosuria"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 76,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following statements are true for the phylum-Chordata ? (a)   In Urochordata notochord extends from head to tail and it is present throughout their life. (b)   In Vertebrata notochord is present during the embryonic period only. (c)   Central nervous system is dorsal and hollow. (d)   Chordata is divided into 3 subphyla : Hemichordata,      Tunicata      and Cephalochordata.",
+   "options": [
+    {
+     "key": "A",
+     "text": "(b) and (c)"
+    },
+    {
+     "key": "B",
+     "text": "(d) and (c)"
+    },
+    {
+     "key": "C",
+     "text": "(c) and (a)"
+    },
+    {
+     "key": "D",
+     "text": "(a) and (b)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 77,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Cuboidal epithelium with brush border of microvilli is found in :",
+   "options": [
+    {
+     "key": "A",
+     "text": "eustachian tube"
+    },
+    {
+     "key": "B",
+     "text": "lining of intestine"
+    },
+    {
+     "key": "C",
+     "text": "ducts of salivary glands"
+    },
+    {
+     "key": "D",
+     "text": "proximal convoluted tubule of nephron"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 78,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Clostridium butylicum - (i) Cyclosporin-A\n- (b) Trichoderma polysporum - (ii) Butyric Acid\n- (c) Monascus purpureus - (iii) Citric Acid\n- (d) Aspergillus niger - (iv) Blood cholesterol lowering agent",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 79,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following is correct about viroids ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "They have free DNA without protein coat."
+    },
+    {
+     "key": "B",
+     "text": "They have RNA with protein coat."
+    },
+    {
+     "key": "C",
+     "text": "They have free RNA without protein coat."
+    },
+    {
+     "key": "D",
+     "text": "They have DNA with protein coat."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 80,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The body of the ovule is fused within the funicle at :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Chalaza"
+    },
+    {
+     "key": "B",
+     "text": "Hilum"
+    },
+    {
+     "key": "C",
+     "text": "Micropyle"
+    },
+    {
+     "key": "D",
+     "text": "Nucellus"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 81,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The oxygenation activity of RuBisCo enzyme in photorespiration leads to the formation of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "1 molecule of 4-C compound and 1 molecule of 2-C compound"
+    },
+    {
+     "key": "B",
+     "text": "2 molecules of 3-C compound"
+    },
+    {
+     "key": "C",
+     "text": "1 molecule of 3-C compound"
+    },
+    {
+     "key": "D",
+     "text": "1 molecule of 6-C compound"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 82,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Eosinophils - (i) Immune response\n- (b) Basophils - (ii) Phagocytosis\n- (c) Neutrophils - (iii) Release histaminase, destructive enzymes\n- (d) Lymphocytes - (iv) Release granules containing histamine",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 83,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following hormone levels will cause release of ovum (ovulation) from the graffian follicle ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Low concentration of FSH"
+    },
+    {
+     "key": "B",
+     "text": "High concentration of Estrogen"
+    },
+    {
+     "key": "C",
+     "text": "High concentration of Progesterone"
+    },
+    {
+     "key": "D",
+     "text": "Low concentration of LH"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 84,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Select the correct events that occur during inspiration. (a)   Contraction of diaphragm (b)   Contraction of external inter-costal muscles (c)   Pulmonary volume decreases (d)   Intra pulmonary pressure increases",
+   "options": [
+    {
+     "key": "A",
+     "text": "only (d)"
+    },
+    {
+     "key": "B",
+     "text": "(a) and (b)"
+    },
+    {
+     "key": "C",
+     "text": "(c) and (d)"
+    },
+    {
+     "key": "D",
+     "text": "(a), (b) and (d)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 85,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "In which of the following techniques, the embryos are transferred to assist those females who cannot conceive ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "GIFT and ICSI"
+    },
+    {
+     "key": "B",
+     "text": "ZIFT and IUT"
+    },
+    {
+     "key": "C",
+     "text": "GIFT and ZIFT"
+    },
+    {
+     "key": "D",
+     "text": "ICSI and ZIFT"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 86,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The infectious stage of Plasmodium that enters the human body is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Male gametocytes"
+    },
+    {
+     "key": "B",
+     "text": "Trophozoites"
+    },
+    {
+     "key": "C",
+     "text": "Sporozoites"
+    },
+    {
+     "key": "D",
+     "text": "Female gametocytes"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 87,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Placenta - (i) Androgens\n- (b) Zona pellucida - (ii) Human Chorionic Gonadotropin (hCG)\n- (c) Bulbo-urethral glands - (iii) Layer of the ovum\n- (d) Leydig cells - (iv) Lubrication of the Penis",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(i), (b)-(iv), (c)-(ii), (d)-(iii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(ii), (c)-(iv), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 88,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Select the correct match.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Thalassemia - X linked"
+    },
+    {
+     "key": "B",
+     "text": "Haemophilia - Y linked"
+    },
+    {
+     "key": "C",
+     "text": "Phenylketonuria - Autosomal dominant trait"
+    },
+    {
+     "key": "D",
+     "text": "Sickle cell anaemia - Autosomal recessive trait, chromosome-11"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 89,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following statements is correct ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Adenine does not pair with thymine."
+    },
+    {
+     "key": "B",
+     "text": "Adenine pairs with thymine through two H-bonds."
+    },
+    {
+     "key": "C",
+     "text": "Adenine pairs with thymine through one H-bond."
+    },
+    {
+     "key": "D",
+     "text": "Adenine pairs with thymine through three H-bonds."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 90,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which one of the following is the most abundant protein in the animals ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Insulin"
+    },
+    {
+     "key": "B",
+     "text": "Haemoglobin"
+    },
+    {
+     "key": "C",
+     "text": "Collagen"
+    },
+    {
+     "key": "D",
+     "text": "Lectin"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 91,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following pairs is of unicellular algae ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Chlorella and Spirulina"
+    },
+    {
+     "key": "B",
+     "text": "Laminaria and Sargassum"
+    },
+    {
+     "key": "C",
+     "text": "Gelidium and Gracilaria"
+    },
+    {
+     "key": "D",
+     "text": "Anabaena and Volvox"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 92,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The plant parts which consist of two generations - one within the other : (a)   Pollen grains inside the anther\n\n(b)   Germinated pollen grain with two male gametes\n\n(c)   Seed inside the fruit\n\n(d)   Embryo sac inside the ovule",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a) and (d)"
+    },
+    {
+     "key": "B",
+     "text": "(a) only"
+    },
+    {
+     "key": "C",
+     "text": "(a), (b) and (c)"
+    },
+    {
+     "key": "D",
+     "text": "(c) and (d)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 93,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the incorrect statement.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Due to deposition of tannins, resins, oils etc., heart wood is dark in colour."
+    },
+    {
+     "key": "B",
+     "text": "Heart wood does not conduct water but gives mechanical support."
+    },
+    {
+     "key": "C",
+     "text": "Sapwood is involved in conduction of water and minerals from root to leaf."
+    },
+    {
+     "key": "D",
+     "text": "Sapwood is the innermost secondary xylem and is lighter in colour."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 94,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "By which method was a new breed ‘Hisardale’ of sheep formed by using Bikaneri ewes and Marino rams ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Inbreeding"
+    },
+    {
+     "key": "B",
+     "text": "Out crossing"
+    },
+    {
+     "key": "C",
+     "text": "Mutational breeding"
+    },
+    {
+     "key": "D",
+     "text": "Cross breeding"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 95,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Some dividing cells exit the cell cycle and enter vegetative inactive stage. This is called quiescent stage (G0). This process occurs at the end of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "G2 phase"
+    },
+    {
+     "key": "B",
+     "text": "M phase"
+    },
+    {
+     "key": "C",
+     "text": "G1 phase"
+    },
+    {
+     "key": "D",
+     "text": "S phase"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 96,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the correct statement with reference to human digestive system.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Vermiform appendix arises from duodenum."
+    },
+    {
+     "key": "B",
+     "text": "Ileum opens into small intestine."
+    },
+    {
+     "key": "C",
+     "text": "Serosa is the innermost layer of the alimentary canal."
+    },
+    {
+     "key": "D",
+     "text": "Ileum is a highly coiled part."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 97,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following refer to correct example(s) of organisms which have evolved due to changes in environment brought about by anthropogenic action ?\n\n(a)   Darwin’s Finches of Galapagos islands.\n\n(b)   Herbicide resistant weeds.\n\n(c)   Drug resistant eukaryotes.\n\n(d)   Man-created breeds of domesticated animals like dogs.",
+   "options": [
+    {
+     "key": "A",
+     "text": "only (d)"
+    },
+    {
+     "key": "B",
+     "text": "only (a)"
+    },
+    {
+     "key": "C",
+     "text": "(a) and (c)"
+    },
+    {
+     "key": "D",
+     "text": "(b), (c) and (d)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 98,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Pituitary gland - (i) Grave's disease\n- (b) Thyroid gland - (ii) Diabetes mellitus\n- (c) Adrenal gland - (iii) Diabetes insipidus\n- (d) Pancreas - (iv) Addison's disease",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(i), (c)-(iv), (d)-(ii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 99,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Select the option including all sexually transmitted diseases.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Cancer, AIDS, Syphilis"
+    },
+    {
+     "key": "B",
+     "text": "Gonorrhoea, Syphilis, Genital herpes"
+    },
+    {
+     "key": "C",
+     "text": "Gonorrhoea, Malaria, Genital herpes"
+    },
+    {
+     "key": "D",
+     "text": "AIDS, Malaria, Filaria"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 100,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The number of substrate level phosphorylations in one turn of citric acid cycle is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Three"
+    },
+    {
+     "key": "B",
+     "text": "Zero"
+    },
+    {
+     "key": "C",
+     "text": "One"
+    },
+    {
+     "key": "D",
+     "text": "Two"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 101,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Montreal protocol was signed in 1987 for control of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Disposal of e-wastes"
+    },
+    {
+     "key": "B",
+     "text": "Transport of Genetically modified organisms from one country to another"
+    },
+    {
+     "key": "C",
+     "text": "Emission of ozone depleting substances"
+    },
+    {
+     "key": "D",
+     "text": "Release of Green House gases"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 102,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following concerning essential elements and their functions in plants :\n\n- (a) Iron - (i) Photolysis of water\n- (b) Zinc - (ii) Pollen germination\n- (c) Boron - (iii) Required for chlorophyll biosynthesis\n- (d) Manganese - (iv) IAA biosynthesis\n\nSelect the correct option :",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 103,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Gregarious, polyphagous pest - (i) Asterias\n- (b) Adult with radial symmetry and larva with bilateral symmetry - (ii) Scorpion\n- (c) Book lungs - (iii) Ctenoplana\n- (d) Bioluminescence - (iv) Locusta",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 104,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "According to Robert May, the global species diversity is about :",
+   "options": [
+    {
+     "key": "A",
+     "text": "7 million"
+    },
+    {
+     "key": "B",
+     "text": "1.5 million"
+    },
+    {
+     "key": "C",
+     "text": "20 million"
+    },
+    {
+     "key": "D",
+     "text": "50 million"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 105,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Ray florets have :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Half inferior ovary"
+    },
+    {
+     "key": "B",
+     "text": "Inferior ovary"
+    },
+    {
+     "key": "C",
+     "text": "Superior ovary"
+    },
+    {
+     "key": "D",
+     "text": "Hypogynous ovary"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 106,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "If the distance between two consecutive base pairs is $0.34$ nm and the total number of base pairs of a DNA double helix in a typical mammalian cell is $6.6\\times10^{9}$ bp, then the length of the DNA is approximately :",
+   "options": [
+    {
+     "key": "A",
+     "text": "2.7 meters"
+    },
+    {
+     "key": "B",
+     "text": "2.0 meters"
+    },
+    {
+     "key": "C",
+     "text": "2.5 meters"
+    },
+    {
+     "key": "D",
+     "text": "2.2 meters"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 107,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Bt cotton - (i) Gene therapy\n- (b) Adenosine deaminase deficiency - (ii) Cellular defence\n- (c) RNAi - (iii) Detection of HIV infection\n- (d) PCR - (iv) Bacillus thuringiensis",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 108,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the trophic levels with their correct species examples in grassland ecosystem.\n\n- (a) Fourth trophic level - (i) Crow\n- (b) Second trophic level - (ii) Vulture\n- (c) First trophic level - (iii) Rabbit\n- (d) Third trophic level - (iv) Grass\n\nSelect the correct option :",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 109,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following diseases with the causative organism and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Typhoid - (i) Wuchereria\n- (b) Pneumonia - (ii) Plasmodium\n- (c) Filariasis - (iii) Salmonella\n- (d) Malaria - (iv) Haemophilus",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 110,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The roots that originate from the base of the stem are :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Lateral roots"
+    },
+    {
+     "key": "B",
+     "text": "Fibrous roots"
+    },
+    {
+     "key": "C",
+     "text": "Primary roots"
+    },
+    {
+     "key": "D",
+     "text": "Prop roots"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 111,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Meiotic division of the secondary oocyte is completed :",
+   "options": [
+    {
+     "key": "A",
+     "text": "At the time of fusion of a sperm with an ovum"
+    },
+    {
+     "key": "B",
+     "text": "Prior to ovulation"
+    },
+    {
+     "key": "C",
+     "text": "At the time of copulation"
+    },
+    {
+     "key": "D",
+     "text": "After zygote formation"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 112,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the wrong statement with regard to Restriction Enzymes.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Sticky ends can be joined by using DNA ligases."
+    },
+    {
+     "key": "B",
+     "text": "Each restriction enzyme functions by inspecting the length of a DNA sequence."
+    },
+    {
+     "key": "C",
+     "text": "They cut the strand of DNA at palindromic sites."
+    },
+    {
+     "key": "D",
+     "text": "They are useful in genetic engineering."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 113,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "In relation to Gross primary productivity and Net primary productivity of an ecosystem, which one of the following statements is correct ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "There is no relationship between Gross primary productivity and Net primary productivity."
+    },
+    {
+     "key": "B",
+     "text": "Gross primary productivity is always less than net primary productivity."
+    },
+    {
+     "key": "C",
+     "text": "Gross primary productivity is always more than net primary productivity."
+    },
+    {
+     "key": "D",
+     "text": "Gross primary productivity and Net primary productivity are one and same."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 114,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The process of growth is maximum during :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Dormancy"
+    },
+    {
+     "key": "B",
+     "text": "Log phase"
+    },
+    {
+     "key": "C",
+     "text": "Lag phase"
+    },
+    {
+     "key": "D",
+     "text": "Senescence"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 115,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The sequence that controls the copy number of the linked DNA in the vector, is termed :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Recognition site"
+    },
+    {
+     "key": "B",
+     "text": "Selectable marker"
+    },
+    {
+     "key": "C",
+     "text": "Ori site"
+    },
+    {
+     "key": "D",
+     "text": "Palindromic sequence"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 116,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Name the enzyme that facilitates opening of DNA helix during transcription.",
+   "options": [
+    {
+     "key": "A",
+     "text": "RNA polymerase"
+    },
+    {
+     "key": "B",
+     "text": "DNA ligase"
+    },
+    {
+     "key": "C",
+     "text": "DNA helicase"
+    },
+    {
+     "key": "D",
+     "text": "DNA polymerase"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 117,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Snow-blindness in Antarctic region is due to :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Damage to retina caused by infra-red rays"
+    },
+    {
+     "key": "B",
+     "text": "Freezing of fluids in the eye by low temperature"
+    },
+    {
+     "key": "C",
+     "text": "Inflammation of cornea due to high dose of UV-B radiation"
+    },
+    {
+     "key": "D",
+     "text": "High reflection of light from snow"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 118,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Strobili or cones are found in :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Equisetum"
+    },
+    {
+     "key": "B",
+     "text": "Salvinia"
+    },
+    {
+     "key": "C",
+     "text": "Pteris"
+    },
+    {
+     "key": "D",
+     "text": "Marchantia"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 119,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Match the following columns and select the correct option.\n\nColumn - I / Column - II\n\n- (a) Floating Ribs - (i) Located between second and seventh ribs\n- (b) Acromion - (ii) Head of the Humerus\n- (c) Scapula - (iii) Clavicle\n- (d) Glenoid cavity - (iv) Do not connect with the sternum",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(ii), (b)-(iv), (c)-(i), (d)-(iii)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(ii), (c)-(iv), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 120,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following is put into Anaerobic sludge digester for further sewage treatment ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Activated sludge"
+    },
+    {
+     "key": "B",
+     "text": "Primary sludge"
+    },
+    {
+     "key": "C",
+     "text": "Floating debris"
+    },
+    {
+     "key": "D",
+     "text": "Effluents of primary treatment"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 121,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the wrong statement with reference to the gene ‘I’ that controls ABO blood groups.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Allele ‘i’ does not produce any sugar."
+    },
+    {
+     "key": "B",
+     "text": "The gene (I) has three alleles."
+    },
+    {
+     "key": "C",
+     "text": "A person will have only two of the three alleles."
+    },
+    {
+     "key": "D",
+     "text": "When IA and IB are present together, they express same type of sugar."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 122,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The ovary is half inferior in :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Plum"
+    },
+    {
+     "key": "B",
+     "text": "Brinjal"
+    },
+    {
+     "key": "C",
+     "text": "Mustard"
+    },
+    {
+     "key": "D",
+     "text": "Sunflower"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 123,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The first phase of translation is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Recognition of an anti-codon"
+    },
+    {
+     "key": "B",
+     "text": "Binding of mRNA to ribosome"
+    },
+    {
+     "key": "C",
+     "text": "Recognition of DNA molecule"
+    },
+    {
+     "key": "D",
+     "text": "Aminoacylation of tRNA"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 124,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "In gel electrophoresis, separated DNA fragments can be visualized with the help of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Ethidium bromide in infrared radiation"
+    },
+    {
+     "key": "B",
+     "text": "Acetocarmine in bright blue light"
+    },
+    {
+     "key": "C",
+     "text": "Ethidium bromide in UV radiation"
+    },
+    {
+     "key": "D",
+     "text": "Acetocarmine in UV radiation"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 125,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Dissolution of the synaptonemal complex occurs during :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Leptotene"
+    },
+    {
+     "key": "B",
+     "text": "Pachytene"
+    },
+    {
+     "key": "C",
+     "text": "Zygotene"
+    },
+    {
+     "key": "D",
+     "text": "Diplotene"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 126,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the substances having glycosidic bond and peptide bond, respectively in their structure :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Inulin, insulin"
+    },
+    {
+     "key": "B",
+     "text": "Chitin, cholesterol"
+    },
+    {
+     "key": "C",
+     "text": "Glycerol, trypsin"
+    },
+    {
+     "key": "D",
+     "text": "Cellulose, lecithin"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 127,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Name the plant growth regulator which upon spraying on sugarcane crop, increases the length of stem, thus increasing the yield of sugarcane crop.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Abscisic acid"
+    },
+    {
+     "key": "B",
+     "text": "Cytokinin"
+    },
+    {
+     "key": "C",
+     "text": "Gibberellin"
+    },
+    {
+     "key": "D",
+     "text": "Ethylene"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 128,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following statements about inclusion bodies is incorrect ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "These represent reserve material in cytoplasm."
+    },
+    {
+     "key": "B",
+     "text": "They are not bound by any membrane."
+    },
+    {
+     "key": "C",
+     "text": "These are involved in ingestion of food particles."
+    },
+    {
+     "key": "D",
+     "text": "They lie free in the cytoplasm."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 129,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following regions of the globe exhibits highest species diversity ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Amazon forests"
+    },
+    {
+     "key": "B",
+     "text": "Western Ghats of India"
+    },
+    {
+     "key": "C",
+     "text": "Madagascar"
+    },
+    {
+     "key": "D",
+     "text": "Himalayas"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 130,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "How many true breeding pea plant varieties did Mendel select as pairs, which were similar except in one character with contrasting traits ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "8"
+    },
+    {
+     "key": "B",
+     "text": "4"
+    },
+    {
+     "key": "C",
+     "text": "2"
+    },
+    {
+     "key": "D",
+     "text": "14"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 131,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Identify the wrong statement with reference to immunity.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Foetus receives some antibodies from mother, it is an example for passive immunity."
+    },
+    {
+     "key": "B",
+     "text": "When exposed to antigen (living or dead) antibodies are produced in the host’s body. It is called “Active immunity”."
+    },
+    {
+     "key": "C",
+     "text": "When ready-made antibodies are directly given, it is called “Passive immunity”."
+    },
+    {
+     "key": "D",
+     "text": "Active immunity is quick and gives full response."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 132,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following is not an attribute of a population ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Species interaction"
+    },
+    {
+     "key": "B",
+     "text": "Sex ratio"
+    },
+    {
+     "key": "C",
+     "text": "Natality"
+    },
+    {
+     "key": "D",
+     "text": "Mortality"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 133,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Choose the correct pair from the following :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Exonucleases - Make cuts at specific positions within DNA"
+    },
+    {
+     "key": "B",
+     "text": "Ligases - Join the two DNA molecules"
+    },
+    {
+     "key": "C",
+     "text": "Polymerases - Break the DNA into fragments"
+    },
+    {
+     "key": "D",
+     "text": "Nucleases - Separate the two strands of DNA"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 134,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "The process responsible for facilitating loss of water in liquid form from the tip of grass blades at night and in early morning is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Plasmolysis"
+    },
+    {
+     "key": "B",
+     "text": "Transpiration"
+    },
+    {
+     "key": "C",
+     "text": "Root pressure"
+    },
+    {
+     "key": "D",
+     "text": "Imbibition"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 135,
+   "type": "SCQ",
+   "subject": null,
+   "stem": "Which of the following is not an inhibitory substance governing seed dormancy ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Para-ascorbic acid"
+    },
+    {
+     "key": "B",
+     "text": "Gibberellic acid"
+    },
+    {
+     "key": "C",
+     "text": "Abscisic acid"
+    },
+    {
+     "key": "D",
+     "text": "Phenolic acid"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 136,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Match the following and identify the correct option.\n\n- (a) $\\ce{CO(g) + H2(g)}$ - (i) $\\ce{Mg(HCO3)2 + Ca(HCO3)2}$\n- (b) Temporary hardness of water - (ii) An electron deficient hydride\n- (c) $\\ce{B2H6}$ - (iii) Synthesis gas\n- (d) $\\ce{H2O2}$ - (iv) Non-planar structure",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(iii), (b)-(i), (c)-(ii), (d)-(iv)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 137,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "A tertiary butyl carbocation is more stable than a secondary butyl carbocation because of which of the following ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Hyperconjugation"
+    },
+    {
+     "key": "B",
+     "text": "−I effect of −CH3 groups"
+    },
+    {
+     "key": "C",
+     "text": "+R effect of −CH3 groups"
+    },
+    {
+     "key": "D",
+     "text": "−R effect of −CH3 groups"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 138,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "What is the change in oxidation number of carbon in the following reaction ?\n$$\\ce{CH4(g) + 4Cl2(g) -> CCl4(l) + 4HCl(g)}$$",
+   "options": [
+    {
+     "key": "A",
+     "text": "$0$ to $-4$"
+    },
+    {
+     "key": "B",
+     "text": "$+4$ to $+4$"
+    },
+    {
+     "key": "C",
+     "text": "$0$ to $+4$"
+    },
+    {
+     "key": "D",
+     "text": "$-4$ to $+4$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 139,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Sucrose on hydrolysis gives :",
+   "options": [
+    {
+     "key": "A",
+     "text": "α-D-Fructose+β-D-Fructose"
+    },
+    {
+     "key": "B",
+     "text": "β-D-Glucose+α-D-Fructose"
+    },
+    {
+     "key": "C",
+     "text": "α-D-Glucose+β-D-Glucose"
+    },
+    {
+     "key": "D",
+     "text": "α-D-Glucose+β-D-Fructose"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 140,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The calculated spin only magnetic moment of $\\ce{Cr^{2+}}$ ion is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "2.84 BM"
+    },
+    {
+     "key": "B",
+     "text": "3.87 BM"
+    },
+    {
+     "key": "C",
+     "text": "4.90 BM"
+    },
+    {
+     "key": "D",
+     "text": "5.92 BM"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 141,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Identify a molecule which does not exist.",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{O2}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\ce{He2}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\ce{Li2}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\ce{C2}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 142,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following oxoacid of sulphur has $-\\text{O}-\\text{O}-$ linkage ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{H2S2O7}$, pyrosulphuric acid"
+    },
+    {
+     "key": "B",
+     "text": "$\\ce{H2SO3}$, sulphurous acid"
+    },
+    {
+     "key": "C",
+     "text": "$\\ce{H2SO4}$, sulphuric acid"
+    },
+    {
+     "key": "D",
+     "text": "$\\ce{H2S2O8}$, peroxodisulphuric acid"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 143,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following is the correct order of increasing field strength of ligands to form coordination compounds ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{CN^-} < \\ce{C2O4^{2-}} < \\ce{SCN^-} < \\ce{F^-}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\ce{SCN^-} < \\ce{F^-} < \\ce{C2O4^{2-}} < \\ce{CN^-}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\ce{SCN^-} < \\ce{F^-} < \\ce{CN^-} < \\ce{C2O4^{2-}}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\ce{F^-} < \\ce{SCN^-} < \\ce{C2O4^{2-}} < \\ce{CN^-}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 144,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The number of Faradays (F) required to produce $20$ g of calcium from molten $\\ce{CaCl2}$ (Atomic mass of Ca $=40$ g mol$^{-1}$) is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "4"
+    },
+    {
+     "key": "B",
+     "text": "1"
+    },
+    {
+     "key": "C",
+     "text": "2"
+    },
+    {
+     "key": "D",
+     "text": "3"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 145,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Reaction between acetone and methylmagnesium chloride followed by hydrolysis will give :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Isobutyl alcohol"
+    },
+    {
+     "key": "B",
+     "text": "Isopropyl alcohol"
+    },
+    {
+     "key": "C",
+     "text": "Sec. butyl alcohol"
+    },
+    {
+     "key": "D",
+     "text": "Tert. butyl alcohol"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 146,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following is a cationic detergent ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Sodium dodecylbenzene sulphonate"
+    },
+    {
+     "key": "B",
+     "text": "Sodium lauryl sulphate"
+    },
+    {
+     "key": "C",
+     "text": "Sodium stearate"
+    },
+    {
+     "key": "D",
+     "text": "Cetyltrimethyl ammonium bromide"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 147,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Identify the incorrect statement.",
+   "options": [
+    {
+     "key": "A",
+     "text": "The oxidation states of chromium in $\\ce{CrO4^{2-}}$ and $\\ce{Cr2O7^{2-}}$ are not the same."
+    },
+    {
+     "key": "B",
+     "text": "$\\ce{Cr^{2+}}$($d^4$) is a stronger reducing agent than $\\ce{Fe^{2+}}$($d^6$) in water."
+    },
+    {
+     "key": "C",
+     "text": "The transition metals and their compounds are known for their catalytic activity due to their ability to adopt multiple oxidation states and to form complexes."
+    },
+    {
+     "key": "D",
+     "text": "Interstitial compounds are those that are formed when small atoms like H, C or N are trapped inside the crystal lattices of metals."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 148,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following alkane cannot be made in good yield by Wurtz reaction ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "n-Butane"
+    },
+    {
+     "key": "B",
+     "text": "n-Hexane"
+    },
+    {
+     "key": "C",
+     "text": "2,3-Dimethylbutane"
+    },
+    {
+     "key": "D",
+     "text": "n-Heptane"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 149,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Urea reacts with water to form A which will decompose to form B. B when passed through $\\ce{Cu^{2+}}$(aq), deep blue colour solution C is formed. What is the formula of C from the following ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{CuCO3.Cu(OH)2}$"
+    },
+    {
+     "key": "B",
+     "text": "$\\ce{CuSO4}$"
+    },
+    {
+     "key": "C",
+     "text": "$\\ce{[Cu(NH3)4]^{2+}}$"
+    },
+    {
+     "key": "D",
+     "text": "$\\ce{Cu(OH)2}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 150,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The freezing point depression constant ($K_f$) of benzene is $5.12$ K kg mol$^{-1}$. The freezing point depression for the solution of molality $0.078$ m containing a non-electrolyte solute in benzene is (rounded off upto two decimal places) :",
+   "options": [
+    {
+     "key": "A",
+     "text": "0.60 K"
+    },
+    {
+     "key": "B",
+     "text": "0.20 K"
+    },
+    {
+     "key": "C",
+     "text": "0.80 K"
+    },
+    {
+     "key": "D",
+     "text": "0.40 K"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 151,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The number of protons, neutrons and electrons in ${}^{175}_{71}\\text{Lu}$, respectively, are :",
+   "options": [
+    {
+     "key": "A",
+     "text": "175, 104 and 71"
+    },
+    {
+     "key": "B",
+     "text": "71, 104 and 71"
+    },
+    {
+     "key": "C",
+     "text": "104, 71 and 71"
+    },
+    {
+     "key": "D",
+     "text": "71, 71 and 104"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 152,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Identify compound X in the following sequence of reactions : [figure: reaction scheme with structures]",
+   "options": [
+    {
+     "key": "A",
+     "text": "[structure 1]"
+    },
+    {
+     "key": "B",
+     "text": "[structure 2]"
+    },
+    {
+     "key": "C",
+     "text": "[structure 3]"
+    },
+    {
+     "key": "D",
+     "text": "[structure 4]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 153,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Identify the correct statement from the following :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Pig iron can be moulded into a variety of shapes."
+    },
+    {
+     "key": "B",
+     "text": "Wrought iron is impure iron with 4% carbon."
+    },
+    {
+     "key": "C",
+     "text": "Blister copper has blistered appearance due to evolution of CO2."
+    },
+    {
+     "key": "D",
+     "text": "Vapour phase refining is carried out for Nickel by Van Arkel method."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 154,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following set of molecules will have zero dipole moment ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Boron trifluoride, beryllium difluoride, carbon dioxide, 1,4-dichlorobenzene"
+    },
+    {
+     "key": "B",
+     "text": "Ammonia, beryllium difluoride, water, 1,4-dichlorobenzene"
+    },
+    {
+     "key": "C",
+     "text": "Boron trifluoride, hydrogen fluoride, carbon dioxide, 1,3-dichlorobenzene"
+    },
+    {
+     "key": "D",
+     "text": "Nitrogen trifluoride, beryllium difluoride, water, 1,3-dichlorobenzene"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 155,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Paper chromatography is an example of :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Column chromatography"
+    },
+    {
+     "key": "B",
+     "text": "Adsorption chromatography"
+    },
+    {
+     "key": "C",
+     "text": "Partition chromatography"
+    },
+    {
+     "key": "D",
+     "text": "Thin layer chromatography"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 156,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Identify the incorrect match.\n\nName / IUPAC Official Name\n\n- (a) Unnilunium - (i) Mendelevium\n- (b) Unniltrium - (ii) Lawrencium\n- (c) Unnilhexium - (iii) Seaborgium\n- (d) Unununnium - (iv) Darmstadtium",
+   "options": [
+    {
+     "key": "A",
+     "text": "(d), (iv)"
+    },
+    {
+     "key": "B",
+     "text": "(a), (i)"
+    },
+    {
+     "key": "C",
+     "text": "(b), (ii)"
+    },
+    {
+     "key": "D",
+     "text": "(c), (iii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 157,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Find out the solubility of $\\ce{Ni(OH)2}$ in $0.1$ M $\\ce{NaOH}$. Given that the ionic product of $\\ce{Ni(OH)2}$ is $2\\times10^{-15}$.",
+   "options": [
+    {
+     "key": "A",
+     "text": "$1\\times10^{8}$ M"
+    },
+    {
+     "key": "B",
+     "text": "$2\\times10^{-13}$ M"
+    },
+    {
+     "key": "C",
+     "text": "$2\\times10^{-8}$ M"
+    },
+    {
+     "key": "D",
+     "text": "$1\\times10^{-13}$ M"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 158,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following is a natural polymer ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "poly (Butadiene-acrylonitrile)"
+    },
+    {
+     "key": "B",
+     "text": "cis-1,4-polyisoprene"
+    },
+    {
+     "key": "C",
+     "text": "poly (Butadiene-styrene)"
+    },
+    {
+     "key": "D",
+     "text": "polybutadiene"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 159,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Reaction between benzaldehyde and acetophenone in presence of dilute $\\ce{NaOH}$ is known as :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Cross Aldol condensation"
+    },
+    {
+     "key": "B",
+     "text": "Aldol condensation"
+    },
+    {
+     "key": "C",
+     "text": "Cannizzaro’s reaction"
+    },
+    {
+     "key": "D",
+     "text": "Cross Cannizzaro’s reaction"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 160,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The mixture which shows positive deviation from Raoult’s law is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "Chloroethane+Bromoethane"
+    },
+    {
+     "key": "B",
+     "text": "Ethanol+Acetone"
+    },
+    {
+     "key": "C",
+     "text": "Benzene+Toluene"
+    },
+    {
+     "key": "D",
+     "text": "Acetone+Chloroform"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 161,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The rate constant for a first order reaction is $4.606\\times10^{-3}$ s$^{-1}$. The time required to reduce $2.0$ g of the reactant to $0.2$ g is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "1000 s"
+    },
+    {
+     "key": "B",
+     "text": "100 s"
+    },
+    {
+     "key": "C",
+     "text": "200 s"
+    },
+    {
+     "key": "D",
+     "text": "500 s"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 162,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "$\\ce{HCl}$ was passed through a solution of $\\ce{CaCl2}$, $\\ce{MgCl2}$ and $\\ce{NaCl}$. Which of the following compound(s) crystallise(s) ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{NaCl}$, $\\ce{MgCl2}$ and $\\ce{CaCl2}$"
+    },
+    {
+     "key": "B",
+     "text": "Both $\\ce{MgCl2}$ and $\\ce{CaCl2}$"
+    },
+    {
+     "key": "C",
+     "text": "Only $\\ce{NaCl}$"
+    },
+    {
+     "key": "D",
+     "text": "Only $\\ce{MgCl2}$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 163,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The correct option for free expansion of an ideal gas under adiabatic condition is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$q>0,\\ \\Delta T>0$ and $w>0$"
+    },
+    {
+     "key": "B",
+     "text": "$q=0,\\ \\Delta T=0$ and $w=0$"
+    },
+    {
+     "key": "C",
+     "text": "$q=0,\\ \\Delta T<0$ and $w>0$"
+    },
+    {
+     "key": "D",
+     "text": "$q<0,\\ \\Delta T=0$ and $w=0$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 164,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Identify the correct statements from the following :\n\n(a) $\\ce{CO2(g)}$ is used as refrigerant for ice-cream and frozen food.\n\n(b) The structure of $\\ce{C60}$ contains twelve six carbon rings and twenty five carbon rings.\n\n(c) ZSM-5, a type of zeolite, is used to convert alcohols into gasoline.\n\n(d) CO is colorless and odourless gas.",
+   "options": [
+    {
+     "key": "A",
+     "text": "(c) and (d) only"
+    },
+    {
+     "key": "B",
+     "text": "(a), (b) and (c) only"
+    },
+    {
+     "key": "C",
+     "text": "(a) and (c) only"
+    },
+    {
+     "key": "D",
+     "text": "(b) and (c) only"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 165,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Hydrolysis of sucrose is given by the following reaction.\n\n$$\\text{Sucrose}+\\ce{H2O} \\rightleftharpoons \\text{Glucose}+\\text{Fructose}$$\n\nIf the equilibrium constant ($K_c$) is $2\\times10^{13}$ at $300$ K, the value of $\\Delta_rG^{\\ominus}$ at the same temperature will be :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$-8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\times300\\ \\text{K}\\times\\ln(4\\times10^{13})$"
+    },
+    {
+     "key": "B",
+     "text": "$-8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\times300\\ \\text{K}\\times\\ln(2\\times10^{13})$"
+    },
+    {
+     "key": "C",
+     "text": "$8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\times300\\ \\text{K}\\times\\ln(2\\times10^{13})$"
+    },
+    {
+     "key": "D",
+     "text": "$8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\times300\\ \\text{K}\\times\\ln(3\\times10^{13})$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "low",
+   "note": "standard-state symbol after Delta_rG",
+   "quarantine": null
+  },
+  {
+   "n": 166,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following amine will give the carbylamine test ? [figure: four amine structures]",
+   "options": [
+    {
+     "key": "A",
+     "text": "[structure 1]"
+    },
+    {
+     "key": "B",
+     "text": "[structure 2]"
+    },
+    {
+     "key": "C",
+     "text": "[structure 3]"
+    },
+    {
+     "key": "D",
+     "text": "[structure 4]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 167,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "An alkene on ozonolysis gives methanal as one of the product. Its structure is : [figure: four alkene structures]",
+   "options": [
+    {
+     "key": "A",
+     "text": "[structure 1]"
+    },
+    {
+     "key": "B",
+     "text": "[structure 2]"
+    },
+    {
+     "key": "C",
+     "text": "[structure 3]"
+    },
+    {
+     "key": "D",
+     "text": "[structure 4]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 168,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Anisole on cleavage with HI gives : [figure: four product pairs]",
+   "options": [
+    {
+     "key": "A",
+     "text": "[structure 1]"
+    },
+    {
+     "key": "B",
+     "text": "[structure 2]"
+    },
+    {
+     "key": "C",
+     "text": "[structure 3]"
+    },
+    {
+     "key": "D",
+     "text": "[structure 4]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": "needs_figure"
+  },
+  {
+   "n": 169,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Elimination reaction of 2-Bromo-pentane to form pent-2-ene is : (a)   β-Elimination reaction (b)   Follows Zaitsev rule (c)   Dehydrohalogenation reaction (d)   Dehydration reaction",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a), (b), (d)"
+    },
+    {
+     "key": "B",
+     "text": "(a), (b), (c)"
+    },
+    {
+     "key": "C",
+     "text": "(a), (c), (d)"
+    },
+    {
+     "key": "D",
+     "text": "(b), (c), (d)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 170,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "An increase in the concentration of the reactants of a reaction leads to change in :",
+   "options": [
+    {
+     "key": "A",
+     "text": "collision frequency"
+    },
+    {
+     "key": "B",
+     "text": "activation energy"
+    },
+    {
+     "key": "C",
+     "text": "heat of reaction"
+    },
+    {
+     "key": "D",
+     "text": "threshold energy"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 171,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following is a basic amino acid ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Lysine"
+    },
+    {
+     "key": "B",
+     "text": "Serine"
+    },
+    {
+     "key": "C",
+     "text": "Alanine"
+    },
+    {
+     "key": "D",
+     "text": "Tyrosine"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 172,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "The following metal ion activates many enzymes, participates in the oxidation of glucose to produce ATP and with Na, is responsible for the transmission of nerve signals.",
+   "options": [
+    {
+     "key": "A",
+     "text": "Potassium"
+    },
+    {
+     "key": "B",
+     "text": "Iron"
+    },
+    {
+     "key": "C",
+     "text": "Copper"
+    },
+    {
+     "key": "D",
+     "text": "Calcium"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 173,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "For the reaction, $\\ce{2Cl(g) -> Cl2(g)}$, the correct option is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\Delta_rH<0$ and $\\Delta_rS<0$"
+    },
+    {
+     "key": "B",
+     "text": "$\\Delta_rH>0$ and $\\Delta_rS>0$"
+    },
+    {
+     "key": "C",
+     "text": "$\\Delta_rH>0$ and $\\Delta_rS<0$"
+    },
+    {
+     "key": "D",
+     "text": "$\\Delta_rH<0$ and $\\Delta_rS>0$"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 174,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Match the following :\n\n- (a) $\\ce{CO}$ - (i) Basic\n- (b) $\\ce{BaO}$ - (ii) Neutral\n- (c) $\\ce{Al2O3}$ - (iii) Acidic\n- (d) $\\ce{Cl2O7}$ - (iv) Amphoteric\n\nWhich of the following is correct option ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+    },
+    {
+     "key": "B",
+     "text": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)"
+    },
+    {
+     "key": "C",
+     "text": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"
+    },
+    {
+     "key": "D",
+     "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 175,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Measuring Zeta potential is useful in determining which property of colloidal solution ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "Size of the colloidal particles"
+    },
+    {
+     "key": "B",
+     "text": "Viscosity"
+    },
+    {
+     "key": "C",
+     "text": "Solubility"
+    },
+    {
+     "key": "D",
+     "text": "Stability of the colloidal particles"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 176,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "A mixture of $\\ce{N2}$ and $\\ce{Ar}$ gases in a cylinder contains $7$ g of $\\ce{N2}$ and $8$ g of $\\ce{Ar}$. If the total pressure of the mixture of the gases in the cylinder is $27$ bar, the partial pressure of $\\ce{N2}$ is :\n\n[Use atomic masses (in g mol$^{-1}$) : N=14, Ar=40]",
+   "options": [
+    {
+     "key": "A",
+     "text": "18 bar"
+    },
+    {
+     "key": "B",
+     "text": "9 bar"
+    },
+    {
+     "key": "C",
+     "text": "12 bar"
+    },
+    {
+     "key": "D",
+     "text": "15 bar"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 177,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which of the following is not correct about carbon monoxide ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "It is produced due to incomplete combustion."
+    },
+    {
+     "key": "B",
+     "text": "It forms carboxyhaemoglobin."
+    },
+    {
+     "key": "C",
+     "text": "It reduces oxygen carrying ability of blood."
+    },
+    {
+     "key": "D",
+     "text": "The carboxyhaemoglobin (haemoglobin bound to CO) is less stable than oxyhaemoglobin."
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 178,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "An element has a body centered cubic (bcc) structure with a cell edge of $288$ pm. The atomic radius is :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\frac{4}{\\sqrt{2}}\\times288$ pm"
+    },
+    {
+     "key": "B",
+     "text": "$\\frac{\\sqrt{3}}{4}\\times288$ pm"
+    },
+    {
+     "key": "C",
+     "text": "$\\frac{\\sqrt{2}}{4}\\times288$ pm"
+    },
+    {
+     "key": "D",
+     "text": "$\\frac{4}{\\sqrt{3}}\\times288$ pm"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 179,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "Which one of the followings has maximum number of atoms ?",
+   "options": [
+    {
+     "key": "A",
+     "text": "$1$ g of Li(s) [Atomic mass of Li $=7$]"
+    },
+    {
+     "key": "B",
+     "text": "$1$ g of Ag(s) [Atomic mass of Ag $=108$]"
+    },
+    {
+     "key": "C",
+     "text": "$1$ g of Mg(s) [Atomic mass of Mg $=24$]"
+    },
+    {
+     "key": "D",
+     "text": "$1$ g of $\\ce{O2}$(g) [Atomic mass of O $=16$]"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  },
+  {
+   "n": 180,
+   "type": "SCQ",
+   "subject": "CHE",
+   "stem": "On electrolysis of dil.sulphuric acid using Platinum (Pt) electrode, the product obtained at anode will be :",
+   "options": [
+    {
+     "key": "A",
+     "text": "$\\ce{SO2}$ gas"
+    },
+    {
+     "key": "B",
+     "text": "Hydrogen gas"
+    },
+    {
+     "key": "C",
+     "text": "Oxygen gas"
+    },
+    {
+     "key": "D",
+     "text": "$\\ce{H2S}$ gas"
+    }
+   ],
+   "answer": null,
+   "solution": null,
+   "figures": [],
+   "confidence": "high",
+   "note": null,
+   "quarantine": null
+  }
+ ]
+}

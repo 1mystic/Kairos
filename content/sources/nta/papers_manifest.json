@@ -1,0 +1,470 @@
+{
+ "retrieved": "2026-11-08",
+ "note": "Official hosts only. TLS verification is always on. sha256/pages/bytes are filled by pipeline/acquire/fetch.py for downloaded entries.",
+ "hosts_tls_ok": [
+  "jeemain.nta.nic.in",
+  "neet.nta.nic.in",
+  "nta.ac.in",
+  "www.nta.ac.in",
+  "cdnbbsr.s3waas.gov.in"
+ ],
+ "hosts_unavailable": [
+  {
+   "host": "www.iiseradmission.in / iiseradmission.in",
+   "error": "curl exit 60: SSL certificate problem: unable to get local issuer certificate"
+  },
+  {
+   "host": "jeemain.nta.ac.in",
+   "error": "curl exit 60 (TLS verify failed)"
+  },
+  {
+   "host": "exams.nta.ac.in/NEET/",
+   "error": "HTTP 404"
+  }
+ ],
+ "entries": [
+  {
+   "id": "jee_main_2026-04-02_s1_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-02",
+   "shift": "1",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": true,
+   "sha256": "ba8b5256533e0a29e2eb71df3e322885335219d48259f4083365662f5ad7933b",
+   "bytes": 2463315,
+   "pages": 30,
+   "retrieved": "2026-11-08",
+   "local": "pipeline/raw/jee_main/2026/jee_main_2026-04-02_s1_paper__202604092096865379.pdf"
+  },
+  {
+   "id": "jee_main_2026-04-02_s2_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-02",
+   "shift": "2",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409481957146.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-04_s1_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-04",
+   "shift": "1",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604091916616339.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-04_s2_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-04",
+   "shift": "2",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409432593766.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-05_s1_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-05",
+   "shift": "1",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409828731207.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-05_s2_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-05",
+   "shift": "2",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409829414602.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-06_s1_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-06",
+   "shift": "1",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092007095665.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-06_s2_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-06",
+   "shift": "2",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409725707538.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026-04-08_s2_paper",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "date": "2026-04-08",
+   "shift": "2",
+   "kind": "paper",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260409932754345.pdf",
+   "language": "English (online-paper preview; question text is IMAGES, no text layer)",
+   "status": "found",
+   "host": "cdnbbsr.s3waas.gov.in (NIC CDN linked from jeemain.nta.nic.in)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026_s2_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420409057044.pdf",
+   "language": "English",
+   "status": "found (FINAL key, keyed by Question ID -> Option ID; all shifts in one PDF)",
+   "download": true,
+   "sha256": "07c89e20741c17f14a000501d6f79055d09834692de0dcb792bf237b77e1c7f9",
+   "bytes": 33395,
+   "pages": 18,
+   "retrieved": "2026-11-08",
+   "local": "pipeline/raw/jee_main/2026/jee_main_2026_s2_final_key__20260420409057044.pdf"
+  },
+  {
+   "id": "jee_main_2026_s2_prov_key",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 2,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260425588179602.pdf",
+   "status": "listed: provisional-key notice (not needed, final key exists)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2026_s1_papers",
+   "exam": "JEE_MAIN",
+   "year": 2026,
+   "session": 1,
+   "kind": "paper",
+   "status": "not found: Session-1 (Jan 2026) papers not listed on the current site in this pass (only Session-2 April papers are)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2025_s2_p1_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2025,
+   "session": 2,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/2025041892.pdf",
+   "status": "found (final key listed; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2025_s1_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2025,
+   "session": 1,
+   "kind": "key",
+   "url": "https://jeemain.nta.nic.in/document/jee-main-2025-session-1-final-answer-key-of-b-e-b-tech-as-on-09-02-2025-2/",
+   "status": "found (document page lists final key as on 10.02.2025; PDF URL not resolved in this pass)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2025_papers",
+   "exam": "JEE_MAIN",
+   "year": 2025,
+   "kind": "paper",
+   "status": "not found: no question-paper PDFs for 2025 on official sites (papers shown to candidates in login only)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2024_s1_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2024,
+   "session": 1,
+   "kind": "key",
+   "url": "https://www.nta.ac.in/Download/Notice/Notice_20240212120843.pdf",
+   "status": "found (final key as on 12.02.2024; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2024_s2_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2024,
+   "session": 2,
+   "kind": "key",
+   "url": "https://www.nta.ac.in/Download/Notice/Notice_20240422121837.pdf",
+   "status": "found (final key as on 22.04.2024; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2024_papers",
+   "exam": "JEE_MAIN",
+   "year": 2024,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "jee_main_2023_s1_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2023,
+   "session": 1,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2023/02/2023020697.pdf",
+   "status": "found (final key P1; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2023_papers",
+   "exam": "JEE_MAIN",
+   "year": 2023,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "jee_main_2022_keys",
+   "exam": "JEE_MAIN",
+   "year": 2022,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/08/2022080776.pdf",
+   "status": "provisional only on archive page ('PROVISIONAL FINAL KEY' S2; S1 key 2022/07/2022070665.pdf); final-key status not confirmed",
+   "download": false
+  },
+  {
+   "id": "jee_main_2022_papers",
+   "exam": "JEE_MAIN",
+   "year": 2022,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "jee_main_2021_feb_final_key",
+   "exam": "JEE_MAIN",
+   "year": 2021,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2022/01/2022012171.pdf",
+   "status": "found (Feb 2021 final key; March/July/Aug sessions have separate keys on archive pages; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "jee_main_2021_papers",
+   "exam": "JEE_MAIN",
+   "year": 2021,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "jee_main_2016_2020",
+   "exam": "JEE_MAIN",
+   "year": "2016-2020",
+   "kind": "paper+key",
+   "status": "not enumerated: not on the current jeemain.nta.nic.in archive pages; older NTA files may live under nta.ac.in/Download (not searched); CBSE ran JEE Main until 2018 (not an NTA/IISER host, out of scope)",
+   "download": false
+  },
+  {
+   "id": "jee_main_host_jeemain.nta.ac.in",
+   "exam": "JEE_MAIN",
+   "kind": "host",
+   "url": "https://jeemain.nta.ac.in/",
+   "status": "host unavailable (TLS): curl exit 60 'unable to get local issuer certificate'; not used",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2020_H3_paper",
+   "exam": "NEET_UG",
+   "year": 2020,
+   "shift": "H3",
+   "kind": "paper",
+   "url": "https://nta.ac.in/Download/ExamPaper/Paper_20201106080951.pdf",
+   "language": "English+Hindi (two-column, text layer; Hindi uses legacy font -> garbled, English readable)",
+   "status": "found (text PDF; 13.09.2020 exam, booklet H3)",
+   "host": "nta.ac.in",
+   "download": true,
+   "sha256": "aa808f8ab35fc936fa0b631f14d7c329a01e3c57b648eed8b5a37281fc979dbb",
+   "bytes": 601482,
+   "pages": 44,
+   "retrieved": "2026-11-08",
+   "local": "pipeline/raw/neet_ug/2020/neet_ug_2020_H3_paper__Paper_20201106080951.pdf"
+  },
+  {
+   "id": "neet_ug_2020_final_key",
+   "exam": "NEET_UG",
+   "year": 2020,
+   "kind": "key",
+   "url": "https://nta.ac.in/Download/Notice/Notice_20201016104324.pdf",
+   "language": "English",
+   "status": "found (FINAL keys 13.09.2020 books E1..H6 and 14.10.2020 re-exam books W1..Y4)",
+   "host": "nta.ac.in",
+   "download": true,
+   "sha256": "54280c1c2ef1684e444b521e7eca228c4cc792d7bbcf692cebca3dff53b729f9",
+   "bytes": 129177,
+   "pages": 48,
+   "retrieved": "2026-11-08",
+   "local": "pipeline/raw/neet_ug/2020/neet_ug_2020_final_key__Notice_20201016104324.pdf"
+  },
+  {
+   "id": "neet_ug_2020_other_codes",
+   "exam": "NEET_UG",
+   "year": 2020,
+   "kind": "paper",
+   "url": "https://neet.nta.nic.in/document-category/archive/",
+   "status": "found: archive page lists 'English Set E1..H6', 'Eng & Hindi Set E1..H4' and regional-language sets as NEET QP 2020; the 'English'/'Eng & Hindi' cdn copies are partly scanned images (8 MB / 5 MB); not downloaded",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2021_paper",
+   "exam": "NEET_UG",
+   "year": 2021,
+   "kind": "paper",
+   "url": "https://nta.ac.in/Download/ExamPaper/Paper_20211218112124.pdf",
+   "status": "found but unusable for text extraction: regional (Malayalam) booklet P6, English half is a separate 48-page part not in the file; not downloaded",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2021_final_key",
+   "exam": "NEET_UG",
+   "year": 2021,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021699.pdf",
+   "status": "found (FINAL, result declared 01.11.2021, books by code e.g. M1; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2022_final_key",
+   "exam": "NEET_UG",
+   "year": 2022,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/09/2022090743.pdf",
+   "status": "found (final key; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2022_papers",
+   "exam": "NEET_UG",
+   "year": 2022,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2023_final_key",
+   "exam": "NEET_UG",
+   "year": 2023,
+   "kind": "key",
+   "url": "https://www.nta.ac.in/Download/Notice/Notice_20230615172159.pdf",
+   "status": "found (final key; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2023_papers",
+   "exam": "NEET_UG",
+   "year": 2023,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2024_final_key",
+   "exam": "NEET_UG",
+   "year": 2024,
+   "kind": "key",
+   "url": "https://nta.ac.in/Download/Notice/Notice_20240726171027.pdf",
+   "status": "found (FINAL key revised 26.07.2024 per Supreme Court order, 52 pp, codes Q1..; a separate key for the 23.06.2024 re-exam exists on nta.ac.in; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2024_papers",
+   "exam": "NEET_UG",
+   "year": 2024,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2025_final_key",
+   "exam": "NEET_UG",
+   "year": 2025,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2025/06/2025061450.pdf",
+   "status": "found (final key, codes 45-48; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2025_papers",
+   "exam": "NEET_UG",
+   "year": 2025,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2026_reexam_final_key",
+   "exam": "NEET_UG",
+   "year": 2026,
+   "kind": "key",
+   "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716131467523.pdf",
+   "status": "found (final key for re-examination held 21.06.2026; re-examination; the original exam was held 03.05.2026; not downloaded)",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2026_papers",
+   "exam": "NEET_UG",
+   "year": 2026,
+   "kind": "paper",
+   "status": "not found on official sites",
+   "download": false
+  },
+  {
+   "id": "neet_ug_2016_2019",
+   "exam": "NEET_UG",
+   "year": "2016-2019",
+   "kind": "paper+key",
+   "status": "not enumerated (2019 key at nta.ac.in/Download/Notice/20190605125750.pdf seen in search; paper not located)",
+   "download": false
+  }
+ ]
+}

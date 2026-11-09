@@ -1,0 +1,272 @@
+[
+ {
+  "detail": "",
+  "id": "q_6c9a137e8697",
+  "official_answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$2x^2-23x-10=0$"
+   },
+   {
+    "key": "B",
+    "text": "$4x^2-35x+24=0$"
+   },
+   {
+    "key": "C",
+    "text": "$2x^2-19x-10=0$"
+   },
+   {
+    "key": "D",
+    "text": "$2x^2-35x+98=0$"
+   }
+  ],
+  "qno": 8,
+  "reason": "table",
+  "stem": "If the mean of the data (frequency table: Class 5-10, 10-15, 15-20, 20-25, 25-30, 30-35 with Frequency 2, k, 28, 54, k+1, 5) is 21, then k is one of the roots of the equation :"
+ },
+ {
+  "detail": "",
+  "id": "q_71701a080e7d",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$33.34$"
+   },
+   {
+    "key": "B",
+    "text": "$66.67$"
+   },
+   {
+    "key": "C",
+    "text": "$200$"
+   },
+   {
+    "key": "D",
+    "text": "$400$"
+   }
+  ],
+  "qno": 32,
+  "reason": "needs_figure",
+  "stem": "A parallel plate air capacitor has a capacitance $C$. When it is half filled as shown in figure with a dielectric constant $K=5$, the percentage increase in the capacitance is ________. [figure: plates separated by d, upper half (thickness d/2) filled with dielectric K=5]"
+ },
+ {
+  "detail": "",
+  "id": "q_e151ece03890",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{\\sqrt{3}}{2}$"
+   },
+   {
+    "key": "B",
+    "text": "$2\\sqrt{3}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{1}{\\sqrt{3}}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\sqrt{3}$"
+   }
+  ],
+  "qno": 36,
+  "reason": "needs_figure",
+  "stem": "Two short electric dipoles $A$ and $B$ having dipole moment $p_1$ and $p_2$ respectively are placed with their axis mutually perpendicular as shown in the figure. The resultant electric field at a point $x$ is making an angle of $60^\\circ$ with the line joining points $O$ and $x$. The ratio of the dipole moments $p_2/p_1$ is ________. [figure: dipole A along horizontal axis, dipole B vertical, both at O]"
+ },
+ {
+  "detail": "",
+  "id": "q_48219eb9916e",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "[circuit diagram: resistor then diode]"
+   },
+   {
+    "key": "B",
+    "text": "[circuit diagram: diode then Zener diode]"
+   },
+   {
+    "key": "C",
+    "text": "[circuit diagram: resistor then Zener diode]"
+   },
+   {
+    "key": "D",
+    "text": "[circuit diagram: diode then Zener diode, reversed]"
+   }
+  ],
+  "qno": 37,
+  "reason": "needs_figure",
+  "stem": "For the given circuit (shown in part (A)) the time dependent input voltage $v_{in}(t)$ and corresponding output $v_o(t)$ are shown in part (B) and part (C), respectively. Identify the components that are used in the circuit between points X and Y. [figures: circuit with ideal diode and Zener diode (Vz=5 V), input/output voltage graphs, and four circuit options]"
+ },
+ {
+  "detail": "",
+  "id": "q_c63be6c7c4b6",
+  "official_answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{2+\\pi}{1+\\pi}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac{1+\\pi}{1-\\pi}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{2+\\pi}{1-\\pi}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{1+\\pi}{2-\\pi}$"
+   }
+  ],
+  "qno": 39,
+  "reason": "needs_figure",
+  "stem": "Two identical long current carrying wires are bent into the shapes shown in the following figures. If the magnitude of magnetic fields at the centres P and Q of a semicircular arc are $B_1$ and $B_2$ respectively, then the ratio $\\frac{B_1}{B_2}$ is ________. [figures (I) and (II): long straight wires joined by a semicircular arc of radius r]"
+ },
+ {
+  "detail": "",
+  "id": "q_f77d00192efd",
+  "official_answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$0.5$"
+   },
+   {
+    "key": "C",
+    "text": "$1.2$"
+   },
+   {
+    "key": "D",
+    "text": "$0.25$"
+   }
+  ],
+  "qno": 41,
+  "reason": "needs_figure",
+  "stem": "Refer the figure given below. $\\mu_1$ and $\\mu_2$ are refractive indices of air and lens material. The height of image will be ________ cm. [figure: object of height 2 cm at O, centre of curvature C, vertex P, distances 20 cm and 40 cm, mu1 = 1, mu2 = 1.54]"
+ },
+ {
+  "detail": "",
+  "id": "q_bc23080e87cb",
+  "official_answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Predominantly at \"r\""
+   },
+   {
+    "key": "B",
+    "text": "\"r\" and \"u\""
+   },
+   {
+    "key": "C",
+    "text": "\"p\" and \"s\""
+   },
+   {
+    "key": "D",
+    "text": "Predominantly at \"u\""
+   }
+  ],
+  "qno": 66,
+  "reason": "needs_figure",
+  "stem": "For the given molecule, \"x\", the preferred site for the attack of the electrophile is : [structure: N-phenylbenzamide with ring positions labelled p, r (on benzoyl ring) and s, u (on N-phenyl ring)]"
+ },
+ {
+  "detail": "",
+  "id": "q_634e37786d93",
+  "official_answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$P>Q>R$"
+   },
+   {
+    "key": "B",
+    "text": "$R>P>Q$"
+   },
+   {
+    "key": "C",
+    "text": "$R>Q>P$"
+   },
+   {
+    "key": "D",
+    "text": "$P>R>Q$"
+   }
+  ],
+  "qno": 68,
+  "reason": "needs_figure",
+  "stem": "Consider the three aromatic molecules (P, Q and R) whose structures have been given below : [structures: P = N,N-dimethylaniline; Q = 2-methyl-N,N-dimethylaniline; R = 2,6-dimethyl-N,N-dimethylaniline]. The correct order regarding the reactivity of these compounds with benzenediazonium chloride under optimum but slightly acidic medium is :"
+ },
+ {
+  "detail": "",
+  "id": "q_0f8d2675097e",
+  "official_answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\ce{Ca^{2+}}$ and $\\ce{SO4^{2-}}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\ce{Ba^{2+}}$ and $\\ce{PO4^{3-}}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\ce{Mn^{2+}}$ and $\\ce{PO4^{3-}}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\ce{Ba^{2+}}$ and $\\ce{SO4^{2-}}$"
+   }
+  ],
+  "qno": 70,
+  "reason": "no_chapter",
+  "stem": "A salt with few drops of conc. HCl gives apple green colour in flame test. The group precipitate of the salt is dissolved in acetic acid and treated with $\\ce{K2CrO4}$ to give yellow precipitate. When the sodium carbonate extract of the salt solution is heated with conc. $\\ce{HNO3}$ and ammonium molybdate, it resulted a canary yellow precipitate. The cation and anion present in the salt are respectively,"
+ }
+]

@@ -1,0 +1,92 @@
+{
+ "retrieved": "2026-11-08",
+ "note": "IAT: the only host found with IAT past papers/keys is iiseradmission.in, which fails TLS verification (above). Nothing was downloaded and no third-party copies were used. URLs were learned from search results and never fetched. Other IISER hosts (iiserb.ac.in, iiserpune.ac.in, iisermohali.ac.in) verify cleanly but had no IAT past papers in a domain-restricted search.",
+ "hosts_unavailable": [
+  {
+   "host": "iiseradmission.in and www.iiseradmission.in",
+   "checked": "2026-11-08 / 2026-11-09",
+   "error": "curl exit 60: SSL certificate problem: unable to get local issuer certificate; python ssl: CERTIFICATE_VERIFY_FAILED unable to get local issuer certificate (the server does not present a chain that verifies against the system CA store). Not bypassed."
+  }
+ ],
+ "entries": [
+  {
+   "id": "iat_2025_key",
+   "exam": "IAT",
+   "year": 2025,
+   "kind": "key",
+   "url": "https://iiseradmission.in/assets/pdfs/English-Key_IAT-2025.pdf",
+   "status": "host unavailable (TLS): curl exit 60 'SSL certificate problem: unable to get local issuer certificate' (server does not send a chain that verifies); not downloaded",
+   "download": false
+  },
+  {
+   "id": "iat_2026_key_provisional",
+   "exam": "IAT",
+   "year": 2026,
+   "kind": "key",
+   "url": "https://www.iiseradmission.in/assets/pdfs/English-Key_IAT-2026.pdf",
+   "status": "host unavailable (TLS); provisional only",
+   "download": false
+  },
+  {
+   "id": "iat_2024_paper",
+   "exam": "IAT",
+   "year": 2024,
+   "kind": "paper",
+   "url": "https://iiseradmission.in/assets/pdfs/2024_Eng_IAT.pdf",
+   "status": "host unavailable (TLS error exit 60); URL learned from search results only, never fetched",
+   "download": false
+  },
+  {
+   "id": "iat_2023_paper",
+   "exam": "IAT",
+   "year": 2023,
+   "kind": "paper",
+   "url": "https://iiseradmission.in/assets/pdfs/2023-eng-IAT.pdf",
+   "status": "host unavailable (TLS error exit 60); URL learned from search results only, never fetched",
+   "download": false
+  },
+  {
+   "id": "iat_2022_paper",
+   "exam": "IAT",
+   "year": 2022,
+   "kind": "paper",
+   "url": "https://iiseradmission.in/assets/pdfs/2022-eng-IAT.pdf",
+   "status": "host unavailable (TLS error exit 60); URL learned from search results only, never fetched",
+   "download": false
+  },
+  {
+   "id": "iat_2021_paper",
+   "exam": "IAT",
+   "year": 2021,
+   "kind": "paper",
+   "url": "https://iiseradmission.in/assets/pdfs/2021_Eng_IAT.pdf",
+   "status": "host unavailable (TLS error exit 60); URL learned from search results only, never fetched",
+   "download": false
+  },
+  {
+   "id": "iat_2019_paper",
+   "exam": "IAT",
+   "year": 2019,
+   "kind": "paper",
+   "url": "https://iiseradmission.in/assets/pdfs/2019_Eng_IAT.pdf",
+   "status": "host unavailable (TLS error exit 60); URL learned from search results only, never fetched",
+   "download": false
+  },
+  {
+   "id": "iat_2017_paper",
+   "exam": "IAT",
+   "year": 2017,
+   "kind": "paper",
+   "url": "https://iiseradmission.in/assets/pdfs/2017_Eng_IAT.pdf",
+   "status": "host unavailable (TLS error exit 60); URL learned from search results only, never fetched",
+   "download": false
+  },
+  {
+   "id": "iat_other_hosts",
+   "exam": "IAT",
+   "kind": "host",
+   "status": "iiserb.ac.in, iiserpune.ac.in, iisermohali.ac.in verify TLS cleanly but no IAT past papers were found there (search restricted to IISER domains returned only iiseradmission.in)",
+   "download": false
+  }
+ ]
+}

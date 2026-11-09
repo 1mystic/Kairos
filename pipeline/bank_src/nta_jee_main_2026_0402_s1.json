@@ -1,0 +1,3992 @@
+[
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 1,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_3f08153778cd",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$0$"
+   },
+   {
+    "key": "B",
+    "text": "$1$"
+   },
+   {
+    "key": "C",
+    "text": "$2$"
+   },
+   {
+    "key": "D",
+    "text": "$3$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $\\alpha, \\alpha+2$, $\\alpha\\in\\mathbb{Z}$, be the roots of the quadratic equation $x(x+2)+(x+1)(x+3)+(x+2)(x+4)+\\ldots+(x+n-1)(x+n+1)=4n$ for some $n\\in\\mathbb{N}$. Then $n+\\alpha$ is equal to :",
+  "tax": {
+   "chapter": "MAT.CPLX",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 2,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_32a56a4fdf42",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$20$"
+   },
+   {
+    "key": "B",
+    "text": "$31$"
+   },
+   {
+    "key": "C",
+    "text": "$35$"
+   },
+   {
+    "key": "D",
+    "text": "$75$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $x$ and $y$ be real numbers such that $50\\left(\\frac{2x}{1+3i}-\\frac{y}{1-2i}\\right)=31+17i$, $i=\\sqrt{-1}$. Then the value of $10(x-3y)$ is :",
+  "tax": {
+   "chapter": "MAT.CPLX",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 3,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_29941722136d",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$-4$"
+   },
+   {
+    "key": "B",
+    "text": "$4$"
+   },
+   {
+    "key": "C",
+    "text": "$8$"
+   },
+   {
+    "key": "D",
+    "text": "$-8$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $\\alpha,\\beta\\in\\mathbb{R}$ be such that the system of linear equations\n\n$$x+2y+z=5$$\n\n$$2x+y+\\alpha z=5$$\n\n$$8x+4y+\\beta z=18$$\n\nhas no solution. Then $\\frac{\\beta}{\\alpha}$ is equal to :",
+  "tax": {
+   "chapter": "MAT.DET",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 4,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_7ab167a47268",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "only (S1) is correct"
+   },
+   {
+    "key": "B",
+    "text": "only (S2) is correct"
+   },
+   {
+    "key": "C",
+    "text": "both (S1) and (S2) are correct"
+   },
+   {
+    "key": "D",
+    "text": "both (S1) and (S2) are wrong"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $A=\\begin{bmatrix}1&2\\\\1&\\alpha\\end{bmatrix}$ and $B=\\begin{bmatrix}3&3\\\\\\beta&2\\end{bmatrix}$. If $A^2-4A+I=O$ and $B^2-5B-6I=O$, then among the two statements :\n\n(S1): $[(B-A)(B+A)]^T=\\begin{bmatrix}13&15\\\\7&10\\end{bmatrix}$ and\n\n(S2): $\\det(\\operatorname{adj}(A+B))=-5$,",
+  "tax": {
+   "chapter": "MAT.MATX",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 5,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_9a34f1050118",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$4$"
+   },
+   {
+    "key": "B",
+    "text": "$5$"
+   },
+   {
+    "key": "C",
+    "text": "$6$"
+   },
+   {
+    "key": "D",
+    "text": "$7$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $A$ be the set of first $101$ terms of an A.P., whose first term is $1$ and the common difference is $5$ and let $B$ be the set of first $71$ terms of an A.P., whose first term is $9$ and the common difference is $7$. Then the number of elements in $A\\cap B$, which are divisible by $3$, is :",
+  "tax": {
+   "chapter": "MAT.SEQ",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 6,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_07753027b2f0",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$15400$"
+   },
+   {
+    "key": "B",
+    "text": "$17800$"
+   },
+   {
+    "key": "C",
+    "text": "$16800$"
+   },
+   {
+    "key": "D",
+    "text": "$29400$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The number of seven-digit numbers, that can be formed by using the digits $1, 2, 3, 5$ and $7$ such that each digit is used at least once, is :",
+  "tax": {
+   "chapter": "MAT.PNC",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 7,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_f67b5b226b98",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$2$"
+   },
+   {
+    "key": "B",
+    "text": "$4$"
+   },
+   {
+    "key": "C",
+    "text": "$8$"
+   },
+   {
+    "key": "D",
+    "text": "$16$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The number of elements in the set $S=\\left\\{(r,k): k\\in\\mathbb{Z}\\text{ and }{}^{36}C_{r+1}=\\frac{6\\left({}^{35}C_r\\right)}{(k^2-3)}\\right\\}$, is :",
+  "tax": {
+   "chapter": "MAT.PNC",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 9,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_8938cbd922a4",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$11$"
+   },
+   {
+    "key": "B",
+    "text": "$12$"
+   },
+   {
+    "key": "C",
+    "text": "$13$"
+   },
+   {
+    "key": "D",
+    "text": "$14$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let the mid points of the sides of a triangle $ABC$ be $\\left(\\frac{5}{2},7\\right)$, $\\left(\\frac{5}{2},3\\right)$ and $(4,5)$. If its incentre is $(h,k)$, then $3h+k$ is equal to :",
+  "tax": {
+   "chapter": "MAT.LINE",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 10,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_906cb02cefff",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{4\\sqrt{5}}{3}$"
+   },
+   {
+    "key": "B",
+    "text": "$2\\sqrt{5}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{7\\sqrt{5}}{3}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{8\\sqrt{5}}{3}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let an ellipse $\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1$, $a<b$, pass through the point $(4,3)$ and have eccentricity $\\frac{\\sqrt{5}}{3}$. Then the length of its latus rectum is :",
+  "tax": {
+   "chapter": "MAT.CONIC",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 11,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_9e4bb3a2bd78",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{\\sqrt{3}+1}{2\\sqrt{2}}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac{\\sqrt{3}-1}{\\sqrt{2}}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{\\sqrt{3}}{2}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{1}{2}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If $\\sin\\left(\\frac{\\pi}{18}\\right)\\sin\\left(\\frac{5\\pi}{18}\\right)\\sin\\left(\\frac{7\\pi}{18}\\right)=K$, then the value of $\\sin\\left(\\frac{10K\\pi}{3}\\right)$ is :",
+  "tax": {
+   "chapter": "MAT.TRIG",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 12,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_d2813603eaa9",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$3$"
+   },
+   {
+    "key": "B",
+    "text": "$6$"
+   },
+   {
+    "key": "C",
+    "text": "$7$"
+   },
+   {
+    "key": "D",
+    "text": "$9$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $S=\\{x\\in[-\\pi,\\pi]:\\sin x(\\sin x+\\cos x)=a,\\ a\\in\\mathbb{Z}\\}$. Then $n(S)$ is equal to :",
+  "tax": {
+   "chapter": "MAT.TRIG",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 13,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_e620bbbf159d",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$2$"
+   },
+   {
+    "key": "B",
+    "text": "$5$"
+   },
+   {
+    "key": "C",
+    "text": "$7$"
+   },
+   {
+    "key": "D",
+    "text": "$9$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If the point of intersection of the lines $\\frac{x+1}{3}=\\frac{y+a}{5}=\\frac{z+b+1}{7}$ and $\\frac{x-2}{1}=\\frac{y-b}{4}=\\frac{z-2a}{7}$ lies on $xy$-plane, then the value of $a+b$ is :",
+  "tax": {
+   "chapter": "MAT.TDG",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 14,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_3d99c1e2e657",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$30$"
+   },
+   {
+    "key": "B",
+    "text": "$36$"
+   },
+   {
+    "key": "C",
+    "text": "$60$"
+   },
+   {
+    "key": "D",
+    "text": "$72$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If $\\vec{a}$ and $\\vec{b}$ are two vectors such that $|\\vec{a}|=2$ and $|\\vec{b}|=3$, then the maximum value of $3\\left|3\\vec{a}+2\\vec{b}\\right|+4\\left|3\\vec{a}-2\\vec{b}\\right|$ is :",
+  "tax": {
+   "chapter": "MAT.VEC",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 15,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_15432a210d34",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$50$"
+   },
+   {
+    "key": "B",
+    "text": "$80$"
+   },
+   {
+    "key": "C",
+    "text": "$100$"
+   },
+   {
+    "key": "D",
+    "text": "$120$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let a line $L$ passing through the point $(1,1,1)$ be perpendicular to both the vectors $2\\hat{i}+2\\hat{j}+\\hat{k}$ and $\\hat{i}+2\\hat{j}+2\\hat{k}$. If $P(a,b,c)$ is the foot of perpendicular from the origin on the line $L$, then the value of $34(a+b+c)$ is :",
+  "tax": {
+   "chapter": "MAT.TDG",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 16,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_58eea0b36c2d",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$5$"
+   },
+   {
+    "key": "B",
+    "text": "$6$"
+   },
+   {
+    "key": "C",
+    "text": "$8$"
+   },
+   {
+    "key": "D",
+    "text": "$10$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If $\\lim_{x\\to2}\\frac{\\sin\\left(x^3-5x^2+ax+b\\right)}{\\left(\\sqrt{x-1}-1\\right)\\log_e(x-1)}=m$, then $a+b+m$ is equal to :",
+  "tax": {
+   "chapter": "MAT.LIM",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 17,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_d8bb983c5764",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$e^{e}$"
+   },
+   {
+    "key": "B",
+    "text": "$e^{e^2}$"
+   },
+   {
+    "key": "C",
+    "text": "$e^{2e}$"
+   },
+   {
+    "key": "D",
+    "text": "$e^{2^{e}}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If the curve $y=f(x)$ passes through the point $(1,e)$ and satisfies the differential equation $dy=y(2+\\log_e x)\\,dx$, $x>0$, then $f(e)$ is equal to :",
+  "tax": {
+   "chapter": "MAT.DE",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 18,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_c24240fb874b",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$3$"
+   },
+   {
+    "key": "C",
+    "text": "$5$"
+   },
+   {
+    "key": "D",
+    "text": "$7$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The number of critical points of the function $f(x)=\\begin{cases}\\left|\\dfrac{\\sin x}{x}\\right|, & x\\neq0\\\\ 1, & x=0\\end{cases}$ in the interval $(-2\\pi,2\\pi)$ is equal to :",
+  "tax": {
+   "chapter": "MAT.AOD",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 19,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_e600b52db3e4",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$e^2+e^3-\\frac{1}{e^2}-\\frac{1}{e^3}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac{1}{2}\\left(e^2+e^3-\\frac{1}{e^2}-\\frac{1}{e^3}\\right)$"
+   },
+   {
+    "key": "C",
+    "text": "$e^2+e^3-\\frac{1}{2e^2}-\\frac{1}{2e^3}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{1}{2}\\left(e^2+e^3\\right)-\\frac{1}{e^2}-\\frac{1}{e^3}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "needs_review",
+  "stem": "Let $[\\cdot]$ denote the greatest integer function. Then the value of $\\int_0^3\\left(\\frac{e^x+e^{-x}}{[x]!}\\right)dx$ is :",
+  "tax": {
+   "chapter": "MAT.INTG",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 20,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_95760a019745",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{\\pi}{6}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac{\\pi}{4}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{\\pi}{3}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{\\pi}{2}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $y=y(x)$ be the solution curve of the differential equation\n\n$$(1+\\sin x)\\frac{dy}{dx}+(y+1)\\cos x=0,\\ y(0)=0.$$\n\nIf the curve $y=y(x)$ passes through the point $\\left(\\alpha,\\frac{-1}{2}\\right)$, then a value of $\\alpha$ is :",
+  "tax": {
+   "chapter": "MAT.DE",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 4.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 21,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_067dc4c55167",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If the domain of the function $f(x)=\\sqrt{\\log_{(0.6)}\\left(\\left|\\frac{2x-5}{x^2-4}\\right|\\right)}$ is $(-\\infty,a]\\cup\\{b\\}\\cup[c,d)\\cup(e,\\infty)$, then the value of $a+b+c+d+e$ is ________.",
+  "tax": {
+   "chapter": "MAT.FUN",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 91.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 22,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_05415f66d054",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If $\\sum_{k=1}^{n}a_k=6n^3$, then $\\sum_{k=1}^{6}\\left(\\frac{a_{k+1}-a_k}{36}\\right)^2$ is equal to ________.",
+  "tax": {
+   "chapter": "MAT.SEQ",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 81.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 23,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_2228f8464781",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let $a,b,c\\in\\{1,2,3,4\\}$. If the probability, that $ax^2+2\\sqrt{2}\\,bx+c>0$ for all $x\\in\\mathbf{R}$, is $\\frac{m}{n}$, $\\gcd(m,n)=1$, then $m+n$ is equal to ________.",
+  "tax": {
+   "chapter": "MAT.PROB",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 8.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 24,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_b3112a4464ab",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Let a circle $C$ have its centre in the first quadrant, intersect the coordinate axes at exactly three points and cut off equal intercepts from the coordinate axes. If the length of the chord of $C$ on the line $x+y=1$ is $\\sqrt{14}$, then the square of the radius of $C$ is ________.",
+  "tax": {
+   "chapter": "MAT.CONIC",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 192.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 25,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_41cde807fa20",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "If $\\alpha=\\int_0^{2\\sqrt{3}}\\log_2\\left(x^2+4\\right)dx+\\int_2^4\\sqrt{2^x-4}\\,dx$, then $\\alpha^2$ is equal to ________.",
+  "tax": {
+   "chapter": "MAT.INTG",
+   "concepts": [],
+   "subject": "MAT",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 26,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_379e909c7f7a",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$0$"
+   },
+   {
+    "key": "B",
+    "text": "$1$"
+   },
+   {
+    "key": "C",
+    "text": "$-1$"
+   },
+   {
+    "key": "D",
+    "text": "$2$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The dimensional formula of $\\frac{1}{2}\\epsilon_0E^2$ ($\\epsilon_0$ = permittivity of vacuum and $E$ = electric field) is $M^aL^bT^c$. The value of $2a-b+c=$ ________.",
+  "tax": {
+   "chapter": "PHY.UNT",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 27,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_19d647566ae2",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$1.3$"
+   },
+   {
+    "key": "B",
+    "text": "$1.65$"
+   },
+   {
+    "key": "C",
+    "text": "$0.13$"
+   },
+   {
+    "key": "D",
+    "text": "$0.25$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The diameter of a wire measured by a screw gauge of least count $0.001$ cm is $0.08$ cm. The length measured by a scale of least count $0.1$ cm is $150$ cm. When a weight of $100$ N is applied to the wire, the extension in length is $0.5$ cm, measured by a micrometer of least count $0.001$ cm. The error in the measured Young's modulus is $\\alpha\\times10^9\\ \\text{N/m}^2$. The value of $\\alpha$ is ________.\n(Ignore the contribution of the load in Young's modulus error calculation)",
+  "tax": {
+   "chapter": "PHY.UNT",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 28,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_3cbd04271a65",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\sqrt{6}$"
+   },
+   {
+    "key": "B",
+    "text": "$9$"
+   },
+   {
+    "key": "C",
+    "text": "$\\sqrt{33}$"
+   },
+   {
+    "key": "D",
+    "text": "$0$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The velocity of a particle is given as $\\vec{v}=-x\\hat{i}+2y\\hat{j}-z\\hat{k}$ m/s. The magnitude of acceleration at point $(1,2,4)$ is ________ m/s$^2$.",
+  "tax": {
+   "chapter": "PHY.KIN2D",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 29,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 1.1,
+   "label": "H",
+   "n": 0
+  },
+  "id": "q_ac6072681e27",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "A, B and C only"
+   },
+   {
+    "key": "B",
+    "text": "B, C and D only"
+   },
+   {
+    "key": "C",
+    "text": "A, C and D only"
+   },
+   {
+    "key": "D",
+    "text": "A, B and D only"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The position of an object having mass $0.1$ kg as a function of time $t$ is given as $\\vec{r}=\\left(10t^2\\hat{i}+5t^3\\hat{j}\\right)$ m. At $t=1$ s, which of the following statements are correct ?\n\nA. The linear momentum $\\vec{p}=\\left(2\\hat{i}+1.5\\hat{j}\\right)$ kg m/s.\n\nB. The force acting on the object $\\vec{F}=\\left(2\\hat{i}+3\\hat{j}\\right)$ N.\n\nC. The angular momentum of the object about its origin $\\vec{L}=15\\,\\hat{k}$ J s.\n\nD. The torque acting on the object about its origin $\\vec{\\tau}=20\\,\\hat{k}$ N m.\n\nChoose the correct answer from the options given below :",
+  "tax": {
+   "chapter": "PHY.ROT",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 30,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_dd25027b9f63",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{1}{2}$"
+   },
+   {
+    "key": "B",
+    "text": "$2$"
+   },
+   {
+    "key": "C",
+    "text": "$4$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{1}{4}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "A planet ($P_1$) is moving around the star of mass $2M$ in the orbit of radius $R$. Another planet ($P_2$) is moving around another star of mass $4M$ in a orbit of radius $2R$. Ratio of time periods of revolution of $P_2$ and $P_1$ is ________.",
+  "tax": {
+   "chapter": "PHY.GRAV",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 31,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_2984c89c36d1",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$150$"
+   },
+   {
+    "key": "B",
+    "text": "$120$"
+   },
+   {
+    "key": "C",
+    "text": "$130$"
+   },
+   {
+    "key": "D",
+    "text": "$170$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "A particle is rotating in a circular path and at any instant its motion can be described as $\\theta=\\frac{5t^4}{40}-\\frac{t^3}{3}$. The angular acceleration of the particle after $10$ seconds is ________ rad/s$^2$.",
+  "tax": {
+   "chapter": "PHY.ROT",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 33,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_5bb27cde4841",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$2:3:5$"
+   },
+   {
+    "key": "B",
+    "text": "$5:3:2$"
+   },
+   {
+    "key": "C",
+    "text": "$2:5:7$"
+   },
+   {
+    "key": "D",
+    "text": "$7:5:2$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Heat is supplied to a diatomic gas at constant pressure. Then the ratio of $\\Delta Q : \\Delta U : \\Delta W$ is ________.",
+  "tax": {
+   "chapter": "PHY.THD",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 34,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_71f505c1f1e5",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{3}{2}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac{2}{3}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{4}{9}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{9}{4}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Two charged conducting spheres $S_1$ and $S_2$ of radii $8$ cm and $18$ cm are connected to each other by a wire. After equilibrium is established, the ratio of electric fields on $S_1$ and $S_2$ spheres are $E_{S1}$ and $E_{S2}$ respectively. The value of $\\frac{E_{S1}}{E_{S2}}$ is ________.",
+  "tax": {
+   "chapter": "PHY.CAP",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 35,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_9e7b2df4524f",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$120$"
+   },
+   {
+    "key": "B",
+    "text": "$150$"
+   },
+   {
+    "key": "C",
+    "text": "$200$"
+   },
+   {
+    "key": "D",
+    "text": "$300$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The equation of a plane progressive wave is given by $y=5\\cos\\pi\\left(200\\,t-\\frac{x}{150}\\right)$ where $x$ and $y$ are in cm and $t$ is in second. The velocity of the wave is ________ m/s.",
+  "tax": {
+   "chapter": "PHY.WAV",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 38,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_db45d07aa45c",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$36$"
+   },
+   {
+    "key": "B",
+    "text": "$128\\sqrt{2}$"
+   },
+   {
+    "key": "C",
+    "text": "$16$"
+   },
+   {
+    "key": "D",
+    "text": "$64$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "When a coil is placed in a time dependent magnetic field the power dissipated in it is $P$. The number of turns, area of the coil and radius of the coil wire are $N$, $A$ and $r$ respectively. For a second coil number of turns, area of the coil and radius of the coil wire are $2N$, $2A$ and $3r$ respectively. When the first coil is replaced with second coil the power dissipated in it is $\\sqrt{2}\\,\\alpha P$. The value of $\\alpha$ is ________.",
+  "tax": {
+   "chapter": "PHY.EMI",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 40,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_804341afef2b",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$3:4$"
+   },
+   {
+    "key": "B",
+    "text": "$3:2$"
+   },
+   {
+    "key": "C",
+    "text": "$2:1$"
+   },
+   {
+    "key": "D",
+    "text": "$1:2$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "For a thin symmetric prism made of glass (refractive index $1.5$), the ratio of incident angle and minimum deviation will be ________.",
+  "tax": {
+   "chapter": "PHY.ROP",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 42,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_46bbddb2b04a",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$4$"
+   },
+   {
+    "key": "C",
+    "text": "$2$"
+   },
+   {
+    "key": "D",
+    "text": "$3$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "For a certain metal, when monochromatic light of wavelength $\\lambda$ is incident, the stopping potential for photoelectrons is $3V_o$. When the same metal is illuminated by light of wavelength $2\\lambda$, then the stopping potential becomes $V_o$. The threshold wavelength for photoelectric emission for the given metal is $\\alpha\\lambda$. The value of $\\alpha$ is ________.",
+  "tax": {
+   "chapter": "PHY.DUAL",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 43,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_2fda4cd212f5",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$200$"
+   },
+   {
+    "key": "B",
+    "text": "$150$"
+   },
+   {
+    "key": "C",
+    "text": "$400$"
+   },
+   {
+    "key": "D",
+    "text": "$300$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "An electromagnetic wave travelling in $x$-direction is described by field equation $E_y=300\\sin\\omega\\left(t-\\frac{x}{c}\\right)$. If the electron is restricted to move in $y$-direction only with speed of $1.5\\times10^6$ m/s then ratio of maximum electric and magnetic forces acting on the electron is ________.",
+  "tax": {
+   "chapter": "PHY.EMW",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 44,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_41c211482998",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$-1.51$"
+   },
+   {
+    "key": "B",
+    "text": "$-0.85$"
+   },
+   {
+    "key": "C",
+    "text": "$-0.38$"
+   },
+   {
+    "key": "D",
+    "text": "$-0.28$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Angular momentum of an electron in a hydrogen atom is $\\frac{3h}{\\pi}$, then the energy of the electron is ________ eV.",
+  "tax": {
+   "chapter": "PHY.ATM",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 45,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_13728e90aff7",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$10$"
+   },
+   {
+    "key": "B",
+    "text": "$7$"
+   },
+   {
+    "key": "C",
+    "text": "$8$"
+   },
+   {
+    "key": "D",
+    "text": "$11$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "A liquid drop of diameter $2$ mm breaks into $512$ droplets. The change in surface energy is $\\alpha\\times10^{-6}$ J. The value of $\\alpha$ is ________. (Take surface tension of liquid $=0.08$ N/m)",
+  "tax": {
+   "chapter": "PHY.FLU",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 36.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 46,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_c764aa054131",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "In single slit diffraction pattern, the wavelength of light used is $628$ nm and slit width is $0.2$ mm, the angular width of central maximum is $\\alpha\\times10^{-2}$ degrees. The value of $\\alpha$ is ________.",
+  "tax": {
+   "chapter": "PHY.WOP",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 120.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 47,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_f013c36cde86",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "A vessel contains $0.15$ m$^3$ of a gas at pressure $8$ bar and temperature $140\\ ^\\circ$C with $c_p=3R$ and $c_v=2R$. It is expanded adiabatically till pressure falls to $1$ bar. The work done during this process is ________ kJ. ($R$ is gas constant)",
+  "tax": {
+   "chapter": "PHY.THD",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 171.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 48,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_8c01ca04ad3a",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "$1\\ \\mu$C charge moving with velocity $\\vec{v}=\\left(\\hat{i}-2\\hat{j}+3\\hat{k}\\right)$ m/s in the region of magnetic field $\\vec{B}=\\left(2\\hat{i}+3\\hat{j}-5\\hat{k}\\right)$ T. The magnitude of force acting on it is $\\sqrt{\\alpha}\\times10^{-6}$ N. The value of $\\alpha$ is ________.",
+  "tax": {
+   "chapter": "PHY.MAG",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 3.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 49,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_c3b9bccbe3e4",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "A uniform wire of length $l$ of weight $w$ is suspended from the roof with a weight of $W$ at the other end. The stress in the wire at $\\frac{l}{3}$ distance from the top is $\\left(\\frac{W}{A}+\\frac{2}{\\gamma}\\frac{w}{A}\\right)$, where, $A$ is the cross sectional area of the wire. The value of $\\gamma$ is ________.",
+  "tax": {
+   "chapter": "PHY.SOL",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 387.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 50,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_10bbcfac4b02",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "A tub is filled with water and a wooden cube $10\\text{ cm}\\times10\\text{ cm}\\times10\\text{ cm}$ is placed in the water. The wooden cube is found to float on the water with a part of it submerged in water. When a metal coin is placed on the wooden cube, the submerged part is increased by $3.87$ cm. The mass of the metal coin is ________ gram.\n(Take water density as $1$ g/cm$^3$ and density of wood as $0.4$ g/cm$^3$)",
+  "tax": {
+   "chapter": "PHY.FLU",
+   "concepts": [],
+   "subject": "PHY",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 51,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_3dccdb91286b",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$2.1$ g"
+   },
+   {
+    "key": "B",
+    "text": "$4.2$ g"
+   },
+   {
+    "key": "C",
+    "text": "$21$ g"
+   },
+   {
+    "key": "D",
+    "text": "$42$ g"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The mass of iron converted into $\\ce{Fe3O4}$ by the action of $18$ g of steam is :\n(Given : Molar mass of H, O and Fe are $1, 16$ and $56$ g mol$^{-1}$ respectively)\nAssume iron is present in excess :",
+  "tax": {
+   "chapter": "CHE.MOLE",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 52,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_cffdba8f133b",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$8.72\\times10^{-18}$"
+   },
+   {
+    "key": "B",
+    "text": "$1.962\\times10^{-18}$"
+   },
+   {
+    "key": "C",
+    "text": "$1.962\\times10^{-17}$"
+   },
+   {
+    "key": "D",
+    "text": "$6.54\\times10^{-17}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "What is the energy (in J atom$^{-1}$) required for the following process ?\n\n$$\\ce{Li^{2+}(g) -> Li^{3+}(g) + e^-}$$\n\n(Take the ionization energy for the H atom in the ground state as $2.18\\times10^{-18}$ J atom$^{-1}$)",
+  "tax": {
+   "chapter": "CHE.ATOM",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 53,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 1.1,
+   "label": "H",
+   "n": 0
+  },
+  "id": "q_91d48b9f123d",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Both **Statement I** and **Statement II** are true"
+   },
+   {
+    "key": "B",
+    "text": "Both **Statement I** and **Statement II** are false"
+   },
+   {
+    "key": "C",
+    "text": "**Statement I** is true but **Statement II** is false"
+   },
+   {
+    "key": "D",
+    "text": "**Statement I** is false but **Statement II** is true"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Given below are two statements :\n\n**Statement (I) :** The correct sequence of bond lengths in the following species is :\n\n$$\\ce{O2^+} < \\ce{O2} < \\ce{O2^-} < \\ce{O2^{2-}}$$\n\n**Statement (II) :** The correct sequence of number of unpaired electrons in the following species is :\n\n$$\\ce{O2} > \\ce{O2^+} > \\ce{O2^-} > \\ce{O2^{2-}}$$\n\nIn the light of the above statements, choose the **correct** answer from the options given below :",
+  "tax": {
+   "chapter": "CHE.BOND",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 54,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_9d3c5681a898",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$-648$ kJ mol$^{-1}$"
+   },
+   {
+    "key": "B",
+    "text": "$-1350$ kJ mol$^{-1}$"
+   },
+   {
+    "key": "C",
+    "text": "$-2002$ kJ mol$^{-1}$"
+   },
+   {
+    "key": "D",
+    "text": "$-1527$ kJ mol$^{-1}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Consider the following data.\n\n(i) $\\ce{2Al(s) + 6HCl(aq) -> Al2Cl6(aq) + 3H2(g)}$ + 1200 kJ/mol\n\n(ii) $\\ce{H2(g) + Cl2(g) -> 2HCl(g)}$ + 164 kJ/mol.\n\n(iii) $\\ce{HCl(g) + aq -> HCl(aq)}$ + 83 kJ/mol.\n\n(iv) $\\ce{Al2Cl6(s) + aq -> Al2Cl6(aq)}$ + 663 kJ/mol\n\nThe enthalpy of formation of anhydrous solid $\\ce{Al2Cl6}$ is :",
+  "tax": {
+   "chapter": "CHE.THERMO",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 55,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_227a2a7740c8",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$10^{-6}$"
+   },
+   {
+    "key": "B",
+    "text": "$4\\times10^{-4}$"
+   },
+   {
+    "key": "C",
+    "text": "$3\\times10^{-5}$"
+   },
+   {
+    "key": "D",
+    "text": "$3\\times10^{-3}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "$19.5$ g of fluoro acetic acid (molar mass $=78$ g mol$^{-1}$) is dissolved in $500$ g of water at $298$ K. The depression in the freezing point of water was $1^\\circ$C. What is $K_a$ of fluoro acetic acid ? (For water, $K_f=1.86$ K kg mol$^{-1}$). Assume molarity and molality to have same values.",
+  "tax": {
+   "chapter": "CHE.SOLN",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 56,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_8ed5d750c303",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\frac{2\\sqrt[3]{x}}{y}$"
+   },
+   {
+    "key": "B",
+    "text": "$2\\sqrt{\\frac{x}{y}}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\sqrt{\\frac{x}{y}}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{\\sqrt[3]{x}}{\\sqrt{y}}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "The solubility product constants of $\\ce{Ag2CrO4}$ and $\\ce{AgBr}$ are $32x$ and $4y$ respectively at $298$ K.\n\nThe value of $\\left(\\frac{\\text{molarity of }\\ce{Ag2CrO4}}{\\text{molarity of }\\ce{AgBr}}\\right)$ can be expressed as :",
+  "tax": {
+   "chapter": "CHE.IONEQ",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 57,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_c5c13a73f92e",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Overall reaction $\\ce{Fe(s) + 2OH^-(aq) + 2AgBr(s) <=> Fe(OH)2(s) + 2Ag(s) + 2Br^-(aq)}$"
+   },
+   {
+    "key": "B",
+    "text": "$E^\\theta_{cell}=-0.95$ V"
+   },
+   {
+    "key": "C",
+    "text": "Fe is reduced in the electrochemical cell"
+   },
+   {
+    "key": "D",
+    "text": "$E^\\theta_{cell}$ is an extensive property"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "An electrochemical cell is constructed using half cells in the direction of spontaneous change\n\n$\\ce{Fe(OH)2(s) + 2e^- -> Fe(s) + 2OH^-(aq)}$ $\\quad E^\\theta=-0.88$ V\n\n$\\ce{AgBr(s) + e^- -> Ag(s) + Br^-(aq)}$ $\\quad E^\\theta=+0.07$ V\n\nWhich of the following option is **correct** ?",
+  "tax": {
+   "chapter": "CHE.ELEC",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 58,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_55eddf02757e",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$t_{100\\%}=(t_{1/2})^2$ and $t_{100\\%}=(t_{1/2})^{-\\infty}$"
+   },
+   {
+    "key": "B",
+    "text": "$t_{100\\%}=2t_{1/2}$ and $t_{100\\%}=(t_{1/2})^{\\infty}$"
+   },
+   {
+    "key": "C",
+    "text": "$t_{100\\%}=2t_{1/2}$ and $t_{100\\%}=(2t_{1/2})^2$"
+   },
+   {
+    "key": "D",
+    "text": "$t_{100\\%}=(t_{1/2})^{\\infty}$ and $t_{100\\%}=2t_{1/2}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "needs_review",
+  "stem": "$t_{100\\%}$ is the time required for the $100\\%$ completion of the reaction while $t_{1/2}$ is the time required for $50\\%$ of the reaction to be completed. Which of the following option correctly represents the relation between $t_{100\\%}$ and $t_{1/2}$ for zero and first order reactions respectively ?",
+  "tax": {
+   "chapter": "CHE.KIN",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 59,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_e02b6dbe5892",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Both **Statement I** and **Statement II** are true"
+   },
+   {
+    "key": "B",
+    "text": "Both **Statement I** and **Statement II** are false"
+   },
+   {
+    "key": "C",
+    "text": "**Statement I** is true but **Statement II** is false"
+   },
+   {
+    "key": "D",
+    "text": "**Statement I** is false but **Statement II** is true"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Given below are two statements :\n\n**Statement (I) :** The first ionisation enthalpy of the elements Na, Mg, Cl and Ar follows the order Na > Mg > Cl > Ar.\n\n**Statement (II) :** Among Ca, Al, Fe and B, the third ionisation enthalpy is very high for Ca.\n\nIn the light of the above statements, choose the **correct** answer from the options given below :",
+  "tax": {
+   "chapter": "CHE.PERIO",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 60,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 1.1,
+   "label": "H",
+   "n": 0
+  },
+  "id": "q_a85858b729bc",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Both **Statement I** and **Statement II** are true"
+   },
+   {
+    "key": "B",
+    "text": "Both **Statement I** and **Statement II** are false"
+   },
+   {
+    "key": "C",
+    "text": "**Statement I** is true but **Statement II** is false"
+   },
+   {
+    "key": "D",
+    "text": "**Statement I** is false but **Statement II** is true"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Given below are two statements :\n\n**Statement (I) :** Oxidising power of halogens decreases in the order $\\ce{F2}$ > $\\ce{Cl2}$ > $\\ce{Br2}$ > $\\ce{I2}$, which is the basis of \"Layer test\".\n\n**Statement (II) :** \"Layer test\" to identify $\\ce{Br2}$ and $\\ce{I2}$ in aqueous solution involves the oxidation of bromide or iodide into $\\ce{Br2}$ or $\\ce{I2}$ respectively with $\\ce{Cl2}$, which is a type of displacement redox reaction.\n\nIn the light of the above statements, choose the **correct answer** from the options given below :",
+  "tax": {
+   "chapter": "CHE.PBLK",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 61,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_67c8b9df6273",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\ce{Fe^{2+}}$, $\\ce{Sn^{2+}}$, $\\ce{I^-}$, $\\ce{S^{2-}}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\ce{S^{2-}}$, $\\ce{Fe^{3+}}$, $\\ce{I^-}$, $\\ce{C2O4^{2-}}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\ce{Fe^{2+}}$, $\\ce{NO2^-}$, $\\ce{SO2}$, $\\ce{Sn^{4+}}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\ce{Fe^{3+}}$, $\\ce{SO4^{2-}}$, $\\ce{S^{2-}}$, $\\ce{Sn^{4+}}$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Which of the following sets includes all the species that will change the orange colour of $\\ce{K2Cr2O7}$ in acidic medium ?",
+  "tax": {
+   "chapter": "CHE.DF",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 62,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_66e7dd57afcc",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "A-I, B-II, C-III, D-IV"
+   },
+   {
+    "key": "B",
+    "text": "A-II, B-III, C-IV, D-I"
+   },
+   {
+    "key": "C",
+    "text": "A-III, B-IV, C-I, D-II"
+   },
+   {
+    "key": "D",
+    "text": "A-IV, B-I, C-II, D-III"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Match List - I with List - II.\n\nList - I (Chromium (III) Complexes; en = ethylene diamine):\n\n- A. $\\ce{[Cr(CN)6]^{3-}}$\n- B. $\\ce{[CrF6]^{3-}}$\n- C. $\\ce{[Cr(H2O)6]^{3+}}$\n- D. $\\ce{[Cr(en)3]^{3+}}$\n\nList - II ($\\Delta_0$ in cm$^{-1}$):\n\n- I. 15,060\n- II. 17,400\n- III. 22,300\n- IV. 26,600\n\nChoose the **correct** answer from the options given below :",
+  "tax": {
+   "chapter": "CHE.COORD",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 63,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_a3c61297952d",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Both **Statement I** and **Statement II** are true"
+   },
+   {
+    "key": "B",
+    "text": "Both **Statement I** and **Statement II** are false"
+   },
+   {
+    "key": "C",
+    "text": "**Statement I** is true but **Statement II** is false"
+   },
+   {
+    "key": "D",
+    "text": "**Statement I** is false but **Statement II** is true"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Given below are two statements :\n\n**Statement (I) :** 1,2,3-Trihydroxypropane can be separated from water by simple distillation.\n\n**Statement (II) :** An azeotropic mixture cannot be separated by fractional distillation.\n\nIn the light of the above statements, choose the **correct** answer from the options given below :",
+  "tax": {
+   "chapter": "CHE.GOC",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 64,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_67091e4fb8c3",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "Both **Statement I** and **Statement II** are true"
+   },
+   {
+    "key": "B",
+    "text": "Both **Statement I** and **Statement II** are false"
+   },
+   {
+    "key": "C",
+    "text": "**Statement I** is true but **Statement II** is false"
+   },
+   {
+    "key": "D",
+    "text": "**Statement I** is false but **Statement II** is true"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Given below are two statements :\n\n**Statement (I) :** Benzyl chloride reacts faster in $\\mathrm{S_N1}$ mechanism than ethyl chloride.\n\n**Statement (II) :** Ethyl carbocation intermediate is less stabilized by hyperconjugation than benzyl carbocation by resonance.\n\nIn the light of the above statements, choose the **correct answer** from the options given below :",
+  "tax": {
+   "chapter": "CHE.HALO",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 65,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_4273b75657f9",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "$-\\text{CONH}_2,\\ >\\text{C=O},\\ -\\text{CHO},\\ -\\text{NH}_2,\\ -\\text{C}\\equiv\\text{C}-$"
+   },
+   {
+    "key": "B",
+    "text": "$-\\text{CONH}_2,\\ -\\text{COOCH}_3,\\ -\\text{CHO},\\ -\\text{NH}_2,\\ -\\text{OH}$"
+   },
+   {
+    "key": "C",
+    "text": "$-\\text{CONH}_2,\\ -\\text{CHO},\\ >\\text{C=O},\\ -\\text{NH}_2,\\ -\\text{C}\\equiv\\text{C}-$"
+   },
+   {
+    "key": "D",
+    "text": "$-\\text{CONH}_2,\\ -\\text{CHO},\\ -\\text{CN},\\ -\\text{NH}_2,\\ -\\text{C}\\equiv\\text{C}-$"
+   }
+  ],
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "In IUPAC nomenclature, the **correct** order of decreasing priority of functional group is :",
+  "tax": {
+   "chapter": "CHE.GOC",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 67,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_19c3f866e349",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "A-IV, B-II, C-I, D-III"
+   },
+   {
+    "key": "B",
+    "text": "A-IV, B-II, C-III, D-I"
+   },
+   {
+    "key": "C",
+    "text": "A-II, B-IV, C-I, D-III"
+   },
+   {
+    "key": "D",
+    "text": "A-II, B-IV, C-III, D-I"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Match List - I with List - II.\n\nList - I (Mixture of Compounds):\n\n- A. Diethyl amine + Ethyl amine\n- B. Acetaldehyde + Acetone\n- C. Ethanol + Phenol\n- D. Benzoic acid + Cinnamic acid\n\nList - II (Reagent used to distinguish):\n\n- I. Bromine water\n- II. $\\ce{CHCl3}$ + KOH, $\\Delta$\n- III. Neutral $\\ce{FeCl3}$\n- IV. Ammoniacal silver nitrate\n\nChoose the **correct** answer from the options given below :",
+  "tax": {
+   "chapter": "CHE.CARB",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 69,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_338fc2abcc5f",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "options": [
+   {
+    "key": "A",
+    "text": "A-II, B-I, C-III, D-IV"
+   },
+   {
+    "key": "B",
+    "text": "A-IV, B-III, C-II, D-I"
+   },
+   {
+    "key": "C",
+    "text": "A-III, B-IV, C-I, D-II"
+   },
+   {
+    "key": "D",
+    "text": "A-I, B-III, C-II, D-IV"
+   }
+  ],
+  "skills": [
+   "conceptual"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Match List - I with List - II.\n\nList - I (Vitamin):\n\n- A. Vitamin $\\mathrm{B_1}$\n- B. Vitamin $\\mathrm{B_2}$\n- C. Vitamin $\\mathrm{B_6}$\n- D. Vitamin C\n\nList - II (Name):\n\n- I. Pyridoxine\n- II. Ascorbic acid\n- III. Thiamine\n- IV. Riboflavin\n\nChoose the **correct** answer from the options given below :",
+  "tax": {
+   "chapter": "CHE.BIOM",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "SCQ",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 33.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 71,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_0fac6101be86",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "$5.33$ g of $\\ce{CrCl3.6H2O}$, which is a $1:3$ electrolyte, is dissolved in water and is passed through a cation exchanger. The chloride ions in the eluted solution, on treatment with $\\ce{AgNO3}$ results in $8.61$ g of $\\ce{AgCl}$. The ratio of moles of complex reacted and moles of $\\ce{AgCl}$ formed is ________ $\\times10^{-2}$. (Nearest integer)\n[Molar mass in g mol$^{-1}$ Cr : 52, Ag : 108, Cl : 35.5, H : 1, O : 16]",
+  "tax": {
+   "chapter": "CHE.COORD",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 14.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 72,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_ffbf9b9dfb6a",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "Consider the isomers of hydrocarbon with molecular formula $\\ce{C5H10}$. These isomers do not decolourise $\\ce{KMnO4}$ solution. These isomers are subjected to chlorination with chlorine in presence of light to give monochloro compounds. The total number of monochloro compounds (structural isomers only) formed is ________.",
+  "tax": {
+   "chapter": "CHE.HC",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 17.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 73,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_103fc759c9b1",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "One mole of an alkane (x) requires $8$ mole oxygen for complete combustion. Sum of number of carbon and hydrogen atoms in the alkane (x) is ________.",
+  "tax": {
+   "chapter": "CHE.MOLE",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 41.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 74,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": 0.1,
+   "label": "M",
+   "n": 0
+  },
+  "id": "q_e2321a9ed54b",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "For reaction $\\ce{A -> P}$, rate constant $k=1.5\\times10^{3}\\ \\text{s}^{-1}$ at $27^\\circ$C\nIf activation energy for the above reaction is $60$ kJ mol$^{-1}$, then the temperature (in $^\\circ$C) at which rate constant, $k=4.5\\times10^{3}\\ \\text{s}^{-1}$ is ________. (Nearest integer)\nGiven : $\\log 2=0.30$, $\\log 3=0.48$, $R=8.3$ J K$^{-1}$ mol$^{-1}$, $\\ln 10=2.3$",
+  "tax": {
+   "chapter": "CHE.KIN",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ },
+ {
+  "answer": {
+   "value": 727.0
+  },
+  "appearances": [
+   {
+    "exam": "JEE_MAIN",
+    "qno": 75,
+    "session": 2,
+    "shift": "2026-04-02-S1",
+    "year": 2026
+   }
+  ],
+  "difficulty": {
+   "b": -0.9,
+   "label": "E",
+   "n": 0
+  },
+  "id": "q_f948fdff5a03",
+  "images": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   }
+  },
+  "skills": [
+   "calculation"
+  ],
+  "solution": null,
+  "source": {
+   "kind": "official",
+   "license": "Public exam paper published by NTA; used per project source policy (see content/sources/nta/ATTRIBUTION.md)",
+   "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/202604092096865379.pdf"
+  },
+  "status": "verified",
+  "stem": "At the transition temperature $T$, $\\ce{A <=> B}$ and $\\Delta G^0=105-35\\log T$ where A and B are two states of substance X. The transition temperature in $^\\circ$C when pressure is $1$ atm is ________. (Nearest integer)",
+  "tax": {
+   "chapter": "CHE.THERMO",
+   "concepts": [],
+   "subject": "CHE",
+   "topics": []
+  },
+  "type": "INT",
+  "version": 1
+ }
+]
