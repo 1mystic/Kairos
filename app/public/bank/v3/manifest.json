@@ -1,0 +1,1543 @@
+{
+ "files": [
+  {
+   "bytes": 8094,
+   "chapter": "AI.LOG",
+   "count": 75,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/AI/AI.LOG.json.gz",
+   "sha256": "eceb9aab885a41998e9e1c14e42a22a69cf7442696efc176f628c1ae70bf2262",
+   "subject": "AI"
+  },
+  {
+   "bytes": 2106,
+   "chapter": "AI.SRCH",
+   "count": 7,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/AI/AI.SRCH.json.gz",
+   "sha256": "ff4b7bb8f84b78daca6b75427b6b4d774fa706ca438ab2c90c301a9ee4b2f6a5",
+   "subject": "AI"
+  },
+  {
+   "bytes": 1520,
+   "chapter": "AI.UNC",
+   "count": 5,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/AI/AI.UNC.json.gz",
+   "sha256": "11c5e122c276e9b90d9be8facc3983f4af48332522af74d98cb6d7f30805be7a",
+   "subject": "AI"
+  },
+  {
+   "bytes": 1907,
+   "chapter": "CO.LIM",
+   "count": 10,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/CO/CO.LIM.json.gz",
+   "sha256": "395dbc9f143cee8bb5a72b21b0a449fdb8158857f0beb61046453847f632af65",
+   "subject": "CO"
+  },
+  {
+   "bytes": 2851,
+   "chapter": "CO.OPT",
+   "count": 24,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/CO/CO.OPT.json.gz",
+   "sha256": "7bb5bdc0fbfcc4ba11ece116113aa8ac78cd42ec7186ddc2c0f5bf3d97f26a20",
+   "subject": "CO"
+  },
+  {
+   "bytes": 1363,
+   "chapter": "CO.TAY",
+   "count": 6,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/CO/CO.TAY.json.gz",
+   "sha256": "9c1da18b5cdd51ad77166a8923135c91af6fb80197d70e432a6608a9587472f5",
+   "subject": "CO"
+  },
+  {
+   "bytes": 1254,
+   "chapter": "DBW.DW",
+   "count": 4,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/DBW/DBW.DW.json.gz",
+   "sha256": "32d3f2a7cacf0bca73f9d9bc1b38ac391ce3ef489a30e1e0e416a76961a838cc",
+   "subject": "DBW"
+  },
+  {
+   "bytes": 823,
+   "chapter": "DBW.ER",
+   "count": 2,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/DBW/DBW.ER.json.gz",
+   "sha256": "299bc95dbcfca53fed1bca234d3d6a805708e5b24570bd3eea36800959d181eb",
+   "subject": "DBW"
+  },
+  {
+   "bytes": 1129,
+   "chapter": "DBW.NF",
+   "count": 4,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/DBW/DBW.NF.json.gz",
+   "sha256": "aa31786aeabd164dcda9581e13da5c57d3bd16cd06f5e7a8d7de73ed4be9ebeb",
+   "subject": "DBW"
+  },
+  {
+   "bytes": 2581,
+   "chapter": "DBW.REL",
+   "count": 9,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/DBW/DBW.REL.json.gz",
+   "sha256": "8e0cb2810b15d029abb22ea97598a82ee227bf2b6ae95a8e952c409f9eec546b",
+   "subject": "DBW"
+  },
+  {
+   "bytes": 549,
+   "chapter": "DBW.XFM",
+   "count": 2,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/DBW/DBW.XFM.json.gz",
+   "sha256": "d40f2b91600438d07069bf76cffc89638c5378d2ea55acf3d950d9416cb580ed",
+   "subject": "DBW"
+  },
+  {
+   "bytes": 2162,
+   "chapter": "GA.ANAL",
+   "count": 9,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/GA/GA.ANAL.json.gz",
+   "sha256": "6303f22d4796771d942ac90ddff56ed97917f7f95664b325fca96e89a37567da",
+   "subject": "GA"
+  },
+  {
+   "bytes": 20831,
+   "chapter": "GA.QUANT",
+   "count": 164,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/GA/GA.QUANT.json.gz",
+   "sha256": "e64c0e22b37c57d3f9cdfa35af4a40815b3b5116f6b072b907ee00f460a71c0f",
+   "subject": "GA"
+  },
+  {
+   "bytes": 965,
+   "chapter": "GA.SPAT",
+   "count": 3,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/GA/GA.SPAT.json.gz",
+   "sha256": "651091ef3915cb9ab515929f7c2b3316c67455ce8e1d46e857663aa7bfbb3ea6",
+   "subject": "GA"
+  },
+  {
+   "bytes": 1873,
+   "chapter": "GA.VERB",
+   "count": 7,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/GA/GA.VERB.json.gz",
+   "sha256": "4434819c5aa473420a60bcb4f0dab78b2726916411fbc570956332b7af7ca5a9",
+   "subject": "GA"
+  },
+  {
+   "bytes": 734,
+   "chapter": "LA.DEC",
+   "count": 2,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/LA/LA.DEC.json.gz",
+   "sha256": "dac15b07bffbca56a156fc0b1c32094a84cc4254154ee8c799ea5cba448e829b",
+   "subject": "LA"
+  },
+  {
+   "bytes": 1393,
+   "chapter": "LA.EIG",
+   "count": 6,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/LA/LA.EIG.json.gz",
+   "sha256": "983a44a972c3dc8bd05c65a5a7d6e841c901822c1192e0f9946474d754b2e247",
+   "subject": "LA"
+  },
+  {
+   "bytes": 1564,
+   "chapter": "LA.MAT",
+   "count": 6,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/LA/LA.MAT.json.gz",
+   "sha256": "1a961ab2a339ce0ddfef2be08156781eeae458c793fa33f7657f6fa13861097d",
+   "subject": "LA"
+  },
+  {
+   "bytes": 988,
+   "chapter": "LA.PROJ",
+   "count": 4,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/LA/LA.PROJ.json.gz",
+   "sha256": "c9cda82faeec47e2823937ae6a7be9831e2b2fe4f307bc0f25be6231ef7dea3a",
+   "subject": "LA"
+  },
+  {
+   "bytes": 1271,
+   "chapter": "LA.SYS",
+   "count": 4,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/LA/LA.SYS.json.gz",
+   "sha256": "f860c7864d3b86ba3933e37feb6c4a5342c5524c528dcb32bd9c5b2933a7fe30",
+   "subject": "LA"
+  },
+  {
+   "bytes": 1706,
+   "chapter": "LA.VS",
+   "count": 10,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/LA/LA.VS.json.gz",
+   "sha256": "3273dc28574376d777afd64e591dc0191aa754244531ac57efb7e35b0bf586d8",
+   "subject": "LA"
+  },
+  {
+   "bytes": 2458,
+   "chapter": "ML.CLS",
+   "count": 12,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/ML/ML.CLS.json.gz",
+   "sha256": "82dd75194d0307a9220109c6f175d7155b1487dfe76d6441c851c0bc7b5e0f5b",
+   "subject": "ML"
+  },
+  {
+   "bytes": 1875,
+   "chapter": "ML.CLU",
+   "count": 8,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/ML/ML.CLU.json.gz",
+   "sha256": "775de44e3b510f0404aa332e86957953e928adb642127c6ca2f4851950b8acf3",
+   "subject": "ML"
+  },
+  {
+   "bytes": 1036,
+   "chapter": "ML.DR",
+   "count": 3,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/ML/ML.DR.json.gz",
+   "sha256": "523c0686757d5f880f77c4f0c058e594653f43700fe54fe4a015ce70574fdb01",
+   "subject": "ML"
+  },
+  {
+   "bytes": 1665,
+   "chapter": "ML.EVAL",
+   "count": 8,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/ML/ML.EVAL.json.gz",
+   "sha256": "4090a83d854e4f697ff35daf9322460f4a01e43cedf134030ecdaa72ff22d045",
+   "subject": "ML"
+  },
+  {
+   "bytes": 1733,
+   "chapter": "ML.NN",
+   "count": 8,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/ML/ML.NN.json.gz",
+   "sha256": "0aa0024f073ba856bb60696443cc06004aacf33da1907efcd3ba454caadcf561",
+   "subject": "ML"
+  },
+  {
+   "bytes": 2189,
+   "chapter": "ML.REG",
+   "count": 11,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/ML/ML.REG.json.gz",
+   "sha256": "8b526fdc7dec09529fcb680111b3c8224655800616d478a01bcce5fab85154c6",
+   "subject": "ML"
+  },
+  {
+   "bytes": 3304,
+   "chapter": "PDS.ALG",
+   "count": 19,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PDS/PDS.ALG.json.gz",
+   "sha256": "93373629d191c3136794eaa752c291434c34c3e4d3e71f71afa1e25426a27cd2",
+   "subject": "PDS"
+  },
+  {
+   "bytes": 3675,
+   "chapter": "PDS.DS",
+   "count": 17,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PDS/PDS.DS.json.gz",
+   "sha256": "d2f3ee92511eb98e8bc03e1438a6fb709ab455f68014139e4352f9b1faa4cc4f",
+   "subject": "PDS"
+  },
+  {
+   "bytes": 2246,
+   "chapter": "PDS.GRAPH",
+   "count": 10,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PDS/PDS.GRAPH.json.gz",
+   "sha256": "3b3998a5cb304f58cb00d0ecfb106f9c59ff185e7399517f8e1cf14c6e98cd36",
+   "subject": "PDS"
+  },
+  {
+   "bytes": 2672,
+   "chapter": "PDS.PY",
+   "count": 28,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PDS/PDS.PY.json.gz",
+   "sha256": "ffe2ff29602c4cf3f6ad384f10e552924837dc4f4c3e3f9822ef15356c84ffe6",
+   "subject": "PDS"
+  },
+  {
+   "bytes": 1109,
+   "chapter": "PRS.CLT",
+   "count": 3,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.CLT.json.gz",
+   "sha256": "b77bfc6dd9cbfc0253ee3cfcbe2e094d801fc01f13cc1de070f3fbe7d1110a5e",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 2203,
+   "chapter": "PRS.CNT",
+   "count": 9,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.CNT.json.gz",
+   "sha256": "2b75d7e0e084e604ac6267ebe8f91a5436f54e7bd53352fe70f223beb011e229",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 1531,
+   "chapter": "PRS.CRV",
+   "count": 7,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.CRV.json.gz",
+   "sha256": "f3cf904399959fdb2a982396265a1b925d49ff1366029c40096b9167515874b2",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 9121,
+   "chapter": "PRS.DESC",
+   "count": 48,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.DESC.json.gz",
+   "sha256": "cd0b83cb2ebabca54c83a8ceaf273e076ffb2f647a8040ea848c478615ddf532",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 1500,
+   "chapter": "PRS.DRV",
+   "count": 6,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.DRV.json.gz",
+   "sha256": "9a621dc16e2c758b0206a7a1d3e01260f89dd317e0772465b1bf1bfd01c6a016",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 3488,
+   "chapter": "PRS.INF",
+   "count": 17,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.INF.json.gz",
+   "sha256": "7639e504fd8e6181cad50a6dbb0c0fec0b55f5bd7f99c2d8a0fc05bc01006a50",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 1667,
+   "chapter": "PRS.MOM",
+   "count": 7,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.MOM.json.gz",
+   "sha256": "a4aaed338964012be47bddd7eef58b870c8aba91035bf9c243f86670586ae615",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 8303,
+   "chapter": "PRS.PROB",
+   "count": 57,
+   "exam": "GATE_DA",
+   "kind": "shard",
+   "path": "GATE_DA/PRS/PRS.PROB.json.gz",
+   "sha256": "2098b6ed1f93247d350af952733310943ad124722a79b7e31b1f8bc287d97f37",
+   "subject": "PRS"
+  },
+  {
+   "bytes": 478,
+   "chapter": "BOT.CCD",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/BOT/BOT.CCD.json.gz",
+   "sha256": "9806bc272cda392622b9ae9a65a1cd2a951b8db57876e39ea9c569422a57575d",
+   "subject": "BOT"
+  },
+  {
+   "bytes": 545,
+   "chapter": "BOT.GEN",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/BOT/BOT.GEN.json.gz",
+   "sha256": "96f1abd2e34c3134f0085554757ab0dc143fa9c79f8870d01ddc6b395bbfa28f",
+   "subject": "BOT"
+  },
+  {
+   "bytes": 537,
+   "chapter": "BOT.PHS",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/BOT/BOT.PHS.json.gz",
+   "sha256": "d8f8ca3e238ea60443529afd63032f6e98d3f140266b00a34eba9947407f99d0",
+   "subject": "BOT"
+  },
+  {
+   "bytes": 548,
+   "chapter": "CHE.ATOM",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.ATOM.json.gz",
+   "sha256": "ffbbdab193dc6adc59e510d3be6975d8aa7fde0dcd03a03fabdff9f74d247d24",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 514,
+   "chapter": "CHE.BOND",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.BOND.json.gz",
+   "sha256": "93a2545a92de6ca26653a902da21fa122cbff10ace0001155f0ff847bbca3261",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 510,
+   "chapter": "CHE.CHEQ",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.CHEQ.json.gz",
+   "sha256": "3c5376a56eb8ea029ca884faa44f67ae51d7adc6a675fccb3ff72a56e685f6a7",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 509,
+   "chapter": "CHE.IONEQ",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.IONEQ.json.gz",
+   "sha256": "8e4f85a9b3b26d2ca77e94f1268f00ab580c6a61a8111d4eed41b29d915b789f",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 505,
+   "chapter": "CHE.KIN",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.KIN.json.gz",
+   "sha256": "5424bb96d03bbd62417f074e1b6e0c31ed81b82c7ded175b8fc8a64d8d497356",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 464,
+   "chapter": "CHE.MOLE",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.MOLE.json.gz",
+   "sha256": "0d27d8d92446f4daf6b15de0204afad113660125c0574fc5f12deecfb3ade8d7",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 563,
+   "chapter": "CHE.REDOX",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/CHE/CHE.REDOX.json.gz",
+   "sha256": "dbddabd83a397323cd5080448f4d441a6a83504f7e3d1f4c05a200f150a2d66c",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 425,
+   "chapter": "MAT.CPLX",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/MAT/MAT.CPLX.json.gz",
+   "sha256": "57b7fb5533569a40cd430e267181391a2728e426187907d943a6aa32f96d0226",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 470,
+   "chapter": "MAT.INTG",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/MAT/MAT.INTG.json.gz",
+   "sha256": "c49b05524418c9f2a5b3580789a0faf6a786e99f867795beb60cba34a24e4ae4",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 475,
+   "chapter": "MAT.LIM",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/MAT/MAT.LIM.json.gz",
+   "sha256": "41a2d2111f7d723eb871f8972a631654c0bd8e0b9510ece3e65d96395575e2b2",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 505,
+   "chapter": "MAT.PNC",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/MAT/MAT.PNC.json.gz",
+   "sha256": "82f18287dfacfe6edc76156310d601755d55f46c159147ea7c6526261041fced",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 469,
+   "chapter": "MAT.SEQ",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/MAT/MAT.SEQ.json.gz",
+   "sha256": "4cb70ca6fc85251487e24d6616725debc84ad56518f6a2d3b50b21d70fb3fbd2",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 827,
+   "chapter": "PHY.CUR",
+   "count": 2,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.CUR.json.gz",
+   "sha256": "2668c0e8504f7849b76e07c7faf7fea583c4096bb300932c16b6fa0da2ae1fa0",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 553,
+   "chapter": "PHY.GRAV",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.GRAV.json.gz",
+   "sha256": "f633211689e7a1d2a81a67aa022c618792508b6ba8ad4fdac0961d8b3b7ea44a",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 512,
+   "chapter": "PHY.KIN1D",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.KIN1D.json.gz",
+   "sha256": "c7fc4fa67ecd01cafb13d556f4d1094cf4356d716fd6616e75e0836f6e99c756",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 654,
+   "chapter": "PHY.LOM",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.LOM.json.gz",
+   "sha256": "d92952744ecb3343d8d5288a40e577b9f18299a864b420bda7e9940fba30af7b",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 498,
+   "chapter": "PHY.OSC",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.OSC.json.gz",
+   "sha256": "1359918c443a1ecbab8b1e32f7c33985bfc08124b47664cbd4f41b269e27406a",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 599,
+   "chapter": "PHY.ROT",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.ROT.json.gz",
+   "sha256": "747c93b5c859ea9b90bf8ed456cb82edff1da452c0e07f28a0bee0acddbdb3f0",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 560,
+   "chapter": "PHY.WEP",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/PHY/PHY.WEP.json.gz",
+   "sha256": "75b6b1933d4d239aae8cb9fb733f1de2438b276909c4dbf527babbc7ca52f124",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 411,
+   "chapter": "ZOO.CIR",
+   "count": 1,
+   "exam": "IAT",
+   "kind": "shard",
+   "path": "IAT/ZOO/ZOO.CIR.json.gz",
+   "sha256": "4fe79bc510b14d086220e3b54a95a2ba182d16019b6129dcf59ccd53b18b9bca",
+   "subject": "ZOO"
+  },
+  {
+   "bytes": 894,
+   "chapter": "CHE.AMN",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.AMN.json.gz",
+   "sha256": "161f2c77fd71159b2e12f51dc13135632c337e391a23761e51e498d70739a3b6",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1710,
+   "chapter": "CHE.ATOM",
+   "count": 5,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.ATOM.json.gz",
+   "sha256": "587051b5eae0f0d420e8ffabf227970f2e5fd49da2836dce336046ed3ba68ffa",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 874,
+   "chapter": "CHE.BIOM",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.BIOM.json.gz",
+   "sha256": "66115f6fdbd6e478f88b4bbf8695bc7be487125c78c73255e2a48ddb9d21b467",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 2289,
+   "chapter": "CHE.BOND",
+   "count": 12,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.BOND.json.gz",
+   "sha256": "8b653c82582ee9f32e1b34ac65eacaf246f8fc96c6d08f4dce4d07cb9a375614",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 800,
+   "chapter": "CHE.CARB",
+   "count": 1,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.CARB.json.gz",
+   "sha256": "2f878f0d15f674352229b26930dba604821bb2a21a4690253abb4443cf84e99e",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 854,
+   "chapter": "CHE.CHEQ",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.CHEQ.json.gz",
+   "sha256": "79aca0bd501b040ab6bfc4827cd4dc059af13871be15d3eb35e964ee63e1cdaf",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 3295,
+   "chapter": "CHE.COORD",
+   "count": 14,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.COORD.json.gz",
+   "sha256": "4e2a097084d202d29941f8a7cf884331bfcedc3fb4169d6339761aecaaa77ea3",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1882,
+   "chapter": "CHE.DF",
+   "count": 7,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.DF.json.gz",
+   "sha256": "874853438a03e8f06cfc7a886bee42b41782f3b3b1ff935573da849fa6277181",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 2712,
+   "chapter": "CHE.ELEC",
+   "count": 10,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.ELEC.json.gz",
+   "sha256": "76902b943db30e5ba73f187289d9d6acdf361822219eae9ec4a86e733dc20049",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1212,
+   "chapter": "CHE.GOC",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.GOC.json.gz",
+   "sha256": "ed2c947ac2b2fa1ecc9903df716617cdc77d3734e55eae4c2ae84edd6851a428",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1527,
+   "chapter": "CHE.IONEQ",
+   "count": 6,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.IONEQ.json.gz",
+   "sha256": "b231bf41096d7b9e61600005dcd2a1abe64b78b37e6a2476f460641914f1bb79",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1724,
+   "chapter": "CHE.KIN",
+   "count": 5,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.KIN.json.gz",
+   "sha256": "3ec421f8c98bf0f2bb9221a2894d4cecfb167dd808817c8a3c0d046434548e05",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1719,
+   "chapter": "CHE.MOLE",
+   "count": 7,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.MOLE.json.gz",
+   "sha256": "88c43ce685b941c99bbd28996412548f2a6e2f3c8be08b71f268832caee04835",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 3812,
+   "chapter": "CHE.PBLK",
+   "count": 22,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.PBLK.json.gz",
+   "sha256": "5fb075415720b8ab5bf78bd1b4196aef98a6c1d018d8a2fbf08dc125596ed924",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 464,
+   "chapter": "CHE.PERIO",
+   "count": 1,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.PERIO.json.gz",
+   "sha256": "eedf00ef1719a24ced83a13c1909399dc973352e77306ed910632ef8e8febc56",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 1987,
+   "chapter": "CHE.REDOX",
+   "count": 9,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.REDOX.json.gz",
+   "sha256": "a77c70b6fde86cd5a8b39f089aa033244cee0282d1150f75434226eb146aea45",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 2100,
+   "chapter": "CHE.SOLN",
+   "count": 10,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.SOLN.json.gz",
+   "sha256": "7e2da06aa0c16338eca642b45497164d22e9c666efdf6a0f93931908c4bd914e",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 2914,
+   "chapter": "CHE.THERMO",
+   "count": 8,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/CHE/CHE.THERMO.json.gz",
+   "sha256": "f0971c8de50d6df4b68231a4cabedfd9431897c9188b6aa2b22d4beeb5a011e5",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 2972,
+   "chapter": "MAT.AOD",
+   "count": 16,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.AOD.json.gz",
+   "sha256": "320b34198233871af249881e22d01193ae6f02260a20c58969769d3ec5488533",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 1828,
+   "chapter": "MAT.AOI",
+   "count": 8,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.AOI.json.gz",
+   "sha256": "55c9c104a0fe6dacb76d9f418f0e4ff9df354c4dab4a7ed9b0e75bb4de092a06",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 1275,
+   "chapter": "MAT.BINO",
+   "count": 5,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.BINO.json.gz",
+   "sha256": "35f4b66f4ce5f6c90b2dce8f2d38fc5f5ea8189d40286caa9d3b6995607a5476",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 1694,
+   "chapter": "MAT.CD",
+   "count": 8,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.CD.json.gz",
+   "sha256": "df45528f06a57ffd84a960184a65f8787ef23a8bd00c2aa69257020aa90144df",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 4374,
+   "chapter": "MAT.CONIC",
+   "count": 22,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.CONIC.json.gz",
+   "sha256": "be13437b5f0f1923d93413ce1b5d38b92c641ccc7d6cffdf45888254ca15ba44",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 3786,
+   "chapter": "MAT.CPLX",
+   "count": 21,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.CPLX.json.gz",
+   "sha256": "fac9bf7028303ebd26d8233449809f96e7c5df19aad183c4d9e5defc2693194a",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2237,
+   "chapter": "MAT.DE",
+   "count": 12,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.DE.json.gz",
+   "sha256": "deabda4224df687ba6673e90aab2ba7bcad192f3fbf518cb3e961e31e9ae6da6",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2500,
+   "chapter": "MAT.DET",
+   "count": 10,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.DET.json.gz",
+   "sha256": "3bdaada7d5a6bf1a0f792e835926385fb6d9db824d7e18cb9ad7ec28069a6350",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 578,
+   "chapter": "MAT.FUN",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.FUN.json.gz",
+   "sha256": "585cf47006374941b03603868ca0e8a810cc47ad19aed1968ca2a179f05e5a58",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2620,
+   "chapter": "MAT.INTG",
+   "count": 15,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.INTG.json.gz",
+   "sha256": "33a542b316353bd9023e632bd0ba6c5d4858068e4c2d3e0e1381e4041b5fc55a",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 1621,
+   "chapter": "MAT.ITF",
+   "count": 7,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.ITF.json.gz",
+   "sha256": "add126eac34b5cdfbfe461215de6c31deb4696f31cfe941065fb30864d3dd264",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2112,
+   "chapter": "MAT.LIM",
+   "count": 12,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.LIM.json.gz",
+   "sha256": "c06e8c2dcb9b3b1d596e494142a708834f448d33011332892a95f658a53920da",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 918,
+   "chapter": "MAT.LINE",
+   "count": 3,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.LINE.json.gz",
+   "sha256": "5758ccacf265ba3b19a94ba1f780274fecb7f13b206789b4ddc4e8ec79a18f99",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2844,
+   "chapter": "MAT.MATX",
+   "count": 14,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.MATX.json.gz",
+   "sha256": "88fbe36f0837d704fd46a587cf494bd5e190fbde57d5c12b1b1971b8dcefc9c3",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2181,
+   "chapter": "MAT.PNC",
+   "count": 11,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.PNC.json.gz",
+   "sha256": "4f5d3add8c253d2007c0ba040ecbaba980640bbedab118944afd0fabe0a29763",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2289,
+   "chapter": "MAT.PROB",
+   "count": 10,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.PROB.json.gz",
+   "sha256": "15253adf853883425f128e3d2fa277c866c4211c80f3b82c1e935254de6cf8d9",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2256,
+   "chapter": "MAT.PROB2",
+   "count": 8,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.PROB2.json.gz",
+   "sha256": "de62f3006282f7c8f01f1bf94aa8d3e9bd35b8bddd5c1f30e8fd36178c3aed37",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 880,
+   "chapter": "MAT.RELF",
+   "count": 3,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.RELF.json.gz",
+   "sha256": "0b437b3bd0588eb713a858e55d29a10652e3c6714f99e199a34a4cd44be7519e",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2235,
+   "chapter": "MAT.SEQ",
+   "count": 11,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.SEQ.json.gz",
+   "sha256": "b28ab27ab0ea703493778c9197743a20de083e5cfdca3c4216e4271161d8faf0",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 692,
+   "chapter": "MAT.STAT",
+   "count": 1,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.STAT.json.gz",
+   "sha256": "06a71286f07390521e2e7485578d5bda9032b807a4cbe055d713915f4e427ab3",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 3019,
+   "chapter": "MAT.TDG",
+   "count": 12,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.TDG.json.gz",
+   "sha256": "6c75f3a0f22f7787391c828606b8f885d7910eec71b55a88333bf3303916a712",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2762,
+   "chapter": "MAT.TRIG",
+   "count": 14,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.TRIG.json.gz",
+   "sha256": "37516afe5b4faec30d4fd0e345e01e3b17b4162b08fbc37a899fb79b8d81bd16",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 2853,
+   "chapter": "MAT.VEC",
+   "count": 11,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/MAT/MAT.VEC.json.gz",
+   "sha256": "1f4a365b4a731d3e3dc46bada6d6359c707e679e7aa9b212f4fa99e7ea3dcdee",
+   "subject": "MAT"
+  },
+  {
+   "bytes": 1489,
+   "chapter": "PHY.AC",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.AC.json.gz",
+   "sha256": "be544f5687d001e7e03fadfb6e128bb2a6813987cbadc402b04c4efd52332b04",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1977,
+   "chapter": "PHY.ATM",
+   "count": 7,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.ATM.json.gz",
+   "sha256": "f5e91e28a45244a0d99bd59fd8ec0977c448800e48b6285f326250e753db25a1",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1116,
+   "chapter": "PHY.CAP",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.CAP.json.gz",
+   "sha256": "82174c6b95a8407004e4d41b3849c7d9c1a59149786b3c3d3bf12442be0b730c",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1560,
+   "chapter": "PHY.CUR",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.CUR.json.gz",
+   "sha256": "359ca72689558c32836abbe25814c5919484ad7bfc388db1394b620c3377bcc7",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1677,
+   "chapter": "PHY.DUAL",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.DUAL.json.gz",
+   "sha256": "b79fd8fac965627f428f709a838bc65ab7a1a9ae3ed4a1113da1b9f54157162d",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1794,
+   "chapter": "PHY.ELE",
+   "count": 5,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.ELE.json.gz",
+   "sha256": "aaaffd2b937b0229d9c0f418c3d369049cdf0fd9712266fc1e55a02f20197d61",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 823,
+   "chapter": "PHY.EMI",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.EMI.json.gz",
+   "sha256": "47a9e2a5e8c6896d948c6d6e4716be0ae468f84e1a0132a7d722c45f2ef4b9c2",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 711,
+   "chapter": "PHY.EMW",
+   "count": 1,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.EMW.json.gz",
+   "sha256": "9ad126cfccf3d35fb6cc92873718feb633d7c26f6838273a3b1173604d410960",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 2322,
+   "chapter": "PHY.FLU",
+   "count": 7,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.FLU.json.gz",
+   "sha256": "6bca293523ba1dabde540c6c87da21ba22d3067cbb77c67039224fb89557bb78",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1482,
+   "chapter": "PHY.GRAV",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.GRAV.json.gz",
+   "sha256": "7d0316851bc65e3bff09e3d9b9766db36925ba71ebfe2fb7725f2441238a5ed3",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1084,
+   "chapter": "PHY.KIN1D",
+   "count": 3,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.KIN1D.json.gz",
+   "sha256": "31ab4b78dc099d3e50bee9d98d2a42c0ce15a6fbcfca85c836121838ff1786fb",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1527,
+   "chapter": "PHY.KIN2D",
+   "count": 6,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.KIN2D.json.gz",
+   "sha256": "d283ef61b3b9d712b6955f52b8a27df667d50ee66c488fde577bd81e08ecc98c",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 914,
+   "chapter": "PHY.KTG",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.KTG.json.gz",
+   "sha256": "901771486b212652c5e344ff6c1148cf14f74d5ce20fdb1f09d05a41404bfcae",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1617,
+   "chapter": "PHY.LOM",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.LOM.json.gz",
+   "sha256": "6162dcfe881e41e2c8f6d166eae0e5becd844527cce3be6b0351aa2c615fb8ec",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1436,
+   "chapter": "PHY.MAG",
+   "count": 3,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.MAG.json.gz",
+   "sha256": "8812142c75ee090a2e6d2b1080042db71566de0a70f21b23029c48b9539bddbd",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 3747,
+   "chapter": "PHY.NUC",
+   "count": 14,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.NUC.json.gz",
+   "sha256": "08cdbb2d0710130bdd2c2b6ce2d5dac2bb60646a4c38aad48f02541e4de50421",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1667,
+   "chapter": "PHY.OSC",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.OSC.json.gz",
+   "sha256": "67085033eed7c7150a4d48621021dc4efcc4ffd93dc97eefe23b829154df62ae",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1368,
+   "chapter": "PHY.ROP",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.ROP.json.gz",
+   "sha256": "d6e4769d1e40a526b989d32a0f374f8919b7f6c75344db67f9d1906ab22407bf",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 3165,
+   "chapter": "PHY.ROT",
+   "count": 10,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.ROT.json.gz",
+   "sha256": "b7b65523cca3f6188fed894c8f3e1278d7bea4f16490c942f7b11eb98b8503b8",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 906,
+   "chapter": "PHY.SOL",
+   "count": 2,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.SOL.json.gz",
+   "sha256": "360e62e99376ded5afa69968118b6bacc56722104fd9467fd2a0f1d44040b634",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 2305,
+   "chapter": "PHY.THD",
+   "count": 7,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.THD.json.gz",
+   "sha256": "20bb1780e9800c5f1e810ddef5ae0d83105b6002bafef698bb4e815d4297442c",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 3230,
+   "chapter": "PHY.THP",
+   "count": 8,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.THP.json.gz",
+   "sha256": "cf924a27f8a22478b28aa493bc56b92f915c99f27936bc45deb1ff21e73ad0b8",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 2620,
+   "chapter": "PHY.UNT",
+   "count": 10,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.UNT.json.gz",
+   "sha256": "80f4239afca8650938d32dbf8c57ac294bc14f5b160bea25c580fc2c05c748bc",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1699,
+   "chapter": "PHY.WAV",
+   "count": 6,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.WAV.json.gz",
+   "sha256": "c90eafdf7789e03a0f07ff91360a87f596208c1ca7d3b52f6cee4f96991548b5",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 1374,
+   "chapter": "PHY.WEP",
+   "count": 4,
+   "exam": "JEE_MAIN",
+   "kind": "shard",
+   "path": "JEE_MAIN/PHY/PHY.WEP.json.gz",
+   "sha256": "55c5ed305ad2dff13084c24bbf71ac2970097fd6d5f89026a49ab1220914147d",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 478,
+   "chapter": "BOT.CCD",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/BOT/BOT.CCD.json.gz",
+   "sha256": "9806bc272cda392622b9ae9a65a1cd2a951b8db57876e39ea9c569422a57575d",
+   "subject": "BOT"
+  },
+  {
+   "bytes": 545,
+   "chapter": "BOT.GEN",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/BOT/BOT.GEN.json.gz",
+   "sha256": "96f1abd2e34c3134f0085554757ab0dc143fa9c79f8870d01ddc6b395bbfa28f",
+   "subject": "BOT"
+  },
+  {
+   "bytes": 537,
+   "chapter": "BOT.PHS",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/BOT/BOT.PHS.json.gz",
+   "sha256": "d8f8ca3e238ea60443529afd63032f6e98d3f140266b00a34eba9947407f99d0",
+   "subject": "BOT"
+  },
+  {
+   "bytes": 548,
+   "chapter": "CHE.ATOM",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.ATOM.json.gz",
+   "sha256": "ffbbdab193dc6adc59e510d3be6975d8aa7fde0dcd03a03fabdff9f74d247d24",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 514,
+   "chapter": "CHE.BOND",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.BOND.json.gz",
+   "sha256": "93a2545a92de6ca26653a902da21fa122cbff10ace0001155f0ff847bbca3261",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 510,
+   "chapter": "CHE.CHEQ",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.CHEQ.json.gz",
+   "sha256": "3c5376a56eb8ea029ca884faa44f67ae51d7adc6a675fccb3ff72a56e685f6a7",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 509,
+   "chapter": "CHE.IONEQ",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.IONEQ.json.gz",
+   "sha256": "8e4f85a9b3b26d2ca77e94f1268f00ab580c6a61a8111d4eed41b29d915b789f",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 505,
+   "chapter": "CHE.KIN",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.KIN.json.gz",
+   "sha256": "5424bb96d03bbd62417f074e1b6e0c31ed81b82c7ded175b8fc8a64d8d497356",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 464,
+   "chapter": "CHE.MOLE",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.MOLE.json.gz",
+   "sha256": "0d27d8d92446f4daf6b15de0204afad113660125c0574fc5f12deecfb3ade8d7",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 563,
+   "chapter": "CHE.REDOX",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/CHE/CHE.REDOX.json.gz",
+   "sha256": "dbddabd83a397323cd5080448f4d441a6a83504f7e3d1f4c05a200f150a2d66c",
+   "subject": "CHE"
+  },
+  {
+   "bytes": 827,
+   "chapter": "PHY.CUR",
+   "count": 2,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.CUR.json.gz",
+   "sha256": "2668c0e8504f7849b76e07c7faf7fea583c4096bb300932c16b6fa0da2ae1fa0",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 553,
+   "chapter": "PHY.GRAV",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.GRAV.json.gz",
+   "sha256": "f633211689e7a1d2a81a67aa022c618792508b6ba8ad4fdac0961d8b3b7ea44a",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 512,
+   "chapter": "PHY.KIN1D",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.KIN1D.json.gz",
+   "sha256": "c7fc4fa67ecd01cafb13d556f4d1094cf4356d716fd6616e75e0836f6e99c756",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 654,
+   "chapter": "PHY.LOM",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.LOM.json.gz",
+   "sha256": "d92952744ecb3343d8d5288a40e577b9f18299a864b420bda7e9940fba30af7b",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 498,
+   "chapter": "PHY.OSC",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.OSC.json.gz",
+   "sha256": "1359918c443a1ecbab8b1e32f7c33985bfc08124b47664cbd4f41b269e27406a",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 599,
+   "chapter": "PHY.ROT",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.ROT.json.gz",
+   "sha256": "747c93b5c859ea9b90bf8ed456cb82edff1da452c0e07f28a0bee0acddbdb3f0",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 560,
+   "chapter": "PHY.WEP",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/PHY/PHY.WEP.json.gz",
+   "sha256": "75b6b1933d4d239aae8cb9fb733f1de2438b276909c4dbf527babbc7ca52f124",
+   "subject": "PHY"
+  },
+  {
+   "bytes": 411,
+   "chapter": "ZOO.CIR",
+   "count": 1,
+   "exam": "NEET_UG",
+   "kind": "shard",
+   "path": "NEET_UG/ZOO/ZOO.CIR.json.gz",
+   "sha256": "4fe79bc510b14d086220e3b54a95a2ba182d16019b6129dcf59ccd53b18b9bca",
+   "subject": "ZOO"
+  },
+  {
+   "bytes": 1705,
+   "kind": "blueprint",
+   "path": "blueprints/gate_da_2027.json",
+   "sha256": "849dd7952a02334d00ffa1f76e3c6d2ed09f653f8daacbc96f278f532d842168"
+  },
+  {
+   "bytes": 550,
+   "kind": "blueprint",
+   "path": "blueprints/iat_2026.json",
+   "sha256": "a4e8ab81ce956cc17319db01642a67d1cd735110838b8e9d8a7d44c7c390b348"
+  },
+  {
+   "bytes": 948,
+   "kind": "blueprint",
+   "path": "blueprints/jee_main_2026_p1.json",
+   "sha256": "38d013639ca30cbae59b1cee50e6a6e9cf9d4dca25e7e5cf5d4e27a1fe32c41e"
+  },
+  {
+   "bytes": 678,
+   "kind": "blueprint",
+   "path": "blueprints/neet_ug_2027.json",
+   "sha256": "58dd47abb5bb7d81186d79778865327f2e99a904513e76293cebc5128edbf24c"
+  },
+  {
+   "bytes": 6089,
+   "count": 9,
+   "kind": "mock",
+   "paperId": "sample_jee_mini_v1",
+   "path": "mocks/sample_jee_mini_v1.json",
+   "sha256": "39805ad2ad3f9357416271b16f97156b58b90f0fa79a50a2a4245541a5297c67"
+  },
+  {
+   "bytes": 45232,
+   "kind": "taxonomy",
+   "path": "taxonomy.json",
+   "sha256": "19c8b77f6682badf37e4d65dd3b6ac921d7b8910d4932d2d5bcf621628803855"
+  }
+ ],
+ "images": [
+  {
+   "bytes": 1826,
+   "id": "3533f734625d29de",
+   "kind": "image",
+   "path": "img/3533f734625d29de.w480.webp",
+   "sha256": "1fe391ad0b5309c59df9ddc7a71210ec4c4ab0c16457256760a34c3d26ff2ce0",
+   "w": 480
+  },
+  {
+   "bytes": 2700,
+   "id": "3533f734625d29de",
+   "kind": "image",
+   "path": "img/3533f734625d29de.w763.webp",
+   "sha256": "b1301880b2990902dc9ae821bd095e817d9872ed554a1a0ddc1fdf4754f3e4b0",
+   "w": 763
+  },
+  {
+   "bytes": 5078,
+   "id": "72da92e3bd83a053",
+   "kind": "image",
+   "path": "img/72da92e3bd83a053.w480.webp",
+   "sha256": "792e810e4d81a20d9291867125dfeff1e20333d605813fbf9e9e5627811ab313",
+   "w": 480
+  },
+  {
+   "bytes": 7726,
+   "id": "72da92e3bd83a053",
+   "kind": "image",
+   "path": "img/72da92e3bd83a053.w659.webp",
+   "sha256": "8ef59313f092ea00f45aaca4f35f7f3dd4b520484785a258a6808cb2b74f5383",
+   "w": 659
+  }
+ ],
+ "schema": 1,
+ "totals": {
+  "images": 2,
+  "questions": 1160,
+  "skipped_unverified": 175
+ },
+ "version": 3
+}

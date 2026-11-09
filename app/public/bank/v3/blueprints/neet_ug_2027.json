@@ -1,0 +1,7 @@
+{"id":"neet_ug_2027","exam":"NEET_UG","mode":"CBT","duration_min":180,"ui_skin":"nta_cbt_v1","_verify":"CBT details + duration when NTA notifies NEET 2027",
+ "subjects":[
+  {"code":"PHY","sections":[{"id":"A","type":"SCQ","count":45,"marks":{"correct":4,"wrong":-1,"blank":0}}]},
+  {"code":"CHE","sections":[{"id":"A","type":"SCQ","count":45,"marks":{"correct":4,"wrong":-1,"blank":0}}]},
+  {"code":"BOT","sections":[{"id":"A","type":"SCQ","count":45,"marks":{"correct":4,"wrong":-1,"blank":0}}]},
+  {"code":"ZOO","sections":[{"id":"A","type":"SCQ","count":45,"marks":{"correct":4,"wrong":-1,"blank":0}}]}],
+ "chapter_weights":"weights/neet_last5y.json","time_slots":["14:00"]}
