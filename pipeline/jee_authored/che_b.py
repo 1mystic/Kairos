@@ -195,7 +195,7 @@ intq("halo_carius", "CHE.HALO",
      "Mass of Br $=0.94\\times\\dfrac{80}{188}=0.40\\ \\mathrm{g}$. $\\%\\mathrm{Br}=\\dfrac{0.40}{0.50}\\times100=80$.", diff="M")
 
 msq("halo_msq", "CHE.HALO",
-    "Select all correct statements.",
+    "Select all correct statements about haloalkanes and haloarenes.",
     [("$\\mathrm{S_N2}$ substitution at a chiral carbon of an alkyl halide proceeds with inversion of configuration.", True),
      ("$\\mathrm{S_N1}$ substitution at a chiral carbon leads largely to racemisation.", True),
      ("Chlorobenzene is less reactive than cyclohexyl chloride towards nucleophilic substitution because the C-Cl bond has partial double-bond character.", True),

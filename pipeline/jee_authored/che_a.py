@@ -87,7 +87,7 @@ scq("perio_en", "CHE.PERIO",
     "Electronegativity increases across a period as effective nuclear charge rises: C $2.55$, N $3.04$, O $3.44$, F $3.98$.", diff="E")
 
 msq("perio_msq", "CHE.PERIO",
-    "Select all correct statements.",
+    "Select all correct statements about periodic properties of elements.",
     [("The electron gain enthalpy of chlorine is more negative than that of fluorine.", True),
      ("The first ionisation enthalpy of nitrogen is higher than that of oxygen.", True),
      ("$\\ce{Be(OH)2}$ is amphoteric.", True),
