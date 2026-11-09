@@ -46,7 +46,6 @@
     .tab:not([aria-selected='true']):not([aria-checked='true']):hover { background: var(--tint-hover); color: var(--ink); }
     .tile:hover, .link-row:hover { background: var(--tint-hover); }
     .nav-item:not([aria-current='page']):not([aria-disabled='true']):hover { background: var(--tint-hover); }
-    .brand:hover { background: var(--tint-hover); }
     .menu-item:hover { background: var(--primary-50); color: var(--primary); }
     .sel-opt:not([aria-disabled='true']):hover { background: var(--primary-50); color: var(--primary); }
     .sel-trigger:hover { background: var(--tint-hover); }
