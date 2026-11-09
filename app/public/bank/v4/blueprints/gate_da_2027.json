@@ -1,0 +1,121 @@
+{
+ "id": "gate_da_2027",
+ "exam": "GATE_DA",
+ "mode": "CBT",
+ "duration_min": 180,
+ "ui_skin": "nta_cbt_v1",
+ "_verify": "Pattern from GATE 2027 Information Brochure (gate2027.iitm.ac.in/question_paper_pattern): 65 Q, 100 marks (GA 15 + subject 85), 180 min; MCQ negative 1/3 (1-mark) and 2/3 (2-mark); no negative for MSQ/NAT; no partial marking in MSQ. Per-type counts are taken from the GATE 2026 DA paper (session 8) and VARY year to year (2024: 17/2/6 + 10/10/... , see docs/13_GATE_DA.md); check the 2027 paper. Fractional negatives are stored as decimals; core scoring accepts any number. NAT answers are ranges {range:[lo,hi]}; MSQ is all-or-nothing (core MSQ rule).",
+ "subject_map": {
+  "DA": [
+   "PRS",
+   "LA",
+   "CO",
+   "PDS",
+   "DBW",
+   "ML",
+   "AI"
+  ],
+  "GA": [
+   "GA"
+  ]
+ },
+ "subjects": [
+  {
+   "code": "GA",
+   "sections": [
+    {
+     "id": "GA1",
+     "type": "SCQ",
+     "count": 5,
+     "marks": {
+      "correct": 1,
+      "wrong": -0.333333,
+      "blank": 0
+     }
+    },
+    {
+     "id": "GA2",
+     "type": "SCQ",
+     "count": 5,
+     "marks": {
+      "correct": 2,
+      "wrong": -0.666667,
+      "blank": 0
+     }
+    }
+   ]
+  },
+  {
+   "code": "DA",
+   "sections": [
+    {
+     "id": "T1M-MCQ",
+     "type": "SCQ",
+     "count": 12,
+     "marks": {
+      "correct": 1,
+      "wrong": -0.333333,
+      "blank": 0
+     }
+    },
+    {
+     "id": "T1M-MSQ",
+     "type": "MSQ",
+     "count": 6,
+     "marks": {
+      "correct": 1,
+      "wrong": 0,
+      "blank": 0
+     }
+    },
+    {
+     "id": "T1M-NAT",
+     "type": "NVQ",
+     "count": 7,
+     "marks": {
+      "correct": 1,
+      "wrong": 0,
+      "blank": 0
+     },
+     "answer_format": "numeric, integer or decimal; graded against official range"
+    },
+    {
+     "id": "T2M-MCQ",
+     "type": "SCQ",
+     "count": 11,
+     "marks": {
+      "correct": 2,
+      "wrong": -0.666667,
+      "blank": 0
+     }
+    },
+    {
+     "id": "T2M-MSQ",
+     "type": "MSQ",
+     "count": 8,
+     "marks": {
+      "correct": 2,
+      "wrong": 0,
+      "blank": 0
+     }
+    },
+    {
+     "id": "T2M-NAT",
+     "type": "NVQ",
+     "count": 11,
+     "marks": {
+      "correct": 2,
+      "wrong": 0,
+      "blank": 0
+     },
+     "answer_format": "numeric, integer or decimal; graded against official range"
+    }
+   ]
+  }
+ ],
+ "time_slots": [
+  "09:30",
+  "14:30"
+ ],
+ "calculator": true
+}

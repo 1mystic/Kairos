@@ -1,0 +1,3 @@
+{"id":"iat_2026","exam":"IAT","mode":"CBT","duration_min":180,"ui_skin":"nta_cbt_v1",
+ "subjects":[{"code":"BIO","sections":[{"id":"A","type":"SCQ","count":15,"marks":{"correct":4,"wrong":-1,"blank":0}}]},{"code":"CHE","sections":[{"id":"A","type":"SCQ","count":15,"marks":{"correct":4,"wrong":-1,"blank":0}}]},{"code":"MAT","sections":[{"id":"A","type":"SCQ","count":15,"marks":{"correct":4,"wrong":-1,"blank":0}}]},{"code":"PHY","sections":[{"id":"A","type":"SCQ","count":15,"marks":{"correct":4,"wrong":-1,"blank":0}}]}],
+ "time_slots":["09:00"]}
