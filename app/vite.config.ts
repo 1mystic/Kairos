@@ -7,11 +7,21 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [react(), tailwindcss(), VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logo.svg', 'logo-mark.svg'],
+      includeAssets: ['logo.svg', 'logo-mark.svg', 'icons/apple-touch-icon.png'],
       workbox: {
         // the question bank and images are runtime-cached, never precached
         globIgnores: ['bank/**', 'img/**'],
+        // SPA fallback: any navigation is answered offline with the precached index.html (the app shell), EXCEPT
+        // bank / image files and Firebase's reserved /__/ paths (the Auth popup/redirect handler must hit the network).
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/bank\//, /^\/img\//, /^\/__\//, /^\/robots\.txt$/, /^\/sitemap\.xml$/],
         runtimeCaching: [
+          {
+            // self-hosted @fontsource files (hashed, immutable): cached on first use so text renders offline
+            urlPattern: ({ url }) => url.pathname.startsWith('/assets/') && /\.woff2?$/.test(url.pathname),
+            handler: 'CacheFirst',
+            options: { cacheName: 'kairos-fonts', expiration: { maxEntries: 40, maxAgeSeconds: 365 * 24 * 60 * 60 }, cacheableResponse: { statuses: [0, 200] } },
+          },
           {
             urlPattern: ({ url }) => url.pathname === '/bank/latest.json',
             handler: 'NetworkFirst',
@@ -40,14 +50,19 @@ export default defineConfig({
       manifest: {
         name: 'Kairos',
         short_name: 'Kairos',
-        description: 'The right question, at the right time.',
+        description: 'A daily plan counted back from your exam date, with exam-style practice for JEE Main, NEET UG, IAT and GATE DA.',
         theme_color: '#3A3FD9',
         background_color: '#FAFAF7',
         display: 'standalone',
         start_url: '/',
+        scope: '/',
+        lang: 'en',
+        categories: ['education'],
         icons: [
-          { src: 'logo-mark.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
-          { src: 'logo-mark.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'maskable' },
+          { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: '/icons/maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: '/logo-mark.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
         ],
       },
     })],

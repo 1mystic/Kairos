@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /exam/
+Disallow: /settings
+
+Sitemap: https://kairos-76a0d.web.app/sitemap.xml
