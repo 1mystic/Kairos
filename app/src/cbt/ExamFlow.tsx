@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { PaletteState } from '@kairos/core';
 import type { UserStore } from '../store';
+import { reportMock } from '../telemetry';
 import { ExamSession, InstructionsBody } from './ExamSession';
 import type { AttemptStore } from './attemptStore';
 import type { AnswerMap } from './loader';
@@ -56,6 +57,7 @@ export function ExamFlow(p: ExamFlowProps) {
         const id = mockIdFor(attempt.startedAtEpoch);
         const doc = buildMockDoc({ id, model, state, focusLog, score, answers, submittedAt: clock(), usedMs });
         await store.putMock(id, doc); // single write
+        try { reportMock(); } catch { /* telemetry never blocks */ }
         await attempts.delete(model.paperId);
         p.onNudge?.();
         exitFullscreen();

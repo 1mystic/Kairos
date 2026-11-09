@@ -10,6 +10,7 @@ import { categorize, summarize, summaryText } from './review';
 import { chapterGroups } from './taxonomy';
 import type { ReviewState } from './useReview';
 import { useMediaUrls } from './UserQuestionPreview';
+import { reportUpload } from '../telemetry';
 
 export interface SaveOutcome {
   saved: number;
@@ -84,6 +85,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
         return c ? [{ id, bytes: c.bytes, w: c.w, h: c.h }] : [];
       });
       await store.save(qs, media);
+      try { reportUpload(qs.length); } catch { /* telemetry never blocks */ }
       onSaved({ saved: qs.length, selfCheck: qs.filter((q) => q.status === 'needs_answer').length });
     } catch (e) {
       setMessage({ tone: 'accent', text: e instanceof Error ? e.message : 'Saving failed. Your edits are still here, so try again.' });

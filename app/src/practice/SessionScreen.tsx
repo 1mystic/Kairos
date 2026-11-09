@@ -8,6 +8,7 @@ import { userBankSource } from '../store/bank';
 import { BankContext } from '../store/bankHooks';
 import { getSessionBuffer, isResumable, type BufferedSession } from './buffer';
 import { commitSession } from './finish';
+import { reportSession } from '../telemetry';
 import { buildQueue, RECENCY_DAYS, seenIds, thetaFor, type Band } from './queue';
 import { SessionRunner } from './SessionRunner';
 import { bankShardSource, mergeSources, type QuestionSource } from './sources';
@@ -117,7 +118,7 @@ export function SessionScreen() {
     setPhase({ kind: 'saving' });
     const { base } = run;
     try {
-      await commitSession(
+      const committed = await commitSession(
         store,
         {
           id: base.id,
@@ -132,6 +133,7 @@ export function SessionScreen() {
         },
         { events: r.events, questions: run.questions, reasons: r.reasons },
       );
+      try { const sm = committed.result.summary; reportSession({ exam: base.exam, answered: sm.correct + sm.wrong, correct: sm.correct }); } catch { /* telemetry never blocks */ }
       await buffer.clear().catch(() => {});
       nudge('first_session');
       navigate(`/practice/summary/${base.id}`, { replace: true });

@@ -5,6 +5,7 @@ import { CheckIcon } from '../components/icons';
 import { Banner, Button, Card, CardGrid, Chip, EmptyState, LinkButton, Columns, ListRow, Page, PageHeader, PageSkeleton, ProgressBar, Tabs } from '../components/ui';
 import { EXAMS, buildChapterRows, isExamId, loadTaxonomy, type ExamId, type SubjectRows, type Taxonomy } from '../practice/taxonomy';
 import { isGuestProfile, useSignInNudge, useStore, type UserStore } from '../store';
+import { reportDiagnostic } from '../telemetry';
 import './diagnostic.css';
 import { DiagnosticRunner, type DiagFinish } from './DiagnosticRunner';
 import { getDiagBuffer, isDiagResumable, type DiagBuffer } from './diagnosticBuffer';
@@ -111,6 +112,7 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
           { id: run.base.id, startedAt: run.base.startedAt, endedAt: r.endedAt, exam: run.base.exam, chapters: run.chapters },
           { events: r.events, questions: r.questions },
         );
+        try { reportDiagnostic(); } catch { /* telemetry never blocks */ }
         await deps.buffer.clear().catch(() => {});
         onSaved?.();
         const nm = Object.fromEntries(

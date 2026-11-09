@@ -11,6 +11,7 @@ import { EXAM_LABELS, chaptersForExam } from '../plan/syllabus';
 import { EXAMS, loadTaxonomy, type Taxonomy } from '../practice/taxonomy';
 import { useSignInNudge, useStore } from '../store';
 import { useExamCalendar } from '../config';
+import { reportOnboarded } from '../telemetry';
 import { RoadmapChoice, type RoadmapMode } from '../roadmap/RoadmapChoice';
 import { customStart, useRoadmap } from '../roadmap/useRoadmap';
 import { entriesFor, prettyDate, WEEKDAYS } from './calendarData';
@@ -370,6 +371,7 @@ function Wizard({ taxonomy, today: todayProp, profile, edit, store, nudge, go }:
       }
       const fields = toFields({ exams: toExamSels(d), ambition: d.ambition, minutesPerWeekday: minutes, offDay: d.offDay, chaptersDone: d.done, onboarded: true });
       await saveOnboardingFields(store, fields);
+      if (!edit) { try { reportOnboarded(); } catch { /* telemetry never blocks */ } }
       if (d.behind === 'drop' && preview?.bundle.behind) {
         const cur = ((await store.getState('pace').catch(() => null)) ?? {}) as Record<string, unknown>;
         const prev = Array.isArray(cur.dropped) ? (cur.dropped as string[]) : [];

@@ -15,6 +15,7 @@ import {
 import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 import { getServices } from '../lib/firebase';
 import { buildNewProfile, type ProfileInput, type UserProfile } from '../lib/profile';
+import { reportSignup } from '../telemetry';
 
 export interface AuthContextValue {
   user: User | null;
@@ -42,6 +43,7 @@ async function writeProfile(uid: string, input: ProfileInput): Promise<UserProfi
   const { db } = getServices();
   const p = buildNewProfile(input);
   await setDoc(doc(db, 'users', uid), { ...p, createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+  try { reportSignup(); } catch { /* telemetry never blocks */ }
   return p;
 }
 
