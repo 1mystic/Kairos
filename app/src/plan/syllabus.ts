@@ -1,12 +1,12 @@
 import type { MasteryDoc, PlannerTopicMeta, TopicMastery } from '@kairos/core';
 import { secondaryOnlyTopics } from '@kairos/core';
-import type { Taxonomy, TaxChapter } from '../practice/taxonomy';
+import { GATE_SUBJECT_LABELS, type Taxonomy, type TaxChapter } from '../practice/taxonomy';
 
-export const EXAM_LABELS: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IAT' };
+export const EXAM_LABELS: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IAT', GATE_DA: 'GATE DA' };
 export const examLabel = (id: string): string => EXAM_LABELS[id] ?? id;
 
 /** Total marks per paper (docs/01 table), for the marks-cost estimates. */
-export const PAPER_MARKS: Record<string, number> = { JEE_MAIN: 300, NEET_UG: 720, IAT: 240 };
+export const PAPER_MARKS: Record<string, number> = { JEE_MAIN: 300, NEET_UG: 720, IAT: 240, GATE_DA: 100 };
 export const DEFAULT_ITEM_MIN = 3;
 /** Mastery assumed for a chapter with no practice yet: marked "done" in onboarding, or not started. */
 export const PRIOR_DONE = 0.5;
@@ -15,7 +15,8 @@ export const PRIOR_NEW = 0.15;
 const SUBJECT_CANON: Record<string, string> = { PHY: 'physics', CHE: 'chemistry', MAT: 'mathematics', BOT: 'biology', ZOO: 'biology' };
 /** Planner subject name (lets core subjectBalance apply NEET biology ~50%, JEE thirds). */
 export const canonicalSubject = (taxId: string): string => SUBJECT_CANON[taxId] ?? taxId.toLowerCase();
-export const subjectLabel = (canon: string): string => canon.charAt(0).toUpperCase() + canon.slice(1);
+export const subjectLabel = (canon: string): string =>
+  GATE_SUBJECT_LABELS[canon.toUpperCase()] ?? canon.charAt(0).toUpperCase() + canon.slice(1);
 
 export interface SyllabusChapter extends TaxChapter {
   subject: string;

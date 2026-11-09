@@ -13,6 +13,7 @@ export const DEFAULT_MEDIAN_MS = 120_000;
 export const EASY_P = 0.75;
 export const SUBJECT_NAME: Record<string, string> = {
   PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BOT: 'Botany', ZOO: 'Zoology', BIO: 'Biology',
+  GA: 'General Aptitude', PRS: 'Probability & Statistics', LA: 'Linear Algebra', CO: 'Calculus & Optimization', PDS: 'Programming', DBW: 'Database & Warehousing', ML: 'Machine Learning', AI: 'Artificial Intelligence',
 };
 export const subjectName = (c: string) => SUBJECT_NAME[c] ?? c;
 

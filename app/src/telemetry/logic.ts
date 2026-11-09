@@ -91,3 +91,15 @@ export function shouldFlush(i: FlushInput): boolean {
   if (i.reason === 'timer') return i.lastFlushDay !== i.today;
   return true;
 }
+
+/**
+ * Exams with a per-exam counter in the rules contract. GATE_DA has none (the stats rules would reject an
+ * unknown field), so its sessions only bump `sessions`. Add the exam here once the rules allow `sessions_<EXAM>`.
+ */
+const KNOWN_EXAMS = ['JEE_MAIN', 'NEET_UG', 'IAT'];
+export function sessionCounts(s: { exam?: string | null; answered: number; correct: number }): Record<string, number> {
+  const answered = Math.max(0, Math.floor(s.answered));
+  const counts: Record<string, number> = { sessions: 1, questions: answered, correct: Math.min(Math.max(0, Math.floor(s.correct)), answered) };
+  if (s.exam && KNOWN_EXAMS.includes(s.exam)) counts[`sessions_${s.exam}`] = 1;
+  return counts;
+}

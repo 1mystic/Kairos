@@ -4,6 +4,7 @@ export const EXAMS = [
   { id: 'JEE_MAIN', label: 'JEE Main', blurb: 'Physics, Chemistry, Mathematics' },
   { id: 'NEET_UG', label: 'NEET UG', blurb: 'Physics, Chemistry, Biology' },
   { id: 'IAT', label: 'IAT', blurb: 'IISER Aptitude Test' },
+  { id: 'GATE_DA', label: 'GATE DA', blurb: 'Data Science & AI: maths, ML, programming, databases' },
 ] as const;
 export type ExamId = (typeof EXAMS)[number]['id'];
 export const examLabel = (id: string) => EXAMS.find((e) => e.id === id)?.label ?? id;

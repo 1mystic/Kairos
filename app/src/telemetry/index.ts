@@ -1,6 +1,6 @@
 import { doc, getDoc, increment, serverTimestamp, setDoc, writeBatch } from 'firebase/firestore';
 import { getServices } from '../lib/firebase';
-import type { Counts } from './logic';
+import { sessionCounts, type Counts } from './logic';
 import { Telemetry, type StatsAdapter, type TelemetryDeps } from './telemetry';
 
 export { Telemetry, TELEMETRY_KEY, type StatsAdapter, type TelemetryDeps } from './telemetry';
@@ -55,12 +55,8 @@ export function bumpStats(partial: Counts): void {
   if (tel().bump(partial)) onBump?.();
 }
 
-const KNOWN_EXAMS = ['JEE_MAIN', 'NEET_UG', 'IAT'];
 export function reportSession(s: { exam?: string | null; answered: number; correct: number }): void {
-  const answered = Math.max(0, Math.floor(s.answered));
-  const counts: Record<string, number> = { sessions: 1, questions: answered, correct: Math.min(Math.max(0, Math.floor(s.correct)), answered) };
-  if (s.exam && KNOWN_EXAMS.includes(s.exam)) counts[`sessions_${s.exam}`] = 1;
-  bumpStats(counts);
+  bumpStats(sessionCounts(s));
 }
 export const reportMock = (): void => bumpStats({ mocks: 1 });
 export const reportDiagnostic = (): void => bumpStats({ diagnostics: 1 });

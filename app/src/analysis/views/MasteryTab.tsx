@@ -27,7 +27,9 @@ function ChartCard({ title, aside, children }: { title: string; aside?: ReactNod
 
 /** Mastery tab: subject cards with trend, chapter heatmap, mistake mix, accuracy by difficulty, study time. */
 export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: { tax: Taxonomy | null; mastery: MasteryDoc | null; sessions: SessionDoc[]; exam?: string; now: number }) {
-  const [exam, setExam] = useState<string>(EXAMS.some((e) => e.id === profileExam) ? profileExam! : 'JEE_MAIN');
+  // profile.exam is packed ('GATE_DA.1', 'JEE_MAIN.2+NEET_UG.1@date'): the first token's exam id
+  const profileId = profileExam?.split('+')[0]?.split('.')[0];
+  const [exam, setExam] = useState<string>(EXAMS.some((e) => e.id === profileId) ? profileId! : 'JEE_MAIN');
   const { subjects: chSubject } = useMemo(() => chapterIndex(tax), [tax]);
   const meta = useMemo(() => (tax ? topicMeta(tax) : {}), [tax]);
   const chAgg = useMemo(() => (tax ? chapterMastery(mastery, tax) : {}), [tax, mastery]);

@@ -22,7 +22,17 @@ export const EXAMS = [
   { id: 'JEE_MAIN', label: 'JEE Main' },
   { id: 'NEET_UG', label: 'NEET UG' },
   { id: 'IAT', label: 'IAT' },
+  { id: 'GATE_DA', label: 'GATE DA' },
 ] as const;
+
+/** Long names, for headings and the landing page. */
+export const EXAM_LONG_NAMES: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IISER Aptitude Test', GATE_DA: 'GATE Data Science & AI' };
+
+/** Subject names for the GATE DA taxonomy ids (the other subjects take their name from the taxonomy). */
+export const GATE_SUBJECT_LABELS: Record<string, string> = {
+  GA: 'General Aptitude', PRS: 'Probability & Statistics', LA: 'Linear Algebra', CO: 'Calculus & Optimization',
+  PDS: 'Programming', DBW: 'Database & Warehousing', ML: 'Machine Learning', AI: 'Artificial Intelligence',
+};
 export type ExamId = (typeof EXAMS)[number]['id'];
 export const isExamId = (s: string | undefined): s is ExamId => EXAMS.some((e) => e.id === s);
 

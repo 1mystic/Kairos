@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { CAPS, addCounts, localDay, normalize, shouldFlush, takeBatch, type Counts } from './logic';
+import { CAPS, addCounts, sessionCounts, localDay, normalize, shouldFlush, takeBatch, type Counts } from './logic';
 import { Telemetry, TELEMETRY_KEY, type StatsAdapter } from './telemetry';
 
 function setup(opts: { uid?: string | null; online?: boolean; seen?: boolean } = {}) {
@@ -125,5 +125,12 @@ describe('Telemetry', () => {
     await a.t.flush('timer');
     expect(a.calls.find((c) => c.kind === 'counts')!.counts).toEqual({ questions: 500, correct: 500 });
     expect(a.t.pending()['2026-11-08']).toEqual({ questions: 100, correct: 50 });
+  });
+});
+
+describe('per-exam session counter', () => {
+  it('GATE_DA has no per-exam counter, only sessions', () => {
+    expect(sessionCounts({ exam: 'GATE_DA', answered: 5, correct: 3 })).toEqual({ sessions: 1, questions: 5, correct: 3 });
+    expect(sessionCounts({ exam: 'IAT', answered: 1, correct: 1 })).toMatchObject({ sessions_IAT: 1 });
   });
 });

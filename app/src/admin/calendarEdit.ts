@@ -1,8 +1,9 @@
 import { dayNumber } from '@kairos/core';
 
-export const EXAMS = ['JEE_MAIN', 'NEET_UG', 'IAT', 'JEE_ADV'] as const;
+/** Exams a calendar entry may carry (validated client side; the rules only check the doc shape). */
+export const EXAMS = ['JEE_MAIN', 'NEET_UG', 'IAT', 'JEE_ADV', 'GATE_DA'] as const;
 export type CalExam = (typeof EXAMS)[number];
-export const EXAM_NAME: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IAT', JEE_ADV: 'JEE Advanced' };
+export const EXAM_NAME: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IAT', JEE_ADV: 'JEE Advanced', GATE_DA: 'GATE DA' };
 export const MAX_ENTRIES = 40;
 
 /** One row of config/exam_calendar.entries (same shape as content/exam_calendar.json). */

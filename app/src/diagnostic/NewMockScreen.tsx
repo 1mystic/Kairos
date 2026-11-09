@@ -6,6 +6,7 @@ import { Banner, Button, Card, CardGrid, Chip, LinkButton, Page, PageHeader, Pro
 import { EXAMS, isExamId, loadTaxonomy, type ExamId, type Taxonomy } from '../practice/taxonomy';
 import { useStore, type MockDoc, type SessionDoc, type UserStore } from '../store';
 import { blueprintsForExam, loadExamBank } from './examBank';
+import { fmtMarks, sectionTitle } from '../cbt/labels';
 import { getGeneratedStore, paperCode, paperIdForSeed, type GeneratedPaperRecord, type GeneratedStore } from './generatedStore';
 import {
   TYPE_WORDS,
@@ -37,7 +38,7 @@ const defaultDeps = (): MockDeps => ({
   generated: getGeneratedStore(),
 });
 
-const SUBJECT_FALLBACK: Record<string, string> = { PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BIO: 'Biology', BOT: 'Botany', ZOO: 'Zoology' };
+const SUBJECT_FALLBACK: Record<string, string> = { PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BIO: 'Biology', BOT: 'Botany', ZOO: 'Zoology', DA: 'Technical (DA)', GA: 'General Aptitude', PRS: 'Probability & Statistics', LA: 'Linear Algebra', CO: 'Calculus & Optimization', PDS: 'Programming', DBW: 'Database & Warehousing', ML: 'Machine Learning', AI: 'Artificial Intelligence' };
 
 /** `/mocks/new` */
 export function NewMockScreen() {
@@ -362,8 +363,8 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
                       <ul className="stack-text text-small text-slate">
                         {s.sections.map((x) => (
                           <li key={x.id}>
-                            Section {x.id}: {x.count} {TYPE_WORDS[x.type]}, +{x.correct}
-                            {x.wrong !== 0 ? ` / ${x.wrong}` : ''}
+                            {sectionTitle(s.code, { sectionId: x.id, type: x.type, marks: { correct: x.correct } })}: {x.count} {TYPE_WORDS[x.type]}, +{fmtMarks(x.correct)}
+                            {x.wrong !== 0 ? ` / ${fmtMarks(x.wrong)}` : ''}
                           </li>
                         ))}
                       </ul>
