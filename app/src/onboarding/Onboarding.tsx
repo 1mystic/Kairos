@@ -10,6 +10,9 @@ import '../plan/plan.css';
 import { EXAM_LABELS, chaptersForExam } from '../plan/syllabus';
 import { EXAMS, loadTaxonomy, type Taxonomy } from '../practice/taxonomy';
 import { useSignInNudge, useStore } from '../store';
+import { useExamCalendar } from '../config';
+import { RoadmapChoice, type RoadmapMode } from '../roadmap/RoadmapChoice';
+import { customStart, useRoadmap } from '../roadmap/useRoadmap';
 import { entriesFor, prettyDate, WEEKDAYS } from './calendarData';
 import {
   DRAFT_KEY, defaultDateFor, draftFromProfile, emptyDraft, examErrors, newExamDraft, sameEveryDay, toExamSels, weekendsHeavier, tomorrow,
@@ -53,7 +56,8 @@ function Choice({ on, name, onSelect, title, children, chip }: { on: boolean; na
 /* ------------------------------------------------------------------ step 1 */
 
 function ExamPicker({ value, onChange, today, error, label }: { value: ExamDraft; onChange(v: ExamDraft): void; today: string; error: string | undefined; label: string }) {
-  const entries = entriesFor(value.exam);
+  const { calendar } = useExamCalendar();
+  const entries = entriesFor(value.exam, calendar);
   const entry = entries.find((e) => e.session === value.sel);
   const n = value.date && !error ? daysLeft(value.date, today) : null;
   return (
@@ -62,7 +66,7 @@ function ExamPicker({ value, onChange, today, error, label }: { value: ExamDraft
         <legend className="mb-s2 text-small font-semibold">{label}</legend>
         <div className="grid-auto">
           {EXAMS.map((e) => (
-            <Choice key={e.id} name={`${label}-exam`} on={value.exam === e.id} onSelect={() => onChange(newExamDraft(e.id))} title={e.label} />
+            <Choice key={e.id} name={`${label}-exam`} on={value.exam === e.id} onSelect={() => onChange(newExamDraft(e.id, calendar))} title={e.label} />
           ))}
         </div>
       </fieldset>
@@ -73,7 +77,7 @@ function ExamPicker({ value, onChange, today, error, label }: { value: ExamDraft
             key={e.id}
             name={`${label}-session`}
             on={value.sel === e.session}
-            onSelect={() => onChange({ ...value, sel: e.session, date: defaultDateFor(value.exam, e.session) || value.date })}
+            onSelect={() => onChange({ ...value, sel: e.session, date: defaultDateFor(value.exam, e.session, calendar) || value.date })}
             title={`${EXAM_LABELS[value.exam] ?? value.exam}${entries.length > 1 ? ` Session ${e.session}` : ''}`}
             chip={<Chip tone={e.status === 'official' ? 'primary' : 'accent'}>{e.status === 'official' ? 'Official date' : 'Expected'}</Chip>}
           >
@@ -102,6 +106,7 @@ function ExamPicker({ value, onChange, today, error, label }: { value: ExamDraft
 }
 
 function StepExam({ d, set, today }: { d: Draft; set(p: Partial<Draft>): void; today: string }) {
+  const { calendar } = useExamCalendar();
   const errs = examErrors(d, today);
   return (
     <div className="stack gap-section">
@@ -114,7 +119,7 @@ function StepExam({ d, set, today }: { d: Draft; set(p: Partial<Draft>): void; t
           </div>
         </Card>
       ) : (
-        <div><Button variant="secondary" onClick={() => set({ second: newExamDraft(d.first.exam === 'NEET_UG' ? 'JEE_MAIN' : 'NEET_UG') })}>Preparing for another exam too?</Button></div>
+        <div><Button variant="secondary" onClick={() => set({ second: newExamDraft(d.first.exam === 'NEET_UG' ? 'JEE_MAIN' : 'NEET_UG', calendar) })}>Preparing for another exam too?</Button></div>
       )}
       {d.second && <p className="text-small text-slate">The nearer exam sets your phases. The other one adds only the chapters the first does not cover.</p>}
     </div>
@@ -307,8 +312,13 @@ export function OnboardingPage(props: OnboardingProps = {}) {
 
 function Wizard({ taxonomy, today: todayProp, profile, edit, store, nudge, go }: OnboardingProps & { profile: OnboardingProfile; edit: boolean; store: ReturnType<typeof useStore>; nudge(k: 'exam_date_set'): void; go(): void }) {
   const today = todayProp ?? planDate(new Date());
+  const { calendar } = useExamCalendar();
+  const roadmap = useRoadmap();
+  const [rmMode, setRmMode] = useState<RoadmapMode | null>(null);
+  const rmChosen: RoadmapMode = rmMode ?? roadmap.mode;
+  const nav = useNavigate();
   const [step, setStep] = useState(0);
-  const [d, setD] = useState<Draft>(() => (edit ? draftFromProfile(profile) : loadDraft() ?? emptyDraft()));
+  const [d, setD] = useState<Draft>(() => (edit ? draftFromProfile(profile) : loadDraft() ?? emptyDraft(calendar)));
   const [tax, setTax] = useState<Taxonomy | null>(taxonomy ?? null);
   const [mastery, setMastery] = useState<MasteryDoc | null>(null);
   const [saving, setSaving] = useState(false);
@@ -339,7 +349,7 @@ function Wizard({ taxonomy, today: todayProp, profile, edit, store, nudge, go }:
     () => ({ exams: toExamSels(d), ambition: d.ambition, minutesPerWeekday: d.minutes, offDay: d.offDay, chaptersDone: d.done }),
     [d],
   );
-  const preview = useMemo(() => (examOk && tax && step === 4 ? buildPreview({ setup, tax, mastery, today }) : null), [examOk, tax, step, setup, mastery, today]);
+  const preview = useMemo(() => (examOk && tax && step === 4 ? buildPreview({ setup, tax, mastery, today, scheduleConfig: roadmap.schedule }) : null), [examOk, tax, step, setup, mastery, today, roadmap.schedule]);
   const days = examOk ? daysLeft(d.first.date, today) : null;
   const weekly = Object.entries(d.minutes).reduce((a, [k, m]) => a + (Number(k) === d.offDay ? 0 : m), 0);
 
@@ -365,9 +375,11 @@ function Wizard({ taxonomy, today: todayProp, profile, edit, store, nudge, go }:
         const prev = Array.isArray(cur.dropped) ? (cur.dropped as string[]) : [];
         await store.putState('pace', { ...cur, dropped: [...new Set([...prev, ...preview.bundle.behind.dropChapters.map((c) => c.id)])] });
       }
+      if (rmChosen !== roadmap.mode) await roadmap.save(rmChosen, rmChosen === 'custom' ? customStart(roadmap) : undefined);
       try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
       nudge('exam_date_set');
-      go();
+      if (rmChosen === 'custom') nav('/roadmap');
+      else go();
     } catch {
       setErr('We could not save that. Your answers are still here; try again.');
     } finally {
@@ -401,6 +413,13 @@ function Wizard({ taxonomy, today: todayProp, profile, edit, store, nudge, go }:
             <div className="stack gap-section">
               {!examOk && <Banner tone="accent" icon={<AlertIcon className="shrink-0" />}>{errs.first ?? errs.second} <button type="button" className="font-semibold underline" onClick={() => setStep(0)}>Fix the date</button></Banner>}
               {preview ? <PlanPreviewCard preview={preview} choice={d.behind} onChoice={(behind) => set({ behind })} /> : examOk && <Skeleton className="h-s8 w-full" />}
+              <Card>
+                <div className="stack gap-base">
+                  <h2 className="text-h3">Your roadmap</h2>
+                  <RoadmapChoice value={rmChosen} onChange={setRmMode} name="ob-roadmap" />
+                  {rmChosen === 'custom' && <p className="text-small text-slate">After saving you can set the final sprint, buffer days and phase lengths yourself.</p>}
+                </div>
+              </Card>
             </div>
           )}
           {err && <Banner tone="accent" role="alert" icon={<AlertIcon className="shrink-0" />}>{err}</Banner>}

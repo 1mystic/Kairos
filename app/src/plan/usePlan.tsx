@@ -13,7 +13,9 @@ import {
   type Task,
 } from '@kairos/core';
 import { getLatestVersion, getManifest } from '../bank/client';
+import { useExamCalendar, useRoadmapDefaults } from '../config';
 import { CALENDAR, findEntry, prettyDate } from '../onboarding/calendarData';
+import { parseRoadmapState, resolveRoadmap } from '../roadmap/model';
 import { planDate, saveOnboardingFields, toFields, parseProfile, type ExamSel, type OnboardingProfile } from '../onboarding/profileModel';
 import { loadTaxonomy, type Taxonomy } from '../practice/taxonomy';
 import { useStore } from '../store';
@@ -165,7 +167,11 @@ function exampleReanchor(profile: OnboardingProfile, pace: PaceState, cal: ExamC
 /** Today's plan and pace. Loads, replans on every open, writes at most the daily snapshot and a changed plan. */
 export function useTodayPlan(): TodayPlan {
   const store = useStore();
-  const env = useContext(EnvCtx);
+  const baseEnv = useContext(EnvCtx);
+  // the default calendar is the bundled file: swap in the admin-published one (tests and callers that pass their own calendar keep it)
+  const remote = useExamCalendar();
+  const { defaults: roadmapDefaults } = useRoadmapDefaults();
+  const env = useMemo(() => (baseEnv.calendar === CALENDAR ? { ...baseEnv, calendar: remote.calendar } : baseEnv), [baseEnv, remote.calendar]);
   const [state, setState] = useState<PlanState>({ kind: 'loading' });
   const [rf, setRf] = useState<RollForward | null>(null);
   const [rfDismissed, setRfDismissed] = useState(false);
@@ -219,7 +225,8 @@ export function useTodayPlan(): TodayPlan {
         if (es.kind === 'none') return live && setState({ kind: 'none' });
         if (es.kind === 'passed') return live && setState({ kind: 'passed', exam: es.exam });
 
-        const [tax, mastery, paceRaw] = await Promise.all([env.loadTax(), store.getState('mastery').catch(() => null), store.getState('pace').catch(() => null)]);
+        const [tax, mastery, paceRaw, roadmapRaw] = await Promise.all([env.loadTax(), store.getState('mastery').catch(() => null), store.getState('pace').catch(() => null), store.getState('roadmap').catch(() => null)]);
+        const scheduleConfig = resolveRoadmap(parseRoadmapState(roadmapRaw), roadmapDefaults).schedule;
         let pace = readPaceState(paceRaw);
         const re = exampleReanchor(profile, pace, env.calendar);
         let exams = profile.exams;
@@ -242,7 +249,7 @@ export function useTodayPlan(): TodayPlan {
         const yesterday = yesterdayStats(plans, today);
         const due = snapshotDue(pace, today);
         const fuState = due ? advanceFu(pace.ewma, yesterday) : { ewma: pace.ewma ?? null, fu: pace.fu ?? 1 };
-        const ctx = buildPlanContext({ setup, tax, today, mastery: mastery as MasteryDoc | null, sessions, recentPlans: plans, pace, fu: fuState.fu, ...(available ? { available } : {}) }, now.getTime());
+        const ctx = buildPlanContext({ setup, tax, today, mastery: mastery as MasteryDoc | null, sessions, recentPlans: plans, pace, fu: fuState.fu, scheduleConfig, ...(available ? { available } : {}) }, now.getTime());
         if (!ctx) return live && setState({ kind: 'passed', exam: es.exam });
         const bundle = computeTodayPace(ctx);
         const res = todayPlan(ctx, { stored, sessions });
@@ -275,7 +282,7 @@ export function useTodayPlan(): TodayPlan {
     return () => {
       live = false;
     };
-  }, [store, env, nonce]);
+  }, [store, env, nonce, roadmapDefaults]);
 
   const refresh = useCallback(() => {
     void flush().then(() => setNonce((n) => n + 1));

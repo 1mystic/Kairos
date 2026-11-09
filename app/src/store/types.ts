@@ -62,7 +62,7 @@ export interface GuestProfile {
 }
 
 export type Profile = UserProfile | GuestProfile;
-export type StateDocName = 'mastery' | 'pace';
+export type StateDocName = 'mastery' | 'pace' | 'roadmap';
 
 export interface ListSessionsOpts {
   /** only sessions with startedAt >= since (epoch ms) */

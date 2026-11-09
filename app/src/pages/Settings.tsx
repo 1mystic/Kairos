@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { useAuth } from '../auth/AuthProvider';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { Button, Chip, LinkButton, Modal, Page, PageHeader, SettingRow, SettingsSection, StickySideNav, TwoColumnPage, type SideNavItem } from '../components/ui';
+import { useIsAdmin } from '../admin/useIsAdmin';
+import { ExamPlanRows } from '../roadmap/ExamPlanSettings';
 import { exportStore } from '../store/exportData';
 import { useGuest, useLocalStore, useStore } from '../store/StoreProvider';
 
 const SECTIONS: SideNavItem[] = [
   { id: 'account', label: 'Account' },
+  { id: 'plan', label: 'Exam and plan' },
   { id: 'appearance', label: 'Appearance' },
   { id: 'data', label: 'Storage and data' },
   { id: 'notifications', label: 'Notifications', soon: true },
@@ -21,6 +24,7 @@ export function Settings() {
   const local = useLocalStore();
   const [confirm, setConfirm] = useState(false);
   const [msg, setMsg] = useState('');
+  const isAdmin = useIsAdmin();
 
   async function download() {
     const data = await exportStore(store);
@@ -49,6 +53,10 @@ export function Settings() {
               <LinkButton to="/signup">Create account</LinkButton>
             </SettingRow>
           )}
+        </SettingsSection>
+
+        <SettingsSection id="plan" title="Exam and plan" description="Your exam date and how Kairos paces you." active={tab === 'plan'}>
+          <ExamPlanRows />
         </SettingsSection>
 
         <SettingsSection id="appearance" title="Appearance" description="Kairos works in light and dark." active={tab === 'appearance'}>
@@ -83,6 +91,12 @@ export function Settings() {
 
         <SettingsSection id="about" title="About" active={tab === 'about'}>
           <SettingRow label="Kairos" description="The right question, at the right time." />
+          <SettingRow label="Anonymous totals" description="We count anonymous totals like sessions per day to improve Kairos. No individual attempts are shared." />
+          {isAdmin && (
+            <SettingRow label="Kairos admin" description="Exam dates, announcements and app insights.">
+              <LinkButton to="/admin" variant="secondary" size="sm">Open admin console</LinkButton>
+            </SettingRow>
+          )}
           <SettingRow label="Legal" description="Drafts, to be reviewed before launch.">
             <LinkButton to="/privacy" variant="ghost" size="sm">Privacy</LinkButton>
             <LinkButton to="/terms" variant="ghost" size="sm">Terms</LinkButton>

@@ -37,8 +37,8 @@ export function newExamDraft(exam: string, cal: ExamCalendar = CALENDAR): ExamDr
   return { exam, sel, date: defaultDateFor(exam, sel, cal) };
 }
 
-export function emptyDraft(): Draft {
-  return { first: newExamDraft('JEE_MAIN'), second: null, minutes: { ...DEFAULT_MINUTES }, offDay: 0, done: [], support: null, ambition: 'competitive', behind: null };
+export function emptyDraft(cal: ExamCalendar = CALENDAR): Draft {
+  return { first: newExamDraft('JEE_MAIN', cal), second: null, minutes: { ...DEFAULT_MINUTES }, offDay: 0, done: [], support: null, ambition: 'competitive', behind: null };
 }
 
 export function draftFromProfile(p: OnboardingProfile): Draft {

@@ -1,4 +1,4 @@
-import { countByKind, DEFAULT_PHASES, type MasteryDoc, type PhaseId } from '@kairos/core';
+import { countByKind, DEFAULT_PHASES, type MasteryDoc, type PhaseId, type ScheduleConfig } from '@kairos/core';
 import { buildPlanContext, computeTodayPace, examState, type PaceBundle, type PlanSetup } from '../plan/engine';
 import { examLabel } from '../plan/syllabus';
 import type { Taxonomy } from '../practice/taxonomy';
@@ -43,7 +43,7 @@ export function rhoWords(status: PaceBundle['pace']['status'], rho: number): str
 }
 
 /** The "Here's your plan" numbers: reverse schedule, pace and runway warning for the entered answers. Pure. */
-export function buildPreview(input: { setup: PlanSetup; tax: Taxonomy; mastery?: MasteryDoc | null; today: string; dropped?: string[] }): PlanPreview | null {
+export function buildPreview(input: { setup: PlanSetup; tax: Taxonomy; mastery?: MasteryDoc | null; today: string; dropped?: string[]; scheduleConfig?: ScheduleConfig }): PlanPreview | null {
   const st = examState(input.setup, input.today);
   if (st.kind !== 'ok') return null;
   const ctx = buildPlanContext({
@@ -55,6 +55,7 @@ export function buildPreview(input: { setup: PlanSetup; tax: Taxonomy; mastery?:
     recentPlans: [],
     pace: { dropped: input.dropped ?? [] },
     fu: 1,
+    ...(input.scheduleConfig ? { scheduleConfig: input.scheduleConfig } : {}),
   });
   if (!ctx) return null;
   const c = countByKind(ctx.schedule);

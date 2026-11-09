@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { Banner, Button, Page, PageHeader } from '../components/ui';
 import { InfoIcon } from '../components/icons';
+import { AnnouncementBanner } from '../config/AnnouncementBanner';
 import { Dashboard } from '../dashboard';
 import { useGuest } from '../store/StoreProvider';
 import { useSignInNudge } from '../store/NudgeProvider';
@@ -26,6 +27,7 @@ export function Home() {
   return (
     <Page>
       <PageHeader title={`Hi${first ? `, ${first}` : ''}.`} subtitle="Here is where today stands." />
+      <AnnouncementBanner />
       {isGuest && <GuestBanner />}
       {profile?.isMinor && profile.consent.status === 'pending' && (
         <Banner tone="accent" role="note">

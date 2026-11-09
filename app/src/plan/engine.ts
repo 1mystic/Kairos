@@ -9,6 +9,7 @@ import {
   DEFAULT_GAIN,
   behindOptions,
   buildSchedule,
+  type ScheduleConfig,
   chapterRemainingMin,
   computePace,
   DEFAULT_PHASES,
@@ -143,6 +144,8 @@ export interface ContextInput {
   fu: number;
   /** chapters that have practice questions; the plan only schedules those when given (pace still counts all chapters) */
   available?: ReadonlySet<string>;
+  /** the student's / admin's roadmap (src/roadmap); core defaults when omitted */
+  scheduleConfig?: ScheduleConfig;
 }
 
 export interface PlanContext {
@@ -231,7 +234,7 @@ export function buildPlanContext(input: ContextInput, nowMs?: number): PlanConte
     const avail = liveChapters.filter((c) => input.available!.has(c));
     if (avail.length > 0) planChapters = avail;
   }
-  const schedule = buildSchedule({ today: input.today, examDate: exam.date, minutesPerWeekday: input.setup.minutesPerWeekday, offDay: input.setup.offDay });
+  const schedule = buildSchedule({ today: input.today, examDate: exam.date, minutesPerWeekday: input.setup.minutesPerWeekday, offDay: input.setup.offDay, ...(input.scheduleConfig ? { config: input.scheduleConfig } : {}) });
   const fromToday = scheduleFrom(schedule, input.today);
   const masteryDoc = chapterMasteryDoc(input.mastery, input.tax);
   const now = nowMs ?? Date.parse(`${input.today}T12:00:00`);
