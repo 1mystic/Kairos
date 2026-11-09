@@ -30794,7 +30794,7 @@
  {
   "id": "q_86ea92251280",
   "type": "NVQ",
-  "stem": "**Database $\\mathcal D$**. Standard SQL semantics; `NULL` shown as –.\n\nTable Emp:\n\n| eid | name | dept | salary | mgr |\n| --- | --- | --- | --- | --- |\n| 1 | Asha | CS | 70 | – |\n| 2 | Bala | CS | 50 | 1 |\n| 3 | Chen | EE | 60 | 1 |\n| 4 | Dev | EE | – | 3 |\n| 5 | Esha | ME | 65 | 3 |\n| 6 | Farid | CS | 55 | 2 |\n| 7 | Gita | – | 45 | 1 |\n\nTable Dept:\n\n| dname | building |\n| --- | --- |\n| CS | A |\n| EE | B |\n| CE | C |\n\nThe script runs with foreign keys enforced.\n\n```sql\nCREATE TABLE Dept(dname TEXT PRIMARY KEY);\nCREATE TABLE Emp(eid INT PRIMARY KEY,\n  dept TEXT REFERENCES Dept(dname) ON DELETE CASCADE);\nCREATE TABLE Proj(pid TEXT PRIMARY KEY,\n  lead INT REFERENCES Emp(eid) ON DELETE SET NULL);\nINSERT INTO Dept VALUES ('CS'), ('EE'), ('ME');\nINSERT INTO Emp VALUES (1,'CS'), (2,'CS'), (3,'EE'),\n                       (4,'ME'), (5,'CS');\nINSERT INTO Proj VALUES ('P1',1), ('P2',3), ('P3',5),\n                        ('P4',NULL), ('P5',2), ('P6',4);\nDELETE FROM Dept WHERE dname = 'CS';\nSELECT (SELECT COUNT(*) FROM Emp),\n       (SELECT COUNT(*) FROM Proj WHERE lead IS NULL);\n```\n\nThe second value printed is ____.",
+  "stem": "The script runs with foreign keys enforced.\n\n```sql\nCREATE TABLE Dept(dname TEXT PRIMARY KEY);\nCREATE TABLE Emp(eid INT PRIMARY KEY,\n  dept TEXT REFERENCES Dept(dname) ON DELETE CASCADE);\nCREATE TABLE Proj(pid TEXT PRIMARY KEY,\n  lead INT REFERENCES Emp(eid) ON DELETE SET NULL);\nINSERT INTO Dept VALUES ('CS'), ('EE'), ('ME');\nINSERT INTO Emp VALUES (1,'CS'), (2,'CS'), (3,'EE'),\n                       (4,'ME'), (5,'CS');\nINSERT INTO Proj VALUES ('P1',1), ('P2',3), ('P3',5),\n                        ('P4',NULL), ('P5',2), ('P6',4);\nDELETE FROM Dept WHERE dname = 'CS';\nSELECT (SELECT COUNT(*) FROM Emp),\n       (SELECT COUNT(*) FROM Proj WHERE lead IS NULL);\n```\n\nThe second value printed is ____.",
   "images": [],
   "answer": {
    "value": 4,
@@ -44968,7 +44968,7 @@
  {
   "id": "q_6f8790735659",
   "type": "SCQ",
-  "stem": "With perfect ordering, the effective branching factor of alpha–beta is about",
+  "stem": "**Conventions.** Levels alternate starting with the player at the root. Children are visited left to right. Alpha–beta prunes when $\\alpha\\ge\\beta$ (cut on equality). \"Pruned leaves\" are leaves never evaluated. Strategies at a node are numbered $1,2,\\dots$ from the left.\n\nWith perfect ordering, the effective branching factor of alpha–beta is about",
   "images": [],
   "answer": {
    "keys": [
@@ -45278,7 +45278,7 @@
  {
   "id": "q_8f2c90f01864",
   "type": "NVQ",
-  "stem": "**Conventions.** Levels alternate starting with the player at the root. Children are visited left to right. Alpha–beta prunes when $\\alpha\\ge\\beta$ (cut on equality). \"Pruned leaves\" are leaves never evaluated. Strategies at a node are numbered $1,2,\\dots$ from the left.\n\nMAX has actions $a_1,a_2$. Each leads to a fair coin flip, after which MIN chooses between two leaves: $a_1$: heads $\\{3,9\\}$, tails $\\{8,4\\}$; $a_2$: heads $\\{6,2\\}$, tails $\\{7,9\\}$. The expectiminimax value at the root is ____.",
+  "stem": "MAX has actions $a_1,a_2$. Each leads to a fair coin flip, after which MIN chooses between two leaves: $a_1$: heads $\\{3,9\\}$, tails $\\{8,4\\}$; $a_2$: heads $\\{6,2\\}$, tails $\\{7,9\\}$. The expectiminimax value at the root is ____.",
   "images": [],
   "answer": {
    "value": 4.5,
@@ -45317,7 +45317,7 @@
  {
   "id": "q_68082718ac0a",
   "type": "SCQ",
-  "stem": "**Conventions.** Levels alternate starting with the player at the root. Children are visited left to right. Alpha–beta prunes when $\\alpha\\ge\\beta$ (cut on equality). \"Pruned leaves\" are leaves never evaluated. Strategies at a node are numbered $1,2,\\dots$ from the left.\n\nMAX has actions $a_1,a_2$. Each leads to a fair coin flip, after which MIN chooses between two leaves: $a_1$: heads $\\{3,9\\}$, tails $\\{8,4\\}$; $a_2$: heads $\\{6,2\\}$, tails $\\{7,9\\}$. MAX chooses",
+  "stem": "MAX has actions $a_1,a_2$. Each leads to a fair coin flip, after which MIN chooses between two leaves: $a_1$: heads $\\{3,9\\}$, tails $\\{8,4\\}$; $a_2$: heads $\\{6,2\\}$, tails $\\{7,9\\}$. MAX chooses",
   "images": [],
   "answer": {
    "keys": [
@@ -45668,7 +45668,7 @@
  {
   "id": "q_32e5593ac9b7",
   "type": "SCQ",
-  "stem": "Game programs use iterative deepening mainly because it",
+  "stem": "**Conventions.** Levels alternate starting with the player at the root. Children are visited left to right. Alpha–beta prunes when $\\alpha\\ge\\beta$ (cut on equality). \"Pruned leaves\" are leaves never evaluated. Strategies at a node are numbered $1,2,\\dots$ from the left.\n\nGame programs use iterative deepening mainly because it",
   "images": [],
   "answer": {
    "keys": [

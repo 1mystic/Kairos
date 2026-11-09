@@ -48,7 +48,7 @@ CTX_MATCH = {
     "Day24-ctx2": r"\\mathcal M",
     "Day25-ctx1": r"conventions|expan|frontier|generated|\\mathcal H|A\*|BFS|DFS|uniform-cost|greedy",
     "Day25-ctx2": r"\\mathcal H",
-    "Day26-ctx3": r"\\mathcal T|prun|strateg|principal variation|leaves",
+    "Day26-ctx3": r"\\mathcal T|prun|strateg|principal variation|alpha",
     "Day26-ctx4": r"\\mathcal T_1",
     "Day28-ctx5": r"\\mathcal N",
     "Day28-ctx6": r"\\mathcal G",
@@ -242,7 +242,7 @@ def build(r: dict, by_id: dict, ctxs_by_id: dict, secmap: dict, overrides: dict,
         if rx is None:
             issues.append(f"context: no rule for {cid}")
             continue
-        if re.search(rx, probe) and not (cid == "Day18-ctx1" and "\\begin{tabular}" in q):
+        if re.search(rx, probe) and not (cid == "Day18-ctx1" and ("\\begin{tabular}" in q or "CREATE TABLE" in q)):
             pre.append(prep_context(c))
     stem_raw = "\n\n".join(pre + [q]) + tail
     stem = convert(stem_raw, cv)
