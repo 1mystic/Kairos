@@ -2,6 +2,13 @@
 
 All build work is done and pushed (`main`, tag `checkpoint-session3-end`+). The site is NOT deployed yet. Do these in order. Anything marked **(agent)** is work to hand to a Sonnet subagent in a new session (say: "read docs/NEXT_STEPS.md and docs/00_WORKPLAN.md and continue").
 
+
+## DONE in session 4 (2026-11-09)
+- Rules tests 150/150 (2 test-helper fixes), **rules + indexes deployed**.
+- **Hosting deployed: https://kairos-76a0d.web.app**. The live site loads its Firebase web config from Hosting's `/__/firebase/init.json` (no env vars needed for production). HTML routes are `no-cache` so new deploys show at once.
+- CSP is report-only; the only reports are `'unsafe-eval'` (most likely zod v4's JIT). Before enforcing, set `z.config({ jitless: true })` in core or allow it, then rename the header to `Content-Security-Policy`.
+- Still to do: enable Google sign-in in the console, test a real email sign-up + Google sign-in on the live site, create `admins/<uid>`, owner inputs in section 5, remaining screenshots, backlog.
+
 ## 1. Firebase console (owner, ~10 min)
 1. **Authentication → Sign-in method → Google → Enable** (set the public-facing name "Kairos" and the support email). Email/Password is already enabled.
 2. **Authentication → Settings → Authorised domains**: make sure `localhost`, `kairos-76a0d.web.app` and `kairos-76a0d.firebaseapp.com` are listed. After the first preview deploy (step 3) add the preview channel domain it prints.
