@@ -396,9 +396,10 @@ describe('stats/{day}/seen dedupe', () => {
   });
   it('same user can increment on another day', async () => {
     await assertSucceeds(activeBatch(alice(), ALICE));
-    const b = writeBatch(alice());
-    b.set(statRef(alice(), '2026-11-09'), stat({ active: increment(1) }), { merge: true });
-    b.set(markerRef(alice(), ALICE, '2026-11-09'), { at: serverTimestamp() });
+    const db = alice(); // one Firestore instance for the batch and every reference in it
+    const b = writeBatch(db);
+    b.set(statRef(db, '2026-11-09'), stat({ active: increment(1) }), { merge: true });
+    b.set(markerRef(db, ALICE, '2026-11-09'), { at: serverTimestamp() });
     await assertSucceeds(b.commit());
   });
   it('marker without increment is fine', async () => {
@@ -415,9 +416,10 @@ describe('stats/{day}/seen dedupe', () => {
   });
   it('active delta above 1 denied even with marker', async () => {
     await seedStats({ active: 1 });
-    const b = writeBatch(alice());
-    b.update(statRef(alice()), { active: 3, updatedAt: serverTimestamp() });
-    b.set(markerRef(alice(), ALICE), { at: serverTimestamp() });
+    const db = alice(); // one Firestore instance for the batch and every reference in it
+    const b = writeBatch(db);
+    b.update(statRef(db), { active: 3, updatedAt: serverTimestamp() });
+    b.set(markerRef(db, ALICE), { at: serverTimestamp() });
     await assertFails(b.commit());
   });
   it('marker shape: extra field, stale at, unauthenticated denied', async () => {
