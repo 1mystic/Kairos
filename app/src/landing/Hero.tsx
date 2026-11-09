@@ -1,5 +1,14 @@
 import { Button, LinkButton, TwoPane } from '../components/ui';
-import { CountdownRing } from './CountdownRing';
+import { MockIcon, UserIcon } from '../components/icons';
+import { HeroVisual } from './HeroVisual';
+
+function OfflineGlyph() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01M4 4l16 16" />
+    </svg>
+  );
+}
 
 export function Hero({ onStartGuest }: { onStartGuest: () => void }) {
   return (
@@ -19,9 +28,14 @@ export function Hero({ onStartGuest }: { onStartGuest: () => void }) {
           <LinkButton to="/signup" variant="secondary" size="lg">Create account</LinkButton>
         </div>
         <p className="ld-note">Free. Your progress stays on your device until you choose to sign in.</p>
+        <ul className="ld-trust" aria-label="Highlights">
+          <li><MockIcon width={20} height={20} />Real exam-style screen</li>
+          <li><OfflineGlyph />Works offline</li>
+          <li><UserIcon width={20} height={20} />No sign-in needed</li>
+        </ul>
       </div>
       <div className="ld-hero-visual">
-        <CountdownRing />
+        <HeroVisual />
       </div>
       </TwoPane>
     </section>

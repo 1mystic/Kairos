@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import { Hero } from './Hero';
-import { TodayCardDemo } from './TodayCardDemo';
+import { HowItDecides } from './HowItDecides';
 import { PhaseTimeline } from './PhaseTimeline';
 import { PaletteDemo } from './PaletteDemo';
 import { NotationCard } from './NotationCard';
@@ -90,27 +90,25 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
       <main id="main" className="ld-main">
         <Hero onStartGuest={onStartGuest} />
 
-        <Block id="how" title="How it decides" intro="Every morning Kairos compares the work left with the time left, then sizes today. You see the reason, not just the list.">
-          <TodayCardDemo />
-        </Block>
+        <HowItDecides />
 
-        <Block id="plan" tone="alt" flip title="Planned backwards from your date" intro="Your days are split into phases, from building chapters to a rested last two days. The plan is re-sized as you go, never crammed at the end.">
+        <Block id="plan" flip title="Planned backwards from your date" intro="Your days are split into phases, from building chapters to a rested last two days. The plan is re-sized as you go, never crammed at the end.">
           <PhaseTimeline />
         </Block>
 
-        <Block id="cbt" title="A real exam screen" intro="Practise on an exam-style CBT screen, so the palette, the timer and the flow feel familiar on the day.">
+        <Block id="cbt" tone="alt" title="A real exam screen" intro="Practise on an exam-style CBT screen, so the palette, the timer and the flow feel familiar on the day.">
           <PaletteDemo />
         </Block>
 
-        <Block id="notation" tone="alt" flip title="Real notation" intro="Chemistry, diagrams, complex notation: rendered crisply, and it works offline.">
+        <Block id="notation" flip title="Real notation" intro="Chemistry, diagrams, complex notation: rendered crisply, and it works offline.">
           <NotationCard />
         </Block>
 
-        <Block id="backlog" title="Honest backlog" intro="You will miss days. That is normal. Kairos carries, spreads, sheds, and never piles.">
+        <Block id="backlog" tone="alt" title="Honest backlog" intro="You will miss days. That is normal. Kairos carries, spreads, sheds, and never piles.">
           <BacklogDemo />
         </Block>
 
-        <Centered id="exams" tone="alt" title="Exams" intro="Built from each exam's published pattern, not a one-size paper.">
+        <Centered id="exams" title="Exams" intro="Built from each exam's published pattern, not a one-size paper.">
           <CardGrid as="ul" cols={3}>
             {EXAMS.map((e) => (
               <li key={e.name} className="card">
@@ -121,7 +119,7 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
           </CardGrid>
         </Centered>
 
-        <Centered id="private" title="Free and private" intro="Start without signing in. Sign in later and your progress comes with you.">
+        <Centered id="private" tone="alt" title="Free and private" intro="Start without signing in. Sign in later and your progress comes with you.">
           <CardGrid as="ul" cols={3}>
             {PROMISES.map(({ icon: I, title, body }) => (
               <li key={title} className="card">
@@ -134,7 +132,7 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
           <div className="ld-tip"><Banner tone="accent" icon={<CalendarIcon className="shrink-0" />}>Tip: roz thoda, but roz. A steady 2 hours beats one 9-hour Sunday.</Banner></div>
         </Centered>
 
-        <Centered id="faq" tone="alt" title="Questions, answered" intro="Short and honest. If something is missing, it is probably not built yet.">
+        <Centered id="faq" title="Questions, answered" intro="Short and honest. If something is missing, it is probably not built yet.">
           <div className="ld-faq">
             {FAQ.map(({ q, a }) => (
               <details key={q} name="faq" className="ld-qa">
@@ -148,11 +146,13 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
           </div>
         </Centered>
 
-        <section className="ld-final ld-wrap" aria-labelledby="ld-final-h">
-          <h2 id="ld-final-h">Know your date. We'll handle the days.</h2>
-          <div className="ld-cta-row ld-center">
-            <Button size="lg" onClick={onStartGuest}>Try it now, no sign-in</Button>
-            <LinkButton to="/signup" variant="secondary" size="lg">Create account</LinkButton>
+        <section className="ld-section ld-alt ld-final" aria-labelledby="ld-final-h">
+          <div className="ld-wrap">
+            <h2 id="ld-final-h">Know your date. We'll handle the days.</h2>
+            <div className="ld-cta-row ld-center">
+              <Button size="lg" onClick={onStartGuest}>Try it now, no sign-in</Button>
+              <LinkButton to="/signup" variant="secondary" size="lg">Create account</LinkButton>
+            </div>
           </div>
         </section>
       </main>
@@ -162,6 +162,7 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
           <div className="ld-foot-brand">
             <span className="ld-logo"><LogoMark /><span>Kairos</span></span>
             <p>The right question, at the right time.</p>
+            <button type="button" className="ld-foot-try text-link" onClick={onStartGuest}>Try it now, no sign-in</button>
           </div>
           <nav aria-label="Product">
             <h2 className="ld-foot-h">Product</h2>
@@ -181,7 +182,10 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
             <Link to="/privacy#contact" className="ld-link">Contact</Link>
           </nav>
         </div>
-        <div className="ld-wrap ld-copy">© Kairos</div>
+        <div className="ld-wrap ld-copy">
+          <span>© Kairos</span>
+          <span>JEE Main · NEET UG · IAT</span>
+        </div>
       </footer>
     </div>
   );

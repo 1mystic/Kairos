@@ -1,0 +1,34 @@
+/* Auth brand panel (desktop only; index.css hides .auth-brand below 1024px). Overrides by specificity, tokens only. */
+@media (min-width: 1024px) {
+  .auth { --au-pad: var(--space-6); }
+  .auth .auth-brand { position: relative; overflow: hidden; flex-direction: column; align-items: stretch; justify-content: center; gap: var(--space-7); padding: var(--space-7) var(--au-pad); }
+  .auth .auth-brand .auth-brand-col { max-width: 38rem; align-self: flex-start; position: static; }
+  .auth .auth-brand .auth-brand-col > a:first-child { position: absolute; top: var(--space-6); left: var(--au-pad); }
+  .auth .auth-brand .auth-headline { max-width: none; }
+  .au-ring { position: absolute; right: -9rem; bottom: -9rem; width: 28rem; height: 28rem; pointer-events: none; }
+  .au-ring-track { stroke: var(--surface-3); }
+  .au-art { position: relative; z-index: 1; width: 100%; max-width: 38rem; display: grid; gap: var(--space-5); }
+  .au-cards { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--space-4); align-items: center; }
+  .au-card { background: var(--surface); border-radius: var(--radius-card); padding: var(--space-4); display: grid; gap: var(--space-3); }
+  .au-h { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); font-size: var(--fs-small); color: var(--slate); }
+  .au-h strong { color: var(--ink); font-size: var(--fs-body); }
+  .au-q { font-size: var(--fs-small); line-height: 1.5; color: var(--ink); }
+  .au-opts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .au-opts li { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-2); border-radius: var(--radius-btn); background: var(--surface-2); font-size: var(--fs-small); color: var(--ink); }
+  .au-opts b { display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--surface-3); font-size: var(--fs-caption); }
+  .au-opts li[data-on="true"] { background: var(--primary-50); color: var(--primary); font-weight: 600; }
+  .au-opts li[data-on="true"] b { background: var(--primary); color: var(--on-primary); }
+  .au-side { display: grid; gap: var(--space-3); justify-items: start; }
+  .au-chip { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-pill); background: var(--surface); color: var(--ink); font-size: var(--fs-caption); font-weight: 600; }
+  .au-dot { width: var(--space-2); height: var(--space-2); border-radius: 50%; background: var(--primary); }
+  .au-dot-accent { background: var(--accent); }
+  .au-strip { display: flex; gap: var(--space-1); height: var(--space-3); opacity: .6; }
+  .au-strip span { flex-basis: 0; border-radius: var(--space-1); background: var(--primary); }
+  .au-strip span[data-i="0"] { opacity: .35; } .au-strip span[data-i="1"] { opacity: .5; } .au-strip span[data-i="2"] { opacity: .65; } .au-strip span[data-i="3"] { opacity: .8; }
+  .au-strip span[data-i="5"] { background: var(--accent); }
+  @keyframes au-float { 50% { transform: translateY(calc(-1 * var(--space-1))); } }
+  .au-float { animation: au-float 7s ease-in-out infinite; }
+  .au-float-b { animation-duration: 8.5s; animation-delay: -2s; }
+}
+@media (min-width: 1280px) { .auth { --au-pad: var(--space-8); } }
+@media (prefers-reduced-motion: reduce) { .au-float { animation: none; } }
