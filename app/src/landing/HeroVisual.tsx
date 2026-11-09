@@ -1,60 +1,54 @@
 import { CheckIcon } from '../components/icons';
 import { CountdownRing } from './CountdownRing';
 
-// Illustrative sample screens, consistent with the Today card further down the page (20 + 12 + 14 = 46 questions).
-const TASKS: [string, boolean][] = [
-  ['Rotation: 20 questions', true],
-  ['Ionic Eq: 12 review cards', false],
-  ['Mixed set: 14 questions', false],
+// Illustrative sample, consistent with the Today card further down the page (20 + 12 + 14 = 46 items).
+const TASKS: { name: string; mins: string; done: number }[] = [
+  { name: 'Rotation', mins: '45 min', done: 1 },
+  { name: 'Ionic Eq', mins: '40 min', done: 0.4 },
+  { name: 'Mixed set', mins: '45 min', done: 0 },
 ];
-const OPTIONS = ['1/2', '1/3', '2/5', '1/4'];
-const PALETTE = ['done', 'done', 'done', 'marked', 'done', 'now', 'todo', 'todo'];
+const STATS: { label: string; value: string; sub: string; status?: boolean }[] = [
+  { label: 'Pace', value: '0.92', sub: 'On track', status: true },
+  { label: 'Accuracy', value: '74%', sub: 'Last 7 days' },
+  { label: 'Next mock', value: 'Sat 9:00', sub: 'Full pattern' },
+];
 
-const idx = (n: number) => ({ ['--i' as string]: n });
-
+/** One product-preview panel: ring + today's plan on a two-cell grid, three equal stat tiles underneath. Decorative. */
 export function HeroVisual() {
   return (
-    <div className="ld-hv">
-      <div className="ld-hv-ring" style={idx(0)}>
-        <CountdownRing />
+    <div className="ld-hv" aria-hidden="true">
+      <div className="ld-hv-bar">
+        <span className="ld-hv-dots"><i /><i /><i /></span>
+        <span className="ld-hv-title">Today · JEE Main</span>
       </div>
-      <div className="ld-hv-chip ld-hv-chip-a" style={idx(3)} aria-hidden="true">
-        <span className="ld-hv-float">
-          <span className="ld-dot" /> Pace 0.92 · On track
-        </span>
-      </div>
-      <div className="ld-hv-chip ld-hv-chip-b" style={idx(4)} aria-hidden="true">
-        <span className="ld-hv-float">
-          <span className="ld-hv-pal">
-            {PALETTE.map((s, i) => <i key={i} data-s={s} />)}
-          </span>
-          Q6 of 25
-        </span>
-      </div>
-      <div className="ld-hv-plan" style={idx(1)} aria-hidden="true">
-        <div className="ld-mini ld-hv-float">
-          <p className="ld-mini-h"><strong>Today</strong><span>~2h 10m</span></p>
-          <ul className="ld-mini-tasks">
-            {TASKS.map(([t, done]) => (
-              <li key={t} data-done={done}>
-                <span className="ld-mini-tick">{done && <CheckIcon />}</span>
-                {t}
+      <div className="ld-hv-body">
+        <div className="ld-hv-cell ld-hv-ringcell">
+          <CountdownRing />
+        </div>
+        <div className="ld-hv-cell ld-hv-plan">
+          <p className="ld-hv-h"><strong>Today's plan</strong><span>~2h 10m</span></p>
+          <ul className="ld-hv-tasks">
+            {TASKS.map((t) => (
+              <li key={t.name} data-done={t.done === 1}>
+                <span className="ld-hv-tick">{t.done === 1 && <CheckIcon />}</span>
+                <span className="ld-hv-task">
+                  <span className="ld-hv-row"><span>{t.name}</span><span className="ld-tab">{t.mins}</span></span>
+                  <span className="ld-hv-prog"><span style={{ ['--p' as string]: t.done }} /></span>
+                </span>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="ld-hv-q" style={idx(2)} aria-hidden="true">
-        <div className="ld-mini ld-hv-float ld-hv-float-b">
-          <p className="ld-mini-h"><strong>Physics</strong><span>Rotation</span></p>
-          <p className="ld-mini-q">Rotational share of a rolling disc's kinetic energy?</p>
-          <ul className="ld-mini-opts">
-            {OPTIONS.map((o, i) => (
-              <li key={o} data-on={i === 1}><b>{'ABCD'[i]}</b>{o}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul className="ld-hv-stats">
+        {STATS.map((s) => (
+          <li key={s.label} className="ld-hv-cell">
+            <span className="ld-hv-k">{s.label}</span>
+            <strong className="ld-tab">{s.value}</strong>
+            <span className="ld-hv-sub">{s.status && <i className="ld-dot" />}{s.sub}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

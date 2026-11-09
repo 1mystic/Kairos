@@ -2,11 +2,11 @@ import { useReveal } from './useReveal';
 
 // Illustrative proportions only; the real plan is built backwards from your exam date.
 const PHASES = [
-  { name: 'Build', w: 30, note: 'Learn chapters, first pass' },
+  { name: 'Build', w: 30, note: 'First pass of chapters' },
   { name: 'Strengthen', w: 22, note: 'Weak topics, spaced review' },
   { name: 'Consolidate', w: 18, note: 'Mixed sets, mocks begin' },
-  { name: 'Exam mode', w: 14, note: 'Timed, full-pattern papers' },
-  { name: 'Final sprint', w: 12, note: 'Last 15 days: a full mock daily at exam time' },
+  { name: 'Exam mode', w: 14, note: 'Timed full-pattern papers' },
+  { name: 'Final sprint', w: 12, note: 'Last 15 days: daily mock' },
   { name: 'Taper', w: 4, note: 'Last 2 days: light, rested' },
 ];
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './cbtDemo.css';
 import { prefersReducedMotion, useInView } from './useReveal';
 
-const N = 30;
+const N = 20;
 const STATES = ['nv', 'na', 'an', 'mk', 'am'] as const;
 const LEGEND: [(typeof STATES)[number], string][] = [
   ['nv', 'Not visited'],
@@ -33,7 +33,7 @@ export function PaletteDemo() {
       <div
         className="ld-pal"
         role="img"
-        aria-label="Question palette demo: 30 numbered questions cycling through five states: not visited, not answered, answered, marked for review, and answered and marked for review."
+        aria-label="Question palette demo: 20 numbered questions cycling through five states: not visited, not answered, answered, marked for review, and answered and marked for review."
       >
         {cells.map((s, i) => (
           <span key={i} className={`ld-q ld-q-${STATES[s]}`} aria-hidden="true">

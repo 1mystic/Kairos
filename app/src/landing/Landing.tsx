@@ -8,7 +8,7 @@ import { NotationCard } from './NotationCard';
 import { BacklogDemo } from './BacklogDemo';
 import { useReveal } from './useReveal';
 import { Banner, Button, CardGrid, LinkButton, LogoMark, TwoPane } from '../components/ui';
-import { CalendarIcon, ChevronDownIcon, LockIcon, SparkIcon, UserIcon } from '../components/icons';
+import { CalendarIcon, CheckIcon, ChevronDownIcon, LockIcon, SparkIcon, UserIcon } from '../components/icons';
 import './landing.css';
 
 // Patterns mirror content/blueprints/*.json (jee_main_2026_p1, neet_ug_2027, iat_2026).
@@ -33,7 +33,7 @@ const FAQ = [
   { q: 'How does the plan work?', a: 'You tell Kairos your exam date and how much time you have each day. It counts back from the date, sizes today from the work left against the days left, and shows you why. It never goes above your daily time without asking, and missed work is carried, spread or, only if you choose, shed.' },
 ];
 
-function Block({ id, title, intro, children, tone, flip }: { id: string; title: string; intro: string; children: ReactNode; tone?: 'alt'; flip?: boolean }) {
+function Block({ id, title, intro, points, children, tone, flip }: { id: string; title: string; intro: string; points?: string[]; children: ReactNode; tone?: 'alt'; flip?: boolean }) {
   const [ref, shown] = useReveal<HTMLElement>(0.15);
   return (
     <section ref={ref} id={id} className={`ld-section${tone === 'alt' ? ' ld-alt' : ''}`} data-shown={shown} aria-labelledby={`${id}-h`}>
@@ -42,6 +42,11 @@ function Block({ id, title, intro, children, tone, flip }: { id: string; title: 
           <div className="ld-head">
             <h2 id={`${id}-h`}>{title}</h2>
             <p>{intro}</p>
+            {points && (
+              <ul className="ld-points">
+                {points.map((t) => <li key={t}><CheckIcon aria-hidden="true" />{t}</li>)}
+              </ul>
+            )}
           </div>
           <div className="ld-visual">{children}</div>
         </TwoPane>
@@ -92,15 +97,15 @@ export function Landing({ onStartGuest }: { onStartGuest: () => void }) {
 
         <HowItDecides />
 
-        <Block id="plan" flip title="Planned backwards from your date" intro="Your days are split into phases, from building chapters to a rested last two days. The plan is re-sized as you go, never crammed at the end.">
+        <Block id="plan" flip title="Planned backwards from your date" intro="Your days are split into phases, from building chapters to a rested last two days. The plan is re-sized as you go, never crammed at the end." points={['Re-sized every day', 'Buffer days built in', 'A full mock daily in the final sprint']}>
           <PhaseTimeline />
         </Block>
 
-        <Block id="cbt" tone="alt" title="A real exam screen" intro="Practise on an exam-style CBT screen, so the palette, the timer and the flow feel familiar on the day.">
+        <Block id="cbt" tone="alt" title="A real exam screen" intro="Practise on an exam-style CBT screen, so the palette, the timer and the flow feel familiar on the day." points={['Question palette with all five states', 'Section timer and mark-for-review', 'Same flow in practice and mocks']}>
           <PaletteDemo />
         </Block>
 
-        <Block id="notation" flip title="Real notation" intro="Chemistry, diagrams, complex notation: rendered crisply, and it works offline.">
+        <Block id="notation" flip title="Real notation" intro="Chemistry, diagrams, complex notation: rendered crisply, and it works offline." points={['Chemistry with \\ce{} equations', 'Diagrams kept crisp as WebP', 'Works offline once loaded']}>
           <NotationCard />
         </Block>
 
