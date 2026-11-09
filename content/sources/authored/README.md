@@ -28,3 +28,33 @@ Constants are stated in the stem (g, hc, k_B, R, molar volume). No figures are u
 2. If you add a new module, list it in `MODULES` in `pipeline/jee_authored/build.py`.
 3. `python -m pipeline.jee_authored.build` then `python -m pipeline.validate -q pipeline/bank_src/authored_jee_main.json`.
    The build aborts on any failed assert, validation error, or a stem that duplicates an existing bank or fixture question.
+
+# Authored NEET UG / IAT practice questions (Biology priority)
+
+Original questions written for Kairos (fresh wording, NCERT-level facts only; nothing copied from real papers or coaching material).
+Output: `pipeline/bank_src/authored_neet_iat.json` (653 questions, `source.kind = authored`, `solution_source = in_house`, `status = verified`).
+Generator and verification code: `pipeline/neet_authored/` (`bot_a/b/c.py`, `zoo_a/b.py`, `phy.py`, `che.py`, `build.py`).
+
+## Counts
+- Subjects: BOT 293, ZOO 197, CHE 119, PHY 44.
+- Types: SCQ 562, INT 53, NVQ 34, ASSERT_REASON 4.
+- Difficulty: E 259, M 344, H 50 (about 40 / 53 / 8 per cent; the hard share is below the 15 per cent target). `b` prior -0.9 / 0.1 / 1.1, `n: 0`.
+- Biology: every one of the 35 BOT/ZOO chapters in the taxonomy has 12-21 questions. `in_syllabus` (years 2026 and 2027) follows the taxonomy flags (NEET_UG and IAT for BOT/ZOO).
+- Physics/chemistry gap chapters (all text-only): PHY.MAGM 13, PHY.WOP 11, PHY.SEM 13, PHY.EMW 7; CHE.HC 13, HALO 11, ALC 12, CARB 7, AMN 8, BIOM 12, PERIO 9, PBLK 9, DF 6,
+  and the IAT-only chapters SBLK 8, POLY 8, GAS 4, SOLID 4, SURF 4, METAL 4.
+
+## Verification statement
+- `recomputed-by-code` (92 / 653): genetics crosses and probabilities (enumeration), Hardy-Weinberg, ploidy/chromatid/DNA-content counts, population growth and logistic rates,
+  enzyme kinetics, respiratory volumes, cardiac output, GFR, energy transfer, stoichiometry (atom-balance checks), optics, semiconductor and magnetism numerics.
+  The module asserts the stored answer at import time.
+- `second-derivation` (561 / 653): factual items. Each solution states the fact together with the textbook rule or mechanism that fixes the answer, independent of the option text.
+  Every solution ends with `*Verified by: <method>.*`. Items with any doubt (edition-dependent numbers, contested facts, "NOT" traps on edge cases) were dropped.
+- No `needs_review` items. No figure-dependent items. Stems were checked for duplicates against the other `bank_src` files by the build.
+
+## Known limits
+- Facts follow the NCERT-style statement of each topic; NEET paper wording can differ. A subject expert should still spot-check Biology (especially counts such as GFR, percentages of CO2 transport).
+- Chapters still thin (below 12): CHE.GAS, SOLID, SURF, METAL (IAT-only, 4 each), CHE.DF 6, CHE.CARB 7, CHE.AMN 8, PHY.EMW 7. Other NEET physics/chemistry chapters already covered by the JEE authored set were not duplicated.
+- Hard items are only 8 per cent.
+
+## Rebuild
+`python -m pipeline.neet_authored.build` (aborts on any failed assert, validation error or duplicate stem), then `python -m pipeline.validate pipeline/bank_src/authored_neet_iat.json`.
