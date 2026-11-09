@@ -1,0 +1,1666 @@
+[
+ {
+  "id": "q_06fb8acd9a96",
+  "type": "MSQ",
+  "stem": "A particle moves along the $x$-axis with $x=2t^3-9t^2+12t$ ($x$ in metres, $t$ in seconds). Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "$v=6t^2-18t+12=6(t-1)(t-2)$ so $v=0$ at $t=1,2$ (A true) while $v(1.5)=-1.5\\ne0$ (D false). $a=12t-18\\Rightarrow a(1)=-6$ (B true). $x(3)=54-81+36=9$ and $x(0)=0$ (C true).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The particle is momentarily at rest at $t=1\\ \\mathrm{s}$ and at $t=2\\ \\mathrm{s}$."
+   },
+   {
+    "key": "B",
+    "text": "Its acceleration at $t=1\\ \\mathrm{s}$ is $-6\\ \\mathrm{m/s^2}$."
+   },
+   {
+    "key": "C",
+    "text": "Its displacement during the first $3\\ \\mathrm{s}$ is $9\\ \\mathrm{m}$."
+   },
+   {
+    "key": "D",
+    "text": "Its velocity at $t=1.5\\ \\mathrm{s}$ is zero."
+   }
+  ]
+ },
+ {
+  "id": "q_0762b27230ea",
+  "type": "SCQ",
+  "stem": "Using $k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$, the average translational kinetic energy of a gas molecule at $27^\\circ\\mathrm{C}$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$T=300\\ \\mathrm{K}$ (always use kelvin). $\\bar{E}=\\tfrac32k_BT=1.5\\times1.38\\times10^{-23}\\times300=6.21\\times10^{-21}\\ \\mathrm{J}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KTG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$4.14\\times10^{-21}$"
+   },
+   {
+    "key": "B",
+    "text": "$1.24\\times10^{-20}$"
+   },
+   {
+    "key": "C",
+    "text": "$5.59\\times10^{-22}$"
+   },
+   {
+    "key": "D",
+    "text": "$6.21\\times10^{-21}$"
+   }
+  ]
+ },
+ {
+  "id": "q_08ebe236431e",
+  "type": "SCQ",
+  "stem": "A planet has $9$ times the mass and $4$ times the radius of the Earth. If the escape speed from the Earth is $11.2\\ \\mathrm{km/s}$, the escape speed from the planet in km/s is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$v_e=\\sqrt{2GM/R}\\propto\\sqrt{M/R}$, so $v_e'=11.2\\sqrt{9/4}=11.2\\times1.5=16.8\\ \\mathrm{km/s}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.GRAV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$50.4$"
+   },
+   {
+    "key": "B",
+    "text": "$8.4$"
+   },
+   {
+    "key": "C",
+    "text": "$16.8$"
+   },
+   {
+    "key": "D",
+    "text": "$25.2$"
+   }
+  ]
+ },
+ {
+  "id": "q_1c0029febaca",
+  "type": "INT",
+  "stem": "A force $F=(3x^2+2x)\\ \\mathrm{N}$ acts on a particle along the $x$-axis. The work done by the force in moving the particle from $x=0$ to $x=4\\ \\mathrm{m}$ is, in joule,",
+  "images": [],
+  "answer": {
+   "value": 80.0
+  },
+  "solution": "$W=\\int_0^4(3x^2+2x)\\,dx=\\left[x^3+x^2\\right]_0^4=64+16=80\\ \\mathrm{J}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1e3301a4d1f3",
+  "type": "INT",
+  "stem": "A $2\\ \\mathrm{kg}$ block is pushed up a rough incline of angle $\\theta$ with $\\sin\\theta=0.6$, $\\cos\\theta=0.8$ and coefficient of kinetic friction $0.5$, by a force parallel to the incline so that it moves up at constant speed. With $g=10\\ \\mathrm{m/s^2}$, the force required in newton is",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "Constant speed: net force zero along the incline, friction acts down the slope: $F=mg\\sin\\theta+\\mu mg\\cos\\theta=20(0.6+0.5\\times0.8)=20\\ \\mathrm{N}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.LOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_31a0a9a1c796",
+  "type": "INT",
+  "stem": "A small block slides from rest from the top of a smooth fixed hemisphere of radius $90\\ \\mathrm{cm}$ and leaves the surface at some point. The vertical distance (in cm) of that point below the top is",
+  "images": [],
+  "answer": {
+   "value": 30.0
+  },
+  "solution": "At angle $\\theta$ from the vertical: energy gives $v^2=2gR(1-\\cos\\theta)$; radial equation $mg\\cos\\theta-N=mv^2/R$. It leaves when $N=0$: $\\cos\\theta=2(1-\\cos\\theta)\\Rightarrow\\cos\\theta=\\tfrac23$. Drop $=R(1-\\cos\\theta)=R/3=30\\ \\mathrm{cm}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_34bc4bc7221e",
+  "type": "NVQ",
+  "stem": "A liquid sample of volume $500\\ \\mathrm{cm^3}$ has bulk modulus $1\\times10^{11}\\ \\mathrm{Pa}$. The decrease in its volume (in $\\mathrm{cm^3}$) when the pressure is increased by $4\\times10^{7}\\ \\mathrm{Pa}$ is",
+  "images": [],
+  "answer": {
+   "value": 0.2,
+   "tol": 0.005
+  },
+  "solution": "$B=-\\dfrac{\\Delta P}{\\Delta V/V}\\Rightarrow|\\Delta V|=\\dfrac{V\\,\\Delta P}{B}=\\dfrac{500\\times4\\times10^7}{10^{11}}=0.2\\ \\mathrm{cm^3}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3ee0daaad86d",
+  "type": "SCQ",
+  "stem": "A mixture of $2$ mol of a monatomic ideal gas and $3$ mol of a rigid diatomic ideal gas is kept at moderate temperature. The ratio $C_p/C_v$ of the mixture is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Per mole of mixture $C_v=\\dfrac{2(3R/2)+3(5R/2)}{5}=\\dfrac{21R}{10}$, $C_p=C_v+R=\\dfrac{31R}{10}$, so $\\gamma=\\dfrac{31}{21}\\approx1.48$. (Averaging the two $\\gamma$ values directly is wrong.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KTG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{19}{12}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{7}{5}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{31}{21}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{3}{2}$"
+   }
+  ]
+ },
+ {
+  "id": "q_4613af1a40b0",
+  "type": "SCQ",
+  "stem": "A car travelling at $72\\ \\mathrm{km\\,h^{-1}}$ brakes with a uniform retardation of $4\\ \\mathrm{m\\,s^{-2}}$. The distance it covers before stopping is (in metres)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Convert first: $u=72\\ \\mathrm{km/h}=20\\ \\mathrm{m/s}$. From $v^2=u^2-2as$ with $v=0$:\n\n$$s=\\frac{u^2}{2a}=\\frac{400}{8}=50\\ \\mathrm{m}.$$\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$648$"
+   },
+   {
+    "key": "B",
+    "text": "$50$"
+   },
+   {
+    "key": "C",
+    "text": "$100$"
+   },
+   {
+    "key": "D",
+    "text": "$25$"
+   }
+  ]
+ },
+ {
+  "id": "q_4b1abf239cd2",
+  "type": "INT",
+  "stem": "Two satellites circle the same planet. Satellite A has orbital period $3\\ \\mathrm{h}$. Satellite B moves in a circular orbit whose radius is $4$ times that of A. The period of B in hours is",
+  "images": [],
+  "answer": {
+   "value": 24.0
+  },
+  "solution": "Kepler's third law: $T^2\\propto r^3\\Rightarrow T_B=T_A\\,4^{3/2}=3\\times8=24\\ \\mathrm{h}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.GRAV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4d0afce413c4",
+  "type": "SCQ",
+  "stem": "A steel wire ($Y=2\\times10^{11}\\ \\mathrm{N/m^2}$, length $2\\ \\mathrm{m}$, area $1\\ \\mathrm{mm^2}$) carries a load of $100\\ \\mathrm{N}$. The elastic energy stored in the wire (in joule) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Extension $=\\dfrac{FL}{AY}=\\dfrac{100\\times2}{10^{-6}\\times2\\times10^{11}}=10^{-3}\\ \\mathrm{m}$. $U=\\tfrac12F\\,\\Delta L=\\tfrac12\\times100\\times10^{-3}=0.05\\ \\mathrm{J}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.05$"
+   },
+   {
+    "key": "B",
+    "text": "$0.025$"
+   },
+   {
+    "key": "C",
+    "text": "$5$"
+   },
+   {
+    "key": "D",
+    "text": "$0.1$"
+   }
+  ]
+ },
+ {
+  "id": "q_50205eacb6ce",
+  "type": "INT",
+  "stem": "At the same temperature, the ratio of the rms speed of hydrogen molecules ($M=2\\ \\mathrm{g/mol}$) to that of oxygen molecules ($M=32\\ \\mathrm{g/mol}$) is",
+  "images": [],
+  "answer": {
+   "value": 4.0
+  },
+  "solution": "$v_{rms}=\\sqrt{3RT/M}\\propto M^{-1/2}\\Rightarrow\\dfrac{v_{H_2}}{v_{O_2}}=\\sqrt{32/2}=4$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KTG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_542d920159db",
+  "type": "SCQ",
+  "stem": "A wire of length $2\\ \\mathrm{m}$ and cross-section $1\\ \\mathrm{mm^2}$ elongates by $1\\ \\mathrm{mm}$ under a load of $100\\ \\mathrm{N}$. Its Young's modulus is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$Y=\\dfrac{FL}{A\\,\\Delta L}=\\dfrac{100\\times2}{(10^{-6})(10^{-3})}=2\\times10^{11}\\ \\mathrm{N/m^2}$ (convert $\\mathrm{mm^2}$ to $\\mathrm{m^2}$ with $10^{-6}$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2\\times10^{11}\\ \\mathrm{N/m^2}$"
+   },
+   {
+    "key": "B",
+    "text": "$5\\times10^{10}\\ \\mathrm{N/m^2}$"
+   },
+   {
+    "key": "C",
+    "text": "$2\\times10^{5}\\ \\mathrm{N/m^2}$"
+   },
+   {
+    "key": "D",
+    "text": "$2\\times10^{8}\\ \\mathrm{N/m^2}$"
+   }
+  ]
+ },
+ {
+  "id": "q_5fb3a4f67350",
+  "type": "MSQ",
+  "stem": "Helium and argon gases (atomic masses $4.0$ and $39.95$) are in thermal equilibrium at the same temperature. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C",
+    "D"
+   ]
+  },
+  "solution": "$\\bar E=\\tfrac32k_BT$ depends only on $T$ (A true, B false). $\\sqrt{39.95/4.0}=3.16$ (C true). $P\\propto T$ at constant $V$ with $T$ in kelvin: doubling $T$ doubles $P$ (D true); $300\\to327\\ \\mathrm{K}$ is only a $9\\%$ increase (E false).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KTG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Average translational kinetic energy per molecule is the same for He and Ar."
+   },
+   {
+    "key": "B",
+    "text": "The rms speed of He atoms equals that of Ar atoms."
+   },
+   {
+    "key": "C",
+    "text": "$v_{rms}(\\mathrm{He})/v_{rms}(\\mathrm{Ar})\\approx3.16$."
+   },
+   {
+    "key": "D",
+    "text": "At constant volume the pressure of a fixed gas sample doubles when its temperature is doubled in kelvin."
+   },
+   {
+    "key": "E",
+    "text": "At constant volume the pressure doubles when the temperature rises from $27^\\circ\\mathrm{C}$ to $54^\\circ\\mathrm{C}$."
+   }
+  ]
+ },
+ {
+  "id": "q_65082f9ee5b1",
+  "type": "INT",
+  "stem": "A particle in SHM has amplitude $24\\ \\mathrm{cm}$. At a displacement of $x$ cm from the mean position its kinetic energy is three times its potential energy. The value of $x$ is",
+  "images": [],
+  "answer": {
+   "value": 12.0
+  },
+  "solution": "$E=\\tfrac12kA^2$, $U=\\tfrac12kx^2$, $K=3U\\Rightarrow E=K+U=4U\\Rightarrow x^2=A^2/4\\Rightarrow x=A/2=12\\ \\mathrm{cm}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.OSC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7060e527a139",
+  "type": "INT",
+  "stem": "A $4\\ \\mathrm{kg}$ block on a rough horizontal table ($\\mu_k=0.25$) is connected by a light string over a smooth pulley at the table edge to a $6\\ \\mathrm{kg}$ block hanging freely. Taking $g=10\\ \\mathrm{m/s^2}$, the tension in the string in newton is",
+  "images": [],
+  "answer": {
+   "value": 30.0
+  },
+  "solution": "System: $6g-\\mu(4g)=(4+6)a\\Rightarrow 60-10=10a\\Rightarrow a=5\\ \\mathrm{m/s^2}$. Table block: $T-\\mu(4g)=4a\\Rightarrow T=10+20=30\\ \\mathrm{N}$; hanging block: $60-T=6\\times5\\Rightarrow T=30$ (consistent).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.LOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7086defc8336",
+  "type": "INT",
+  "stem": "A pump lifts $1800\\ \\mathrm{kg}$ of water every minute from a well $20\\ \\mathrm{m}$ deep and delivers it with negligible kinetic energy. If its efficiency is $75\\%$ and $g=10\\ \\mathrm{m/s^2}$, the electrical power drawn in kW is",
+  "images": [],
+  "answer": {
+   "value": 8.0
+  },
+  "solution": "Useful power $=\\dfrac{mgh}{t}=\\dfrac{1800\\times10\\times20}{60}=6000\\ \\mathrm{W}$. Input $=\\dfrac{6000}{0.75}=8000\\ \\mathrm{W}=8\\ \\mathrm{kW}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_782034d34df8",
+  "type": "SCQ",
+  "stem": "A particle executes SHM given by $x=5\\sin\\left(4\\pi t+\\dfrac{\\pi}{6}\\right)$ cm. The maximum acceleration of the particle is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$A=5\\ \\mathrm{cm}=0.05\\ \\mathrm{m}$, $\\omega=4\\pi\\ \\mathrm{rad/s}$. $a_{max}=A\\omega^2=0.05\\times(4\\pi)^2=0.05\\times157.9=7.90\\ \\mathrm{m/s^2}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.OSC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$790\\ \\mathrm{m/s^2}$"
+   },
+   {
+    "key": "B",
+    "text": "$1.97\\ \\mathrm{m/s^2}$"
+   },
+   {
+    "key": "C",
+    "text": "$7.90\\ \\mathrm{m/s^2}$"
+   },
+   {
+    "key": "D",
+    "text": "$0.63\\ \\mathrm{m/s^2}$"
+   }
+  ]
+ },
+ {
+  "id": "q_797e6828bac0",
+  "type": "SCQ",
+  "stem": "The velocity of a particle moving along a line is $v=t^2-6t+8$ (SI units). The total distance travelled in the interval $t=0$ to $t=5\\ \\mathrm{s}$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$v=(t-2)(t-4)$ changes sign at $t=2$ and $t=4$, so split the path. With $x(t)=\\frac{t^3}{3}-3t^2+8t$: $x(2)=\\frac{20}{3},\\ x(4)=\\frac{16}{3},\\ x(5)=\\frac{20}{3}$.\n\nDistance $=\\frac{20}{3}+\\left|\\frac{16}{3}-\\frac{20}{3}\\right|+\\left|\\frac{20}{3}-\\frac{16}{3}\\right|=\\frac{28}{3}\\ \\mathrm{m}$. ($\\frac{20}{3}$ is the displacement, not the distance.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{16}{3}\\ \\mathrm{m}$"
+   },
+   {
+    "key": "B",
+    "text": "$8\\ \\mathrm{m}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{20}{3}\\ \\mathrm{m}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{28}{3}\\ \\mathrm{m}$"
+   }
+  ]
+ },
+ {
+  "id": "q_873f390843a3",
+  "type": "SCQ",
+  "stem": "Masses $3\\ \\mathrm{kg}$ and $5\\ \\mathrm{kg}$ hang from the two ends of a light string passing over a smooth light pulley. Taking $g=10\\ \\mathrm{m/s^2}$, the tension in the string (in newton) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$a=\\dfrac{(5-3)g}{8}=2.5\\ \\mathrm{m/s^2}$. For the lighter block $T-3g=3a\\Rightarrow T=3(10+2.5)=37.5\\ \\mathrm{N}$. Check with the heavier block: $5g-T=5a\\Rightarrow T=50-12.5=37.5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.LOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$22.5$"
+   },
+   {
+    "key": "B",
+    "text": "$50$"
+   },
+   {
+    "key": "C",
+    "text": "$37.5$"
+   },
+   {
+    "key": "D",
+    "text": "$30$"
+   }
+  ]
+ },
+ {
+  "id": "q_8daa81680e9c",
+  "type": "SCQ",
+  "stem": "A simple pendulum has period $T$ in a stationary lift. In a lift accelerating upward at $3\\ \\mathrm{m/s^2}$ (take $g=10\\ \\mathrm{m/s^2}$) its period becomes $T'$. The ratio $T'/T$ is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In the lift's frame $g_{eff}=g+a=13\\ \\mathrm{m/s^2}$. $T\\propto g_{eff}^{-1/2}\\Rightarrow T'/T=\\sqrt{10/13}=0.877$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.OSC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1.14$"
+   },
+   {
+    "key": "B",
+    "text": "$0.769$"
+   },
+   {
+    "key": "C",
+    "text": "$0.877$"
+   },
+   {
+    "key": "D",
+    "text": "$0.837$"
+   }
+  ]
+ },
+ {
+  "id": "q_948a7efd2e83",
+  "type": "INT",
+  "stem": "Two wires of the same material carry the same load. Wire 2 is twice as long as wire 1 and has half the radius of wire 1. The ratio (extension of wire 2) : (extension of wire 1) is $n:1$. The value of $n$ is",
+  "images": [],
+  "answer": {
+   "value": 8.0
+  },
+  "solution": "$\\Delta L=\\dfrac{FL}{\\pi r^2Y}\\propto\\dfrac{L}{r^2}$. So $\\dfrac{\\Delta L_2}{\\Delta L_1}=\\dfrac{2}{1}\\cdot\\dfrac{1}{(1/2)^2}=8$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_995ec58947dd",
+  "type": "NVQ",
+  "stem": "A wire of radius $0.5\\ \\mathrm{mm}$ has a breaking stress of $3.0\\times10^{8}\\ \\mathrm{N/m^2}$. Taking $g=10\\ \\mathrm{m/s^2}$, the maximum mass (in kg) that can be hung from it without breaking is approximately",
+  "images": [],
+  "answer": {
+   "value": 23.6,
+   "tol": 0.2
+  },
+  "solution": "$F_{max}=\\sigma A=3\\times10^8\\times\\pi(0.5\\times10^{-3})^2=235.6\\ \\mathrm{N}$, so $m=F/g=23.6\\ \\mathrm{kg}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_be304687d520",
+  "type": "SCQ",
+  "stem": "A $60\\ \\mathrm{kg}$ person stands on a weighing scale in a lift that accelerates downward at $2\\ \\mathrm{m/s^2}$. Taking $g=10\\ \\mathrm{m/s^2}$, the scale reads (in newton)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$mg-N=ma\\Rightarrow N=m(g-a)=60\\times8=480\\ \\mathrm{N}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.LOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$600$"
+   },
+   {
+    "key": "B",
+    "text": "$120$"
+   },
+   {
+    "key": "C",
+    "text": "$720$"
+   },
+   {
+    "key": "D",
+    "text": "$480$"
+   }
+  ]
+ },
+ {
+  "id": "q_c266bb2da269",
+  "type": "SCQ",
+  "stem": "A $0.5\\ \\mathrm{kg}$ block is attached to two identical springs of force constant $200\\ \\mathrm{N/m}$ joined end to end (in series) and oscillates on a smooth horizontal table. Its time period in seconds is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Series combination: $k_{eff}=\\dfrac{200\\times200}{400}=100\\ \\mathrm{N/m}$. $T=2\\pi\\sqrt{m/k_{eff}}=2\\pi\\sqrt{0.005}=0.444\\ \\mathrm{s}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.OSC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.222$"
+   },
+   {
+    "key": "B",
+    "text": "$0.628$"
+   },
+   {
+    "key": "C",
+    "text": "$0.444$"
+   },
+   {
+    "key": "D",
+    "text": "$0.314$"
+   }
+  ]
+ },
+ {
+  "id": "q_cf33d78ebb2c",
+  "type": "SCQ",
+  "stem": "Treating molecules as hard spheres of diameter $3.0\\times10^{-10}\\ \\mathrm{m}$, the mean free path of a gas at $300\\ \\mathrm{K}$ and $1.013\\times10^5\\ \\mathrm{Pa}$ is ($k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\lambda=\\dfrac{k_BT}{\\sqrt2\\,\\pi d^2P}=\\dfrac{4.14\\times10^{-21}}{1.414\\times3.142\\times9\\times10^{-20}\\times1.013\\times10^5}\\approx1.02\\times10^{-7}\\ \\mathrm{m}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KTG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1.02\\times10^{-6}$"
+   },
+   {
+    "key": "B",
+    "text": "$5.11\\times10^{-8}$"
+   },
+   {
+    "key": "C",
+    "text": "$1.45\\times10^{-7}$"
+   },
+   {
+    "key": "D",
+    "text": "$1.02\\times10^{-7}$"
+   }
+  ]
+ },
+ {
+  "id": "q_dda44a851a88",
+  "type": "SCQ",
+  "stem": "An astronaut weighs $80\\ \\mathrm{N}$ at the surface of the Earth (radius $R$). Her weight (in newton) at a height $R$ above the surface is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$g'=g\\left(\\dfrac{R}{R+h}\\right)^2=\\dfrac{g}{4}$ for $h=R$, so $W'=80/4=20\\ \\mathrm{N}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.GRAV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$26.7$"
+   },
+   {
+    "key": "B",
+    "text": "$40$"
+   },
+   {
+    "key": "C",
+    "text": "$10$"
+   },
+   {
+    "key": "D",
+    "text": "$20$"
+   }
+  ]
+ },
+ {
+  "id": "q_ef52a3d7f829",
+  "type": "SCQ",
+  "stem": "A block of mass $0.5\\ \\mathrm{kg}$ is pressed against a spring ($k=200\\ \\mathrm{N/m}$) compressing it by $10\\ \\mathrm{cm}$ on a smooth horizontal surface and is then released. The speed with which it leaves the spring (in m/s) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Energy conservation: $\\tfrac12kx^2=\\tfrac12mv^2\\Rightarrow v=x\\sqrt{k/m}=0.1\\sqrt{400}=2\\ \\mathrm{m/s}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WEP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$0.2$"
+   },
+   {
+    "key": "B",
+    "text": "$2.83$"
+   },
+   {
+    "key": "C",
+    "text": "$4$"
+   },
+   {
+    "key": "D",
+    "text": "$2$"
+   }
+  ]
+ },
+ {
+  "id": "q_f0466c229041",
+  "type": "SCQ",
+  "stem": "A $500\\ \\mathrm{kg}$ satellite moves in a circular orbit of radius $2R_E$ about the Earth ($R_E=6.4\\times10^6\\ \\mathrm{m}$, $g=10\\ \\mathrm{m/s^2}$ at the surface). The minimum extra energy needed to free it from the Earth's gravity is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Total energy in orbit $=-\\dfrac{GMm}{2r}$; to escape it must become $0$, so $\\Delta E=\\dfrac{GMm}{2r}=\\dfrac{gR_E^2m}{4R_E}=\\dfrac{gR_Em}{4}=\\dfrac{10\\times6.4\\times10^6\\times500}{4}=8\\times10^9\\ \\mathrm{J}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.GRAV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$3.2\\times10^{10}$"
+   },
+   {
+    "key": "B",
+    "text": "$8\\times10^{9}$"
+   },
+   {
+    "key": "C",
+    "text": "$4\\times10^{9}$"
+   },
+   {
+    "key": "D",
+    "text": "$1.6\\times10^{10}$"
+   }
+  ]
+ },
+ {
+  "id": "q_f5441397e460",
+  "type": "INT",
+  "stem": "A stone is thrown vertically upward with speed $20\\ \\mathrm{m/s}$ from the top of a $25\\ \\mathrm{m}$ tower and finally lands on the ground at the foot of the tower. Taking $g=10\\ \\mathrm{m/s^2}$, the total time of flight in seconds is",
+  "images": [],
+  "answer": {
+   "value": 5.0
+  },
+  "solution": "Take upward positive and origin at the throw point: $-25=20t-5t^2\\Rightarrow t^2-4t-5=0\\Rightarrow (t-5)(t+1)=0$. Only $t=5\\ \\mathrm{s}$ is physical.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN1D",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ }
+]
