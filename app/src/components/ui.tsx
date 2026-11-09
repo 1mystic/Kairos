@@ -3,6 +3,7 @@ import {
   type ButtonHTMLAttributes, type InputHTMLAttributes, type KeyboardEvent, type ReactNode,
   type SelectHTMLAttributes, type TextareaHTMLAttributes,
 } from 'react';
+import { AuthArt } from '../auth/AuthArt';
 import { Link, type LinkProps } from 'react-router';
 import { AlertIcon, ArrowRightIcon, CheckIcon, ChevronDownIcon, CloseIcon, InfoIcon, TargetIcon } from './icons';
 
@@ -697,6 +698,7 @@ export function AuthShell({ title, subtitle, children, footer }: { title: string
           </ul>
           <p className="text-small text-slate">JEE Main · NEET UG · IAT</p>
         </div>
+        <AuthArt />
       </aside>
     </div>
   );
