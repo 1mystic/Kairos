@@ -1,0 +1,88 @@
+[
+ {
+  "year": 2026,
+  "session": 8,
+  "qno": 3,
+  "reason": "needs_figure",
+  "note": "four puzzle pieces and candidate figures P,Q,R,S (spatial aptitude)",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 1,
+   "session": 8,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf"
+ },
+ {
+  "year": 2026,
+  "session": 8,
+  "qno": 10,
+  "reason": "needs_figure",
+  "note": "circle diagram with shaded region PQRO",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 2,
+   "session": 8,
+   "keys": [
+    "C"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf"
+ },
+ {
+  "year": 2026,
+  "session": 8,
+  "qno": 30,
+  "reason": "needs_figure",
+  "note": "minimax game tree figure",
+  "key": {
+   "type": "NAT",
+   "section": "DA",
+   "marks": 1,
+   "session": 8,
+   "range": [
+    2.0,
+    2.0
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf"
+ },
+ {
+  "year": 2026,
+  "session": 8,
+  "qno": 41,
+  "reason": "needs_figure",
+  "note": "B+ tree figure before insertion",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 8,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf"
+ },
+ {
+  "year": 2026,
+  "session": 8,
+  "qno": 43,
+  "reason": "needs_figure",
+  "note": "concept hierarchies figure",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 8,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf"
+ }
+]

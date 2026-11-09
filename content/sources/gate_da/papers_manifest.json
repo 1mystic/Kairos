@@ -1,0 +1,122 @@
+{
+ "_note": "All files fetched from the current official GATE portal (gate2027.iitm.ac.in, IIT Madras) 'Download' page, TLS verified. Sessions: the portal publishes ONE master DA paper per year (2024 session 1, 2025 session 5, 2026 session 8); other sessions' DA papers (questions differ per session) are not published there. Key finality: the 2024 file is titled 'Final Answer Key'; the 2025 and 2026 files are titled 'Answer Key' on the official archive page (no provisional/final label); treated as the final keys because they are the archived keys on the official download page. VERIFY. Official mock/sample DA papers: none found (the portal lists a sample paper only for Robotics & Automation, RA). GATE 2023 and earlier have no DA paper (DA introduced in 2024).",
+ "index_only_cross_checks": [
+  "https://github.com/DS-AI-GATE/dsai-gate/tree/main/PYQ mirrors the same six files (SHA256 identical to ours)",
+  "https://gate2024.iisc.ac.in/question-papers/",
+  "https://gate2026.iitg.ac.in/QPs-answer-keys.html (listed by the mirror; not fetched)"
+ ],
+ "files": [
+  {
+   "kind": "paper",
+   "year": 2024,
+   "session": 1,
+   "organising_institute": "IISc Bengaluru",
+   "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 41,
+   "bytes": 991009,
+   "sha256": "8ba7f11014fc63413961cde0592da1ac67babf0bb0b488db33b5b86ade1db27b",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/2024_DA24S1.pdf (gitignored)"
+  },
+  {
+   "kind": "final_key",
+   "year": 2024,
+   "session": 1,
+   "organising_institute": "IISc Bengaluru",
+   "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DAFinalAnswerKey.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 2,
+   "bytes": 312215,
+   "sha256": "3dc72f5afde9eb2e87607c98d9e057a61ccd9ff798b6fe1ad831d1cee3cdb69d",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/2024_DAFinalAnswerKey.pdf (gitignored)"
+  },
+  {
+   "kind": "paper",
+   "year": 2025,
+   "session": 5,
+   "organising_institute": "IIT Roorkee",
+   "url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 34,
+   "bytes": 7897137,
+   "sha256": "69ba28fc60e64338113d99c90533025049b7c6e0c99c4f03d76d5ce9d70478c6",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/2025_DA2025.pdf (gitignored)"
+  },
+  {
+   "kind": "key",
+   "year": 2025,
+   "session": 5,
+   "organising_institute": "IIT Roorkee",
+   "url": "https://gate2027.iitm.ac.in/static/doc/download/2025_Key/DA_Keys.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 2,
+   "bytes": 208959,
+   "sha256": "081f108d4a2d617895b6859a9e715504391c87f9a6f13593548869d71b33dc40",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/2025_Key_DA_Keys.pdf (gitignored)"
+  },
+  {
+   "kind": "paper",
+   "year": 2026,
+   "session": 8,
+   "organising_institute": "IIT Guwahati",
+   "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 39,
+   "bytes": 2116753,
+   "sha256": "4adb2f713433ec93748ff96bc04891dc10d877e8e4fb5fe7797e36ba87f298f3",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/2026_QPs_DA.pdf (gitignored)"
+  },
+  {
+   "kind": "key",
+   "year": 2026,
+   "session": 8,
+   "organising_institute": "IIT Guwahati",
+   "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/DA_Keys.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 2,
+   "bytes": 516882,
+   "sha256": "f94cf2caf46e84cd06cc1591f375403b04466f8fa71e64ca87b49804d1e8dceb",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/2026_Keys_DA_Keys.pdf (gitignored)"
+  },
+  {
+   "kind": "brochure_syllabus_pattern",
+   "year": 2027,
+   "session": null,
+   "organising_institute": "IIT Madras",
+   "url": "https://gate2027ib.iitm.ac.in/GATE2027-IB.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 143,
+   "bytes": 4714340,
+   "sha256": "431bb1d9f98b05323b1285aeb281d94471e7a6584db68220e9b31543b4f0522c",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/IB2027.pdf (gitignored)"
+  },
+  {
+   "kind": "syllabus",
+   "year": 2027,
+   "session": null,
+   "organising_institute": "IIT Madras",
+   "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/DA_GATE2027_Syllabus.pdf",
+   "available": true,
+   "tls_verified": true,
+   "pages": 1,
+   "bytes": 135687,
+   "sha256": "2e9fed7ac0f70331c8777852ed8a1d880d2206b1dac8f741a5c925ea24bc8b0e",
+   "retrieved": "2026-11-09",
+   "local_raw": "pipeline/gate_da/raw/DA_GATE2027_Syllabus.pdf (gitignored)"
+  }
+ ]
+}

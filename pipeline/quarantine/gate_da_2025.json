@@ -1,0 +1,140 @@
+[
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 3,
+  "reason": "needs_figure",
+  "note": "4x4 digital image with pixel intensities shown in a figure",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 1,
+   "session": 5,
+   "keys": [
+    "C"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 4,
+  "reason": "needs_figure",
+  "note": "Venn-style figure with shapes and numbered regions",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 1,
+   "session": 5,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 8,
+  "reason": "needs_figure",
+  "note": "dodecagon inscribed in a circle with numbered triangles",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 2,
+   "session": 5,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 10,
+  "reason": "needs_figure",
+  "note": "bar chart of number of shifts versus patients",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 2,
+   "session": 5,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 42,
+  "reason": "needs_figure",
+  "note": "neural network diagram: wiring of weights a..f not recoverable from text",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 5,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 43,
+  "reason": "needs_figure",
+  "note": "two game trees with partially labelled leaves",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 5,
+   "keys": [
+    "C"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 44,
+  "reason": "needs_figure",
+  "note": "state graph with edge costs and heuristics, edge layout not reliably recoverable from text",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 5,
+   "keys": [
+    "C"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ },
+ {
+  "year": 2025,
+  "session": 5,
+  "qno": 58,
+  "reason": "needs_figure",
+  "note": "graph figure showing vertices a..h",
+  "key": {
+   "type": "MSQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 5,
+   "keys": [
+    "A",
+    "C",
+    "D"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf"
+ }
+]

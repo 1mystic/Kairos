@@ -1,0 +1,124 @@
+[
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 2,
+  "reason": "needs_figure",
+  "note": "figure of 15 parts to be coloured (map colouring)",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 1,
+   "session": 1,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ },
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 9,
+  "reason": "needs_figure",
+  "note": "three views of a dice and candidate folded paper nets",
+  "key": {
+   "type": "MCQ",
+   "section": "GA",
+   "marks": 2,
+   "session": 1,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ },
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 42,
+  "reason": "needs_figure",
+  "note": "options are dendrogram diagrams",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 1,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ },
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 43,
+  "reason": "needs_figure",
+  "note": "two neural-network figures with weights",
+  "key": {
+   "type": "MCQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 1,
+   "keys": [
+    "A"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ },
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 51,
+  "reason": "needs_figure",
+  "note": "DAG figure for topological sort",
+  "key": {
+   "type": "MSQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 1,
+   "keys": [
+    "B",
+    "D"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ },
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 53,
+  "reason": "needs_figure",
+  "note": "four 2-D scatter figures for linear separability",
+  "key": {
+   "type": "MSQ",
+   "section": "DA",
+   "marks": 2,
+   "session": 1,
+   "keys": [
+    "A",
+    "D"
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ },
+ {
+  "year": 2024,
+  "session": 1,
+  "qno": 63,
+  "reason": "needs_figure",
+  "note": "2-D scatter of 5 labelled points and a query point for k-NN",
+  "key": {
+   "type": "NAT",
+   "section": "DA",
+   "marks": 2,
+   "session": 1,
+   "range": [
+    5.0,
+    5.0
+   ]
+  },
+  "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf"
+ }
+]
