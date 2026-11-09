@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { Banner, Button, Card, Columns, IconButton, Input, Skeleton, SpanGrid, spanClass } from '../components/ui';
+import { usePredictedScore } from '../diagnostic/usePredictedScore';
 import './dashboard.css';
 import { CardMenu } from './CardMenu';
 import { Customize } from './Customize';
@@ -95,7 +96,14 @@ export function Dashboard({ now = Date.now }: { now?: () => number }) {
   const wide = useWide('(min-width: 1280px)');
 
   const range: Range = clampToToday({ kind: layout.range, end }, today);
-  const bundle = sample ? makeSampleBundle(today) : (loaded ?? EMPTY);
+  // the predicted band is only computed (and the bank only fetched) when a card actually shows it
+  const wantsBand = layout.widgets.some((w) => w.visible && ((w.id === 'readiness' && w.options.view === 'band') || (w.id === 'stats' && Array.isArray(w.options.tiles) && w.options.tiles.includes('band'))));
+  const predicted = usePredictedScore({ enabled: wantsBand && !sample });
+  const base0 = sample ? makeSampleBundle(today) : (loaded ?? EMPTY);
+  const bundle = useMemo<DashboardBundle>(
+    () => (!sample && predicted.band && predicted.max ? { ...base0, band: { p25: predicted.band.p25, p50: predicted.band.p50, p75: predicted.band.p75, max: predicted.max } } : base0),
+    [base0, predicted.band, predicted.max, sample],
+  );
   const data = useMemo(() => selectRangeData(bundle.sessions, bundle.mocks, bundle.mastery, range, { today, names: bundle.names, uploads: bundle.uploads }), [bundle, range.kind, range.end, today]); // eslint-disable-line react-hooks/exhaustive-deps
   const readiness = useMemo(() => selectReadiness(bundle.mastery), [bundle]);
   const plan = useMemo(() => selectPlan(bundle.profile, bundle.paceLog, today, { workRemainingMin: bundle.workRemainingMin }), [bundle, today]);

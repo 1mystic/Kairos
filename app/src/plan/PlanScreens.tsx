@@ -9,6 +9,7 @@ import { useStore } from '../store';
 import type { PlanDoc } from '../store/types';
 import { addDays } from '@kairos/core';
 import { taskLink, type StoredPlan } from './engine';
+import { examLabel } from './syllabus';
 import { STATUS_WORDS, fmtMin, groupTasks, taskMeta, taskTitle, todayLine } from './format';
 import './plan.css';
 import { useTodayPlan, type PlanView, type RollForward, type TodayPlan } from './usePlan';
@@ -70,7 +71,7 @@ export function TodayCard({ view }: { view: PlanView }) {
             <h2 id="today-h" className="text-small font-semibold text-slate">Today</h2>
             <span className="text-display font-bold tabular">{ctx.daysLeft}</span>
             <span className="text-body">
-              {ctx.daysLeft === 1 ? 'day' : 'days'} to {ctx.exam.exam.replace('_', ' ')} ({prettyDate(ctx.exam.date).slice(0, -5)})
+              {ctx.daysLeft === 1 ? 'day' : 'days'} to {examLabel(ctx.exam.exam)} ({prettyDate(ctx.exam.date).slice(0, -5)})
             </span>
           </div>
           <div className="stack gap-base">
@@ -85,7 +86,7 @@ export function TodayCard({ view }: { view: PlanView }) {
         <dl className="pl-lines tabular">
           <Line k="Yesterday" v={yesterday ? `${fmtMin(yesterday.done)} of ${fmtMin(yesterday.planned)} done` : 'Nothing planned yesterday. Today is a fresh start.'} />
           <Line k="Today" v={todayLine({ plan, ctx })} />
-          <Line k="Next mock" v={nm ? `${shortDate(nm.date)} · full ${ctx.exam.exam.replace('_', ' ')} pattern` : 'No mock scheduled yet.'} />
+          <Line k="Next mock" v={nm ? `${shortDate(nm.date)} · full ${examLabel(ctx.exam.exam)} pattern` : 'No mock scheduled yet.'} />
           <Line k="Predicted" v="Your score band appears after your first mock." />
         </dl>
       </div>
@@ -328,6 +329,12 @@ export function DayPage() {
   }, [store, date]);
   if (t.state.kind === 'loading' || stored?.date !== date) return <PlanSkeleton />;
   if (t.state.kind === 'none') return <NoExam />;
+  if (t.state.kind === 'error')
+    return (
+      <Page width="reading" className="page-center">
+        <EmptyState icon={AlertIcon} title="We could not build your plan" action={<Button onClick={t.refresh}>Try again</Button>}>{t.state.message}</EmptyState>
+      </Page>
+    );
   if (t.state.kind !== 'ready') return <Passed label={t.examLabel ?? 'Your exam'} />;
   const view = t.state.view;
   const doc = stored.doc as StoredPlan | null;

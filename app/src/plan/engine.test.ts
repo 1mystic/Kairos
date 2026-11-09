@@ -187,6 +187,8 @@ describe('plan', () => {
     expect(taskLink(t, {}, 'JEE_MAIN')).toBe('/practice/JEE_MAIN/PHY.LOM?size=10&bands=E,M,H&mode=relaxed');
     expect(taskLink({ ...t, target_p: 0.7 }, { 'PHY.LOM': 'NEET_UG' }, 'JEE_MAIN')).toContain('/practice/NEET_UG/PHY.LOM?size=10&bands=M');
     expect(taskLink({ ...t, kind: 'mock' }, {}, 'JEE_MAIN')).toBe('/exam/sample_jee_mini_v1');
+    expect(taskLink({ ...t, kind: 'mock' }, {}, 'GATE_DA')).toBe('/exam/gate_da_mock_a');
+    expect(taskLink({ ...t, kind: 'mock' }, {}, 'NEET_UG')).toBe('/mocks/new');
     expect(bandsFor(0.85)).toBe('E');
     expect(bandsFor(0.55)).toBe('M,H');
   });

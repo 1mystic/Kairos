@@ -46,7 +46,7 @@ describe('today card for each pace status', () => {
     expect(v.bundle.pace.status).toBe(status);
     render(<Harness><TodayCard view={v} /></Harness>);
     expect(screen.getByText(STATUS_WORDS[status].label, { selector: '.chip' })).toBeInTheDocument();
-    expect(screen.getByText(/to JEE MAIN/)).toBeInTheDocument();
+    expect(screen.getByText(/to JEE Main/)).toBeInTheDocument();
     expect(screen.getByText(/buffer days? left/)).toBeInTheDocument();
     expect(screen.getByText(/41 min of 50 min done/)).toBeInTheDocument();
     expect(screen.getByText(/Your score band appears after your first mock/)).toBeInTheDocument();

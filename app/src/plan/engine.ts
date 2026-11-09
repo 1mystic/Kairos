@@ -554,9 +554,14 @@ export function bandsFor(targetP: number | undefined): string {
 }
 
 export const DEFAULT_MOCK_PAPER = 'sample_jee_mini_v1';
+/** Published ready-made paper per exam. Exams without one (NEET, IAT) go to the paper generator. */
+export const MOCK_PAPER_BY_EXAM: Record<string, string> = { JEE_MAIN: DEFAULT_MOCK_PAPER, GATE_DA: 'gate_da_mock_a' };
 
-export function taskLink(t: Task, examOf: Record<string, string>, fallbackExam: string, paperId: string = DEFAULT_MOCK_PAPER): string | null {
-  if (t.kind === 'mock') return `/exam/${paperId}`;
+export function taskLink(t: Task, examOf: Record<string, string>, fallbackExam: string, paperId?: string): string | null {
+  if (t.kind === 'mock') {
+    const id = paperId ?? MOCK_PAPER_BY_EXAM[fallbackExam];
+    return id ? `/exam/${id}` : '/mocks/new';
+  }
   if (t.topic === 'mock_analysis') return '/mocks';
   if (t.kind === 'diagnostic' || !t.chapter || t.items <= 0) return t.kind === 'diagnostic' ? '/practice' : null;
   const exam = examOf[t.chapter] ?? fallbackExam;

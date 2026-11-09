@@ -253,6 +253,7 @@ export function useTodayPlan(): TodayPlan {
         if (!ctx) return live && setState({ kind: 'passed', exam: es.exam });
         const bundle = computeTodayPace(ctx);
         const res = todayPlan(ctx, { stored, sessions });
+        if (!live) return; // superseded run (calendar/roadmap config arrived, StrictMode): never write twice
         const snap = due ? buildSnapshot({ ctx, bundle, tax, mastery: mastery as MasteryDoc | null, yesterday, fuState, prev: pace }) : null;
         const planWrites = env.getPlanWrites(today);
         const r = await commitDay({ store, today, plan: res.plan, stored, planWritesToday: planWrites, snapshot: snap });
