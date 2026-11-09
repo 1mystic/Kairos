@@ -3,6 +3,7 @@
 @import './styles/tokens.css';
 @import './styles/interactions.css';
 @import './styles/semantic.css';
+@import './styles/scrollbar.css';
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 

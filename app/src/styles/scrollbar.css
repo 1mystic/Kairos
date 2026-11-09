@@ -1,0 +1,22 @@
+/* Custom scrollbar, app-wide (docs/10_DESIGN_SYSTEM.md). Flat: a slim rounded thumb on a transparent track,
+   tinted from the theme tokens so it follows light/dark mode. The CBT exam screen inherits it too. */
+@layer base {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-3) transparent;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-3) transparent;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--surface-3);
+    border-radius: var(--radius-pill);
+  }
+  ::-webkit-scrollbar-corner { background: transparent; }
+  @media (hover: hover) {
+    ::-webkit-scrollbar-thumb:hover { background-color: var(--slate); }
+  }
+}
