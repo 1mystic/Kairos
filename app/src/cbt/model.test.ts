@@ -1,6 +1,7 @@
 import { createPaletteState, paletteReducer, type PaletteState } from '@kairos/core';
 import { loadAnswerMap, loadSampleModel } from './fixtures';
 import { applyKey } from './Keypad';
+import { fmtMarks, sectionFullLabel, sectionTitle, subjectTitle, wantsCalculator, wrongText } from './labels';
 import { buildMockDoc, expireAttempt, formatClock, gradeAttempt, newAttempt, readAnalysis, resolveAttempt } from './model';
 
 const model = loadSampleModel();
@@ -107,5 +108,26 @@ describe('keypad logic and clock', () => {
     expect(formatClock(3 * 3600_000)).toBe('03:00:00');
     expect(formatClock(0)).toBe('00:00:00');
     expect(formatClock(61_001)).toBe('00:01:02');
+  });
+});
+
+describe('cbt labels', () => {
+  it('formats fractional negatives', () => {
+    expect(fmtMarks(-0.3333)).toBe('−1/3');
+    expect(fmtMarks(-0.666667)).toBe('−2/3');
+    expect(fmtMarks(-1)).toBe('-1');
+    expect(fmtMarks(4)).toBe('4');
+    expect(wrongText(0)).toBe('No negative marking');
+  });
+  it('keeps Section A/B and reads GATE ids', () => {
+    expect(sectionTitle('PHY', { sectionId: 'A', type: 'SCQ', marks: { correct: 4 } })).toBe('Section A');
+    expect(sectionFullLabel('GA', { sectionId: 'GA1', type: 'SCQ', marks: { correct: 1 } })).toBe('General Aptitude · 1 mark');
+    expect(sectionFullLabel('DA', { sectionId: 'T2M-NAT', type: 'NVQ', marks: { correct: 2 } })).toBe('Technical · 2 marks · NAT');
+    expect(subjectTitle('PHY')).toBe('PHY');
+  });
+  it('reads the loose calculator flag', () => {
+    expect(wantsCalculator(undefined)).toBe(false);
+    expect(wantsCalculator({ calculator: true } as never)).toBe(true);
+    expect(wantsCalculator({} as never)).toBe(false);
   });
 });

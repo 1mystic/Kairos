@@ -4,6 +4,7 @@ import 'katex/dist/katex.min.css';
 import './QuestionView.css';
 import { CheckIcon, CloseIcon } from './icons';
 import { IMG_BASE, imageUrl } from '../bank/config';
+import { renderWithBlocks } from './mdBlocks';
 import { isUserQuestion, useUserImageMap } from './useUserImages';
 
 const MAX_SRC_WIDTH = 960;
@@ -42,7 +43,7 @@ export function contentToHtml(
   strict = false,
 ): string {
   const byId = new Map(images.map((i) => [i.id, i]));
-  return renderContentHtml(markdown, {
+  return renderWithBlocks(markdown, (md) => renderContentHtml(md, {
     imageHtml: (id, alt) => {
       const im = byId.get(id);
       if (!im) return `<span>${escapeHtml(alt)}</span>`;
@@ -52,7 +53,7 @@ export function contentToHtml(
       if (strict) return `<span class="kc-alt">${escapeHtml(im.alt)}</span>`;
       return imageHtml(im, imgBase);
     },
-  });
+  }));
 }
 
 export interface ContentHtmlProps {

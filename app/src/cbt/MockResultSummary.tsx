@@ -3,7 +3,7 @@ import { Card, CardGrid, Chip, Section, Stat } from '../components/ui';
 import { CheckIcon, CloseIcon } from '../components/icons';
 import { formatClock, isPaperScore, readAnalysis } from './model';
 
-const SUBJECT_NAME: Record<string, string> = { PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BOT: 'Botany', ZOO: 'Zoology' };
+const SUBJECT_NAME: Record<string, string> = { PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BOT: 'Botany', ZOO: 'Zoology', DA: 'Technical', GA: 'General Aptitude', PRS: 'Probability & Statistics', LA: 'Linear Algebra', CO: 'Calculus & Optimization', PDS: 'Programming', DBW: 'Database & Warehousing', ML: 'Machine Learning', AI: 'Artificial Intelligence' };
 
 /**
  * Stable contract: `mock` is the stored MockDoc (see README.md for `analysis`). This component

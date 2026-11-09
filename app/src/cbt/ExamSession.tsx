@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type Rea
 import { legendCounts, paletteReducer, statuses, type PaletteAction, type PaletteState, type PaletteStatus, type Response } from '@kairos/core';
 import { ContentHtml } from '../components/QuestionView';
 import { Keypad } from './Keypad';
+import { Calculator } from './calculator/Calculator';
+import { fmtMarks, typeName, sectionFullLabel, sectionTitle, subjectTitle, wantsCalculator, wrongText } from './labels';
 import { formatClock, type Attempt, type ExamModel, type FocusEntry, type Lang } from './model';
 import type { AttemptStore } from './attemptStore';
 import { enterFullscreen, isFullscreen } from './fullscreen';
@@ -99,11 +101,11 @@ export function InstructionsBody({ model }: { model: ExamModel }) {
         <tbody>
           {Object.entries(secs).map(([k, s]) => (
             <tr key={k}>
-              <td>{s.subject} - Section {s.sectionId}</td>
-              <td>{s.type}</td>
+              <td>{sectionFullLabel(s.subject, s)}</td>
+              <td>{typeName(s.type)}</td>
               <td>{model.slots.filter((x) => x.subject === s.subject && x.sectionId === s.sectionId).length}</td>
-              <td>+{s.marks.correct}</td>
-              <td>{s.marks.wrong}</td>
+              <td>+{fmtMarks(s.marks.correct)}</td>
+              <td>{wrongText(s.marks.wrong)}</td>
               <td>{s.marks.blank}</td>
             </tr>
           ))}
@@ -130,6 +132,8 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
   const [lang, setLang] = useState<Lang>(attempt.lang);
   const [modal, setModal] = useState<null | 'instructions' | 'paper' | 'submit'>(null);
   const [drawer, setDrawer] = useState(false);
+  const [calcOpen, setCalcOpen] = useState(false);
+  const hasCalc = wantsCalculator(model.blueprint);
   const startedAt = attempt.startedAtEpoch;
 
   const act = useCallback(
@@ -232,10 +236,14 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
   const toggle = (k: string) => select(multi ? (selected.includes(k) ? selected.filter((x) => x !== k) : [...selected, k]) : [k]);
   const goSubject = (code: string) => act({ type: 'OPEN_QUESTION', index: model.slots.findIndex((s) => s.subject === code) });
 
+  const secTitleOf = (code: string, sec: string) => {
+    const s = model.slots.find((x) => x.subject === code && x.sectionId === sec)!;
+    return sectionTitle(code, s);
+  };
   const paletteGrid = (code: string) =>
     [...new Set(model.slots.filter((s) => s.subject === code).map((s) => s.sectionId))].map((sec) => (
       <div key={sec} className="cbt-pal-sec">
-        <div className="cbt-pal-sec-title">Section {sec}</div>
+        <div className="cbt-pal-sec-title">{secTitleOf(code, sec)}</div>
         <div className="cbt-pal-grid">
           {model.slots.map((s, i) =>
             s.subject === code && s.sectionId === sec ? (
@@ -261,11 +269,11 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
         ))}
       </ul>
       <div className="cbt-pal-scroll">
-        <div className="cbt-pal-subject">{slot.subject}</div>
+        <div className="cbt-pal-subject">{subjectTitle(slot.subject)}</div>
         {paletteGrid(slot.subject)}
         {subjects.filter((c) => c !== slot.subject).map((c) => (
           <div key={c}>
-            <div className="cbt-pal-subject">{c}</div>
+            <div className="cbt-pal-subject">{subjectTitle(c)}</div>
             {paletteGrid(c)}
           </div>
         ))}
@@ -303,13 +311,16 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
               <option value="hi">Hindi</option>
             </select>
           </label>
+          {hasCalc && (
+            <button type="button" className="cbt-btn" aria-pressed={calcOpen} onClick={() => setCalcOpen((v) => !v)}>Calculator</button>
+          )}
           <Countdown startedAt={startedAt} durationMs={model.durationMs} clock={clock} onExpire={() => act({ type: 'SUBMIT', reason: 'auto' })} />
         </div>
       </header>
       <nav className="cbt-tabs" role="tablist" aria-label="Subjects">
         {subjects.map((c) => (
           <button key={c} role="tab" aria-selected={c === slot.subject} className={`cbt-tab${c === slot.subject ? ' active' : ''}`} onClick={() => goSubject(c)}>
-            {c}
+            {subjectTitle(c)}
           </button>
         ))}
       </nav>
@@ -317,10 +328,12 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
         <main className="cbt-question" aria-label="Question">
           <div className="cbt-qhead">
             <div>
-              <b>Question {cur + 1}</b> <span className="cbt-muted">· Section {slot.sectionId} · {secNo} of {secLabel.length} · {slot.type}</span>
+              <b>Question {cur + 1}</b> <span className="cbt-muted">· {sectionTitle(slot.subject, slot)} · {secNo} of {secLabel.length} · {typeName(slot.type)}</span>
             </div>
             <div className="cbt-marks">
-              <span className="cbt-plus">+{slot.marks.correct}</span> <span className="cbt-minus">{slot.marks.wrong}</span>
+              <span className="cbt-plus">+{fmtMarks(slot.marks.correct)}</span> <span className="cbt-minus">{fmtMarks(slot.marks.wrong)}</span>
+              {slot.marks.wrong === 0 && slot.type !== 'SCQ' && <span className="cbt-muted"> · no negative marking</span>}
+              {multi && <span className="cbt-muted"> · all-or-nothing</span>}
             </div>
           </div>
           <div className="cbt-qbody" key={q.id}>
@@ -357,6 +370,7 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
           <button type="button" className="cbt-btn cbt-btn-submit" onClick={() => setModal('submit')}>Submit</button>
         </div>
       </footer>
+      {hasCalc && calcOpen && <Calculator onClose={() => setCalcOpen(false)} />}
       {drawer && <button type="button" className="cbt-scrim" aria-label="Close palette" onClick={() => setDrawer(false)} />}
 
       {modal === 'instructions' && (
@@ -374,7 +388,7 @@ export function ExamSession({ model, attempt, candidateName, clock, attempts, on
                 const n = (f: (s: PaletteStatus) => boolean) => idx.filter((i) => f(st[i]!)).length;
                 return (
                   <tr key={k}>
-                    <td>{k.split('.')[0]}</td><td>{k.split('.')[1]}</td><td>{idx.length}</td>
+                    <td>{subjectTitle(k.split('.')[0]!)}</td><td>{secTitleOf(k.split('.')[0]!, k.split('.').slice(1).join('.'))}</td><td>{idx.length}</td>
                     <td>{n((s) => s === 'answered' || s === 'answered_marked')}</td>
                     <td>{n((s) => s === 'marked' || s === 'answered_marked')}</td>
                     <td>{n((s) => s === 'not_visited')}</td>

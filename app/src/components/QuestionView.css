@@ -9,3 +9,9 @@
 /* diagrams are drawn on white: keep a white backing card in dark mode too, never invert (deliberate exception, borderless) */
 .kc .kc-fig { display: block; margin: var(--space-2) 0; padding: var(--space-2); background: var(--img-backing); border-radius: var(--radius-btn); max-width: 100%; width: fit-content; }
 .kc .kc-fig img { display: block; max-width: 100%; height: auto; }
+.kc .kc-code { margin: var(--space-2) 0; padding: var(--space-2) var(--space-3); background: var(--primary-50); border-radius: var(--radius-btn); overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; line-height: 1.5; white-space: pre; }
+.kc .kc-code code { background: none; padding: 0; font-size: inherit; }
+.kc .kc-table-wrap { overflow-x: auto; max-width: 100%; margin: var(--space-2) 0; }
+.kc .kc-table { border-collapse: collapse; font-size: 0.95em; }
+.kc .kc-table th, .kc .kc-table td { border: 1px solid var(--line); padding: var(--space-1) var(--space-3); text-align: left; }
+.kc .kc-table th { background: var(--primary-50); font-weight: 600; }

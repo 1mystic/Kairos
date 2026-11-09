@@ -124,3 +124,16 @@
 
 .cbt-fs-banner { display: flex; align-items: center; gap: 12px; padding: 6px 16px; background: #fff4d6; color: #3a2e00; font-size: 14px; }
 .cbt-fs-banner span { flex: 1; }
+
+/* GATE-style virtual calculator (panel, not modal) */
+.cbt-calc { position: fixed; right: 16px; bottom: 80px; z-index: 90; width: min(340px, calc(100vw - 32px)); background: #fff; border: 1px solid var(--cbt-line); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25); display: grid; gap: 8px; padding: 8px; }
+.cbt-calc-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.cbt-calc-modes { display: flex; }
+.cbt-calc-mode { font: inherit; min-height: 44px; padding: 0 12px; border: 1px solid var(--cbt-line); background: #fff; cursor: pointer; }
+.cbt-calc-mode.on { background: var(--cbt-header); color: #fff; border-color: var(--cbt-header); }
+.cbt-calc-field { font: inherit; font-size: 1.1em; min-height: 44px; padding: 0 8px; border: 1px solid var(--cbt-line); background: var(--cbt-soft); text-align: right; font-variant-numeric: tabular-nums; }
+.cbt-calc-result { font-size: 1.4em; min-height: 1.6em; text-align: right; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.cbt-calc-result.err { color: var(--cbt-not-answered); font-size: 1em; }
+.cbt-calc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.cbt-calc-key { font-size: 1em; min-height: 44px; padding: 0; }
+@media (max-width: 640px) { .cbt-calc { bottom: 64px; right: 8px; } }
