@@ -100,6 +100,12 @@ describe('mock planning helpers', () => {
     expect(summarizeBlueprint(mini).total).toBe(3);
     expect(capacityShortfalls(bp, thinBank)).toEqual([{ subject: 'PHY', section: 'A', type: 'SCQ', need: 15, have: 4 }]);
   });
+  it('counts a virtual blueprint subject (subject_map) over its mapped taxonomy subjects', () => {
+    const gate = parseBlueprint({ ...bp, subject_map: { DA: ['PHY', 'CHE'] }, subjects: [{ code: 'DA', sections: bp.subjects[0]!.sections }] });
+    expect(capacityShortfalls(gate, bigBank)).toEqual([]);
+    expect(capacityShortfalls(gate, thinBank)).toEqual([{ subject: 'DA', section: 'A', type: 'SCQ', need: 15, have: 4 }]);
+    expect(summarizeBlueprint(miniBlueprint(gate, bigBank)).total).toBe(3);
+  });
   it('maps IAT-style subject aliases onto the blueprint', () => {
     const b = synthBank([{ id: 'BOT.X', subject: 'BOT' }], 2);
     const iat = parseBlueprint({ ...bp, subjects: [{ code: 'BIO', sections: bp.subjects[0]!.sections }] });

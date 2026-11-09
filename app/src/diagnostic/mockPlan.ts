@@ -2,6 +2,7 @@ import {
   generatePaper,
   masteryByChapter,
   maxMarks,
+  resolveSubjects,
   stripAnswer,
   totalQuestions,
   type Blueprint,
@@ -108,11 +109,14 @@ export interface Shortfall {
 /** Sections the bank cannot fill (the generator would throw). Pool = same subject + type, not quarantined. */
 export function capacityShortfalls(bp: Blueprint, preparedBank: Question[]): Shortfall[] {
   const out: Shortfall[] = [];
-  for (const s of bp.subjects)
+  for (const s of bp.subjects) {
+    // a blueprint subject may be virtual (GATE "DA" = PRS, LA, CO, ...): the same mapping the generator draws from
+    const pool = new Set(resolveSubjects(bp, s.code));
     for (const sec of s.sections) {
-      const have = preparedBank.filter((q) => q.status !== 'quarantined' && q.type === sec.type && q.tax?.subject === s.code).length;
+      const have = preparedBank.filter((q) => q.status !== 'quarantined' && q.type === sec.type && pool.has(q.tax?.subject ?? '')).length;
       if (have < sec.count) out.push({ subject: s.code, section: sec.id, type: sec.type, need: sec.count, have });
     }
+  }
   return out;
 }
 
@@ -124,15 +128,18 @@ export function capacityShortfalls(bp: Blueprint, preparedBank: Question[]): Sho
 export function miniBlueprint(bp: Blueprint, preparedBank: Question[], fraction = MINI_FRACTION): Blueprint {
   const full = totalQuestions(bp);
   const subjects = bp.subjects
-    .map((s) => ({
+    .map((s) => {
+      const pool = new Set(resolveSubjects(bp, s.code));
+      return {
       ...s,
       sections: s.sections
         .map((sec) => {
-          const have = preparedBank.filter((q) => q.status !== 'quarantined' && q.type === sec.type && q.tax?.subject === s.code).length;
+          const have = preparedBank.filter((q) => q.status !== 'quarantined' && q.type === sec.type && pool.has(q.tax?.subject ?? '')).length;
           return { ...sec, count: Math.min(have, Math.max(1, Math.round(sec.count * fraction))) };
         })
         .filter((sec) => sec.count > 0),
-    }))
+      };
+    })
     .filter((s) => s.sections.length > 0);
   const kept = subjects.reduce((n, s) => n + s.sections.reduce((m, sec) => m + sec.count, 0), 0);
   return { ...bp, subjects, duration_min: Math.max(5, Math.round((bp.duration_min * kept) / Math.max(1, full))) };
