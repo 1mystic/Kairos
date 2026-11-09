@@ -11,6 +11,7 @@ import {
   toPaperResponses,
   statuses,
   flattenSlots,
+  resolveSubjects,
   type Blueprint,
   type KairosEvent,
   type LegendCounts,
@@ -79,7 +80,9 @@ export function buildExamModel(paper: MockPaperLike, blueprint: Blueprint): Exam
     qids = [];
     const subjects = [];
     for (const subj of blueprint.subjects) {
-      const mine = paper.slots.filter((id) => need(id).tax?.subject === subj.code);
+      // A blueprint subject may be virtual (GATE DA's `DA` maps to PRS, LA, CO, PDS, DBW, ML, AI): match by resolved subjects.
+      const subjectSet = new Set(resolveSubjects(blueprint, subj.code));
+      const mine = paper.slots.filter((id) => subjectSet.has(need(id).tax?.subject ?? ''));
       const sections = [];
       for (const sec of subj.sections) {
         const take = mine.filter((id) => !used.has(id) && need(id).type === sec.type).slice(0, sec.count);
