@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth } from '../auth/AuthProvider';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { Button, Chip, LinkButton, Modal, Page, PageHeader, SettingRow, SettingsSection, StickySideNav, TwoColumnPage, type SideNavItem } from '../components/ui';
 import { useIsAdmin } from '../admin/useIsAdmin';
 import { ExamPlanRows } from '../roadmap/ExamPlanSettings';
 import { exportStore } from '../store/exportData';
-import { useGuest, useLocalStore, useStore } from '../store/StoreProvider';
+import { useGuest, useLocalStore, useMigration, useStore } from '../store/StoreProvider';
 
 const SECTIONS: SideNavItem[] = [
   { id: 'account', label: 'Account' },
@@ -25,6 +25,16 @@ export function Settings() {
   const [confirm, setConfirm] = useState(false);
   const [msg, setMsg] = useState('');
   const isAdmin = useIsAdmin();
+  const { migration, retry } = useMigration();
+  const [pending, setPending] = useState(false);
+  const uid = user?.uid;
+  // signed in, this device still holds progress that was never added to the account (the prompt was postponed)
+  useEffect(() => {
+    let live = true;
+    if (!uid || migration.phase !== 'idle') { setPending(false); return; }
+    void Promise.all([local.hasData(), local.getMeta()]).then(([has, meta]) => { if (live) setPending(has && meta.migratedTo !== uid); }).catch(() => { if (live) setPending(false); });
+    return () => { live = false; };
+  }, [uid, migration.phase, local]);
 
   async function download() {
     const data = await exportStore(store);
@@ -77,6 +87,11 @@ export function Settings() {
               {store.kind === 'local' ? 'Export local data (JSON)' : 'Export my data (JSON)'}
             </Button>
           </SettingRow>
+          {user && pending && (
+            <SettingRow label="Add this device's progress to your account" description="This device has practice you did before signing in. Add it so it is saved with your account.">
+              <Button variant="secondary" onClick={retry}>Add progress</Button>
+            </SettingRow>
+          )}
           {isGuest && (
             <SettingRow label="Clear local data" description="Removes sessions, mocks and plans from this device.">
               <Button variant="secondary" onClick={() => setConfirm(true)}>Clear local data</Button>

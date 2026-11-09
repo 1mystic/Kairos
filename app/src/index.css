@@ -183,7 +183,7 @@
   .dash > .dash-third { display: flex; }
   .dash-third > .tile { flex: 1; }
 
-  /* ---- two named column ratios: .cols-main-side (2fr 1fr) and .cols-side-main (1fr 2fr). Tops align; sticky side shares --sticky-top ---- */
+  /* ---- two named column ratios: .cols-main-side (2fr 1fr) and .cols-side-main (fixed 220-280px nav + 1fr). Tops align; sticky side shares --sticky-top ---- */
   .cols { display: grid; gap: var(--gap-card); align-items: start; }
   .cols-main { display: flex; flex-direction: column; gap: var(--gap-card); min-width: 0; }
   .cols-side { display: flex; flex-direction: column; gap: var(--gap-grid); min-width: 0; }
@@ -192,7 +192,7 @@
   @media (min-width: 1024px) {
     .cols { gap: var(--gap-card) var(--gap-card); }
     .cols-main-side { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
-    .cols-side-main { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+    .cols-side-main { grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); }
     .cols-side-main > .cols-side { grid-column: 1; grid-row: 1; }
     .cols-side-main > .cols-main { grid-column: 2; grid-row: 1; }
     .cols-side-lg { display: flex; }
@@ -295,7 +295,7 @@
   .brand { display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: var(--topbar-h); padding: 0 var(--space-3); border-radius: var(--radius-card); background: var(--surface-3); color: var(--ink); text-decoration: none; transition: background-color var(--dur) var(--ease); }
   .brand:active { background: var(--tint-active); }
   .brand-text { display: none; flex-direction: column; min-width: 0; }
-  .brand-text > * { line-height: 1.2; }
+  .brand-text > * { line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .menu-item { display: flex; align-items: center; gap: var(--space-3); width: 100%; min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius-btn); font: 500 var(--fs-small)/1.4 var(--font-ui); color: var(--ink); text-decoration: none; text-align: left; cursor: pointer; }
   @keyframes fade { from { opacity: 0; } }
   @keyframes rise { from { opacity: 0; transform: translateY(var(--space-2)); } }
