@@ -26,7 +26,7 @@ function lazyGroup(
 
 export const lazyPracticeRoutes = lazyGroup(
   () => import('../practice/routes').then((m) => m.practiceRoutes),
-  ['/practice', '/practice/summary/:sessionId', '/practice/:exam/:chapter'],
+  ['/practice', '/practice/today', '/practice/summary/:sessionId', '/practice/:exam/:chapter'],
 );
 export const lazyAnalysisRoutes = lazyGroup(
   () => import('../analysis/routes').then((m) => m.analysisRoutes),

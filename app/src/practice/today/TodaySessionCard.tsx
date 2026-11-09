@@ -4,11 +4,12 @@ import { Button, Card, Chip, LinkButton, ProgressBar, Skeleton, TwoPane } from '
 import { StatusChip } from '../../plan/PlanScreens';
 import type { CardModel } from './todayModel';
 import { useTodayCard } from './useTodayCard';
+import './today.css';
 
 /** Same shape as the loaded card, so nothing jumps when the plan arrives. */
 function CardSkeleton() {
   return (
-    <Card tone="primary" as="section" aria-busy="true" aria-label="Today's session" data-testid="today-card-loading">
+    <Card tone="primary" className="today-hero" as="section" aria-busy="true" aria-label="Today's session" data-testid="today-card-loading">
       <TwoPane ratio="main-side" align="center">
         <div className="stack gap-base">
           <Skeleton className="h-s4 w-32" />
@@ -35,7 +36,7 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
       <Button variant={variant} size={size} block onClick={onRetry}>{c.label}</Button>
     );
   return (
-    <Card tone="primary" as="section" aria-labelledby="today-session-h" data-testid="today-session-card" data-variant={model.variant}>
+    <Card tone="primary" className="today-hero" as="section" aria-labelledby="today-session-h" data-testid="today-session-card" data-variant={model.variant}>
       <TwoPane ratio="main-side" align="center">
         <div className="stack gap-base">
           <div className="row-inline">
