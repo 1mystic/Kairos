@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import type { Blueprint, Manifest, MasteryDoc, Question } from '@kairos/core';
 import { ArrowRightIcon } from '../components/icons';
 import { Banner, Button, Card, CardGrid, Chip, LinkButton, Page, PageHeader, ProgressBar, Columns, Section, Select, Stack, Tabs } from '../components/ui';
-import { EXAMS, isExamId, loadTaxonomy, type ExamId, type Taxonomy } from '../practice/taxonomy';
+import { EXAMS, loadTaxonomy, primaryExamId, type ExamId, type Taxonomy } from '../practice/taxonomy';
 import { useStore, type MockDoc, type SessionDoc, type UserStore } from '../store';
 import { blueprintsForExam, loadExamBank } from './examBank';
 import { fmtMarks, sectionTitle } from '../cbt/labels';
@@ -97,7 +97,8 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
       let s = Math.floor(rand() * 0xfffe) + 1;
       while (taken.has(paperIdForSeed(s))) s = (s % 0xfffe) + 1;
       setSeed(s);
-      if (isExamId(profile?.exam)) setExam(profile.exam);
+      const pe = primaryExamId(profile?.exam);
+      if (pe) setExam(pe);
       profileDone.current = true;
     })();
     return () => {
@@ -111,6 +112,7 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
     if (!profileDone.current && seed === 0) return;
     let live = true;
     setBank(null);
+    setWeights(null); // never reuse another exam's chapter weights
     setLoadError(null);
     setProgress([0, 1]);
     setGen({ kind: 'idle' });

@@ -3,8 +3,8 @@ import type { Manifest, Question } from '@kairos/core';
 import { getLatestVersion, getManifest } from '../bank/client';
 import { CheckIcon } from '../components/icons';
 import { Banner, Button, Card, CardGrid, Chip, EmptyState, LinkButton, Columns, ListRow, Page, PageHeader, PageSkeleton, ProgressBar, Tabs } from '../components/ui';
-import { EXAMS, buildChapterRows, isExamId, loadTaxonomy, type ExamId, type SubjectRows, type Taxonomy } from '../practice/taxonomy';
-import { isGuestProfile, useSignInNudge, useStore, type UserStore } from '../store';
+import { EXAMS, buildChapterRows, isExamId, loadTaxonomy, primaryExamId, type ExamId, type SubjectRows, type Taxonomy } from '../practice/taxonomy';
+import { useSignInNudge, useStore, type UserStore } from '../store';
 import { reportDiagnostic } from '../telemetry';
 import './diagnostic.css';
 import { DiagnosticRunner, type DiagFinish } from './DiagnosticRunner';
@@ -62,10 +62,9 @@ export function DiagnosticView({ store, deps, onSaved }: { store: UserStore; dep
           store.getProfile().catch(() => null),
           deps.buffer.load().catch(() => null),
         ]);
-        const p = profile && !isGuestProfile(profile) ? profile : null;
-        const ex = profile?.exam;
-        if (isExamId(ex)) setExam(ex);
-        setDone(p?.chaptersDone ?? []);
+        const ex = primaryExamId(profile?.exam);
+        if (ex) setExam(ex);
+        setDone(Array.isArray(profile?.chaptersDone) ? profile.chaptersDone : []);
         if (isDiagResumable(buf, (deps.clock ?? Date.now)())) {
           setSaved(buf);
           if (isExamId(buf.exam)) setExam(buf.exam);

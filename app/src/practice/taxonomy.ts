@@ -36,6 +36,15 @@ export const GATE_SUBJECT_LABELS: Record<string, string> = {
 export type ExamId = (typeof EXAMS)[number]['id'];
 export const isExamId = (s: string | undefined): s is ExamId => EXAMS.some((e) => e.id === s);
 
+/**
+ * Primary exam id from the profile's PACKED exam string ("JEE_MAIN.1", "JEE_MAIN.2+NEET_UG.1@2027-05-03").
+ * Also accepts a bare id ("JEE_MAIN"). Undefined when empty or unknown.
+ */
+export function primaryExamId(packed: string | undefined | null): ExamId | undefined {
+  const id = (packed ?? '').split('+')[0]?.split('@')[0]?.split('.')[0] ?? '';
+  return isExamId(id) ? id : undefined;
+}
+
 let taxMemo: Promise<Taxonomy> | undefined;
 /** Taxonomy is published next to the manifest (`v{N}/taxonomy.json`), so it works offline via the SW cache. */
 export function loadTaxonomy(): Promise<Taxonomy> {

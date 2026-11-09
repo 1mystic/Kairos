@@ -3,7 +3,7 @@ import type { MasteryDoc, Question } from '@kairos/core';
 import { getLatestVersion, getQuestionsByIds } from '../bank/client';
 import { useExamData } from '../cbt/loader';
 import { useStore, type MockDoc, type SessionDoc } from '../store';
-import { loadTaxonomy, type Taxonomy } from '../practice/taxonomy';
+import { loadTaxonomy, primaryExamId, type Taxonomy } from '../practice/taxonomy';
 import type { QMap } from './compute';
 
 export interface AnalysisData {
@@ -29,7 +29,7 @@ export function useAnalysisData(): AnalysisData {
       store.getProfile().catch(() => null),
       loadTaxonomy().catch(() => null),
     ]).then(([sessions, mocks, mastery, profile, taxonomy]) => {
-      if (live) setS({ done: true, sessions, mocks, mastery: mastery as MasteryDoc | null, taxonomy, exam: (profile as { exam?: string } | null)?.exam });
+      if (live) setS({ done: true, sessions, mocks, mastery: mastery as MasteryDoc | null, taxonomy, exam: primaryExamId((profile as { exam?: string } | null)?.exam) });
     });
     return () => { live = false; };
   }, [store]);
@@ -45,16 +45,20 @@ export function useSessionQuestions(sessions: SessionDoc[]): { questions: Readon
     let live = true;
     void (async () => {
       const byExam = new Map<string, Set<string>>();
+      const chaptersOf = new Map<string, Set<string>>();
       for (const s of sessions) {
         const ids = (s.qids as string[] | undefined) ?? [];
         const exam = String(s.exam ?? 'JEE_MAIN');
         const set = byExam.get(exam) ?? byExam.set(exam, new Set()).get(exam)!;
         ids.forEach((i) => set.add(i));
+        // load only the shards these sessions came from (falls back to the whole exam when an id is not there)
+        const chs = chaptersOf.get(exam) ?? chaptersOf.set(exam, new Set()).get(exam)!;
+        for (const c of Array.isArray(s.chapters) ? (s.chapters as unknown[]) : [s.chapter]) if (typeof c === 'string' && c !== 'mixed') chs.add(c);
       }
       const map = new Map<string, Question>();
       try {
         const v = await getLatestVersion();
-        for (const [exam, ids] of byExam) for (const q of await getQuestionsByIds(v, exam, [...ids])) map.set(q.id, q);
+        for (const [exam, ids] of byExam) for (const q of await getQuestionsByIds(v, exam, [...ids], [...(chaptersOf.get(exam) ?? [])])) map.set(q.id, q);
       } catch { /* offline and not cached: examples are optional */ }
       if (live) setState({ key, map });
     })();

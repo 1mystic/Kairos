@@ -13,6 +13,7 @@ import {
   chapterMastery,
   loadTaxonomy,
   masteryWords,
+  primaryExamId,
   weakFirst,
   type ExamId,
   type Taxonomy,
@@ -301,8 +302,11 @@ export function PracticePicker() {
   const [resume, setResume] = useState<PickerViewProps['resumeLink']>(null);
   const bank = useContext(BankContext)?.store ?? null;
   const [mine, setMine] = useState<UserQuestion[]>([]);
+  // the student's own exam opens first (profile.exam is the packed "JEE_MAIN.1+..." string); null = unknown, show the default
+  const [ownExam, setOwnExam] = useState<ExamId | null | undefined>(undefined);
 
   useEffect(() => {
+    store.getProfile().then((p) => setOwnExam(primaryExamId(p?.exam) ?? null), () => setOwnExam(null));
     loadTaxonomy().then(setTax, () => setErr(true));
     store.getState('mastery').then((d) => setDoc(d as Record<string, never> | null), () => {});
     getSessionBuffer()
@@ -325,9 +329,9 @@ export function PracticePicker() {
         <EmptyState title="Could not load chapters">Check your connection. Questions you have already opened still work offline.</EmptyState>
       </Page>
     );
-  if (!m.data || !tax)
+  if (!m.data || !tax || ownExam === undefined)
     return (
       <PageSkeleton cards={6} />
     );
-  return <PickerView tax={tax} manifest={m.data.manifest} mastery={mastery} resumeLink={resume} myQuestions={mine} />;
+  return <PickerView tax={tax} manifest={m.data.manifest} mastery={mastery} {...(ownExam ? { initialExam: ownExam } : {})} resumeLink={resume} myQuestions={mine} />;
 }

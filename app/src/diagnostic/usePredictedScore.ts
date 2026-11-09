@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { MasteryDoc, ScoreBand } from '@kairos/core';
-import { loadTaxonomy, isExamId, type Taxonomy } from '../practice/taxonomy';
+import { loadTaxonomy, primaryExamId, type Taxonomy } from '../practice/taxonomy';
 import { useStore, type UserStore } from '../store';
 import { toYmd } from '../lib/profile';
 import { blueprintsForExam, loadExamBank } from './examBank';
@@ -44,6 +44,8 @@ export interface PredictDeps {
   loadBlueprints?: typeof blueprintsForExam;
   loadTaxonomy?: () => Promise<Taxonomy | null>;
   mobile?: boolean;
+  /** false = do nothing (no reads, no bank download); default true */
+  enabled?: boolean;
 }
 
 const idle = (fn: () => void) => {
@@ -93,7 +95,12 @@ export function usePredictedScore(deps: PredictDeps = {}): PredictedScore {
 
 export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): PredictedScore {
   const [s, setS] = useState<PredictedScore>({ ...EMPTY, loading: true });
+  const enabled = deps.enabled !== false;
   useEffect(() => {
+    if (!enabled) {
+      setS({ ...EMPTY, loading: false });
+      return;
+    }
     let live = true;
     const kv: KV = deps.kv ?? localStorage;
     const now = deps.now ?? Date.now;
@@ -101,7 +108,7 @@ export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): 
       try {
         const [profile, doc] = await Promise.all([store.getProfile().catch(() => null), store.getState('mastery').catch(() => null)]);
         const mastery = doc as MasteryDoc | null;
-        const exam = isExamId(profile?.exam) ? profile.exam : 'JEE_MAIN';
+        const exam = primaryExamId(profile?.exam) ?? 'JEE_MAIN';
         const ambition = (profile as { ambition?: string } | null)?.ambition;
         const stats = dataStats(mastery);
         const confidence = confidenceOf(mastery);
@@ -148,6 +155,6 @@ export function usePredictedScoreFor(store: UserStore, deps: PredictDeps = {}): 
       live = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [store]);
+  }, [store, enabled]);
   return s;
 }
