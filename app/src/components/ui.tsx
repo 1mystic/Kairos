@@ -195,7 +195,7 @@ export function LogoMark({ className = 'size-s6' }: { className?: string }) {
 
 /* ------------------------------------------------------------------ buttons */
 
-type Variant = 'primary' | 'secondary' | 'ghost';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'success' | 'danger' | 'danger-ghost';
 type Size = 'sm' | 'md' | 'lg';
 const btnClass = (variant: Variant, size: Size, block?: boolean, extra = '') =>
   `btn btn-${variant}${size === 'md' ? '' : ` btn-${size}`}${block ? ' btn-block' : ''} ${extra}`.trim();
@@ -420,7 +420,7 @@ function FieldShell({ label, error, hint, id, children }: FieldChrome & { id: st
       <label htmlFor={id} className="text-small font-semibold">{label}</label>
       {children}
       {(error || hint) && (
-        <p id={msgId} className={`flex items-start gap-s2 text-small ${error ? 'text-accent-ink' : 'text-slate'}`} role={error ? 'alert' : undefined}>
+        <p id={msgId} className={`flex items-start gap-s2 text-small ${error ? 'text-status-bad' : 'text-slate'}`} role={error ? 'alert' : undefined}>
           {error && <AlertIcon width={16} height={16} className="mt-s1 shrink-0" />}
           <span>{error ?? hint}</span>
         </p>
@@ -460,7 +460,7 @@ export function TextareaField({ label, error, hint, ...props }: FieldChrome & Te
 export function FormError({ children }: { children?: ReactNode }) {
   if (!children) return null;
   return (
-    <p role="alert" className="banner banner-accent">
+    <p role="alert" className="banner banner-bad">
       <AlertIcon width={20} height={20} className="shrink-0" />
       <span className="min-w-0 flex-1">{children}</span>
     </p>
@@ -499,7 +499,7 @@ export function Tile({ title, body, icon: I, to, onClick, soon }: { title: strin
   return <button type="button" className="tile text-left" onClick={onClick}>{inner}</button>;
 }
 
-export function Chip({ tone = 'neutral', icon, children }: { tone?: 'neutral' | 'primary' | 'accent'; icon?: ReactNode; children: ReactNode }) {
+export function Chip({ tone = 'neutral', icon, children }: { tone?: 'neutral' | 'primary' | 'accent' | 'good' | 'bad' | 'warn'; icon?: ReactNode; children: ReactNode }) {
   return <span className={`chip${tone === 'neutral' ? '' : ` chip-${tone}`}`}>{icon}{children}</span>;
 }
 export const Pill = Chip;
@@ -589,9 +589,9 @@ export function Toast({ children, onClose }: { children: ReactNode; onClose(): v
 export const Notice = Toast;
 
 /** Soft tinted strip for page-level messages. */
-export function Banner({ tone = 'primary', icon, children, actions, role = 'note' }: { tone?: 'primary' | 'accent'; icon?: ReactNode; children: ReactNode; actions?: ReactNode; role?: string }) {
+export function Banner({ tone = 'primary', icon, children, actions, role = 'note' }: { tone?: 'primary' | 'accent' | 'good' | 'bad'; icon?: ReactNode; children: ReactNode; actions?: ReactNode; role?: string }) {
   return (
-    <aside role={role} className={`banner${tone === 'accent' ? ' banner-accent' : ''}`}>
+    <aside role={role} className={`banner${tone === 'primary' ? '' : ` banner-${tone}`}`}>
       {icon ?? <InfoIcon className="shrink-0" />}
       <div className="min-w-0 flex-1 basis-48">{children}</div>
       {actions && <div className="row gap-tight">{actions}</div>}
@@ -664,7 +664,7 @@ export function Stat({ label, value, hint }: { label: string; value: ReactNode; 
 
 /** Done / not-done word + icon status line (no green/red). */
 export function StatusLine({ done, children }: { done: boolean; children: ReactNode }) {
-  return <span className={`row gap-tight text-small ${done ? 'text-primary' : 'text-accent-ink'}`}>{done ? <CheckIcon width={16} height={16} /> : <AlertIcon width={16} height={16} />}{children}</span>;
+  return <span className={`row gap-tight text-small ${done ? 'text-status-good' : 'text-status-warn'}`}>{done ? <CheckIcon width={16} height={16} /> : <AlertIcon width={16} height={16} />}{children}</span>;
 }
 
 /* ------------------------------------------------------------------ auth shell */

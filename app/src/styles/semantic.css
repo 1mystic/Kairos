@@ -4,7 +4,7 @@
      warn  (saffron) = needs attention, slightly behind, expiring
      bad   (red)   = wrong, error, behind, destructive, failed
    Brand/interactive colour stays indigo. Flat system: tints + solid fills, no borders, no shadows, no gradients. */
-@layer components {
+@layer semantic {
   /* chips */
   .chip-good { background: var(--good-50); color: var(--good-ink); }
   .chip-bad { background: var(--bad-50); color: var(--bad-ink); }

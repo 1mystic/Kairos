@@ -32,7 +32,7 @@ export function WaterfallChart({ w, selected, onSelect }: { w: Waterfall; select
               <span className={`min-w-0 basis-full text-small sm:w-40 sm:shrink-0 sm:basis-auto ${total || potential ? 'font-semibold' : ''}`}>{b.label}</span>
               <span className="relative h-s4 min-w-0 flex-1 rounded-pill bg-surface-3" aria-hidden="true">
                 <span
-                  className={`absolute inset-y-0 rounded-pill ${b.kind === 'loss' ? 'bg-accent' : 'bg-primary'}`}
+                  className={`absolute inset-y-0 rounded-pill ${b.kind === 'loss' ? (b.id === 'skippedEasy' ? 'bg-accent' : 'bg-bad') : b.id === 'actual' ? 'bg-good' : 'bg-primary'}`}
                   style={{ left: `${(start / scale) * 100}%`, width: `${(len / scale) * 100}%` }}
                 />
                 {potential && (

@@ -127,7 +127,7 @@ function TaskRow({ t, view, onTick, readOnly }: { t: Task; view: PlanView; onTic
     </li>
   );
 }
-const StatusDone = () => <span className="text-small text-primary">Done</span>;
+const StatusDone = () => <span className="row gap-tight text-small text-status-good"><CheckIcon width={16} height={16} />Done</span>;
 
 export function TaskList({ view, onTick, readOnly }: { view: PlanView; onTick?(id: string): void; readOnly?: boolean }) {
   const groups = groupTasks(view.plan.tasks);

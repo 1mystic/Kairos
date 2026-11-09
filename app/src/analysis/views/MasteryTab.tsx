@@ -110,7 +110,7 @@ export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: {
               <HBars
                 caption="Accuracy by question difficulty"
                 summary={`Accuracy by difficulty: ${bands.map((b) => `${b.label} ${pct(b.accuracy)}`).join(', ')}.`}
-                rows={bands.map((b) => ({ key: b.id, label: b.label, value: b.accuracy, text: b.accuracy === null ? 'No answers' : `${pct(b.accuracy)} of ${b.attempted}`, tone: b.id === 'easy' && b.accuracy !== null && b.accuracy < 0.7 ? 'accent' : 'primary' }))}
+                rows={bands.map((b) => ({ key: b.id, label: b.label, value: b.accuracy, text: b.accuracy === null ? 'No answers' : `${pct(b.accuracy)} of ${b.attempted}`, tone: b.id === 'easy' && b.accuracy !== null && b.accuracy < 0.7 ? 'bad' : 'primary' }))}
               />
             ) : <p className="text-slate">Needs the question bank. It fills in when you are online and have practised recently.</p>}
           </ChartCard>

@@ -2,7 +2,7 @@ import { useId, useMemo } from 'react';
 import { escapeHtml, renderContentHtml, type ImageRef, type PublicQuestion, type Question } from '@kairos/core';
 import 'katex/dist/katex.min.css';
 import './QuestionView.css';
-import { CheckIcon } from './icons';
+import { CheckIcon, CloseIcon } from './icons';
 import { IMG_BASE, imageUrl } from '../bank/config';
 import { isUserQuestion, useUserImageMap } from './useUserImages';
 
@@ -141,10 +141,11 @@ export function QuestionView({
           {options.map((o) => {
             const on = selected.includes(o.key);
             const isCorrect = correct.has(o.key);
+            const isWrong = on && correct.size > 0 && !isCorrect;
             return (
               <label
                 key={o.key}
-                className={`opt${variant === 'review' ? ' opt-review' : ''}${interactive ? ' opt-live' : ''}${on ? ' opt-on' : isCorrect ? ' opt-correct' : ''}`}
+                className={`opt${variant === 'review' ? ' opt-review' : ''}${interactive ? ' opt-live' : ''}${on ? ' opt-on' : ''}${isCorrect ? ' opt-right' : isWrong ? ' opt-wrong' : ''}`}
               >
                 <input
                   type={multi ? 'checkbox' : 'radio'}
@@ -157,7 +158,8 @@ export function QuestionView({
                 />
                 <span aria-hidden="true" className={`opt-key${multi ? ' opt-key-sq' : ''}`}>{o.key}</span>
                 <ContentHtml markdown={o.text} images={q.images} {...img} className="min-w-0 flex-1" />
-                {isCorrect && <span className="chip chip-accent shrink-0"><CheckIcon width={14} height={14} />Correct</span>}
+                {isCorrect && <span className="chip chip-good shrink-0"><CheckIcon width={14} height={14} />Correct</span>}
+                {isWrong && <span className="chip chip-bad shrink-0"><CloseIcon width={14} height={14} />Not quite</span>}
               </label>
             );
           })}

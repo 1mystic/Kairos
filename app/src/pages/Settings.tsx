@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../auth/AuthProvider';
+import { CheckIcon } from '../components/icons';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { Button, Chip, LinkButton, Modal, Page, PageHeader, SettingRow, SettingsSection, StickySideNav, TwoColumnPage, type SideNavItem } from '../components/ui';
 import { useIsAdmin } from '../admin/useIsAdmin';
@@ -94,10 +95,10 @@ export function Settings() {
           )}
           {isGuest && (
             <SettingRow label="Clear local data" description="Removes sessions, mocks and plans from this device.">
-              <Button variant="secondary" onClick={() => setConfirm(true)}>Clear local data</Button>
+              <Button variant="danger-ghost" onClick={() => setConfirm(true)}>Clear local data</Button>
             </SettingRow>
           )}
-          {msg && <p role="status" className="text-small text-slate">{msg}</p>}
+          {msg && <p role="status" className="row-inline text-small text-status-good"><CheckIcon width={16} height={16} className="shrink-0" />{msg}</p>}
         </SettingsSection>
 
         <SettingsSection id="notifications" title="Notifications" description="Daily reminders are not built yet." active={tab === 'notifications'}>
@@ -123,7 +124,7 @@ export function Settings() {
           <p className="text-slate">This removes your sessions, mocks and plans from this device. It cannot be undone.</p>
           <div className="row-actions justify-end">
             <Button variant="secondary" onClick={() => setConfirm(false)}>Keep my data</Button>
-            <Button onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</Button>
+            <Button variant="danger" onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); })}>Clear data</Button>
           </div>
         </Modal>
       )}

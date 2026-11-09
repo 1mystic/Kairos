@@ -424,7 +424,7 @@ function Wizard({ taxonomy, today: todayProp, profile, edit, store, nudge, go }:
               </Card>
             </div>
           )}
-          {err && <Banner tone="accent" role="alert" icon={<AlertIcon className="shrink-0" />}>{err}</Banner>}
+          {err && <Banner tone="bad" role="alert" icon={<AlertIcon className="shrink-0" />}>{err}</Banner>}
           <div className="row justify-between gap-s3">
             <Button variant="secondary" onClick={() => goTo(step - 1)} disabled={step === 0}>Back</Button>
             {last ? (

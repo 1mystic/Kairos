@@ -1,5 +1,6 @@
 import type { MockDoc } from '../store';
 import { Card, CardGrid, Chip, Section, Stat } from '../components/ui';
+import { CheckIcon, CloseIcon } from '../components/icons';
 import { formatClock, isPaperScore, readAnalysis } from './model';
 
 const SUBJECT_NAME: Record<string, string> = { PHY: 'Physics', CHE: 'Chemistry', MAT: 'Mathematics', BOT: 'Botany', ZOO: 'Zoology' };
@@ -18,6 +19,7 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
       </Card>
     );
   }
+  const negMarks = a.questions.reduce((n, q) => n + (typeof q.marks === 'number' && q.marks < 0 ? q.marks : 0), 0);
   const attempted = a.counts.correct + a.counts.wrong + a.counts.partial;
   const name = (c: string) => SUBJECT_NAME[c] ?? c;
   return (
@@ -35,6 +37,14 @@ export function MockResultSummary({ mock }: { mock: MockDoc }) {
         </Card>
         <Card>
           <Stat label="Attempted" value={`${attempted} / ${a.questions.length}`} hint={score ? `${a.counts.correct} correct, ${a.counts.wrong} wrong, ${a.counts.blank} blank` : `${a.counts.answered + a.counts.answered_marked} answered`} />
+          {score && (
+            <div className="row-inline">
+              <Chip tone="good" icon={<CheckIcon width={14} height={14} />}>{a.counts.correct} right</Chip>
+              <Chip tone="bad" icon={<CloseIcon width={14} height={14} />}>{a.counts.wrong} wrong</Chip>
+              <Chip>{a.counts.blank} blank</Chip>
+              {negMarks < 0 && <Chip tone="bad">{negMarks} negative marks</Chip>}
+            </div>
+          )}
         </Card>
       </CardGrid>
 

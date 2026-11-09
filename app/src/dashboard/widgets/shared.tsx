@@ -20,7 +20,7 @@ export interface WidgetProps { size: Size; options: Record<string, OptionValue>;
 /** Up arrow + indigo for gains, down arrow + saffron tint for drops, always with words. */
 export function DeltaChip({ delta, range }: { delta: Delta | null; range: Range }) {
   if (!delta) return null;
-  const tone = delta.dir === 'down' ? 'accent' : delta.dir === 'up' ? 'primary' : 'neutral';
+  const tone = delta.dir === 'down' ? 'bad' : delta.dir === 'up' ? 'good' : 'neutral';
   const Icon = delta.dir === 'down' ? ArrowDownIcon : delta.dir === 'up' ? ArrowUpIcon : MinusIcon;
   return (
     <Chip tone={tone} icon={<Icon size={14} />}>

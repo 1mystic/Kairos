@@ -10,11 +10,11 @@ export function fmtMin(m: number): string {
   return mm ? `${h}h ${mm}m` : `${h}h`;
 }
 
-export const STATUS_WORDS: Record<PaceStatus, { label: string; tone: 'primary' | 'accent' }> = {
-  ahead: { label: 'Ahead', tone: 'primary' },
-  on_track: { label: 'On track', tone: 'primary' },
-  slightly_behind: { label: 'Slightly behind', tone: 'accent' },
-  behind: { label: 'Behind', tone: 'accent' },
+export const STATUS_WORDS: Record<PaceStatus, { label: string; tone: 'good' | 'warn' | 'bad' }> = {
+  ahead: { label: 'Ahead', tone: 'good' },
+  on_track: { label: 'On track', tone: 'good' },
+  slightly_behind: { label: 'Slightly behind', tone: 'warn' },
+  behind: { label: 'Behind', tone: 'bad' },
 };
 
 export type GroupId = 'mock' | 'warmup' | 'weak' | 'practice' | 'review' | 'check';

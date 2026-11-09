@@ -70,7 +70,7 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
               </IconButton>
             </div>
           ))}
-          {optErr && <p role="alert" className="text-small text-accent-ink">{optErr}</p>}
+          {optErr && <p role="alert" className="text-small text-status-bad">{optErr}</p>}
           <div><Button size="sm" variant="secondary" onClick={() => setOptions([...options, { key: nextKey(options.map((o) => o.key)), text: '' }])}>Add option</Button></div>
         </fieldset>
       )}
@@ -93,7 +93,7 @@ export function QuestionEditor({ q, issues, exam, onChange }: { q: UserQuestion;
               ))}
               <Button size="sm" variant="ghost" onClick={() => onChange({ answer: null })}>No answer</Button>
             </div>
-            {err('answer') && <p role="alert" className="text-small text-accent-ink">{err('answer')}</p>}
+            {err('answer') && <p role="alert" className="text-small text-status-bad">{err('answer')}</p>}
           </>
         )}
       </fieldset>

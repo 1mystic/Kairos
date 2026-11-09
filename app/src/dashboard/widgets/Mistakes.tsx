@@ -10,7 +10,7 @@ export function Mistakes({ size, ctx }: WidgetProps) {
   if (!rows.length) return <CardEmpty title="No tagged mistakes here" to="/practice" cta="Open practice" icon={<TargetIcon2 />}>When you note why an answer went wrong, the patterns show up here.</CardEmpty>;
   return (
     <div className="stack gap-s4">
-      <HBar ariaLabel="Questions by mistake type" rows={rows.map(([l, c]) => ({ key: l, label: BEHAVIOUR_NAMES[l], value: c, valueLabel: `${c} question${c === 1 ? '' : 's'}`, tone: l === 'concept_gap' ? 'accent' : 'primary' }))} />
+      <HBar ariaLabel="Questions by mistake type" rows={rows.map(([l, c]) => ({ key: l, label: BEHAVIOUR_NAMES[l], value: c, valueLabel: `${c} question${c === 1 ? '' : 's'}`, tone: l === 'concept_gap' ? 'bad' : 'primary' }))} />
       <div><LinkButton to="/practice" size="sm" variant="secondary">Practise a weak area</LinkButton></div>
     </div>
   );

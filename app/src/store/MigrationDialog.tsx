@@ -28,7 +28,7 @@ export function MigrationDialog({ state, onAdd, onDiscard, onRetry, onClose, onL
           <>
             <p role="alert" className="text-small text-slate">This deletes the progress saved on this device for good. Delete it?</p>
             <div className="stack gap-tight sm:flex-row-reverse">
-              <Button onClick={onDiscard}>Yes, discard</Button>
+              <Button variant="danger" onClick={onDiscard}>Yes, discard</Button>
               <Button variant="secondary" onClick={() => setConfirm(false)}>Keep it</Button>
             </div>
           </>
@@ -36,7 +36,7 @@ export function MigrationDialog({ state, onAdd, onDiscard, onRetry, onClose, onL
           <div className="stack gap-tight sm:flex-row-reverse">
             <Button onClick={onAdd}>Add</Button>
             <Button variant="secondary" onClick={later}>Decide later</Button>
-            <Button variant="secondary" onClick={() => setConfirm(true)}>Discard local</Button>
+            <Button variant="danger-ghost" onClick={() => setConfirm(true)}>Discard local</Button>
           </div>
         )}
       </Modal>

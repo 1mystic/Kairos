@@ -1,4 +1,4 @@
-export interface HBarRow { key: string; label: string; value: number; valueLabel: string; tone?: 'primary' | 'accent' }
+export interface HBarRow { key: string; label: string; value: number; valueLabel: string; tone?: 'primary' | 'accent' | 'bad' }
 
 /** Flat horizontal bars: label + value above a thin track. Scale is the largest value unless `max` is given. */
 export function HBar({ rows, max, ariaLabel }: { rows: readonly HBarRow[]; max?: number; ariaLabel: string }) {
@@ -12,7 +12,7 @@ export function HBar({ rows, max, ariaLabel }: { rows: readonly HBarRow[]; max?:
             <span className="shrink-0 tabular text-slate">{r.valueLabel}</span>
           </div>
           <div className="h-s2 overflow-hidden rounded-pill bg-surface-3" aria-hidden="true">
-            <div className={`dash-grow-x h-full w-full rounded-pill ${r.tone === 'accent' ? 'bg-accent' : 'bg-primary'}`} style={{ transform: `scaleX(${Math.max(0, Math.min(1, r.value / top))})` }} />
+            <div className={`dash-grow-x h-full w-full rounded-pill ${r.tone === 'accent' ? 'bg-accent' : r.tone === 'bad' ? 'bg-bad' : 'bg-primary'}`} style={{ transform: `scaleX(${Math.max(0, Math.min(1, r.value / top))})` }} />
           </div>
         </li>
       ))}

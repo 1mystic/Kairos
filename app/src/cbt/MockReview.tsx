@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { PublicQuestion, Question, Response } from '@kairos/core';
 import type { MockDoc } from '../store';
 import { Button, Chip, Section, Tabs } from '../components/ui';
+import { CheckIcon, CloseIcon } from '../components/icons';
 import { QuestionView } from '../components/QuestionView';
 import { describeResponse, formatClock, readAnalysis } from './model';
 
@@ -56,7 +57,7 @@ export function MockReview({ mock, questions }: { mock: MockDoc; questions: Read
                   <span className="mock-cell"><span className="mock-cell-label">Correct answer</span><b>{correctText(q)}</b></span>
                   <span className="mock-cell"><span className="mock-cell-label">Time</span><b className="tabular">{formatClock(o.timeMs)}</b></span>
                   <span className="row-inline">
-                    {o.verdict && <Chip tone={good ? 'primary' : 'neutral'}>{VERDICT[o.verdict]}</Chip>}
+                    {o.verdict && <Chip tone={good ? 'good' : o.verdict === 'wrong' ? 'bad' : 'neutral'} icon={good ? <CheckIcon width={14} height={14} /> : o.verdict === 'wrong' ? <CloseIcon width={14} height={14} /> : undefined}>{VERDICT[o.verdict]}</Chip>}
                     {o.marks !== undefined && <span className="tabular text-small">{o.marks > 0 ? `+${o.marks}` : o.marks}</span>}
                   </span>
                   {q && (

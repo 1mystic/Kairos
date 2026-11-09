@@ -95,7 +95,7 @@ export function BankPage() {
     return (
       <Page>
         {header}
-        {error && <Banner tone="accent" role="alert">{error}</Banner>}
+        {error && <Banner tone="bad" role="alert">{error}</Banner>}
         <EmptyState
           icon={UploadIcon}
           title="Bring your own papers"
@@ -109,8 +109,8 @@ export function BankPage() {
   return (
     <Page>
       {header}
-      {error && <Banner tone="accent" role="alert">{error}</Banner>}
-      {failed && <Banner tone="accent" role="alert">{failed}</Banner>}
+      {error && <Banner tone="bad" role="alert">{error}</Banner>}
+      {failed && <Banner tone="bad" role="alert">{failed}</Banner>}
 
       <Card className="u-meter" aria-label="Usage">
         <CardGrid cols={2}>
@@ -141,7 +141,7 @@ export function BankPage() {
         <Tabs<StatusFilter> label="Status" value={status} onChange={(s) => { setStatus(s); setShown(PAGE); }} tabs={[{ id: 'all', label: 'All' }, { id: 'ready', label: 'With answer' }, { id: 'self', label: 'Self-check' }]} />
         <div className="row-actions">
           <span className="text-small text-slate">{visible.length} shown</span>
-          <Button size="sm" variant="secondary" disabled={selected.size === 0} loading={busy} onClick={() => void remove([...selected])}>Delete {selected.size || ''} selected</Button>
+          <Button size="sm" variant="danger-ghost" disabled={selected.size === 0} loading={busy} onClick={() => void remove([...selected])}>Delete {selected.size || ''} selected</Button>
         </div>
       </div>
 

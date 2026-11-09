@@ -245,7 +245,7 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
                   <span className="text-small text-slate tabular">Loading questions, {progress[0]} of {progress[1]}</span>
                 </div>
               )}
-              {loadError && <Banner tone="accent">Could not load the question bank. Check your connection and try again. ({loadError})</Banner>}
+              {loadError && <Banner tone="bad">Could not load the question bank. Check your connection and try again. ({loadError})</Banner>}
 
               {tooThinFull && (
                 <Banner tone="accent" actions={<Button size="sm" variant="secondary" onClick={() => setLength('mini')}>Make a mini paper</Button>}>
@@ -420,7 +420,7 @@ export function NewMockView({ store, deps }: { store: UserStore; deps: MockDeps 
                   </div>
                   <div className="row-actions">
                     <LinkButton to={`/exam/${p.paperId}`} variant="secondary">Re-take</LinkButton>
-                    <Button variant="ghost" onClick={() => void remove(p.paperId)} aria-label={`Remove paper ${paperCode(p.paperId)}`}>Remove</Button>
+                    <Button variant="danger-ghost" onClick={() => void remove(p.paperId)} aria-label={`Remove paper ${paperCode(p.paperId)}`}>Remove</Button>
                   </div>
                 </div>
               </Card>

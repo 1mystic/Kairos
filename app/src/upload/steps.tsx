@@ -138,7 +138,7 @@ export function StepPages({ api }: { api: PagesApi }) {
       </label>
       {api.busy && <p role="status" className="text-small text-slate">{api.progress ?? 'Working…'}</p>}
       {api.errors.map((e) => (
-        <p key={e} role="alert" className="row-inline text-small text-accent-ink"><AlertIcon width={16} height={16} className="shrink-0" />{e}</p>
+        <p key={e} role="alert" className="row-inline text-small text-status-bad"><AlertIcon width={16} height={16} className="shrink-0" />{e}</p>
       ))}
       <Privacy />
     </Card>
@@ -150,7 +150,7 @@ export function PagesPreview({ api }: { api: PagesApi }) {
     <Card>
       <div className="row-between">
         <h3 className="text-h3">{api.pages.length === 0 ? 'Your pages' : `${api.pages.length} page${api.pages.length === 1 ? '' : 's'}`}</h3>
-        {api.pages.length > 0 && <Button size="sm" variant="ghost" onClick={() => void api.clear()}>Remove all</Button>}
+        {api.pages.length > 0 && <Button size="sm" variant="danger-ghost" onClick={() => void api.clear()}>Remove all</Button>}
       </div>
       {api.pages.length === 0 ? (
         <p className="text-slate">Page thumbnails will appear here. They stay in this browser and are never uploaded.</p>

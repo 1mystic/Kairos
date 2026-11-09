@@ -23,7 +23,7 @@ export function Plan({ size, ctx }: WidgetProps) {
           <div className="stack gap-s1"><span className="text-h1 font-bold tabular">{p.daysLeft}</span><span className="text-caption text-slate">days left</span></div>
         </Ring>
         <div className="stack min-w-0 flex-1 gap-s2 basis-40">
-          <div className="row gap-s2"><Chip tone="primary">{p.phase} phase</Chip>{pace && <Chip tone={pace.status === 'ahead' || pace.status === 'on_track' ? 'primary' : 'accent'} icon={<Icon size={14} />}>{PACE_WORDS[pace.status]}</Chip>}</div>
+          <div className="row gap-s2"><Chip tone="primary">{p.phase} phase</Chip>{pace && <Chip tone={pace.status === 'ahead' || pace.status === 'on_track' ? 'good' : pace.status === 'behind' ? 'bad' : 'warn'} icon={<Icon size={14} />}>{PACE_WORDS[pace.status]}</Chip>}</div>
           <p className="text-small text-slate">{pace ? pace.message : 'Pace needs a bit more practice data. For now: days left and phase.'}</p>
           {p.buffersLeft !== null && <p className="text-small"><span className="font-semibold tabular">{p.buffersLeft}</span> buffer days left</p>}
         </div>

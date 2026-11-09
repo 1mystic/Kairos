@@ -187,7 +187,7 @@ export function MockReport(props: MockReportProps) {
                 <li key={c.key}>
                   <ListRow
                     title={c.label}
-                    description={<><Chip tone={c.quadrant === 'steady' || c.quadrant === 'cautious' ? 'primary' : 'accent'}>{QUAD_NAME[c.quadrant]}</Chip> {c.advice}</>}
+                    description={<><Chip tone={c.quadrant === 'steady' ? 'good' : c.quadrant === 'careless' ? 'bad' : 'warn'}>{QUAD_NAME[c.quadrant]}</Chip> {c.advice}</>}
                   >
                     <span className="tabular text-small text-slate">attempted {pct(c.attemptRate)} · accuracy {pct(c.accuracy)}</span>
                   </ListRow>
@@ -233,7 +233,7 @@ export function MockReport(props: MockReportProps) {
                 markX={fat.trend === 'unknown' ? undefined : a.usedMs / 60_000 - fat.last.spanMin} markLabel={fat.trend === 'unknown' ? undefined : 'last stretch'}
                 summary={`Accuracy over the paper in 30-minute windows. ${fat.text}`}
                 table={{ caption: 'Accuracy per window', head: ['Window', 'Answers', 'Accuracy'], rows: fat.points.map((p) => [`${clock(p.fromMin)} to ${clock(p.toMin)}`, p.answers, pct(p.accuracy)]) }}
-                tone={fat.trend === 'dropped' ? 'accent' : 'primary'} height={170}
+                tone={fat.trend === 'dropped' ? 'bad' : 'primary'} height={170}
               />
               <p className="text-small font-semibold">Pace, answers per hour</p>
               <LineChart
@@ -282,7 +282,7 @@ export function MockReport(props: MockReportProps) {
                   lead={<span className="tabular font-semibold text-primary">{i + 1}</span>}
                   title={f.text}
                   titleClass="text-body"
-                  description={f.marksAtStake > 0 ? `About ${marksText(f.marksAtStake)} marks at stake` : 'Worth fixing before the next mock'}
+                  description={f.marksAtStake > 0 ? <span className="text-status-bad">{`About ${marksText(f.marksAtStake)} marks at stake`}</span> : 'Worth fixing before the next mock'}
                 >
                   <Link to={f.link} className="inline-flex min-h-s7 items-center font-semibold text-primary">{f.link.startsWith('/practice') ? 'Practise' : f.link === '/mocks' ? 'Mock tests' : 'Review'}</Link>
                 </ListRow>

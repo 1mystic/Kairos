@@ -11,9 +11,9 @@ import { UserQuestionPreview } from './UserQuestionPreview';
 
 export function IssueChip({ chip }: { chip: ChipSpec }) {
   if (chip.level === 'error')
-    return <span className="u-chip-error" title={chip.title}><AlertIcon width={14} height={14} />{chip.label}</span>;
-  if (chip.level === 'warn') return <span title={chip.title}><Chip tone="accent" icon={<InfoIcon width={14} height={14} />}>{chip.label}</Chip></span>;
-  return <span title={chip.title}><Chip tone="primary" icon={<CheckIcon width={14} height={14} />}>{chip.label}</Chip></span>;
+    return <span title={chip.title}><Chip tone="bad" icon={<AlertIcon width={14} height={14} />}>{chip.label}</Chip></span>;
+  if (chip.level === 'warn') return <span title={chip.title}><Chip tone="warn" icon={<InfoIcon width={14} height={14} />}>{chip.label}</Chip></span>;
+  return <span title={chip.title}><Chip tone="good" icon={<CheckIcon width={14} height={14} />}>{chip.label}</Chip></span>;
 }
 
 export interface QuestionCardProps {
@@ -54,7 +54,7 @@ function QuestionCardBase({ item, exam, selected, urls, pages, cropToWebp, onTog
 
       {errors.length > 0 && (
         <ul className="stack-label text-small" aria-label="Problems to fix">
-          {errors.slice(0, 3).map((e, i) => <li key={i} className="row-inline"><AlertIcon width={16} height={16} className="shrink-0 text-accent-ink" />{e.message}</li>)}
+          {errors.slice(0, 3).map((e, i) => <li key={i} className="row-inline"><AlertIcon width={16} height={16} className="shrink-0 text-status-bad" />{e.message}</li>)}
         </ul>
       )}
 

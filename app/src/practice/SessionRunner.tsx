@@ -374,7 +374,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
 
         {isChecked && selfCheck && (
           <div data-testid="feedback">
-            <Banner tone={answer === SELF_RIGHT ? 'primary' : 'accent'} icon={answer === SELF_RIGHT ? <CheckIcon className="shrink-0" /> : <CloseIcon className="shrink-0" />} role="status">
+            <Banner tone={answer === SELF_RIGHT ? 'good' : 'bad'} icon={answer === SELF_RIGHT ? <CheckIcon className="shrink-0" /> : <CloseIcon className="shrink-0" />} role="status">
               {answer === SELF_RIGHT ? 'Marked as right.' : 'Marked as wrong.'} Self-checked questions are logged but do not change your mastery.
             </Banner>
           </div>
@@ -382,7 +382,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
         {isChecked && !selfCheck && (
           <div className="stack-card" data-testid="feedback">
             <Banner
-              tone={verdict === 'correct' ? 'primary' : 'accent'}
+              tone={verdict === 'correct' ? 'good' : 'bad'}
               icon={verdict === 'correct' ? <CheckIcon className="shrink-0" /> : <CloseIcon className="shrink-0" />}
               role="status"
             >

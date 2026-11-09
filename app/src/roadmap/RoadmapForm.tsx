@@ -67,7 +67,7 @@ export function RoadmapForm({ value, onChange }: { value: RoadmapConfig; onChang
             <Stepper key={id} label={`${PHASE_LABEL[id]} starts at`} unit="days left" hint={PHASE_HINT[id]} value={value.phases[id]} min={RANGES.phase[0]} max={RANGES.phase[1]} onChange={(n) => set({ phases: { ...value.phases, [id]: clampPhase(n) } })} />
           ))}
           {errors.length > 0 && (
-            <ul role="alert" className="stack gap-tight text-small text-accent-ink">
+            <ul role="alert" className="stack gap-tight text-small text-status-bad">
               {errors.map((e) => <li key={e} className="row gap-tight"><AlertIcon width={16} height={16} className="shrink-0" />{e}</li>)}
             </ul>
           )}

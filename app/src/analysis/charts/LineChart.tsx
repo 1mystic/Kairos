@@ -8,7 +8,7 @@ export function LineChart({
   points, xDomain, yDomain, xTicks, yTicks, summary, table, height = 180, markX, markLabel, endLabel, tone = 'primary',
 }: {
   points: LinePoint[]; xDomain: [number, number]; yDomain: [number, number]; xTicks: Tick[]; yTicks: Tick[];
-  summary: string; table: TableData; height?: number; markX?: number; markLabel?: string; endLabel?: string; tone?: 'primary' | 'accent';
+  summary: string; table: TableData; height?: number; markX?: number; markLabel?: string; endLabel?: string; tone?: 'primary' | 'accent' | 'bad';
 }) {
   const [ref, width] = useWidth<HTMLDivElement>();
   const padL = 40, padR = 12, padT = 12, padB = 28;
@@ -23,8 +23,8 @@ export function LineChart({
   }
   if (cur.length) segs.push(cur);
   const last = [...points].reverse().find((p) => p.y !== null);
-  const stroke = tone === 'accent' ? 'stroke-accent' : 'stroke-primary';
-  const fill = tone === 'accent' ? 'fill-accent' : 'fill-primary';
+  const stroke = tone === 'accent' ? 'stroke-accent' : tone === 'bad' ? 'stroke-bad' : 'stroke-primary';
+  const fill = tone === 'accent' ? 'fill-accent' : tone === 'bad' ? 'fill-bad' : 'fill-primary';
   return (
     <div ref={ref}>
       <Chart summary={summary} table={table}>

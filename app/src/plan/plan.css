@@ -13,7 +13,7 @@
   .pl-task[data-done='true'] { background: transparent; color: var(--slate); }
   .pl-task-main { min-width: 0; display: flex; flex-direction: column; gap: var(--space-1); }
   .pl-check { display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--radius-pill); background: var(--surface-3); color: var(--slate); cursor: pointer; transition: background-color var(--dur) var(--ease); }
-  .pl-check[aria-checked='true'] { background: var(--primary); color: var(--on-primary); }
+  .pl-check[aria-checked='true'] { background: var(--good); color: var(--on-good); }
   .pl-week { display: grid; gap: var(--space-2); grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); }
   .pl-day { display: flex; flex-direction: column; gap: var(--space-1); min-height: 44px; padding: var(--space-3); border-radius: var(--radius-btn); background: var(--surface); color: var(--ink); text-decoration: none; transition: background-color var(--dur) var(--ease); }
   .pl-day:hover { background: var(--surface-3); }

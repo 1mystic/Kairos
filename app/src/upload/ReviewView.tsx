@@ -40,7 +40,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
   const [shown, setShown] = useState(PAGE);
   const [bulkChapter, setBulkChapter] = useState('');
   const [saving, setSaving] = useState(false);
-  const [message, setMessage] = useState<{ tone: 'accent' | 'primary'; text: string } | null>(null);
+  const [message, setMessage] = useState<{ tone: 'bad' | 'primary'; text: string } | null>(null);
 
   const sum = useMemo(() => summarize(items), [items]);
   const visible = useMemo(() => items.filter((i) => filter === 'all' || categorize(i.issues) === filter), [items, filter]);
@@ -57,11 +57,11 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
     const chosen = review.snapshot();
     const bad = chosen.filter((i) => i.issues.some((x) => x.severity === 'error')).length;
     if (bad > 0) {
-      setMessage({ tone: 'accent', text: `${bad} selected question${bad === 1 ? ' still has' : 's still have'} a problem. Fix ${bad === 1 ? 'it' : 'them'} or untick ${bad === 1 ? 'it' : 'them'}, then save.` });
+      setMessage({ tone: 'bad', text: `${bad} selected question${bad === 1 ? ' still has' : 's still have'} a problem. Fix ${bad === 1 ? 'it' : 'them'} or untick ${bad === 1 ? 'it' : 'them'}, then save.` });
       return;
     }
     if (chosen.length === 0) {
-      setMessage({ tone: 'accent', text: 'Tick the questions you want to keep first.' });
+      setMessage({ tone: 'bad', text: 'Tick the questions you want to keep first.' });
       return;
     }
     setSaving(true);
@@ -75,7 +75,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
       if (!quota.ok) {
         const r = quota.remaining;
         setMessage({
-          tone: 'accent',
+          tone: 'bad',
           text: `${quota.reasons.map((x) => x.message).join(' ')} Remaining: ${r.questions} questions, ${r.images} images, ${r.today} more today.`,
         });
         return;
@@ -88,7 +88,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
       try { reportUpload(qs.length); } catch { /* telemetry never blocks */ }
       onSaved({ saved: qs.length, selfCheck: qs.filter((q) => q.status === 'needs_answer').length });
     } catch (e) {
-      setMessage({ tone: 'accent', text: e instanceof Error ? e.message : 'Saving failed. Your edits are still here, so try again.' });
+      setMessage({ tone: 'bad', text: e instanceof Error ? e.message : 'Saving failed. Your edits are still here, so try again.' });
     } finally {
       setSaving(false);
     }
@@ -116,7 +116,7 @@ export function ReviewView({ review, store, exam, pages, cropToWebp, skipped = [
       </div>
 
       {blocked > 0 && (
-        <Banner tone="accent" icon={<AlertIcon className="shrink-0" />} role="alert">
+        <Banner tone="bad" icon={<AlertIcon className="shrink-0" />} role="alert">
           {blocked} selected question{blocked === 1 ? ' has' : 's have'} a problem. Fix {blocked === 1 ? 'it' : 'them'} or untick {blocked === 1 ? 'it' : 'them'} to save.
         </Banner>
       )}

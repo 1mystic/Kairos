@@ -17,7 +17,7 @@ const fmt = (ms: number) => {
   return s >= 60 ? `${Math.floor(s / 60)}m ${s % 60}s` : `${s}s`;
 };
 
-/** Flat accuracy ring: indigo arc on a neutral track. */
+/** Flat accuracy ring: green at or above the practice target, saffron in the middle, red when low (the % is always printed). */
 export function AccuracyRing({ value }: { value: number }) {
   const r = 52;
   const c = 2 * Math.PI * r;
@@ -26,7 +26,7 @@ export function AccuracyRing({ value }: { value: number }) {
       <circle cx="64" cy="64" r={r} fill="none" strokeWidth="12" className="stroke-surface-3" />
       <circle
         cx="64" cy="64" r={r} fill="none" strokeWidth="12" strokeLinecap="round"
-        className="stroke-primary" strokeDasharray={c} strokeDashoffset={c * (1 - Math.max(0, Math.min(1, value)))}
+        className={value >= 0.65 ? 'stroke-good' : value >= 0.4 ? 'stroke-accent' : 'stroke-bad'} strokeDasharray={c} strokeDashoffset={c * (1 - Math.max(0, Math.min(1, value)))}
         transform="rotate(-90 64 64)"
       />
       <text x="64" y="72" textAnchor="middle" className="fill-ink text-h2 font-semibold tabular">{Math.round(value * 100)}%</text>
@@ -129,7 +129,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
           {wrong.map((r, i) => (
             <Card key={r.q.id}>
               <div className="stack-card">
-                <Chip tone="accent">Mistake {i + 1} of {wrong.length}</Chip>
+                <Chip tone="bad">Mistake {i + 1} of {wrong.length}</Chip>
                 <QuestionView
                   question={r.q}
                   variant="review"
@@ -242,7 +242,7 @@ function RowItem({ r, n, flagged }: { r: ReviewRow; n: number; flagged: boolean 
     <li className={`slog-row ${ok ? 'slog-row-ok' : 'slog-row-bad'}`} data-testid="log-row">
       <button type="button" className="slog-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
         <span className="slog-status">
-          {ok ? <CheckIcon width={20} height={20} className="text-primary" /> : <CloseIcon width={20} height={20} className="text-accent-ink" />}
+          {ok ? <CheckIcon width={20} height={20} className="text-status-good" /> : <CloseIcon width={20} height={20} className={r.outcome === 'skipped' ? 'text-status-warn' : 'text-status-bad'} />}
           <span>Question {n}: {verdict}</span>
         </span>
         <span className="slog-stem text-small">{snippet(r.q.stem)}</span>
@@ -252,7 +252,7 @@ function RowItem({ r, n, flagged }: { r: ReviewRow; n: number; flagged: boolean 
         <span className="slog-chips">
           {isMine(r.q) && <Chip>Your question</Chip>}
           {flagged && <Chip>Flagged</Chip>}
-          {r.labels.map((l) => <Chip key={l} tone={ok ? 'primary' : 'accent'}>{LABEL_WORDS[l]}</Chip>)}
+          {r.labels.map((l) => <Chip key={l} tone={ok ? 'good' : 'bad'}>{LABEL_WORDS[l]}</Chip>)}
           <span className="text-small text-slate">{open ? 'Hide solution' : 'Show solution'}</span>
         </span>
       </button>
