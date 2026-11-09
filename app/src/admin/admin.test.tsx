@@ -199,4 +199,11 @@ describe('overview', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Refresh' }));
     await waitFor(() => expect(getStats).toHaveBeenCalledTimes(2));
   });
+  it('the 7 day view still reads 14 days so week-over-week insights compare real data', async () => {
+    const getStats = vi.fn(async () => []);
+    render(wrap(fakeData({ getStats }), 'a1', <Overview today="2026-11-08" />));
+    await waitFor(() => expect(getStats).toHaveBeenCalledWith('2026-10-10', '2026-11-08'));
+    await userEvent.click(screen.getByRole('tab', { name: '7 days' }));
+    await waitFor(() => expect(getStats).toHaveBeenCalledWith('2026-10-26', '2026-11-08'));
+  });
 });

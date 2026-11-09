@@ -36,7 +36,16 @@ export const firestoreAdminData: AdminData = {
   async getUsers(limit) {
     const { db } = getServices();
     const snap = await getDocs(query(collection(db, 'users'), orderBy('createdAt', 'desc'), fsLimit(limit)));
-    return snap.docs.map((d) => ({ id: d.id, data: jsonSafe(d.data()) as Record<string, unknown> }));
+    // Keep only what the summaries need. The rows are cached in sessionStorage by useCachedQuery, so email and
+    // date of birth (minors!) must never leave this function.
+    return snap.docs.map((d) => {
+      const { displayName, isMinor, consent, onboarded, exam, createdAt } = d.data() as Record<string, unknown>;
+      const status = (consent as { status?: unknown } | undefined)?.status;
+      return {
+        id: d.id,
+        data: jsonSafe({ displayName, isMinor, onboarded, exam, createdAt, ...(typeof status === 'string' ? { consent: { status } } : {}) }) as Record<string, unknown>,
+      };
+    });
   },
   async getConfig(id) {
     const { db } = getServices();

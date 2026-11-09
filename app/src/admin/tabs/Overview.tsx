@@ -39,11 +39,13 @@ export function Overview({ today }: { today: string }) {
   const data = useAdminData();
   const [range, setRange] = useState<'7' | '30' | '90'>('30');
   const days = Number(range);
-  const [start, end] = rangeBounds(today, days);
+  // insights compare the last 7 days with the 7 before, so the 7-day view still reads 14 days (<= 90 reads either way)
+  const fetchDays = Math.max(days, 14);
+  const [start, end] = rangeBounds(today, fetchDays);
   const q = useCachedQuery(`stats:${start}:${end}`, () => data.getStats(start, end));
   const rows = useMemo(() => (q.data ? fillDays(q.data, end, days) : []), [q.data, end, days]);
   const t = useMemo(() => totals(rows), [rows]);
-  const insights = useMemo(() => buildInsights(fillDays(q.data ?? [], end, Math.max(days, 14))), [q.data, end, days]);
+  const insights = useMemo(() => buildInsights(fillDays(q.data ?? [], end, fetchDays)), [q.data, end, fetchDays]);
   const split = EXAM_SESSION_FIELDS.map((e) => ({ ...e, n: t[e.field] }));
   const splitTotal = split.reduce((a, e) => a + e.n, 0);
 
@@ -59,7 +61,7 @@ export function Overview({ today }: { today: string }) {
         }
       >
         <p className="text-small text-slate tabular">
-          {q.data ? `Reads used: ${q.fromCache ? '0 (from this session\'s cache)' : q.data.length} of up to ${days}.` : `Uses up to ${days} reads.`} Guests are not counted (their data stays on their device) and counts are indicative.
+          {q.data ? `Reads used: ${q.fromCache ? '0 (from this session\'s cache)' : q.data.length} of up to ${fetchDays}.` : `Uses up to ${fetchDays} reads.`} Guests are not counted (their data stays on their device) and counts are indicative.
         </p>
         {q.error && <Banner tone="accent" role="alert" icon={<AlertIcon className="shrink-0" />}>We could not read the stats: {q.error}</Banner>}
         {q.loading && !q.data ? (
