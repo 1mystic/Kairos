@@ -14,3 +14,14 @@ Policy: official papers + official keys, permissively licensed datasets (MIT / A
 | https://practicepaper.in/gate-da/... | Footer: "(c) 2026 PracticePaper.in - All rights reserved." robots.txt allows crawling but no reuse licence is granted. | EXCLUDED. Learned only that subject-wise PYQ practice exists. Nothing copied. |
 | https://www.geeksforgeeks.org/gate/gate-da-topic-wise-quizzes/ | Copyrighted publisher content; robots.txt disallows `anthropic-ai`, `CCBot`, `cohere-ai`, `Bytespider`. Not fetched beyond robots.txt. | EXCLUDED (project policy names GeeksforGeeks). |
 | https://www.gatexaiml.in/gatexaiml_black/da/index.php | Footer: "(c) GateXAIML 2025 - 2026, All rights reserved." Terms section 1: "GateXAIML owns the intellectual property rights for all original study material ... You may view and download materials for personal, non-commercial educational use only." No robots.txt (404). | EXCLUDED (personal non-commercial only; not compatible). Learned only topic coverage. |
+
+## Open question banks (Phase 3)
+
+| Dataset | Licence evidence read | Decision | Notes |
+|---|---|---|---|
+| MMLU (hendrycks/test) | LICENSE: MIT (c) 2020 Dan Hendrycks; HF card `license: mit` | ACCEPTED (9 subjects, syllabus-filtered) | attribution/mmlu.md. Known label noise caveat. |
+| MATH (via openai/prm800k MATH-500 split) | prm800k LICENSE MIT (c) 2023 OpenAI; hendrycks/math LICENSE MIT (c) 2021 | ACCEPTED (numeric answers only) | attribution/math500.md. The official MATH tar on people.eecs.berkeley.edu returned HTTP 403, so the MIT-licensed MATH-500 split was used. |
+| GSM8K (openai/grade-school-math) | LICENSE MIT (c) 2021 OpenAI | ACCEPTED (multi-step quantitative aptitude) | attribution/gsm8k.md |
+| AQuA-RAT / MathQA | Apache-2.0 on GitHub (google-deepmind/AQuA); not downloaded | REJECTED for now | Gold labels are known to be noisy and cannot be verified at scale; rationales not reusable. Re-evaluate with a verification pass. |
+| TheoremQA, SciBench, LogiQA, BIG-bench | not fetched (distributed as HF parquet / mixed per-task licences; no stdlib parquet reader allowed under the no-install rule; LogiQA licence unclear) | NOT USED | Licence not verified by us: treated as unavailable per policy. |
+| econometrics / logical_fallacies (MMLU subjects) | same MIT licence | EXCLUDED | off-syllabus (jargon-heavy, no GATE DA topic match) |
