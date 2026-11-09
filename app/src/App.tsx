@@ -17,6 +17,8 @@ import { diagnosticRoutes } from './diagnostic/routes';
 import { analysisRoutes } from './analysis/routes';
 import { onboardingRoutes } from './onboarding/routes';
 import { planRoutes } from './plan/routes';
+import { adminRoutes } from './admin/routes';
+import { roadmapRoutes } from './roadmap/routes';
 import { ScrollToTop } from './lib/ScrollToTop';
 import { StoreProvider } from './store/StoreProvider';
 import { NudgeProvider } from './store/NudgeProvider';
@@ -56,6 +58,12 @@ export function AppRoutes() {
             <Route key={r.path} path={r.path} element={r.element} />
           ))}
           {onboardingRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {roadmapRoutes.map((r) => (
+            <Route key={r.path} path={r.path} element={r.element} />
+          ))}
+          {adminRoutes.map((r) => (
             <Route key={r.path} path={r.path} element={r.element} />
           ))}
           {planRoutes.map((r) => (
