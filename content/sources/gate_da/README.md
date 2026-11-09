@@ -86,3 +86,59 @@ Papers: `content/sources/gate_da/papers_manifest.json` (URL, pages, sha256, retr
 - HMM / MDP / EM / SVM duality are NOT in the GATE DA 2027 syllabus and are not covered.
 - `python -m pipeline.stats --md` only reports the JEE/NEET/IAT served counts (stats.py is not GATE-aware), so `content/sources/bank_stats.md` was not regenerated.
 - Tests written but not run: `pipeline/tests/test_gate_convert.py`, `test_gate_openbank.py`, `test_gate_authored.py`.
+
+## Owner-supplied question bank (W11)
+
+`pipeline/bank_src/gate_da_qbank.json`: **1,203 questions** converted from the owner's GATE DA 2027 workbooks (1,206 records; 3 quarantined as duplicates). `source.kind = authored`, license "Provided by the project owner (owner confirms rights)", solutions in house, `status: verified` (the owner confirms rights; the answer keys and worked solutions are the workbook author's, audited in `content/sources/gate_da/qbank/QUALITY.md`: 0 mismatches in 700+ independent recomputations). Source archive, attribution and the figure PNGs: `content/sources/gate_da/qbank/`. Converter: `python -m pipeline.ingest.gate_qbank` (deterministic; maps in `pipeline/gate_da/qbank/`: `section_map.json` 124 workbook sections, `chapter_overrides.json` 120 per-question chapters for the Mock Sets, `xref.py` self-containment fixes, `figures.json` alt texts, `id_map.json` source id to question id). Twenty figures are processed to webp in `app/public/img`; **publishing needs their PNG sources in the `--img-src` directory** (`pipeline.publish` takes a single directory; copy `content/sources/gate_da/qbank/figures/*.png` next to the fixture images).
+
+Types: 705 NVQ, 314 SCQ, 184 MSQ. Marks (workbook): 770 one-mark, 433 two-mark. Difficulty: 302 E, 728 M, 173 H. Subjects: PRS 192, AI 172, PDS 165, ML 165, LA 160, DBW 159, CO 150, GA 40.
+
+Quarantined (`pipeline/quarantine/gate_qbank_rejected.json`): 3, all `duplicate` (Q7.02 equals an authored question; Q30.12 = Q8.21 and Q30.15 = Q9.02 inside the workbook, aliased in `id_map.json`). No `cross_ref`, `latex`, `table` or `answer` rejects: 32 cross-references were fixed by inlining the referenced text, and shared data (tables, graphs, trees) is attached only to the questions that use it.
+
+NAT answers: 390 integers (tol 0), 280 decimals (tol = half a unit of the last decimal, or of the stem's "round to d decimals"), 46 ranges (kept as `range`, 45 with an en dash and 1 written "to"); 24 keys use the Unicode minus sign.
+
+Counts by chapter:
+
+| Chapter | Questions | SCQ | MSQ | NVQ | 1 mark | 2 marks |
+|---|---|---|---|---|---|---|
+| AI.LOG | 43 | 18 | 13 | 12 | 36 | 7 |
+| AI.SRCH | 85 | 37 | 12 | 36 | 61 | 24 |
+| AI.UNC | 44 | 11 | 7 | 26 | 30 | 14 |
+| CO.LIM | 88 | 12 | 11 | 65 | 48 | 40 |
+| CO.OPT | 46 | 5 | 6 | 35 | 26 | 20 |
+| CO.TAY | 16 | 2 | 1 | 13 | 9 | 7 |
+| DBW.DW | 12 | 3 | 4 | 5 | 10 | 2 |
+| DBW.ER | 9 | 4 | 3 | 2 | 7 | 2 |
+| DBW.NF | 58 | 19 | 12 | 27 | 33 | 25 |
+| DBW.REL | 69 | 22 | 8 | 39 | 43 | 26 |
+| DBW.XFM | 11 | 1 | 2 | 8 | 10 | 1 |
+| GA.ANAL | 10 | 6 | 1 | 3 | 7 | 3 |
+| GA.QUANT | 12 | 7 | 1 | 4 | 8 | 4 |
+| GA.SPAT | 8 | 2 | 0 | 6 | 8 | 0 |
+| GA.VERB | 10 | 10 | 0 | 0 | 7 | 3 |
+| LA.DEC | 27 | 3 | 5 | 19 | 15 | 12 |
+| LA.EIG | 33 | 4 | 3 | 26 | 19 | 14 |
+| LA.MAT | 33 | 5 | 9 | 19 | 17 | 16 |
+| LA.PROJ | 31 | 4 | 5 | 22 | 21 | 10 |
+| LA.SYS | 20 | 1 | 6 | 13 | 15 | 5 |
+| LA.VS | 16 | 3 | 6 | 7 | 11 | 5 |
+| ML.CLS | 52 | 13 | 7 | 32 | 39 | 13 |
+| ML.CLU | 27 | 11 | 3 | 13 | 20 | 7 |
+| ML.DR | 14 | 3 | 1 | 10 | 12 | 2 |
+| ML.EVAL | 21 | 8 | 5 | 8 | 15 | 6 |
+| ML.NN | 21 | 6 | 3 | 12 | 16 | 5 |
+| ML.REG | 30 | 10 | 3 | 17 | 22 | 8 |
+| PDS.ALG | 41 | 12 | 7 | 22 | 27 | 14 |
+| PDS.DS | 42 | 14 | 5 | 23 | 29 | 13 |
+| PDS.GRAPH | 40 | 7 | 9 | 24 | 26 | 14 |
+| PDS.PY | 42 | 27 | 0 | 15 | 27 | 15 |
+| PRS.CLT | 13 | 1 | 3 | 9 | 6 | 7 |
+| PRS.CNT | 11 | 1 | 0 | 10 | 7 | 4 |
+| PRS.CRV | 39 | 3 | 4 | 32 | 21 | 18 |
+| PRS.DESC | 7 | 0 | 1 | 6 | 5 | 2 |
+| PRS.DRV | 19 | 3 | 1 | 15 | 14 | 5 |
+| PRS.INF | 34 | 7 | 5 | 22 | 15 | 19 |
+| PRS.MOM | 36 | 3 | 5 | 28 | 11 | 25 |
+| PRS.PROB | 33 | 6 | 7 | 20 | 17 | 16 |
+
+Mock papers (mini, blueprint `gate_da_2027`): `pipeline/fixtures/papers/gate_da_mock_{a,b,c}.json`, built by `python -m pipeline.gate_da.qbank.build_mocks`. A: 48 questions (GA 5x1 + 3x2, technical 40), B: 46, C: 45; no question is shared between the papers. Technical items come from Mock Sets A/B/C (days 30-32), General Aptitude from Day 29. Because the app fills a mini paper by section order and question type only, every section is kept consistent with its marks: surplus 1-mark NAT of the Mock Sets (9, 11 and 12) are left out and 9, 9 and 10 one-mark MCQ/MSQ from Days 1-28 top up T1M-MCQ/T1M-MSQ (ids in the build output). Day 29 has only eight two-mark MCQ, so GA2 has 3, 3 and 2 questions. These questions also exist in the practice shards (answers visible there); real shared mocks need server grading later.
