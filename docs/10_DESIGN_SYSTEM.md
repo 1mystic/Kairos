@@ -97,3 +97,13 @@ Checklist before you ship a screen:
 
 ## Semantic status colours (owner update)
 Brand palette stays neutrals + indigo + saffron. **Green (good) and red (bad) are now allowed for status** to communicate meaning faster: correct/wrong answers, success/error states, on-track/behind, saved/failed, improved/declined, destructive buttons. Always pair colour with an icon or words; text on tinted backgrounds uses `--good-ink`/`--bad-ink`; solid buttons use `btn-success`/`btn-danger` with `--on-good`/`--on-bad`. Tokens: `brand/tokens.css` (`--good*`, `--bad*`, light + dark); classes: `app/src/styles/semantic.css`; Tailwind utilities `bg-good-50`, `text-good-ink`, `bg-bad`, `text-on-bad`, etc. Flat rules still apply (no borders, shadows, gradients). Do not use green/red for decoration or for brand/interactive elements (those stay indigo).
+
+
+## Colour contrast (WCAG 2.2)
+Audited with `python3 scripts/contrast_audit.py brand/tokens.css` (pure math over every text/background pair in both themes; re-run after ANY token change).
+- **Text: every pair passes AA (≥4.5:1) in light and dark**, secondary text (`slate`) reaches ≥7:1 on `paper`/`surface` (AAA) and ≥5.5:1 on the raised tints; `ink` on every surface is ≥12:1.
+- Status text uses the `-ink` variants (`good-ink`, `bad-ink`, `accent-ink`) on their tints (≥4.5:1); filled buttons use `on-primary` / `on-good` / `on-bad` (≥4.5:1 incl. hover and pressed).
+- Dark-mode primary (`#A3A7FF`) is lighter than before so indigo text/links pass on every raised surface.
+- Placeholder text is NOT faded (no opacity) so it keeps its contrast; disabled/inactive controls are exempt from WCAG and may be faded.
+- **Known, accepted limits (non-text, WCAG 1.4.11):** the borderless tint steps (card vs page, field vs card, track vs surface) are 1.1–1.5:1 by design (flat system, no borders). Fields are identified by their label, text and the 2px focus ring (≥3:1 on all surfaces), not by their edge. Saffron fills on light backgrounds (1.8:1) are decorative/paired with text; meaningful graphics use `accent-ink`.
+- The CBT exam screen keeps its NTA palette (`--cbt-*`), outside this audit.

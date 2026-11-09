@@ -2,18 +2,18 @@
    Flat system: no borders, no shadows. Separation = tint layers (paper > surface > surface-2 > surface-3) + space. */
 :root{
   /* colour: neutrals + indigo + saffron */
-  --ink:#0E1330; --paper:#FAFAF7; --surface:#FFFFFF; --slate:#5B6178;
-  --surface-2:#F1F2F7; --surface-3:#E5E7F0;   /* tint layers: cards / fields+hover / tracks+pressed */
-  --line:#E3E5EC;                              /* 1px tinted rule (dividers only, used sparingly) */
+  --ink:#0E1330; --paper:#FAFAF7; --surface:#FFFFFF; --slate:#4B516A;
+  --surface-2:#EEF0F7; --surface-3:#D9DCEA;   /* tint layers: cards / fields+hover / tracks+pressed */
+  --line:#CBCFE0;                              /* 1px tinted rule (dividers only, used sparingly) */
   --primary:#3A3FD9; --primary-hover:#2F33B8; --primary-active:#25299A; --primary-50:#EEF0FF;
   --accent:#F5A524;
-  --accent-ink:#9A5B00; --accent-50:#FEF4E2;
+  --accent-ink:#8A5000; --accent-50:#FEF4E2;
   --img-backing:#FFFFFF;                       /* diagrams are drawn on white: backing card in both themes */
   --scrim:rgba(14,19,48,.45);
   /* interaction model: hover = one tint step up, active = one step darker (pressed tint = surface-3 + 8% ink) */
   --tint-active:color-mix(in srgb,var(--surface-3),var(--ink) 8%);
-  /* status maps onto the 3 colours (no green/red in product UI) */
-  --good:#16885A; --good-50:#E6F5EE; --good-ink:#0F6B46; --on-good:#FFFFFF;
+  /* semantic status colours (see BRAND.md): meaning only, always with icon/words */
+  --good:#137A52; --good-50:#E6F5EE; --good-ink:#0C5C3D; --on-good:#FFFFFF;
   --warn:var(--accent);
   --bad:#C73737; --bad-50:#FBE9E9; --bad-ink:#A12626; --on-bad:#FFFFFF;
 
@@ -54,11 +54,11 @@
 @media(min-width:1920px){html{font-size:106.25%}}
 @media(min-width:2560px){html{font-size:118.75%}}
 [data-theme="dark"]{
-  --ink:#ECEEF8; --paper:#0B0F24; --surface:#141936; --slate:#A3A8C3;
-  --surface-2:#1A2046; --surface-3:#262D5C; --line:#262C4D;
-  --primary:#7B80FF; --primary-hover:#9599FF; --primary-active:#B3B6FF; --primary-50:#1D2250;
-  --good:#3CC48D; --good-50:#10302A; --good-ink:#5FE0A9; --on-good:#06281B;
-  --bad:#FF7B7B; --bad-50:#3A1A24; --bad-ink:#FF9C9C; --on-bad:#3A0A0A;
+  --ink:#ECEEF8; --paper:#0B0F24; --surface:#141936; --slate:#B8BDD8;
+  --surface-2:#1B2249; --surface-3:#2C3568; --line:#262C4D;
+  --primary:#A3A7FF; --primary-hover:#B8BBFF; --primary-active:#CDD0FF; --primary-50:#1D2250;
+  --good:#45D098; --good-50:#10302A; --good-ink:#5FE0A9; --on-good:#06281B;
+  --bad:#FF8383; --bad-50:#3A1A24; --bad-ink:#FF9C9C; --on-bad:#3A0A0A;
   --accent-ink:#F5A524; --accent-50:#2A2210;
   --scrim:rgba(4,6,18,.62);
 }
