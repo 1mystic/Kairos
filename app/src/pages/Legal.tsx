@@ -113,26 +113,11 @@ export function Privacy() {
         },
         {
           id: 'minors',
-          title: 'Students under 18',
+          title: 'Age and young students',
           body: (
             <>
-              {/*
-                OWNER DECISION (docs/14_LAUNCH.md blocker 4). Pick ONE variant and delete the other plus the placeholder chip below.
-
-                VARIANT A (recommended for v1): accounts for 18+, guest mode for minors
-                  "Accounts on Kairos are for people aged 18 or over. If you are under 18, you can use Kairos in guest mode.
-                   Guest mode collects no personal data: everything stays on your device. We ask for your date of birth when you
-                   create an account, and we do not create accounts for under-18s. When we add a verified way for a parent or
-                   guardian to give consent, we will update this page."
-
-                VARIANT B (current v1 behaviour, needs a guardian-consent flow to be compliant): under-18 accounts with parental consent
-                  "If you are under 18, we ask for your date of birth and record that a parent or guardian's consent is pending.
-                   A parent or guardian can ask us to see, correct or delete your data at <CONTACT EMAIL>. We do not track
-                   children's behaviour for ads and we do not send them targeted advertising."
-                  NOTE: today the app only RECORDS consent.status 'pending'; it does not verify or enforce parental consent.
-              */}
-              <p><Ph>[MINORS POLICY: pending owner decision: recommended: accounts for 18+, guest mode for minors]</Ph></p>
-              <p>Many Kairos students are under 18. We ask for your date of birth at sign-up so that we can treat your data correctly. We never use students' data for advertising, tracking or profiling beyond helping them learn.</p>
+              <p>Kairos is open to students of all ages: there is no minimum age to use it. Many students are under 18. We ask for your date of birth at sign-up so that we can look after younger students properly and treat their data with extra care.</p>
+              <p>We never use students' data for advertising, tracking or profiling beyond helping them learn, and we do not send targeted advertising to anyone. We encourage students under 18 to use Kairos with a parent or guardian's knowledge. A parent or guardian can contact us at <Ph>[CONTACT EMAIL]</Ph> to see, correct or delete a child's data at any time. Guest mode collects no personal data: everything stays on the device.</p>
             </>
           ),
         },

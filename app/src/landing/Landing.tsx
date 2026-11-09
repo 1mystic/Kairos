@@ -22,13 +22,13 @@ const EXAMS = [
 const PROMISES = [
   { icon: SparkIcon, title: 'Free to use', body: 'Start practising right away. No card, no trial clock.' },
   { icon: LockIcon, title: 'Private by default', body: 'Without an account your progress stays on your device. Sign in later and it syncs across devices.' },
-  { icon: UserIcon, title: 'Parents in the loop', body: 'Under 18? A parent or guardian is asked to confirm, and your attempt data is used only for your own learning.' },
+  { icon: UserIcon, title: 'Made for students', body: 'Open to students of all ages. Your attempt data is used only for your own learning, and a parent or guardian can ask to see or delete it.' },
 ];
 
 const FAQ = [
   { q: 'Is Kairos free?', a: 'Yes. Kairos is free to use today, including practice, mocks and your daily plan.' },
   { q: 'Do I need an account?', a: 'No. Use it as a guest and your progress is saved on your device only. When you sign in, we offer to add that progress to your account. We never force it.' },
-  { q: 'What happens to my data, and what if I am under 18?', a: 'We ask for your date of birth at sign-up. If you are under 18, a parent or guardian is asked to confirm consent. Your attempts are used only to help you learn, and you can export or clear your data from Settings.' },
+  { q: 'What happens to my data, and is there an age limit?', a: 'Kairos is open to students of all ages. We ask for your date of birth at sign-up to look after younger students properly. Your attempts are used only to help you learn, never for ads, and you can export or clear your data from Settings. A parent or guardian can ask us to see or delete a child\'s data.' },
   { q: 'Which exams are covered?', a: 'JEE Main, NEET UG, IAT and GATE DA (Data Science & AI). Papers follow each exam\'s published pattern: sections, question types and marking come from the pattern, not a one-size paper.' },
   { q: 'Does it work offline?', a: 'Once loaded, practice works offline: questions are cached on your device and your progress is kept locally. Syncing to your account waits until you are back online.' },
   { q: 'How does the plan work?', a: 'You tell Kairos your exam date and how much time you have each day. It counts back from the date, sizes today from the work left against the days left, and shows you why. It never goes above your daily time without asking, and missed work is carried, spread or, only if you choose, shed.' },

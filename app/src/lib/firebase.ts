@@ -9,7 +9,9 @@ import {
 } from 'firebase/firestore';
 
 const env = import.meta.env;
-export const useEmulators = env.VITE_USE_EMULATORS === 'true';
+// Emulators are a development-only convenience: a production build (`vite build`) NEVER connects to localhost, even if
+// VITE_USE_EMULATORS=true is set in app/.env.local, so the live site can't ship in emulator mode by accident.
+export const useEmulators = env.VITE_USE_EMULATORS === 'true' && !env.PROD;
 
 const REQUIRED = ['VITE_FIREBASE_API_KEY', 'VITE_FIREBASE_AUTH_DOMAIN', 'VITE_FIREBASE_PROJECT_ID', 'VITE_FIREBASE_APP_ID'] as const;
 const missing = REQUIRED.filter((k) => !env[k]);
@@ -31,10 +33,13 @@ let services: Services | null = null;
 export function getServices(): Services {
   if (firebaseConfigError) throw new Error(firebaseConfigError);
   if (services) return services;
+  const projectId = env.VITE_FIREBASE_PROJECT_ID || 'kairos-76a0d';
   const app = initializeApp({
     apiKey: env.VITE_FIREBASE_API_KEY || 'demo-key',
-    authDomain: env.VITE_FIREBASE_AUTH_DOMAIN || 'localhost',
-    projectId: env.VITE_FIREBASE_PROJECT_ID || 'kairos-76a0d',
+    // Google sign-in's redirect fallback lands on https://<authDomain>/__/auth/handler: the default must be the project's
+    // own Firebase domain (never 'localhost', which has no handler).
+    authDomain: env.VITE_FIREBASE_AUTH_DOMAIN || `${projectId}.firebaseapp.com`,
+    projectId,
     storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID,
     appId: env.VITE_FIREBASE_APP_ID || 'demo-app',

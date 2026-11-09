@@ -16,7 +16,11 @@
     "e2e": "pnpm --filter @kairos/app e2e",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "build:prod": "VITE_USE_EMULATORS=false pnpm --filter @kairos/app exec vite build",
+    "deploy:rules": "firebase deploy --only firestore:rules,firestore:indexes --project kairos-76a0d --non-interactive",
+    "deploy:preview": "pnpm build:prod && firebase hosting:channel:deploy preview --expires 7d --project kairos-76a0d --non-interactive",
+    "deploy:hosting": "pnpm build:prod && firebase deploy --only hosting --project kairos-76a0d --non-interactive"
   },
   "devDependencies": {
     "@eslint/js": "^9",

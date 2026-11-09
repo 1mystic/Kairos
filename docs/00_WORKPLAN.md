@@ -97,6 +97,9 @@ Mounted routes: / (landing), auth, settings, privacy/terms, practice, mocks/exam
 3. **Q2: authored NEET + IAT-biology questions** (`pipeline/neet_authored/**` → `pipeline/bank_src/authored_neet_iat.json`; biology only well-established NCERT facts, second-derivation verified).
 Neither Q agent publishes. **Orchestrator then publishes bank v4**: `python -m pipeline.publish --version 4 --src pipeline/fixtures/questions --src pipeline/bank_src` (default src; NTA files are outside bank_src; `gate_da_official.json` is needs_review so skipped), bump the version in `.github/workflows/ci.yml` determinism step to 4, update `app/public/bank/latest.json`.
 
+> **RESUME POINT: read `docs/NEXT_STEPS.md` first** (ordered checklist: Firebase console Google auth, run checks, preview deploy via `pnpm deploy:preview`, go live via `pnpm deploy:hosting`, owner inputs, more screenshots, backlog).
+> Latest decisions: age policy = open to all ages (no 18+ / no consent flow promised); Google sign-in fix (authDomain default, emulator flag ignored in production builds); deploy scripts added (`build:prod`, `deploy:rules`, `deploy:preview`, `deploy:hosting`).
+
 ### STATUS (end of session 3, later): ALL BUILD WORK DONE; at the pre-launch gate
 Done since the last handoff: bank v4 published (3,263 Qs incl. owner GATE DA workbook 1,203 + 3 GATE DA mocks; JEE authored 247; NEET/IAT authored 653); GATE DA app integration (calculator, MSQ/NAT, labels, admin, landing); static audits A1–A4 + cleanup C1 (see docs/audit/README.md); 404/error boundary/lazy routes/SEO/PWA icons/legal pages rewritten (placeholders); per-exam counter `sessions_GATE_DA` added to rules/telemetry/admin (rules compile-checked only); one build OK; one screenshot round OK (see docs/14_LAUNCH.md F).
 ### TODO next, in order

@@ -32,7 +32,7 @@ export function Home() {
       {profile?.isMinor && profile.consent.status === 'pending' && (
         <Banner tone="accent" role="note">
           <strong className="block text-body">A note for parents and guardians</strong>
-          Since you are under 18, we will soon ask a parent or guardian to confirm consent. There is nothing to do right now, and you can keep using Kairos.
+          Kairos only uses practice data to help the student learn, never for ads. A parent or guardian can ask us to see or delete it at any time: see the Privacy notice.
         </Banner>
       )}
       <Dashboard />
