@@ -8,6 +8,8 @@ All build work is done and pushed (`main`, tag `checkpoint-session3-end`+). The 
 - **Hosting deployed: https://kairos-76a0d.web.app**. The live site loads its Firebase web config from Hosting's `/__/firebase/init.json` (no env vars needed for production). HTML routes are `no-cache` so new deploys show at once.
 - CSP is report-only; the only reports are `'unsafe-eval'` (most likely zod v4's JIT). Before enforcing, set `z.config({ jitless: true })` in core or allow it, then rename the header to `Content-Security-Policy`.
 - **Today's session card on Home** (pinned above the dashboard) + route `/practice/today`: builds an auto practice session from today's plan (or from mastery when there is no plan), loads only the needed shards, one `addSession` + one mastery write at the end. Code in `app/src/practice/today/`. Written without running tests/tsc: run `pnpm --filter @kairos/app test -- practice/today` and tsc once.
+- **Adding a route? Add its path to `app/src/shell/lazyRoutes.tsx` too** (lazy route table lists paths by hand; a missing path shows the 404 page: this broke `/practice/today` once). `app/src/shell/lazyRoutes.test.ts` checks the table against every `*Routes` module.
+- Colours audited for WCAG AA (`python3 scripts/contrast_audit.py brand/tokens.css`); Home has the solid-brand "Today's session" hero (`app/src/practice/today/`).
 - Still to do: enable Google sign-in in the console, test a real email sign-up + Google sign-in on the live site, create `admins/<uid>`, owner inputs in section 5, remaining screenshots, backlog.
 
 ## 1. Firebase console (owner, ~10 min)
