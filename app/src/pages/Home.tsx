@@ -6,6 +6,7 @@ import { AnnouncementBanner } from '../config/AnnouncementBanner';
 import { Dashboard } from '../dashboard';
 import { useGuest } from '../store/StoreProvider';
 import { useSignInNudge } from '../store/NudgeProvider';
+import { TodaySessionCard } from '../practice/today/TodaySessionCard';
 
 function GuestBanner() {
   const { bannerVisible, dismissBanner } = useSignInNudge();
@@ -35,6 +36,7 @@ export function Home() {
           Kairos only uses practice data to help the student learn, never for ads. A parent or guardian can ask us to see or delete it at any time: see the Privacy notice.
         </Banner>
       )}
+      <TodaySessionCard />
       <Dashboard />
     </Page>
   );
