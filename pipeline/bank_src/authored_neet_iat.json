@@ -107,6 +107,132 @@
   "version": 1
  },
  {
+  "id": "q_034509721277",
+  "type": "SCQ",
+  "stem": "The Bt toxin is lethal to insect larvae but not to the bacterium itself because the toxin protein exists as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The crystals dissolve in the alkaline insect midgut, get processed to active toxin, bind to the gut epithelium and create pores, causing swelling and lysis.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a lipid that bursts only in acidic pH"
+   },
+   {
+    "key": "B",
+    "text": "an active toxin that is destroyed in the gut"
+   },
+   {
+    "key": "C",
+    "text": "an inactive protoxin that is activated by the alkaline pH of the insect gut"
+   },
+   {
+    "key": "D",
+    "text": "a DNA that is expressed only in larvae"
+   }
+  ]
+ },
+ {
+  "id": "q_03b868ae56dd",
+  "type": "SCQ",
+  "stem": "Milk is converted into curd mainly by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "LAB produce lactic acid, which coagulates and partially digests milk proteins; curd also has higher vitamin B$_{12}$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lactic acid bacteria such as *Lactobacillus*"
+   },
+   {
+    "key": "B",
+    "text": "*Penicillium notatum*"
+   },
+   {
+    "key": "C",
+    "text": "*Aspergillus niger*"
+   },
+   {
+    "key": "D",
+    "text": "*Saccharomyces cerevisiae*"
+   }
+  ]
+ },
+ {
   "id": "q_046735573e0a",
   "type": "SCQ",
   "stem": "Photorespiration occurs when RuBisCO",
@@ -166,6 +292,69 @@
    {
     "key": "D",
     "text": "acts as an oxygenase at high O$_2$ and low CO$_2$ concentration, in C$_3$ plants"
+   }
+  ]
+ },
+ {
+  "id": "q_05944b109525",
+  "type": "SCQ",
+  "stem": "In the species-area relationship $\\log S=\\log C+Z\\log A$ for small areas, the slope $Z$ typically lies between",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Alexander von Humboldt's relationship is a rectangular hyperbola, which on a log scale is a straight line with slope Z, generally 0.1-0.2 regardless of taxonomic group or region.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "2 and 3"
+   },
+   {
+    "key": "B",
+    "text": "5 and 10"
+   },
+   {
+    "key": "C",
+    "text": "-1 and 0"
+   },
+   {
+    "key": "D",
+    "text": "0.1 and 0.2"
    }
   ]
  },
@@ -422,6 +611,69 @@
   ]
  },
  {
+  "id": "q_08cfcce38637",
+  "type": "SCQ",
+  "stem": "In sewage treatment, BOD (biochemical oxygen demand) measures",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A higher BOD means more biodegradable organic matter and thus more polluted water; treatment aims to lower BOD.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the amount of oxygen microbes consume to oxidise the organic matter in the water"
+   },
+   {
+    "key": "B",
+    "text": "the amount of CO$_2$ released by fish"
+   },
+   {
+    "key": "C",
+    "text": "the number of coliform bacteria only"
+   },
+   {
+    "key": "D",
+    "text": "the total dissolved salt"
+   }
+  ]
+ },
+ {
   "id": "q_0ae3961bd253",
   "type": "SCQ",
   "stem": "A cross between an F$_1$ plant and its homozygous recessive parent is called a",
@@ -481,6 +733,69 @@
    {
     "key": "D",
     "text": "reciprocal cross"
+   }
+  ]
+ },
+ {
+  "id": "q_0b61e300d746",
+  "type": "SCQ",
+  "stem": "A temporary suspension of development in zooplankton to tide over unfavourable conditions is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Many zooplankton species in lakes and ponds undergo diapause, a stage of suspended development; hibernation is winter dormancy and aestivation is summer dormancy.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "aestivation"
+   },
+   {
+    "key": "B",
+    "text": "hibernation"
+   },
+   {
+    "key": "C",
+    "text": "migration"
+   },
+   {
+    "key": "D",
+    "text": "diapause"
    }
   ]
  },
@@ -548,6 +863,132 @@
   ]
  },
  {
+  "id": "q_0d31e1eb1722",
+  "type": "SCQ",
+  "stem": "'Golden Rice' is rich in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Golden rice is genetically modified to produce $\\beta$-carotene, which the body converts to vitamin A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "iron only"
+   },
+   {
+    "key": "B",
+    "text": "provitamin A ($\\beta$-carotene)"
+   },
+   {
+    "key": "C",
+    "text": "vitamin C"
+   },
+   {
+    "key": "D",
+    "text": "vitamin K"
+   }
+  ]
+ },
+ {
+  "id": "q_0da3892f7198",
+  "type": "SCQ",
+  "stem": "During transcription in bacteria, RNA polymerase",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "All nucleic acid polymerases extend the new chain at its 3' end, so RNA is made 5'→3' using a template read 3'→5'; RNA polymerase needs no primer.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "reads the template strand 3' to 5' and synthesises RNA in the 5' to 3' direction"
+   },
+   {
+    "key": "B",
+    "text": "copies both strands of DNA at the same time"
+   },
+   {
+    "key": "C",
+    "text": "needs a primer to begin RNA synthesis"
+   },
+   {
+    "key": "D",
+    "text": "reads the template 5' to 3' and synthesises RNA 3' to 5'"
+   }
+  ]
+ },
+ {
   "id": "q_0e4203e7b367",
   "type": "SCQ",
   "stem": "Pollen grains of wind-pollinated flowers are typically",
@@ -611,6 +1052,69 @@
   ]
  },
  {
+  "id": "q_0e8935a060be",
+  "type": "SCQ",
+  "stem": "Which of the following is used as a biological control agent of insect pests by being sprayed as spores?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Dried spores of Bt are mixed with water and sprayed; the toxin protein kills larvae of moths and butterflies after ingestion.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Nostoc*"
+   },
+   {
+    "key": "B",
+    "text": "*Azotobacter*"
+   },
+   {
+    "key": "C",
+    "text": "*Rhizobium*"
+   },
+   {
+    "key": "D",
+    "text": "*Bacillus thuringiensis*"
+   }
+  ]
+ },
+ {
   "id": "q_112e3a36a818",
   "type": "SCQ",
   "stem": "Long-day plants flower when",
@@ -670,6 +1174,69 @@
    {
     "key": "D",
     "text": "the photoperiod exceeds a critical length (the dark period is short)"
+   }
+  ]
+ },
+ {
+  "id": "q_134e29579acc",
+  "type": "SCQ",
+  "stem": "Which of the following steps is part of post-transcriptional processing of a eukaryotic hnRNA?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "hnRNA gets a methyl guanosine cap at 5', introns are removed and exons joined (splicing), and 200-300 adenylate residues are added at 3'.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "synthesis of anticodons"
+   },
+   {
+    "key": "B",
+    "text": "methylation of introns and their translation"
+   },
+   {
+    "key": "C",
+    "text": "capping at the 5' end, splicing out introns and tailing (poly-A) at the 3' end"
+   },
+   {
+    "key": "D",
+    "text": "attachment of a poly-U tail"
    }
   ]
  },
@@ -771,6 +1338,50 @@
    "label": "M",
    "b": 0.1,
    "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1533aa71c5c4",
+  "type": "INT",
+  "stem": "Of the 64 possible codons, the number that code for amino acids is ______.",
+  "images": [],
+  "answer": {
+   "value": 61.0,
+   "tol": 0.0
+  },
+  "solution": "$4^3=64$ codons, of which 3 (UAA, UAG, UGA) are stop signals, leaving 61 sense codons.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
    "n": 0
   },
   "source": {
@@ -1096,6 +1707,69 @@
   ]
  },
  {
+  "id": "q_1d032c4c7927",
+  "type": "SCQ",
+  "stem": "Which of these showed that DNA is the 'transforming principle' in Griffith's experiment?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Griffith showed transformation of R cells by heat-killed S cells; Avery, MacLeod and McCarty identified DNA as the transforming agent, since protease and RNase did not destroy activity but DNase did.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Meselson and Stahl"
+   },
+   {
+    "key": "B",
+    "text": "Hershey and Chase only"
+   },
+   {
+    "key": "C",
+    "text": "Watson and Crick"
+   },
+   {
+    "key": "D",
+    "text": "Avery, MacLeod and McCarty, by purifying biochemicals from heat-killed S cells"
+   }
+  ]
+ },
+ {
   "id": "q_1d063e705fc2",
   "type": "NVQ",
   "stem": "In a test cross of a dihybrid, 200 progeny are obtained, of which 20 are recombinants. The recombination frequency (%) is ______.",
@@ -1153,6 +1827,50 @@
   "tax": {
    "subject": "BOT",
    "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1fb74cf8dc53",
+  "type": "NVQ",
+  "stem": "For $S=CA^{Z}$ with $Z=0.2$, by what factor does the species richness $S$ increase when the area $A$ increases tenfold? (answer to two decimals) ______",
+  "images": [],
+  "answer": {
+   "value": 1.58,
+   "tol": 0.01
+  },
+  "solution": "$S_2/S_1=(A_2/A_1)^Z=10^{0.2}\\approx1.585$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
    "topics": [],
    "concepts": []
   },
@@ -1562,6 +2280,258 @@
   ]
  },
  {
+  "id": "q_2adaeb633068",
+  "type": "SCQ",
+  "stem": "The promoter of a transcription unit lies",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The promoter, where RNA polymerase binds, lies upstream (5') of the coding sequence on the coding strand; the terminator is at the 3' end.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "within the terminator"
+   },
+   {
+    "key": "B",
+    "text": "on the tRNA"
+   },
+   {
+    "key": "C",
+    "text": "at the 3' end of the structural gene"
+   },
+   {
+    "key": "D",
+    "text": "at the 5' end (upstream) of the structural gene"
+   }
+  ]
+ },
+ {
+  "id": "q_2b4cdd1a7694",
+  "type": "SCQ",
+  "stem": "A transgenic organism is one in which",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Transgenic organisms carry and express a gene from another species, e.g. Bt cotton and transgenic mice.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "all genes are replaced"
+   },
+   {
+    "key": "B",
+    "text": "a foreign gene has been introduced and is expressed"
+   },
+   {
+    "key": "C",
+    "text": "the chromosome number is doubled"
+   },
+   {
+    "key": "D",
+    "text": "a gene has been deleted by mutation"
+   }
+  ]
+ },
+ {
+  "id": "q_2c3f386b314c",
+  "type": "SCQ",
+  "stem": "The greatest cause of species extinction today is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Of the 'evil quartet' (habitat loss and fragmentation, over-exploitation, alien species invasions, co-extinctions), habitat loss is the most important cause.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "natural disasters only"
+   },
+   {
+    "key": "B",
+    "text": "lack of mutations"
+   },
+   {
+    "key": "C",
+    "text": "decline of the Sun's output"
+   },
+   {
+    "key": "D",
+    "text": "habitat loss and fragmentation"
+   }
+  ]
+ },
+ {
+  "id": "q_2e55211365ba",
+  "type": "SCQ",
+  "stem": "A distinct feature of the phosphorus cycle compared with the carbon cycle is that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The main reservoir of phosphorus is rock; its natural input to the atmosphere through rainfall is negligible, so it is a sedimentary cycle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "respiration returns phosphorus to the air"
+   },
+   {
+    "key": "B",
+    "text": "atmosphere is its major reservoir"
+   },
+   {
+    "key": "C",
+    "text": "it is a gaseous cycle"
+   },
+   {
+    "key": "D",
+    "text": "there is no significant gaseous exchange with the atmosphere"
+   }
+  ]
+ },
+ {
   "id": "q_2e608e752e2e",
   "type": "SCQ",
   "stem": "Vernalisation is the promotion of flowering by",
@@ -1688,6 +2658,365 @@
   ]
  },
  {
+  "id": "q_327ac95190a4",
+  "type": "SCQ",
+  "stem": "The interaction between the cuckoo (koel) and the crow, in which the cuckoo lays its eggs in the crow's nest, is an example of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The parasitic bird's eggs resemble the host's, so the host incubates them; this is a type of parasitism.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "amensalism"
+   },
+   {
+    "key": "B",
+    "text": "brood parasitism"
+   },
+   {
+    "key": "C",
+    "text": "commensalism"
+   },
+   {
+    "key": "D",
+    "text": "mutualism"
+   }
+  ]
+ },
+ {
+  "id": "q_32d1204c11ae",
+  "type": "INT",
+  "stem": "A double-stranded DNA fragment of 1000 base pairs has 22% cytosine. The number of adenine bases in it is ______.",
+  "images": [],
+  "answer": {
+   "value": 560.0,
+   "tol": 0.0
+  },
+  "solution": "Total bases $=2000$. C = G = 440, so A + T = $2000-880=1120$, A = T = 560.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_33880e8ac3af",
+  "type": "SCQ",
+  "stem": "Which of the following is an extinct animal?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The dodo went extinct in the 17th century; the others still survive, though they are threatened.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Dodo of Mauritius"
+   },
+   {
+    "key": "B",
+    "text": "One-horned rhinoceros"
+   },
+   {
+    "key": "C",
+    "text": "Bengal tiger"
+   },
+   {
+    "key": "D",
+    "text": "Asiatic lion"
+   }
+  ]
+ },
+ {
+  "id": "q_34b55fb9760f",
+  "type": "SCQ",
+  "stem": "Bt cotton is resistant to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Bt toxin genes (e.g. cryIAc, cryIIAb) are inserted into cotton, which then produces insecticidal protein.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "viral diseases"
+   },
+   {
+    "key": "B",
+    "text": "herbicides only"
+   },
+   {
+    "key": "C",
+    "text": "nematodes through RNA interference"
+   },
+   {
+    "key": "D",
+    "text": "cotton bollworms, due to the cry genes of *Bacillus thuringiensis*"
+   }
+  ]
+ },
+ {
+  "id": "q_34ebca997014",
+  "type": "SCQ",
+  "stem": "The first antibiotic, penicillin, was discovered by Alexander Fleming from",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Fleming noticed the mould *Penicillium notatum* killing *Staphylococcus* on a culture plate; Chain and Florey later established its effectiveness.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Penicillium notatum*"
+   },
+   {
+    "key": "B",
+    "text": "*Trichoderma polysporum*"
+   },
+   {
+    "key": "C",
+    "text": "*Streptococcus*"
+   },
+   {
+    "key": "D",
+    "text": "*Monascus purpureus*"
+   }
+  ]
+ },
+ {
+  "id": "q_3519e077b31a",
+  "type": "SCQ",
+  "stem": "In India, the body that decides the validity of GM research and the safety of introducing GM organisms for public services is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "GEAC makes decisions regarding the validity of GM research and the safety of introducing GM organisms.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Central Zoo Authority"
+   },
+   {
+    "key": "B",
+    "text": "Indian Council of Agricultural Research"
+   },
+   {
+    "key": "C",
+    "text": "Genetic Engineering Approval Committee (GEAC)"
+   },
+   {
+    "key": "D",
+    "text": "National Biodiversity Authority"
+   }
+  ]
+ },
+ {
   "id": "q_353e2d20657d",
   "type": "SCQ",
   "stem": "Vascular bundles that are scattered in the ground tissue and have no cambium (closed) are characteristic of the",
@@ -1747,6 +3076,69 @@
    {
     "key": "D",
     "text": "dicot stem"
+   }
+  ]
+ },
+ {
+  "id": "q_35542c25d83a",
+  "type": "SCQ",
+  "stem": "DNA fragments produced by the same restriction enzyme can be joined by DNA ligase because they have",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Staggered cuts leave single-stranded overhangs that can base-pair with each other, and ligase seals the sugar-phosphate backbone.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "identical base sequences on both strands"
+   },
+   {
+    "key": "B",
+    "text": "blunt ends only"
+   },
+   {
+    "key": "C",
+    "text": "complementary sticky (cohesive) ends"
+   },
+   {
+    "key": "D",
+    "text": "no free ends"
    }
   ]
  },
@@ -1936,6 +3328,132 @@
    {
     "key": "D",
     "text": "heterocysts"
+   }
+  ]
+ },
+ {
+  "id": "q_37db0af53195",
+  "type": "SCQ",
+  "stem": "Early detection of an infection in which the bacteria or virus is present in very low numbers can be done by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "PCR amplifies the pathogen's nucleic acid, and ELISA detects antibodies or antigens; both detect infection before symptoms appear.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "restriction of RNA"
+   },
+   {
+    "key": "B",
+    "text": "PCR (amplification of nucleic acid) or ELISA (antigen-antibody interaction)"
+   },
+   {
+    "key": "C",
+    "text": "Southern blotting without amplification"
+   },
+   {
+    "key": "D",
+    "text": "culturing in glass beads"
+   }
+  ]
+ },
+ {
+  "id": "q_37e085371244",
+  "type": "SCQ",
+  "stem": "The 'rivet popper hypothesis', which compares species to the rivets holding together an aircraft, was proposed by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Ehrlich argued that losing species one by one is like popping rivets, eventually a critical loss makes the ecosystem collapse; Tilman's long-term experiments showed more diverse plots are more productive.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "David Tilman"
+   },
+   {
+    "key": "B",
+    "text": "Robert May"
+   },
+   {
+    "key": "C",
+    "text": "Alexander von Humboldt"
+   },
+   {
+    "key": "D",
+    "text": "Paul Ehrlich"
    }
   ]
  },
@@ -2192,6 +3710,50 @@
   ]
  },
  {
+  "id": "q_3b6c487526cc",
+  "type": "INT",
+  "stem": "A linear DNA molecule has four recognition sites for EcoRI. The number of fragments produced on complete digestion is ______.",
+  "images": [],
+  "answer": {
+   "value": 5.0,
+   "tol": 0.0
+  },
+  "solution": "$n$ cuts in a linear molecule give $n+1$ fragments, so $4+1=5$ (a circular molecule with $n$ sites gives $n$ fragments).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_3b78140584ca",
   "type": "SCQ",
   "stem": "Glycolysis, the breakdown of glucose to pyruvic acid, occurs in the",
@@ -2251,6 +3813,69 @@
    {
     "key": "D",
     "text": "inner mitochondrial membrane"
+   }
+  ]
+ },
+ {
+  "id": "q_3bd8a3b5a9a4",
+  "type": "SCQ",
+  "stem": "The 'clot buster' enzyme used to remove clots from the blood vessels of heart-attack patients, produced by *Streptococcus*, is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Streptokinase converts plasminogen into plasmin, which digests fibrin clots. Pectinases and proteases are used to clarify fruit juices.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pectinase"
+   },
+   {
+    "key": "B",
+    "text": "cyclosporin A"
+   },
+   {
+    "key": "C",
+    "text": "lipase"
+   },
+   {
+    "key": "D",
+    "text": "streptokinase"
    }
   ]
  },
@@ -2614,6 +4239,176 @@
   ]
  },
  {
+  "id": "q_44547e2ce935",
+  "type": "SCQ",
+  "stem": "A transgenic cow, Rosie, produced human $\\alpha$-lactalbumin-enriched milk. This is an example of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Rosie (1997) produced milk with human $\\alpha$-lactalbumin, more nutritionally balanced for human infants. Transgenic animals are also used for vaccine safety testing and disease models.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "using transgenic animals to produce valuable biological products"
+   },
+   {
+    "key": "B",
+    "text": "RNA interference"
+   },
+   {
+    "key": "C",
+    "text": "gene therapy of the cow"
+   },
+   {
+    "key": "D",
+    "text": "biopiracy"
+   }
+  ]
+ },
+ {
+  "id": "q_448d4cc86906",
+  "type": "SCQ",
+  "stem": "The kangaroo rat in North American deserts survives without drinking water because it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Metabolic oxidation of fat yields water, and the kidney produces highly concentrated urine, an adaptation to desert life.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "concentrates its urine and meets water needs through internal fat oxidation"
+   },
+   {
+    "key": "B",
+    "text": "stores water in its stomach"
+   },
+   {
+    "key": "C",
+    "text": "drinks dew from leaves"
+   },
+   {
+    "key": "D",
+    "text": "hibernates all year"
+   }
+  ]
+ },
+ {
+  "id": "q_4563ef5d669d",
+  "type": "INT",
+  "stem": "An mRNA coding region (AUG to the stop codon, inclusive) has 303 nucleotides. The number of amino acids in the polypeptide it encodes is ______.",
+  "images": [],
+  "answer": {
+   "value": 100.0,
+   "tol": 0.0
+  },
+  "solution": "$303/3=101$ codons, of which the last is the stop codon, so the polypeptide has 100 amino acids.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_4632567ed305",
   "type": "SCQ",
   "stem": "The fluid mosaic model of the plasma membrane was proposed by",
@@ -2971,6 +4766,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_4ad3a0789736",
+  "type": "SCQ",
+  "stem": "The anticoagulant hirudin was produced in transgenic",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A gene for hirudin, the protein of the leech that prevents blood clotting, was synthesised and expressed in *Brassica napus*; the seeds accumulate hirudin.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Brassica napus*"
+   },
+   {
+    "key": "B",
+    "text": "*Bacillus thuringiensis*"
+   },
+   {
+    "key": "C",
+    "text": "cattle"
+   },
+   {
+    "key": "D",
+    "text": "*Meloidogyne incognita*"
+   }
+  ]
  },
  {
   "id": "q_4bad52fdb7b0",
@@ -3458,6 +5316,69 @@
   ]
  },
  {
+  "id": "q_563aa06bb252",
+  "type": "SCQ",
+  "stem": "Which of the following is a biofertiliser for rice paddy fields (nitrogen-fixing, free-living, photosynthetic)?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Cyanobacteria such as *Anabaena*, *Nostoc*, *Oscillatoria* fix nitrogen in paddy fields and add organic matter, improving soil fertility.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Lactobacillus*"
+   },
+   {
+    "key": "B",
+    "text": "*Penicillium*"
+   },
+   {
+    "key": "C",
+    "text": "*Anabaena*, a cyanobacterium"
+   },
+   {
+    "key": "D",
+    "text": "*Saccharomyces*"
+   }
+  ]
+ },
+ {
   "id": "q_56ad12f296e1",
   "type": "SCQ",
   "stem": "Lysosomes are called 'suicide bags' because they contain",
@@ -3773,6 +5694,132 @@
   ]
  },
  {
+  "id": "q_59067334368a",
+  "type": "SCQ",
+  "stem": "On the lagging strand, DNA is synthesised as short fragments called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "DNA polymerase can only extend 5'→3', so the strand oriented opposite to the fork movement is made discontinuously; ligase seals the nicks.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "introns, joined by primase"
+   },
+   {
+    "key": "B",
+    "text": "Okazaki fragments, joined by helicase"
+   },
+   {
+    "key": "C",
+    "text": "exons, joined by RNA polymerase"
+   },
+   {
+    "key": "D",
+    "text": "Okazaki fragments, joined by DNA ligase"
+   }
+  ]
+ },
+ {
+  "id": "q_591690203d27",
+  "type": "SCQ",
+  "stem": "A population growing in an environment with limited resources typically shows",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Verhulst-Pearl logistic growth has a lag, an exponential phase and an asymptote at the carrying capacity $K$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a straight line"
+   },
+   {
+    "key": "B",
+    "text": "a sigmoid (logistic) curve that levels off at the carrying capacity"
+   },
+   {
+    "key": "C",
+    "text": "a J-shaped curve that continues indefinitely"
+   },
+   {
+    "key": "D",
+    "text": "a curve that always falls"
+   }
+  ]
+ },
+ {
   "id": "q_594d4669e0c9",
   "type": "SCQ",
   "stem": "Asexual reproduction in *Marchantia* occurs by",
@@ -3899,6 +5946,69 @@
   ]
  },
  {
+  "id": "q_5c15387ca0e1",
+  "type": "SCQ",
+  "stem": "The prickly pear cactus (*Opuntia*) became a pest in Australia and was brought under control by introducing",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Introduction of a natural predator of the cactus is an example of biological control by predation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the cactus-feeding moth *Cactoblastis cactorum*"
+   },
+   {
+    "key": "B",
+    "text": "the dodo"
+   },
+   {
+    "key": "C",
+    "text": "a herbicide-producing fungus"
+   },
+   {
+    "key": "D",
+    "text": "a parasitic wasp"
+   }
+  ]
+ },
+ {
   "id": "q_5c678d47bdf6",
   "type": "SCQ",
   "stem": "The cell wall of fungi is mainly composed of",
@@ -3960,6 +6070,113 @@
     "text": "peptidoglycan"
    }
   ]
+ },
+ {
+  "id": "q_5da874e29399",
+  "type": "SCQ",
+  "stem": "A direct physical method of introducing DNA into plant cells using high-velocity microparticles of gold or tungsten is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Biolistics bombards plant cells with DNA-coated gold or tungsten particles; microinjection puts DNA directly into the nucleus of an animal cell.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "microinjection"
+   },
+   {
+    "key": "B",
+    "text": "biolistics (gene gun)"
+   },
+   {
+    "key": "C",
+    "text": "heat shock"
+   },
+   {
+    "key": "D",
+    "text": "electrophoresis"
+   }
+  ]
+ },
+ {
+  "id": "q_5e7f735c68c6",
+  "type": "INT",
+  "stem": "Starting from one double-stranded template, the number of copies of the target DNA after five complete PCR cycles (ideal efficiency) is ______.",
+  "images": [],
+  "answer": {
+   "value": 32.0,
+   "tol": 0.0
+  },
+  "solution": "Each cycle doubles the copies: $2^5=32$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_5f839714b5bc",
@@ -4088,6 +6305,132 @@
   ]
  },
  {
+  "id": "q_60283fa2e7fc",
+  "type": "SCQ",
+  "stem": "On a bare rock, the pioneer species of primary succession are generally",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Lichens secrete acids that weather rock, then mosses, herbs and shrubs follow to reach a climax community.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lichens"
+   },
+   {
+    "key": "B",
+    "text": "shrubs"
+   },
+   {
+    "key": "C",
+    "text": "grasses"
+   },
+   {
+    "key": "D",
+    "text": "trees"
+   }
+  ]
+ },
+ {
+  "id": "q_6146ff4f9644",
+  "type": "SCQ",
+  "stem": "Organisms that can tolerate and thrive in a wide range of temperatures are called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Eurythermal species tolerate a wide temperature range; stenothermal ones only a narrow range. Euryhaline and stenohaline refer to salinity tolerance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "stenohaline"
+   },
+   {
+    "key": "B",
+    "text": "eurythermal"
+   },
+   {
+    "key": "C",
+    "text": "euryhaline"
+   },
+   {
+    "key": "D",
+    "text": "stenothermal"
+   }
+  ]
+ },
+ {
   "id": "q_6223291d3018",
   "type": "SCQ",
   "stem": "What is the lowest taxonomic category shared by a cat (*Felis*, family Felidae) and a dog (*Canis*, family Canidae)?",
@@ -4149,6 +6492,50 @@
     "text": "Genus"
    }
   ]
+ },
+ {
+  "id": "q_62ddb999baee",
+  "type": "INT",
+  "stem": "A DNA molecule with both strands labelled $^{15}$N replicates three times in $^{14}$N medium. The number of daughter DNA molecules that still contain $^{15}$N (in one strand) is ______.",
+  "images": [],
+  "answer": {
+   "value": 2.0,
+   "tol": 0.0
+  },
+  "solution": "Semi-conservative replication always leaves two old strands, one in each of 2 molecules, among $2^3=8$ molecules; the other 6 are fully $^{14}$N.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_6315cd305678",
@@ -4336,6 +6723,69 @@
    {
     "key": "D",
     "text": "bilaterally symmetrical only"
+   }
+  ]
+ },
+ {
+  "id": "q_675ea0326dae",
+  "type": "SCQ",
+  "stem": "In the double helix of B-DNA the pitch is 3.4 nm and there are 10 bp per turn. The rise per base pair is therefore",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Rise per bp $=3.4\\ \\mathrm{nm}/10=0.34$ nm.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "0.34 nm"
+   },
+   {
+    "key": "B",
+    "text": "3.4 nm"
+   },
+   {
+    "key": "C",
+    "text": "34 nm"
+   },
+   {
+    "key": "D",
+    "text": "0.034 nm"
    }
   ]
  },
@@ -4787,6 +7237,69 @@
   "version": 1
  },
  {
+  "id": "q_6eafa6b8664d",
+  "type": "SCQ",
+  "stem": "Mycorrhiza formed by *Glomus* helps the host plant mainly by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The fungal hyphae of *Glomus* absorb phosphorus and pass it to the plant, which in turn supplies carbohydrates.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "absorbing phosphorus from the soil and increasing resistance to root pathogens"
+   },
+   {
+    "key": "B",
+    "text": "fixing atmospheric nitrogen in nodules"
+   },
+   {
+    "key": "C",
+    "text": "producing antibiotics for human use"
+   },
+   {
+    "key": "D",
+    "text": "fermenting sugars into alcohol"
+   }
+  ]
+ },
+ {
   "id": "q_6f103de746f2",
   "type": "SCQ",
   "stem": "A centriole shows a cartwheel arrangement of nine peripheral fibrils, each a",
@@ -4913,6 +7426,50 @@
   ]
  },
  {
+  "id": "q_7073162fac12",
+  "type": "NVQ",
+  "stem": "In a double-stranded DNA 30% of the bases are adenine. The percentage of guanine is ______.",
+  "images": [],
+  "answer": {
+   "value": 20.0,
+   "tol": 0.01
+  },
+  "solution": "By Chargaff's rule A = T and G = C, so T = 30%, and A + T = 60%; G + C = 40%, so G = 20%.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_70aa8b54132e",
   "type": "SCQ",
   "stem": "The taxonomic category that lies immediately above the family is the",
@@ -4976,6 +7533,132 @@
   ]
  },
  {
+  "id": "q_724a7fbb3492",
+  "type": "SCQ",
+  "stem": "In a biosphere reserve, the zone in which no human activity is allowed is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A biosphere reserve has a legally protected core zone, a surrounding buffer zone with limited activities and an outer transition zone with settlements.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "transition zone"
+   },
+   {
+    "key": "B",
+    "text": "buffer zone"
+   },
+   {
+    "key": "C",
+    "text": "restoration zone"
+   },
+   {
+    "key": "D",
+    "text": "core zone"
+   }
+  ]
+ },
+ {
+  "id": "q_72b2cd5c3f69",
+  "type": "SCQ",
+  "stem": "Which of these is an ex situ conservation method?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Ex situ conservation protects threatened species outside their natural habitat: zoos, botanical gardens, gene banks, cryopreservation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sacred groves"
+   },
+   {
+    "key": "B",
+    "text": "biosphere reserves"
+   },
+   {
+    "key": "C",
+    "text": "storing gametes at very low temperature (cryopreservation)"
+   },
+   {
+    "key": "D",
+    "text": "wildlife sanctuaries"
+   }
+  ]
+ },
+ {
   "id": "q_7359203be852",
   "type": "SCQ",
   "stem": "The coralloid roots of *Cycas* are associated with",
@@ -5035,6 +7718,69 @@
    {
     "key": "D",
     "text": "mycorrhizal fungi that fix nitrogen"
+   }
+  ]
+ },
+ {
+  "id": "q_743d0e394859",
+  "type": "SCQ",
+  "stem": "Insertional inactivation of $\\beta$-galactosidase (lacZ) in a vector is used to select recombinants because, in the presence of a chromogenic substrate, recombinant colonies",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "An insert inactivates the lacZ enzyme, so the chromogenic substrate is not cleaved; non-recombinants with active enzyme give blue colonies.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "glow under UV light"
+   },
+   {
+    "key": "B",
+    "text": "are blue and non-recombinants are colourless"
+   },
+   {
+    "key": "C",
+    "text": "die"
+   },
+   {
+    "key": "D",
+    "text": "remain colourless, while non-recombinants produce a blue colour"
    }
   ]
  },
@@ -5161,6 +7907,239 @@
    {
     "key": "D",
     "text": "*Spirogyra*"
+   }
+  ]
+ },
+ {
+  "id": "q_78b8538eb8ff",
+  "type": "SCQ",
+  "stem": "Foreign DNA is inserted at the BamHI site within the tetracycline resistance gene of pBR322, which also carries an ampicillin resistance gene. Cells carrying the recombinant plasmid will",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Insertion inactivates tet$^R$ while amp$^R$ remains intact, so recombinants are amp$^R$ tet$^S$. Non-recombinants keep both genes and grow on both.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "grow on ampicillin but not on tetracycline"
+   },
+   {
+    "key": "B",
+    "text": "not grow on either antibiotic"
+   },
+   {
+    "key": "C",
+    "text": "grow on both antibiotics"
+   },
+   {
+    "key": "D",
+    "text": "grow on tetracycline but not on ampicillin"
+   }
+  ]
+ },
+ {
+  "id": "q_7943d1ff0e05",
+  "type": "SCQ",
+  "stem": "Biopiracy refers to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Patents on products derived from traditional knowledge, such as the attempt to patent Basmati rice, are examples of biopiracy.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "tissue culture of banana"
+   },
+   {
+    "key": "B",
+    "text": "the use of bio-resources by multinational companies and others without proper authorisation from the countries and people concerned"
+   },
+   {
+    "key": "C",
+    "text": "seed banking by governments"
+   },
+   {
+    "key": "D",
+    "text": "cultivating organic crops"
+   }
+  ]
+ },
+ {
+  "id": "q_7a3401f41298",
+  "type": "NVQ",
+  "stem": "In exponential growth $\\mathrm{d}N/\\mathrm{d}t=rN$ with $r=0.05$ per year, a population of 200 grows at (individuals per year) ______.",
+  "images": [],
+  "answer": {
+   "value": 10.0,
+   "tol": 0.001
+  },
+  "solution": "$0.05\\times200=10$ per year.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7a5c2800f7b1",
+  "type": "SCQ",
+  "stem": "Decomposition proceeds faster when the detritus is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Warm, moist, aerobic conditions favour microbial activity; lignin and chitin slow decomposition.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "in anaerobic conditions"
+   },
+   {
+    "key": "B",
+    "text": "poor in nitrogen"
+   },
+   {
+    "key": "C",
+    "text": "rich in lignin and chitin, in cold dry conditions"
+   },
+   {
+    "key": "D",
+    "text": "rich in nitrogen and water-soluble substances, in warm and moist conditions"
    }
   ]
  },
@@ -5360,6 +8339,69 @@
   "version": 1
  },
  {
+  "id": "q_7cdf73e40643",
+  "type": "SCQ",
+  "stem": "The pyramid of biomass in a sea ecosystem is generally inverted because",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Producers (phytoplankton) have a small standing biomass at any time but a high turnover rate, so consumer biomass can exceed it; the energy pyramid is still upright.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "phytoplankton are larger than fish"
+   },
+   {
+    "key": "B",
+    "text": "fish have no biomass"
+   },
+   {
+    "key": "C",
+    "text": "energy increases at higher levels"
+   },
+   {
+    "key": "D",
+    "text": "the standing crop of phytoplankton is small and they reproduce quickly, supporting a larger biomass of zooplankton and fish"
+   }
+  ]
+ },
+ {
   "id": "q_7d7e9c2fa1e3",
   "type": "SCQ",
   "stem": "Pneumatophores, the roots that grow upward out of the mud for gaseous exchange, occur in",
@@ -5419,6 +8461,239 @@
    {
     "key": "D",
     "text": "*Rhizophora*, a mangrove"
+   }
+  ]
+ },
+ {
+  "id": "q_7da72a172c92",
+  "type": "SCQ",
+  "stem": "Which ecological pyramid is always upright in any ecosystem?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Energy decreases at each successive trophic level, so the energy pyramid cannot be inverted; numbers and biomass pyramids can be inverted (e.g. a tree with many insects, phytoplankton in the sea).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pyramid of energy"
+   },
+   {
+    "key": "B",
+    "text": "pyramid of biomass"
+   },
+   {
+    "key": "C",
+    "text": "pyramid of numbers"
+   },
+   {
+    "key": "D",
+    "text": "none of the pyramids"
+   }
+  ]
+ },
+ {
+  "id": "q_7db6fd4db514",
+  "type": "SCQ",
+  "stem": "Co-extinction refers to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "When a host fish becomes extinct, its unique parasites also vanish; the same holds for plant and pollinator pairs.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "random extinction by chance"
+   },
+   {
+    "key": "B",
+    "text": "the extinction of a species whose survival depends on another species that has gone extinct, such as an obligate parasite or its host"
+   },
+   {
+    "key": "C",
+    "text": "extinction due to climate only"
+   },
+   {
+    "key": "D",
+    "text": "extinction of two species by hybridisation"
+   }
+  ]
+ },
+ {
+  "id": "q_7dcfd17f4861",
+  "type": "INT",
+  "stem": "In an ecosystem, gross primary productivity is 100 units and plant respiration losses are 40 units. Net primary productivity is ______ units.",
+  "images": [],
+  "answer": {
+   "value": 60.0,
+   "tol": 0.0
+  },
+  "solution": "$\\mathrm{NPP}=\\mathrm{GPP}-R=100-40=60$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7eb331d266be",
+  "type": "SCQ",
+  "stem": "Organisms that maintain a constant internal environment despite changes in the external environment are called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Birds and mammals are regulators (homeostasis by thermoregulation and osmoregulation); conformers let internal conditions change with the surroundings.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "conformers"
+   },
+   {
+    "key": "B",
+    "text": "parasites"
+   },
+   {
+    "key": "C",
+    "text": "regulators"
+   },
+   {
+    "key": "D",
+    "text": "migrants only"
    }
   ]
  },
@@ -5656,6 +8931,132 @@
   "version": 1
  },
  {
+  "id": "q_85653e3765da",
+  "type": "SCQ",
+  "stem": "An age pyramid with a broad base (large pre-reproductive group) indicates a population that is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A large pre-reproductive group means many individuals will enter the reproductive age, so the population will grow; a bell-shaped pyramid is stable and an urn-shaped one is declining.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "declining"
+   },
+   {
+    "key": "B",
+    "text": "stable"
+   },
+   {
+    "key": "C",
+    "text": "expanding"
+   },
+   {
+    "key": "D",
+    "text": "extinct"
+   }
+  ]
+ },
+ {
+  "id": "q_857bbbd2bcd1",
+  "type": "SCQ",
+  "stem": "The introduction of the Nile perch into Lake Victoria in East Africa led to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Alien species introduced deliberately or accidentally can become invasive and cause the decline of native species.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "no change in biodiversity"
+   },
+   {
+    "key": "B",
+    "text": "extinction of all water birds"
+   },
+   {
+    "key": "C",
+    "text": "an increase in cichlid species"
+   },
+   {
+    "key": "D",
+    "text": "the extinction of more than 200 species of cichlid fish"
+   }
+  ]
+ },
+ {
   "id": "q_8696ca13db70",
   "type": "SCQ",
   "stem": "Movement of substances from a region of higher concentration to lower concentration without expenditure of energy is",
@@ -5845,6 +9246,132 @@
   ]
  },
  {
+  "id": "q_8a121b1565b3",
+  "type": "SCQ",
+  "stem": "Conservation of biodiversity in its natural habitat, as in national parks and sanctuaries, is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In situ conservation protects the whole ecosystem; ex situ methods include zoos, botanical gardens, seed banks and cryopreservation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cryopreservation"
+   },
+   {
+    "key": "B",
+    "text": "in situ conservation"
+   },
+   {
+    "key": "C",
+    "text": "ex situ conservation"
+   },
+   {
+    "key": "D",
+    "text": "seed banking"
+   }
+  ]
+ },
+ {
+  "id": "q_8adde396cd5f",
+  "type": "SCQ",
+  "stem": "Diversity of species between different communities of a region (turnover of species along habitat gradients) is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Alpha diversity is within a community, beta diversity is between communities and gamma diversity is for the total geographical region.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "alpha diversity"
+   },
+   {
+    "key": "B",
+    "text": "genetic diversity"
+   },
+   {
+    "key": "C",
+    "text": "beta diversity"
+   },
+   {
+    "key": "D",
+    "text": "gamma diversity"
+   }
+  ]
+ },
+ {
   "id": "q_8c3fc6fdb29b",
   "type": "SCQ",
   "stem": "The nuclear envelope and nucleolus reappear during",
@@ -5971,6 +9498,69 @@
   ]
  },
  {
+  "id": "q_8f0f25201873",
+  "type": "SCQ",
+  "stem": "In agarose gel electrophoresis, DNA fragments move towards the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "DNA is negatively charged due to phosphate groups; the gel sieves fragments, so shorter ones move faster. Ethidium bromide with UV light visualises the bands.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cathode, and the smaller fragments travel farther"
+   },
+   {
+    "key": "B",
+    "text": "anode, and the larger fragments travel farther"
+   },
+   {
+    "key": "C",
+    "text": "anode (positive electrode), and the smaller fragments travel farther"
+   },
+   {
+    "key": "D",
+    "text": "cathode, and the larger fragments travel farther"
+   }
+  ]
+ },
+ {
   "id": "q_8f635e949d73",
   "type": "SCQ",
   "stem": "The phases of growth, in order, are",
@@ -6078,6 +9668,69 @@
   "version": 1
  },
  {
+  "id": "q_90dee8e18321",
+  "type": "SCQ",
+  "stem": "The international list that records the status of threatened species of plants and animals is called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The IUCN Red List categorises species as extinct, critically endangered, endangered, vulnerable and so on.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "IUCN Red List (Red Data Book)"
+   },
+   {
+    "key": "B",
+    "text": "Blue List of rivers"
+   },
+   {
+    "key": "C",
+    "text": "Convention of tribal rights"
+   },
+   {
+    "key": "D",
+    "text": "Green Book"
+   }
+  ]
+ },
+ {
   "id": "q_91f9919ae14f",
   "type": "SCQ",
   "stem": "A man of blood group O marries a woman of blood group AB. Their children can be of blood group(s)",
@@ -6141,6 +9794,69 @@
   ]
  },
  {
+  "id": "q_92a2c988b28e",
+  "type": "SCQ",
+  "stem": "The first clinical gene therapy (1990) was given to a four-year-old girl with a deficiency of the enzyme",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "ADA deficiency impairs immunity (severe combined immunodeficiency). Lymphocytes were grown outside, given a functional ADA gene with a retroviral vector and returned.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "phenylalanine hydroxylase"
+   },
+   {
+    "key": "B",
+    "text": "adenosine deaminase (ADA)"
+   },
+   {
+    "key": "C",
+    "text": "lactase"
+   },
+   {
+    "key": "D",
+    "text": "$\\beta$-galactosidase"
+   }
+  ]
+ },
+ {
   "id": "q_95f7a241cf91",
   "type": "SCQ",
   "stem": "A carrier woman ($X^CX^c$) marries a colour-blind man ($X^cY$). The probability that a daughter is colour-blind is",
@@ -6200,6 +9916,69 @@
    {
     "key": "D",
     "text": "$1/2$"
+   }
+  ]
+ },
+ {
+  "id": "q_978726a0efcf",
+  "type": "SCQ",
+  "stem": "Taq polymerase is used in PCR because it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Taq polymerase, from the bacterium *Thermus aquaticus*, survives the 94 °C denaturation step, so fresh enzyme need not be added each cycle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "digests the primer"
+   },
+   {
+    "key": "B",
+    "text": "works only at low temperature"
+   },
+   {
+    "key": "C",
+    "text": "is isolated from humans"
+   },
+   {
+    "key": "D",
+    "text": "is thermostable and remains active at the high temperature used to denature DNA"
    }
   ]
  },
@@ -6393,6 +10172,132 @@
   ]
  },
  {
+  "id": "q_9a6a1cf975a0",
+  "type": "SCQ",
+  "stem": "Meselson and Stahl grew *E. coli* for many generations in $^{15}$N medium and then transferred it to $^{14}$N medium. After one generation in $^{14}$N, the DNA was",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Semi-conservative replication gives DNA with one old ($^{15}$N) strand and one new ($^{14}$N) strand, so the single band had intermediate density.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "all heavy"
+   },
+   {
+    "key": "B",
+    "text": "all of intermediate (hybrid) density"
+   },
+   {
+    "key": "C",
+    "text": "all light"
+   },
+   {
+    "key": "D",
+    "text": "half heavy and half light"
+   }
+  ]
+ },
+ {
+  "id": "q_9d9f032b80c3",
+  "type": "SCQ",
+  "stem": "Species diversity generally",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Tropical regions have greater species richness owing to more stable climate, longer evolutionary time and more solar energy.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "is highest at the poles"
+   },
+   {
+    "key": "B",
+    "text": "is the same at all latitudes"
+   },
+   {
+    "key": "C",
+    "text": "increases from the equator towards the poles"
+   },
+   {
+    "key": "D",
+    "text": "decreases from the equator towards the poles"
+   }
+  ]
+ },
+ {
   "id": "q_9e8754c4d85e",
   "type": "SCQ",
   "stem": "DNA replication takes place in which phase of the cell cycle?",
@@ -6454,6 +10359,113 @@
     "text": "M phase"
    }
   ]
+ },
+ {
+  "id": "q_9edc26f6cae3",
+  "type": "SCQ",
+  "stem": "Citric acid is commercially produced by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "*A. niger* gives citric acid; *Acetobacter aceti* gives acetic acid (vinegar); *Clostridium butylicum* gives butyric acid; *Lactobacillus* gives lactic acid.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Aspergillus niger*"
+   },
+   {
+    "key": "B",
+    "text": "*Clostridium butylicum*"
+   },
+   {
+    "key": "C",
+    "text": "*Lactobacillus*"
+   },
+   {
+    "key": "D",
+    "text": "*Acetobacter aceti*"
+   }
+  ]
+ },
+ {
+  "id": "q_9f6f26f7568c",
+  "type": "INT",
+  "stem": "A circular plasmid has three recognition sites for a restriction enzyme. The number of fragments on complete digestion is ______.",
+  "images": [],
+  "answer": {
+   "value": 3.0,
+   "tol": 0.0
+  },
+  "solution": "A circular molecule cut at $n$ sites gives $n$ fragments.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_a29bf32fadf2",
@@ -6645,6 +10657,132 @@
   ]
  },
  {
+  "id": "q_a5193dd0b16e",
+  "type": "SCQ",
+  "stem": "An orchid growing on a mango branch is an example of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The orchid (epiphyte) benefits by getting support while the mango is neither harmed nor benefited; cattle egret and grazing cattle are another example.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "competition"
+   },
+   {
+    "key": "B",
+    "text": "commensalism"
+   },
+   {
+    "key": "C",
+    "text": "parasitism"
+   },
+   {
+    "key": "D",
+    "text": "mutualism"
+   }
+  ]
+ },
+ {
+  "id": "q_a746475750a0",
+  "type": "SCQ",
+  "stem": "To make a bacterial cell competent to take up recombinant DNA, it is treated with",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Ca$^{2+}$ increases pore efficiency in the cell wall; incubating cells with DNA on ice, then at 42 °C, then back on ice makes DNA enter.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sodium hydroxide"
+   },
+   {
+    "key": "B",
+    "text": "ethidium bromide"
+   },
+   {
+    "key": "C",
+    "text": "a restriction enzyme"
+   },
+   {
+    "key": "D",
+    "text": "a divalent cation such as calcium, followed by a brief heat shock at about 42 °C"
+   }
+  ]
+ },
+ {
   "id": "q_a7cf36a318c7",
   "type": "INT",
   "stem": "In biological nitrogen fixation the overall reaction is $\\mathrm{N_2}+8e^-+8H^++16\\,\\mathrm{ATP}\\to2\\mathrm{NH_3}+\\mathrm{H_2}+16\\,\\mathrm{ADP}+16P_i$. The number of ATP molecules consumed to fix one molecule of N$_2$ is ______.",
@@ -6748,6 +10886,69 @@
    {
     "key": "D",
     "text": "ATP and ADP"
+   }
+  ]
+ },
+ {
+  "id": "q_a89f09a9c2a5",
+  "type": "SCQ",
+  "stem": "The main advantage of a stirred-tank bioreactor over shake flasks is that it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A stirrer ensures uniform distribution of cells and nutrients and a sparger bubbles in sterile air; probes control temperature, pH and oxygen.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "needs no sterilisation"
+   },
+   {
+    "key": "B",
+    "text": "works only under anaerobic conditions"
+   },
+   {
+    "key": "C",
+    "text": "does not allow monitoring of pH or temperature"
+   },
+   {
+    "key": "D",
+    "text": "provides even mixing and an oxygen supply through sparging, allowing large-scale culture under controlled conditions"
    }
   ]
  },
@@ -6985,6 +11186,69 @@
   "version": 1
  },
  {
+  "id": "q_abd6338407ae",
+  "type": "SCQ",
+  "stem": "Which statement distinguishes an exonuclease from an endonuclease?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Restriction endonucleases make cuts within the DNA; exonucleases remove nucleotides one by one from the ends.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both ligate DNA fragments"
+   },
+   {
+    "key": "B",
+    "text": "An exonuclease removes nucleotides from the ends of DNA, while an endonuclease cuts at internal positions"
+   },
+   {
+    "key": "C",
+    "text": "Exonucleases occur only in viruses"
+   },
+   {
+    "key": "D",
+    "text": "An exonuclease cuts at internal sites and an endonuclease removes nucleotides from ends"
+   }
+  ]
+ },
+ {
   "id": "q_ac3110495347",
   "type": "SCQ",
   "stem": "In bryophytes the male sex organ is the antheridium and the female sex organ is the",
@@ -7044,6 +11308,69 @@
    {
     "key": "D",
     "text": "gemma"
+   }
+  ]
+ },
+ {
+  "id": "q_ad83e1c11be8",
+  "type": "SCQ",
+  "stem": "In the early recombinant production of insulin in *E. coli*, the A and B chains were produced",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Eli Lilly (1983) made the DNA sequences for chains A and B separately in plasmids, expressed them in separate *E. coli* cultures, and then joined the chains in vitro.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "in human cells only"
+   },
+   {
+    "key": "B",
+    "text": "separately and then combined by creating disulphide bonds"
+   },
+   {
+    "key": "C",
+    "text": "as a single chain that needed no processing"
+   },
+   {
+    "key": "D",
+    "text": "only after removal of the C peptide in bacteria"
    }
   ]
  },
@@ -7237,6 +11564,176 @@
   ]
  },
  {
+  "id": "q_af7db3088e8b",
+  "type": "SCQ",
+  "stem": "In terrestrial ecosystems the major conduit for energy flow is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In most terrestrial ecosystems a much larger part of energy flows through detritus than through grazers. In aquatic ecosystems the grazing chain is the major conduit.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "predator chain"
+   },
+   {
+    "key": "B",
+    "text": "parasitic food chain only"
+   },
+   {
+    "key": "C",
+    "text": "detritus food chain"
+   },
+   {
+    "key": "D",
+    "text": "grazing food chain"
+   }
+  ]
+ },
+ {
+  "id": "q_b023954cb40a",
+  "type": "NVQ",
+  "stem": "The distance between two adjacent base pairs in B-DNA is $0.34$ nm. For $6.6\\times10^{9}$ bp (the diploid human genome), the approximate length of the DNA in metres is ______.",
+  "images": [],
+  "answer": {
+   "value": 2.2,
+   "tol": 0.05
+  },
+  "solution": "$6.6\\times10^9\\times0.34\\times10^{-9}\\ \\mathrm{m}\\approx2.2$ m.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b159a19bc2be",
+  "type": "SCQ",
+  "stem": "Human insulin consists of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Mature insulin has chain A (21 amino acids) and chain B (30 amino acids), joined by disulphide bonds. In pro-insulin the C peptide is removed during maturation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "two short polypeptide chains, A and B, linked by disulphide bridges"
+   },
+   {
+    "key": "B",
+    "text": "a single polypeptide chain without disulphide bonds"
+   },
+   {
+    "key": "C",
+    "text": "two chains linked by peptide bonds"
+   },
+   {
+    "key": "D",
+    "text": "three chains A, B and C all in the mature hormone"
+   }
+  ]
+ },
+ {
   "id": "q_b18fbff3ffa4",
   "type": "SCQ",
   "stem": "The 'powerhouse of the cell', where aerobic respiration yields most ATP, is the",
@@ -7426,6 +11923,132 @@
   ]
  },
  {
+  "id": "q_b42cb678d2cc",
+  "type": "SCQ",
+  "stem": "The dark, amorphous substance formed during decomposition, which is highly resistant to microbial action and is a reservoir of nutrients, is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Humification produces humus, which is degraded very slowly; mineralisation then releases inorganic nutrients.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "detritus"
+   },
+   {
+    "key": "B",
+    "text": "peat only"
+   },
+   {
+    "key": "C",
+    "text": "humus"
+   },
+   {
+    "key": "D",
+    "text": "leachate"
+   }
+  ]
+ },
+ {
+  "id": "q_b502796f14ae",
+  "type": "SCQ",
+  "stem": "The large holes in 'Swiss cheese' are due to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The bacterium *Propionibacterium sharmanii* makes CO$_2$ during ripening. Roquefort cheese is ripened with *Penicillium roqueforti* for its flavour.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Aspergillus niger*"
+   },
+   {
+    "key": "B",
+    "text": "boiling of whey"
+   },
+   {
+    "key": "C",
+    "text": "the production of a large amount of CO$_2$ by *Propionibacterium sharmanii*"
+   },
+   {
+    "key": "D",
+    "text": "*Penicillium roqueforti* growing in it"
+   }
+  ]
+ },
+ {
   "id": "q_b5bb579dbd5a",
   "type": "SCQ",
   "stem": "Axile placentation, in which the placenta lies at the centre of a multilocular ovary, is seen in",
@@ -7489,6 +12112,69 @@
   ]
  },
  {
+  "id": "q_b5d4e11365e4",
+  "type": "SCQ",
+  "stem": "RNA interference (RNAi) was used to protect tobacco plants from the root-knot nematode *Meloidogyne incognita* by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A nematode-specific gene is expressed in sense and antisense by Agrobacterium vectors, forming dsRNA that silences the mRNA of the pest's essential gene, so the parasite cannot survive.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "producing dsRNA in the plant that silences a nematode gene"
+   },
+   {
+    "key": "B",
+    "text": "deleting the plant's own genes"
+   },
+   {
+    "key": "C",
+    "text": "producing the Bt toxin"
+   },
+   {
+    "key": "D",
+    "text": "killing the nematode with antibiotics"
+   }
+  ]
+ },
+ {
   "id": "q_b78c75a28bab",
   "type": "INT",
   "stem": "The functional megaspore undergoes 3 successive free-nuclear mitotic divisions to form the embryo sac. The number of nuclei in the mature embryo sac is ______.",
@@ -7531,6 +12217,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_b798a9f7bafe",
+  "type": "SCQ",
+  "stem": "Gause's competitive exclusion principle states that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In Gause's experiments with *Paramoecium*, the better competitor eventually eliminated the other when the resource was limiting.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "mutualism is impossible"
+   },
+   {
+    "key": "B",
+    "text": "predators always eliminate prey"
+   },
+   {
+    "key": "C",
+    "text": "two closely related species competing for the same limiting resources cannot coexist indefinitely"
+   },
+   {
+    "key": "D",
+    "text": "species with different resources cannot coexist"
+   }
+  ]
  },
  {
   "id": "q_b7bdaf522386",
@@ -7592,6 +12341,69 @@
    {
     "key": "D",
     "text": "a single base substitution leading to replacement of glutamic acid by valine at the sixth position of the $\\beta$-globin chain"
+   }
+  ]
+ },
+ {
+  "id": "q_b7f9cc10224b",
+  "type": "SCQ",
+  "stem": "In the lac operon of *E. coli*, in the absence of lactose the repressor",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The i gene constitutively produces the repressor; without an inducer it blocks the operator. Allolactose (an isomer of lactose) binds the repressor and releases the operator.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "is not produced because the i gene is switched off"
+   },
+   {
+    "key": "B",
+    "text": "binds to lactose and activates the promoter"
+   },
+   {
+    "key": "C",
+    "text": "binds to RNA polymerase and activates the genes"
+   },
+   {
+    "key": "D",
+    "text": "binds to the operator and prevents transcription of the structural genes"
    }
   ]
  },
@@ -7829,6 +12641,69 @@
   ]
  },
  {
+  "id": "q_bb069c68c742",
+  "type": "SCQ",
+  "stem": "The correct sequence of decomposition steps is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Detritivores fragment the detritus; water-soluble inorganic nutrients leach; fungi and bacteria carry out catabolism; humification forms humus; and mineralisation releases inorganic nutrients.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "leaching, mineralisation, fragmentation"
+   },
+   {
+    "key": "B",
+    "text": "catabolism, leaching, fragmentation, mineralisation, humification"
+   },
+   {
+    "key": "C",
+    "text": "humification, fragmentation, leaching"
+   },
+   {
+    "key": "D",
+    "text": "fragmentation, leaching, catabolism, humification and mineralisation"
+   }
+  ]
+ },
+ {
   "id": "q_bed9249f14ce",
   "type": "SCQ",
   "stem": "A typical angiosperm anther is bilobed and each lobe has",
@@ -8062,6 +12937,69 @@
   ]
  },
  {
+  "id": "q_c17e9c53ef42",
+  "type": "SCQ",
+  "stem": "In the food chain grass $\\to$ grasshopper $\\to$ frog $\\to$ snake $\\to$ hawk, the frog is a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Grass is the producer, the grasshopper the primary consumer, the frog the secondary consumer, the snake tertiary and the hawk quaternary.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "tertiary consumer"
+   },
+   {
+    "key": "B",
+    "text": "secondary consumer"
+   },
+   {
+    "key": "C",
+    "text": "producer"
+   },
+   {
+    "key": "D",
+    "text": "primary consumer"
+   }
+  ]
+ },
+ {
   "id": "q_c44205581854",
   "type": "SCQ",
   "stem": "A student claims that chloroplasts and mitochondria are 'semi-autonomous organelles'. The best justification is that they",
@@ -8121,6 +13059,69 @@
    {
     "key": "D",
     "text": "are not bounded by a membrane"
+   }
+  ]
+ },
+ {
+  "id": "q_c471dae39963",
+  "type": "SCQ",
+  "stem": "Only about 2-10 per cent of the photosynthetically active radiation (PAR) is captured by plants. PAR forms about what fraction of incident solar radiation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "PAR (400-700 nm) forms around 50% of incident solar radiation; plants capture only 2-10% of it.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1 per cent"
+   },
+   {
+    "key": "B",
+    "text": "50 per cent"
+   },
+   {
+    "key": "C",
+    "text": "90 per cent"
+   },
+   {
+    "key": "D",
+    "text": "10 per cent"
    }
   ]
  },
@@ -8377,6 +13378,69 @@
   ]
  },
  {
+  "id": "q_c89527efd2d4",
+  "type": "SCQ",
+  "stem": "According to Allen's rule, mammals from colder climates generally have",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A smaller surface area-to-volume ratio of extremities lowers heat loss in cold climates; the polar seal has a thick fat layer and polar fox short ears.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "shorter ears and limbs, to minimise heat loss"
+   },
+   {
+    "key": "B",
+    "text": "no fur"
+   },
+   {
+    "key": "C",
+    "text": "a thinner fat layer than those from warm climates"
+   },
+   {
+    "key": "D",
+    "text": "longer ears and limbs"
+   }
+  ]
+ },
+ {
   "id": "q_c94f53f0af13",
   "type": "SCQ",
   "stem": "A flaccid cell with $\\psi_s=-1.0$ MPa and $\\psi_p=0$ is placed in a solution with $\\psi_w=-0.4$ MPa. Which statement is correct?",
@@ -8440,6 +13504,69 @@
   ]
  },
  {
+  "id": "q_caa797ad75f6",
+  "type": "SCQ",
+  "stem": "Secondary productivity is defined as the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Primary productivity is by producers; secondary productivity is the rate of assimilation of food energy and production of new biomass by consumers.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "rate of respiration of producers"
+   },
+   {
+    "key": "B",
+    "text": "total biomass of decomposers only"
+   },
+   {
+    "key": "C",
+    "text": "rate of photosynthesis by producers"
+   },
+   {
+    "key": "D",
+    "text": "rate of formation of new organic matter by consumers"
+   }
+  ]
+ },
+ {
   "id": "q_cbbef71b2482",
   "type": "SCQ",
   "stem": "Cornelius van Niel's work on purple sulphur bacteria, which use H$_2$S instead of water, led to the inference that in green plants the oxygen released comes from",
@@ -8499,6 +13626,69 @@
    {
     "key": "D",
     "text": "chlorophyll"
+   }
+  ]
+ },
+ {
+  "id": "q_cc91b1ed5a1d",
+  "type": "SCQ",
+  "stem": "The enzymes that cut DNA at specific recognition sequences are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Restriction endonucleases cut within DNA at specific palindromic sequences; ligase joins fragments and exonucleases remove nucleotides from the ends.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "restriction endonucleases"
+   },
+   {
+    "key": "B",
+    "text": "exonucleases"
+   },
+   {
+    "key": "C",
+    "text": "DNA ligases"
+   },
+   {
+    "key": "D",
+    "text": "DNA polymerases"
    }
   ]
  },
@@ -8669,6 +13859,69 @@
    {
     "key": "D",
     "text": "International Code of Zoological Nomenclature (ICZN)"
+   }
+  ]
+ },
+ {
+  "id": "q_cda640d08308",
+  "type": "SCQ",
+  "stem": "The puffed-up appearance of bread dough is due to the production of CO$_2$ by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Yeast ferments sugars in the dough, releasing CO$_2$ that expands the dough; hence it is called baker's yeast.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Lactobacillus*"
+   },
+   {
+    "key": "B",
+    "text": "*Trichoderma*"
+   },
+   {
+    "key": "C",
+    "text": "*Rhizobium*"
+   },
+   {
+    "key": "D",
+    "text": "baker's yeast, *Saccharomyces cerevisiae*"
    }
   ]
  },
@@ -8988,6 +14241,69 @@
   ]
  },
  {
+  "id": "q_d03184c1e6b8",
+  "type": "SCQ",
+  "stem": "A palindromic DNA sequence is one in which",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "For example, 5'-GAATTC-3' is complementary to 3'-CTTAAG-5', which read 5'→3' is also GAATTC.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the base sequence reads the same in the 5'→3' direction on both strands"
+   },
+   {
+    "key": "B",
+    "text": "the two strands are identical in the 3'→5' direction only"
+   },
+   {
+    "key": "C",
+    "text": "no base pairing occurs"
+   },
+   {
+    "key": "D",
+    "text": "all bases are identical"
+   }
+  ]
+ },
+ {
   "id": "q_d123d147b36d",
   "type": "SCQ",
   "stem": "The gaseous plant hormone that hastens fruit ripening is",
@@ -9049,6 +14365,50 @@
     "text": "gibberellin"
    }
   ]
+ },
+ {
+  "id": "q_d25540e1f60d",
+  "type": "NVQ",
+  "stem": "In logistic growth $\\mathrm{d}N/\\mathrm{d}t=rN\\left(\\frac{K-N}{K}\\right)$. For $r=0.1$ per year, $N=200$ and $K=1000$, the growth rate (individuals per year) is ______.",
+  "images": [],
+  "answer": {
+   "value": 16.0,
+   "tol": 0.001
+  },
+  "solution": "$0.1\\times200\\times(800/1000)=16$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_d28f8f948424",
@@ -10002,6 +15362,132 @@
   ]
  },
  {
+  "id": "q_e0e7642d6072",
+  "type": "SCQ",
+  "stem": "The blood-cholesterol lowering agent 'statin' is produced by the yeast",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Statins are competitive inhibitors of the enzyme for cholesterol synthesis; cyclosporin A, the immunosuppressant, comes from *Trichoderma polysporum*.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Trichoderma polysporum*"
+   },
+   {
+    "key": "B",
+    "text": "*Penicillium chrysogenum*"
+   },
+   {
+    "key": "C",
+    "text": "*Saccharomyces cerevisiae*"
+   },
+   {
+    "key": "D",
+    "text": "*Monascus purpureus*"
+   }
+  ]
+ },
+ {
+  "id": "q_e1d01cdb31aa",
+  "type": "SCQ",
+  "stem": "Histones are rich in the basic amino acids",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The positively charged residues of histones bind the negatively charged phosphate backbone of DNA; eight histone molecules (an octamer) form the core of a nucleosome.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lysine and arginine, which carry positive charges"
+   },
+   {
+    "key": "B",
+    "text": "cysteine and methionine"
+   },
+   {
+    "key": "C",
+    "text": "aspartic acid and glutamic acid"
+   },
+   {
+    "key": "D",
+    "text": "glycine and alanine"
+   }
+  ]
+ },
+ {
   "id": "q_e2b8b3ba7f07",
   "type": "SCQ",
   "stem": "The 80S ribosome of eukaryotes is made of subunits of",
@@ -10191,6 +15677,132 @@
   ]
  },
  {
+  "id": "q_e3f9e09281da",
+  "type": "SCQ",
+  "stem": "Which of the following is a stop (termination) codon?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "UAA, UAG and UGA do not code for any amino acid. AUG codes for methionine and also serves as the start codon.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "UAA"
+   },
+   {
+    "key": "B",
+    "text": "GUG"
+   },
+   {
+    "key": "C",
+    "text": "AUG"
+   },
+   {
+    "key": "D",
+    "text": "UUU"
+   }
+  ]
+ },
+ {
+  "id": "q_e42128986b7a",
+  "type": "SCQ",
+  "stem": "In the Hershey-Chase experiment, bacteriophages were grown with radioactive $^{32}$P and $^{35}$S in separate batches. $^{32}$P labelled the phage",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "DNA has phosphate groups and no sulphur, while the protein coat contains sulphur (cysteine, methionine) and no phosphorus. Radioactivity inside infected bacteria came from $^{32}$P, showing DNA is the genetic material.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lipid envelope"
+   },
+   {
+    "key": "B",
+    "text": "protein coat, because proteins contain phosphorus"
+   },
+   {
+    "key": "C",
+    "text": "both DNA and protein equally"
+   },
+   {
+    "key": "D",
+    "text": "DNA, because DNA contains phosphorus but little or no sulphur"
+   }
+  ]
+ },
+ {
   "id": "q_e44f28c8cac3",
   "type": "INT",
   "stem": "In a plant with $2n=24$, the number of chromosomes in a cell of the endosperm is ______.",
@@ -10361,6 +15973,69 @@
   ]
  },
  {
+  "id": "q_e62da9cfa1df",
+  "type": "SCQ",
+  "stem": "During secondary (biological) treatment of sewage, aggregates of bacteria associated with fungal filaments that form mesh-like masses are called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Aerobic microbes grow as flocs in the aeration tank, consume the organic matter and reduce BOD. The settled flocs form activated sludge.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bio-pellets of yeast"
+   },
+   {
+    "key": "B",
+    "text": "flocs"
+   },
+   {
+    "key": "C",
+    "text": "sludge granules of methanogens"
+   },
+   {
+    "key": "D",
+    "text": "biofilms of algae only"
+   }
+  ]
+ },
+ {
   "id": "q_e66962cc87a3",
   "type": "SCQ",
   "stem": "The age of a tree growing in a temperate region can be estimated by counting its",
@@ -10483,6 +16158,69 @@
    {
     "key": "D",
     "text": "*Neurospora*"
+   }
+  ]
+ },
+ {
+  "id": "q_e7f812c8d3f5",
+  "type": "SCQ",
+  "stem": "The main constituent of biogas is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Biogas from anaerobic digestion of dung or waste by methanogens such as *Methanobacterium* is mostly CH$_4$ with CO$_2$ and traces of H$_2$ and H$_2$S.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ethanol"
+   },
+   {
+    "key": "B",
+    "text": "methane"
+   },
+   {
+    "key": "C",
+    "text": "hydrogen sulphide"
+   },
+   {
+    "key": "D",
+    "text": "carbon monoxide"
    }
   ]
  },
@@ -10676,6 +16414,132 @@
   ]
  },
  {
+  "id": "q_ea9f6e479a56",
+  "type": "SCQ",
+  "stem": "Which region in India is a biodiversity hotspot?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Hotspots are regions with high species richness, high endemism and severe habitat threat. India's three hotspots are Western Ghats and Sri Lanka, Indo-Burma, and the Himalaya.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BIOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Thar Desert"
+   },
+   {
+    "key": "B",
+    "text": "Deccan plateau interior"
+   },
+   {
+    "key": "C",
+    "text": "Gangetic plain"
+   },
+   {
+    "key": "D",
+    "text": "Western Ghats and Sri Lanka"
+   }
+  ]
+ },
+ {
+  "id": "q_eb36fe7210a0",
+  "type": "SCQ",
+  "stem": "DNA fingerprinting is based on the polymorphism in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "VNTRs are short repeated sequences whose number varies between individuals; this is used to compare DNA from different people (technique of Alec Jeffreys).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "variable number tandem repeats (VNTRs)"
+   },
+   {
+    "key": "B",
+    "text": "the number of mitochondria"
+   },
+   {
+    "key": "C",
+    "text": "the amino acid sequence of histones"
+   },
+   {
+    "key": "D",
+    "text": "the genetic code"
+   }
+  ]
+ },
+ {
   "id": "q_eb4b28bb1a93",
   "type": "SCQ",
   "stem": "Binomial nomenclature, the system of giving each organism a two-part scientific name, was introduced by",
@@ -10739,6 +16603,50 @@
   ]
  },
  {
+  "id": "q_ec044c5484d5",
+  "type": "NVQ",
+  "stem": "A producer level fixes 20,000 J of energy. Applying the 10 per cent law, the energy available at the tertiary consumer level (producer, herbivore, secondary, tertiary consumers) is ______ J.",
+  "images": [],
+  "answer": {
+   "value": 20.0,
+   "tol": 0.01
+  },
+  "solution": "Each transfer retains 10%: $20000\\to2000\\to200\\to20$ J.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_ed2b8d503d7d",
   "type": "SCQ",
   "stem": "The Krebs cycle is described as an amphibolic pathway because it",
@@ -10798,6 +16706,69 @@
    {
     "key": "D",
     "text": "occurs only in plants and animals but not microbes"
+   }
+  ]
+ },
+ {
+  "id": "q_ed765aec7097",
+  "type": "SCQ",
+  "stem": "In the name EcoRI, the letter 'R' stands for",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "E = genus *Escherichia*, co = species *coli*, R = strain RY13, I = order in which the enzyme was isolated from that strain.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.BTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ribosome"
+   },
+   {
+    "key": "B",
+    "text": "the strain (RY13) of the bacterium"
+   },
+   {
+    "key": "C",
+    "text": "recombinant"
+   },
+   {
+    "key": "D",
+    "text": "restriction"
    }
   ]
  },
@@ -11117,6 +17088,50 @@
   ]
  },
  {
+  "id": "q_f5a68a54cf27",
+  "type": "INT",
+  "stem": "A population has 500 individuals. In a year, 60 are born, 20 die, 10 immigrate and 5 emigrate. Using $N_{t+1}=N_t+[(B+I)-(D+E)]$, the population size at the end of the year is ______.",
+  "images": [],
+  "answer": {
+   "value": 545.0,
+   "tol": 0.0
+  },
+  "solution": "$N_{t+1}=500+[(60+10)-(20+5)]=500+45=545$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ORG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_f71d94bb1221",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Removal of the shoot apex promotes the growth of lateral buds.\n\n**Reason (R):** Auxin produced by the apical bud inhibits the growth of lateral buds.\n\nChoose the correct option.",
@@ -11176,6 +17191,69 @@
    {
     "key": "D",
     "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_f736caa9ef37",
+  "type": "SCQ",
+  "stem": "In the lac operon, the gene $y$ codes for",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "lacZ codes for $\\beta$-galactosidase, lacY for permease (lactose entry) and lacA for transacetylase; the repressor is the i gene product.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "transacetylase"
+   },
+   {
+    "key": "B",
+    "text": "$\\beta$-galactosidase"
+   },
+   {
+    "key": "C",
+    "text": "permease"
+   },
+   {
+    "key": "D",
+    "text": "the repressor"
    }
   ]
  },
@@ -11491,6 +17569,132 @@
    {
     "key": "D",
     "text": "zero"
+   }
+  ]
+ },
+ {
+  "id": "q_fe6dd05f1d45",
+  "type": "SCQ",
+  "stem": "Standing crop of an ecosystem refers to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Standing crop is measured as fresh or dry weight of living material per unit area; productivity is the rate of biomass production.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.ECOS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the total energy lost by respiration"
+   },
+   {
+    "key": "B",
+    "text": "the amount of dead organic matter"
+   },
+   {
+    "key": "C",
+    "text": "the rate of production of new biomass"
+   },
+   {
+    "key": "D",
+    "text": "the mass of living organisms at each trophic level at a given time"
+   }
+  ]
+ },
+ {
+  "id": "q_ff74a42caf9f",
+  "type": "SCQ",
+  "stem": "In eukaryotes, the RNA polymerase that transcribes the precursor of mRNA (hnRNA) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "RNA pol I transcribes rRNAs (28S, 18S, 5.8S), pol II the hnRNA and pol III tRNA, 5S rRNA and snRNAs. Bacteria use a single polymerase for all.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a single polymerase that transcribes all RNAs"
+   },
+   {
+    "key": "B",
+    "text": "RNA polymerase II"
+   },
+   {
+    "key": "C",
+    "text": "RNA polymerase I"
+   },
+   {
+    "key": "D",
+    "text": "RNA polymerase III"
    }
   ]
  }
