@@ -51,7 +51,7 @@ $P -m pipeline.extract.neet_text PDF STEM                  # text-layer booklets
 #   -> the structuring agent reads each question (page images where math is garbled) and writes notes1..N.jsonl
 $P -m pipeline.extract.merge_notes STEM --exam E --year Y --expect N --sections "1-25:MAT,..."
 $P -m pipeline.ingest.nta_convert PILOT [--write-manual-tags]   # + official key -> bank_src/nta_*.json, quarantine/nta_*.json
-$P -m pipeline.validate pipeline/bank_src/nta_*.json -q
+$P -m pipeline.validate pipeline/held_pending_permission/nta_*.json -q
 ```
 
 - **Sources and allow-list.** `content/sources/nta/papers_manifest.json` (and `content/sources/iiser/`) list every official URL with status (found / not found / provisional / host unavailable), sha256, pages. `acquire/fetch.py` refuses (SystemExit) any host outside `ALLOWED_HOSTS` (jeemain.nta.nic.in, neet.nta.nic.in, nta.ac.in, www.nta.ac.in, the NIC government CDN `cdnbbsr.s3waas.gov.in` that serves their files, and the IISER hosts), also after redirects. TLS verification is always on; a host failing verification (currently `iiseradmission.in`) is recorded as unavailable, never bypassed. Coaching / publisher sites are never fetched.
