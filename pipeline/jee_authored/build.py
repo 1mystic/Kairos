@@ -17,7 +17,7 @@ from ..validate import validate_question
 from . import ITEMS, qid
 
 OUT = ROOT / "pipeline" / "bank_src" / "authored_jee_main.json"
-MODULES = ["phy_mech", "phy_em", "phy_opt", "che_a", "che_b", "mat_a", "mat_b", "extra"]
+MODULES = ["phy_mech", "phy_em", "phy_opt", "che_a", "che_b", "mat_a", "mat_b", "extra", "extra2"]
 DIFF_B = {"E": -0.9, "M": 0.1, "H": 1.1}
 YEAR = "2026"
 

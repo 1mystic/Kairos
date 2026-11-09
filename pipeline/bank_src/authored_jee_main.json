@@ -1386,6 +1386,49 @@
   "version": 1
  },
  {
+  "id": "q_1d7692c46a0f",
+  "type": "INT",
+  "stem": "A uniform rod of mass $3\\ \\mathrm{kg}$ and length $2\\ \\mathrm{m}$ is rotated about an axis perpendicular to it through one end. Its moment of inertia in $\\mathrm{kg\\,m^2}$ is",
+  "images": [],
+  "answer": {
+   "value": 4.0
+  },
+  "solution": "$I_{end}=\\dfrac{ML^2}{3}=\\dfrac{3\\times4}{3}=4$. Parallel-axis check: $\\dfrac{ML^2}{12}+M\\left(\\dfrac L2\\right)^2=1+3=4$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_1e3301a4d1f3",
   "type": "INT",
   "stem": "A $2\\ \\mathrm{kg}$ block is pushed up a rough incline of angle $\\theta$ with $\\sin\\theta=0.6$, $\\cos\\theta=0.8$ and coefficient of kinetic friction $0.5$, by a force parallel to the incline so that it moves up at constant speed. With $g=10\\ \\mathrm{m/s^2}$, the force required in newton is",
@@ -1651,6 +1694,50 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_21875e42ad3a",
+  "type": "NVQ",
+  "stem": "The pH of $0.10\\ \\mathrm M$ acetic acid ($K_a=1.8\\times10^{-5}$) is approximately",
+  "images": [],
+  "answer": {
+   "value": 2.87,
+   "tol": 0.02
+  },
+  "solution": "Weak acid: $[\\ce{H+}]=\\sqrt{K_aC}=\\sqrt{1.8\\times10^{-6}}=1.34\\times10^{-3}\\ \\mathrm M$ ($\\alpha\\approx1.3\\%$, so the approximation holds). $\\mathrm{pH}=-\\log(1.34\\times10^{-3})=2.87$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.IONEQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -2049,6 +2136,66 @@
   "version": 1
  },
  {
+  "id": "q_2a4019d53f35",
+  "type": "SCQ",
+  "stem": "The area of the parallelogram with adjacent sides $\\vec a=\\hat i+2\\hat j+3\\hat k$ and $\\vec b=2\\hat i-\\hat j+\\hat k$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\vec a\\times\\vec b=(2\\cdot1-3\\cdot(-1))\\hat i-(1\\cdot1-3\\cdot2)\\hat j+(1\\cdot(-1)-2\\cdot2)\\hat k=5\\hat i+5\\hat j-5\\hat k$. Area $=|\\vec a\\times\\vec b|=\\sqrt{75}=5\\sqrt3$ (the triangle would have half of this).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.VEC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$3\\sqrt5$"
+   },
+   {
+    "key": "B",
+    "text": "$\\sqrt{75}\\,/\\,2$"
+   },
+   {
+    "key": "C",
+    "text": "$5$"
+   },
+   {
+    "key": "D",
+    "text": "$5\\sqrt3$"
+   }
+  ]
+ },
+ {
   "id": "q_2c368ef11848",
   "type": "SCQ",
   "stem": "A circular coil of $20$ turns and radius $10\\ \\mathrm{cm}$ carries a current of $5\\ \\mathrm{A}$. The magnetic field at its centre is ($\\mu_0=4\\pi\\times10^{-7}\\ \\mathrm{T\\,m/A}$)",
@@ -2217,6 +2364,46 @@
     "text": "$30\\ \\mathrm{mm}$"
    }
   ]
+ },
+ {
+  "id": "q_3325e47eb925",
+  "type": "INT",
+  "stem": "The value of $\\left(1+i\\sqrt3\\right)^6$ is",
+  "images": [],
+  "answer": {
+   "value": 64.0
+  },
+  "solution": "$1+i\\sqrt3=2\\left(\\cos\\dfrac\\pi3+i\\sin\\dfrac\\pi3\\right)$. By De Moivre $z^6=2^6(\\cos2\\pi+i\\sin2\\pi)=64$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.CPLX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_33e53432cd7e",
@@ -2529,6 +2716,49 @@
   "tax": {
    "subject": "PHY",
    "chapter": "PHY.EMW",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_38555500ebf8",
+  "type": "INT",
+  "stem": "A small hole is made in the side of a tank filled with water, $5\\ \\mathrm{m}$ below the free surface (surface exposed to atmosphere, $g=10\\ \\mathrm{m/s^2}$). The speed of efflux of water in m/s is",
+  "images": [],
+  "answer": {
+   "value": 10.0
+  },
+  "solution": "Bernoulli between surface and hole: $v=\\sqrt{2gh}=\\sqrt{2\\times10\\times5}=10\\ \\mathrm{m/s}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.FLU",
    "topics": [],
    "concepts": []
   },
@@ -2990,6 +3220,46 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_45709fa2d8cc",
+  "type": "INT",
+  "stem": "The value of the determinant $\\begin{vmatrix}2&1&3\\\\0&4&1\\\\1&2&5\\end{vmatrix}$ is",
+  "images": [],
+  "answer": {
+   "value": 25.0
+  },
+  "solution": "Expand along the first row: $2(20-2)-1(0-1)+3(0-4)=36+1-12=25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.DET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -3763,6 +4033,50 @@
   "version": 1
  },
  {
+  "id": "q_4bccb9ffe679",
+  "type": "NVQ",
+  "stem": "A current of $2\\ \\mathrm{A}$ is passed for $965\\ \\mathrm{s}$ through aqueous $\\ce{CuSO4}$. The mass of copper deposited in grams is ($F=96500\\ \\mathrm{C/mol}$, $\\mathrm{Cu}=63.5$)",
+  "images": [],
+  "answer": {
+   "value": 0.635,
+   "tol": 0.005
+  },
+  "solution": "$Q=It=1930\\ \\mathrm{C}$; moles of electrons $=\\dfrac{1930}{96500}=0.02$. $\\ce{Cu^{2+} + 2e- -> Cu}$: $0.01$ mol Cu $=0.01\\times63.5=0.635\\ \\mathrm{g}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.ELEC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_4bdc9cffed7d",
   "type": "INT",
   "stem": "Maximise $Z=x+y$ subject to $x+y\\le4$, $x+3y\\le6$, $x,y\\ge0$. The maximum value of $Z$ is",
@@ -3864,6 +4178,49 @@
     "text": "$0.1$"
    }
   ]
+ },
+ {
+  "id": "q_4e5b709d6fad",
+  "type": "INT",
+  "stem": "A string of length $1\\ \\mathrm{m}$ and linear density $0.01\\ \\mathrm{kg/m}$ is fixed at both ends under a tension of $100\\ \\mathrm{N}$. The fundamental frequency in Hz is",
+  "images": [],
+  "answer": {
+   "value": 50.0
+  },
+  "solution": "$v=\\sqrt{T/\\mu}=\\sqrt{10^4}=100\\ \\mathrm{m/s}$. Fundamental: $\\lambda=2L=2\\ \\mathrm{m}$, $f=\\dfrac v\\lambda=50\\ \\mathrm{Hz}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WAV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_4f13e1896a43",
@@ -3970,6 +4327,49 @@
     "text": "$\\ce{F-}$"
    }
   ]
+ },
+ {
+  "id": "q_4f943fd582a8",
+  "type": "INT",
+  "stem": "$50\\ \\mathrm{g}$ of water at $80^\\circ\\mathrm{C}$ is mixed with $100\\ \\mathrm{g}$ of water at $20^\\circ\\mathrm{C}$ in an insulated container. The final temperature in $^\\circ\\mathrm{C}$ is",
+  "images": [],
+  "answer": {
+   "value": 40.0
+  },
+  "solution": "Heat lost $=$ heat gained: $50(80-T)=100(T-20)\\Rightarrow4000-50T=100T-2000\\Rightarrow T=40^\\circ\\mathrm{C}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.THP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_50205eacb6ce",
@@ -4139,6 +4539,50 @@
     "text": "$2\\times10^{8}\\ \\mathrm{N/m^2}$"
    }
   ]
+ },
+ {
+  "id": "q_544567094014",
+  "type": "NVQ",
+  "stem": "$10\\ \\mathrm{g}$ of pure $\\ce{CaCO3}$ ($M=100\\ \\mathrm{g/mol}$) is decomposed completely: $\\ce{CaCO3 -> CaO + CO2}$. The volume of $\\ce{CO2}$ at STP (molar volume $22.4\\ \\mathrm{L}$) in litres is",
+  "images": [],
+  "answer": {
+   "value": 2.24,
+   "tol": 0.01
+  },
+  "solution": "$n(\\ce{CaCO3})=\\dfrac{10}{100}=0.1$ mol gives $0.1$ mol $\\ce{CO2}$: $V=0.1\\times22.4=2.24\\ \\mathrm{L}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.MOLE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_5502f8c24d8c",
@@ -4825,6 +5269,50 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_6536a0fc9ff9",
+  "type": "NVQ",
+  "stem": "A solid sphere rolls without slipping down a $30^\\circ$ incline. Taking $g=10\\ \\mathrm{m/s^2}$, its acceleration down the incline in $\\mathrm{m/s^2}$ is approximately",
+  "images": [],
+  "answer": {
+   "value": 3.57,
+   "tol": 0.02
+  },
+  "solution": "$a=\\dfrac{g\\sin\\theta}{1+I/(mR^2)}=\\dfrac{10\\times0.5}{1+2/5}=\\dfrac{5}{1.4}=3.57\\ \\mathrm{m/s^2}$ (a sliding block would have $5\\ \\mathrm{m/s^2}$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -5735,6 +6223,106 @@
   "version": 1
  },
  {
+  "id": "q_756bba95c28c",
+  "type": "SCQ",
+  "stem": "Two fair dice are thrown. The probability that the sum of the numbers is $8$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Favourable: $(2,6),(3,5),(4,4),(5,3),(6,2)$ $=5$ out of $36$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{5}{36}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac16$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{1}{9}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{7}{36}$"
+   }
+  ]
+ },
+ {
+  "id": "q_7604249fafb8",
+  "type": "INT",
+  "stem": "The maximum value of $f(x)=x^3-12x$ on the interval $[-3,3]$ is",
+  "images": [],
+  "answer": {
+   "value": 16.0
+  },
+  "solution": "$f'(x)=3x^2-12=0\\Rightarrow x=\\pm2$. $f(-2)=-8+24=16$, $f(2)=-16$, endpoints $f(-3)=9$, $f(3)=-9$. The maximum is $16$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.AOD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_7715814be70b",
   "type": "INT",
   "stem": "Open-chain glucose, $\\ce{HOCH2-(CHOH)4-CHO}$, has $4$ chiral carbons (C2 to C5). The total number of stereoisomers possible for this aldohexose is",
@@ -6540,6 +7128,66 @@
   "version": 1
  },
  {
+  "id": "q_89c7b9033a39",
+  "type": "SCQ",
+  "stem": "A fair coin is tossed $4$ times. The probability of getting exactly $2$ heads is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\binom42\\left(\\tfrac12\\right)^4=\\dfrac{6}{16}=\\dfrac38$ ($6$ of the $16$ equally likely outcomes).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac14$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac12$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac38$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{5}{16}$"
+   }
+  ]
+ },
+ {
   "id": "q_8b4c11ca168a",
   "type": "MSQ",
   "stem": "Select all correct statements about semiconductors and $p$-$n$ junctions.",
@@ -7193,6 +7841,66 @@
   ]
  },
  {
+  "id": "q_959a21518efb",
+  "type": "SCQ",
+  "stem": "Bag 1 has $3$ red and $2$ blue balls; bag 2 has $2$ red and $3$ blue balls. A bag is chosen at random and a ball drawn from it is red. The probability that it came from bag 1 is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Bayes: $P(B_1|R)=\\dfrac{\\frac12\\cdot\\frac35}{\\frac12\\cdot\\frac35+\\frac12\\cdot\\frac25}=\\dfrac{3/10}{1/2}=\\dfrac35$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.PROB2",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{3}{10}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac35$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac25$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac12$"
+   }
+  ]
+ },
+ {
   "id": "q_95a117809657",
   "type": "INT",
   "stem": "A coil of $100$ turns and area $0.01\\ \\mathrm{m^2}$ has its plane perpendicular to a field that grows uniformly from $0$ to $0.5\\ \\mathrm{T}$ in $0.05\\ \\mathrm{s}$. The induced emf in volt is",
@@ -7825,6 +8533,66 @@
   ]
  },
  {
+  "id": "q_a35710bb2d40",
+  "type": "SCQ",
+  "stem": "The value of $\\sin15^\\circ\\cos15^\\circ$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\sin A\\cos A=\\tfrac12\\sin2A=\\tfrac12\\sin30^\\circ=\\dfrac14$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.TRIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{\\sqrt3-1}{4}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac12$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{\\sqrt3}{4}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac14$"
+   }
+  ]
+ },
+ {
   "id": "q_a4644978dd98",
   "type": "SCQ",
   "stem": "A rectangular coil of $200$ turns and area $0.05\\ \\mathrm{m^2}$ rotates at $50$ revolutions per second in a uniform field of $0.4\\ \\mathrm{T}$ about an axis perpendicular to the field. The peak emf generated is approximately",
@@ -7949,6 +8717,46 @@
     "text": "$4.12$"
    }
   ]
+ },
+ {
+  "id": "q_a529c49802fb",
+  "type": "INT",
+  "stem": "In the arithmetic progression $3,7,11,\\dots$ the term equal to $99$ is the $n^{th}$ term. The value of $n$ is",
+  "images": [],
+  "answer": {
+   "value": 25.0
+  },
+  "solution": "$a_n=3+(n-1)4=99\\Rightarrow n-1=24\\Rightarrow n=25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.SEQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_aa5bd4ec1f8b",
@@ -8154,6 +8962,47 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ad7e9ac127f7",
+  "type": "NVQ",
+  "stem": "The length of the latus rectum of the ellipse $\\dfrac{x^2}{25}+\\dfrac{y^2}{9}=1$ is",
+  "images": [],
+  "answer": {
+   "value": 3.6,
+   "tol": 0.01
+  },
+  "solution": "$a^2=25$, $b^2=9$: $\\ell=\\dfrac{2b^2}{a}=\\dfrac{18}{5}=3.6$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.CONIC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -8588,6 +9437,50 @@
   ]
  },
  {
+  "id": "q_bb920d497afd",
+  "type": "NVQ",
+  "stem": "For a reaction $\\Delta H=+40\\ \\mathrm{kJ\\,mol^{-1}}$ and $\\Delta S=+100\\ \\mathrm{J\\,K^{-1}mol^{-1}}$ (both temperature independent). The reaction becomes spontaneous above a temperature (in K) of",
+  "images": [],
+  "answer": {
+   "value": 400.0,
+   "tol": 1.0
+  },
+  "solution": "$\\Delta G=\\Delta H-T\\Delta S<0\\Rightarrow T>\\dfrac{\\Delta H}{\\Delta S}=\\dfrac{40000}{100}=400\\ \\mathrm{K}$ (convert kJ to J).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.THERMO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_bbfa81d3d622",
   "type": "SCQ",
   "stem": "A copper wire of cross-section $1\\ \\mathrm{mm^2}$ carries $2\\ \\mathrm{A}$. With $n=8.5\\times10^{28}\\ \\mathrm{m^{-3}}$ free electrons and $e=1.6\\times10^{-19}\\ \\mathrm{C}$, the drift speed is approximately",
@@ -8752,6 +9645,46 @@
     "text": "$480$"
    }
   ]
+ },
+ {
+  "id": "q_bf2ab245dcf8",
+  "type": "INT",
+  "stem": "A committee of $2$ men and $2$ women is to be formed from $5$ men and $4$ women. The number of ways is",
+  "images": [],
+  "answer": {
+   "value": 60.0
+  },
+  "solution": "$\\binom52\\binom42=10\\times6=60$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.PNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_bf7f878f8c2f",
@@ -9091,6 +10024,50 @@
     "text": "$\\ce{CH3CH2Cl}$ with $\\ce{NaI}$ in dry acetone gives $\\ce{CH3CH2I}$ and a precipitate of $\\ce{NaCl}$."
    }
   ]
+ },
+ {
+  "id": "q_c6a68f124f40",
+  "type": "NVQ",
+  "stem": "$18\\ \\mathrm{g}$ of glucose ($M=180$) is dissolved in $500\\ \\mathrm{g}$ of water ($K_b=0.52\\ \\mathrm{K\\,kg\\,mol^{-1}}$). The elevation in boiling point in kelvin is",
+  "images": [],
+  "answer": {
+   "value": 0.104,
+   "tol": 0.002
+  },
+  "solution": "$m=\\dfrac{0.1\\ \\mathrm{mol}}{0.5\\ \\mathrm{kg}}=0.2\\ \\mathrm{mol/kg}$; glucose does not dissociate ($i=1$). $\\Delta T_b=K_bm=0.52\\times0.2=0.104\\ \\mathrm{K}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.SOLN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_c91b0e3a8fd6",
@@ -9722,6 +10699,92 @@
   ]
  },
  {
+  "id": "q_d0efdadb7e27",
+  "type": "INT",
+  "stem": "A projectile is launched at $20\\ \\mathrm{m/s}$ at $30^\\circ$ above the horizontal ($g=10\\ \\mathrm{m/s^2}$). The maximum height reached, in metres, is",
+  "images": [],
+  "answer": {
+   "value": 5.0
+  },
+  "solution": "$H=\\dfrac{u^2\\sin^2\\theta}{2g}=\\dfrac{400\\times0.25}{20}=5\\ \\mathrm{m}$. (Vertical component $10\\ \\mathrm{m/s}$: $H=10^2/20$.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.KIN2D",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d1e4b60e0dad",
+  "type": "INT",
+  "stem": "A Carnot engine works between $500\\ \\mathrm{K}$ and $300\\ \\mathrm{K}$. Its efficiency in per cent is",
+  "images": [],
+  "answer": {
+   "value": 40.0
+  },
+  "solution": "$\\eta=1-\\dfrac{T_2}{T_1}=1-\\dfrac{300}{500}=0.40=40\\%$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.THD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_d2ffc559a9d9",
   "type": "INT",
   "stem": "A thin equi-convex glass lens ($n=1.5$, both radii $20\\ \\mathrm{cm}$) has focal length $20\\ \\mathrm{cm}$ in air. Its focal length in water ($n=4/3$), in cm, is",
@@ -9755,6 +10818,46 @@
   "difficulty": {
    "label": "H",
    "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d448337ca94c",
+  "type": "INT",
+  "stem": "$\\displaystyle\\lim_{x\\to0}\\dfrac{1-\\cos4x}{x^2}$ equals",
+  "images": [],
+  "answer": {
+   "value": 8.0
+  },
+  "solution": "$1-\\cos4x=2\\sin^22x$, so the limit is $2\\cdot\\left(\\dfrac{\\sin2x}{x}\\right)^2\\to2\\times2^2=8$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -10897,6 +12000,66 @@
   ]
  },
  {
+  "id": "q_efb76652c58a",
+  "type": "SCQ",
+  "stem": "The value of $\\displaystyle\\int_0^1x(1-x)^3\\,dx$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Substitute $t=1-x$: $\\int_0^1(1-t)t^3dt=\\dfrac14-\\dfrac15=\\dfrac1{20}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MAT",
+   "chapter": "MAT.INTG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac1{30}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac14$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac1{20}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac1{12}$"
+   }
+  ]
+ },
+ {
   "id": "q_f0466c229041",
   "type": "SCQ",
   "stem": "A $500\\ \\mathrm{kg}$ satellite moves in a circular orbit of radius $2R_E$ about the Earth ($R_E=6.4\\times10^6\\ \\mathrm{m}$, $g=10\\ \\mathrm{m/s^2}$ at the surface). The minimum extra energy needed to free it from the Earth's gravity is",
@@ -11192,6 +12355,49 @@
     "text": "Lactose"
    }
   ]
+ },
+ {
+  "id": "q_f8ae0f1a27f2",
+  "type": "INT",
+  "stem": "The oxidation state of chromium in $\\ce{K2Cr2O7}$ is",
+  "images": [],
+  "answer": {
+   "value": 6.0
+  },
+  "solution": "$2(+1)+2x+7(-2)=0\\Rightarrow2x=12\\Rightarrow x=+6$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CHE",
+   "chapter": "CHE.REDOX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_f92a488bacbc",
