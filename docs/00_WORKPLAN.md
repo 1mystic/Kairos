@@ -101,6 +101,7 @@ Neither Q agent publishes. **Orchestrator then publishes bank v4**: `python -m p
 1. Let G2/Q1/Q2 finish; verify each commit's imports resolve; push.
 2. Publish bank v4 (see above).
 3. (resolved) Firestore rules DO allow GATE_DA entries in `config/exam_calendar` (per-entry validation is client-side); only the optional stats counter `sessions_GATE_DA` is absent from the rules (telemetry guards it).
+4a. **KNOWN BUG for the audit (found by G2):** DiagnosticScreen, NewMockScreen and usePredictedScore call `isExamId(profile.exam)` on the PACKED exam string (`JEE_MAIN.1`, `GATE_DA.0`, `JEE_MAIN.2+NEET_UG.1@2027-05-03`), which never matches: decode with the onboarding decode helper (primary exam) first. Also the exam-runner marking table/header now says MCQ/NAT instead of SCQ/NVQ for all exams (check existing exam tests asserting exact strings).
 4. **Static flow audit** (agent(s), code reading only; list in docs/14_LAUNCH.md B1 and the FINAL QA PLAN below): fix everything found.
 5. Launch blockers needing the OWNER: minors/DPDP decision (recommend: 18+ accounts, guest mode for minors until a consent flow exists), contact/grievance email + real Privacy/Terms text, permission emails to NTA/IITs, Auth authorised domains + OAuth consent branding, create `admins/<uid>` after rules deploy, optional App Check site key.
 6. 404 page + error boundary, robots.txt/sitemap, PNG PWA icons 192/512 (+maskable), offline fallback.
