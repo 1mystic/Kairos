@@ -107,6 +107,69 @@
   "version": 1
  },
  {
+  "id": "q_046735573e0a",
+  "type": "SCQ",
+  "stem": "Photorespiration occurs when RuBisCO",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "RuBisCO binds O$_2$ in place of CO$_2$, producing phosphoglycolate and releasing CO$_2$ via chloroplast, peroxisome and mitochondrion, without making ATP or NADPH.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "is blocked in the mitochondria of C$_4$ plants only"
+   },
+   {
+    "key": "B",
+    "text": "acts as a carboxylase at high CO$_2$"
+   },
+   {
+    "key": "C",
+    "text": "is inhibited completely by light"
+   },
+   {
+    "key": "D",
+    "text": "acts as an oxygenase at high O$_2$ and low CO$_2$ concentration, in C$_3$ plants"
+   }
+  ]
+ },
+ {
   "id": "q_05a25ec08b9a",
   "type": "SCQ",
   "stem": "Lenticels in woody stems are meant for",
@@ -296,6 +359,132 @@
   ]
  },
  {
+  "id": "q_088a609edfcd",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** C$_4$ plants show very little photorespiration.\n\n**Reason (R):** In C$_4$ plants the CO$_2$ concentration is raised around RuBisCO in the bundle sheath cells.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The C$_4$ pathway concentrates CO$_2$ at RuBisCO, so oxygenation is suppressed. Both statements are true and R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_0ae3961bd253",
+  "type": "SCQ",
+  "stem": "A cross between an F$_1$ plant and its homozygous recessive parent is called a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A test cross reveals whether the dominant phenotype parent is homozygous (all dominant) or heterozygous (1:1).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "test cross"
+   },
+   {
+    "key": "B",
+    "text": "back cross to dominant parent only"
+   },
+   {
+    "key": "C",
+    "text": "dihybrid cross"
+   },
+   {
+    "key": "D",
+    "text": "reciprocal cross"
+   }
+  ]
+ },
+ {
   "id": "q_0b65952977b2",
   "type": "SCQ",
   "stem": "A taxonomic key is based on",
@@ -355,6 +544,302 @@
    {
     "key": "D",
     "text": "geographical distribution only"
+   }
+  ]
+ },
+ {
+  "id": "q_0e4203e7b367",
+  "type": "SCQ",
+  "stem": "Pollen grains of wind-pollinated flowers are typically",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Anemophilous flowers have light dry pollen in abundance, exposed stamens and a large feathery stigma to catch pollen.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "scented with showy petals"
+   },
+   {
+    "key": "B",
+    "text": "light, non-sticky and produced in large numbers, with feathery stigmas"
+   },
+   {
+    "key": "C",
+    "text": "released only underwater"
+   },
+   {
+    "key": "D",
+    "text": "large, sticky and few in number"
+   }
+  ]
+ },
+ {
+  "id": "q_112e3a36a818",
+  "type": "SCQ",
+  "stem": "Long-day plants flower when",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Flowering responses depend on photoperiod: short-day plants flower below a critical day length and long-day plants above it; perception is by the leaves.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "no light is given"
+   },
+   {
+    "key": "B",
+    "text": "the photoperiod is less than a critical length in all cases"
+   },
+   {
+    "key": "C",
+    "text": "they are exposed to cold for a period"
+   },
+   {
+    "key": "D",
+    "text": "the photoperiod exceeds a critical length (the dark period is short)"
+   }
+  ]
+ },
+ {
+  "id": "q_141596d9d27c",
+  "type": "SCQ",
+  "stem": "Guttation, the loss of water as droplets from leaf margins at night, is due to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At night when stomata are closed and soil is moist, root pressure forces water out of special pores (hydathodes) at vein endings.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "transpiration through stomata"
+   },
+   {
+    "key": "B",
+    "text": "photorespiration"
+   },
+   {
+    "key": "C",
+    "text": "root pressure, and the water exudes through hydathodes"
+   },
+   {
+    "key": "D",
+    "text": "cuticular transpiration"
+   }
+  ]
+ },
+ {
+  "id": "q_14c452f522ec",
+  "type": "INT",
+  "stem": "The number of different gamete types produced by $\\mathrm{AaBBCc}$ (independent assortment) is ______.",
+  "images": [],
+  "answer": {
+   "value": 4.0,
+   "tol": 0.0
+  },
+  "solution": "Only Aa and Cc are heterozygous; BB gives one type, so $2^2=4$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_16e44f1bc6ab",
+  "type": "SCQ",
+  "stem": "Zinc is required by plants for the synthesis of the hormone",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Zinc activates several enzymes and is needed for synthesis of indole-3-acetic acid; its deficiency causes 'little leaf'.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "auxin (IAA)"
+   },
+   {
+    "key": "B",
+    "text": "ethylene"
+   },
+   {
+    "key": "C",
+    "text": "abscisic acid"
+   },
+   {
+    "key": "D",
+    "text": "gibberellin only"
    }
   ]
  },
@@ -422,6 +907,69 @@
   ]
  },
  {
+  "id": "q_18ec6fd4f820",
+  "type": "SCQ",
+  "stem": "In yeast, anaerobic breakdown of pyruvic acid yields",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Pyruvate decarboxylase forms acetaldehyde and CO$_2$, and alcohol dehydrogenase reduces acetaldehyde to ethanol with NADH. Lactic acid formation occurs in muscle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "acetyl CoA and water"
+   },
+   {
+    "key": "B",
+    "text": "ethanol and CO$_2$"
+   },
+   {
+    "key": "C",
+    "text": "lactic acid only"
+   },
+   {
+    "key": "D",
+    "text": "oxaloacetic acid"
+   }
+  ]
+ },
+ {
   "id": "q_1a640cc2c6de",
   "type": "SCQ",
   "stem": "In a typical dicot leaf, the mesophyll is differentiated into",
@@ -481,6 +1029,220 @@
    {
     "key": "D",
     "text": "only spongy parenchyma"
+   }
+  ]
+ },
+ {
+  "id": "q_1cfd4a2ed56b",
+  "type": "SCQ",
+  "stem": "The cohesion-tension theory of the ascent of sap was proposed by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Dixon and Joly proposed that transpiration pull (tension) transmitted through a continuous water column held by cohesion and adhesion lifts water. Münch proposed the pressure-flow hypothesis for phloem.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Stephen Hales"
+   },
+   {
+    "key": "B",
+    "text": "Ernst Münch"
+   },
+   {
+    "key": "C",
+    "text": "Jan Ingenhousz"
+   },
+   {
+    "key": "D",
+    "text": "Dixon and Joly"
+   }
+  ]
+ },
+ {
+  "id": "q_1d063e705fc2",
+  "type": "NVQ",
+  "stem": "In a test cross of a dihybrid, 200 progeny are obtained, of which 20 are recombinants. The recombination frequency (%) is ______.",
+  "images": [],
+  "answer": {
+   "value": 10.0,
+   "tol": 0.01
+  },
+  "solution": "$\\text{RF}=(20/200)\\times100=10\\%$, i.e. 10 map units (cM) between the genes.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1ef634f67034",
+  "type": "NVQ",
+  "stem": "Two heterozygous parents ($\\mathrm{Aa}\\times\\mathrm{Aa}$, complete dominance) have three children. The probability that all three show the dominant phenotype is (decimal, 3 places) ______.",
+  "images": [],
+  "answer": {
+   "value": 0.422,
+   "tol": 0.001
+  },
+  "solution": "$P(\\text{dominant})=3/4$ per child, so $(3/4)^3=27/64=0.4219\\approx0.422$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_20bb87d9c780",
+  "type": "SCQ",
+  "stem": "Which products are formed by non-cyclic photophosphorylation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In the Z-scheme, electrons from water pass through PS II and PS I to NADP$^+$, with ATP made by the proton gradient and O$_2$ released by water splitting.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "NADPH only, no ATP"
+   },
+   {
+    "key": "B",
+    "text": "ATP only"
+   },
+   {
+    "key": "C",
+    "text": "ATP, NADPH and oxygen"
+   },
+   {
+    "key": "D",
+    "text": "ATP and CO$_2$"
    }
   ]
  },
@@ -800,6 +1562,69 @@
   ]
  },
  {
+  "id": "q_2e608e752e2e",
+  "type": "SCQ",
+  "stem": "Vernalisation is the promotion of flowering by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Winter varieties of wheat, barley and rye need a cold treatment to flower in the following summer; it substitutes for the winter requirement.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "treatment with ethylene gas"
+   },
+   {
+    "key": "B",
+    "text": "exposure to long days only"
+   },
+   {
+    "key": "C",
+    "text": "removal of the shoot apex"
+   },
+   {
+    "key": "D",
+    "text": "prior exposure to low temperature"
+   }
+  ]
+ },
+ {
   "id": "q_32294706d9be",
   "type": "SCQ",
   "stem": "In the grass family, the single cotyledon of the embryo is represented by the",
@@ -922,6 +1747,69 @@
    {
     "key": "D",
     "text": "dicot stem"
+   }
+  ]
+ },
+ {
+  "id": "q_35e402df0c55",
+  "type": "SCQ",
+  "stem": "Genes located close together on the same chromosome show",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Morgan showed that tightly linked genes tend to be inherited together; the farther apart two genes lie, the more often they recombine.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "more recombinants than loosely linked genes"
+   },
+   {
+    "key": "B",
+    "text": "no linkage at all"
+   },
+   {
+    "key": "C",
+    "text": "independent assortment"
+   },
+   {
+    "key": "D",
+    "text": "fewer recombinants, because tight linkage reduces crossing over between them"
    }
   ]
  },
@@ -1052,6 +1940,195 @@
   ]
  },
  {
+  "id": "q_38142d54a432",
+  "type": "SCQ",
+  "stem": "Leghaemoglobin in root nodules of legumes",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Nitrogenase is inactivated by oxygen. Leghaemoglobin, a pink pigment, binds oxygen and keeps the nodule interior at low oxygen levels.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "carries nitrogen to the shoot"
+   },
+   {
+    "key": "B",
+    "text": "synthesises nitrate"
+   },
+   {
+    "key": "C",
+    "text": "fixes nitrogen directly"
+   },
+   {
+    "key": "D",
+    "text": "scavenges oxygen to protect the oxygen-sensitive nitrogenase"
+   }
+  ]
+ },
+ {
+  "id": "q_39759406bb80",
+  "type": "SCQ",
+  "stem": "ATP synthesis by chemiosmosis in mitochondria takes place by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Complexes I, III and IV pump protons into the intermembrane space; the proton-motive force drives F$_0$-F$_1$ ATP synthase.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "protons flowing back through ATP synthase (Complex V) in the inner membrane"
+   },
+   {
+    "key": "B",
+    "text": "substrate-level phosphorylation in the cristae"
+   },
+   {
+    "key": "C",
+    "text": "NADH dehydrogenase directly phosphorylating ADP"
+   },
+   {
+    "key": "D",
+    "text": "protons moving out through the outer membrane"
+   }
+  ]
+ },
+ {
+  "id": "q_39adda9433b2",
+  "type": "SCQ",
+  "stem": "In nitrification, ammonia is oxidised first to nitrite and then to nitrate by, respectively,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Nitrosomonas (or Nitrococcus) converts NH$_3$ to NO$_2^-$, and Nitrobacter converts NO$_2^-$ to NO$_3^-$. Denitrifying bacteria such as *Pseudomonas* return N$_2$ to the air.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Pseudomonas* and *Thiobacillus*"
+   },
+   {
+    "key": "B",
+    "text": "*Nitrobacter* and *Nitrosomonas*"
+   },
+   {
+    "key": "C",
+    "text": "*Rhizobium* and *Azotobacter*"
+   },
+   {
+    "key": "D",
+    "text": "*Nitrosomonas/Nitrococcus* and *Nitrobacter*"
+   }
+  ]
+ },
+ {
   "id": "q_3b2848f7a040",
   "type": "SCQ",
   "stem": "The characteristic pigment of brown algae (Phaeophyceae) is",
@@ -1111,6 +2188,69 @@
    {
     "key": "D",
     "text": "phycocyanin"
+   }
+  ]
+ },
+ {
+  "id": "q_3b78140584ca",
+  "type": "SCQ",
+  "stem": "Glycolysis, the breakdown of glucose to pyruvic acid, occurs in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Glycolysis (EMP pathway) takes place in the cytoplasm of all living cells and is the common first step in aerobic and anaerobic respiration.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cytoplasm"
+   },
+   {
+    "key": "B",
+    "text": "mitochondrial matrix"
+   },
+   {
+    "key": "C",
+    "text": "chloroplast stroma"
+   },
+   {
+    "key": "D",
+    "text": "inner mitochondrial membrane"
    }
   ]
  },
@@ -1285,6 +2425,195 @@
   ]
  },
  {
+  "id": "q_3e03ca7aeaeb",
+  "type": "SCQ",
+  "stem": "Which of the following is a micronutrient (trace element) for plants?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Macronutrients (needed in amounts above about 10 mmol per kg of dry matter) include C, H, O, N, P, S, K, Ca, Mg. Micronutrients include Fe, Mn, Cu, Zn, B, Mo, Cl and Ni.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Potassium"
+   },
+   {
+    "key": "B",
+    "text": "Calcium"
+   },
+   {
+    "key": "C",
+    "text": "Zinc"
+   },
+   {
+    "key": "D",
+    "text": "Magnesium"
+   }
+  ]
+ },
+ {
+  "id": "q_40c0b32f9d19",
+  "type": "SCQ",
+  "stem": "Cyclic photophosphorylation differs from the non-cyclic type because it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In cyclic flow the electrons excited in PS I return to PS I via the cytochrome complex: ATP is made, but there is no water splitting and no NADPH.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "occurs in the stroma"
+   },
+   {
+    "key": "B",
+    "text": "produces both NADPH and oxygen"
+   },
+   {
+    "key": "C",
+    "text": "involves PS II only and produces NADPH"
+   },
+   {
+    "key": "D",
+    "text": "involves only PS I and produces ATP but no NADPH or O$_2$"
+   }
+  ]
+ },
+ {
+  "id": "q_411c508814e5",
+  "type": "SCQ",
+  "stem": "A single gene producing multiple, apparently unrelated phenotypic effects, as with the gene for phenylketonuria, is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Pleiotropic genes affect more than one trait; the PKU mutation affects phenylalanine hydroxylase and causes mental retardation and reduced skin pigment.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "epistasis"
+   },
+   {
+    "key": "B",
+    "text": "codominance"
+   },
+   {
+    "key": "C",
+    "text": "pleiotropy"
+   },
+   {
+    "key": "D",
+    "text": "linkage"
+   }
+  ]
+ },
+ {
   "id": "q_4632567ed305",
   "type": "SCQ",
   "stem": "The fluid mosaic model of the plasma membrane was proposed by",
@@ -1411,6 +2740,69 @@
   ]
  },
  {
+  "id": "q_47258ad5a80a",
+  "type": "SCQ",
+  "stem": "The enzymes nitrogenase and nitrate reductase both require the micronutrient",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Molybdenum is a cofactor of nitrogenase (nitrogen fixation) and nitrate reductase (nitrate assimilation).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "boron"
+   },
+   {
+    "key": "B",
+    "text": "manganese"
+   },
+   {
+    "key": "C",
+    "text": "molybdenum"
+   },
+   {
+    "key": "D",
+    "text": "zinc"
+   }
+  ]
+ },
+ {
   "id": "q_48fb80e37cc3",
   "type": "SCQ",
   "stem": "The edible part of a mango, a drupe, is the",
@@ -1533,6 +2925,113 @@
    {
     "key": "D",
     "text": "plasmodium, a multinucleate mass of protoplasm that creeps over decaying organic matter"
+   }
+  ]
+ },
+ {
+  "id": "q_4a6b966d2eaf",
+  "type": "INT",
+  "stem": "In an additive polygenic trait controlled by three gene pairs ($\\mathrm{AaBbCc}\\times\\mathrm{AaBbCc}$), the number of distinct phenotypic classes in the progeny (by number of contributing alleles) is ______.",
+  "images": [],
+  "answer": {
+   "value": 7.0,
+   "tol": 0.0
+  },
+  "solution": "The number of contributing alleles ranges over $0,1,\\dots,6$, which gives $7$ classes with frequencies $1:6:15:20:15:6:1$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4bad52fdb7b0",
+  "type": "SCQ",
+  "stem": "Deficiency symptoms of calcium appear first in young leaves because calcium",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Elements such as N, P, K and Mg are mobile and symptoms appear first in older leaves; Ca, S and Fe are immobile, so young tissues show symptoms first.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "is lost by leaching only from young leaves"
+   },
+   {
+    "key": "B",
+    "text": "is not needed by young leaves"
+   },
+   {
+    "key": "C",
+    "text": "is highly mobile and moves to old leaves"
+   },
+   {
+    "key": "D",
+    "text": "is relatively immobile and is not remobilised from older tissues"
    }
   ]
  },
@@ -1726,6 +3225,113 @@
   ]
  },
  {
+  "id": "q_5208a869da24",
+  "type": "SCQ",
+  "stem": "The reaction centre pigments of photosystems I and II are, respectively,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "PS I has chlorophyll a P700 and PS II has chlorophyll a P680, named for their absorption maxima.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "P680 and P680"
+   },
+   {
+    "key": "B",
+    "text": "P680 and P700"
+   },
+   {
+    "key": "C",
+    "text": "P700 and P680"
+   },
+   {
+    "key": "D",
+    "text": "P700 and P700"
+   }
+  ]
+ },
+ {
+  "id": "q_52546fd220fd",
+  "type": "INT",
+  "stem": "The number of pollen mother cells needed to produce 100 pollen grains is ______.",
+  "images": [],
+  "answer": {
+   "value": 25.0,
+   "tol": 0.0
+  },
+  "solution": "Each microspore mother cell gives a tetrad of four microspores, so $100/4=25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_54ef81b7a7d1",
   "type": "SCQ",
   "stem": "Water and minerals are absorbed from the soil mainly through",
@@ -1789,6 +3395,69 @@
   ]
  },
  {
+  "id": "q_563304154d66",
+  "type": "SCQ",
+  "stem": "The respiratory quotient (RQ) when glucose is completely oxidised in aerobic respiration is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\mathrm{C_6H_{12}O_6+6O_2\\to6CO_2+6H_2O}$: $\\mathrm{RQ}=6/6=1$. Fats have RQ below 1 (about 0.7).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "0.7"
+   },
+   {
+    "key": "B",
+    "text": "0.9"
+   },
+   {
+    "key": "C",
+    "text": "greater than 1"
+   },
+   {
+    "key": "D",
+    "text": "1"
+   }
+  ]
+ },
+ {
   "id": "q_56ad12f296e1",
   "type": "SCQ",
   "stem": "Lysosomes are called 'suicide bags' because they contain",
@@ -1848,6 +3517,132 @@
    {
     "key": "D",
     "text": "DNA and RNA polymerases"
+   }
+  ]
+ },
+ {
+  "id": "q_578d7bd45093",
+  "type": "SCQ",
+  "stem": "The Krebs cycle begins when acetyl CoA combines with",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Acetyl CoA (2C) condenses with oxaloacetate (4C) to give citrate (6C), the first step of the TCA cycle in the matrix.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "oxaloacetic acid to form citric acid"
+   },
+   {
+    "key": "B",
+    "text": "succinic acid to form fumaric acid"
+   },
+   {
+    "key": "C",
+    "text": "glucose to form fructose"
+   },
+   {
+    "key": "D",
+    "text": "pyruvic acid to form lactic acid"
+   }
+  ]
+ },
+ {
+  "id": "q_57f92d3db767",
+  "type": "SCQ",
+  "stem": "Movement of water from cell to cell through the cell walls and intercellular spaces, without crossing any membrane, is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In the apoplast water moves through walls and spaces; in the symplast it moves via cytoplasm and plasmodesmata. The Casparian strip blocks the apoplast at the endodermis.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "transmembrane osmosis"
+   },
+   {
+    "key": "B",
+    "text": "vacuolar transport"
+   },
+   {
+    "key": "C",
+    "text": "apoplastic movement"
+   },
+   {
+    "key": "D",
+    "text": "symplastic movement"
    }
   ]
  },
@@ -2167,6 +3962,132 @@
   ]
  },
  {
+  "id": "q_5f839714b5bc",
+  "type": "SCQ",
+  "stem": "Thalassaemia is a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Thalassaemia is an autosomal recessive disorder due to mutations reducing globin chain synthesis; sickle-cell anaemia is the qualitative defect.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "qualitative defect: an altered amino acid in $\\beta$-chain"
+   },
+   {
+    "key": "B",
+    "text": "sex-linked dominant disorder"
+   },
+   {
+    "key": "C",
+    "text": "quantitative defect: reduced synthesis of one of the globin chains"
+   },
+   {
+    "key": "D",
+    "text": "chromosomal disorder due to trisomy"
+   }
+  ]
+ },
+ {
+  "id": "q_6000b61689a4",
+  "type": "SCQ",
+  "stem": "In C$_3$ plants the first stable product of CO$_2$ fixation is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "RuBisCO carboxylates RuBP (5C); the unstable 6C product splits into two molecules of 3-PGA, hence C$_3$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ribulose bisphosphate (5C)"
+   },
+   {
+    "key": "B",
+    "text": "oxaloacetic acid (4C)"
+   },
+   {
+    "key": "C",
+    "text": "glucose (6C)"
+   },
+   {
+    "key": "D",
+    "text": "3-phosphoglyceric acid (3C)"
+   }
+  ]
+ },
+ {
   "id": "q_6223291d3018",
   "type": "SCQ",
   "stem": "What is the lowest taxonomic category shared by a cat (*Felis*, family Felidae) and a dog (*Canis*, family Canidae)?",
@@ -2226,6 +4147,132 @@
    {
     "key": "D",
     "text": "Genus"
+   }
+  ]
+ },
+ {
+  "id": "q_6315cd305678",
+  "type": "SCQ",
+  "stem": "The outer wall of a pollen grain, resistant to enzymes, acids and high temperature, is the exine, made of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Sporopollenin is one of the most resistant organic materials known; the exine has germ pores where it is absent. The inner intine is cellulose and pectin.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lignin"
+   },
+   {
+    "key": "B",
+    "text": "chitin"
+   },
+   {
+    "key": "C",
+    "text": "cellulose and pectin"
+   },
+   {
+    "key": "D",
+    "text": "sporopollenin"
+   }
+  ]
+ },
+ {
+  "id": "q_6344c46aaf95",
+  "type": "SCQ",
+  "stem": "Facilitated diffusion of a solute across the plasma membrane",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Facilitated diffusion is passive: transport proteins give hydrophilic solutes a path, but the direction is set by the concentration gradient and no energy is used.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "occurs only for lipid-soluble substances"
+   },
+   {
+    "key": "B",
+    "text": "moves the solute against its gradient using ATP"
+   },
+   {
+    "key": "C",
+    "text": "needs no membrane proteins at all"
+   },
+   {
+    "key": "D",
+    "text": "uses carrier or channel proteins and moves the solute down its gradient without ATP"
    }
   ]
  },
@@ -2291,6 +4338,50 @@
     "text": "bilaterally symmetrical only"
    }
   ]
+ },
+ {
+  "id": "q_6796d7deb1e9",
+  "type": "NVQ",
+  "stem": "In arithmetic growth, $L_t=L_0+rt$. A root tip is 2 cm long and grows at $0.5$ cm/day. Its length after 10 days is ______ cm.",
+  "images": [],
+  "answer": {
+   "value": 7.0,
+   "tol": 0.001
+  },
+  "solution": "$L_t=2+0.5\\times10=7$ cm.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_682fc345105c",
@@ -2419,6 +4510,132 @@
   ]
  },
  {
+  "id": "q_69f7a482db4a",
+  "type": "SCQ",
+  "stem": "The final electron acceptor in the mitochondrial electron transport chain is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Electrons passed along complexes I-IV reach complex IV (cytochrome c oxidase), which reduces O$_2$ to water.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ubiquinone"
+   },
+   {
+    "key": "B",
+    "text": "cytochrome c"
+   },
+   {
+    "key": "C",
+    "text": "oxygen"
+   },
+   {
+    "key": "D",
+    "text": "NAD$^+$"
+   }
+  ]
+ },
+ {
+  "id": "q_6b7655c5dbc8",
+  "type": "SCQ",
+  "stem": "Reductive amination of $\\alpha$-ketoglutaric acid with ammonia gives",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\alpha$-Ketoglutarate + NH$_4^+$ + NADPH gives glutamate (glutamic acid), through glutamate dehydrogenase; other amino acids are then made by transamination.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "aspartic acid"
+   },
+   {
+    "key": "B",
+    "text": "asparagine"
+   },
+   {
+    "key": "C",
+    "text": "glutamic acid"
+   },
+   {
+    "key": "D",
+    "text": "alanine only"
+   }
+  ]
+ },
+ {
   "id": "q_6b81555b6eeb",
   "type": "SCQ",
   "stem": "Which of the following is a modified stem and NOT a modified root?",
@@ -2480,6 +4697,94 @@
     "text": "Potato tuber"
    }
   ]
+ },
+ {
+  "id": "q_6c31f6dc99dd",
+  "type": "INT",
+  "stem": "The number of cells in a mature (Polygonum type) embryo sac is ______.",
+  "images": [],
+  "answer": {
+   "value": 7.0,
+   "tol": 0.0
+  },
+  "solution": "Three mitoses of the functional megaspore give 8 nuclei; cell walls form such that there are 3 antipodals, 2 synergids, 1 egg and one large central cell with 2 polar nuclei: 7 cells.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_6d42e20fcad8",
+  "type": "NVQ",
+  "stem": "In $\\mathrm{AaBb}\\times\\mathrm{AaBb}$, the probability of an offspring being $\\mathrm{aabb}$ is (as a decimal) ______.",
+  "images": [],
+  "answer": {
+   "value": 0.0625,
+   "tol": 0.0001
+  },
+  "solution": "$P(aa)=1/4$ and $P(bb)=1/4$, independent, so $1/16=0.0625$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_6f103de746f2",
@@ -2734,6 +5039,69 @@
   ]
  },
  {
+  "id": "q_748ab54f40f1",
+  "type": "SCQ",
+  "stem": "Cleistogamous flowers such as those of *Viola* and *Commelina* always set seed because",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Cleistogamous flowers remain closed; anthers and stigma lie close so pollination is within the flower, ensuring seed set even without pollinators.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "they need cross-pollen"
+   },
+   {
+    "key": "B",
+    "text": "they produce no gametes"
+   },
+   {
+    "key": "C",
+    "text": "they never open, so pollination is autogamous"
+   },
+   {
+    "key": "D",
+    "text": "they are pollinated by insects at night"
+   }
+  ]
+ },
+ {
   "id": "q_749ef7150928",
   "type": "SCQ",
   "stem": "Which of the following has a diplontic life cycle?",
@@ -2795,6 +5163,94 @@
     "text": "*Spirogyra*"
    }
   ]
+ },
+ {
+  "id": "q_7a8204844df3",
+  "type": "INT",
+  "stem": "A C$_4$ plant needs 5 ATP and 2 NADPH per CO$_2$ fixed (the extra 2 ATP regenerate PEP). The ATP needed to make one glucose molecule is ______.",
+  "images": [],
+  "answer": {
+   "value": 30.0,
+   "tol": 0.0
+  },
+  "solution": "Six CO$_2$ must be fixed, so $6\\times5=30$ ATP.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7afb9b93fb6a",
+  "type": "INT",
+  "stem": "The total number of chromosomes in a person with Klinefelter's syndrome (XXY) is ______.",
+  "images": [],
+  "answer": {
+   "value": 47.0,
+   "tol": 0.0
+  },
+  "solution": "$44$ autosomes $+\\,\\mathrm{XXY}=47$ chromosomes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_7bda192c093d",
@@ -2860,6 +5316,50 @@
   ]
  },
  {
+  "id": "q_7c677def2c4a",
+  "type": "INT",
+  "stem": "In the cross $\\mathrm{AaBb}\\times\\mathrm{AaBb}$ (complete dominance, independent assortment), the number of different genotypes among the progeny is ______.",
+  "images": [],
+  "answer": {
+   "value": 9.0,
+   "tol": 0.0
+  },
+  "solution": "$3$ genotypes for each gene give $3\\times3=9$ genotypes (and 4 phenotypes).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_7d7e9c2fa1e3",
   "type": "SCQ",
   "stem": "Pneumatophores, the roots that grow upward out of the mud for gaseous exchange, occur in",
@@ -2923,6 +5423,69 @@
   ]
  },
  {
+  "id": "q_80af90f494b2",
+  "type": "SCQ",
+  "stem": "A normal-visioned woman whose father was colour-blind (X-linked recessive) marries a normal man. The probability that a son is colour-blind is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The woman is a carrier ($X^CX^c$) and the man is $X^CY$. Sons receive either $X^C$ or $X^c$ from the mother, so half the sons are colour-blind; no daughter is affected.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1/4$"
+   },
+   {
+    "key": "B",
+    "text": "$1/2$"
+   },
+   {
+    "key": "C",
+    "text": "$0$"
+   },
+   {
+    "key": "D",
+    "text": "$1$"
+   }
+  ]
+ },
+ {
   "id": "q_816f7dfe9a20",
   "type": "SCQ",
   "stem": "Microtubules are made up of the protein",
@@ -2982,6 +5545,302 @@
    {
     "key": "D",
     "text": "tubulin"
+   }
+  ]
+ },
+ {
+  "id": "q_81eadff37ec1",
+  "type": "SCQ",
+  "stem": "Conversion of nitrate in the soil back to molecular nitrogen is carried out by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Denitrification reduces nitrate to N$_2$ in anaerobic conditions; nitrifiers do the opposite and *Rhizobium* fixes N$_2$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Rhizobium*"
+   },
+   {
+    "key": "B",
+    "text": "denitrifying bacteria such as *Pseudomonas* and *Thiobacillus*"
+   },
+   {
+    "key": "C",
+    "text": "*Nitrobacter*"
+   },
+   {
+    "key": "D",
+    "text": "*Nitrosomonas*"
+   }
+  ]
+ },
+ {
+  "id": "q_845a4290ecb2",
+  "type": "INT",
+  "stem": "The number of different types of gametes formed by an individual of genotype $\\mathrm{AaBbCc}$ (genes on different chromosomes) is ______.",
+  "images": [],
+  "answer": {
+   "value": 8.0,
+   "tol": 0.0
+  },
+  "solution": "Each heterozygous gene pair doubles the types: $2^3=8$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8696ca13db70",
+  "type": "SCQ",
+  "stem": "Movement of substances from a region of higher concentration to lower concentration without expenditure of energy is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Diffusion is passive and slow, down a concentration gradient, and needs no metabolic energy; active transport works against a gradient and needs ATP.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "active transport"
+   },
+   {
+    "key": "B",
+    "text": "diffusion"
+   },
+   {
+    "key": "C",
+    "text": "translocation against a gradient"
+   },
+   {
+    "key": "D",
+    "text": "bulk flow driven by ATP"
+   }
+  ]
+ },
+ {
+  "id": "q_86a84c8d5684",
+  "type": "SCQ",
+  "stem": "When a plant cell is placed in a hypertonic solution, the protoplast shrinks away from the cell wall. This phenomenon is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Water leaves the cell by exosmosis, and the membrane-bound protoplast detaches from the wall: plasmolysis.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "guttation"
+   },
+   {
+    "key": "B",
+    "text": "plasmolysis"
+   },
+   {
+    "key": "C",
+    "text": "deplasmolysis"
+   },
+   {
+    "key": "D",
+    "text": "imbibition"
+   }
+  ]
+ },
+ {
+  "id": "q_89c3d6fdcb11",
+  "type": "SCQ",
+  "stem": "2,4-D, a synthetic auxin, is used as a weedicide chiefly to kill",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "2,4-D selectively kills broad-leaved dicot weeds without harming monocot crops such as wheat or maize.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "all weeds equally"
+   },
+   {
+    "key": "B",
+    "text": "algae in ponds only"
+   },
+   {
+    "key": "C",
+    "text": "monocot weeds in dicot fields"
+   },
+   {
+    "key": "D",
+    "text": "dicotyledonous weeds in monocot crop fields"
    }
   ]
  },
@@ -3108,6 +5967,239 @@
    {
     "key": "D",
     "text": "*Alstonia*"
+   }
+  ]
+ },
+ {
+  "id": "q_8f635e949d73",
+  "type": "SCQ",
+  "stem": "The phases of growth, in order, are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Cells divide in the meristematic zone, enlarge in the elongation zone and then differentiate in the maturation zone.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "meristematic, maturation, elongation"
+   },
+   {
+    "key": "B",
+    "text": "meristematic, elongation, maturation"
+   },
+   {
+    "key": "C",
+    "text": "maturation, elongation, meristematic"
+   },
+   {
+    "key": "D",
+    "text": "elongation, meristematic, maturation"
+   }
+  ]
+ },
+ {
+  "id": "q_90091d1ab7c7",
+  "type": "NVQ",
+  "stem": "A plant cell has solute potential $-0.7$ MPa and pressure potential $+0.3$ MPa. Its water potential (in MPa) is ______.",
+  "images": [],
+  "answer": {
+   "value": -0.4,
+   "tol": 0.001
+  },
+  "solution": "$\\psi_w=\\psi_s+\\psi_p=-0.7+0.3=-0.4$ MPa.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_91f9919ae14f",
+  "type": "SCQ",
+  "stem": "A man of blood group O marries a woman of blood group AB. Their children can be of blood group(s)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The man is $ii$; the woman is $I^AI^B$. Children are $I^Ai$ (A) or $I^Bi$ (B). No child can be AB or O.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A, B or O"
+   },
+   {
+    "key": "B",
+    "text": "O or AB only"
+   },
+   {
+    "key": "C",
+    "text": "AB only"
+   },
+   {
+    "key": "D",
+    "text": "A or B only"
+   }
+  ]
+ },
+ {
+  "id": "q_95f7a241cf91",
+  "type": "SCQ",
+  "stem": "A carrier woman ($X^CX^c$) marries a colour-blind man ($X^cY$). The probability that a daughter is colour-blind is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Daughters receive $X^c$ from the father and $X^C$ or $X^c$ from the mother with equal chance, so half of the daughters are $X^cX^c$ (colour-blind).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$0$"
+   },
+   {
+    "key": "C",
+    "text": "$1/4$"
+   },
+   {
+    "key": "D",
+    "text": "$1/2$"
    }
   ]
  },
@@ -3364,6 +6456,428 @@
   ]
  },
  {
+  "id": "q_a29bf32fadf2",
+  "type": "SCQ",
+  "stem": "The hormone responsible for apical dominance and promoting rooting in stem cuttings is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Apical-bud auxin suppresses lateral bud growth; synthetic auxins such as IBA and NAA stimulate root formation in cuttings.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "auxin"
+   },
+   {
+    "key": "B",
+    "text": "abscisic acid"
+   },
+   {
+    "key": "C",
+    "text": "ethylene"
+   },
+   {
+    "key": "D",
+    "text": "cytokinin"
+   }
+  ]
+ },
+ {
+  "id": "q_a3b1e3f241fd",
+  "type": "SCQ",
+  "stem": "The 'stress hormone' that induces stomatal closure and seed dormancy is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "ABA closes stomata under water deficit, promotes seed dormancy and inhibits seed germination; it acts mostly as a growth inhibitor.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "gibberellic acid"
+   },
+   {
+    "key": "B",
+    "text": "zeatin"
+   },
+   {
+    "key": "C",
+    "text": "abscisic acid"
+   },
+   {
+    "key": "D",
+    "text": "auxin"
+   }
+  ]
+ },
+ {
+  "id": "q_a4f1a5f21e92",
+  "type": "SCQ",
+  "stem": "The hormone that promotes cell division (cytokinesis) and delays senescence of leaves is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Cytokinins (zeatin, kinetin) were discovered through culture of tobacco pith by Skoog and Miller; they promote cell division, delay senescence and help shoot formation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "abscisic acid"
+   },
+   {
+    "key": "B",
+    "text": "ethylene"
+   },
+   {
+    "key": "C",
+    "text": "gibberellin"
+   },
+   {
+    "key": "D",
+    "text": "cytokinin"
+   }
+  ]
+ },
+ {
+  "id": "q_a7cf36a318c7",
+  "type": "INT",
+  "stem": "In biological nitrogen fixation the overall reaction is $\\mathrm{N_2}+8e^-+8H^++16\\,\\mathrm{ATP}\\to2\\mathrm{NH_3}+\\mathrm{H_2}+16\\,\\mathrm{ADP}+16P_i$. The number of ATP molecules consumed to fix one molecule of N$_2$ is ______.",
+  "images": [],
+  "answer": {
+   "value": 16.0,
+   "tol": 0.0
+  },
+  "solution": "By the balanced equation 16 ATP are hydrolysed per N$_2$ reduced to 2 NH$_3$; this is why nitrogen fixation is an energy-demanding process.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a887fc2aa684",
+  "type": "SCQ",
+  "stem": "Nitrogen is transported in the xylem of many plants mainly as the amides",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Asparagine and glutamine carry nitrogen with a high N:C ratio and are also produced by amination of aspartic and glutamic acids.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "asparagine and glutamine"
+   },
+   {
+    "key": "B",
+    "text": "alanine and glycine"
+   },
+   {
+    "key": "C",
+    "text": "urea and uric acid"
+   },
+   {
+    "key": "D",
+    "text": "ATP and ADP"
+   }
+  ]
+ },
+ {
+  "id": "q_a8ca281ab9e9",
+  "type": "SCQ",
+  "stem": "Which component is a mobile carrier shuttling electrons from Complex III to Complex IV?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Ubiquinone ferries electrons from complexes I and II to III, and cytochrome c (a small protein on the outer face of the inner membrane) carries them from III to IV.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ubiquinone"
+   },
+   {
+    "key": "B",
+    "text": "Complex V"
+   },
+   {
+    "key": "C",
+    "text": "cytochrome c"
+   },
+   {
+    "key": "D",
+    "text": "FMN"
+   }
+  ]
+ },
+ {
+  "id": "q_a931f603f031",
+  "type": "SCQ",
+  "stem": "A mature pollen grain at the time of release contains",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Pollen is shed at the 2-celled stage commonly; the generative cell later divides into two male gametes (3-celled in some species).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "four sperm nuclei"
+   },
+   {
+    "key": "B",
+    "text": "a vegetative cell and a generative cell"
+   },
+   {
+    "key": "C",
+    "text": "only one male gamete"
+   },
+   {
+    "key": "D",
+    "text": "a zygote"
+   }
+  ]
+ },
+ {
   "id": "q_a99e5bf0b1eb",
   "type": "SCQ",
   "stem": "Peat, used as fuel and as packing material for transporting living material, is obtained from",
@@ -3530,6 +7044,69 @@
    {
     "key": "D",
     "text": "gemma"
+   }
+  ]
+ },
+ {
+  "id": "q_ad8c860b7fed",
+  "type": "SCQ",
+  "stem": "A man with blood group A (genotype $I^Ai$) marries a woman with blood group B (genotype $I^Bi$). Their children can have blood group(s)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Gametes: $I^A$ or $i$ from father, $I^B$ or $i$ from mother. Combinations: $I^AI^B$ (AB), $I^Ai$ (A), $I^Bi$ (B), $ii$ (O): all four groups.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A, B or AB only"
+   },
+   {
+    "key": "B",
+    "text": "A or B only"
+   },
+   {
+    "key": "C",
+    "text": "AB only"
+   },
+   {
+    "key": "D",
+    "text": "A, B, AB or O"
    }
   ]
  },
@@ -3912,6 +7489,220 @@
   ]
  },
  {
+  "id": "q_b78c75a28bab",
+  "type": "INT",
+  "stem": "The functional megaspore undergoes 3 successive free-nuclear mitotic divisions to form the embryo sac. The number of nuclei in the mature embryo sac is ______.",
+  "images": [],
+  "answer": {
+   "value": 8.0,
+   "tol": 0.0
+  },
+  "solution": "$2^3=8$ nuclei.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b7bdaf522386",
+  "type": "SCQ",
+  "stem": "Sickle-cell anaemia is caused by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The $\\mathrm{GAG}\\to\\mathrm{GUG}$ change gives HbS in homozygotes ($\\mathrm{Hb^SHb^S}$); it is an autosomal recessive trait.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a sex-linked dominant gene"
+   },
+   {
+    "key": "B",
+    "text": "deletion of the alpha-globin gene"
+   },
+   {
+    "key": "C",
+    "text": "an extra chromosome 21"
+   },
+   {
+    "key": "D",
+    "text": "a single base substitution leading to replacement of glutamic acid by valine at the sixth position of the $\\beta$-globin chain"
+   }
+  ]
+ },
+ {
+  "id": "q_b874e202c607",
+  "type": "INT",
+  "stem": "The net gain of ATP molecules by substrate-level phosphorylation during glycolysis of one glucose molecule is ______.",
+  "images": [],
+  "answer": {
+   "value": 2.0,
+   "tol": 0.0
+  },
+  "solution": "Two ATP are used in the preparatory phase and four are made in the pay-off phase, a net of $4-2=2$ ATP.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b8773958960d",
+  "type": "SCQ",
+  "stem": "Fruit formation without fertilisation, as in banana, is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Parthenocarpic fruits are seedless; apomixis is seed formation without fertilisation, and polyembryony is more than one embryo in a seed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "polyembryony"
+   },
+   {
+    "key": "B",
+    "text": "parthenocarpy"
+   },
+   {
+    "key": "C",
+    "text": "apomixis"
+   },
+   {
+    "key": "D",
+    "text": "vivipary"
+   }
+  ]
+ },
+ {
   "id": "q_b9a4a23a8011",
   "type": "SCQ",
   "stem": "The cork cambium (phellogen) cuts off",
@@ -4036,6 +7827,176 @@
     "text": "gymnosperms"
    }
   ]
+ },
+ {
+  "id": "q_bed9249f14ce",
+  "type": "SCQ",
+  "stem": "A typical angiosperm anther is bilobed and each lobe has",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Each anther is dithecous (two lobes, each with two chambers), so it has four microsporangia that produce pollen grains.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "two microsporangia (the anther is tetrasporangiate)"
+   },
+   {
+    "key": "B",
+    "text": "four megasporangia"
+   },
+   {
+    "key": "C",
+    "text": "one microsporangium"
+   },
+   {
+    "key": "D",
+    "text": "three microsporangia"
+   }
+  ]
+ },
+ {
+  "id": "q_bf3a157c64a8",
+  "type": "SCQ",
+  "stem": "Blackman's law of limiting factors states that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The factor in short supply limits the rate; increasing a non-limiting factor gives no further rise.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "when several factors affect a process, its rate is determined by the factor nearest its minimal value"
+   },
+   {
+    "key": "B",
+    "text": "all factors affect the rate equally"
+   },
+   {
+    "key": "C",
+    "text": "only light affects photosynthesis"
+   },
+   {
+    "key": "D",
+    "text": "the rate is determined by the factor at its maximum"
+   }
+  ]
+ },
+ {
+  "id": "q_bff20a96bb5c",
+  "type": "NVQ",
+  "stem": "For complete oxidation of tripalmitin, $2\\,\\mathrm{C_{51}H_{98}O_6}+145\\,\\mathrm{O_2}\\to102\\,\\mathrm{CO_2}+98\\,\\mathrm{H_2O}$. The RQ, correct to one decimal place, is ______.",
+  "images": [],
+  "answer": {
+   "value": 0.7,
+   "tol": 0.05
+  },
+  "solution": "$\\mathrm{RQ}=102/145\\approx0.70$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_c09f2fe8bf42",
@@ -4290,6 +8251,69 @@
   ]
  },
  {
+  "id": "q_c5f31c051c13",
+  "type": "SCQ",
+  "stem": "Soil-less cultivation of plants in a nutrient solution is known as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Hydroponics, developed from the work of Julius von Sachs, grows plants with roots in a defined nutrient solution; it helps identify essential elements.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "vernalisation"
+   },
+   {
+    "key": "B",
+    "text": "hydroponics"
+   },
+   {
+    "key": "C",
+    "text": "aeroponic grafting"
+   },
+   {
+    "key": "D",
+    "text": "tissue culture"
+   }
+  ]
+ },
+ {
   "id": "q_c88fc92bb99b",
   "type": "SCQ",
   "stem": "'Red tides' in the sea are caused by the rapid multiplication of",
@@ -4349,6 +8373,132 @@
    {
     "key": "D",
     "text": "dinoflagellates such as *Gonyaulax*"
+   }
+  ]
+ },
+ {
+  "id": "q_c94f53f0af13",
+  "type": "SCQ",
+  "stem": "A flaccid cell with $\\psi_s=-1.0$ MPa and $\\psi_p=0$ is placed in a solution with $\\psi_w=-0.4$ MPa. Which statement is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Initial cell $\\psi_w=-1.0+0=-1.0$ MPa, lower than $-0.4$ MPa, so water enters. Turgor ($\\psi_p$) builds until the cell's $\\psi_w$ matches the solution.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Water leaves the cell because its solute potential is more negative"
+   },
+   {
+    "key": "B",
+    "text": "The cell becomes plasmolysed"
+   },
+   {
+    "key": "C",
+    "text": "No net movement occurs because the cell is flaccid"
+   },
+   {
+    "key": "D",
+    "text": "Water enters the cell until its pressure potential rises and its water potential equals that of the solution"
+   }
+  ]
+ },
+ {
+  "id": "q_cbbef71b2482",
+  "type": "SCQ",
+  "stem": "Cornelius van Niel's work on purple sulphur bacteria, which use H$_2$S instead of water, led to the inference that in green plants the oxygen released comes from",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Bacteria release sulphur from H$_2$S; by analogy, green plants must release O$_2$ from H$_2$O (the equation $\\mathrm{CO_2+2H_2A\\to CH_2O+2A+H_2O}$).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "glucose"
+   },
+   {
+    "key": "B",
+    "text": "water"
+   },
+   {
+    "key": "C",
+    "text": "carbon dioxide"
+   },
+   {
+    "key": "D",
+    "text": "chlorophyll"
    }
   ]
  },
@@ -4414,6 +8564,50 @@
     "text": "chitin"
    }
   ]
+ },
+ {
+  "id": "q_cd0a0a78db49",
+  "type": "INT",
+  "stem": "The Calvin cycle uses 3 ATP and 2 NADPH per CO$_2$ fixed. The number of ATP molecules used to synthesise one glucose molecule in a C$_3$ plant is ______.",
+  "images": [],
+  "answer": {
+   "value": 18.0,
+   "tol": 0.0
+  },
+  "solution": "One glucose needs 6 CO$_2$ fixed, so $6\\times3=18$ ATP (and $6\\times2=12$ NADPH).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_cd2964988ede",
@@ -4542,6 +8736,69 @@
   ]
  },
  {
+  "id": "q_ce1286c131af",
+  "type": "SCQ",
+  "stem": "Down syndrome is caused by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Down syndrome results from an extra copy of chromosome 21 (non-disjunction); Turner syndrome is 45, XO and Klinefelter syndrome is 47, XXY.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "an extra X chromosome in males"
+   },
+   {
+    "key": "B",
+    "text": "monosomy of the X chromosome"
+   },
+   {
+    "key": "C",
+    "text": "trisomy of chromosome 21, giving 47 chromosomes"
+   },
+   {
+    "key": "D",
+    "text": "trisomy of chromosome 13 only"
+   }
+  ]
+ },
+ {
   "id": "q_ce4e847b9e6f",
   "type": "SCQ",
   "stem": "Heterospory, the production of two kinds of spores (micro- and megaspores), is seen in",
@@ -4603,6 +8860,239 @@
     "text": "*Dryopteris* and *Pteris*"
    }
   ]
+ },
+ {
+  "id": "q_ce6d2083689b",
+  "type": "SCQ",
+  "stem": "Interfascicular cambium arises in a dicot stem through",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Mature parenchyma cells can regain the power of division (dedifferentiation) forming meristems such as interfascicular cambium and cork cambium.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "redifferentiation of sieve tubes"
+   },
+   {
+    "key": "B",
+    "text": "dedifferentiation of parenchyma cells between the vascular bundles"
+   },
+   {
+    "key": "C",
+    "text": "meiosis in the cortex"
+   },
+   {
+    "key": "D",
+    "text": "differentiation of tracheids"
+   }
+  ]
+ },
+ {
+  "id": "q_cf677f242a86",
+  "type": "SCQ",
+  "stem": "Cell A has water potential $-0.5$ MPa and adjacent cell B has $-0.3$ MPa. Water will move",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Water moves from higher (less negative) to lower (more negative) water potential, so from B ($-0.3$) to A ($-0.5$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "in both directions equally"
+   },
+   {
+    "key": "B",
+    "text": "in neither direction"
+   },
+   {
+    "key": "C",
+    "text": "from A to B"
+   },
+   {
+    "key": "D",
+    "text": "from B to A"
+   }
+  ]
+ },
+ {
+  "id": "q_d123d147b36d",
+  "type": "SCQ",
+  "stem": "The gaseous plant hormone that hastens fruit ripening is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Ethylene promotes ripening, senescence and abscission; ethephon releases ethylene.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ethylene"
+   },
+   {
+    "key": "B",
+    "text": "auxin"
+   },
+   {
+    "key": "C",
+    "text": "cytokinin"
+   },
+   {
+    "key": "D",
+    "text": "gibberellin"
+   }
+  ]
+ },
+ {
+  "id": "q_d28f8f948424",
+  "type": "INT",
+  "stem": "Per glucose molecule, the NADH molecules generated in glycolysis (2), pyruvate to acetyl CoA conversion (2) and the Krebs cycle (6) total ______.",
+  "images": [],
+  "answer": {
+   "value": 10.0,
+   "tol": 0.0
+  },
+  "solution": "$2+2+6=10$ NADH (the Krebs cycle also gives 2 FADH$_2$ per glucose, since each acetyl CoA yields 3 NADH and 1 FADH$_2$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_d4a331110fb0",
@@ -4731,6 +9221,69 @@
   ]
  },
  {
+  "id": "q_d5415ebbfd4a",
+  "type": "SCQ",
+  "stem": "In C$_4$ plants, primary CO$_2$ fixation by PEP carboxylase takes place in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "PEPcase in mesophyll cells fixes CO$_2$ to PEP making OAA (4C); the C$_4$ acid moves to bundle sheath cells where CO$_2$ is released for the Calvin cycle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bundle sheath cells, forming 3-PGA"
+   },
+   {
+    "key": "B",
+    "text": "mesophyll cells, forming oxaloacetic acid"
+   },
+   {
+    "key": "C",
+    "text": "guard cells only"
+   },
+   {
+    "key": "D",
+    "text": "root cells, forming malate"
+   }
+  ]
+ },
+ {
   "id": "q_d58fc4deff76",
   "type": "SCQ",
   "stem": "Separation of sister chromatids following the splitting of the centromere occurs in",
@@ -4790,6 +9343,69 @@
    {
     "key": "D",
     "text": "telophase"
+   }
+  ]
+ },
+ {
+  "id": "q_d7c743dd315f",
+  "type": "SCQ",
+  "stem": "In double fertilisation, the fusion of a male gamete with the two polar nuclei yields",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "One male gamete fuses with the egg (syngamy, 2n zygote); the other fuses with the two polar nuclei (triple fusion) giving the 3n primary endosperm nucleus.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a haploid egg"
+   },
+   {
+    "key": "B",
+    "text": "a diploid zygote"
+   },
+   {
+    "key": "C",
+    "text": "a tetraploid embryo"
+   },
+   {
+    "key": "D",
+    "text": "a triploid primary endosperm nucleus"
    }
   ]
  },
@@ -4920,6 +9536,113 @@
   ]
  },
  {
+  "id": "q_da78f5a31e39",
+  "type": "INT",
+  "stem": "Pyruvate dehydrogenase releases 1 CO$_2$ per pyruvate and each acetyl CoA releases 2 CO$_2$ in the Krebs cycle. The total CO$_2$ released per glucose in the link reaction plus Krebs cycle is ______.",
+  "images": [],
+  "answer": {
+   "value": 6.0,
+   "tol": 0.0
+  },
+  "solution": "Two pyruvates give $2\\times1=2$ CO$_2$ and two acetyl CoA give $2\\times2=4$ CO$_2$: total 6, matching the six carbons of glucose.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_dae2fff28188",
+  "type": "SCQ",
+  "stem": "The innermost wall layer of the microsporangium that nourishes the developing pollen grains is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Tapetum cells are multinucleate, dense and secrete nutrients for developing microspores.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "middle layer"
+   },
+   {
+    "key": "B",
+    "text": "tapetum"
+   },
+   {
+    "key": "C",
+    "text": "endothecium"
+   },
+   {
+    "key": "D",
+    "text": "epidermis"
+   }
+  ]
+ },
+ {
   "id": "q_db31242490f7",
   "type": "INT",
   "stem": "Starting from a single cell, the number of mitotic divisions needed (with every cell dividing each round) to produce 64 cells is ______.",
@@ -4962,6 +9685,132 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_dbbfcb169616",
+  "type": "SCQ",
+  "stem": "The synergids at the micropylar end of the embryo sac have",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Synergids with the egg form the egg apparatus; the filiform apparatus directs pollen tube entry.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "special cellular thickenings called the filiform apparatus that guide the pollen tube"
+   },
+   {
+    "key": "B",
+    "text": "starch grains that nourish the zygote"
+   },
+   {
+    "key": "C",
+    "text": "tubular chloroplasts"
+   },
+   {
+    "key": "D",
+    "text": "the polar nuclei"
+   }
+  ]
+ },
+ {
+  "id": "q_dc85391b9d69",
+  "type": "SCQ",
+  "stem": "Which of the following would DECREASE the rate of transpiration?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Higher humidity reduces the vapour-pressure gradient between leaf and air, so transpiration slows; heat, wind and dry air accelerate it.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "an increase in atmospheric humidity"
+   },
+   {
+    "key": "B",
+    "text": "a decrease in humidity"
+   },
+   {
+    "key": "C",
+    "text": "an increase in temperature"
+   },
+   {
+    "key": "D",
+    "text": "an increase in wind speed"
+   }
+  ]
  },
  {
   "id": "q_de203fc5e26d",
@@ -5023,6 +9872,132 @@
    {
     "key": "D",
     "text": "Carolus Linnaeus"
+   }
+  ]
+ },
+ {
+  "id": "q_df33a3cedee2",
+  "type": "SCQ",
+  "stem": "The 'coconut water' of a tender coconut is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "In coconut the endosperm nuclei divide first without wall formation (a coenocyte, the water) and later form cells at the periphery.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "free-nuclear endosperm, and the surrounding white kernel is cellular endosperm"
+   },
+   {
+    "key": "B",
+    "text": "perisperm"
+   },
+   {
+    "key": "C",
+    "text": "the embryo"
+   },
+   {
+    "key": "D",
+    "text": "cellular endosperm only"
+   }
+  ]
+ },
+ {
+  "id": "q_e02f5ad3f1b6",
+  "type": "SCQ",
+  "stem": "According to the chemiosmotic hypothesis in chloroplasts, ATP is formed when protons",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Water splitting and plastoquinone proton transport build up protons in the lumen; their return flow through CF$_0$-CF$_1$ drives ATP synthesis in the stroma.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "diffuse freely across the lipid bilayer"
+   },
+   {
+    "key": "B",
+    "text": "move from stroma to lumen through ATP synthase"
+   },
+   {
+    "key": "C",
+    "text": "are pumped into the stroma by NADP reductase"
+   },
+   {
+    "key": "D",
+    "text": "move down their gradient from the thylakoid lumen to the stroma through ATP synthase"
    }
   ]
  },
@@ -5151,6 +10126,113 @@
     "text": "keeps the chromosome number constant across generations and creates genetic variation"
    }
   ]
+ },
+ {
+  "id": "q_e3eae96acc7f",
+  "type": "SCQ",
+  "stem": "A student plots the dry weight of a developing seedling against time and obtains a sigmoid (S-shaped) curve. The correct sequence of the phases is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A sigmoid curve has an initial lag phase, a rapid exponential phase and finally a slowing stationary phase as nutrients become limiting.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "stationary, log, lag"
+   },
+   {
+    "key": "B",
+    "text": "lag, stationary, log"
+   },
+   {
+    "key": "C",
+    "text": "log, lag, stationary"
+   },
+   {
+    "key": "D",
+    "text": "lag, log (exponential), stationary (senescent)"
+   }
+  ]
+ },
+ {
+  "id": "q_e44f28c8cac3",
+  "type": "INT",
+  "stem": "In a plant with $2n=24$, the number of chromosomes in a cell of the endosperm is ______.",
+  "images": [],
+  "answer": {
+   "value": 36.0,
+   "tol": 0.0
+  },
+  "solution": "Endosperm is triploid: $3n=3\\times12=36$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_e4a57e8a36c6",
@@ -5342,6 +10424,132 @@
   ]
  },
  {
+  "id": "q_e70e57b00f93",
+  "type": "SCQ",
+  "stem": "Gregor Mendel conducted his hybridisation experiments on",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Mendel studied seven contrasting pairs of traits in garden pea over about seven years; it has distinct traits, self-pollinates and has a short life cycle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Drosophila melanogaster*"
+   },
+   {
+    "key": "B",
+    "text": "garden pea, *Pisum sativum*"
+   },
+   {
+    "key": "C",
+    "text": "maize"
+   },
+   {
+    "key": "D",
+    "text": "*Neurospora*"
+   }
+  ]
+ },
+ {
+  "id": "q_e83bcbb449e9",
+  "type": "SCQ",
+  "stem": "In snapdragon (incomplete dominance), a cross between two pink-flowered F$_1$ plants gives red, pink and white offspring in the ratio",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "With incomplete dominance the heterozygote is intermediate (pink), so the phenotypic ratio matches the genotypic ratio $1:2:1$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1:2:1$"
+   },
+   {
+    "key": "B",
+    "text": "$3:1$"
+   },
+   {
+    "key": "C",
+    "text": "$1:1:1:1$"
+   },
+   {
+    "key": "D",
+    "text": "$9:3:3:1$"
+   }
+  ]
+ },
+ {
   "id": "q_e95e0a8c67d0",
   "type": "SCQ",
   "stem": "Terminalisation of chiasmata occurs during",
@@ -5401,6 +10609,69 @@
    {
     "key": "D",
     "text": "anaphase II"
+   }
+  ]
+ },
+ {
+  "id": "q_ea75736869b8",
+  "type": "SCQ",
+  "stem": "Chlorosis in older leaves with veins remaining green is a typical symptom of deficiency of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Mg forms the central atom of chlorophyll and is mobile, so deficiency shows as interveinal chlorosis in older leaves first.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "boron"
+   },
+   {
+    "key": "B",
+    "text": "magnesium"
+   },
+   {
+    "key": "C",
+    "text": "calcium"
+   },
+   {
+    "key": "D",
+    "text": "iron in young leaves only"
    }
   ]
  },
@@ -5468,6 +10739,132 @@
   ]
  },
  {
+  "id": "q_ed2b8d503d7d",
+  "type": "SCQ",
+  "stem": "The Krebs cycle is described as an amphibolic pathway because it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "TCA intermediates such as OAA and $\\alpha$-ketoglutarate are withdrawn to make amino acids, while fatty acids and proteins can be fed in for oxidation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.RESP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "takes place in both cytoplasm and chloroplast"
+   },
+   {
+    "key": "B",
+    "text": "needs both oxygen and light"
+   },
+   {
+    "key": "C",
+    "text": "serves both in breakdown (catabolism) and as a source of intermediates for biosynthesis (anabolism)"
+   },
+   {
+    "key": "D",
+    "text": "occurs only in plants and animals but not microbes"
+   }
+  ]
+ },
+ {
+  "id": "q_ef6008dc88eb",
+  "type": "SCQ",
+  "stem": "Spraying sugarcane with gibberellin increases the yield because it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Gibberellins promote internode elongation; they are also used for bolting of rosette plants and malting in brewing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "causes leaf abscission"
+   },
+   {
+    "key": "B",
+    "text": "increases the length of the stem, giving more sugar-rich stalk"
+   },
+   {
+    "key": "C",
+    "text": "induces dormancy"
+   },
+   {
+    "key": "D",
+    "text": "inhibits cell elongation"
+   }
+  ]
+ },
+ {
   "id": "q_f06c3bd11a43",
   "type": "SCQ",
   "stem": "Reticulate venation is typical of the leaves of",
@@ -5531,6 +10928,384 @@
   ]
  },
  {
+  "id": "q_f10768551d81",
+  "type": "SCQ",
+  "stem": "The micronutrient needed for the splitting of water to liberate oxygen during photosynthesis is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Mn is needed in the oxygen-evolving complex of photosystem II; Cl$^-$ is also an essential co-factor.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.MIN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "molybdenum"
+   },
+   {
+    "key": "B",
+    "text": "manganese (with chloride)"
+   },
+   {
+    "key": "C",
+    "text": "copper only"
+   },
+   {
+    "key": "D",
+    "text": "boron"
+   }
+  ]
+ },
+ {
+  "id": "q_f1f6f1fb91a4",
+  "type": "SCQ",
+  "stem": "In a monohybrid cross between two heterozygous plants ($\\mathrm{Aa}\\times\\mathrm{Aa}$) with complete dominance, the genotypic ratio of the progeny is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Gametes A and a combine as AA, Aa, Aa, aa, giving $1:2:1$ genotypes and $3:1$ phenotypes.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.GEN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1:2:1$"
+   },
+   {
+    "key": "B",
+    "text": "$9:3:3:1$"
+   },
+   {
+    "key": "C",
+    "text": "$3:1$"
+   },
+   {
+    "key": "D",
+    "text": "$1:1$"
+   }
+  ]
+ },
+ {
+  "id": "q_f464873c4245",
+  "type": "SCQ",
+  "stem": "Stomata open when the guard cells",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Potassium influx lowers the solute potential of guard cells, water enters, they become turgid and the thicker inner walls draw them apart, opening the pore.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lose turgor due to ABA-induced water entry"
+   },
+   {
+    "key": "B",
+    "text": "become turgid, as K$^+$ ions enter and water follows by osmosis"
+   },
+   {
+    "key": "C",
+    "text": "lose K$^+$ ions and become flaccid"
+   },
+   {
+    "key": "D",
+    "text": "have their radial walls become thinner than the inner walls"
+   }
+  ]
+ },
+ {
+  "id": "q_f71d94bb1221",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Removal of the shoot apex promotes the growth of lateral buds.\n\n**Reason (R):** Auxin produced by the apical bud inhibits the growth of lateral buds.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Apical dominance is due to auxin from the apex; decapitating removes the source of auxin, so lateral buds sprout. Both are true and R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PGD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_f75af35f95cd",
+  "type": "SCQ",
+  "stem": "In his classic experiment with *Cladophora* and aerobic bacteria, T. W. Engelmann showed that",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Engelmann split light with a prism over the alga; aerobic bacteria clustered where oxygen release was highest, giving the first action spectrum: blue and red light.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.PHS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "oxygen is released only in far-red light"
+   },
+   {
+    "key": "B",
+    "text": "photosynthesis occurs only in darkness"
+   },
+   {
+    "key": "C",
+    "text": "bacteria collected in the green region most"
+   },
+   {
+    "key": "D",
+    "text": "bacteria collected mainly in the blue and red regions, where photosynthesis (oxygen release) is highest"
+   }
+  ]
+ },
+ {
+  "id": "q_f89ab0fa11c4",
+  "type": "SCQ",
+  "stem": "In black pepper and beet, a remnant of the nucellus persists in the mature seed. This tissue is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Perisperm is the persistent nucellus; endosperm is formed from the primary endosperm nucleus after triple fusion.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.SRP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "endosperm"
+   },
+   {
+    "key": "B",
+    "text": "perisperm"
+   },
+   {
+    "key": "C",
+    "text": "tegmen"
+   },
+   {
+    "key": "D",
+    "text": "chalaza"
+   }
+  ]
+ },
+ {
   "id": "q_f90707a907c6",
   "type": "SCQ",
   "stem": "In bryophytes (for example a moss), the dominant, independent plant body is the",
@@ -5590,6 +11365,132 @@
    {
     "key": "D",
     "text": "diploid gametophyte"
+   }
+  ]
+ },
+ {
+  "id": "q_fa62136c2ade",
+  "type": "SCQ",
+  "stem": "The pressure-flow (mass flow) hypothesis explains the translocation of food in phloem as flow from",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Sugar loaded at a source raises osmotic water entry and turgor in the sieve tube; at the sink unloading lowers turgor, so the sap flows from source to sink.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "source to sink along a turgor pressure gradient"
+   },
+   {
+    "key": "B",
+    "text": "root to leaf due to transpiration pull"
+   },
+   {
+    "key": "C",
+    "text": "sink to source along a concentration gradient"
+   },
+   {
+    "key": "D",
+    "text": "xylem to phloem by active pumping only"
+   }
+  ]
+ },
+ {
+  "id": "q_fda11e3a5383",
+  "type": "SCQ",
+  "stem": "The water potential of pure water at standard (atmospheric) pressure is taken as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Pure water has the highest water potential, set at zero; adding solutes lowers it, making it negative.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "BOT",
+   "chapter": "BOT.TRN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "positive 1 MPa"
+   },
+   {
+    "key": "B",
+    "text": "equal to its osmotic pressure"
+   },
+   {
+    "key": "C",
+    "text": "negative, because of solutes"
+   },
+   {
+    "key": "D",
+    "text": "zero"
    }
   ]
  }
