@@ -490,6 +490,13 @@ describe('convertUpload', () => {
     const bad = { ...q, answer: { value: Number.NaN } } as UserQuestion;
     expect(codes(validateUserQuestion(bad, { chapterIds: CH }))).toContain('invalid_schema');
   });
+  it('rejects fields over the firestore.rules caps (stem/solution/passage 12000, options 10, figures 12)', () => {
+    const q = conv([baseQ({})]).questions[0]!;
+    expect(codes(validateUserQuestion({ ...q, stem: 'x'.repeat(12001) }, { chapterIds: CH }))).toContain('invalid_schema');
+    expect(codes(validateUserQuestion({ ...q, stem: 'x'.repeat(12000) }, { chapterIds: CH }))).not.toContain('invalid_schema');
+    const eleven = Array.from({ length: 11 }, (_x, i) => ({ key: String.fromCharCode(65 + i), text: `o${i}` }));
+    expect(codes(validateUserQuestion({ ...q, options: eleven, answer: { keys: ['A'] } }, { chapterIds: CH }))).toContain('bad_options');
+  });
   it('bad_options', () => {
     const r = conv([
       baseQ({ options: [{ key: 'A', text: 'only' }], answer: { keys: ['A'] } }),

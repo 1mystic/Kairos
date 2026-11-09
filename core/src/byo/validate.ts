@@ -7,6 +7,11 @@ export interface ValidateContext {
   chapterIds: readonly string[];
 }
 
+/** firestore.rules `validBankDoc` caps. */
+export const MAX_FIELD_CHARS = 12000;
+export const MAX_OPTIONS = 10;
+export const MAX_FIGURES = 12;
+
 const FIG_RE = /\{\{fig:(\d+)\}\}/g;
 const HTML_RE = /<\/?[a-zA-Z][^<>]*>|<!--|<!\[CDATA\[/;
 const CHOICE = new Set(['SCQ', 'MSQ', 'MATCH', 'ASSERT_REASON']);
@@ -55,6 +60,14 @@ export function validateUserQuestion(q: UserQuestion, ctx: ValidateContext): Iss
     const h = findHtml(t);
     if (h) add('error', 'html_not_allowed', `Raw HTML or external image not allowed in ${f}: ${h.slice(0, 40)}`, f);
   }
+
+  // size caps that firestore.rules enforce on users/{uid}/bank/{id} (a violating doc would fail the whole batched save)
+  for (const [f, t] of fields)
+    if (t.length > MAX_FIELD_CHARS && (f === 'stem' || f === 'solution' || f === 'passage'))
+      add('error', 'invalid_schema', `The ${f} is too long to store (${t.length} of ${MAX_FIELD_CHARS} characters). Shorten it.`, f);
+  if ((q.options ?? []).length > MAX_OPTIONS) add('error', 'bad_options', `At most ${MAX_OPTIONS} options are allowed.`, 'options');
+  if (q.images.length + q.pending_figures.length > MAX_FIGURES)
+    add('error', 'invalid_schema', `At most ${MAX_FIGURES} figures per question.`, 'figures');
 
   // chapter
   if (!q.tax?.chapter || !ctx.chapterIds.includes(q.tax.chapter))
