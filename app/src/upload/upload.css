@@ -10,7 +10,8 @@
 @media (min-width: 768px) { .u-step-label { display: block; } .u-step { padding-inline: var(--space-4); } }
 
 
-.u-exam { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+.u-exam { display: grid; gap: var(--space-4); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 479px) { .u-exam { grid-template-columns: minmax(0, 1fr); } }
 .u-exam-opt { display: flex; flex-direction: column; gap: var(--space-1); min-height: 64px; padding: var(--space-4); border-radius: var(--radius-card); background: var(--surface); text-align: left; cursor: pointer; transition: background-color var(--dur) var(--ease); }
 .u-exam-opt[aria-pressed='true'] { background: var(--primary); color: var(--on-primary); }
 .u-exam-opt[aria-pressed='true'] .u-sub { color: var(--on-primary); }
