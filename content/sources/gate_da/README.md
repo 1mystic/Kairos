@@ -95,7 +95,7 @@ Types: 705 NVQ, 314 SCQ, 184 MSQ. Marks (workbook): 770 one-mark, 433 two-mark. 
 
 Quarantined (`pipeline/quarantine/gate_qbank_rejected.json`): 3, all `duplicate` (Q7.02 equals an authored question; Q30.12 = Q8.21 and Q30.15 = Q9.02 inside the workbook, aliased in `id_map.json`). No `cross_ref`, `latex`, `table` or `answer` rejects: 32 cross-references were fixed by inlining the referenced text, and shared data (tables, graphs, trees) is attached only to the questions that use it.
 
-NAT answers: 390 integers (tol 0), 280 decimals (tol = half a unit of the last decimal, or of the stem's "round to d decimals"), 46 ranges (kept as `range`, 45 with an en dash and 1 written "to"); 24 keys use the Unicode minus sign.
+NAT answers: 401 integers (`value`, tol 0), 258 decimals (`value` with tol = half a unit of the last decimal, or of the stem's "round to d decimals"), 46 ranges (kept as `range`: 45 with an en dash, 1 written "to"); 25 keys use the Unicode minus sign (24 values, 1 range). No fractions or scientific notation occur.
 
 Counts by chapter:
 
