@@ -1,5 +1,131 @@
 [
  {
+  "id": "q_00e25f2ab627",
+  "type": "SCQ",
+  "stem": "Which of the following animals has eight external rows of ciliated comb plates for locomotion and shows bioluminescence?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Ctenophores such as *Pleurobrachia* and *Ctenoplana* are marine, radially symmetrical, diploblastic, with comb plates and bioluminescence; they lack cnidoblasts.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Pleurobrachia* (comb jelly)"
+   },
+   {
+    "key": "B",
+    "text": "*Physalia*"
+   },
+   {
+    "key": "C",
+    "text": "*Hydra*"
+   },
+   {
+    "key": "D",
+    "text": "*Aurelia*"
+   }
+  ]
+ },
+ {
+  "id": "q_014a46f15a2b",
+  "type": "SCQ",
+  "stem": "Kwashiorkor is a form of protein-energy malnutrition due to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Marasmus results from a deficiency of both proteins and calories, whereas kwashiorkor is caused mainly by protein deficiency.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "deficiency of vitamin C"
+   },
+   {
+    "key": "B",
+    "text": "excess carbohydrates"
+   },
+   {
+    "key": "C",
+    "text": "deficiency of both proteins and calories"
+   },
+   {
+    "key": "D",
+    "text": "protein deficiency, with adequate or near-adequate calorie intake"
+   }
+  ]
+ },
+ {
   "id": "q_01a16d04e3c3",
   "type": "SCQ",
   "stem": "Instead of a cell wall, euglenoids have a protein-rich, flexible layer called the",
@@ -296,6 +422,69 @@
   ]
  },
  {
+  "id": "q_058567a63de8",
+  "type": "SCQ",
+  "stem": "Which of the following is a jawless vertebrate?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Cyclostomes (*Petromyzon*, *Myxine*) have a sucking circular mouth without jaws; *Scoliodon* is cartilaginous and *Exocoetus* and *Labeo* are bony fishes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Labeo*"
+   },
+   {
+    "key": "B",
+    "text": "*Scoliodon*"
+   },
+   {
+    "key": "C",
+    "text": "*Petromyzon* (lamprey)"
+   },
+   {
+    "key": "D",
+    "text": "*Exocoetus*"
+   }
+  ]
+ },
+ {
   "id": "q_05944b109525",
   "type": "SCQ",
   "stem": "In the species-area relationship $\\log S=\\log C+Z\\log A$ for small areas, the slope $Z$ typically lies between",
@@ -422,6 +611,69 @@
   ]
  },
  {
+  "id": "q_05c1bbb8d321",
+  "type": "SCQ",
+  "stem": "The oxygen-haemoglobin dissociation curve shifts to the right (lower affinity for O$_2$) when there is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In the tissues, higher pCO$_2$ and H$^+$ and higher temperature favour release of O$_2$ (Bohr effect); in the alveoli the opposite conditions favour binding.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a fall in temperature"
+   },
+   {
+    "key": "B",
+    "text": "a decrease in pCO$_2$ and rise in pH"
+   },
+   {
+    "key": "C",
+    "text": "an increase in pO$_2$ only"
+   },
+   {
+    "key": "D",
+    "text": "an increase in pCO$_2$, increase in H$^+$ concentration (lower pH) and rise in temperature"
+   }
+  ]
+ },
+ {
   "id": "q_0702be8c4344",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Meiosis I is called a reductional division.\n\n**Reason (R):** In anaphase I, homologous chromosomes (not sister chromatids) separate and move to opposite poles.\n\nChoose the correct option.",
@@ -481,6 +733,69 @@
    {
     "key": "D",
     "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_076098d97fb7",
+  "type": "SCQ",
+  "stem": "Reabsorption of nearly all the glucose and amino acids from the glomerular filtrate takes place in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The PCT, with its brush-border epithelium, reabsorbs nearly all essential nutrients and 70-80% of electrolytes and water.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "descending limb of the loop of Henle only"
+   },
+   {
+    "key": "B",
+    "text": "proximal convoluted tubule"
+   },
+   {
+    "key": "C",
+    "text": "collecting duct"
+   },
+   {
+    "key": "D",
+    "text": "distal convoluted tubule"
    }
   ]
  },
@@ -611,6 +926,50 @@
   ]
  },
  {
+  "id": "q_08be2cc6728e",
+  "type": "INT",
+  "stem": "The maximum number of oxygen molecules that one molecule of haemoglobin can carry is ______.",
+  "images": [],
+  "answer": {
+   "value": 4.0,
+   "tol": 0.0
+  },
+  "solution": "Each haemoglobin has four haem groups, each binding one O$_2$ molecule.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_08cfcce38637",
   "type": "SCQ",
   "stem": "In sewage treatment, BOD (biochemical oxygen demand) measures",
@@ -737,6 +1096,50 @@
   ]
  },
  {
+  "id": "q_0b4dae167fc1",
+  "type": "NVQ",
+  "stem": "An enzyme obeys $v=V_{max}[S]/(K_m+[S])$ with $V_{max}=100$ units and $K_m=2$ mM. The reaction velocity at $[S]=6$ mM is ______ units.",
+  "images": [],
+  "answer": {
+   "value": 75.0,
+   "tol": 0.001
+  },
+  "solution": "$v=100\\times6/(2+6)=75$ units. At $[S]=K_m$ the velocity would be $V_{max}/2$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_0b61e300d746",
   "type": "SCQ",
   "stem": "A temporary suspension of development in zooplankton to tide over unfavourable conditions is called",
@@ -859,6 +1262,69 @@
    {
     "key": "D",
     "text": "geographical distribution only"
+   }
+  ]
+ },
+ {
+  "id": "q_0d306385bdcc",
+  "type": "SCQ",
+  "stem": "The clitellum of the earthworm *Pheretima posthuma*, a glandular band, is found in segments",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The clitellum (segments 14-16) divides the body into pre-clitellar, clitellar and post-clitellar regions; spermathecae are in segments 6-9.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "26 to 28"
+   },
+   {
+    "key": "B",
+    "text": "1 to 3"
+   },
+   {
+    "key": "C",
+    "text": "6 to 9"
+   },
+   {
+    "key": "D",
+    "text": "14 to 16"
    }
   ]
  },
@@ -1111,6 +1577,132 @@
    {
     "key": "D",
     "text": "*Bacillus thuringiensis*"
+   }
+  ]
+ },
+ {
+  "id": "q_0f14cdb36675",
+  "type": "SCQ",
+  "stem": "Erythroblastosis foetalis can occur when",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Rh-positive foetal cells entering the mother at delivery sensitise her to produce anti-Rh antibodies, which can cross the placenta in subsequent pregnancies; hence anti-Rh antibody is given to the mother after the first delivery.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the mother is group O and the father is group O"
+   },
+   {
+    "key": "B",
+    "text": "an Rh-negative mother carries an Rh-positive foetus, usually in a later pregnancy"
+   },
+   {
+    "key": "C",
+    "text": "both parents are Rh-negative"
+   },
+   {
+    "key": "D",
+    "text": "an Rh-positive mother carries an Rh-negative foetus"
+   }
+  ]
+ },
+ {
+  "id": "q_0fef28755edc",
+  "type": "SCQ",
+  "stem": "The frog has a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The frog (*Rana tigrina*) has a three-chambered heart; the sinus venosus receives blood and opens into the right atrium. Frogs are ureotelic.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "single-chambered heart"
+   },
+   {
+    "key": "B",
+    "text": "three-chambered heart with two atria and one ventricle"
+   },
+   {
+    "key": "C",
+    "text": "two-chambered heart"
+   },
+   {
+    "key": "D",
+    "text": "four-chambered heart"
    }
   ]
  },
@@ -1518,6 +2110,69 @@
   ]
  },
  {
+  "id": "q_189d3e33fd72",
+  "type": "SCQ",
+  "stem": "The first heart sound, 'lub', is associated with",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The first sound is from closure of the AV valves at the beginning of ventricular systole; the second ('dub') from closure of the semilunar valves at the end of ventricular systole.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "atrial diastole"
+   },
+   {
+    "key": "B",
+    "text": "opening of the aortic valve"
+   },
+   {
+    "key": "C",
+    "text": "the closure of the semilunar valves"
+   },
+   {
+    "key": "D",
+    "text": "the closure of the tricuspid and bicuspid valves"
+   }
+  ]
+ },
+ {
   "id": "q_18ec6fd4f820",
   "type": "SCQ",
   "stem": "In yeast, anaerobic breakdown of pyruvic acid yields",
@@ -1577,6 +2232,132 @@
    {
     "key": "D",
     "text": "oxaloacetic acid"
+   }
+  ]
+ },
+ {
+  "id": "q_191d3dbf9c33",
+  "type": "SCQ",
+  "stem": "A rasping organ, the radula, used for feeding is found in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Molluscs have a soft body covered by a calcareous shell and a muscular foot, and most have a radula (e.g. *Pila*, *Octopus*, *Pinctada*).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Echinodermata"
+   },
+   {
+    "key": "B",
+    "text": "Mollusca"
+   },
+   {
+    "key": "C",
+    "text": "Platyhelminthes"
+   },
+   {
+    "key": "D",
+    "text": "Annelida"
+   }
+  ]
+ },
+ {
+  "id": "q_19ef55aab9e8",
+  "type": "SCQ",
+  "stem": "Which of the following features is found in all chordates at some stage of their life?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Chordates have a notochord, dorsal hollow nerve cord, paired pharyngeal gill slits, a post-anal tail and a closed circulatory system; a vertebral column appears only in vertebrates.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "notochord, dorsal hollow nerve cord and pharyngeal gill slits"
+   },
+   {
+    "key": "B",
+    "text": "a vertebral column"
+   },
+   {
+    "key": "C",
+    "text": "a four-chambered heart"
+   },
+   {
+    "key": "D",
+    "text": "jaws and paired fins"
    }
   ]
  },
@@ -1642,6 +2423,50 @@
     "text": "only spongy parenchyma"
    }
   ]
+ },
+ {
+  "id": "q_1b02d1f4a065",
+  "type": "INT",
+  "stem": "The number of peptide bonds in a linear polypeptide made of 100 amino acids is ______.",
+  "images": [],
+  "answer": {
+   "value": 99.0,
+   "tol": 0.0
+  },
+  "solution": "A linear chain of $n$ amino acids has $n-1$ peptide bonds: $100-1=99$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_1cfd4a2ed56b",
@@ -1814,6 +2639,69 @@
   "version": 1
  },
  {
+  "id": "q_1e74e625e603",
+  "type": "SCQ",
+  "stem": "Which of the following mammals lays eggs?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Mammals are generally viviparous, but monotremes such as the platypus and echidna are oviparous; kangaroos are marsupials that give birth to young and carry them in a pouch.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "*Ornithorhynchus* (platypus)"
+   },
+   {
+    "key": "B",
+    "text": "*Panthera* (lion)"
+   },
+   {
+    "key": "C",
+    "text": "*Pteropus* (flying fox)"
+   },
+   {
+    "key": "D",
+    "text": "*Macropus* (kangaroo)"
+   }
+  ]
+ },
+ {
   "id": "q_1ef634f67034",
   "type": "NVQ",
   "stem": "Two heterozygous parents ($\\mathrm{Aa}\\times\\mathrm{Aa}$, complete dominance) have three children. The probability that all three show the dominant phenotype is (decimal, 3 places) ______.",
@@ -1858,6 +2746,69 @@
   "version": 1
  },
  {
+  "id": "q_1f4843c293a1",
+  "type": "SCQ",
+  "stem": "Most of the carbon dioxide (about 70%) is transported in blood as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "In RBCs carbonic anhydrase forms H$_2$CO$_3$ from CO$_2$ and water, which dissociates to HCO$_3^-$ and H$^+$; 20-25% is carried as carbamino-haemoglobin and about 7% dissolved.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bicarbonate in the plasma, formed through the action of carbonic anhydrase"
+   },
+   {
+    "key": "B",
+    "text": "carbaminohaemoglobin"
+   },
+   {
+    "key": "C",
+    "text": "carbonic acid in lymph"
+   },
+   {
+    "key": "D",
+    "text": "dissolved CO$_2$ only"
+   }
+  ]
+ },
+ {
   "id": "q_1fb74cf8dc53",
   "type": "NVQ",
   "stem": "For $S=CA^{Z}$ with $Z=0.2$, by what factor does the species richness $S$ increase when the area $A$ increases tenfold? (answer to two decimals) ______",
@@ -1900,6 +2851,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_20b38f623d38",
+  "type": "SCQ",
+  "stem": "Which of the following correctly describes the tissue that forms the lining of the lumen of the nephron's proximal convoluted tubule?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The PCT is lined by simple cuboidal brush-border epithelium that increases the surface area for reabsorption.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ciliated columnar epithelium"
+   },
+   {
+    "key": "B",
+    "text": "brush border cuboidal epithelium"
+   },
+   {
+    "key": "C",
+    "text": "stratified squamous epithelium"
+   },
+   {
+    "key": "D",
+    "text": "simple squamous epithelium"
+   }
+  ]
  },
  {
   "id": "q_20bb87d9c780",
@@ -2028,6 +3042,113 @@
   ]
  },
  {
+  "id": "q_22704896b997",
+  "type": "SCQ",
+  "stem": "The pacemaker of the human heart is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The SA node, in the upper right corner of the right atrium, generates the action potentials that initiate each cardiac cycle.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bundle of His"
+   },
+   {
+    "key": "B",
+    "text": "Purkinje fibres"
+   },
+   {
+    "key": "C",
+    "text": "sino-atrial node"
+   },
+   {
+    "key": "D",
+    "text": "atrio-ventricular node"
+   }
+  ]
+ },
+ {
+  "id": "q_25eb061cce97",
+  "type": "INT",
+  "stem": "If one complete cardiac cycle lasts 0.8 s, the heart rate (beats per minute) is ______.",
+  "images": [],
+  "answer": {
+   "value": 75.0,
+   "tol": 0.0
+  },
+  "solution": "$60/0.8=75$ beats per minute.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_2614678dc30c",
   "type": "SCQ",
   "stem": "In the five-kingdom system, all bacteria are placed in kingdom",
@@ -2091,6 +3212,69 @@
   ]
  },
  {
+  "id": "q_2779d58e73c0",
+  "type": "SCQ",
+  "stem": "Gizzard of the cockroach contains",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The foregut includes the crop (storage) and the gizzard, which has an outer layer of thick muscles and an inner cuticle with six chitinous plate-like teeth.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "gastric caeca"
+   },
+   {
+    "key": "B",
+    "text": "bile ducts"
+   },
+   {
+    "key": "C",
+    "text": "digestive enzymes for starch"
+   },
+   {
+    "key": "D",
+    "text": "chitinous teeth that grind the food"
+   }
+  ]
+ },
+ {
   "id": "q_28d3d2d9d3de",
   "type": "SCQ",
   "stem": "Rudolf Virchow's addition to the cell theory was that",
@@ -2150,6 +3334,69 @@
    {
     "key": "D",
     "text": "new cells arise from pre-existing cells"
+   }
+  ]
+ },
+ {
+  "id": "q_29538185a259",
+  "type": "SCQ",
+  "stem": "The lungs are covered by a double-layered membrane called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The pleural fluid reduces friction on the lung surface during breathing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "meninges"
+   },
+   {
+    "key": "B",
+    "text": "peritoneum"
+   },
+   {
+    "key": "C",
+    "text": "pericardium"
+   },
+   {
+    "key": "D",
+    "text": "pleura, with pleural fluid between the layers"
    }
   ]
  },
@@ -2280,6 +3527,69 @@
   ]
  },
  {
+  "id": "q_2aaa17ac63d7",
+  "type": "SCQ",
+  "stem": "Tendons connect",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Tendons are dense regular connective tissue connecting muscle to bone; ligaments connect bone to bone.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "skeletal muscles to bones"
+   },
+   {
+    "key": "B",
+    "text": "muscles to muscles"
+   },
+   {
+    "key": "C",
+    "text": "bones to bones"
+   },
+   {
+    "key": "D",
+    "text": "nerves to muscles"
+   }
+  ]
+ },
+ {
   "id": "q_2adaeb633068",
   "type": "SCQ",
   "stem": "The promoter of a transcription unit lies",
@@ -2402,6 +3712,69 @@
    {
     "key": "D",
     "text": "a gene has been deleted by mutation"
+   }
+  ]
+ },
+ {
+  "id": "q_2b9fc6530e2c",
+  "type": "SCQ",
+  "stem": "The largest phylum of the animal kingdom, characterised by jointed appendages and a chitinous exoskeleton, is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "More than two-thirds of all named species are arthropods; they have an open circulatory system and Malpighian tubules (insects).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Mollusca"
+   },
+   {
+    "key": "B",
+    "text": "Arthropoda"
+   },
+   {
+    "key": "C",
+    "text": "Chordata"
+   },
+   {
+    "key": "D",
+    "text": "Annelida"
    }
   ]
  },
@@ -2595,6 +3968,69 @@
   ]
  },
  {
+  "id": "q_320981dd57cd",
+  "type": "SCQ",
+  "stem": "Which epithelium lines the lumen of the stomach and intestine and helps in secretion and absorption?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Simple columnar epithelium is composed of tall, slender cells with microvilli in the intestine; squamous epithelium lines alveoli and blood vessels.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "stratified squamous epithelium"
+   },
+   {
+    "key": "B",
+    "text": "pseudostratified ciliated epithelium"
+   },
+   {
+    "key": "C",
+    "text": "simple columnar epithelium"
+   },
+   {
+    "key": "D",
+    "text": "simple squamous epithelium"
+   }
+  ]
+ },
+ {
   "id": "q_32294706d9be",
   "type": "SCQ",
   "stem": "In the grass family, the single cotyledon of the embryo is represented by the",
@@ -2717,6 +4153,69 @@
    {
     "key": "D",
     "text": "mutualism"
+   }
+  ]
+ },
+ {
+  "id": "q_32bb50c0d322",
+  "type": "SCQ",
+  "stem": "The vein that carries blood from the intestine to the liver is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The hepatic portal system carries blood from the digestive tract to the liver before it reaches the heart.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "renal vein"
+   },
+   {
+    "key": "B",
+    "text": "inferior vena cava"
+   },
+   {
+    "key": "C",
+    "text": "hepatic vein"
+   },
+   {
+    "key": "D",
+    "text": "hepatic portal vein"
    }
   ]
  },
@@ -3139,6 +4638,69 @@
    {
     "key": "D",
     "text": "no free ends"
+   }
+  ]
+ },
+ {
+  "id": "q_35878ad95026",
+  "type": "SCQ",
+  "stem": "In emphysema,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Emphysema is a chronic disorder with damaged alveolar walls; asthma is inflammation of bronchi and bronchioles; silicosis and asbestosis are occupational lung diseases.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the bronchi become inflamed with wheezing due to allergy"
+   },
+   {
+    "key": "B",
+    "text": "the lungs fill with blood"
+   },
+   {
+    "key": "C",
+    "text": "the alveolar walls are damaged, reducing the respiratory surface; cigarette smoking is a major cause"
+   },
+   {
+    "key": "D",
+    "text": "the lungs are fibrosed by silica dust only"
    }
   ]
  },
@@ -3647,6 +5209,113 @@
   ]
  },
  {
+  "id": "q_3a19e039ecd0",
+  "type": "INT",
+  "stem": "The glomerular filtration rate is about 125 mL/min. The volume of filtrate formed in a day (litres) is ______.",
+  "images": [],
+  "answer": {
+   "value": 180.0,
+   "tol": 0.0
+  },
+  "solution": "$125\\times60\\times24=180{,}000$ mL $=180$ L per day.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3a7ef2b4f61f",
+  "type": "SCQ",
+  "stem": "Birds and reptiles excrete their nitrogenous waste chiefly as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Uricotelic animals (birds, reptiles, insects, land snails) excrete uric acid as a pellet or paste with minimum water loss; ammonotelic ones excrete ammonia and ureotelic ones urea.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "creatinine"
+   },
+   {
+    "key": "B",
+    "text": "urea"
+   },
+   {
+    "key": "C",
+    "text": "uric acid"
+   },
+   {
+    "key": "D",
+    "text": "ammonia"
+   }
+  ]
+ },
+ {
   "id": "q_3b2848f7a040",
   "type": "SCQ",
   "stem": "The characteristic pigment of brown algae (Phaeophyceae) is",
@@ -4109,6 +5778,69 @@
    {
     "key": "D",
     "text": "Magnesium"
+   }
+  ]
+ },
+ {
+  "id": "q_4019b6d25a97",
+  "type": "SCQ",
+  "stem": "Trypsinogen of the pancreatic juice is activated by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Enterokinase converts trypsinogen into trypsin, which then activates the other zymogens such as chymotrypsinogen.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pepsin"
+   },
+   {
+    "key": "B",
+    "text": "enterokinase secreted by the intestinal mucosa"
+   },
+   {
+    "key": "C",
+    "text": "bile"
+   },
+   {
+    "key": "D",
+    "text": "gastrin"
    }
   ]
  },
@@ -4661,6 +6393,113 @@
   ]
  },
  {
+  "id": "q_497dbd01e32e",
+  "type": "SCQ",
+  "stem": "Lymph differs from blood mainly because it",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Lymph is a colourless fluid with specialised lymphocytes; it carries nutrients, hormones and fats absorbed via lacteals, and drains tissue fluid back to the blood.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "carries only oxygen"
+   },
+   {
+    "key": "B",
+    "text": "lacks red blood cells and most plasma proteins, and contains lymphocytes"
+   },
+   {
+    "key": "C",
+    "text": "contains more RBCs"
+   },
+   {
+    "key": "D",
+    "text": "lacks WBCs"
+   }
+  ]
+ },
+ {
+  "id": "q_4a354fc79320",
+  "type": "INT",
+  "stem": "In a healthy adult, TV $=500$ mL, IRV $=3000$ mL and ERV $=1100$ mL. The vital capacity in mL is ______.",
+  "images": [],
+  "answer": {
+   "value": 4600.0,
+   "tol": 0.0
+  },
+  "solution": "$\\mathrm{VC}=\\mathrm{ERV}+\\mathrm{TV}+\\mathrm{IRV}=1100+500+3000=4600$ mL.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_4a50669b6fda",
   "type": "SCQ",
   "stem": "The vegetative body of a slime mould under favourable conditions is a",
@@ -5190,6 +7029,195 @@
   "version": 1
  },
  {
+  "id": "q_52613226c48c",
+  "type": "SCQ",
+  "stem": "In blood clotting, which ions are essential for the conversion of prothrombin to thrombin?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Thromboplastin and Ca$^{2+}$ convert prothrombin to thrombin, which converts soluble fibrinogen to fibrin threads that trap blood cells to form a clot.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sodium ions"
+   },
+   {
+    "key": "B",
+    "text": "magnesium ions"
+   },
+   {
+    "key": "C",
+    "text": "calcium ions"
+   },
+   {
+    "key": "D",
+    "text": "iron ions"
+   }
+  ]
+ },
+ {
+  "id": "q_526b24f874ef",
+  "type": "SCQ",
+  "stem": "In the cockroach, excretion is carried out by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Malpighian tubules at the junction of mid- and hindgut absorb waste from the haemolymph and eliminate it as uric acid, so the cockroach is uricotelic.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "kidneys with nephrons"
+   },
+   {
+    "key": "B",
+    "text": "flame cells"
+   },
+   {
+    "key": "C",
+    "text": "nephridia that remove ammonia"
+   },
+   {
+    "key": "D",
+    "text": "Malpighian tubules, which remove nitrogenous waste mainly as uric acid"
+   }
+  ]
+ },
+ {
+  "id": "q_53e7afd2f9d7",
+  "type": "SCQ",
+  "stem": "In proteins, amino acids are linked by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A peptide bond forms between the carboxyl group of one amino acid and the amino group of the next with loss of water.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "glycosidic bonds"
+   },
+   {
+    "key": "B",
+    "text": "phosphodiester bonds"
+   },
+   {
+    "key": "C",
+    "text": "ester bonds"
+   },
+   {
+    "key": "D",
+    "text": "peptide bonds"
+   }
+  ]
+ },
+ {
   "id": "q_54ef81b7a7d1",
   "type": "SCQ",
   "stem": "Water and minerals are absorbed from the soil mainly through",
@@ -5438,6 +7466,132 @@
    {
     "key": "D",
     "text": "DNA and RNA polymerases"
+   }
+  ]
+ },
+ {
+  "id": "q_56f44d80e455",
+  "type": "SCQ",
+  "stem": "Yellowing of the skin and eyes in jaundice is due to deposition of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "In jaundice, bile pigments accumulate in the skin and the whites of the eyes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "excess melanin"
+   },
+   {
+    "key": "B",
+    "text": "bile pigments, because the liver is affected"
+   },
+   {
+    "key": "C",
+    "text": "glucose"
+   },
+   {
+    "key": "D",
+    "text": "haemoglobin in the cornea"
+   }
+  ]
+ },
+ {
+  "id": "q_576ff3eea58d",
+  "type": "SCQ",
+  "stem": "Placoid scales, a ventral mouth and no air bladder are characters of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Cartilaginous fishes such as *Scoliodon* and *Pristis* have a cartilaginous endoskeleton and skin with placoid scales; they must swim constantly to avoid sinking since they lack an air bladder.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Osteichthyes"
+   },
+   {
+    "key": "B",
+    "text": "Cyclostomata"
+   },
+   {
+    "key": "C",
+    "text": "Amphibia"
+   },
+   {
+    "key": "D",
+    "text": "Chondrichthyes (cartilaginous fishes)"
    }
   ]
  },
@@ -5694,6 +7848,113 @@
   ]
  },
  {
+  "id": "q_5820d44832fd",
+  "type": "INT",
+  "stem": "A person breathes 12 times per minute with a tidal volume of 500 mL. The pulmonary ventilation (mL per minute) is ______.",
+  "images": [],
+  "answer": {
+   "value": 6000.0,
+   "tol": 0.0
+  },
+  "solution": "Minute ventilation $=\\mathrm{TV}\\times\\text{rate}=500\\times12=6000$ mL/min.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_59014e1e38de",
+  "type": "SCQ",
+  "stem": "A nucleoside consists of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Nucleoside = base + sugar; nucleotide = nucleoside + phosphate. Nucleotides are joined by phosphodiester bonds.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a base, a sugar and a phosphate group"
+   },
+   {
+    "key": "B",
+    "text": "a base and a phosphate only"
+   },
+   {
+    "key": "C",
+    "text": "a nitrogenous base and a pentose sugar"
+   },
+   {
+    "key": "D",
+    "text": "a sugar and a phosphate only"
+   }
+  ]
+ },
+ {
   "id": "q_59067334368a",
   "type": "SCQ",
   "stem": "On the lagging strand, DNA is synthesised as short fragments called",
@@ -5879,6 +8140,132 @@
    {
     "key": "D",
     "text": "fragmentation of the sporophyte"
+   }
+  ]
+ },
+ {
+  "id": "q_59af9775e668",
+  "type": "SCQ",
+  "stem": "An enzyme-catalysed reaction differs from the same reaction without enzyme in that the enzyme",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Enzymes lower the energy barrier and speed approach to equilibrium; they are not used up and do not alter the free energy change or the equilibrium position.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "raises the activation energy"
+   },
+   {
+    "key": "B",
+    "text": "shifts the equilibrium towards products"
+   },
+   {
+    "key": "C",
+    "text": "lowers the activation energy but does not change the equilibrium of the reaction"
+   },
+   {
+    "key": "D",
+    "text": "is consumed in the reaction"
+   }
+  ]
+ },
+ {
+  "id": "q_5b558445df6e",
+  "type": "SCQ",
+  "stem": "Atrial natriuretic factor (ANF), secreted by the atria of the heart on increased blood pressure, causes",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "ANF opposes the RAAS: it dilates blood vessels, reducing blood pressure.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "vasoconstriction and increased aldosterone"
+   },
+   {
+    "key": "B",
+    "text": "increased reabsorption of Na$^+$"
+   },
+   {
+    "key": "C",
+    "text": "vasodilation and reduces the renin-angiotensin mechanism, acting as a check"
+   },
+   {
+    "key": "D",
+    "text": "release of ADH"
    }
   ]
  },
@@ -6177,6 +8564,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_5edc34b995e2",
+  "type": "SCQ",
+  "stem": "Renin is released by the juxtaglomerular cells when",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Renin converts angiotensinogen to angiotensin I and then II, which raises blood pressure and stimulates aldosterone secretion from the adrenal cortex.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "blood pressure rises sharply"
+   },
+   {
+    "key": "B",
+    "text": "the glomerular blood pressure or filtration rate falls"
+   },
+   {
+    "key": "C",
+    "text": "plasma osmolarity decreases"
+   },
+   {
+    "key": "D",
+    "text": "urine becomes hypertonic"
+   }
+  ]
  },
  {
   "id": "q_5f839714b5bc",
@@ -6490,6 +8940,132 @@
    {
     "key": "D",
     "text": "Genus"
+   }
+  ]
+ },
+ {
+  "id": "q_626d10012085",
+  "type": "SCQ",
+  "stem": "Deficiency of ADH leads to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Without ADH, water is not reabsorbed in the distal parts, resulting in diuresis and dehydration.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "diabetes mellitus"
+   },
+   {
+    "key": "B",
+    "text": "glycosuria with sweet urine"
+   },
+   {
+    "key": "C",
+    "text": "diabetes insipidus, with passage of large volumes of dilute urine"
+   },
+   {
+    "key": "D",
+    "text": "oliguria"
+   }
+  ]
+ },
+ {
+  "id": "q_6280e7a9c1ef",
+  "type": "SCQ",
+  "stem": "Presence of glucose in urine is called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Glycosuria and ketonuria (ketone bodies in urine) are indicators of diabetes mellitus.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ketonuria"
+   },
+   {
+    "key": "B",
+    "text": "glycosuria"
+   },
+   {
+    "key": "C",
+    "text": "haematuria"
+   },
+   {
+    "key": "D",
+    "text": "uremia"
    }
   ]
  },
@@ -6897,6 +9473,69 @@
   ]
  },
  {
+  "id": "q_694477562911",
+  "type": "SCQ",
+  "stem": "Enzymes that catalyse the removal of groups from substrates by cleaving C-C, C-O or C-N bonds, leaving double bonds, are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Lyases cleave bonds by means other than hydrolysis, e.g. aldolase; hydrolases use water.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "lyases"
+   },
+   {
+    "key": "B",
+    "text": "ligases"
+   },
+   {
+    "key": "C",
+    "text": "transferases"
+   },
+   {
+    "key": "D",
+    "text": "hydrolases"
+   }
+  ]
+ },
+ {
   "id": "q_6991f7de1bdb",
   "type": "SCQ",
   "stem": "The lion (*Panthera leo*) and the tiger (*Panthera tigris*) are placed in the same",
@@ -7019,6 +9658,69 @@
    {
     "key": "D",
     "text": "NAD$^+$"
+   }
+  ]
+ },
+ {
+  "id": "q_6abba83491f3",
+  "type": "SCQ",
+  "stem": "The maximum osmolarity of the human medullary interstitial fluid, which allows the formation of concentrated urine, is about",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The interstitial osmolarity rises from about 300 mOsm/L in the cortex to about 1200 mOsm/L in the inner medulla; this gradient allows the production of urine up to four times concentrated.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "50 mOsm/L"
+   },
+   {
+    "key": "B",
+    "text": "1200 mOsm/L"
+   },
+   {
+    "key": "C",
+    "text": "300 mOsm/L at the cortex only"
+   },
+   {
+    "key": "D",
+    "text": "12 mOsm/L"
    }
   ]
  },
@@ -7193,6 +9895,69 @@
   "version": 1
  },
  {
+  "id": "q_6cf250c25c3c",
+  "type": "SCQ",
+  "stem": "Cnidarians possess stinging cells that are used for anchorage, defence and capture of prey. These are called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Cnidoblasts contain nematocysts; Cnidaria (e.g. *Hydra*, *Aurelia*) are diploblastic with tissue-level organisation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "solenocytes"
+   },
+   {
+    "key": "B",
+    "text": "flame cells"
+   },
+   {
+    "key": "C",
+    "text": "choanocytes"
+   },
+   {
+    "key": "D",
+    "text": "cnidoblasts (cnidocytes)"
+   }
+  ]
+ },
+ {
   "id": "q_6d42e20fcad8",
   "type": "NVQ",
   "stem": "In $\\mathrm{AaBb}\\times\\mathrm{AaBb}$, the probability of an offspring being $\\mathrm{aabb}$ is (as a decimal) ______.",
@@ -7296,6 +10061,69 @@
    {
     "key": "D",
     "text": "fermenting sugars into alcohol"
+   }
+  ]
+ },
+ {
+  "id": "q_6f0f55f313bf",
+  "type": "SCQ",
+  "stem": "The average lifespan of human red blood cells is about",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "RBCs are formed in the red bone marrow and destroyed mainly in the spleen (the 'graveyard' of RBCs) after about 120 days.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "120 days"
+   },
+   {
+    "key": "B",
+    "text": "1 year"
+   },
+   {
+    "key": "C",
+    "text": "20 days"
+   },
+   {
+    "key": "D",
+    "text": "12 hours"
    }
   ]
  },
@@ -7659,6 +10487,69 @@
   ]
  },
  {
+  "id": "q_73276ca4cb30",
+  "type": "SCQ",
+  "stem": "The innermost layer of the wall of the alimentary canal is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "From outside inward: serosa, muscularis, submucosa and mucosa.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "mucosa"
+   },
+   {
+    "key": "B",
+    "text": "muscularis"
+   },
+   {
+    "key": "C",
+    "text": "serosa"
+   },
+   {
+    "key": "D",
+    "text": "submucosa"
+   }
+  ]
+ },
+ {
   "id": "q_7359203be852",
   "type": "SCQ",
   "stem": "The coralloid roots of *Cycas* are associated with",
@@ -7911,6 +10802,132 @@
   ]
  },
  {
+  "id": "q_76afb435c4dc",
+  "type": "SCQ",
+  "stem": "Salivary amylase begins the digestion of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Saliva (pH about 6.8) contains the enzyme salivary amylase that acts on starch in the mouth.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "fats into fatty acids"
+   },
+   {
+    "key": "B",
+    "text": "proteins into peptones"
+   },
+   {
+    "key": "C",
+    "text": "starch, into maltose"
+   },
+   {
+    "key": "D",
+    "text": "cellulose into glucose"
+   }
+  ]
+ },
+ {
+  "id": "q_76d72d5dfa47",
+  "type": "SCQ",
+  "stem": "The universal donor blood group and the universal recipient blood group are, respectively,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Blood group O has neither A nor B antigens, so it can be given to all (in terms of red cells); AB has no anti-A or anti-B antibodies in plasma, so it can receive from all.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "AB and O"
+   },
+   {
+    "key": "B",
+    "text": "O and O"
+   },
+   {
+    "key": "C",
+    "text": "A and B"
+   },
+   {
+    "key": "D",
+    "text": "O and AB"
+   }
+  ]
+ },
+ {
   "id": "q_78b8538eb8ff",
   "type": "SCQ",
   "stem": "Foreign DNA is inserted at the BamHI site within the tetracycline resistance gene of pBR322, which also carries an ampicillin resistance gene. Cells carrying the recombinant plasmid will",
@@ -8033,6 +11050,69 @@
    {
     "key": "D",
     "text": "cultivating organic crops"
+   }
+  ]
+ },
+ {
+  "id": "q_79467ef68eee",
+  "type": "SCQ",
+  "stem": "The hormone released by the duodenum that stimulates the gallbladder to release bile and the pancreas to release enzymes is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "CCK acts on the pancreas and gallbladder; secretin acts on the pancreas to secrete water and bicarbonate; gastrin acts on gastric glands.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "secretin only"
+   },
+   {
+    "key": "B",
+    "text": "cholecystokinin (CCK)"
+   },
+   {
+    "key": "C",
+    "text": "thyroxine"
+   },
+   {
+    "key": "D",
+    "text": "gastrin"
    }
   ]
  },
@@ -8887,6 +11967,50 @@
   ]
  },
  {
+  "id": "q_83aa40398cbe",
+  "type": "INT",
+  "stem": "The adult human dental formula is $\\frac{2123}{2123}$ (incisors, canines, premolars, molars in one half of each jaw). The total number of teeth in an adult is ______.",
+  "images": [],
+  "answer": {
+   "value": 32.0,
+   "tol": 0.0
+  },
+  "solution": "Each half-jaw has $2+1+2+3=8$ teeth; four half-jaws give $4\\times8=32$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_845a4290ecb2",
   "type": "INT",
   "stem": "The number of different types of gametes formed by an individual of genotype $\\mathrm{AaBbCc}$ (genes on different chromosomes) is ______.",
@@ -9183,6 +12307,69 @@
   ]
  },
  {
+  "id": "q_89765ab95d9f",
+  "type": "SCQ",
+  "stem": "Haemoglobin, made of four polypeptide chains, is an example of a protein with",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Haemoglobin consists of two $\\alpha$ and two $\\beta$ subunits; the arrangement of multiple chains is quaternary structure.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "only secondary structure"
+   },
+   {
+    "key": "B",
+    "text": "tertiary structure alone"
+   },
+   {
+    "key": "C",
+    "text": "quaternary structure"
+   },
+   {
+    "key": "D",
+    "text": "only primary structure"
+   }
+  ]
+ },
+ {
   "id": "q_89c3d6fdcb11",
   "type": "SCQ",
   "stem": "2,4-D, a synthetic auxin, is used as a weedicide chiefly to kill",
@@ -9372,6 +12559,69 @@
   ]
  },
  {
+  "id": "q_8ae40f60535c",
+  "type": "SCQ",
+  "stem": "Which tissue is striated, involuntary and has intercalated discs?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Cardiac muscle fibres are branched and joined by intercalated discs, which allow rapid spread of excitation; skeletal muscle is voluntary and striated; smooth muscle is involuntary and non-striated.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "cardiac muscle"
+   },
+   {
+    "key": "B",
+    "text": "nervous tissue"
+   },
+   {
+    "key": "C",
+    "text": "smooth muscle"
+   },
+   {
+    "key": "D",
+    "text": "skeletal muscle"
+   }
+  ]
+ },
+ {
   "id": "q_8c3fc6fdb29b",
   "type": "SCQ",
   "stem": "The nuclear envelope and nucleolus reappear during",
@@ -9431,6 +12681,69 @@
    {
     "key": "D",
     "text": "anaphase"
+   }
+  ]
+ },
+ {
+  "id": "q_8dbba713492a",
+  "type": "SCQ",
+  "stem": "Normal blood pressure of a healthy adult is about",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "120 mm Hg systolic over 80 mm Hg diastolic; a person is hypertensive when the pressure is 140/90 mm Hg or above.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "120/80 mm Hg"
+   },
+   {
+    "key": "B",
+    "text": "140/90 mm Hg"
+   },
+   {
+    "key": "C",
+    "text": "200/120 mm Hg"
+   },
+   {
+    "key": "D",
+    "text": "80/120 mm Hg"
    }
   ]
  },
@@ -9920,6 +13233,50 @@
   ]
  },
  {
+  "id": "q_962c7a6798e6",
+  "type": "INT",
+  "stem": "With ERV $=1100$ mL and RV $=1200$ mL, the functional residual capacity (mL) is ______.",
+  "images": [],
+  "answer": {
+   "value": 2300.0,
+   "tol": 0.0
+  },
+  "solution": "$\\mathrm{FRC}=\\mathrm{ERV}+\\mathrm{RV}=2300$ mL.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_978726a0efcf",
   "type": "SCQ",
   "stem": "Taq polymerase is used in PCR because it",
@@ -10109,6 +13466,69 @@
   ]
  },
  {
+  "id": "q_99d37fd2c991",
+  "type": "SCQ",
+  "stem": "The circulatory system of the cockroach is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In cockroaches the heart is a muscular tube with 13 funnel-shaped chambers; blood lacks haemoglobin and flows into sinuses (haemocoel).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "absent"
+   },
+   {
+    "key": "B",
+    "text": "closed, with a four-chambered heart"
+   },
+   {
+    "key": "C",
+    "text": "open, with a heart of 13 chambers, and blood (haemolymph) filling a haemocoel"
+   },
+   {
+    "key": "D",
+    "text": "closed, with a two-chambered heart"
+   }
+  ]
+ },
+ {
   "id": "q_9a3e4dd1f965",
   "type": "SCQ",
   "stem": "Lipid synthesis and detoxification of drugs are chiefly the function of the",
@@ -10231,6 +13651,132 @@
    {
     "key": "D",
     "text": "half heavy and half light"
+   }
+  ]
+ },
+ {
+  "id": "q_9b4a11452496",
+  "type": "SCQ",
+  "stem": "The water vascular system, which helps in locomotion, capture and transport of food and respiration, is characteristic of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Echinoderms (e.g. *Asterias*, *Echinus*, *Antedon*) have an endoskeleton of calcareous ossicles and a water vascular system with tube feet; adults are radially symmetrical.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Arthropoda"
+   },
+   {
+    "key": "B",
+    "text": "Echinodermata"
+   },
+   {
+    "key": "C",
+    "text": "Cnidaria"
+   },
+   {
+    "key": "D",
+    "text": "Hemichordata"
+   }
+  ]
+ },
+ {
+  "id": "q_9b4a7a934528",
+  "type": "SCQ",
+  "stem": "The earthworm excretes nitrogenous waste mainly as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "*Pheretima* is ureotelic and excretes via nephridia; cockroach is uricotelic.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "creatinine"
+   },
+   {
+    "key": "B",
+    "text": "uric acid"
+   },
+   {
+    "key": "C",
+    "text": "ammonia only"
+   },
+   {
+    "key": "D",
+    "text": "urea (ureotelic)"
    }
   ]
  },
@@ -10468,6 +14014,69 @@
   "version": 1
  },
  {
+  "id": "q_a066c5236683",
+  "type": "SCQ",
+  "stem": "The most abundant WBC in human blood is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Neutrophils form about 60-65% of the total WBCs; lymphocytes follow with 20-25%. Basophils are the least abundant.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "neutrophil"
+   },
+   {
+    "key": "B",
+    "text": "monocyte"
+   },
+   {
+    "key": "C",
+    "text": "basophil"
+   },
+   {
+    "key": "D",
+    "text": "eosinophil"
+   }
+  ]
+ },
+ {
   "id": "q_a29bf32fadf2",
   "type": "SCQ",
   "stem": "The hormone responsible for apical dominance and promoting rooting in stem cuttings is",
@@ -10590,6 +14199,69 @@
    {
     "key": "D",
     "text": "auxin"
+   }
+  ]
+ },
+ {
+  "id": "q_a49efcf9dca7",
+  "type": "SCQ",
+  "stem": "Zinc is a cofactor of the enzyme",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Metal ions can be enzyme cofactors: zinc for carboxypeptidase. Haem is the prosthetic group of catalase, and NAD is a coenzyme.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "NAD-dependent dehydrogenases"
+   },
+   {
+    "key": "B",
+    "text": "carboxypeptidase"
+   },
+   {
+    "key": "C",
+    "text": "catalase"
+   },
+   {
+    "key": "D",
+    "text": "amylase"
    }
   ]
  },
@@ -10720,6 +14392,69 @@
   ]
  },
  {
+  "id": "q_a51a3739fcfe",
+  "type": "SCQ",
+  "stem": "In the human stomach, the secretion that protects its lining from HCl and from enzymatic damage is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Mucus-bicarbonate secretion forms a layer lubricating and protecting the mucosa from the acidic gastric juice.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pancreatic amylase"
+   },
+   {
+    "key": "B",
+    "text": "mucus and bicarbonate"
+   },
+   {
+    "key": "C",
+    "text": "pepsin"
+   },
+   {
+    "key": "D",
+    "text": "bile"
+   }
+  ]
+ },
+ {
   "id": "q_a746475750a0",
   "type": "SCQ",
   "stem": "To make a bacterial cell competent to take up recombinant DNA, it is treated with",
@@ -10779,6 +14514,69 @@
    {
     "key": "D",
     "text": "a divalent cation such as calcium, followed by a brief heat shock at about 42 °C"
+   }
+  ]
+ },
+ {
+  "id": "q_a75e21c60077",
+  "type": "SCQ",
+  "stem": "Ammonia is the principal nitrogenous waste of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Ammonia is highly toxic and needs a lot of water for removal, so ammonotelism is typical of aquatic animals.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "reptiles"
+   },
+   {
+    "key": "B",
+    "text": "bony fishes and aquatic amphibians"
+   },
+   {
+    "key": "C",
+    "text": "birds"
+   },
+   {
+    "key": "D",
+    "text": "human beings"
    }
   ]
  },
@@ -11075,6 +14873,69 @@
    {
     "key": "D",
     "text": "a zygote"
+   }
+  ]
+ },
+ {
+  "id": "q_a95488a603ee",
+  "type": "SCQ",
+  "stem": "Micturition, the release of urine, is controlled by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Stretch of the bladder wall sends signals to the CNS, which passes motor messages causing contraction of the bladder muscles and relaxation of the urethral sphincter.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the pituitary only"
+   },
+   {
+    "key": "B",
+    "text": "the central nervous system and the urinary bladder's stretch receptors"
+   },
+   {
+    "key": "C",
+    "text": "the adrenal cortex only"
+   },
+   {
+    "key": "D",
+    "text": "the liver"
    }
   ]
  },
@@ -11434,6 +15295,132 @@
    {
     "key": "D",
     "text": "A, B, AB or O"
+   }
+  ]
+ },
+ {
+  "id": "q_ae56b4788511",
+  "type": "SCQ",
+  "stem": "Kidney stones (renal calculi) are formed of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Renal calculi are crystallised oxalates and other salts that can form in the kidney.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "excess bile"
+   },
+   {
+    "key": "B",
+    "text": "insoluble masses of crystallised salts such as oxalates"
+   },
+   {
+    "key": "C",
+    "text": "accumulated glucose"
+   },
+   {
+    "key": "D",
+    "text": "dead RBCs"
+   }
+  ]
+ },
+ {
+  "id": "q_ae5a731fed04",
+  "type": "SCQ",
+  "stem": "Match animal groups to their heart type: which animal group has a four-chambered heart?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Fish have a 2-chambered heart, amphibians and most reptiles 3-chambered (two atria, one ventricle), while crocodiles, birds and mammals have a 4-chambered heart.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Amphibia"
+   },
+   {
+    "key": "B",
+    "text": "Pisces"
+   },
+   {
+    "key": "C",
+    "text": "Aves"
+   },
+   {
+    "key": "D",
+    "text": "most Reptilia (except crocodiles)"
    }
   ]
  },
@@ -11860,6 +15847,132 @@
   ]
  },
  {
+  "id": "q_b1ff015a6805",
+  "type": "SCQ",
+  "stem": "Which of the following is the primary site of gas exchange in the human lung?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Alveoli are thin-walled vascularised bag-like structures; the diffusion membrane is made of the squamous epithelium of the alveoli, the endothelium of the capillary and the basement substance between them.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "alveoli, a thin simple squamous epithelium with capillaries"
+   },
+   {
+    "key": "B",
+    "text": "bronchi"
+   },
+   {
+    "key": "C",
+    "text": "bronchioles"
+   },
+   {
+    "key": "D",
+    "text": "trachea"
+   }
+  ]
+ },
+ {
+  "id": "q_b214e5b14045",
+  "type": "SCQ",
+  "stem": "A competitive inhibitor of an enzyme",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Competitive inhibitors compete for the active site, e.g. malonate for succinic dehydrogenase; raising the substrate concentration overcomes the inhibition.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "binds irreversibly to a site far from the active site"
+   },
+   {
+    "key": "B",
+    "text": "resembles the substrate in structure and its effect is reduced by increasing the substrate concentration"
+   },
+   {
+    "key": "C",
+    "text": "increases $V_{max}$"
+   },
+   {
+    "key": "D",
+    "text": "is always a product of the reaction"
+   }
+  ]
+ },
+ {
   "id": "q_b38ac090fce0",
   "type": "SCQ",
   "stem": "Agar, used to grow microbes and prepare jellies, is obtained from",
@@ -12171,6 +16284,132 @@
    {
     "key": "D",
     "text": "killing the nematode with antibiotics"
+   }
+  ]
+ },
+ {
+  "id": "q_b5ebc7d720ff",
+  "type": "SCQ",
+  "stem": "Bile",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Bile is made in the liver and stored in the gallbladder; bile salts break large fat globules into micelles, increasing the surface for lipase action.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "contains lipase"
+   },
+   {
+    "key": "B",
+    "text": "contains no digestive enzymes but its salts emulsify fats"
+   },
+   {
+    "key": "C",
+    "text": "is produced by the gallbladder"
+   },
+   {
+    "key": "D",
+    "text": "digests proteins"
+   }
+  ]
+ },
+ {
+  "id": "q_b7808a866c6d",
+  "type": "SCQ",
+  "stem": "Which WBCs release histamine and are involved in inflammatory reactions?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Basophils secrete histamine, serotonin and heparin; eosinophils are associated with allergic reactions and resist infections; neutrophils and monocytes are phagocytic.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "neutrophils"
+   },
+   {
+    "key": "B",
+    "text": "lymphocytes"
+   },
+   {
+    "key": "C",
+    "text": "monocytes"
+   },
+   {
+    "key": "D",
+    "text": "basophils"
    }
   ]
  },
@@ -12515,6 +16754,132 @@
   ]
  },
  {
+  "id": "q_b8ed106eaa9a",
+  "type": "SCQ",
+  "stem": "The primary respiratory rhythm centre of the brain is located in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The respiratory rhythm centre in the medulla is moderated by the pneumotaxic centre in the pons; a chemosensitive area near it detects CO$_2$ and H$^+$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "medulla oblongata"
+   },
+   {
+    "key": "B",
+    "text": "cerebellum"
+   },
+   {
+    "key": "C",
+    "text": "hypothalamus"
+   },
+   {
+    "key": "D",
+    "text": "pons only"
+   }
+  ]
+ },
+ {
+  "id": "q_b92ff6714a14",
+  "type": "SCQ",
+  "stem": "Pepsinogen is converted to the active enzyme pepsin by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "HCl provides the acidic pH (about 1.8) and activates pepsinogen to pepsin, which converts proteins into proteoses and peptones.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "enterokinase"
+   },
+   {
+    "key": "B",
+    "text": "salivary amylase"
+   },
+   {
+    "key": "C",
+    "text": "hydrochloric acid"
+   },
+   {
+    "key": "D",
+    "text": "bile salts"
+   }
+  ]
+ },
+ {
   "id": "q_b9a4a23a8011",
   "type": "SCQ",
   "stem": "The cork cambium (phellogen) cuts off",
@@ -12574,6 +16939,69 @@
    {
     "key": "D",
     "text": "phellem (cork) outwards and secondary cortex (phelloderm) inwards"
+   }
+  ]
+ },
+ {
+  "id": "q_bac544e1ab3d",
+  "type": "SCQ",
+  "stem": "Metameric segmentation, in which the body is externally and internally divided into segments, is a feature of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Annelids such as *Pheretima* (earthworm) and *Hirudinaria* (leech) show metamerism and have a true coelom and nephridia.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Cnidaria"
+   },
+   {
+    "key": "B",
+    "text": "Mollusca"
+   },
+   {
+    "key": "C",
+    "text": "Porifera"
+   },
+   {
+    "key": "D",
+    "text": "Annelida"
    }
   ]
  },
@@ -12704,6 +17132,195 @@
   ]
  },
  {
+  "id": "q_bb0e598d792b",
+  "type": "SCQ",
+  "stem": "Enzymes that catalyse the joining of two substrates using energy from ATP hydrolysis are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Class 6 enzymes, ligases, link two compounds with the use of ATP, e.g. DNA ligase; hydrolases break bonds with water and lyases cleave bonds without water.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "isomerases"
+   },
+   {
+    "key": "B",
+    "text": "hydrolases"
+   },
+   {
+    "key": "C",
+    "text": "ligases"
+   },
+   {
+    "key": "D",
+    "text": "lyases"
+   }
+  ]
+ },
+ {
+  "id": "q_bb8c7ba6ac1e",
+  "type": "SCQ",
+  "stem": "The partial pressure of CO$_2$ is higher in",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "pCO$_2$ is about 45 mm Hg in deoxygenated blood and 40 mm Hg in alveoli, so CO$_2$ diffuses out down this gradient even though the gradient is small, owing to the high solubility of CO$_2$.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "deoxygenated blood than in the alveoli, so CO$_2$ diffuses from blood to alveoli"
+   },
+   {
+    "key": "B",
+    "text": "the atmosphere than in alveoli"
+   },
+   {
+    "key": "C",
+    "text": "oxygenated blood than in the tissues"
+   },
+   {
+    "key": "D",
+    "text": "alveoli than in deoxygenated blood"
+   }
+  ]
+ },
+ {
+  "id": "q_bd49453e8546",
+  "type": "SCQ",
+  "stem": "Inulin, a polysaccharide, is a polymer of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Inulin is a fructose polymer; starch, glycogen and cellulose are polymers of glucose, and chitin has N-acetylglucosamine.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "glucose"
+   },
+   {
+    "key": "B",
+    "text": "fructose"
+   },
+   {
+    "key": "C",
+    "text": "galactose"
+   },
+   {
+    "key": "D",
+    "text": "N-acetylglucosamine"
+   }
+  ]
+ },
+ {
   "id": "q_bed9249f14ce",
   "type": "SCQ",
   "stem": "A typical angiosperm anther is bilobed and each lobe has",
@@ -12763,6 +17380,69 @@
    {
     "key": "D",
     "text": "three microsporangia"
+   }
+  ]
+ },
+ {
+  "id": "q_bf322745c5f2",
+  "type": "SCQ",
+  "stem": "Which of the following types of cell junctions facilitates cell-to-cell communication by connecting the cytoplasm of adjacent cells?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Gap junctions form channels that allow the rapid transfer of ions, small molecules and sometimes big molecules; tight junctions prevent leakage of substances across a tissue.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "gap junctions"
+   },
+   {
+    "key": "B",
+    "text": "desmosome-free junctions"
+   },
+   {
+    "key": "C",
+    "text": "adhering junctions"
+   },
+   {
+    "key": "D",
+    "text": "tight junctions"
    }
   ]
  },
@@ -12864,6 +17544,50 @@
    "label": "H",
    "b": 1.1,
    "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_c02ce07eae7a",
+  "type": "INT",
+  "stem": "If the residual volume is 1200 mL and the vital capacity is 4600 mL, the total lung capacity (mL) is ______.",
+  "images": [],
+  "answer": {
+   "value": 5800.0,
+   "tol": 0.0
+  },
+  "solution": "$\\mathrm{TLC}=\\mathrm{VC}+\\mathrm{RV}=4600+1200=5800$ mL.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
    "n": 0
   },
   "source": {
@@ -13000,6 +17724,69 @@
   ]
  },
  {
+  "id": "q_c2c22fcfe7c7",
+  "type": "SCQ",
+  "stem": "The Michaelis constant $K_m$ of an enzyme is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Setting $v=V_{max}/2$ in the Michaelis-Menten equation gives $[S]=K_m$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "substrate concentration at which $V_{max}$ is reached"
+   },
+   {
+    "key": "B",
+    "text": "enzyme concentration at which the reaction stops"
+   },
+   {
+    "key": "C",
+    "text": "substrate concentration at which the reaction velocity is half of $V_{max}$"
+   },
+   {
+    "key": "D",
+    "text": "temperature at which the enzyme is denatured"
+   }
+  ]
+ },
+ {
   "id": "q_c44205581854",
   "type": "SCQ",
   "stem": "A student claims that chloroplasts and mitochondria are 'semi-autonomous organelles'. The best justification is that they",
@@ -13061,6 +17848,50 @@
     "text": "are not bounded by a membrane"
    }
   ]
+ },
+ {
+  "id": "q_c45875fb46bd",
+  "type": "INT",
+  "stem": "A heart pumps a stroke volume of 70 mL at a rate of 72 beats per minute. The cardiac output (mL per minute) is ______.",
+  "images": [],
+  "answer": {
+   "value": 5040.0,
+   "tol": 0.0
+  },
+  "solution": "$\\mathrm{CO}=\\mathrm{SV}\\times\\mathrm{HR}=70\\times72=5040$ mL/min (about 5 L/min).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_c471dae39963",
@@ -13185,6 +18016,69 @@
    {
     "key": "D",
     "text": "vessels"
+   }
+  ]
+ },
+ {
+  "id": "q_c53df6c096ac",
+  "type": "SCQ",
+  "stem": "The most abundant protein in the whole biosphere is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "RuBisCO is the most abundant protein in the whole biosphere, while collagen is the most abundant protein in the animal world.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "collagen"
+   },
+   {
+    "key": "B",
+    "text": "insulin"
+   },
+   {
+    "key": "C",
+    "text": "RuBisCO"
+   },
+   {
+    "key": "D",
+    "text": "haemoglobin"
    }
   ]
  },
@@ -14304,6 +19198,113 @@
   ]
  },
  {
+  "id": "q_d044fbba59f3",
+  "type": "SCQ",
+  "stem": "Conditional reabsorption of Na$^+$ and water takes place in the distal convoluted tubule and collecting duct under the control of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "ADH makes the collecting duct water-permeable; aldosterone promotes Na$^+$ reabsorption in the DCT.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "insulin and glucagon"
+   },
+   {
+    "key": "B",
+    "text": "thyroxine"
+   },
+   {
+    "key": "C",
+    "text": "adrenaline only"
+   },
+   {
+    "key": "D",
+    "text": "aldosterone and antidiuretic hormone (ADH)"
+   }
+  ]
+ },
+ {
+  "id": "q_d08ad638adf0",
+  "type": "NVQ",
+  "stem": "If 180 L of filtrate is formed per day and 1.5 L of urine is excreted, the percentage of the filtrate reabsorbed (to 1 decimal place) is ______.",
+  "images": [],
+  "answer": {
+   "value": 99.2,
+   "tol": 0.1
+  },
+  "solution": "$(180-1.5)/180\\times100=99.17\\%\\approx99.2\\%$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_d123d147b36d",
   "type": "SCQ",
   "stem": "The gaseous plant hormone that hastens fruit ripening is",
@@ -14363,6 +19364,69 @@
    {
     "key": "D",
     "text": "gibberellin"
+   }
+  ]
+ },
+ {
+  "id": "q_d1ad534b8e46",
+  "type": "SCQ",
+  "stem": "The valve between the left atrium and left ventricle is the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The right AV opening has the tricuspid valve; the left has the bicuspid (mitral) valve.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "bicuspid (mitral) valve"
+   },
+   {
+    "key": "B",
+    "text": "aortic semilunar valve"
+   },
+   {
+    "key": "C",
+    "text": "tricuspid valve"
+   },
+   {
+    "key": "D",
+    "text": "pulmonary semilunar valve"
    }
   ]
  },
@@ -14581,6 +19645,69 @@
   ]
  },
  {
+  "id": "q_d51dfe8879d2",
+  "type": "SCQ",
+  "stem": "Most of the oxygen (about 97%) in the blood is transported",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "About 97% of O$_2$ is carried by RBCs as oxyhaemoglobin and about 3% is dissolved in plasma.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "dissolved in plasma"
+   },
+   {
+    "key": "B",
+    "text": "bound to haemoglobin in red blood cells"
+   },
+   {
+    "key": "C",
+    "text": "bound to albumin"
+   },
+   {
+    "key": "D",
+    "text": "as bicarbonate"
+   }
+  ]
+ },
+ {
   "id": "q_d5415ebbfd4a",
   "type": "SCQ",
   "stem": "In C$_4$ plants, primary CO$_2$ fixation by PEP carboxylase takes place in",
@@ -14644,6 +19771,69 @@
   ]
  },
  {
+  "id": "q_d542fd86e438",
+  "type": "SCQ",
+  "stem": "In the gastric glands, HCl and intrinsic factor are secreted by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Parietal cells secrete HCl and intrinsic factor (needed for absorption of vitamin B$_{12}$); chief cells secrete pepsinogen; mucous cells secrete mucus.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "chief (peptic) cells"
+   },
+   {
+    "key": "B",
+    "text": "parietal (oxyntic) cells"
+   },
+   {
+    "key": "C",
+    "text": "goblet cells"
+   },
+   {
+    "key": "D",
+    "text": "Brunner's gland cells"
+   }
+  ]
+ },
+ {
   "id": "q_d58fc4deff76",
   "type": "SCQ",
   "stem": "Separation of sister chromatids following the splitting of the centromere occurs in",
@@ -14703,6 +19893,69 @@
    {
     "key": "D",
     "text": "telophase"
+   }
+  ]
+ },
+ {
+  "id": "q_d713537f1023",
+  "type": "SCQ",
+  "stem": "Fatty acids and glycerol absorbed in the intestinal villi are first taken to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "They are incorporated into small protein-coated fat globules called chylomicrons that enter the lymph vessels (lacteals) in the villi and reach the blood circulation via lymph.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "blood capillaries directly"
+   },
+   {
+    "key": "B",
+    "text": "the bile duct"
+   },
+   {
+    "key": "C",
+    "text": "lacteals, as chylomicrons"
+   },
+   {
+    "key": "D",
+    "text": "the portal vein only"
    }
   ]
  },
@@ -14829,6 +20082,69 @@
    {
     "key": "D",
     "text": "Flora"
+   }
+  ]
+ },
+ {
+  "id": "q_d9488798b0ba",
+  "type": "SCQ",
+  "stem": "Which of the following is a secondary metabolite?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Primary metabolites (sugars, amino acids, lipids, nucleotides) have identifiable roles in normal physiological processes; alkaloids such as morphine and codeine, pigments, drugs and rubber are secondary metabolites.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "nucleotides"
+   },
+   {
+    "key": "B",
+    "text": "amino acids"
+   },
+   {
+    "key": "C",
+    "text": "glucose"
+   },
+   {
+    "key": "D",
+    "text": "morphine"
    }
   ]
  },
@@ -15106,6 +20422,69 @@
    {
     "key": "D",
     "text": "the polar nuclei"
+   }
+  ]
+ },
+ {
+  "id": "q_dbd50fb58c11",
+  "type": "SCQ",
+  "stem": "Adipose tissue is a type of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Adipose tissue lies beneath the skin and stores fat in its cells (adipocytes); areolar tissue and adipose tissue both belong to loose connective tissue.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "loose connective tissue with cells specialised to store fat"
+   },
+   {
+    "key": "B",
+    "text": "dense regular connective tissue"
+   },
+   {
+    "key": "C",
+    "text": "muscular tissue"
+   },
+   {
+    "key": "D",
+    "text": "epithelial tissue"
    }
   ]
  },
@@ -15614,6 +20993,69 @@
   ]
  },
  {
+  "id": "q_e37375bf2d54",
+  "type": "SCQ",
+  "stem": "Flame cells are the excretory and osmoregulatory structures of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Platyhelminthes such as *Taenia* and *Fasciola* are dorso-ventrally flattened, acoelomate animals with flame cells; annelids have nephridia and insects have Malpighian tubules.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "echinoderms"
+   },
+   {
+    "key": "B",
+    "text": "arthropods"
+   },
+   {
+    "key": "C",
+    "text": "flatworms (Platyhelminthes)"
+   },
+   {
+    "key": "D",
+    "text": "annelids"
+   }
+  ]
+ },
+ {
   "id": "q_e3eae96acc7f",
   "type": "SCQ",
   "stem": "A student plots the dry weight of a developing seedling against time and obtains a sigmoid (S-shaped) curve. The correct sequence of the phases is",
@@ -15736,6 +21178,69 @@
    {
     "key": "D",
     "text": "UUU"
+   }
+  ]
+ },
+ {
+  "id": "q_e40dab8f3dc7",
+  "type": "SCQ",
+  "stem": "Which of the following are purines?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Purines (adenine, guanine) have a double ring; pyrimidines (cytosine, thymine, uracil) have a single ring.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BMOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "thymine and uracil"
+   },
+   {
+    "key": "B",
+    "text": "cytosine and uracil"
+   },
+   {
+    "key": "C",
+    "text": "adenine and guanine"
+   },
+   {
+    "key": "D",
+    "text": "cytosine and thymine"
    }
   ]
  },
@@ -16477,6 +21982,69 @@
   ]
  },
  {
+  "id": "q_eb0525dde3d6",
+  "type": "SCQ",
+  "stem": "The body cavity of roundworms (Aschelminthes), such as *Ascaris*, is a",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In pseudocoelomates the body cavity is not fully lined by mesoderm; the mesoderm is scattered as patches between ectoderm and endoderm. Annelids have a true coelom.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "true coelom"
+   },
+   {
+    "key": "B",
+    "text": "haemocoel formed as an open sinus"
+   },
+   {
+    "key": "C",
+    "text": "pseudocoelom"
+   },
+   {
+    "key": "D",
+    "text": "no body cavity at all"
+   }
+  ]
+ },
+ {
   "id": "q_eb36fe7210a0",
   "type": "SCQ",
   "stem": "DNA fingerprinting is based on the polymorphism in",
@@ -16599,6 +22167,132 @@
    {
     "key": "D",
     "text": "Carolus Linnaeus"
+   }
+  ]
+ },
+ {
+  "id": "q_eb6b973b3f94",
+  "type": "SCQ",
+  "stem": "The descending limb of the loop of Henle is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The ascending limb is impermeable to water but allows transport of electrolytes; together with the vasa recta they set up the counter-current gradient in the medulla.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "permeable to both"
+   },
+   {
+    "key": "B",
+    "text": "impermeable to both"
+   },
+   {
+    "key": "C",
+    "text": "permeable to water but almost impermeable to electrolytes"
+   },
+   {
+    "key": "D",
+    "text": "impermeable to water and permeable to electrolytes"
+   }
+  ]
+ },
+ {
+  "id": "q_ebfd11c0a121",
+  "type": "SCQ",
+  "stem": "The forewings of the cockroach, which are opaque, dark and leathery, are called",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In *Periplaneta americana* the first pair of wings (mesothoracic) are tegmina; the transparent hindwings are used for flight.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.STR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "elytra"
+   },
+   {
+    "key": "B",
+    "text": "alula"
+   },
+   {
+    "key": "C",
+    "text": "tegmina"
+   },
+   {
+    "key": "D",
+    "text": "halteres"
    }
   ]
  },
@@ -16769,6 +22463,195 @@
    {
     "key": "D",
     "text": "restriction"
+   }
+  ]
+ },
+ {
+  "id": "q_ee39de00b1f0",
+  "type": "SCQ",
+  "stem": "During normal inspiration",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Contraction of the diaphragm and external intercostals increases thoracic volume; intra-pulmonary pressure falls below atmospheric pressure, so air flows in.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.BRE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the diaphragm contracts and flattens, and the volume of the thoracic cavity increases"
+   },
+   {
+    "key": "B",
+    "text": "the volume of the thoracic cavity decreases"
+   },
+   {
+    "key": "C",
+    "text": "the diaphragm relaxes and the external intercostals contract"
+   },
+   {
+    "key": "D",
+    "text": "the pressure in the lungs rises above atmospheric"
+   }
+  ]
+ },
+ {
+  "id": "q_ee7cc1628cd7",
+  "type": "SCQ",
+  "stem": "Water enters the body of a sponge through minute pores and leaves through the large opening called the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "In sponges (Porifera) water enters through the ostia (numerous pores), flows through the spongocoel and exits through the osculum; choanocytes line the canals and spongocoel.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.ANK",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "recall"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "p_correct": 0.78,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "osculum"
+   },
+   {
+    "key": "B",
+    "text": "spongocoel"
+   },
+   {
+    "key": "C",
+    "text": "choanocyte"
+   },
+   {
+    "key": "D",
+    "text": "ostium"
+   }
+  ]
+ },
+ {
+  "id": "q_ef03f08037fe",
+  "type": "SCQ",
+  "stem": "Which of the following correctly lists the sequence of the nephron's parts from the glomerulus to the collecting duct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The filtrate passes from Bowman's capsule to the PCT, then the loop of Henle, DCT and the collecting duct.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.EXC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Bowman's capsule, DCT, loop of Henle, PCT, collecting duct"
+   },
+   {
+    "key": "B",
+    "text": "Bowman's capsule, PCT, loop of Henle, DCT, collecting duct"
+   },
+   {
+    "key": "C",
+    "text": "PCT, Bowman's capsule, DCT, loop of Henle, collecting duct"
+   },
+   {
+    "key": "D",
+    "text": "loop of Henle, PCT, Bowman's capsule, DCT, collecting duct"
    }
   ]
  },
@@ -16962,6 +22845,69 @@
   ]
  },
  {
+  "id": "q_f1e146268eca",
+  "type": "SCQ",
+  "stem": "In an ECG, the QRS complex represents",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The P-wave is atrial depolarisation, the QRS complex is ventricular depolarisation (followed by ventricular systole) and the T-wave is ventricular repolarisation (return of the ventricles to normal).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.CIR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "repolarisation of the atria"
+   },
+   {
+    "key": "B",
+    "text": "repolarisation of the ventricles"
+   },
+   {
+    "key": "C",
+    "text": "depolarisation of the atria"
+   },
+   {
+    "key": "D",
+    "text": "depolarisation of the ventricles, the start of ventricular contraction"
+   }
+  ]
+ },
+ {
   "id": "q_f1f6f1fb91a4",
   "type": "SCQ",
   "stem": "In a monohybrid cross between two heterozygous plants ($\\mathrm{Aa}\\times\\mathrm{Aa}$) with complete dominance, the genotypic ratio of the progeny is",
@@ -17130,6 +23076,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_f6c37cb96529",
+  "type": "SCQ",
+  "stem": "Glucose and amino acids are absorbed into the blood mainly by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Fructose is absorbed by facilitated diffusion; glucose and amino acids are absorbed by sodium-linked active transport.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "p_correct": 0.55,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "simple diffusion through lipids"
+   },
+   {
+    "key": "B",
+    "text": "active transport coupled with sodium ions"
+   },
+   {
+    "key": "C",
+    "text": "endocytosis only"
+   },
+   {
+    "key": "D",
+    "text": "lacteals"
+   }
+  ]
  },
  {
   "id": "q_f71d94bb1221",
@@ -17317,6 +23326,69 @@
    {
     "key": "D",
     "text": "bacteria collected mainly in the blue and red regions, where photosynthesis (oxygen release) is highest"
+   }
+  ]
+ },
+ {
+  "id": "q_f820e0732783",
+  "type": "SCQ",
+  "stem": "Crypts of Lieberkühn and Brunner's glands are found in the",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The intestinal glands (crypts of Lieberkühn) lie between villi; Brunner's glands in the submucosa of the duodenum secrete alkaline mucus.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ZOO",
+   "chapter": "ZOO.DIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "NEET_UG": {
+    "2026": true,
+    "2027": true
+   },
+   "IAT": {
+    "2026": true,
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "p_correct": 0.3,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "stomach"
+   },
+   {
+    "key": "B",
+    "text": "large intestine only"
+   },
+   {
+    "key": "C",
+    "text": "small intestine, as crypts secrete intestinal juice and Brunner's glands are in the duodenum"
+   },
+   {
+    "key": "D",
+    "text": "oesophagus"
    }
   ]
  },
