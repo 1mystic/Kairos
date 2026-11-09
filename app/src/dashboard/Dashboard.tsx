@@ -9,9 +9,10 @@ import { CalendarIcon2, ChevronLeftIcon, ChevronRightIcon, SlidersIcon } from '.
 import { packSpans, patchWidget, type Layout, type WidgetState } from './layout';
 import { selectPlan } from './plan';
 import {
-  canGoNext, clampToToday, isYmd, PREVIOUS_WORD, RANGE_KINDS, RANGE_LABEL, rangeLabel, rangeTitle, setKind, shiftRange, todayYmd, type Range, type RangeKind,
+  canGoNext, clampToToday, isYmd, PREVIOUS_WORD, RANGE_KINDS, RANGE_LABEL, rangeLabel, rangeTitle, setKind, shiftRange, type Range, type RangeKind,
 } from './range';
 import { metaOf, type WidgetId } from './registry';
+import { planDate } from '../onboarding/profileModel';
 import { makeSampleBundle } from './sample';
 import type { DashboardBundle } from './types';
 import { useDashboardData } from './useDashboardData';
@@ -88,7 +89,7 @@ function Loading({ layout }: { layout: Layout }) {
 export function Dashboard({ now = Date.now }: { now?: () => number }) {
   const { loading, bundle: loaded, error } = useDashboardData(now);
   const { layout, setLayout, reset } = useLayout();
-  const today = useMemo(() => todayYmd(now()), [now]);
+  const today = useMemo(() => planDate(new Date(now())), [now]) // same 04:00 day boundary as the plan;
   const [end, setEnd] = useState(today);
   const [picker, setPicker] = useState(false);
   const [sample, setSample] = useState(false);

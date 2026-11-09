@@ -71,6 +71,11 @@ export interface ListSessionsOpts {
   limit?: number;
 }
 
+export interface ListMocksOpts {
+  /** at most this many, newest (submittedAt) first. Cloud store default 100; Infinity = all. Ignored by the local store. */
+  limit?: number;
+}
+
 /** Everything feature code uses for per-user state. Never call Firestore or IndexedDB directly. */
 export interface UserStore {
   kind: 'local' | 'cloud';
@@ -81,11 +86,14 @@ export interface UserStore {
   putState(doc: StateDocName, data: Record<string, unknown>): Promise<void>;
   addSession(s: SessionDoc): Promise<void>;
   listSessions(opts?: ListSessionsOpts): Promise<SessionDoc[]>;
+  /** One session by id (cloud: a single document read, so old sessions are found too). */
+  getSession(id: string): Promise<SessionDoc | null>;
   putPlan(date: string, plan: PlanDoc): Promise<void>;
   getPlan(date: string): Promise<PlanDoc | null>;
   listPlans(): Promise<Array<PlanDoc & { date: string }>>;
   putMock(id: string, m: MockDoc): Promise<void>;
-  listMocks(): Promise<MockDoc[]>;
+  /** Newest first. Cloud store: defaults to 100 (reads are billed per doc); Infinity = all (export). Local: always all. */
+  listMocks(opts?: ListMocksOpts): Promise<MockDoc[]>;
   putPaceLog(date: string, p: PaceLogDoc): Promise<void>;
   /** Cloud store returns the newest ~130 days unless `all` (export). */
   listPaceLog(opts?: { all?: boolean }): Promise<Array<PaceLogDoc & { date: string }>>;

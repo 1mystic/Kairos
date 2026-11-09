@@ -277,7 +277,7 @@ export function SummaryScreen() {
     setState(null);
     (async () => {
       try {
-        const session = (await store.listSessions()).find((s) => s.id === sessionId);
+        const session = (await store.getSession(sessionId)) ?? undefined;
         if (!session || !session.summary) return live && setState('missing');
         const version = await getLatestVersion();
         const ids = Array.isArray(session.qids) ? (session.qids as string[]) : [];

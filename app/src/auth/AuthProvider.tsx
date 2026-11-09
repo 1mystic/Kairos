@@ -29,6 +29,8 @@ export interface AuthContextValue {
   /** friendly message when a Google redirect sign-in came back with an error (shown by the Google button) */
   redirectError?: string;
   reloadProfile?(): Promise<void>;
+  /** merge fields the app just wrote into the in-memory profile (no read, no loading flash) */
+  patchProfile?(fields: Partial<UserProfile>): void;
   signIn(email: string, password: string): Promise<void>;
   signInWithGoogle(): Promise<void>;
   signUp(input: { name: string; email: string; password: string; dob: string }): Promise<void>;
@@ -117,6 +119,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (u) await loadProfile(u);
   }, [loadProfile]);
 
+  const patchProfile = useCallback((fields: Partial<UserProfile>) => {
+    setProfile((p) => (p ? { ...p, ...fields } : p));
+  }, []);
+
   const signIn = useCallback(async (email: string, password: string) => {
     await signInWithEmailAndPassword(getServices().auth, email.trim(), password);
   }, []);
@@ -186,8 +192,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo<AuthContextValue>(
-    () => ({ user, profile, loading, profileError, redirectError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut }),
-    [user, profile, loading, profileError, redirectError, reloadProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut],
+    () => ({ user, profile, loading, profileError, redirectError, reloadProfile, patchProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut }),
+    [user, profile, loading, profileError, redirectError, reloadProfile, patchProfile, signIn, signInWithGoogle, signUp, completeProfile, resetPassword, resendVerification, signOut],
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useAuth } from '../auth/AuthProvider';
 import { getServices } from '../lib/firebase';
+import type { UserProfile } from '../lib/profile';
 import { FirestoreStore, createFirestoreAdapter, type FsAdapter } from './FirestoreStore';
 import type { KvDb } from './bankDb';
 import { CloudBankStore, createBankFirestoreAdapter, type BankFsAdapter } from './bankCloud';
@@ -76,7 +77,9 @@ export interface StoreProviderProps {
 }
 
 export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapter, now = Date.now }: StoreProviderProps) {
-  const { user, profile, loading, signOut } = useAuth();
+  const { user, profile, loading, signOut, patchProfile } = useAuth();
+  const patch = useRef(patchProfile);
+  patch.current = patchProfile;
   const local = useMemo(() => new LocalStore(localDb ?? createIdbLocalDb()), [localDb]);
   const [guestFlag, setGuestFlag] = useState(() => {
     try { return localStorage.getItem(GUEST_FLAG) === '1'; } catch { return false; }
@@ -91,7 +94,7 @@ export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapte
   const cloud = useMemo(() => {
     if (!uid) return null;
     adapter.current ??= createFirestoreAdapter(getServices().db);
-    return new FirestoreStore(uid, adapter.current);
+    return new FirestoreStore(uid, adapter.current, (f) => patch.current?.(f as Partial<UserProfile>));
   }, [uid]);
   const store: UserStore = cloud ?? local;
   const bankDeps = useCallback((c: FirestoreStore) => {

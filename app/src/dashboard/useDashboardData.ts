@@ -9,6 +9,8 @@ import type { DashboardBundle } from './types';
 const DAY = 86_400_000;
 /** How far back we read sessions (one doc each). Older history is not shown on the dashboard. */
 export const HISTORY_DAYS = 120;
+/** Newest sessions read for the dashboard (one billed read each). */
+export const HISTORY_SESSION_LIMIT = 200;
 
 export interface DashboardState { loading: boolean; bundle: DashboardBundle | null; error: boolean }
 
@@ -21,7 +23,7 @@ export function useDashboardData(now: () => number = Date.now): DashboardState {
     let live = true;
     (async () => {
       const [sessions, mocks, mastery, profile, paceLog] = await Promise.all([
-        store.listSessions({ since: now() - HISTORY_DAYS * DAY, limit: 600 }),
+        store.listSessions({ since: now() - HISTORY_DAYS * DAY, limit: HISTORY_SESSION_LIMIT }),
         store.listMocks(),
         store.getState('mastery'),
         store.getProfile(),

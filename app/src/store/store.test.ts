@@ -36,6 +36,36 @@ describe('stores', () => {
     expect([...f.docs.keys()].sort()).toEqual(['users/u1/mocks/m', 'users/u1/sessions/a', 'users/u1/state/pace']);
     expect((await c.listSessions())[0]?.id).toBe('a');
   });
+  it('getSession reads one doc (cloud) / one record (local), null when missing', async () => {
+    const f = fakeFs();
+    const c = new FirestoreStore('u1', f.adapter);
+    await c.addSession(sess('old', 400));
+    expect((await c.getSession('old'))?.id).toBe('old');
+    expect(await c.getSession('nope')).toBeNull();
+    const l = await seeded(2);
+    expect((await l.getSession('s1'))?.id).toBe('s1');
+    expect(await l.getSession('nope')).toBeNull();
+  });
+  it('cloud listMocks is newest-first and bounded (default 100, Infinity = all); local stays unbounded', async () => {
+    const f = fakeFs();
+    const c = new FirestoreStore('u1', f.adapter);
+    for (let i = 0; i < 130; i++) await c.putMock(`m${i}`, { id: `m${i}`, paperId: 'p', submittedAt: 1000 + i });
+    const some = await c.listMocks();
+    expect(some).toHaveLength(100);
+    expect(some[0]?.id).toBe('m129');
+    expect(await c.listMocks({ limit: 5 })).toHaveLength(5);
+    expect(await c.listMocks({ limit: Number.POSITIVE_INFINITY })).toHaveLength(130);
+    expect(f.queries.at(-1)).toMatchObject({ field: 'submittedAt' });
+    const l = new LocalStore(createMemoryLocalDb());
+    for (let i = 0; i < 130; i++) await l.putMock(`m${i}`, { id: `m${i}`, paperId: 'p', submittedAt: i });
+    expect(await l.listMocks({ limit: 5 })).toHaveLength(130);
+  });
+  it('cloud saveProfile reports the written fields to onProfileSaved', async () => {
+    const seen: unknown[] = [];
+    const c = new FirestoreStore('u1', fakeFs().adapter, (f) => seen.push(f));
+    await c.saveProfile({ displayName: 'Asha' });
+    expect(seen).toEqual([{ displayName: 'Asha' }]);
+  });
   it('cloud saveProfile rejects guest profiles', async () => {
     const c = new FirestoreStore('u1', fakeFs().adapter);
     await expect(c.saveProfile({ kind: 'guest', displayName: 'G', createdAt: 1 })).rejects.toThrow();

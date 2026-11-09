@@ -37,6 +37,9 @@ export class LocalStore implements UserStore {
     all.sort((a, b) => b.startedAt - a.startedAt);
     return opts.limit ? all.slice(0, opts.limit) : all;
   }
+  async getSession(id: string) {
+    return ((await this.db.get('sessions', id)) as SessionDoc | undefined) ?? null;
+  }
   async putPlan(date: string, plan: PlanDoc) {
     await this.db.put('plans', date, plan);
   }
@@ -49,6 +52,7 @@ export class LocalStore implements UserStore {
   async putMock(id: string, m: MockDoc) {
     await this.db.put('mocks', id, { ...m, id });
   }
+  /** always all of them (opts.limit is a cloud-billing concern) */
   async listMocks() {
     return (await this.db.getAll('mocks')).map((r) => r.value as MockDoc);
   }

@@ -3,7 +3,7 @@ import {
   type Firestore,
 } from 'firebase/firestore';
 import { chunkOps } from './batching';
-import type { ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
+import type { ListMocksOpts, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
 type Data = Record<string, unknown>;
 
@@ -27,6 +27,8 @@ export interface FsAdapter {
 export const DEFAULT_SESSION_LIMIT = 60;
 /** Pass as `limit` to read every session (export only). */
 export const ALL_SESSIONS = Number.POSITIVE_INFINITY;
+/** Mocks returned by FirestoreStore.listMocks when the caller passes no limit. Pass Infinity to read every mock (export). */
+export const DEFAULT_MOCK_LIMIT = 100;
 
 /** pace_log docs returned by listPaceLog unless `all` (dashboard looks back 120 days). */
 export const PACE_LOG_LIMIT = 130;
@@ -103,7 +105,8 @@ export function createFirestoreAdapter(db: Firestore, now: () => number = Date.n
 /** docs/03 paths under users/{uid}. Sessions are one doc per session. */
 export class FirestoreStore implements UserStore {
   readonly kind = 'cloud' as const;
-  constructor(readonly uid: string, readonly fs: FsAdapter) {}
+  /** `onProfileSaved` lets the app mirror a successful profile write into its in-memory profile (no extra read) */
+  constructor(readonly uid: string, readonly fs: FsAdapter, private onProfileSaved?: (fields: Data) => void) {}
   private p(rest: string) {
     return `users/${this.uid}/${rest}`;
   }
@@ -114,6 +117,7 @@ export class FirestoreStore implements UserStore {
   async saveProfile(p: Parameters<UserStore['saveProfile']>[0]) {
     if ('kind' in p) throw new Error('Cannot write a guest profile to the cloud.');
     await this.fs.updateProfile(`users/${this.uid}`, p as Data);
+    this.onProfileSaved?.(p as Data);
   }
   getState(d: StateDocName) {
     return this.fs.get(this.p(`state/${d}`));
@@ -133,6 +137,11 @@ export class FirestoreStore implements UserStore {
     const rows = await this.fs.listRecent(this.p('sessions'), { field: 'startedAt', limit, ...(opts.since !== undefined ? { since: opts.since } : {}) });
     return rows.map((r) => ({ ...r.data, id: r.id }) as SessionDoc);
   }
+  /** One document read. */
+  async getSession(id: string) {
+    const d = await this.fs.get(this.p(`sessions/${id}`));
+    return d ? ({ ...d, id } as SessionDoc) : null;
+  }
   putPlan(date: string, plan: PlanDoc) {
     return this.fs.set(this.p(`plans/${date}`), plan);
   }
@@ -145,8 +154,13 @@ export class FirestoreStore implements UserStore {
   putMock(id: string, m: MockDoc) {
     return this.fs.set(this.p(`mocks/${id}`), { ...m, id });
   }
-  async listMocks() {
-    return (await this.fs.list(this.p('mocks'))).map((r) => ({ ...r.data, id: r.id }) as MockDoc);
+  /**
+   * Newest first by submittedAt (single-field order, automatic index; mock docs always carry a numeric submittedAt,
+   * see cbt/model.ts buildMockDoc). Default limit 100; Infinity reads everything.
+   */
+  async listMocks(opts: ListMocksOpts = {}) {
+    const limit = opts.limit && opts.limit > 0 ? opts.limit : DEFAULT_MOCK_LIMIT;
+    return (await this.fs.listRecent(this.p('mocks'), { field: 'submittedAt', limit })).map((r) => ({ ...r.data, id: r.id }) as MockDoc);
   }
   putPaceLog(date: string, p: PaceLogDoc) {
     return this.fs.set(this.p(`pace_log/${date}`), p);

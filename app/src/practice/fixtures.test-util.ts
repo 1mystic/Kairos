@@ -32,6 +32,7 @@ export function fakeStore(over: Partial<UserStore> = {}) {
       sessions.push(s);
     },
     listSessions: async () => [...sessions],
+    getSession: async (id: string) => sessions.find((s) => s.id === id) ?? null,
     ...over,
   } as unknown as UserStore;
   return { store, sessions, states, calls };
