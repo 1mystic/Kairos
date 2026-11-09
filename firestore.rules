@@ -261,7 +261,7 @@ service cloud.firestore {
     function statKeys() {
       return ['signups', 'sessions', 'questions', 'correct', 'mocks', 'diagnostics',
               'uploads', 'active', 'onboarded', 'sessions_JEE_MAIN', 'sessions_NEET_UG',
-              'sessions_IAT', 'updatedAt'];
+              'sessions_IAT', 'sessions_GATE_DA', 'updatedAt'];
     }
 
     function markerPath(day) {
@@ -305,6 +305,7 @@ service cloud.firestore {
         && statCreateOk(d, 'sessions_JEE_MAIN', 50)
         && statCreateOk(d, 'sessions_NEET_UG', 50)
         && statCreateOk(d, 'sessions_IAT', 50)
+        && statCreateOk(d, 'sessions_GATE_DA', 50)
         && (!('active' in d) || d.active == 0 || (d.active == 1 && markerNew(day)));
     }
 
@@ -325,6 +326,7 @@ service cloud.firestore {
         && statIncOk(aff, o, 'sessions_JEE_MAIN', 50)
         && statIncOk(aff, o, 'sessions_NEET_UG', 50)
         && statIncOk(aff, o, 'sessions_IAT', 50)
+        && statIncOk(aff, o, 'sessions_GATE_DA', 50)
         && statIncOk(aff, o, 'active', 1)
         && (!('active' in aff) || markerNew(day));
     }

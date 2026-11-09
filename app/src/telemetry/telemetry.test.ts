@@ -129,8 +129,9 @@ describe('Telemetry', () => {
 });
 
 describe('per-exam session counter', () => {
-  it('GATE_DA has no per-exam counter, only sessions', () => {
-    expect(sessionCounts({ exam: 'GATE_DA', answered: 5, correct: 3 })).toEqual({ sessions: 1, questions: 5, correct: 3 });
+  it('GATE_DA has its own per-exam counter', () => {
+    expect(sessionCounts({ exam: 'GATE_DA', answered: 5, correct: 3 })).toEqual({ sessions: 1, questions: 5, correct: 3, sessions_GATE_DA: 1 });
+    expect(sessionCounts({ exam: 'SOME_OTHER', answered: 5, correct: 3 })).toEqual({ sessions: 1, questions: 5, correct: 3 });
     expect(sessionCounts({ exam: 'IAT', answered: 1, correct: 1 })).toMatchObject({ sessions_IAT: 1 });
   });
 });

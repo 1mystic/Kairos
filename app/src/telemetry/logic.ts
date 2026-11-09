@@ -1,7 +1,7 @@
 /** Pure telemetry logic: accumulate, clamp to the firestore.rules caps, decide when to flush. No Firebase here. */
 export const COUNTERS = [
   'signups', 'sessions', 'questions', 'correct', 'mocks', 'diagnostics', 'uploads', 'onboarded',
-  'sessions_JEE_MAIN', 'sessions_NEET_UG', 'sessions_IAT',
+  'sessions_JEE_MAIN', 'sessions_NEET_UG', 'sessions_IAT', 'sessions_GATE_DA',
 ] as const;
 export type Counter = (typeof COUNTERS)[number];
 export type Counts = Partial<Record<Counter, number>>;
@@ -9,7 +9,7 @@ export type Counts = Partial<Record<Counter, number>>;
 /** Largest increment one write may carry (rules). `active` is separate: exactly +1 together with the seen marker. */
 export const CAPS: Record<Counter, number> = {
   signups: 50, sessions: 50, questions: 500, correct: 500, mocks: 50, diagnostics: 50, uploads: 50, onboarded: 50,
-  sessions_JEE_MAIN: 50, sessions_NEET_UG: 50, sessions_IAT: 50,
+  sessions_JEE_MAIN: 50, sessions_NEET_UG: 50, sessions_IAT: 50, sessions_GATE_DA: 50,
 };
 
 const isCounter = (k: string): k is Counter => (COUNTERS as readonly string[]).includes(k);
@@ -93,10 +93,10 @@ export function shouldFlush(i: FlushInput): boolean {
 }
 
 /**
- * Exams with a per-exam counter in the rules contract. GATE_DA has none (the stats rules would reject an
- * unknown field), so its sessions only bump `sessions`. Add the exam here once the rules allow `sessions_<EXAM>`.
+ * Exams with a per-exam counter in the rules contract: keep this list in sync with `statKeys()` in
+ * firestore.rules (`sessions_<EXAM>`); an unknown field would make the whole stats write be rejected.
  */
-const KNOWN_EXAMS = ['JEE_MAIN', 'NEET_UG', 'IAT'];
+const KNOWN_EXAMS = ['JEE_MAIN', 'NEET_UG', 'IAT', 'GATE_DA'];
 export function sessionCounts(s: { exam?: string | null; answered: number; correct: number }): Record<string, number> {
   const answered = Math.max(0, Math.floor(s.answered));
   const counts: Record<string, number> = { sessions: 1, questions: answered, correct: Math.min(Math.max(0, Math.floor(s.correct)), answered) };

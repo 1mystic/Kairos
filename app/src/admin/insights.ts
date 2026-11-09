@@ -1,6 +1,6 @@
 import { dayNumber, fromDayNumber } from '@kairos/core';
 
-export const STAT_FIELDS = ['signups', 'sessions', 'questions', 'correct', 'mocks', 'diagnostics', 'uploads', 'active', 'onboarded', 'sessions_JEE_MAIN', 'sessions_NEET_UG', 'sessions_IAT'] as const;
+export const STAT_FIELDS = ['signups', 'sessions', 'questions', 'correct', 'mocks', 'diagnostics', 'uploads', 'active', 'onboarded', 'sessions_JEE_MAIN', 'sessions_NEET_UG', 'sessions_IAT', 'sessions_GATE_DA'] as const;
 export type StatField = (typeof STAT_FIELDS)[number];
 export type DayStats = { day: string } & Record<StatField, number>;
 export interface StatsRow { day: string; data: Record<string, number> }
@@ -9,6 +9,7 @@ export const EXAM_SESSION_FIELDS = [
   { field: 'sessions_JEE_MAIN', label: 'JEE Main' },
   { field: 'sessions_NEET_UG', label: 'NEET' },
   { field: 'sessions_IAT', label: 'IAT' },
+  { field: 'sessions_GATE_DA', label: 'GATE DA' },
 ] as const;
 
 /** Every day of the range (oldest first), zero where no stats doc exists. */
