@@ -7,7 +7,7 @@ into pipeline questions.
 Inputs   pipeline/extract/structured/<stem>.json     (agent transcription; ``answer`` is always null there)
          pipeline/extract/structured/<stem>.chapters.json   optional {qno: chapter | "NONE"} reading-based hints
          pipeline/raw/**/<paper>.pdf, <key>.pdf      (downloaded by pipeline.acquire.fetch; not committed)
-Outputs  pipeline/bank_src/nta_<name>.json           questions (status verified | needs_review)
+Outputs  pipeline/held_pending_permission/nta_<name>.json           questions (status verified | needs_review)
          pipeline/quarantine/nta_<name>.json         questions we did NOT convert, with reason + the transcription
 
 Rules (same conventions as ingest.jeebench: normalise_latex, id, difficulty prior, skills, tagging):
@@ -197,7 +197,7 @@ def convert(pilot: str, write_tags: bool = False) -> dict:
         cur = json.loads(MANUAL.read_text(encoding="utf-8")) if MANUAL.exists() else {}
         cur.update(new_tags)
         MANUAL.write_text(json.dumps(dict(sorted(cur.items())), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    out = ROOT / "pipeline" / "bank_src" / f"{cfg['out']}.json"
+    out = ROOT / "pipeline" / "held_pending_permission" / f"{cfg['out']}.json"
     qf = ROOT / "pipeline" / "quarantine" / f"{cfg['out']}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     qf.parent.mkdir(parents=True, exist_ok=True)
