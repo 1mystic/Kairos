@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../auth/AuthProvider';
 import { CheckIcon } from '../components/icons';
 import { ThemeToggle } from '../components/ThemeToggle';
-import { Button, Chip, LinkButton, Modal, Page, PageHeader, SettingRow, SettingsSection, StickySideNav, TwoColumnPage, type SideNavItem } from '../components/ui';
+import { Button, Chip, Input, LinkButton, Modal, Page, PageHeader, SettingRow, SettingsSection, StickySideNav, TwoColumnPage, type SideNavItem } from '../components/ui';
 import { useIsAdmin } from '../admin/useIsAdmin';
 import { ExamPlanRows } from '../roadmap/ExamPlanSettings';
 import { exportStore } from '../store/exportData';
-import { useGuest, useLocalStore, useMigration, useStore } from '../store/StoreProvider';
+import { useClearLocalData, useGuest, useLocalStore, useMigration, useStore } from '../store/StoreProvider';
 
 const SECTIONS: SideNavItem[] = [
   { id: 'account', label: 'Account' },
@@ -23,12 +23,18 @@ export function Settings() {
   const { isGuest, signOutToGuest } = useGuest();
   const store = useStore();
   const local = useLocalStore();
+  const clearLocalData = useClearLocalData();
   const [confirm, setConfirm] = useState(false);
   const [msg, setMsg] = useState('');
   const isAdmin = useIsAdmin();
   const { migration, retry } = useMigration();
   const [pending, setPending] = useState(false);
   const uid = user?.uid;
+  const [name, setName] = useState('');
+  const [nameMsg, setNameMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  const [savingName, setSavingName] = useState(false);
+  const shownName = profile?.displayName ?? '';
+  useEffect(() => { setName(shownName); }, [shownName]);
   // signed in, this device still holds progress that was never added to the account (the prompt was postponed)
   useEffect(() => {
     let live = true;
@@ -36,6 +42,22 @@ export function Settings() {
     void Promise.all([local.hasData(), local.getMeta()]).then(([has, meta]) => { if (live) setPending(has && meta.migratedTo !== uid); }).catch(() => { if (live) setPending(false); });
     return () => { live = false; };
   }, [uid, migration.phase, local]);
+
+  async function saveName() {
+    const v = name.trim();
+    if (v.length < 1 || v.length > 80) { setNameMsg({ ok: false, text: 'Use 1 to 80 characters.' }); return; }
+    if (v === shownName) { setNameMsg(null); return; }
+    setSavingName(true);
+    setNameMsg(null);
+    try {
+      await store.saveProfile({ displayName: v }); // the cloud store mirrors the write into the in-memory profile
+      setNameMsg({ ok: true, text: 'Name saved.' });
+    } catch {
+      setNameMsg({ ok: false, text: 'We could not save your name. Check your connection and try again.' });
+    } finally {
+      setSavingName(false);
+    }
+  }
 
   async function download() {
     try {
@@ -57,7 +79,17 @@ export function Settings() {
       <PageHeader title="Settings" subtitle="Your account, look and data." />
       <TwoColumnPage nav={<StickySideNav label="Settings sections" items={SECTIONS} active={tab} onSelect={setTab} />}>
         <SettingsSection id="account" title="Account" description="Who you are on Kairos." active={tab === 'account'}>
-          <SettingRow label="Name" description={isGuest ? 'Guest' : (profile?.displayName ?? '')} />
+          {user ? (
+            <SettingRow label="Name" description="Shown on Home and in your account menu.">
+              <form className="row-inline" onSubmit={(e) => { e.preventDefault(); void saveName(); }}>
+                <Input aria-label="Display name" value={name} maxLength={80} autoComplete="name" invalid={nameMsg?.ok === false} onChange={(e) => { setName(e.target.value); setNameMsg(null); }} />
+                <Button type="submit" variant="secondary" loading={savingName} disabled={name.trim() === shownName}>Save name</Button>
+              </form>
+              {nameMsg && <p role={nameMsg.ok ? 'status' : 'alert'} className={`text-small ${nameMsg.ok ? 'text-status-good' : 'text-status-bad'}`}>{nameMsg.text}</p>}
+            </SettingRow>
+          ) : (
+            <SettingRow label="Name" description="Guest" />
+          )}
           <SettingRow label="Email" description={user?.email ?? 'No email: you are using Kairos as a guest.'} />
           {user ? (
             <SettingRow label="Sign out" description="You can keep practising as a guest afterwards.">
@@ -98,7 +130,7 @@ export function Settings() {
             </SettingRow>
           )}
           {isGuest && (
-            <SettingRow label="Clear local data" description="Removes sessions, mocks and plans from this device.">
+            <SettingRow label="Clear local data" description="Removes sessions, mocks, plans and your uploaded questions (with their images) from this device.">
               <Button variant="danger-ghost" onClick={() => setConfirm(true)}>Clear local data</Button>
             </SettingRow>
           )}
@@ -125,10 +157,11 @@ export function Settings() {
       </TwoColumnPage>
       {confirm && (
         <Modal title="Clear all data on this device?" onClose={() => setConfirm(false)} dismissLabel="Keep my data">
-          <p className="text-slate">This removes your sessions, mocks and plans from this device. It cannot be undone.</p>
+          <p className="text-slate">This removes your sessions, mocks, plans and uploaded questions (with their images) from this device.</p>
+          <p className="text-status-bad">It cannot be undone.</p>
           <div className="row-actions justify-end">
             <Button variant="secondary" onClick={() => setConfirm(false)}>Keep my data</Button>
-            <Button variant="danger" onClick={() => void local.clearData().then(() => { setConfirm(false); setMsg('Local data cleared.'); }, () => { setConfirm(false); setMsg('We could not clear local data. Try again.'); })}>Clear data</Button>
+            <Button variant="danger" onClick={() => void clearLocalData().then(() => { setConfirm(false); setMsg('Local data cleared.'); }, () => { setConfirm(false); setMsg('We could not clear local data. Try again.'); })}>Clear data</Button>
           </div>
         </Modal>
       )}

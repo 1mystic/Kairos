@@ -32,6 +32,8 @@ interface StoreCtx {
   signOutToGuest(): Promise<void>;
   migration: MigrationState;
   retryMigration(): void;
+  /** empty this device's guest data: sessions, mocks, plans AND the guest question bank + images */
+  clearLocalData(): Promise<void>;
 }
 
 const Ctx = createContext<StoreCtx | null>(null);
@@ -58,6 +60,10 @@ export function useStartGuest(): () => Promise<void> {
 export function useMigration() {
   const { migration, retryMigration } = useCtx();
   return { migration, retry: retryMigration };
+}
+/** Settings > "Clear local data": guest store plus the guest question bank and media. */
+export function useClearLocalData(): () => Promise<void> {
+  return useCtx().clearLocalData;
 }
 export function useLocalStore(): LocalStore {
   return useCtx().local;
@@ -180,9 +186,13 @@ export function StoreProvider({ children, localDb, fsAdapter, bankDb, bankAdapte
     }
   }, [cloud, local, localBank, now, bankDeps]);
 
+  const clearLocalData = useCallback(async () => {
+    await Promise.all([local.clearData(), localBank.clearAll()]);
+  }, [local, localBank]);
+
   const value = useMemo<StoreCtx>(
-    () => ({ store, local, isGuest: guestFlag && !user, startGuest, signOutToGuest, migration, retryMigration }),
-    [store, local, guestFlag, user, startGuest, signOutToGuest, migration, retryMigration],
+    () => ({ store, local, isGuest: guestFlag && !user, startGuest, signOutToGuest, migration, retryMigration, clearLocalData }),
+    [store, local, guestFlag, user, startGuest, signOutToGuest, migration, retryMigration, clearLocalData],
   );
 
   return (
