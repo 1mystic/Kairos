@@ -254,6 +254,49 @@
   ]
  },
  {
+  "id": "q_138c9ad5ab0b",
+  "type": "INT",
+  "stem": "A coin lies at the bottom of a $12\\ \\mathrm{cm}$ deep layer of water ($n=4/3$). Seen from directly above, its apparent depth in cm is",
+  "images": [],
+  "answer": {
+   "value": 9.0
+  },
+  "solution": "Apparent depth $=\\dfrac{\\text{real depth}}{n}=\\dfrac{12}{4/3}=9\\ \\mathrm{cm}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_13e5a2b192a7",
   "type": "NVQ",
   "stem": "A coil of $50$ turns, area $0.02\\ \\mathrm{m^2}$ and current $2\\ \\mathrm{A}$ is in a uniform field of $0.3\\ \\mathrm{T}$. The normal to the coil makes $60^\\circ$ with the field. The torque on the coil, in N m, is approximately",
@@ -596,6 +639,112 @@
   "version": 1
  },
  {
+  "id": "q_2160a68c9e03",
+  "type": "INT",
+  "stem": "An astronomical telescope has an objective of focal length $100\\ \\mathrm{cm}$ and an eyepiece of focal length $5\\ \\mathrm{cm}$. In normal adjustment its angular magnification is",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "$m=\\dfrac{f_o}{f_e}=\\dfrac{100}{5}=20$ (tube length $f_o+f_e=105\\ \\mathrm{cm}$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_27789fbfcc0e",
+  "type": "SCQ",
+  "stem": "The critical angle for light going from water ($n=4/3$) to air is $\\theta_c$. Then $\\sin\\theta_c$ equals",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At the critical angle the refracted ray grazes the surface: $n\\sin\\theta_c=1\\times\\sin90^\\circ\\Rightarrow\\sin\\theta_c=\\dfrac1n=\\dfrac34$ ($\\theta_c\\approx48.6^\\circ$). $\\dfrac43>1$ is impossible for a sine.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{\\sqrt7}{4}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac43$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac34$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{3}{5}$"
+   }
+  ]
+ },
+ {
   "id": "q_2c368ef11848",
   "type": "SCQ",
   "stem": "A circular coil of $20$ turns and radius $10\\ \\mathrm{cm}$ carries a current of $5\\ \\mathrm{A}$. The magnetic field at its centre is ($\\mu_0=4\\pi\\times10^{-7}\\ \\mathrm{T\\,m/A}$)",
@@ -703,6 +852,69 @@
   "version": 1
  },
  {
+  "id": "q_31a54391a6c3",
+  "type": "SCQ",
+  "stem": "In Young's double-slit experiment the slits are $0.3\\ \\mathrm{mm}$ apart and the screen is $1.5\\ \\mathrm{m}$ away. Light of wavelength $600\\ \\mathrm{nm}$ is used. The fringe width is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\beta=\\dfrac{\\lambda D}{d}=\\dfrac{600\\times10^{-9}\\times1.5}{0.3\\times10^{-3}}=3\\times10^{-3}\\ \\mathrm{m}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1.2\\ \\mathrm{mm}$"
+   },
+   {
+    "key": "B",
+    "text": "$0.3\\ \\mathrm{mm}$"
+   },
+   {
+    "key": "C",
+    "text": "$3\\ \\mathrm{mm}$"
+   },
+   {
+    "key": "D",
+    "text": "$30\\ \\mathrm{mm}$"
+   }
+  ]
+ },
+ {
   "id": "q_34bc4bc7221e",
   "type": "NVQ",
   "stem": "A liquid sample of volume $500\\ \\mathrm{cm^3}$ has bulk modulus $1\\times10^{11}\\ \\mathrm{Pa}$. The decrease in its volume (in $\\mathrm{cm^3}$) when the pressure is increased by $4\\times10^{7}\\ \\mathrm{Pa}$ is",
@@ -716,6 +928,49 @@
   "tax": {
    "subject": "PHY",
    "chapter": "PHY.SOL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_34efd859cb32",
+  "type": "INT",
+  "stem": "A prism of apex angle $60^\\circ$ has refractive index $\\sqrt3$. The angle of minimum deviation in degrees is",
+  "images": [],
+  "answer": {
+   "value": 60.0
+  },
+  "solution": "$n=\\dfrac{\\sin\\frac{A+\\delta_m}{2}}{\\sin\\frac A2}\\Rightarrow\\sin\\frac{60+\\delta_m}{2}=\\sqrt3\\times\\tfrac12=\\sin60^\\circ$, so $\\dfrac{60+\\delta_m}{2}=60^\\circ\\Rightarrow\\delta_m=60^\\circ$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROP",
    "topics": [],
    "concepts": []
   },
@@ -1200,6 +1455,49 @@
   "version": 1
  },
  {
+  "id": "q_4bb7d62a3920",
+  "type": "INT",
+  "stem": "Light of wavelength $500\\ \\mathrm{nm}$ falls on a single slit of width $0.2\\ \\mathrm{mm}$. On a screen $2\\ \\mathrm{m}$ away the width of the central maximum in mm is",
+  "images": [],
+  "answer": {
+   "value": 10.0
+  },
+  "solution": "Central maximum extends between the first minima: width $=\\dfrac{2\\lambda D}{a}=\\dfrac{2\\times500\\times10^{-9}\\times2}{0.2\\times10^{-3}}=10^{-2}\\ \\mathrm{m}=10\\ \\mathrm{mm}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_4d0afce413c4",
   "type": "SCQ",
   "stem": "A steel wire ($Y=2\\times10^{11}\\ \\mathrm{N/m^2}$, length $2\\ \\mathrm{m}$, area $1\\ \\mathrm{mm^2}$) carries a load of $100\\ \\mathrm{N}$. The elastic energy stored in the wire (in joule) is",
@@ -1263,6 +1561,49 @@
   ]
  },
  {
+  "id": "q_4f13e1896a43",
+  "type": "INT",
+  "stem": "Unpolarised light is reflected from a glass surface of refractive index $\\sqrt3$. The angle of incidence (in degrees) at which the reflected light is completely plane polarised is",
+  "images": [],
+  "answer": {
+   "value": 60.0
+  },
+  "solution": "Brewster's law: $\\tan\\theta_B=n=\\sqrt3\\Rightarrow\\theta_B=60^\\circ$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_50205eacb6ce",
   "type": "INT",
   "stem": "At the same temperature, the ratio of the rms speed of hydrogen molecules ($M=2\\ \\mathrm{g/mol}$) to that of oxygen molecules ($M=32\\ \\mathrm{g/mol}$) is",
@@ -1304,6 +1645,69 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_5043fa065e54",
+  "type": "SCQ",
+  "stem": "Unpolarised light of intensity $I_0$ passes through two ideal polaroids whose pass axes make an angle of $60^\\circ$. The transmitted intensity is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "First polaroid: $I_1=I_0/2$. Malus's law: $I_2=I_1\\cos^260^\\circ=\\dfrac{I_0}{2}\\times\\dfrac14=\\dfrac{I_0}{8}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{I_0}{8}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{I_0}{2}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{I_0}{4}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{3I_0}{8}$"
+   }
+  ]
  },
  {
   "id": "q_542d920159db",
@@ -1588,6 +1992,49 @@
   "version": 1
  },
  {
+  "id": "q_65ecdb233f4c",
+  "type": "INT",
+  "stem": "A Zener diode of breakdown voltage $6.8\\ \\mathrm{V}$ is connected in parallel with a $680\\ \\Omega$ load and fed from a $12\\ \\mathrm{V}$ supply through a series resistor of $200\\ \\Omega$. The current through the Zener diode in mA is",
+  "images": [],
+  "answer": {
+   "value": 16.0
+  },
+  "solution": "Current through the series resistor $=\\dfrac{12-6.8}{200}=26\\ \\mathrm{mA}$. Load current $=\\dfrac{6.8}{680}=10\\ \\mathrm{mA}$. $I_Z=26-10=16\\ \\mathrm{mA}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_671622877fe3",
   "type": "SCQ",
   "stem": "Two point charges of $4\\ \\mu\\mathrm{C}$ each are placed $30\\ \\mathrm{cm}$ apart in air ($k=9\\times10^9\\ \\mathrm{N\\,m^2/C^2}$). The force of repulsion between them (in newton) is",
@@ -1823,6 +2270,49 @@
   "version": 1
  },
  {
+  "id": "q_746c8dfdd92d",
+  "type": "INT",
+  "stem": "A silicon diode (forward drop $0.7\\ \\mathrm{V}$, otherwise ideal) is forward biased in series with a $430\\ \\Omega$ resistor and a $5\\ \\mathrm{V}$ battery. The current in mA is",
+  "images": [],
+  "answer": {
+   "value": 10.0
+  },
+  "solution": "$I=\\dfrac{5-0.7}{430}=\\dfrac{4.3}{430}=0.010\\ \\mathrm{A}=10\\ \\mathrm{mA}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_747170fd439a",
   "type": "INT",
   "stem": "A $4\\ \\mu\\mathrm{F}$ capacitor charged to $100\\ \\mathrm{V}$ is connected across an uncharged $6\\ \\mu\\mathrm{F}$ capacitor. The energy lost (in millijoule) in the process is",
@@ -1856,6 +2346,50 @@
   "difficulty": {
    "label": "M",
    "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7485ee6d4843",
+  "type": "NVQ",
+  "stem": "The work function of a metal is $2.5\\ \\mathrm{eV}$. Using $hc=1240\\ \\mathrm{eV\\,nm}$, the threshold wavelength in nm is approximately",
+  "images": [],
+  "answer": {
+   "value": 496.0,
+   "tol": 2.0
+  },
+  "solution": "$\\lambda_0=\\dfrac{hc}{\\phi}=\\dfrac{1240}{2.5}=496\\ \\mathrm{nm}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.DUAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
    "n": 0
   },
   "source": {
@@ -2182,6 +2716,50 @@
   ]
  },
  {
+  "id": "q_878fd4bf0ce1",
+  "type": "INT",
+  "stem": "A logic circuit gives $Y=(A\\ \\mathrm{NAND}\\ B)\\ \\mathrm{AND}\\ (B\\ \\mathrm{NOR}\\ C)$. For how many of the $8$ possible input combinations of $A,B,C$ is $Y=1$?",
+  "images": [],
+  "answer": {
+   "value": 2.0
+  },
+  "solution": "$B\\,\\mathrm{NOR}\\,C=1$ needs $B=C=0$. Then $A\\,\\mathrm{NAND}\\,B=1$ for either $A$ (since $B=0$). So $(A,B,C)=(0,0,0),(1,0,0)$: $2$ combinations.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual",
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_897e3130fe59",
   "type": "INT",
   "stem": "A uniform wire of resistance $8\\ \\Omega$ is uniformly stretched to three times its original length (volume constant). The new resistance in ohm is",
@@ -2223,6 +2801,75 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_8b4c11ca168a",
+  "type": "MSQ",
+  "stem": "Select all correct statements about semiconductors and $p$-$n$ junctions.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "A: each thermally generated electron leaves a hole. B: donor ions carry the compensating positive charge. C: forward bias pushes carriers towards the junction, shrinking the depletion region. D false: reverse bias widens the depletion layer and only a tiny minority-carrier current flows. E false: more carriers are excited across the gap at higher $T$, so conductivity rises (resistance falls).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "In pure silicon at room temperature the number of free electrons equals the number of holes."
+   },
+   {
+    "key": "B",
+    "text": "An $n$-type semiconductor is electrically neutral even though its majority carriers are electrons."
+   },
+   {
+    "key": "C",
+    "text": "The depletion layer becomes narrower under forward bias."
+   },
+   {
+    "key": "D",
+    "text": "Under reverse bias a large current flows because of majority carriers."
+   },
+   {
+    "key": "E",
+    "text": "The conductivity of an intrinsic semiconductor decreases as temperature rises."
+   }
+  ]
  },
  {
   "id": "q_8ba43defd2d7",
@@ -2284,6 +2931,69 @@
    {
     "key": "D",
     "text": "$2\\times10^{-4}\\ \\mathrm{T}$"
+   }
+  ]
+ },
+ {
+  "id": "q_8c6eec1ea862",
+  "type": "SCQ",
+  "stem": "A source emits monochromatic light of wavelength $600\\ \\mathrm{nm}$ with a power of $3.3\\ \\mathrm{mW}$. The number of photons emitted per second is approximately ($h=6.63\\times10^{-34}\\ \\mathrm{J\\,s}$, $c=3\\times10^8\\ \\mathrm{m/s}$)",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Photon energy $=\\dfrac{hc}{\\lambda}=\\dfrac{1.989\\times10^{-25}}{6\\times10^{-7}}=3.32\\times10^{-19}\\ \\mathrm{J}$. $N=\\dfrac{P}{E}=\\dfrac{3.3\\times10^{-3}}{3.32\\times10^{-19}}\\approx1.0\\times10^{16}\\ \\mathrm{s^{-1}}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.DUAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1.0\\times10^{16}$"
+   },
+   {
+    "key": "B",
+    "text": "$1.0\\times10^{13}$"
+   },
+   {
+    "key": "C",
+    "text": "$2.0\\times10^{16}$"
+   },
+   {
+    "key": "D",
+    "text": "$1.0\\times10^{19}$"
    }
   ]
  },
@@ -2449,6 +3159,49 @@
   "tax": {
    "subject": "PHY",
    "chapter": "PHY.EMI",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_96b626b3cd14",
+  "type": "INT",
+  "stem": "Light of wavelength $200\\ \\mathrm{nm}$ falls on a metal of work function $4.2\\ \\mathrm{eV}$. Using $hc=1240\\ \\mathrm{eV\\,nm}$, the stopping potential in volt is",
+  "images": [],
+  "answer": {
+   "value": 2.0
+  },
+  "solution": "$E=\\dfrac{hc}{\\lambda}=\\dfrac{1240}{200}=6.2\\ \\mathrm{eV}$. $eV_s=E-\\phi=6.2-4.2=2.0\\ \\mathrm{eV}\\Rightarrow V_s=2\\ \\mathrm{V}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.DUAL",
    "topics": [],
    "concepts": []
   },
@@ -3310,6 +4063,219 @@
   ]
  },
  {
+  "id": "q_c51ed7b1f7d7",
+  "type": "SCQ",
+  "stem": "An object is placed $30\\ \\mathrm{cm}$ in front of a thin convex lens of focal length $20\\ \\mathrm{cm}$. The image is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\dfrac1v-\\dfrac1u=\\dfrac1f$ with $u=-30$, $f=+20$: $\\dfrac1v=\\dfrac1{20}-\\dfrac1{30}=\\dfrac1{60}\\Rightarrow v=+60\\ \\mathrm{cm}$ (real, other side). $m=v/u=-2$: inverted and magnified.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.ROP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "virtual, erect, $60\\ \\mathrm{cm}$ from the lens on the same side"
+   },
+   {
+    "key": "B",
+    "text": "real, inverted, $12\\ \\mathrm{cm}$ from the lens on the other side"
+   },
+   {
+    "key": "C",
+    "text": "virtual, erect, $12\\ \\mathrm{cm}$ from the lens on the same side"
+   },
+   {
+    "key": "D",
+    "text": "real, inverted, $60\\ \\mathrm{cm}$ from the lens on the other side"
+   }
+  ]
+ },
+ {
+  "id": "q_c9ef7eb66948",
+  "type": "INT",
+  "stem": "In a double-slit setup ($d=0.5\\ \\mathrm{mm}$, $D=1\\ \\mathrm{m}$) a thin transparent sheet of refractive index $1.5$ and thickness $0.02\\ \\mathrm{mm}$ is placed over one slit. The central fringe shifts by (in mm)",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "Extra optical path $=(\\mu-1)t=0.5\\times0.02\\ \\mathrm{mm}=0.01\\ \\mathrm{mm}$. Shift $=\\dfrac{D}{d}(\\mu-1)t=\\dfrac{1}{0.5\\times10^{-3}}\\times10^{-5}=0.02\\ \\mathrm{m}=20\\ \\mathrm{mm}$ (towards the covered slit).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_cd600da0e42e",
+  "type": "SCQ",
+  "stem": "A common-emitter amplifier has current gain $\\beta=60$, input resistance $0.5\\ \\mathrm{k\\Omega}$ and collector load $1.5\\ \\mathrm{k\\Omega}$. Its voltage gain is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$A_v=\\beta\\dfrac{R_L}{R_{in}}=60\\times\\dfrac{1.5}{0.5}=180$ (magnitude; the output is $180^\\circ$ out of phase with the input).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$20$"
+   },
+   {
+    "key": "B",
+    "text": "$180$"
+   },
+   {
+    "key": "C",
+    "text": "$60$"
+   },
+   {
+    "key": "D",
+    "text": "$30$"
+   }
+  ]
+ },
+ {
+  "id": "q_ce5d2c8e2b69",
+  "type": "NVQ",
+  "stem": "The band gap of silicon is $1.1\\ \\mathrm{eV}$. The longest wavelength (in nm) of light that can create an electron-hole pair in it is approximately (use $hc=1240\\ \\mathrm{eV\\,nm}$)",
+  "images": [],
+  "answer": {
+   "value": 1127.0,
+   "tol": 5.0
+  },
+  "solution": "Need $\\dfrac{hc}{\\lambda}\\ge E_g\\Rightarrow\\lambda\\le\\dfrac{1240}{1.1}=1127\\ \\mathrm{nm}$ (infrared).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_cecd6a076bb2",
   "type": "SCQ",
   "stem": "A $0.5\\ \\mathrm{m}$ long straight wire carrying $4\\ \\mathrm{A}$ is placed in a uniform field of $0.2\\ \\mathrm{T}$ making an angle of $30^\\circ$ with the field. The magnetic force on the wire (in newton) is",
@@ -3562,6 +4528,49 @@
   ]
  },
  {
+  "id": "q_db3a9c057b77",
+  "type": "INT",
+  "stem": "Two coherent sources produce intensities in the ratio $9:1$ at a point of the screen when each acts alone. The ratio $I_{max}:I_{min}$ in the interference pattern is $n:1$. The value of $n$ is",
+  "images": [],
+  "answer": {
+   "value": 4.0
+  },
+  "solution": "Amplitudes are in ratio $3:1$. $\\dfrac{I_{max}}{I_{min}}=\\dfrac{(a_1+a_2)^2}{(a_1-a_2)^2}=\\dfrac{4^2}{2^2}=4$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_dd1578ab4bba",
   "type": "INT",
   "stem": "Two long parallel wires $5\\ \\mathrm{cm}$ apart carry currents of $10\\ \\mathrm{A}$ and $15\\ \\mathrm{A}$ in the same direction. The force per unit length between them is $x\\times10^{-5}\\ \\mathrm{N/m}$. The value of $x$ is",
@@ -3664,6 +4673,69 @@
    {
     "key": "D",
     "text": "$20$"
+   }
+  ]
+ },
+ {
+  "id": "q_e83873cbfda3",
+  "type": "SCQ",
+  "stem": "An electron is accelerated from rest through $150\\ \\mathrm{V}$. Its de Broglie wavelength is approximately",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\lambda=\\dfrac{h}{\\sqrt{2meV}}=\\dfrac{12.27}{\\sqrt V}\\ \\mathrm{\\AA}=\\dfrac{12.27}{\\sqrt{150}}=1.0\\ \\mathrm{\\AA}$. Direct: $\\dfrac{6.63\\times10^{-34}}{\\sqrt{2\\times9.11\\times10^{-31}\\times1.6\\times10^{-19}\\times150}}=1.0\\times10^{-10}\\ \\mathrm{m}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.DUAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$12\\ \\mathrm{\\AA}$"
+   },
+   {
+    "key": "B",
+    "text": "$10\\ \\mathrm{\\AA}$"
+   },
+   {
+    "key": "C",
+    "text": "$1.0\\ \\mathrm{\\AA}$"
+   },
+   {
+    "key": "D",
+    "text": "$0.1\\ \\mathrm{\\AA}$"
    }
   ]
  },
@@ -3795,6 +4867,49 @@
   ]
  },
  {
+  "id": "q_f3ec0f4e78cb",
+  "type": "INT",
+  "stem": "In a double-slit experiment with slit separation $0.5\\ \\mathrm{mm}$, screen distance $1\\ \\mathrm{m}$ and $\\lambda=500\\ \\mathrm{nm}$, the distance (in mm) of the $4^{th}$ bright fringe from the central maximum is",
+  "images": [],
+  "answer": {
+   "value": 4.0
+  },
+  "solution": "$y_n=\\dfrac{n\\lambda D}{d}$, $y_4=\\dfrac{4\\times500\\times10^{-9}\\times1}{0.5\\times10^{-3}}=4\\times10^{-3}\\ \\mathrm{m}=4\\ \\mathrm{mm}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.WOP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_f5441397e460",
   "type": "INT",
   "stem": "A stone is thrown vertically upward with speed $20\\ \\mathrm{m/s}$ from the top of a $25\\ \\mathrm{m}$ tower and finally lands on the ground at the foot of the tower. Taking $g=10\\ \\mathrm{m/s^2}$, the total time of flight in seconds is",
@@ -3879,5 +4994,68 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_fed0c638d3d3",
+  "type": "SCQ",
+  "stem": "A full-wave rectifier is fed from a $50\\ \\mathrm{Hz}$ AC supply. The fundamental frequency of the ripple in the output is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A full-wave rectifier conducts on both half-cycles, so the output has two pulses per input cycle: ripple frequency $=2\\times50=100\\ \\mathrm{Hz}$ (a half-wave rectifier would give $50\\ \\mathrm{Hz}$).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PHY",
+   "chapter": "PHY.SEM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "JEE_MAIN": {
+    "2026": true
+   },
+   "NEET_UG": {
+    "2026": true
+   },
+   "IAT": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$50\\ \\mathrm{Hz}$"
+   },
+   {
+    "key": "B",
+    "text": "$25\\ \\mathrm{Hz}$"
+   },
+   {
+    "key": "C",
+    "text": "$200\\ \\mathrm{Hz}$"
+   },
+   {
+    "key": "D",
+    "text": "$100\\ \\mathrm{Hz}$"
+   }
+  ]
  }
 ]
