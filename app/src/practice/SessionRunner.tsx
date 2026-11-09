@@ -153,8 +153,12 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
       let nextReasons = reasons;
       if (auto) {
         setTimedOut(true);
-        nextReasons = { ...reasons, [q.id]: 'time' };
-        setReasons(nextReasons);
+        // "ran out of time" only explains a miss: a typed answer that turned out right needs no reason
+        const right = !selfCheck && v !== '' && checkAnswer(q, valueToResponse(q, v)) === 'correct';
+        if (!right) {
+          nextReasons = { ...reasons, [q.id]: 'time' };
+          setReasons(nextReasons);
+        }
       }
       persist({ checked: nextChecked, reasons: nextReasons });
     },
