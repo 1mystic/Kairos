@@ -12,3 +12,7 @@ __pycache__/
 playwright-report/
 test-results/
 kairos-starter.zip
+
+# GATE DA raw downloads
+pipeline/gate_da/raw/
+pipeline/raw/

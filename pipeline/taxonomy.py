@@ -10,8 +10,8 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from .paths import TAXONOMY_PATH
 
-SubjectId = Literal["PHY", "CHE", "MAT", "BOT", "ZOO"]
-EXAMS = ("JEE_MAIN", "NEET_UG", "IAT")
+SubjectId = Literal["PHY", "CHE", "MAT", "BOT", "ZOO", "GA", "PRS", "LA", "CO", "PDS", "DBW", "ML", "AI"]
+EXAMS = ("JEE_MAIN", "NEET_UG", "IAT", "GATE_DA")
 
 
 class Topic(BaseModel):
@@ -25,6 +25,7 @@ class ExamFlags(BaseModel):
     JEE_MAIN: bool
     NEET_UG: bool
     IAT: bool
+    GATE_DA: bool = False
 
 
 class Chapter(BaseModel):

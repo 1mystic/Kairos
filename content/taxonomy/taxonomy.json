@@ -1,6 +1,6 @@
 {
  "version": 1,
- "_verify": "VERIFY: chapter lists are based on the rationalised NCERT class 11/12 books and must be checked against the official 2026 NTA syllabi (JEE Main, NEET UG) and the IAT syllabus before launch. Equilibrium is split into CHE.CHEQ/CHE.IONEQ for practice granularity. Topics are intentionally sparse in v1. W7a additions (JEE Advanced coverage): CHE.GAS, CHE.SBLK, CHE.PBLK, CHE.SOLID, CHE.SURF, CHE.METAL, CHE.POLY. Flags for the six non-PBLK chapters (JEE_MAIN/NEET_UG false) reflect the rationalised 2024-26 syllabi as best known and are Advanced-only content; VERIFY against the official NTA syllabi.",
+ "_verify": "check against official 2027 syllabus (GATE_DA). VERIFY: chapter lists are based on the rationalised NCERT class 11/12 books and must be checked against the official 2026 NTA syllabi (JEE Main, NEET UG) and the IAT syllabus before launch. Equilibrium is split into CHE.CHEQ/CHE.IONEQ for practice granularity. Topics are intentionally sparse in v1. W7a additions (JEE Advanced coverage): CHE.GAS, CHE.SBLK, CHE.PBLK, CHE.SOLID, CHE.SURF, CHE.METAL, CHE.POLY. Flags for the six non-PBLK chapters (JEE_MAIN/NEET_UG false) reflect the rationalised 2024-26 syllabi as best known and are Advanced-only content; VERIFY against the official NTA syllabi. GATE_DA additions (W8): subjects GA PRS LA CO PDS DBW ML AI follow the GATE 2027 syllabus for DA in the official Information Brochure (gate2027ib.iitm.ac.in, Appendix D, DA + GA); chapter 'class' is a placeholder (12) because GATE has no NCERT class. VERIFY: check against official 2027 syllabus when the final brochure revision is released.",
  "iat_subject_map": {
   "BIO": [
    "BOT",
@@ -1379,6 +1379,993 @@
       "IAT": true
      },
      "topics": []
+    }
+   ]
+  },
+  {
+   "id": "GA",
+   "name": "General Aptitude",
+   "chapters": [
+    {
+     "id": "GA.VERB",
+     "name": "Verbal Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.VERB.GRAM",
+       "name": "English grammar: tenses, articles, prepositions, agreement"
+      },
+      {
+       "id": "GA.VERB.VOC",
+       "name": "Vocabulary: words, idioms and phrases in context"
+      },
+      {
+       "id": "GA.VERB.RC",
+       "name": "Reading comprehension"
+      },
+      {
+       "id": "GA.VERB.SEQ",
+       "name": "Narrative sequencing"
+      }
+     ]
+    },
+    {
+     "id": "GA.QUANT",
+     "name": "Quantitative Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.QUANT.DI",
+       "name": "Data interpretation: graphs, tables, maps"
+      },
+      {
+       "id": "GA.QUANT.NUMC",
+       "name": "Numerical computation and estimation: ratios, percentages, powers, logs, series, P&C"
+      },
+      {
+       "id": "GA.QUANT.MENS",
+       "name": "Mensuration and geometry"
+      },
+      {
+       "id": "GA.QUANT.STAT",
+       "name": "Elementary statistics and probability"
+      }
+     ]
+    },
+    {
+     "id": "GA.ANAL",
+     "name": "Analytical Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.ANAL.DED",
+       "name": "Logic: deduction and induction"
+      },
+      {
+       "id": "GA.ANAL.ANLG",
+       "name": "Analogy"
+      },
+      {
+       "id": "GA.ANAL.NREL",
+       "name": "Numerical relations and reasoning"
+      }
+     ]
+    },
+    {
+     "id": "GA.SPAT",
+     "name": "Spatial Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.SPAT.TRANS",
+       "name": "Transformation of shapes: translation, rotation, scaling, mirroring"
+      },
+      {
+       "id": "GA.SPAT.FOLD",
+       "name": "Paper folding, cutting, patterns"
+      },
+      {
+       "id": "GA.SPAT.ASSM",
+       "name": "Assembling and grouping in 2D and 3D"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PRS",
+   "name": "Probability and Statistics",
+   "chapters": [
+    {
+     "id": "PRS.CNT",
+     "name": "Counting",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.CNT.PC",
+       "name": "Permutations and combinations"
+      }
+     ]
+    },
+    {
+     "id": "PRS.PROB",
+     "name": "Probability Axioms, Events and Bayes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.PROB.AX",
+       "name": "Sample space, axioms, events"
+      },
+      {
+       "id": "PRS.PROB.IND",
+       "name": "Independent and mutually exclusive events"
+      },
+      {
+       "id": "PRS.PROB.COND",
+       "name": "Marginal, conditional and joint probability"
+      },
+      {
+       "id": "PRS.PROB.BAYES",
+       "name": "Bayes theorem"
+      }
+     ]
+    },
+    {
+     "id": "PRS.DESC",
+     "name": "Descriptive Statistics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.DESC.CT",
+       "name": "Mean, median, mode"
+      },
+      {
+       "id": "PRS.DESC.SD",
+       "name": "Standard deviation"
+      },
+      {
+       "id": "PRS.DESC.COR",
+       "name": "Correlation and covariance"
+      }
+     ]
+    },
+    {
+     "id": "PRS.DRV",
+     "name": "Discrete Random Variables",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.DRV.PMF",
+       "name": "Probability mass function"
+      },
+      {
+       "id": "PRS.DRV.UNI",
+       "name": "Discrete uniform"
+      },
+      {
+       "id": "PRS.DRV.BER",
+       "name": "Bernoulli"
+      },
+      {
+       "id": "PRS.DRV.BIN",
+       "name": "Binomial"
+      },
+      {
+       "id": "PRS.DRV.POI",
+       "name": "Poisson"
+      }
+     ]
+    },
+    {
+     "id": "PRS.CRV",
+     "name": "Continuous Random Variables",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.CRV.PDF",
+       "name": "PDF and CDF"
+      },
+      {
+       "id": "PRS.CRV.UNI",
+       "name": "Uniform"
+      },
+      {
+       "id": "PRS.CRV.EXP",
+       "name": "Exponential"
+      },
+      {
+       "id": "PRS.CRV.NOR",
+       "name": "Normal and standard normal"
+      },
+      {
+       "id": "PRS.CRV.TCH",
+       "name": "t and chi-squared distributions"
+      },
+      {
+       "id": "PRS.CRV.CPDF",
+       "name": "Conditional PDF"
+      }
+     ]
+    },
+    {
+     "id": "PRS.MOM",
+     "name": "Expectation, Variance and Joint Distributions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.MOM.EXV",
+       "name": "Expectation and variance"
+      },
+      {
+       "id": "PRS.MOM.CEX",
+       "name": "Conditional expectation and variance"
+      },
+      {
+       "id": "PRS.MOM.JNT",
+       "name": "Joint and marginal distributions"
+      }
+     ]
+    },
+    {
+     "id": "PRS.CLT",
+     "name": "Central Limit Theorem",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PRS.INF",
+     "name": "Confidence Intervals and Hypothesis Tests",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.INF.CI",
+       "name": "Confidence interval"
+      },
+      {
+       "id": "PRS.INF.ZT",
+       "name": "z-test"
+      },
+      {
+       "id": "PRS.INF.TT",
+       "name": "t-test"
+      },
+      {
+       "id": "PRS.INF.CHI",
+       "name": "chi-squared test"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LA",
+   "name": "Linear Algebra",
+   "chapters": [
+    {
+     "id": "LA.VS",
+     "name": "Vector Spaces and Independence",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.VS.SUB",
+       "name": "Subspaces"
+      },
+      {
+       "id": "LA.VS.LIN",
+       "name": "Linear dependence and independence"
+      }
+     ]
+    },
+    {
+     "id": "LA.MAT",
+     "name": "Matrices and Special Matrices",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.MAT.PROP",
+       "name": "Matrix properties, partition matrices"
+      },
+      {
+       "id": "LA.MAT.ORTH",
+       "name": "Orthogonal matrices"
+      },
+      {
+       "id": "LA.MAT.IDEM",
+       "name": "Idempotent matrices"
+      },
+      {
+       "id": "LA.MAT.QF",
+       "name": "Quadratic forms"
+      }
+     ]
+    },
+    {
+     "id": "LA.SYS",
+     "name": "Linear Systems",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.SYS.GAUSS",
+       "name": "Gaussian elimination"
+      },
+      {
+       "id": "LA.SYS.SOL",
+       "name": "Existence and uniqueness of solutions"
+      }
+     ]
+    },
+    {
+     "id": "LA.EIG",
+     "name": "Determinant, Eigenvalues and Eigenvectors",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.EIG.DET",
+       "name": "Determinant"
+      },
+      {
+       "id": "LA.EIG.EV",
+       "name": "Eigenvalues and eigenvectors"
+      }
+     ]
+    },
+    {
+     "id": "LA.PROJ",
+     "name": "Rank, Nullity and Projections",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.PROJ.RK",
+       "name": "Rank and nullity"
+      },
+      {
+       "id": "LA.PROJ.PM",
+       "name": "Projection matrix and projections"
+      }
+     ]
+    },
+    {
+     "id": "LA.DEC",
+     "name": "Matrix Decompositions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.DEC.LU",
+       "name": "LU decomposition"
+      },
+      {
+       "id": "LA.DEC.SVD",
+       "name": "Singular value decomposition"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "CO",
+   "name": "Calculus and Optimization",
+   "chapters": [
+    {
+     "id": "CO.LIM",
+     "name": "Limits, Continuity and Differentiability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "CO.LIM.LIM",
+       "name": "Limits"
+      },
+      {
+       "id": "CO.LIM.CNT",
+       "name": "Continuity"
+      },
+      {
+       "id": "CO.LIM.DIF",
+       "name": "Differentiability"
+      }
+     ]
+    },
+    {
+     "id": "CO.TAY",
+     "name": "Taylor Series",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CO.OPT",
+     "name": "Maxima, Minima and Single-variable Optimization",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "CO.OPT.MM",
+       "name": "Maxima and minima"
+      },
+      {
+       "id": "CO.OPT.OPT",
+       "name": "Optimization involving a single variable"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PDS",
+   "name": "Programming, Data Structures and Algorithms",
+   "chapters": [
+    {
+     "id": "PDS.PY",
+     "name": "Programming in Python",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PDS.DS",
+     "name": "Basic Data Structures",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PDS.DS.STK",
+       "name": "Stacks"
+      },
+      {
+       "id": "PDS.DS.QUE",
+       "name": "Queues"
+      },
+      {
+       "id": "PDS.DS.LL",
+       "name": "Linked lists"
+      },
+      {
+       "id": "PDS.DS.TREE",
+       "name": "Trees"
+      },
+      {
+       "id": "PDS.DS.HASH",
+       "name": "Hash tables"
+      }
+     ]
+    },
+    {
+     "id": "PDS.ALG",
+     "name": "Searching, Sorting and Divide and Conquer",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PDS.ALG.SRCH",
+       "name": "Linear and binary search"
+      },
+      {
+       "id": "PDS.ALG.SORT",
+       "name": "Selection, bubble and insertion sort"
+      },
+      {
+       "id": "PDS.ALG.DC",
+       "name": "Mergesort and quicksort"
+      },
+      {
+       "id": "PDS.ALG.CPX",
+       "name": "Complexity analysis"
+      }
+     ]
+    },
+    {
+     "id": "PDS.GRAPH",
+     "name": "Graph Theory and Basic Graph Algorithms",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PDS.GRAPH.BASIC",
+       "name": "Introduction to graph theory"
+      },
+      {
+       "id": "PDS.GRAPH.TRAV",
+       "name": "Traversals"
+      },
+      {
+       "id": "PDS.GRAPH.SP",
+       "name": "Shortest path"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "DBW",
+   "name": "Database Management and Warehousing",
+   "chapters": [
+    {
+     "id": "DBW.ER",
+     "name": "ER Model",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "DBW.REL",
+     "name": "Relational Model, Algebra, Calculus and SQL",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.REL.ALGB",
+       "name": "Relational algebra"
+      },
+      {
+       "id": "DBW.REL.TUP",
+       "name": "Tuple calculus"
+      },
+      {
+       "id": "DBW.REL.SQL",
+       "name": "SQL"
+      },
+      {
+       "id": "DBW.REL.IC",
+       "name": "Integrity constraints"
+      }
+     ]
+    },
+    {
+     "id": "DBW.NF",
+     "name": "Normal Forms, File Organization and Indexing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.NF.NF",
+       "name": "Normal forms"
+      },
+      {
+       "id": "DBW.NF.FILE",
+       "name": "File organization"
+      },
+      {
+       "id": "DBW.NF.IDX",
+       "name": "Indexing"
+      }
+     ]
+    },
+    {
+     "id": "DBW.XFM",
+     "name": "Data Types and Data Transformation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.XFM.NORM",
+       "name": "Normalization (scaling)"
+      },
+      {
+       "id": "DBW.XFM.DISC",
+       "name": "Discretization"
+      },
+      {
+       "id": "DBW.XFM.SAMP",
+       "name": "Sampling"
+      },
+      {
+       "id": "DBW.XFM.COMP",
+       "name": "Compression"
+      }
+     ]
+    },
+    {
+     "id": "DBW.DW",
+     "name": "Data Warehouse Modelling",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.DW.SCH",
+       "name": "Schemas for multidimensional models"
+      },
+      {
+       "id": "DBW.DW.HIER",
+       "name": "Concept hierarchies"
+      },
+      {
+       "id": "DBW.DW.MEAS",
+       "name": "Measures: categorization and computation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ML",
+   "name": "Machine Learning",
+   "chapters": [
+    {
+     "id": "ML.REG",
+     "name": "Regression",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.REG.SLR",
+       "name": "Simple linear regression"
+      },
+      {
+       "id": "ML.REG.MLR",
+       "name": "Multiple linear regression"
+      },
+      {
+       "id": "ML.REG.RDG",
+       "name": "Ridge regression"
+      }
+     ]
+    },
+    {
+     "id": "ML.CLS",
+     "name": "Classification",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.CLS.LOG",
+       "name": "Logistic regression"
+      },
+      {
+       "id": "ML.CLS.KNN",
+       "name": "k-nearest neighbour"
+      },
+      {
+       "id": "ML.CLS.NB",
+       "name": "Naive Bayes classifier"
+      },
+      {
+       "id": "ML.CLS.LDA",
+       "name": "Linear discriminant analysis"
+      },
+      {
+       "id": "ML.CLS.SVM",
+       "name": "Support vector machine"
+      },
+      {
+       "id": "ML.CLS.DT",
+       "name": "Decision trees"
+      }
+     ]
+    },
+    {
+     "id": "ML.EVAL",
+     "name": "Model Selection and Generalisation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.EVAL.BV",
+       "name": "Bias-variance trade-off"
+      },
+      {
+       "id": "ML.EVAL.CV",
+       "name": "Cross-validation: LOO, k-fold"
+      }
+     ]
+    },
+    {
+     "id": "ML.NN",
+     "name": "Neural Networks",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.NN.MLP",
+       "name": "Multi-layer perceptron"
+      },
+      {
+       "id": "ML.NN.FF",
+       "name": "Feed-forward neural network"
+      }
+     ]
+    },
+    {
+     "id": "ML.CLU",
+     "name": "Clustering",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.CLU.KM",
+       "name": "k-means and k-medoid"
+      },
+      {
+       "id": "ML.CLU.HC",
+       "name": "Hierarchical clustering: single and multiple linkage"
+      }
+     ]
+    },
+    {
+     "id": "ML.DR",
+     "name": "Dimensionality Reduction",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.DR.PCA",
+       "name": "Principal component analysis"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "AI",
+   "name": "Artificial Intelligence",
+   "chapters": [
+    {
+     "id": "AI.SRCH",
+     "name": "Search",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "AI.SRCH.UNINF",
+       "name": "Uninformed search"
+      },
+      {
+       "id": "AI.SRCH.INF",
+       "name": "Informed search"
+      },
+      {
+       "id": "AI.SRCH.ADV",
+       "name": "Adversarial search"
+      }
+     ]
+    },
+    {
+     "id": "AI.LOG",
+     "name": "Logic",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "AI.LOG.PROP",
+       "name": "Propositional logic"
+      },
+      {
+       "id": "AI.LOG.PRED",
+       "name": "Predicate logic"
+      }
+     ]
+    },
+    {
+     "id": "AI.UNC",
+     "name": "Reasoning under Uncertainty",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "AI.UNC.CI",
+       "name": "Conditional independence representation"
+      },
+      {
+       "id": "AI.UNC.VE",
+       "name": "Exact inference: variable elimination"
+      },
+      {
+       "id": "AI.UNC.SAMP",
+       "name": "Approximate inference: sampling"
+      }
+     ]
     }
    ]
   }

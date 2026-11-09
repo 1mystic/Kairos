@@ -16,7 +16,7 @@ from .taxonomy import EXAMS, Taxonomy, default_taxonomy
 QType = Literal["SCQ", "MSQ", "NVQ", "INT", "MATCH", "PARA_CHILD", "ASSERT_REASON"]
 # JEE_ADV is an appearance/provenance tag only: it has no shard tree. Such questions are served
 # under JEE_MAIN when in_syllabus.JEE_MAIN is true (see Question.exams()).
-Exam = Literal["JEE_MAIN", "JEE_ADV", "NEET_UG", "IAT"]
+Exam = Literal["JEE_MAIN", "JEE_ADV", "NEET_UG", "IAT", "GATE_DA"]
 CHOICE_TYPES = {"SCQ", "MSQ", "MATCH", "ASSERT_REASON"}  # PARA_CHILD may be either
 NUMERIC_TYPES = {"NVQ", "INT"}
 
