@@ -696,7 +696,7 @@ export function AuthShell({ title, subtitle, children, footer }: { title: string
               <li key={p} className="row-inline text-body font-medium"><span className="tile-icon !mb-0 !bg-surface"><CheckIcon /></span>{p}</li>
             ))}
           </ul>
-          <p className="text-small text-slate">JEE Main · NEET UG · IAT</p>
+          <p className="text-small text-slate">JEE Main · NEET UG · IAT · GATE DA</p>
         </div>
         <AuthArt />
       </aside>

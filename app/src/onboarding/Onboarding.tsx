@@ -82,7 +82,7 @@ function ExamPicker({ value, onChange, today, error, label }: { value: ExamDraft
             title={`${EXAM_LABELS[value.exam] ?? value.exam}${entries.length > 1 ? ` Session ${e.session}` : ''}`}
             chip={<Chip tone={e.status === 'official' ? 'primary' : 'accent'}>{e.status === 'official' ? 'Official date' : 'Expected'}</Chip>}
           >
-            {e.date ? prettyDate(e.date, true) : 'Date not announced yet. Enter the date you expect below; we update it when it is official.'}
+            {e.date ? prettyDate(e.date, true) : `${e.window ? `Exam window ${prettyDate(e.window.start)} to ${prettyDate(e.window.end)}. ` : ''}Date not announced yet. Enter the date you expect below; we update it when it is official.`}
           </Choice>
         ))}
         <Choice name={`${label}-session`} on={value.sel === 0} onSelect={() => onChange({ ...value, sel: 0 })} title="My own date">Use this if your exam is not listed.</Choice>

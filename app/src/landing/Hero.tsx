@@ -15,7 +15,7 @@ export function Hero({ onStartGuest }: { onStartGuest: () => void }) {
     <section className="ld-hero ld-wrap" aria-labelledby="ld-h1">
       <TwoPane>
       <div className="ld-hero-copy">
-        <p className="ld-eyebrow">JEE Main · NEET UG · IAT</p>
+        <p className="ld-eyebrow">JEE Main · NEET UG · IAT · GATE DA</p>
         <h1 id="ld-h1">
           The right question, <span className="ld-hl">at the right time.</span>
         </h1>
