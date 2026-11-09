@@ -281,7 +281,8 @@ export function SummaryScreen() {
         if (!session || !session.summary) return live && setState('missing');
         const version = await getLatestVersion();
         const ids = Array.isArray(session.qids) ? (session.qids as string[]) : [];
-        const bankQs = await getQuestionsByIds(version, String(session.exam), ids.filter((id) => !id.startsWith('u_')));
+        const hint = (Array.isArray(session.chapters) ? (session.chapters as string[]) : [session.chapter]).filter((c): c is string => typeof c === 'string' && c !== '' && c !== 'mixed');
+        const bankQs = await getQuestionsByIds(version, String(session.exam), ids.filter((id) => !id.startsWith('u_')), hint);
         const own = ids.some((id) => id.startsWith('u_')) && bank ? await bank.listQuestions().catch(() => []) : [];
         const byId = new Map([...bankQs, ...own.map(toPracticeQuestion)].map((q) => [q.id, q]));
         const questions = ids.map((id) => byId.get(id)).filter((q): q is Question => !!q);

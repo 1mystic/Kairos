@@ -34,7 +34,7 @@ export function SessionScreen() {
   const manifest = useManifest();
   const [phase, setPhase] = useState<Phase>({ kind: 'loading' });
   const buffer = getSessionBuffer();
-  const started = useRef(false);
+  const started = useRef<string | null>(null);
 
   const chapters = chapter === 'mixed' ? (sp.get('chapters') ?? '').split(',').filter(Boolean) : [chapter];
   const size = Number(sp.get('size')) || 10;
@@ -53,7 +53,8 @@ export function SessionScreen() {
   const start = useCallback(
     async (pool: Question[]) => {
       const now = Date.now();
-      const sessions = await store.listSessions(unseen ? {} : { since: now - RECENCY_DAYS * DAY }).catch(() => []);
+      // bounded reads: the cloud store bills one read per session doc
+      const sessions = await store.listSessions(unseen ? { limit: 300 } : { since: now - RECENCY_DAYS * DAY, limit: 200 }).catch(() => []);
       const mastery = (await store.getState('mastery').catch(() => null)) as Record<string, { θ: number; n: number }> | null;
       const seed = Math.floor(Math.random() * 2 ** 32);
       const q = buildQueue(pool, { size, seed, seen: seenIds(sessions), theta: thetaFor(pool, mastery), bands, selfCheck });
@@ -66,8 +67,12 @@ export function SessionScreen() {
   );
 
   useEffect(() => {
-    if (!manifest.data || started.current) return;
-    started.current = true;
+    if (!manifest.data) return;
+    // one load per (exam, chapters, own-questions) combination; a route change inside this mounted screen starts over
+    const runKey = `${exam}/${chapterKey}/${mineKey}`;
+    if (started.current === runKey) return;
+    if (started.current !== null) setPhase({ kind: 'loading' });
+    started.current = runKey;
     const files = manifest.data.manifest.files;
     const refs =
       my === 'only'

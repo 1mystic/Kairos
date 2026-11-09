@@ -36,6 +36,11 @@ const fmt = (ms: number) => {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 };
 
+/** Keep only number characters; typographic minus signs (U+2212, en/em dash) become '-' so "−2" is not read as 2. */
+export function cleanNumeric(raw: string): string {
+  return raw.replace(/[\u2212\u2012\u2013\u2014]/g, '-').replace(/[^0-9eE+\-.]/g, '');
+}
+
 /** Per-question time limit in timed mode: twice the median, kept between 1 and 4 minutes. */
 export function timeLimitMs(q: Question): number {
   const m = (q.difficulty?.median_time_s ?? 60) * 2000;
@@ -363,7 +368,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
                     autoComplete="off"
                     value={answer}
                     disabled={isChecked}
-                    onChange={(e) => setValue(e.target.value.replace(/[^0-9eE+\-.]/g, ''))}
+                    onChange={(e) => setValue(cleanNumeric(e.target.value))}
                     placeholder="Type a number"
                   />
                 </div>

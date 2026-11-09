@@ -141,6 +141,15 @@ describe('bank client', () => {
     expect(r.map((x) => x.id)).toEqual(['q_c', 'q_a']);
   });
 
+  it('getQuestionsByIds loads only the hinted chapters, and falls back to every shard when an id is not there', async () => {
+    const r = await getQuestionsByIds(3, 'JEE', ['q_a', 'q_b'], ['PHY.ROT']);
+    expect(r.map((x) => x.id)).toEqual(['q_a', 'q_b']);
+    expect(hits.some((u) => u.includes('PHY.MOT'))).toBe(false);
+    const r2 = await getQuestionsByIds(3, 'JEE', ['q_a', 'q_c'], ['PHY.ROT']);
+    expect(r2.map((x) => x.id)).toEqual(['q_a', 'q_c']);
+    expect(hits.some((u) => u.includes('PHY.MOT'))).toBe(true);
+  });
+
   it('getQuestionsByIds uses manifest.qindex to load only needed shards', async () => {
     const m = JSON.parse(served['/bank/v3/manifest.json'] as string);
     m.qindex = { q_a: 'PHY.ROT', q_c: 'PHY.MOT' };

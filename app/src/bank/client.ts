@@ -299,32 +299,43 @@ export async function getMockPaper(version: number, paperId: string): Promise<Mo
 
 /**
  * Questions for `ids` (order preserved, unknown ids skipped) among the shards of `exam`.
- * Uses `manifest.qindex` when present, else loads every shard of the exam to build an index.
+ * Uses `manifest.qindex` when present. Otherwise, with `chapterHint` (the chapters the ids came from, e.g. a
+ * practice session's chapters) only those shards load first; ids still missing fall back to loading every
+ * shard of the exam (cached after the first load, in memory per version+exam and in IndexedDB per shard).
  */
 export async function getQuestionsByIds(
   version: number,
   exam: string,
   ids: readonly string[],
+  chapterHint?: readonly string[],
 ): Promise<Question[]> {
   const m = await getManifest(version);
   const shards = m.files.filter((f) => f.kind === 'shard' && f.exam === exam);
-  let chapters: ManifestFile[];
+  const index = (chapters: ManifestFile[], key: string): Promise<Map<string, Question>> => {
+    let p = qindexMemo.get(key);
+    if (!p) {
+      p = (async () => {
+        const idx = new Map<string, Question>();
+        const loaded = await Promise.all(chapters.map((f) => loadFile(version, f, shardsSchema, true)));
+        for (const qs of loaded) for (const q of qs) idx.set(q.id, q);
+        return idx;
+      })();
+      p.catch(() => qindexMemo.delete(key));
+      qindexMemo.set(key, p);
+    }
+    return p;
+  };
+  const pick = (idx: Map<string, Question>) => ids.map((id) => idx.get(id)).filter((q): q is Question => !!q);
+
   if (m.qindex) {
     const want = new Set(ids.map((id) => m.qindex![id]).filter((x): x is string => !!x));
-    chapters = shards.filter((f) => f.chapter && want.has(f.chapter));
-  } else chapters = shards;
-  const key = `${version}:${exam}:${m.qindex ? ids.join(',') : '*'}`;
-  let p = qindexMemo.get(key);
-  if (!p) {
-    p = (async () => {
-      const idx = new Map<string, Question>();
-      const loaded = await Promise.all(chapters.map((f) => loadFile(version, f, shardsSchema, true)));
-      for (const qs of loaded) for (const q of qs) idx.set(q.id, q);
-      return idx;
-    })();
-    p.catch(() => qindexMemo.delete(key));
-    qindexMemo.set(key, p);
+    const chapters = shards.filter((f) => f.chapter && want.has(f.chapter));
+    return pick(await index(chapters, `${version}:${exam}:${ids.join(',')}`));
   }
-  const idx = await p;
-  return ids.map((id) => idx.get(id)).filter((q): q is Question => !!q);
+  const hint = chapterHint?.length ? new Set(chapterHint) : null;
+  if (hint) {
+    const part = pick(await index(shards.filter((f) => f.chapter && hint.has(f.chapter)), `${version}:${exam}:ch:${[...hint].sort().join(',')}`));
+    if (part.length === ids.length) return part;
+  }
+  return pick(await index(shards, `${version}:${exam}:*`));
 }
