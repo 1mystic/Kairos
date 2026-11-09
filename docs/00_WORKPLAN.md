@@ -100,7 +100,7 @@ Neither Q agent publishes. **Orchestrator then publishes bank v4**: `python -m p
 ### TODO in order
 1. Let G2/Q1/Q2 finish; verify each commit's imports resolve; push.
 2. Publish bank v4 (see above).
-3. **Firestore rules gap**: `config/exam_calendar` entries allow exam enum 'JEE_MAIN'|'NEET_UG'|'IAT'|'JEE_ADV' only → add `GATE_DA` (+ stats counter `sessions_GATE_DA` optional) in `firestore.rules` and the admin editor's allowed-exam constant (G2 keeps GATE_DA bundled-only until then); add rules tests (write only).
+3. (resolved) Firestore rules DO allow GATE_DA entries in `config/exam_calendar` (per-entry validation is client-side); only the optional stats counter `sessions_GATE_DA` is absent from the rules (telemetry guards it).
 4. **Static flow audit** (agent(s), code reading only; list in docs/14_LAUNCH.md B1 and the FINAL QA PLAN below): fix everything found.
 5. Launch blockers needing the OWNER: minors/DPDP decision (recommend: 18+ accounts, guest mode for minors until a consent flow exists), contact/grievance email + real Privacy/Terms text, permission emails to NTA/IITs, Auth authorised domains + OAuth consent branding, create `admins/<uid>` after rules deploy, optional App Check site key.
 6. 404 page + error boundary, robots.txt/sitemap, PNG PWA icons 192/512 (+maskable), offline fallback.
