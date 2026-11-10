@@ -2368,6 +2368,1254 @@
      ]
     }
    ]
+  },
+  {
+   "id": "SD",
+   "name": "System Design",
+   "chapters": [
+    {
+     "id": "SD.SCAL",
+     "name": "Scalability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.SCAL.DEF",
+       "name": "Scalability dimensions"
+      },
+      {
+       "id": "SD.SCAL.BOT",
+       "name": "Finding bottlenecks"
+      }
+     ]
+    },
+    {
+     "id": "SD.AVAIL",
+     "name": "Availability and reliability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.AVAIL.NINES",
+       "name": "Availability nines"
+      },
+      {
+       "id": "SD.AVAIL.REDUN",
+       "name": "Redundancy and failover"
+      }
+     ]
+    },
+    {
+     "id": "SD.LATTP",
+     "name": "Latency vs throughput",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.LATTP.LAT",
+       "name": "Latency percentiles"
+      },
+      {
+       "id": "SD.LATTP.LITTLE",
+       "name": "Little's law and queueing"
+      }
+     ]
+    },
+    {
+     "id": "SD.CAP",
+     "name": "CAP theorem and PACELC",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CAP.CAP",
+       "name": "Consistency, availability, partition tolerance"
+      },
+      {
+       "id": "SD.CAP.PACELC",
+       "name": "Latency trade-off without partitions"
+      }
+     ]
+    },
+    {
+     "id": "SD.LB",
+     "name": "Load balancers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.LB.ALGO",
+       "name": "Balancing algorithms"
+      },
+      {
+       "id": "SD.LB.L4L7",
+       "name": "Layer 4 vs layer 7"
+      },
+      {
+       "id": "SD.LB.HEALTH",
+       "name": "Health checks"
+      }
+     ]
+    },
+    {
+     "id": "SD.DB",
+     "name": "Databases and replication",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.DB.REPL",
+       "name": "Replication"
+      },
+      {
+       "id": "SD.DB.TXN",
+       "name": "Transactions and isolation"
+      }
+     ]
+    },
+    {
+     "id": "SD.CDN",
+     "name": "Content delivery networks",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CDN.PUSH",
+       "name": "Push vs pull CDN"
+      },
+      {
+       "id": "SD.CDN.INV",
+       "name": "Cache invalidation and TTL"
+      }
+     ]
+    },
+    {
+     "id": "SD.MQ",
+     "name": "Message queues and streams",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.MQ.DELIV",
+       "name": "Delivery guarantees"
+      },
+      {
+       "id": "SD.MQ.ORDER",
+       "name": "Ordering and partitions"
+      }
+     ]
+    },
+    {
+     "id": "SD.RATE",
+     "name": "Rate limiting",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.RATE.ALGO",
+       "name": "Token bucket and window algorithms"
+      },
+      {
+       "id": "SD.RATE.DIST",
+       "name": "Distributed rate limiting"
+      }
+     ]
+    },
+    {
+     "id": "SD.IDX",
+     "name": "Database indexes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.IDX.BTREE",
+       "name": "B-tree and LSM indexes"
+      },
+      {
+       "id": "SD.IDX.COST",
+       "name": "Index cost and selectivity"
+      }
+     ]
+    },
+    {
+     "id": "SD.CACHE",
+     "name": "Caching",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CACHE.POLICY",
+       "name": "Eviction policies"
+      },
+      {
+       "id": "SD.CACHE.PATT",
+       "name": "Cache-aside and stampede"
+      },
+      {
+       "id": "SD.CACHE.HIT",
+       "name": "Hit ratio and latency"
+      }
+     ]
+    },
+    {
+     "id": "SD.CHASH",
+     "name": "Consistent hashing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CHASH.RING",
+       "name": "Hash ring"
+      },
+      {
+       "id": "SD.CHASH.VNODE",
+       "name": "Virtual nodes"
+      }
+     ]
+    },
+    {
+     "id": "SD.SHARD",
+     "name": "Database sharding",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.SHARD.KEY",
+       "name": "Shard keys"
+      },
+      {
+       "id": "SD.SHARD.HOT",
+       "name": "Hot spots and resharding"
+      }
+     ]
+    },
+    {
+     "id": "SD.CONS",
+     "name": "Consensus and quorums",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CONS.QUORUM",
+       "name": "Quorum arithmetic"
+      },
+      {
+       "id": "SD.CONS.RAFT",
+       "name": "Leader election and log replication"
+      }
+     ]
+    },
+    {
+     "id": "SD.PROXY",
+     "name": "Proxy servers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PROXY.FWD",
+       "name": "Forward vs reverse proxy"
+      },
+      {
+       "id": "SD.PROXY.USE",
+       "name": "Typical proxy roles"
+      }
+     ]
+    },
+    {
+     "id": "SD.HB",
+     "name": "Heartbeats and failure detection",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.HB.FD",
+       "name": "Failure detectors"
+      },
+      {
+       "id": "SD.HB.TIMEOUT",
+       "name": "Timeouts and false positives"
+      }
+     ]
+    },
+    {
+     "id": "SD.CKSUM",
+     "name": "Checksums and data integrity",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CKSUM.CRC",
+       "name": "Checksums and hashes"
+      },
+      {
+       "id": "SD.CKSUM.REPAIR",
+       "name": "Corruption detection and repair"
+      }
+     ]
+    },
+    {
+     "id": "SD.SVCDISC",
+     "name": "Service discovery",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.SVCDISC.REG",
+       "name": "Registries"
+      },
+      {
+       "id": "SD.SVCDISC.CLIENT",
+       "name": "Client-side vs server-side discovery"
+      }
+     ]
+    },
+    {
+     "id": "SD.BLOOM",
+     "name": "Bloom filters",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.BLOOM.FPR",
+       "name": "False-positive rate"
+      },
+      {
+       "id": "SD.BLOOM.USE",
+       "name": "Applications and limits"
+      }
+     ]
+    },
+    {
+     "id": "SD.GOSSIP",
+     "name": "Gossip protocols",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.GOSSIP.SPREAD",
+       "name": "Epidemic dissemination"
+      },
+      {
+       "id": "SD.GOSSIP.MEMB",
+       "name": "Membership and failure detection"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_SCALE",
+     "name": "Trade-off: vertical vs horizontal scaling",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_SCALE.VH",
+       "name": "Scale up vs scale out"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_CONS",
+     "name": "Trade-off: strong vs eventual consistency",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_CONS.MODELS",
+       "name": "Consistency models"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_STATE",
+     "name": "Trade-off: stateful vs stateless",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_STATE.SESS",
+       "name": "Sessions and state placement"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_WRITE",
+     "name": "Trade-off: write-through vs write-back caching",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_WRITE.POL",
+       "name": "Write policies"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_SQL",
+     "name": "Trade-off: SQL vs NoSQL",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_SQL.CHOICE",
+       "name": "Choosing a data store"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_API",
+     "name": "Trade-off: REST vs RPC",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_API.STYLE",
+       "name": "API styles"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_ASYNC",
+     "name": "Trade-off: synchronous vs asynchronous",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_ASYNC.COMM",
+       "name": "Communication styles"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_BATCH",
+     "name": "Trade-off: batch vs stream processing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_BATCH.PROC",
+       "name": "Processing models"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_PUSH",
+     "name": "Trade-off: polling, long polling, WebSockets",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_PUSH.RT",
+       "name": "Real-time delivery"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_NORM",
+     "name": "Trade-off: normalisation vs denormalisation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_NORM.MODEL",
+       "name": "Data modelling"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_NET",
+     "name": "Trade-off: TCP vs UDP",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_NET.TRANS",
+       "name": "Transport protocols"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_CS",
+     "name": "Pattern: client-server",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_CS.TIER",
+       "name": "Tiers and layering"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_MICRO",
+     "name": "Pattern: microservices",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_MICRO.BOUND",
+       "name": "Service boundaries"
+      },
+      {
+       "id": "SD.PAT_MICRO.RES",
+       "name": "Resilience patterns"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_SERVERLESS",
+     "name": "Pattern: serverless",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_SERVERLESS.FAAS",
+       "name": "Functions as a service"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_EVENT",
+     "name": "Pattern: event-driven architecture",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_EVENT.ES",
+       "name": "Event sourcing and CQRS"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_P2P",
+     "name": "Pattern: peer-to-peer",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_P2P.DHT",
+       "name": "Decentralised lookup"
+      }
+     ]
+    },
+    {
+     "id": "SD.TEMPLATE",
+     "name": "Interview framework",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TEMPLATE.REQ",
+       "name": "Requirements and scope"
+      },
+      {
+       "id": "SD.TEMPLATE.API",
+       "name": "API and data model"
+      },
+      {
+       "id": "SD.TEMPLATE.DEEP",
+       "name": "Deep dives and bottlenecks"
+      }
+     ]
+    },
+    {
+     "id": "SD.ESTIM",
+     "name": "Back-of-the-envelope estimation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.ESTIM.QPS",
+       "name": "Traffic estimates"
+      },
+      {
+       "id": "SD.ESTIM.STORE",
+       "name": "Storage and bandwidth"
+      }
+     ]
+    },
+    {
+     "id": "SD.CASES",
+     "name": "Classic design problems",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CASES.URL",
+       "name": "URL shortener"
+      },
+      {
+       "id": "SD.CASES.FEED",
+       "name": "News feed and chat"
+      },
+      {
+       "id": "SD.CASES.MEDIA",
+       "name": "Video streaming and crawling"
+      },
+      {
+       "id": "SD.CASES.INFRA",
+       "name": "Notifications, ride sharing, autocomplete, cache"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "MSD",
+   "name": "AI/ML System Design",
+   "chapters": [
+    {
+     "id": "MSD.FRAME",
+     "name": "Problem framing and metrics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.FRAME.OBJ",
+       "name": "Objectives and proxies"
+      },
+      {
+       "id": "MSD.FRAME.METRIC",
+       "name": "Business vs model metrics"
+      }
+     ]
+    },
+    {
+     "id": "MSD.DATA",
+     "name": "Data and labels",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.DATA.LABEL",
+       "name": "Label sources and noise"
+      },
+      {
+       "id": "MSD.DATA.SPLIT",
+       "name": "Splits and leakage"
+      },
+      {
+       "id": "MSD.DATA.IMB",
+       "name": "Class imbalance"
+      }
+     ]
+    },
+    {
+     "id": "MSD.FEAT",
+     "name": "Features and feature stores",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.FEAT.OFFON",
+       "name": "Offline/online consistency"
+      },
+      {
+       "id": "MSD.FEAT.ENC",
+       "name": "Encodings and embeddings"
+      }
+     ]
+    },
+    {
+     "id": "MSD.MODEL",
+     "name": "Model selection and training",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.MODEL.SEL",
+       "name": "Model choice"
+      },
+      {
+       "id": "MSD.MODEL.OPT",
+       "name": "Optimisation and scaling rules"
+      }
+     ]
+    },
+    {
+     "id": "MSD.EVAL",
+     "name": "Offline and online evaluation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.EVAL.OFF",
+       "name": "Offline metrics"
+      },
+      {
+       "id": "MSD.EVAL.AB",
+       "name": "A/B testing"
+      }
+     ]
+    },
+    {
+     "id": "MSD.SERVE",
+     "name": "Serving and latency",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.SERVE.BATCH",
+       "name": "Batch vs online inference"
+      },
+      {
+       "id": "MSD.SERVE.LAT",
+       "name": "Latency budgets"
+      }
+     ]
+    },
+    {
+     "id": "MSD.MON",
+     "name": "Monitoring and drift",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.MON.DRIFT",
+       "name": "Data and concept drift"
+      },
+      {
+       "id": "MSD.MON.LOOP",
+       "name": "Feedback loops"
+      }
+     ]
+    },
+    {
+     "id": "MSD.REC",
+     "name": "Recommender systems",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.REC.RETR",
+       "name": "Retrieval and ranking"
+      },
+      {
+       "id": "MSD.REC.COLD",
+       "name": "Cold start and exploration"
+      }
+     ]
+    },
+    {
+     "id": "MSD.CLF",
+     "name": "Classification: spam and abuse",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.CLF.SPAM",
+       "name": "Spam detection"
+      },
+      {
+       "id": "MSD.CLF.ADV",
+       "name": "Adversaries and thresholds"
+      }
+     ]
+    },
+    {
+     "id": "MSD.FRAUD",
+     "name": "Real-time fraud detection",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.FRAUD.RT",
+       "name": "Streaming features"
+      },
+      {
+       "id": "MSD.FRAUD.COST",
+       "name": "Cost-sensitive decisions"
+      }
+     ]
+    },
+    {
+     "id": "MSD.DIST",
+     "name": "Distributed training",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.DIST.PAR",
+       "name": "Data, model and pipeline parallelism"
+      },
+      {
+       "id": "MSD.DIST.COMM",
+       "name": "Communication and memory"
+      }
+     ]
+    },
+    {
+     "id": "MSD.RAG",
+     "name": "Retrieval-augmented generation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.RAG.RETR",
+       "name": "Chunking and retrieval"
+      },
+      {
+       "id": "MSD.RAG.EVAL",
+       "name": "RAG evaluation"
+      }
+     ]
+    },
+    {
+     "id": "MSD.LLMOPS",
+     "name": "LLM serving, cost and guardrails",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.LLMOPS.COST",
+       "name": "Token cost and latency"
+      },
+      {
+       "id": "MSD.LLMOPS.SAFE",
+       "name": "Guardrails and safety"
+      }
+     ]
+    },
+    {
+     "id": "MSD.CASES",
+     "name": "ML system design case studies",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.CASES.RANK",
+       "name": "Ranking and ads"
+      },
+      {
+       "id": "MSD.CASES.PLAT",
+       "name": "End-to-end platforms"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
