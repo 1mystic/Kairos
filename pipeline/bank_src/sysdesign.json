@@ -1,0 +1,6216 @@
+[
+ {
+  "id": "q_005a66b6a5a3",
+  "type": "SCQ",
+  "stem": "Read replicas help scale a database primarily because they",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Replicas copy data and can answer reads, but every write still goes through the primary, and async replicas can lag. Check: write throughput stays bounded by one primary.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "make all reads strongly consistent"
+   },
+   {
+    "key": "B",
+    "text": "serve read queries, offloading the primary"
+   },
+   {
+    "key": "C",
+    "text": "increase write throughput linearly"
+   },
+   {
+    "key": "D",
+    "text": "remove the need for backups"
+   }
+  ]
+ },
+ {
+  "id": "q_0557afc10823",
+  "type": "SCQ",
+  "stem": "What is a cache stampede?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "When a popular entry expires, concurrent misses recompute it simultaneously. Mitigations include request coalescing (single-flight), jittered TTLs and early refresh.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A cache that is always empty"
+   },
+   {
+    "key": "B",
+    "text": "A cache using too little memory"
+   },
+   {
+    "key": "C",
+    "text": "Many requests miss on the same expired hot key at once and all hit the database"
+   },
+   {
+    "key": "D",
+    "text": "A misspelled key"
+   }
+  ]
+ },
+ {
+  "id": "q_07b406d1f4c3",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A system that is linearizable cannot also remain fully available on both sides of a partition.\n\n**Reason (R):** Serving writes on both sides during a partition would let replicas diverge and violate the single up-to-date view.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "That is the core of the CAP argument: with divergent sides, either one side stops answering or answers can contradict. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_08047375b1a9",
+  "type": "SCQ",
+  "stem": "A query uses WHERE LOWER(email) = 'a@b.com', and an index exists on email. Why may it not be used?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A predicate on a transformed value does not match an index built on the raw value. Index the expression or normalise on write.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Indexes are only used for numbers"
+   },
+   {
+    "key": "B",
+    "text": "The function on the column prevents using the plain index; use a functional index on LOWER(email) or store normalised values"
+   },
+   {
+    "key": "C",
+    "text": "Indexes cannot store strings"
+   },
+   {
+    "key": "D",
+    "text": "LOWER is not a valid function"
+   }
+  ]
+ },
+ {
+  "id": "q_0852aaf601e6",
+  "type": "NVQ",
+  "stem": "A service has 200 requests in flight on average (concurrency) and an average response time of 0.25 s. By Little's law, what throughput in requests per second does it sustain?",
+  "images": [],
+  "answer": {
+   "value": 800.0,
+   "tol": 1
+  },
+  "solution": "Little's law: $L=\\lambda W$, so $\\lambda=L/W=200/0.25=800$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_0acee33ac9d8",
+  "type": "INT",
+  "stem": "Round-robin sends requests in order to 5 identical servers. Out of 10,000 requests, how many does each server receive?",
+  "images": [],
+  "answer": {
+   "value": 2000.0
+  },
+  "solution": "Equal rotation gives $10000/5=2000$ requests per server.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_0d16979508e7",
+  "type": "INT",
+  "stem": "A B-tree index has a fanout of about 100 child pointers per node and indexes 1,000,000 keys. Roughly how many levels (node reads) does a lookup need, taking the smallest integer $h$ with $100^h \\ge 10^6$?",
+  "images": [],
+  "answer": {
+   "value": 3.0
+  },
+  "solution": "$100^3=10^6$, so $h=3$ levels suffice.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_0d92c68d59ac",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Setting a short TTL on CDN objects increases freshness.\n\n**Reason (R):** Objects expire sooner and are re-fetched from the origin more often.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A shorter TTL bounds staleness but raises origin load, so freshness is bought with more origin traffic. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_0ddda37289d7",
+  "type": "SCQ",
+  "stem": "A ring has 3 servers, each with a single position, and one server owns 60% of the ring. What is the most appropriate fix?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Imbalanced arcs come from few random positions. More virtual nodes reduce variance (balance improves roughly with the square root of the number of positions).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Remove two servers"
+   },
+   {
+    "key": "B",
+    "text": "Switch to mod N"
+   },
+   {
+    "key": "C",
+    "text": "Double all key sizes"
+   },
+   {
+    "key": "D",
+    "text": "Add virtual nodes for each server to even out arc lengths"
+   }
+  ]
+ },
+ {
+  "id": "q_0fed5e1fc77e",
+  "type": "NVQ",
+  "stem": "Keys are placed by hash(key) mod N and you grow from N=4 to N=5 servers. Assuming uniform hashes, what fraction of keys changes server? Give a decimal.",
+  "images": [],
+  "answer": {
+   "value": 0.8,
+   "tol": 0.01
+  },
+  "solution": "A key stays only if $h \\bmod 4=h \\bmod 5$, which holds for 4 of every 20 residues, so 20% stay and 80% (0.8) move.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_10eb4d8ace03",
+  "type": "SCQ",
+  "stem": "A team measures availability only by whether the load balancer answers health pings, and reports 99.99%. Users still see frequent failed checkouts. What is the best conclusion?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Availability should reflect whether users' requests succeed, so use a request-level indicator such as the fraction of requests served without error. Pings can pass while the application behind them is failing. Check: the user-facing outcome is the definition of the SLO.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The metric does not measure user-visible success; track the success rate of real requests (an SLI) instead"
+   },
+   {
+    "key": "B",
+    "text": "Add more health pings"
+   },
+   {
+    "key": "C",
+    "text": "99.99% is always correct if the ping succeeds"
+   },
+   {
+    "key": "D",
+    "text": "Availability is a hardware metric, so checkout errors are irrelevant"
+   }
+  ]
+ },
+ {
+  "id": "q_10fac77d06be",
+  "type": "INT",
+  "stem": "Messages arrive at 1,200 per second for 10 minutes while consumers handle 1,000 per second. How many messages are waiting in the queue at the end of the burst?",
+  "images": [],
+  "answer": {
+   "value": 120000.0
+  },
+  "solution": "Backlog grows at $1200-1000=200$ per second for $600$ s: $200\\times600=120{,}000$ messages.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_17eefb76eb78",
+  "type": "MSQ",
+  "stem": "Select all ways to reduce the chance of serving stale data from a cache.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Expiry, explicit invalidation and write-through all bound staleness. Caching forever maximises it.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Set an appropriate TTL"
+   },
+   {
+    "key": "B",
+    "text": "Invalidate or update the key when the source data changes"
+   },
+   {
+    "key": "C",
+    "text": "Cache every response forever"
+   },
+   {
+    "key": "D",
+    "text": "Use write-through so the cache is updated with each write"
+   }
+  ]
+ },
+ {
+  "id": "q_1801e0cb4a70",
+  "type": "SCQ",
+  "stem": "Which type of system typically prefers consistency over availability during a partition?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Money correctness matters more than always answering. Likes, caches and DNS resolvers tolerate stale values.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A DNS caching resolver"
+   },
+   {
+    "key": "B",
+    "text": "A bank's account-balance ledger"
+   },
+   {
+    "key": "C",
+    "text": "A product-recommendation cache"
+   },
+   {
+    "key": "D",
+    "text": "A social media like counter"
+   }
+  ]
+ },
+ {
+  "id": "q_19a7adbaf28c",
+  "type": "SCQ",
+  "stem": "Which eviction policy removes the item that has not been accessed for the longest time?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "LRU tracks recency of access and evicts the oldest-accessed entry. LFU uses counts; FIFO uses insertion order.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Random replacement"
+   },
+   {
+    "key": "B",
+    "text": "LRU (least recently used)"
+   },
+   {
+    "key": "C",
+    "text": "LFU (least frequently used)"
+   },
+   {
+    "key": "D",
+    "text": "FIFO"
+   }
+  ]
+ },
+ {
+  "id": "q_204568a69a99",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** LFU can keep a popular item cached longer than LRU after a one-time scan of many other items.\n\n**Reason (R):** LFU evicts based on access frequency, while LRU evicts based on recency only.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A scan makes many cold items recent, pushing out hot items under LRU; LFU keeps items with high counts. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_212e1074b75e",
+  "type": "SCQ",
+  "stem": "Which is a typical reason to choose a queue for sending confirmation emails after checkout?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The user-facing path needs only to record the intent; background workers send the email with retries.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The email can be sent asynchronously without slowing or failing the checkout"
+   },
+   {
+    "key": "B",
+    "text": "Queues are required by HTTP"
+   },
+   {
+    "key": "C",
+    "text": "Emails need a synchronous strongly consistent database transaction"
+   },
+   {
+    "key": "D",
+    "text": "Checkout cannot work without email"
+   }
+  ]
+ },
+ {
+  "id": "q_24e4ba541044",
+  "type": "SCQ",
+  "stem": "What is the main weakness of a fixed window counter?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "With a limit of N per minute, N requests just before the boundary and N just after fall within a short span, giving about 2N in a short interval.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It always blocks the first request"
+   },
+   {
+    "key": "B",
+    "text": "It uses unbounded memory per client"
+   },
+   {
+    "key": "C",
+    "text": "A client can make up to twice the limit around a window boundary"
+   },
+   {
+    "key": "D",
+    "text": "It cannot count requests at all"
+   }
+  ]
+ },
+ {
+  "id": "q_2669080a0fea",
+  "type": "SCQ",
+  "stem": "Which is a likely best first step for a slow query that scans a 50-million-row table for one customer id?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A selective equality filter benefits from an index lookup instead of a full scan.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Rewrite the front end"
+   },
+   {
+    "key": "B",
+    "text": "Add more application servers"
+   },
+   {
+    "key": "C",
+    "text": "Add an index on the customer id column"
+   },
+   {
+    "key": "D",
+    "text": "Increase the page title length"
+   }
+  ]
+ },
+ {
+  "id": "q_26c3fad28cc3",
+  "type": "MSQ",
+  "stem": "Select all valid uses of a dead-letter queue.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Dead-letter queues isolate failures and allow replay; they do not provide exactly-once semantics. Check: each correct option is about isolating or reprocessing failures.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Holding messages that repeatedly failed processing for later inspection"
+   },
+   {
+    "key": "B",
+    "text": "Preventing a poison message from blocking the main queue"
+   },
+   {
+    "key": "C",
+    "text": "Making delivery exactly-once automatically"
+   },
+   {
+    "key": "D",
+    "text": "Letting operators replay failed messages after a fix"
+   }
+  ]
+ },
+ {
+  "id": "q_2a66225300ac",
+  "type": "NVQ",
+  "stem": "For an M/M/1 queue, the mean waiting time in the queue is proportional to $\\rho/(1-\\rho)$. By what factor does waiting time grow when utilisation $\\rho$ rises from 0.70 to 0.95? Give one decimal.",
+  "images": [],
+  "answer": {
+   "value": 8.14286,
+   "tol": 0.1
+  },
+  "solution": "$0.95/0.05=19$ and $0.7/0.3\\approx2.333$, so the ratio is about 8.1.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_2b3f9da935cc",
+  "type": "NVQ",
+  "stem": "Two replicas, each independently available 99% of the time, serve traffic in an active-active pair and the service works if at least one is up (assume perfect failover). What is the combined availability as a percentage?",
+  "images": [],
+  "answer": {
+   "value": 99.99,
+   "tol": 0.01
+  },
+  "solution": "Failure needs both down: $0.01^2=10^{-4}$, so availability is $1-10^{-4}=99.99\\%$. Check: redundancy squares the failure probability.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_2dda230b2c31",
+  "type": "SCQ",
+  "stem": "Producers briefly send 5x more messages than consumers can process. What does a queue provide here?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Queues smooth bursts (load levelling). They do not make consumers faster, and a persistent overload still grows the backlog.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It absorbs the burst and lets consumers drain it later, as long as the backlog fits"
+   },
+   {
+    "key": "B",
+    "text": "It guarantees zero delay"
+   },
+   {
+    "key": "C",
+    "text": "It makes the consumers 5x faster"
+   },
+   {
+    "key": "D",
+    "text": "It drops the extra messages by definition"
+   }
+  ]
+ },
+ {
+  "id": "q_304e19df3e4c",
+  "type": "SCQ",
+  "stem": "What is the main job of a load balancer?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A load balancer spreads requests over a pool of backends so no single server is overloaded and failed servers are bypassed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Encrypt the database"
+   },
+   {
+    "key": "B",
+    "text": "Distribute incoming requests across multiple servers"
+   },
+   {
+    "key": "C",
+    "text": "Translate programming languages"
+   },
+   {
+    "key": "D",
+    "text": "Store the application's data"
+   }
+  ]
+ },
+ {
+  "id": "q_322c8dd9fa76",
+  "type": "SCQ",
+  "stem": "What do load balancer health checks do?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Periodic probes mark failing servers out of rotation so users are not routed to them. They do not alter the servers.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Increase the backend's CPU"
+   },
+   {
+    "key": "B",
+    "text": "Cache responses for the clients"
+   },
+   {
+    "key": "C",
+    "text": "Encrypt traffic to the backends"
+   },
+   {
+    "key": "D",
+    "text": "Detect unhealthy backends and stop sending them traffic until they recover"
+   }
+  ]
+ },
+ {
+  "id": "q_326827fbfbc7",
+  "type": "SCQ",
+  "stem": "Which database family is the natural fit for data made of highly connected entities where queries traverse many relationships (for example friends of friends)?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Graph databases store relationships as first-class edges, so multi-hop traversals avoid repeated joins. Check: the other families are optimised for time-ordered points, simple lookups and geometry respectively.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A key-value cache only"
+   },
+   {
+    "key": "B",
+    "text": "A graph database"
+   },
+   {
+    "key": "C",
+    "text": "A spatial database"
+   },
+   {
+    "key": "D",
+    "text": "A time series database"
+   }
+  ]
+ },
+ {
+  "id": "q_366729e06d8f",
+  "type": "SCQ",
+  "stem": "In a publish-subscribe model, a single published message is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Pub/sub fans out a message to all subscriptions; competing consumers inside one subscription share the work.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "never delivered"
+   },
+   {
+    "key": "B",
+    "text": "stored only on the publisher"
+   },
+   {
+    "key": "C",
+    "text": "delivered to every subscriber of the topic (each subscription gets a copy)"
+   },
+   {
+    "key": "D",
+    "text": "delivered to exactly one random subscriber in all cases"
+   }
+  ]
+ },
+ {
+  "id": "q_38f8648d1ae1",
+  "type": "NVQ",
+  "stem": "A table stores 200 million rows of 500 bytes each (use 1 GB = $10^9$ bytes). With one primary and 2 replicas (3 full copies in total), how many GB of raw table storage are needed in total?",
+  "images": [],
+  "answer": {
+   "value": 300.0,
+   "tol": 1
+  },
+  "solution": "One copy is $2\\times10^8\\times500=10^{11}$ B = 100 GB; three copies give 300 GB.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3dcd7078c5b3",
+  "type": "NVQ",
+  "stem": "A thread pool has 64 worker threads, all busy on average, and each request takes 80 ms of service time. What is the maximum sustainable throughput in requests per second? Round to one decimal.",
+  "images": [],
+  "answer": {
+   "value": 800.0,
+   "tol": 0.5
+  },
+  "solution": "With $L=64$ and $W=0.08$ s, $\\lambda=L/W=800$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3f060f645abf",
+  "type": "NVQ",
+  "stem": "A CDN edge has a 90% cache hit ratio. An edge hit takes 20 ms; a miss takes 220 ms (edge plus origin fetch). What is the average latency in milliseconds?",
+  "images": [],
+  "answer": {
+   "value": 40.0,
+   "tol": 0.1
+  },
+  "solution": "Average $=0.9\\times20+0.1\\times220=18+22=40$ ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3f1494589e6b",
+  "type": "SCQ",
+  "stem": "A column has only two distinct values (a boolean) across 100 million rows. A plain B-tree index on it is usually",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Selecting half the table through an index costs more than scanning it. Indexes pay off on selective predicates.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "always faster than a table scan"
+   },
+   {
+    "key": "B",
+    "text": "required for correctness"
+   },
+   {
+    "key": "C",
+    "text": "the best possible index"
+   },
+   {
+    "key": "D",
+    "text": "of little help for queries because it has low selectivity"
+   }
+  ]
+ },
+ {
+  "id": "q_4177ad14bf52",
+  "type": "INT",
+  "stem": "A token bucket has capacity 100 tokens and refills at 10 tokens per second. It starts full. A client sends 150 requests in a burst at time 0 (each takes one token if available). How many are accepted?",
+  "images": [],
+  "answer": {
+   "value": 100.0
+  },
+  "solution": "The bucket holds 100 tokens at time 0 and no time passes, so only 100 requests are accepted; the other 50 are rejected.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_42759e8997ff",
+  "type": "SCQ",
+  "stem": "Why can a CDN improve availability during an origin outage for static content?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Cached objects remain available (often with stale-if-error behaviour) even if the origin is down.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The CDN stops all traffic"
+   },
+   {
+    "key": "B",
+    "text": "The CDN doubles origin CPU"
+   },
+   {
+    "key": "C",
+    "text": "Edge caches can keep serving stored copies while the origin is unreachable"
+   },
+   {
+    "key": "D",
+    "text": "The CDN repairs the origin server"
+   }
+  ]
+ },
+ {
+  "id": "q_433a6240536b",
+  "type": "MSQ",
+  "stem": "Select all properties guaranteed by ACID transactions.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "ACID stands for atomicity, consistency, isolation and durability; no latency promise is part of it. Check: expand the acronym and compare with the false statement.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Atomicity: all operations of a transaction apply or none do"
+   },
+   {
+    "key": "B",
+    "text": "Consistency: a transaction moves the database between valid states"
+   },
+   {
+    "key": "C",
+    "text": "Isolation: concurrent transactions do not see each other's partial effects (to the chosen level)"
+   },
+   {
+    "key": "D",
+    "text": "Every query returns in under 10 ms"
+   }
+  ]
+ },
+ {
+  "id": "q_46966598d930",
+  "type": "SCQ",
+  "stem": "With IP-hash balancing, what happens to existing client-to-server mapping when a server is added using a simple hash(ip) mod N?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Changing N in the modulus remaps most keys. Consistent hashing limits this movement. Check: a key stays in place only if hash mod N equals hash mod (N+1), which is rare.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Only the new server's clients change"
+   },
+   {
+    "key": "B",
+    "text": "Most clients get remapped to a different server"
+   },
+   {
+    "key": "C",
+    "text": "All clients map to the new server"
+   },
+   {
+    "key": "D",
+    "text": "No client changes server"
+   }
+  ]
+ },
+ {
+  "id": "q_48e0e5ebb964",
+  "type": "SCQ",
+  "stem": "A service's average utilisation rises from 70% to 95% with unchanged service time and Poisson-like arrivals. What happens to average queueing delay?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "For an M/M/1 queue the waiting-time factor is $\\rho/(1-\\rho)$: 2.33 at 70% and 19 at 95%, about 8x. Delay explodes near saturation, so keep headroom. Check: as utilisation approaches 100% the denominator approaches zero.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It decreases because the server is busier"
+   },
+   {
+    "key": "B",
+    "text": "It grows disproportionately (for a simple M/M/1 queue by roughly 8x), not linearly"
+   },
+   {
+    "key": "C",
+    "text": "It stays the same"
+   },
+   {
+    "key": "D",
+    "text": "It rises by about 25%"
+   }
+  ]
+ },
+ {
+  "id": "q_48fc4a12534e",
+  "type": "SCQ",
+  "stem": "A database acknowledges a write after one replica stores it and replicates asynchronously to the rest. Which pair best describes its behaviour without partitions?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Acknowledging early means readers of other replicas can see old values until replication catches up, trading consistency for latency. Check: synchronous replication would wait for replicas, adding latency but removing staleness.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Higher latency with stronger consistency"
+   },
+   {
+    "key": "B",
+    "text": "Lower latency with weaker consistency (a read from another replica can be stale)"
+   },
+   {
+    "key": "C",
+    "text": "Zero replication lag"
+   },
+   {
+    "key": "D",
+    "text": "Linearizable reads from every replica"
+   }
+  ]
+ },
+ {
+  "id": "q_4951493fd742",
+  "type": "NVQ",
+  "stem": "In a sample of 100 requests, 99 took 10 ms and 1 took 1,000 ms. What is the mean latency in milliseconds?",
+  "images": [],
+  "answer": {
+   "value": 19.9,
+   "tol": 0.1
+  },
+  "solution": "Mean $=(99\\times10+1000)/100=19.9$ ms, while the maximum is 1,000 ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_49dd56b28eb3",
+  "type": "SCQ",
+  "stem": "PACELC extends CAP. What additional trade-off does it name for the normal case with no partition?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "PACELC: if Partition, choose Availability or Consistency; Else, choose Latency or Consistency. Waiting for more replicas to confirm raises consistency but also latency.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Storage versus compression"
+   },
+   {
+    "key": "B",
+    "text": "Cost versus durability"
+   },
+   {
+    "key": "C",
+    "text": "Latency versus consistency"
+   },
+   {
+    "key": "D",
+    "text": "Throughput versus security"
+   }
+  ]
+ },
+ {
+  "id": "q_4a344d57220b",
+  "type": "MSQ",
+  "stem": "Which of the following are bottlenecks that adding more stateless web servers will NOT fix?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Extra web servers help only the web tier. Anything shared (one primary, one lock, one partition) stays a single point of contention. Check: each correct item is a component that all web servers still funnel into.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A single primary database saturated by writes"
+   },
+   {
+    "key": "B",
+    "text": "A global lock held by a shared in-memory service"
+   },
+   {
+    "key": "C",
+    "text": "CPU saturation of the web tier itself"
+   },
+   {
+    "key": "D",
+    "text": "A single message broker partition receiving all the traffic"
+   }
+  ]
+ },
+ {
+  "id": "q_50a7625ad87b",
+  "type": "SCQ",
+  "stem": "A rate limiter built on read-then-write operations in a shared store lets clients exceed limits under concurrency. What fixes it?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Two concurrent requests can both read the same count before either writes. An atomic operation removes that race. Check: the race window is between the read and the write.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Add a longer sleep"
+   },
+   {
+    "key": "B",
+    "text": "Use a larger client timeout"
+   },
+   {
+    "key": "C",
+    "text": "Make the check-and-increment atomic (for example an atomic increment or a server-side script)"
+   },
+   {
+    "key": "D",
+    "text": "Disable the limiter"
+   }
+  ]
+ },
+ {
+  "id": "q_52ccfebd54ee",
+  "type": "SCQ",
+  "stem": "In the CAP theorem, which three properties are named?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "CAP stands for Consistency, Availability and Partition tolerance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Cost, accuracy and performance"
+   },
+   {
+    "key": "B",
+    "text": "Concurrency, atomicity and persistence"
+   },
+   {
+    "key": "C",
+    "text": "Caching, availability and partitioning"
+   },
+   {
+    "key": "D",
+    "text": "Consistency, availability and partition tolerance"
+   }
+  ]
+ },
+ {
+  "id": "q_53521ca62ba4",
+  "type": "SCQ",
+  "stem": "A single load balancer is used in front of a cluster. What is the problem with this design, and the usual fix?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A lone balancer makes the whole service depend on one machine, so you run several with failover. Check: apply 'what single event takes the service down?'\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It always adds 1 second of latency; remove it"
+   },
+   {
+    "key": "B",
+    "text": "It cannot balance more than two servers; use more servers"
+   },
+   {
+    "key": "C",
+    "text": "It is impossible to monitor; use sticky sessions"
+   },
+   {
+    "key": "D",
+    "text": "It is itself a single point of failure; run a redundant pair (active-passive or active-active) or use DNS/anycast"
+   }
+  ]
+ },
+ {
+  "id": "q_53d1e471baab",
+  "type": "SCQ",
+  "stem": "Requests vary hugely in duration (some last seconds, some milliseconds). Which algorithm usually balances load best?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Counting active requests accounts for long-running ones, so busy servers are avoided. Round robin ignores how long requests take. Check: round robin can stack several long requests on one server by chance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Always the first server"
+   },
+   {
+    "key": "B",
+    "text": "Plain round robin"
+   },
+   {
+    "key": "C",
+    "text": "IP hash"
+   },
+   {
+    "key": "D",
+    "text": "Least connections (fewest active requests)"
+   }
+  ]
+ },
+ {
+  "id": "q_551af30ad1b6",
+  "type": "SCQ",
+  "stem": "A query filters on city and then sorts by signup_date. Which composite index helps most?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Equality on the leading column city narrows the range, and within one city the entries are already ordered by signup_date, avoiding a sort. Check: leftmost-prefix rule.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "An index on (city, signup_date)"
+   },
+   {
+    "key": "B",
+    "text": "No index is useful"
+   },
+   {
+    "key": "C",
+    "text": "An index on the first letter of each name"
+   },
+   {
+    "key": "D",
+    "text": "An index on (signup_date, city) only"
+   }
+  ]
+ },
+ {
+  "id": "q_568b389bf643",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** An in-memory database such as a cache store usually offers lower read latency than a disk-based database.\n\n**Reason (R):** RAM access is orders of magnitude faster than disk access.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Memory is far faster than disk (nanoseconds versus microseconds to milliseconds), so serving from RAM lowers latency. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_60c155c60767",
+  "type": "INT",
+  "stem": "Peak traffic is 40,000 requests per second. One server handles 2,500 requests per second at the target utilisation. You also want two spare servers (N+2) for failures. How many servers do you provision?",
+  "images": [],
+  "answer": {
+   "value": 18.0
+  },
+  "solution": "Needed: $40000/2500=16$ servers, plus 2 spares gives 18.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_63481b32a9d6",
+  "type": "SCQ",
+  "stem": "A pipeline has three stages that process 100, 40 and 70 items per second. What is the steady-state throughput of the pipeline?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The slowest stage (40 items/s) bottlenecks the flow; the other stages wait. Check: a queue before stage 2 grows if stage 1 feeds it faster than 40 per second.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "40 items per second"
+   },
+   {
+    "key": "B",
+    "text": "70 items per second on average of all stages"
+   },
+   {
+    "key": "C",
+    "text": "70 items per second"
+   },
+   {
+    "key": "D",
+    "text": "100 items per second"
+   }
+  ]
+ },
+ {
+  "id": "q_6b1b611a24a2",
+  "type": "NVQ",
+  "stem": "A service promises 99.9% availability (three nines). Using a 365-day year, how many minutes of downtime per year does that allow? Round to the nearest minute.",
+  "images": [],
+  "answer": {
+   "value": 525.6,
+   "tol": 1
+  },
+  "solution": "Allowed downtime $=(1-0.999)\\times525600=525.6\\approx526$ minutes (about 8.8 hours).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_6d887baa7a23",
+  "type": "SCQ",
+  "stem": "An application needs to route /api/* and /static/* to different server pools based on the URL path. Which balancer layer is required?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Path-based routing needs to read the HTTP request, which is a layer 7 capability. Layer 4 sees only addresses and ports. Check: URL paths are not visible in TCP headers.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A DNS A-record only"
+   },
+   {
+    "key": "B",
+    "text": "Layer 2 switching"
+   },
+   {
+    "key": "C",
+    "text": "Layer 7 (application layer)"
+   },
+   {
+    "key": "D",
+    "text": "Layer 4 (transport layer) alone"
+   }
+  ]
+ },
+ {
+  "id": "q_6ea035081c67",
+  "type": "NVQ",
+  "stem": "Raising the hit rate from 90% to 99% in the same system (hit 1 ms, miss 101 ms) lowers the average latency by what factor? Give the ratio (old average divided by new average) to one decimal.",
+  "images": [],
+  "answer": {
+   "value": 5.5,
+   "tol": 0.05
+  },
+  "solution": "Old: $0.9+10.1=11.0$ ms; new: $0.99+1.01=2.0$ ms; ratio $11/2=5.5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_76aff63b53a4",
+  "type": "INT",
+  "stem": "A token bucket (capacity 100, refill 10 tokens per second) is empty at $t=0$. How many tokens does it hold at $t=4$ s with no requests?",
+  "images": [],
+  "answer": {
+   "value": 40.0
+  },
+  "solution": "Refill adds $10\\times4=40$ tokens, below the capacity 100, so it holds 40.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7eceb8d85af5",
+  "type": "SCQ",
+  "stem": "What is the difference between an SLO and an SLA?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Teams set SLOs as targets, typically stricter than the SLA they promise customers, so they have a margin. Check: SLA = agreement (contract); SLO = objective (target).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "An SLO is an internal reliability target; an SLA is a contractual commitment, usually with penalties"
+   },
+   {
+    "key": "B",
+    "text": "SLOs apply only to databases"
+   },
+   {
+    "key": "C",
+    "text": "They are the same except for spelling"
+   },
+   {
+    "key": "D",
+    "text": "An SLA is internal and an SLO has penalties"
+   }
+  ]
+ },
+ {
+  "id": "q_7fa4a26d3a96",
+  "type": "SCQ",
+  "stem": "Which caching pattern has the application check the cache first, and on a miss load from the database and populate the cache itself?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In cache-aside the application owns the load-and-fill logic. In read-through the cache does it on behalf of the app.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Write-back"
+   },
+   {
+    "key": "B",
+    "text": "Read replicas"
+   },
+   {
+    "key": "C",
+    "text": "Write-through only"
+   },
+   {
+    "key": "D",
+    "text": "Cache-aside (lazy loading)"
+   }
+  ]
+ },
+ {
+  "id": "q_817fb0885718",
+  "type": "NVQ",
+  "stem": "A cache has a 95% hit rate. A hit costs 1 ms and a miss costs 101 ms (including the database). What is the average read latency in ms?",
+  "images": [],
+  "answer": {
+   "value": 6.0,
+   "tol": 0.01
+  },
+  "solution": "Average $=0.95\\times1+0.05\\times101=0.95+5.05=6.0$ ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_86861f0d0bb6",
+  "type": "NVQ",
+  "stem": "A request must pass through three components in series, each independently available 99.9% of the time. What is the end-to-end availability, as a percentage rounded to two decimals?",
+  "images": [],
+  "answer": {
+   "value": 99.7003,
+   "tol": 0.01
+  },
+  "solution": "In series the availabilities multiply: $0.999^3=0.997003$, i.e. about 99.70%. Check: each 0.1% of unavailability adds roughly, giving about 0.3% total.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_87a0edd330ff",
+  "type": "NVQ",
+  "stem": "One node serves 1,000 requests per second. When the cluster has 8 nodes the load balancer, coordination and uneven load cost you 15% of the ideal linear throughput. What is the cluster's throughput in requests per second?",
+  "images": [],
+  "answer": {
+   "value": 6800.0,
+   "tol": 1
+  },
+  "solution": "Ideal $=8\\times1000=8000$; with 85% scaling efficiency: $8000\\times0.85=6800$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8b997b52707f",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Increasing throughput can leave latency of a single request unchanged.\n\n**Reason (R):** Latency is the time of one request, while throughput counts how many requests finish per unit time.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Adding parallel workers raises throughput while each request still takes the same time, so A holds and R states why.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_8c3877fdf8a1",
+  "type": "SCQ",
+  "stem": "A server fails on a consistent-hashing ring (no replicas). Which keys are affected?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Only the failed node's arc changes ownership; other assignments remain, which is the point of consistent hashing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Only the keys that mapped to that server, which move to its clockwise neighbour"
+   },
+   {
+    "key": "B",
+    "text": "No keys"
+   },
+   {
+    "key": "C",
+    "text": "All keys in the cluster"
+   },
+   {
+    "key": "D",
+    "text": "Only keys with the largest hashes"
+   }
+  ]
+ },
+ {
+  "id": "q_905939b486f0",
+  "type": "MSQ",
+  "stem": "Select all ways to reduce tail latency in a fan-out service that calls many backends in parallel.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Hedging, timeouts with graceful degradation and smaller fan-out all cut the chance that one slow backend delays the whole response. Check: the response time is the maximum over backends, so each correct option reduces that maximum.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Hedged requests: send a duplicate to a second replica after a short delay"
+   },
+   {
+    "key": "B",
+    "text": "Setting per-call timeouts and returning partial results when allowed"
+   },
+   {
+    "key": "C",
+    "text": "Waiting for the slowest backend with no timeout"
+   },
+   {
+    "key": "D",
+    "text": "Reducing fan-out width where possible"
+   }
+  ]
+ },
+ {
+  "id": "q_9075cdbe47d7",
+  "type": "SCQ",
+  "stem": "What is the main benefit of placing a message queue between a producer and a consumer?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A queue buffers messages so producers and consumers can run, fail and scale independently.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The producer and consumer must run at the same speed"
+   },
+   {
+    "key": "B",
+    "text": "No consumer is ever needed"
+   },
+   {
+    "key": "C",
+    "text": "They are decoupled in time: the producer continues without waiting for the consumer"
+   },
+   {
+    "key": "D",
+    "text": "Messages are processed before they are sent"
+   }
+  ]
+ },
+ {
+  "id": "q_90969ecf7421",
+  "type": "MSQ",
+  "stem": "Select all examples of eliminating a single point of failure.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Each correct option adds an independent copy in a separate failure domain. Same-rack replicas share power and network, so one fault takes them all. Check: ask 'what single event removes every copy?'; only the third answer has an answer.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Running two load balancers in an active-passive pair"
+   },
+   {
+    "key": "B",
+    "text": "Deploying replicas across multiple availability zones"
+   },
+   {
+    "key": "C",
+    "text": "Placing all replicas on the same rack and power feed"
+   },
+   {
+    "key": "D",
+    "text": "Using a primary database with a standby that can be promoted"
+   }
+  ]
+ },
+ {
+  "id": "q_957f93a28819",
+  "type": "NVQ",
+  "stem": "A cache holds 2 million entries averaging 1.5 KB each (1 KB = 1000 B). With 25% additional overhead for keys and metadata, how many GB of memory are needed? Give one decimal.",
+  "images": [],
+  "answer": {
+   "value": 3.75,
+   "tol": 0.05
+  },
+  "solution": "Data $=2\\times10^6\\times1500=3\\times10^9$ B = 3 GB; with 25% overhead: $3\\times1.25=3.75$ GB, about 3.8.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_961085278178",
+  "type": "SCQ",
+  "stem": "A user updates their profile and immediately reloads it, but sometimes sees the old data because reads go to a lagging replica. Which fix preserves most of the replica benefit?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Read-your-writes can be provided by pinning recent writers to the primary (or a replica known to be caught up) while other users still read from replicas. Check: the other options either give up scaling or are unreliable.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Retry the read until it changes"
+   },
+   {
+    "key": "B",
+    "text": "Disable replication"
+   },
+   {
+    "key": "C",
+    "text": "Route a user's reads to the primary for a short period after they write (read-your-writes)"
+   },
+   {
+    "key": "D",
+    "text": "Send every read to the primary"
+   }
+  ]
+ },
+ {
+  "id": "q_978e23d1af23",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Rate limiting helps protect a service from denial-of-service-style overload by a single client.\n\n**Reason (R):** It caps how many requests each client can make in a time window.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Capping per-client request volume prevents one client from consuming all capacity. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_9b9c59cdc5e8",
+  "type": "SCQ",
+  "stem": "Which rate limiting algorithm allows short bursts above the average rate while enforcing a long-run rate?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A token bucket accumulates tokens up to its capacity, so a quiet client can later send a burst up to that capacity, while the refill rate bounds the average.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Random drop"
+   },
+   {
+    "key": "B",
+    "text": "Fixed window with zero limit"
+   },
+   {
+    "key": "C",
+    "text": "Leaky bucket with no queue capacity"
+   },
+   {
+    "key": "D",
+    "text": "Token bucket"
+   }
+  ]
+ },
+ {
+  "id": "q_9d18a6cad346",
+  "type": "SCQ",
+  "stem": "Why is 'CA' not a practical choice for a distributed system spanning several machines?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Network partitions cannot be ruled out, so partition tolerance is not optional; the real choice when one occurs is consistency or availability. Check: a single-node database appears 'CA' only because there is no distribution.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "CAP forbids using the network"
+   },
+   {
+    "key": "B",
+    "text": "Partitions can occur on real networks, so a system must tolerate them and choose between C and A during one"
+   },
+   {
+    "key": "C",
+    "text": "Partitions are impossible so CA is trivially true"
+   },
+   {
+    "key": "D",
+    "text": "CA systems cannot store data"
+   }
+  ]
+ },
+ {
+  "id": "q_9f7900ac66a6",
+  "type": "SCQ",
+  "stem": "Why do teams track p99 latency rather than only the average?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Latency distributions are long-tailed, so a mean can look healthy while 1% of requests are very slow. Check: with 99 requests at 10 ms and one at 1,000 ms the mean is about 20 ms but p99 is near the slow request.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "p99 is always lower than the average"
+   },
+   {
+    "key": "B",
+    "text": "The average is mathematically undefined for latency"
+   },
+   {
+    "key": "C",
+    "text": "Percentiles cannot be aggregated across servers"
+   },
+   {
+    "key": "D",
+    "text": "A small slow fraction of requests can hurt many users and is hidden by the mean"
+   }
+  ]
+ },
+ {
+  "id": "q_a29c1a663ff7",
+  "type": "MSQ",
+  "stem": "Select all techniques that typically increase a system's ability to scale out.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Externalised state, good partitioning and buffering via queues let capacity grow with nodes. Pinning users to one server ties load to that machine and defeats balancing. Check: each correct choice removes a dependency on one machine.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Keeping session state in an external store instead of server memory"
+   },
+   {
+    "key": "B",
+    "text": "Partitioning data across nodes by a well-distributed key"
+   },
+   {
+    "key": "C",
+    "text": "Sticky routing every user to one fixed server forever"
+   },
+   {
+    "key": "D",
+    "text": "Making work asynchronous through a queue to absorb bursts"
+   }
+  ]
+ },
+ {
+  "id": "q_a380a6b9c52a",
+  "type": "MSQ",
+  "stem": "Select all advantages of a layer 4 load balancer compared with layer 7.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C",
+    "D"
+   ]
+  },
+  "solution": "Layer 4 forwards connections without parsing HTTP, so it is cheaper and protocol-agnostic. Content-based routing needs layer 7. Check: the false option requires application-level parsing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Lower per-request processing overhead"
+   },
+   {
+    "key": "B",
+    "text": "Can route by URL path or HTTP header"
+   },
+   {
+    "key": "C",
+    "text": "Works with any TCP-based protocol without parsing it"
+   },
+   {
+    "key": "D",
+    "text": "Typically higher raw throughput"
+   }
+  ]
+ },
+ {
+  "id": "q_a63163659da2",
+  "type": "SCQ",
+  "stem": "A partitioned log guarantees order only within a partition. How do you ensure all events of one order id are processed in order?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Same key hashes to the same partition, preserving relative order for that key; ordering across keys is not guaranteed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use random partitioning"
+   },
+   {
+    "key": "B",
+    "text": "Add more partitions and hope"
+   },
+   {
+    "key": "C",
+    "text": "Use the order id as the partition key so they land in the same partition"
+   },
+   {
+    "key": "D",
+    "text": "Use a different queue per message"
+   }
+  ]
+ },
+ {
+  "id": "q_adfe637f648c",
+  "type": "NVQ",
+  "stem": "Using a 365-day year, how many minutes of downtime per year does 99.99% availability allow? Give one decimal place.",
+  "images": [],
+  "answer": {
+   "value": 52.56,
+   "tol": 0.1
+  },
+  "solution": "Allowed downtime $=0.0001\\times525600=52.56\\approx52.6$ minutes. Check: one more nine divides the 526 minutes of three nines by ten.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ae61c52026a9",
+  "type": "NVQ",
+  "stem": "On a consistent-hashing ring with 9 equal-load servers, one more is added. Assuming good balance, what fraction of the keys is expected to move to the new server? Give a decimal.",
+  "images": [],
+  "answer": {
+   "value": 0.1,
+   "tol": 0.005
+  },
+  "solution": "The new server takes over roughly an equal share of $1/(9+1)=0.1$ of the keys, all from neighbours.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ae861aaa598b",
+  "type": "SCQ",
+  "stem": "Which index family favours very high write throughput by buffering writes in memory and merging sorted runs on disk?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "LSM trees append writes to memory tables and flush/merge sorted files, trading some read cost and compaction work for fast writes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "No index family does this"
+   },
+   {
+    "key": "B",
+    "text": "LSM-tree based indexes"
+   },
+   {
+    "key": "C",
+    "text": "Bitmap indexes"
+   },
+   {
+    "key": "D",
+    "text": "B-tree indexes only"
+   }
+  ]
+ },
+ {
+  "id": "q_b36b9305833c",
+  "type": "SCQ",
+  "stem": "Servers differ: one has 4 times the capacity of the others. Which algorithm accounts for that?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Weights let the balancer send proportionally more requests to larger machines. Plain round robin treats all servers equally. Check: with weights 4:1:1 the big server gets 4/6 of requests.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Plain round robin"
+   },
+   {
+    "key": "B",
+    "text": "Random choice with no weights"
+   },
+   {
+    "key": "C",
+    "text": "Source-port hashing only"
+   },
+   {
+    "key": "D",
+    "text": "Weighted round robin (or weighted least connections)"
+   }
+  ]
+ },
+ {
+  "id": "q_b3fc3f86aff5",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A covering index can answer a query without reading the table rows.\n\n**Reason (R):** It contains all the columns that the query needs.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "If every selected and filtered column is in the index, the engine reads only the index. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_b4689f9aa299",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Exactly-once processing is usually achieved by at-least-once delivery combined with idempotent consumers.\n\n**Reason (R):** Duplicates created by retries are harmless when applying a message twice has the same effect as once.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "True exactly-once delivery over unreliable networks is impractical; effective exactly-once comes from dedupe or idempotency on top of redelivery. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_b552f2d91823",
+  "type": "NVQ",
+  "stem": "A sliding window counter limits 100 requests per minute. The previous minute had 80 requests, the current minute has 30 so far, and the window is 40% through the current minute (so 60% of the previous minute still overlaps). What is the estimated count in the sliding window?",
+  "images": [],
+  "answer": {
+   "value": 78.0,
+   "tol": 0.01
+  },
+  "solution": "Estimate $=30+0.6\\times80=30+48=78$ requests, so the next request is allowed (under 100).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b58cd7cade32",
+  "type": "SCQ",
+  "stem": "What is the main cost of adding many indexes to a write-heavy table?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Indexes accelerate reads but each write must update them too. Check: more indexes means more structures to keep in sync per write.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The table loses its primary key"
+   },
+   {
+    "key": "B",
+    "text": "Every insert, update or delete must also maintain each index, slowing writes and using storage"
+   },
+   {
+    "key": "C",
+    "text": "Reads become slower"
+   },
+   {
+    "key": "D",
+    "text": "Indexes force full table scans"
+   }
+  ]
+ },
+ {
+  "id": "q_b8e86379fad0",
+  "type": "SCQ",
+  "stem": "Which strategy writes to the cache first and updates the database later, risking data loss if the cache fails before flushing?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Write-back acknowledges after the cache write and flushes asynchronously; it is fast but can lose recent writes on failure.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Read-through"
+   },
+   {
+    "key": "B",
+    "text": "Cache-aside read path"
+   },
+   {
+    "key": "C",
+    "text": "Write-through"
+   },
+   {
+    "key": "D",
+    "text": "Write-back"
+   }
+  ]
+ },
+ {
+  "id": "q_b8ed7cc8c6e5",
+  "type": "SCQ",
+  "stem": "In a pull CDN, when does the edge fetch an object from the origin?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Pull CDNs fetch on demand and keep the copy for later requests; push CDNs rely on you uploading content in advance.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "On the first request for it (a cache miss), then it caches the object"
+   },
+   {
+    "key": "B",
+    "text": "Only when the operator uploads it manually"
+   },
+   {
+    "key": "C",
+    "text": "Only at midnight"
+   },
+   {
+    "key": "D",
+    "text": "Never; the CDN stores nothing"
+   }
+  ]
+ },
+ {
+  "id": "q_b962ac4b9ebf",
+  "type": "SCQ",
+  "stem": "The product catalogue cache is lost during a restart and the database collapses under the cold-cache traffic. What is the best preventive measure?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A cold cache sends nearly every request to the database. Pre-warming hot data and gradual traffic ramp avoid the overload. Check: hit rate is the quantity that collapsed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CACHE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Remove the database"
+   },
+   {
+    "key": "B",
+    "text": "Shorten TTLs to one second"
+   },
+   {
+    "key": "C",
+    "text": "Disable all monitoring"
+   },
+   {
+    "key": "D",
+    "text": "Warm the cache (pre-populate hot keys) and throttle or stagger traffic during recovery"
+   }
+  ]
+ },
+ {
+  "id": "q_bafadc9e54a0",
+  "type": "SCQ",
+  "stem": "Which statement correctly distinguishes latency from throughput?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Latency is a duration for one unit of work; throughput is a rate. Check: units differ (seconds vs operations per second).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LATTP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They always move together"
+   },
+   {
+    "key": "B",
+    "text": "Throughput is only measured at the client"
+   },
+   {
+    "key": "C",
+    "text": "Latency is bytes per second; throughput is the delay of one packet"
+   },
+   {
+    "key": "D",
+    "text": "Latency is the time for one operation; throughput is the number of operations completed per unit time"
+   }
+  ]
+ },
+ {
+  "id": "q_bf644d5ac51e",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Terminating TLS at a layer 7 load balancer lets it route on HTTP headers.\n\n**Reason (R):** The balancer must decrypt the traffic to read the request headers.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Encrypted headers are unreadable without decryption, so header routing requires TLS termination (or inspection) at the balancer. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.LB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_c4a7fb70dee0",
+  "type": "SCQ",
+  "stem": "A primary database replicates asynchronously to a replica. The primary fails right after acknowledging a write. What is the risk when the replica is promoted?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Asynchronous replication acknowledges before the replica has the data, so the promoted node can be behind by a few writes. Check: synchronous replication would remove the gap at the cost of write latency.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Reads become impossible forever"
+   },
+   {
+    "key": "B",
+    "text": "The recent acknowledged write may be missing on the replica"
+   },
+   {
+    "key": "C",
+    "text": "Indexes are lost on all tables"
+   },
+   {
+    "key": "D",
+    "text": "The replica will contain extra writes the primary never had"
+   }
+  ]
+ },
+ {
+  "id": "q_c891d5719f2b",
+  "type": "NVQ",
+  "stem": "A job has a serial fraction of 5% that cannot be parallelised; the rest scales perfectly. By Amdahl's law, what is the speedup on 10 processors? Give a number rounded to two decimals.",
+  "images": [],
+  "answer": {
+   "value": 6.89655,
+   "tol": 0.02
+  },
+  "solution": "Speedup $=1/(s+(1-s)/p)=1/(0.05+0.95/10)=1/0.145\\approx 6.90$. Check: even with infinite processors the limit is $1/0.05=20$, so 6.9 on 10 is plausible.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_cb064d499bfb",
+  "type": "SCQ",
+  "stem": "Which statement about relational (SQL) databases is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "RDBMSs use tables with a declared schema, SQL, joins and ACID transactions.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They are schema-less by definition"
+   },
+   {
+    "key": "B",
+    "text": "They cannot store more than one table"
+   },
+   {
+    "key": "C",
+    "text": "They enforce a predefined schema and support ACID transactions and joins"
+   },
+   {
+    "key": "D",
+    "text": "They never support indexes"
+   }
+  ]
+ },
+ {
+  "id": "q_cd11e76080fa",
+  "type": "SCQ",
+  "stem": "Why does an index speed up a query that filters on an indexed column?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "An index holds sorted keys with row pointers, so lookups are logarithmic instead of linear.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It lets the database locate matching rows without scanning the whole table"
+   },
+   {
+    "key": "B",
+    "text": "It compresses the network"
+   },
+   {
+    "key": "C",
+    "text": "It stores a second copy of every table"
+   },
+   {
+    "key": "D",
+    "text": "It disables locking"
+   }
+  ]
+ },
+ {
+  "id": "q_cd3627bc248c",
+  "type": "SCQ",
+  "stem": "What is the primary benefit of using a CDN for static assets?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Edge servers near users reduce round-trip distance and absorb most requests that would otherwise hit the origin.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Content is served from locations close to users, cutting latency and origin load"
+   },
+   {
+    "key": "B",
+    "text": "It removes the need for any caching headers"
+   },
+   {
+    "key": "C",
+    "text": "It encrypts the origin database"
+   },
+   {
+    "key": "D",
+    "text": "It makes the origin database consistent"
+   }
+  ]
+ },
+ {
+  "id": "q_d2836f5a9630",
+  "type": "NVQ",
+  "stem": "Without a CDN, all 10,000 requests per second hit the origin. With a CDN hit ratio of 95%, how many requests per second reach the origin?",
+  "images": [],
+  "answer": {
+   "value": 500.0,
+   "tol": 1
+  },
+  "solution": "Only misses reach the origin: $10000\\times(1-0.95)=500$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d2ade5647cbf",
+  "type": "SCQ",
+  "stem": "You deploy a new version of app.js but users still receive the old one from the CDN for hours. What is the most robust fix?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Fingerprinted URLs sidestep invalidation entirely: the new name is a cache miss that fetches the new file, and old URLs can stay cached forever. Check: purge-based fixes work but are slower and error-prone.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Lower the origin server's CPU usage"
+   },
+   {
+    "key": "B",
+    "text": "Version the file name (for example with a content hash) so each release is a new URL"
+   },
+   {
+    "key": "C",
+    "text": "Ask every user to clear the cache"
+   },
+   {
+    "key": "D",
+    "text": "Use a larger edge disk"
+   }
+  ]
+ },
+ {
+  "id": "q_d2e9c041d31a",
+  "type": "SCQ",
+  "stem": "A banking transfer and a 'like' counter are both built on the same distributed store. What is the most sensible use of the consistency settings?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Match the guarantee to the cost of being wrong: errors in money are unacceptable, while a like count that lags briefly is harmless. Check: ask what happens if a reader sees a value that is a few seconds old.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use strong consistency for the like count only"
+   },
+   {
+    "key": "B",
+    "text": "Use eventual consistency for both"
+   },
+   {
+    "key": "C",
+    "text": "Use strong consistency for the transfer and weaker consistency for the like count"
+   },
+   {
+    "key": "D",
+    "text": "Consistency settings do not matter for either"
+   }
+  ]
+ },
+ {
+  "id": "q_d36dfac483d8",
+  "type": "MSQ",
+  "stem": "Select all statements that are true for consistent hashing.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Ring-based placement supports replication to successors, and a single hot key still lands on one node. Remapping is limited, not total.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It is widely used for distributed caches and partitioned data stores"
+   },
+   {
+    "key": "B",
+    "text": "Replication can place copies on the next several distinct servers along the ring"
+   },
+   {
+    "key": "C",
+    "text": "Adding a node forces every key to be rehashed to a new location"
+   },
+   {
+    "key": "D",
+    "text": "Hotspots can still occur for very popular keys"
+   }
+  ]
+ },
+ {
+  "id": "q_d6972b16c3da",
+  "type": "SCQ",
+  "stem": "Which statement best describes the difference between scalability and raw performance?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A system can be quick for one request yet fail to grow with load, or slow per request yet scale linearly. Check: adding machines changes capacity (scalability) while a single call's latency may stay the same.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Performance only matters for databases"
+   },
+   {
+    "key": "B",
+    "text": "Scalability is how well throughput or capacity grows as resources are added; performance is how fast one request is served"
+   },
+   {
+    "key": "C",
+    "text": "They are the same measure under different names"
+   },
+   {
+    "key": "D",
+    "text": "Scalability is only about reducing latency for a single user"
+   }
+  ]
+ },
+ {
+  "id": "q_dada114fadd8",
+  "type": "SCQ",
+  "stem": "Which content is the best candidate for a push CDN?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Known, popular, rarely-changing large files can be pre-positioned. Personalised data should not be cached at shared edges.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Highly personalised dashboards"
+   },
+   {
+    "key": "B",
+    "text": "Per-request shopping carts"
+   },
+   {
+    "key": "C",
+    "text": "A large software release or video you know users will download soon, uploaded ahead of time"
+   },
+   {
+    "key": "D",
+    "text": "Bank balances"
+   }
+  ]
+ },
+ {
+  "id": "q_dc8266952fed",
+  "type": "SCQ",
+  "stem": "A shopping-cart service must stay writable during a partition and merge conflicting carts later. Which CAP choice is this?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Accepting writes on both sides and reconciling later gives availability and eventual consistency. Check: any later merge step is evidence that replicas diverged during the partition.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "AP: it favours availability and accepts temporary inconsistency"
+   },
+   {
+    "key": "B",
+    "text": "CA"
+   },
+   {
+    "key": "C",
+    "text": "It violates the CAP theorem"
+   },
+   {
+    "key": "D",
+    "text": "CP"
+   }
+  ]
+ },
+ {
+  "id": "q_dd72700af751",
+  "type": "SCQ",
+  "stem": "Which practice most directly improves availability against the failure of a single server?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Redundancy lets another replica take over when one fails. A bigger server is still a single point of failure.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Compressing stored data"
+   },
+   {
+    "key": "B",
+    "text": "Using a larger primary server"
+   },
+   {
+    "key": "C",
+    "text": "Adding more log statements"
+   },
+   {
+    "key": "D",
+    "text": "Redundant replicas with automatic failover"
+   }
+  ]
+ },
+ {
+  "id": "q_dfb64d7eb44f",
+  "type": "SCQ",
+  "stem": "Reads are 95% of the traffic to a product catalogue and one primary database is at its limit. What is usually the cheapest first scaling step?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A read-dominated load is relieved by offloading reads to caches or replicas; sharding is far more complex and is justified only when writes or data size exceed a node. Check: removing 95% of read work from the primary leaves about 5% of the original query rate if the cache is effective.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Shard by user id immediately"
+   },
+   {
+    "key": "B",
+    "text": "Double the primary's RAM and do nothing else"
+   },
+   {
+    "key": "C",
+    "text": "Move all reads to the primary's standby with no replication"
+   },
+   {
+    "key": "D",
+    "text": "Add a cache and read replicas, keeping the primary for writes"
+   }
+  ]
+ },
+ {
+  "id": "q_e007969dce71",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** With hash(key) mod N, adding one server to a cluster of N servers moves most of the keys.\n\n**Reason (R):** The modulus changes, so the remainder of most hashes changes too.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "For uniform hashes, a fraction N/(N+1) of keys changes server when N increases to N+1. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_e09d10c64fbc",
+  "type": "SCQ",
+  "stem": "What is the main advantage of consistent hashing over hash(key) mod N for distributing keys across servers?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "With mod N, changing N moves most keys; on a hash ring only keys adjacent to the changed node move (about 1/N on average).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It removes the need for a hash function"
+   },
+   {
+    "key": "B",
+    "text": "Adding or removing a server remaps only a small fraction of keys"
+   },
+   {
+    "key": "C",
+    "text": "It guarantees perfectly equal load without extra work"
+   },
+   {
+    "key": "D",
+    "text": "It stores each key on every server"
+   }
+  ]
+ },
+ {
+  "id": "q_e0db26e04be1",
+  "type": "MSQ",
+  "stem": "Select all content that is generally safe and effective to cache at a CDN edge.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Shared caches should hold content identical for many users. Private per-user data risks being served to others. Check: ask whether the response is the same for every requester.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CDN",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Images and style sheets"
+   },
+   {
+    "key": "B",
+    "text": "Videos served as segments"
+   },
+   {
+    "key": "C",
+    "text": "Public JavaScript bundles"
+   },
+   {
+    "key": "D",
+    "text": "Responses containing one user's private account data without careful cache keys"
+   }
+  ]
+ },
+ {
+  "id": "q_e2c2bdeaa584",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Adding a hard dependency on a 99.9%-available service to a 99.95%-available service cannot leave the combined availability at 99.95%.\n\n**Reason (R):** For components in series, availability is the product of the components' availabilities.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The product $0.9995\\times0.999\\approx0.9985$ is below 0.9995, so A holds and R is the reason. Check: multiplying by a number below 1 always lowers the result.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_e68d60e8964e",
+  "type": "SCQ",
+  "stem": "On the ring, a key is assigned to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Keys and servers are hashed to the same ring; ownership goes to the next server position in the chosen direction.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the server with the smallest id"
+   },
+   {
+    "key": "B",
+    "text": "all servers"
+   },
+   {
+    "key": "C",
+    "text": "the first server found moving clockwise from the key's position"
+   },
+   {
+    "key": "D",
+    "text": "a random server each time"
+   }
+  ]
+ },
+ {
+  "id": "q_eb637a034585",
+  "type": "SCQ",
+  "stem": "Two bank accounts live on different database nodes. A transfer must debit one and credit the other atomically. Which approach provides this guarantee?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Atomic cross-node updates need coordination (2PC) or compensating steps (saga). Uncoordinated writes can leave money debited but not credited. Check: ask what happens if the process crashes between the two writes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use eventual consistency and ignore failures"
+   },
+   {
+    "key": "B",
+    "text": "Two independent single-row writes with no coordination"
+   },
+   {
+    "key": "C",
+    "text": "Write both entries to a local log file on the client"
+   },
+   {
+    "key": "D",
+    "text": "A distributed transaction protocol such as two-phase commit (or a saga with compensation if weaker guarantees suffice)"
+   }
+  ]
+ },
+ {
+  "id": "q_ebe3402cae20",
+  "type": "SCQ",
+  "stem": "Why are virtual nodes (many ring positions per physical server) used?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "With few points per server, arc lengths vary widely. Many virtual nodes average this out and allow weighting by capacity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To make hashing unnecessary"
+   },
+   {
+    "key": "B",
+    "text": "To spread load more evenly and let stronger servers take more positions"
+   },
+   {
+    "key": "C",
+    "text": "To store keys in sorted order"
+   },
+   {
+    "key": "D",
+    "text": "To reduce the number of servers"
+   }
+  ]
+ },
+ {
+  "id": "q_eca058177d41",
+  "type": "SCQ",
+  "stem": "A web tier is CPU-bound at peak and the application keeps no per-user data in memory. Which change scales it most directly?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Stateless, CPU-bound servers scale out: identical copies share the load behind a balancer. The other options leave the saturated CPU on one machine. Check: capacity grows with instance count only if requests can go to any instance, which statelessness guarantees.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Move the database to a bigger disk"
+   },
+   {
+    "key": "B",
+    "text": "Compress responses with a stronger algorithm only"
+   },
+   {
+    "key": "C",
+    "text": "Run more identical instances behind a load balancer"
+   },
+   {
+    "key": "D",
+    "text": "Add a second DNS record that points to the same single server"
+   }
+  ]
+ },
+ {
+  "id": "q_ee701b839da3",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Vertical scaling eventually hits a hard ceiling.\n\n**Reason (R):** The largest machine available has finite CPU, memory and I/O.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Hardware has an upper bound per machine, which is exactly why vertical scaling is capped and designs eventually scale out. R states that bound, so it explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_efde1c2adbb3",
+  "type": "MSQ",
+  "stem": "Select all true statements about database indexes.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Indexes take space, help lookups and ranges, and can enforce uniqueness, but they cost write time. Check: the false statement contradicts the maintenance cost.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.IDX",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They consume additional storage"
+   },
+   {
+    "key": "B",
+    "text": "They can speed up range queries on the indexed column"
+   },
+   {
+    "key": "C",
+    "text": "A unique index can enforce uniqueness"
+   },
+   {
+    "key": "D",
+    "text": "Adding an index never changes write performance"
+   }
+  ]
+ },
+ {
+  "id": "q_f3203ec09b4c",
+  "type": "SCQ",
+  "stem": "Which algorithm smooths bursty traffic into a constant outflow rate?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A leaky bucket drains queued requests at a fixed rate, producing smooth output. Token buckets permit bursts.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Fixed window counter"
+   },
+   {
+    "key": "B",
+    "text": "Sliding window log"
+   },
+   {
+    "key": "C",
+    "text": "Leaky bucket"
+   },
+   {
+    "key": "D",
+    "text": "Token bucket with huge capacity"
+   }
+  ]
+ },
+ {
+  "id": "q_f47bff141508",
+  "type": "MSQ",
+  "stem": "Select all appropriate responses when a client exceeds a rate limit.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "429 with retry guidance is the standard signal; limits per identity protect other clients. Check: crashing is never a rate limiting strategy.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Return HTTP 429 Too Many Requests"
+   },
+   {
+    "key": "B",
+    "text": "Include a Retry-After hint when possible"
+   },
+   {
+    "key": "C",
+    "text": "Silently crash the server"
+   },
+   {
+    "key": "D",
+    "text": "Apply per-user or per-API-key limits rather than one global limit"
+   }
+  ]
+ },
+ {
+  "id": "q_f4e4f62e9045",
+  "type": "SCQ",
+  "stem": "In a cluster of 10 API gateways, per-client limits kept in each gateway's local memory enforce the limit incorrectly because",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Without shared state, a client spread across gateways gets the limit on each. Use a shared store (for example Redis) or route a client consistently to one gateway.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.RATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "each gateway sees only part of the traffic, so the effective limit can be up to 10x higher"
+   },
+   {
+    "key": "B",
+    "text": "limits only work on one machine"
+   },
+   {
+    "key": "C",
+    "text": "gateways cannot read headers"
+   },
+   {
+    "key": "D",
+    "text": "local memory cannot count"
+   }
+  ]
+ },
+ {
+  "id": "q_f508058d5451",
+  "type": "SCQ",
+  "stem": "Why is a dependency chain of many services in series an availability risk?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Probabilities of all components being up multiply, so each hard dependency reduces the total. Redundancy (parallel) is what raises it. Check: with ten 99.9% services in series the product is about 99.0%.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.AVAIL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Series dependencies increase availability through redundancy"
+   },
+   {
+    "key": "B",
+    "text": "The overall availability is the product of the parts, so it is lower than that of any single part"
+   },
+   {
+    "key": "C",
+    "text": "Each added service averages out failures"
+   },
+   {
+    "key": "D",
+    "text": "Availability only depends on the slowest component"
+   }
+  ]
+ },
+ {
+  "id": "q_fde09335aa7e",
+  "type": "MSQ",
+  "stem": "Select all correct statements about the CAP theorem.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C",
+    "D"
+   ]
+  },
+  "solution": "CAP's trade-off is forced when a partition happens; outside partitions a system can be both consistent and available. Its C is linearizability and A means every request to a live node gets a response. Check: the second statement overstates the theorem.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The trade-off between consistency and availability applies while a partition is occurring"
+   },
+   {
+    "key": "B",
+    "text": "It says a system can be only two of three at all times, even without partitions"
+   },
+   {
+    "key": "C",
+    "text": "'Consistency' in CAP means linearizability (a single up-to-date view)"
+   },
+   {
+    "key": "D",
+    "text": "Availability in CAP means every non-failing node returns a response"
+   }
+  ]
+ },
+ {
+  "id": "q_fec08fd0d781",
+  "type": "SCQ",
+  "stem": "Under at-least-once delivery, what must consumers be designed to handle?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At-least-once means a message may be redelivered (for example after a missed acknowledgement), so handlers must tolerate repeats, typically with idempotency keys.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.MQ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Nothing; duplicates are impossible"
+   },
+   {
+    "key": "B",
+    "text": "Lost messages only"
+   },
+   {
+    "key": "C",
+    "text": "Duplicate messages, by making processing idempotent"
+   },
+   {
+    "key": "D",
+    "text": "Messages arriving before they are sent"
+   }
+  ]
+ },
+ {
+  "id": "q_ff4b4f6a660a",
+  "type": "SCQ",
+  "stem": "A rate counter for one celebrity account is updated by millions of clients. Sharding the counter table over 100 more nodes does not reduce latency. Why?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Sharding spreads distinct keys. A single hot key still maps to one shard, so that shard remains the bottleneck. Fixes split the key (for example into several sub-counters summed on read) or aggregate updates before writing. Check: throughput for one key is bounded by one node regardless of cluster size.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SCAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Counters cannot be stored in distributed databases"
+   },
+   {
+    "key": "B",
+    "text": "Sharding only helps reads"
+   },
+   {
+    "key": "C",
+    "text": "All updates hit the same key, so one shard still serves that hot key"
+   },
+   {
+    "key": "D",
+    "text": "More nodes always add network latency that cancels any gain"
+   }
+  ]
+ },
+ {
+  "id": "q_ff8addde8d6d",
+  "type": "SCQ",
+  "stem": "During a network partition between two data centres, a store chooses to reject writes on the minority side to keep replicas identical. Which CAP choice is this?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Refusing requests to avoid divergence preserves consistency at the cost of availability. Check: if both sides kept accepting writes, replicas would diverge (AP).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CAP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Neither; CAP does not apply"
+   },
+   {
+    "key": "B",
+    "text": "CA: it gives up partition tolerance"
+   },
+   {
+    "key": "C",
+    "text": "CP: it keeps consistency and gives up availability on the minority side"
+   },
+   {
+    "key": "D",
+    "text": "AP: it keeps availability and gives up consistency"
+   }
+  ]
+ },
+ {
+  "id": "q_ffba2e6c53be",
+  "type": "SCQ",
+  "stem": "Which store is the best match for metrics sampled every second from thousands of sensors, queried by time ranges and aggregated over windows?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Time series databases are optimised for append-heavy timestamped data, range scans, downsampling and retention. Check: the access pattern is time-ordered.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.DB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A document store used as a single large blob"
+   },
+   {
+    "key": "B",
+    "text": "A time series database"
+   },
+   {
+    "key": "C",
+    "text": "A full-text search index only"
+   },
+   {
+    "key": "D",
+    "text": "A graph database"
+   }
+  ]
+ }
+]
