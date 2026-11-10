@@ -6,6 +6,7 @@ import {
   lazyCbtPageRoutes,
   lazyDiagnosticRoutes,
   lazyDsaRoutes,
+  lazyExamRoutes,
   lazyOnboardingRoutes,
   lazyPlanRoutes,
   lazyPracticeRoutes,
@@ -23,6 +24,7 @@ describe('lazy route table stays in sync with the real route modules', () => {
   it('practice', async () => expect(paths(lazyPracticeRoutes)).toEqual(paths((await import('../practice/routes')).practiceRoutes)));
   it('analysis', async () => expect(paths(lazyAnalysisRoutes)).toEqual(paths((await import('../analysis/routes')).analysisRoutes)));
   it('diagnostic', async () => expect(paths(lazyDiagnosticRoutes)).toEqual(paths((await import('../diagnostic/routes')).diagnosticRoutes)));
+  it('exams', async () => expect(paths(lazyExamRoutes)).toEqual(paths((await import('../exams/routes')).examRoutes)));
   it('dsa', async () => expect(paths(lazyDsaRoutes)).toEqual(paths((await import('../dsa/routes')).dsaRoutes)));
   it('onboarding', async () => expect(paths(lazyOnboardingRoutes)).toEqual(paths((await import('../onboarding/routes')).onboardingRoutes)));
   it('plan', async () => expect(paths(lazyPlanRoutes)).toEqual(paths((await import('../plan/routes')).planRoutes)));

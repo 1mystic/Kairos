@@ -12,7 +12,7 @@ import { PublicEntry } from './pages/PublicEntry';
 import { Settings } from './pages/Settings';
 import { uploadRoutes } from './upload/routes';
 import {
-  lazyAdminRoutes, lazyAnalysisRoutes, lazyCbtExamRoutes, lazyDsaRoutes, lazyCbtPageRoutes, lazyDiagnosticRoutes,
+  lazyAdminRoutes, lazyAnalysisRoutes, lazyCbtExamRoutes, lazyDsaRoutes, lazyExamRoutes, lazyCbtPageRoutes, lazyDiagnosticRoutes,
   lazyOnboardingRoutes, lazyPlanRoutes, lazyPracticeRoutes, lazyRoadmapRoutes,
 } from './shell/lazyRoutes';
 import { ErrorBoundary } from './shell/ErrorBoundary';
@@ -30,6 +30,7 @@ const appLayoutRoutes = [
   ...lazyPracticeRoutes,
   ...lazyAnalysisRoutes,
   ...lazyDsaRoutes,
+  ...lazyExamRoutes,
   ...lazyDiagnosticRoutes,
   ...uploadRoutes,
   ...lazyCbtPageRoutes,

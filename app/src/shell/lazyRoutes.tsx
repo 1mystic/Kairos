@@ -32,6 +32,10 @@ export const lazyDsaRoutes = lazyGroup(
   () => import('../dsa/routes').then((m) => m.dsaRoutes),
   ['/dsa', '/dsa/t/:track', '/dsa/p/:slug'],
 );
+export const lazyExamRoutes = lazyGroup(
+  () => import('../exams/routes').then((m) => m.examRoutes),
+  ['/exams'],
+);
 export const lazyAnalysisRoutes = lazyGroup(
   () => import('../analysis/routes').then((m) => m.analysisRoutes),
   ['/analysis', '/analysis/mock/:mockId'],

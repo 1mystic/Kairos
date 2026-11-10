@@ -5,7 +5,7 @@ import { friendlyAuthError } from '../auth/errors';
 import { Banner, LogoMark } from '../components/ui';
 import { ThemeToggle } from '../components/ThemeToggle';
 import {
-  CalendarIcon, ChartIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon,
+  CalendarIcon, ChartIcon, CodeIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon,
 } from '../components/icons';
 import { ExamSwitcher } from '../exams/ExamSwitcher';
 import { useActiveExam } from '../exams/useActiveExam';
@@ -20,6 +20,7 @@ export const NAV: NavEntry[] = [
   { to: '/', label: 'Home', icon: HomeIcon, tab: true },
   { to: '/practice', label: 'Practice', icon: PracticeIcon, tab: true },
   { to: '/mocks', label: 'Mocks', icon: MockIcon, tab: true, also: ['/exam'] },
+  { to: '/dsa', label: 'DSA', icon: CodeIcon },
   { to: '/upload', label: 'Upload', icon: UploadIcon },
   { to: '/analysis', label: 'Analysis', icon: ChartIcon },
   { to: '/plan', label: 'Plan', icon: PlanIcon },

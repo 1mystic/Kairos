@@ -23,6 +23,7 @@ export const MockIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="4"
 export const UploadIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M12 16V4M7 9l5-5 5 5M5 20h14" /></Icon>;
 export const ChartIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M5 20V10M12 20V4M19 20v-7" /></Icon>;
 export const PlanIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="3.5" y="5" width="17" height="15" rx="3" /><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4" /></Icon>;
+export const CodeIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></Icon>;
 export const CheckIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M5 12.5l4.5 4.5L19 7.5" /></Icon>;
 export const ChevronDownIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M6 9l6 6 6-6" /></Icon>;
 export const ArrowRightIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M5 12h14M13 6l6 6-6 6" /></Icon>;

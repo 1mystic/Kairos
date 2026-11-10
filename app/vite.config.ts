@@ -37,6 +37,11 @@ export default defineConfig({
             options: { cacheName: 'kairos-bank-latest', networkTimeoutSeconds: 4 },
           },
           {
+            urlPattern: ({ url }) => url.pathname === '/dsa/catalog.json',
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'kairos-dsa-catalog' },
+          },
+          {
             urlPattern: ({ url }) => /^\/bank\/v[^/]+\//.test(url.pathname),
             handler: 'CacheFirst',
             options: {
