@@ -88,7 +88,7 @@ describe('onboarding step 1: choose your exams', () => {
     await userEvent.click(screen.getByRole('checkbox', { name: /^IAT/ }));
     await userEvent.click(screen.getByRole('radio', { name: /My own date/ }));
     await userEvent.type(screen.getByLabelText('Exam date'), '2027-06-01');
-    await userEvent.click(screen.getByRole('checkbox', { name: /System Design/ }));
+    await userEvent.click(screen.getByRole('checkbox', { name: /^System Design/ }));
     await next();
     await next();
     await next();

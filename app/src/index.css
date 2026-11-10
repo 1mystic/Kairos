@@ -294,11 +294,11 @@
   .menu { position: absolute; z-index: 30; min-width: 240px; padding: var(--space-2); border-radius: var(--radius-card); background: var(--surface-3); animation: rise var(--dur) var(--ease); }
   .menu-note { padding: var(--space-2) var(--space-3); }
   .brand { display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: var(--topbar-h); padding: 0 var(--space-3); border-radius: var(--radius-card); background: transparent; color: var(--ink); text-decoration: none; transition: color var(--dur) var(--ease); }
-  .brand:active, .brand:hover { background: transparent; }
+  .brand:active { background: transparent; }
   .brand-text { display: none; flex-direction: column; min-width: 0; }
   .brand-text > * { line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .brand-text > :nth-child(2) { display: none; } /* tagline never fits one line in the 240px rail: wordmark only */
-  .brand:hover .brand-text > :first-child { color: var(--primary); }
+  @media (hover: hover) and (pointer: fine) { .brand:hover { background: transparent; } .brand:hover .brand-text > :first-child { color: var(--primary); } }
   .menu-item { display: flex; align-items: center; gap: var(--space-3); width: 100%; min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius-btn); font: 500 var(--fs-small)/1.4 var(--font-ui); color: var(--ink); text-decoration: none; text-align: left; cursor: pointer; }
   @keyframes fade { from { opacity: 0; } }
   @keyframes rise { from { opacity: 0; transform: translateY(var(--space-2)); } }
@@ -366,3 +366,6 @@
     .auth-brand-col { gap: var(--space-6); }
   }
 }
+
+/* keyboard focus on the solid Today hero panel */
+.today-hero :focus-visible { outline: 2px solid var(--on-primary); outline-offset: 2px; }

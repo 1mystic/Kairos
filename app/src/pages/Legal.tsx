@@ -13,7 +13,7 @@ function Ph({ children }: { children: string }) {
   return <Chip tone="accent">{children}</Chip>;
 }
 
-const List = ({ children }: { children: ReactNode }) => <ul className="stack-text list-disc pl-s5">{children}</ul>;
+const List = ({ children }: { children: ReactNode }) => <ul className="stack-text list-disc" style={{ paddingInlineStart: 'var(--space-5)' }}>{children}</ul>;
 
 function LegalPage({ title, intro, sections }: { title: string; intro: string; sections: Sec[] }) {
   useDocumentTitle(title);

@@ -50,7 +50,7 @@ describe('picker', () => {
 
 describe('routes', () => {
   it('exports the three practice routes', () => {
-    expect(practiceRoutes.map((r) => r.path)).toEqual(['/practice', '/practice/summary/:sessionId', '/practice/:exam/:chapter']);
+    expect(practiceRoutes.map((r) => r.path)).toEqual(['/practice', '/practice/summary/:sessionId', '/practice/today', '/practice/:exam/:chapter']);
   });
 });
 

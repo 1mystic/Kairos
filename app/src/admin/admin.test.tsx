@@ -93,7 +93,7 @@ describe('insights', () => {
     expect(out).toContain('NEET sessions grew 20% this week.');
   });
   it('stays quiet on thin data', () => {
-    expect(buildInsights(fillDays([day(1, { questions: 5, correct: 1 })], '2026-10-14', 14))[0]).toMatch(/Not enough data/);
+    expect(buildInsights(fillDays([day(1, { questions: 5, correct: 1, active: 0 })], '2026-10-14', 14))[0]).toMatch(/Not enough data/);
   });
 });
 

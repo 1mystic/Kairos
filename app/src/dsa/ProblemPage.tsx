@@ -77,8 +77,9 @@ function Frame({ slug, title }: { slug: string; title: string }) {
           sandbox="allow-scripts allow-same-origin allow-popups allow-downloads"
           referrerPolicy="no-referrer"
           onError={() => setFailed(true)}
+          frameBorder={0}
           className={show ? 'w-full' : 'sr-only'}
-          style={{ display: 'block', border: 0, minHeight: 'max(32rem, calc(100dvh - var(--sticky-top)))' }}
+          style={{ display: 'block', minHeight: 'max(32rem, calc(100dvh - var(--sticky-top)))' }}
         />
       )}
     </Stack>

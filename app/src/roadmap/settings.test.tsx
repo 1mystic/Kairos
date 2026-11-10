@@ -43,7 +43,7 @@ describe('Settings > account and data', () => {
     );
     await userEvent.click(screen.getByRole('button', { name: 'Storage and data' }));
     await userEvent.click(screen.getByRole('button', { name: 'Clear local data' }));
-    expect(screen.getByText(/uploaded questions/)).toBeInTheDocument();
+    expect(screen.getByText(/This removes your sessions.*uploaded questions/)).toBeInTheDocument();
     await userEvent.click(screen.getByRole('button', { name: 'Clear data' }));
     await waitFor(async () => expect(await kv.getAll('questions')).toHaveLength(0));
   });

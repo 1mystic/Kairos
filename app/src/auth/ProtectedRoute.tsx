@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router';
 import { useAuth } from './AuthProvider';
 import { useGuest } from '../store/StoreProvider';
-import { Button, Spinner } from '../components/ui';
+import { Button, Page, PageHeader, Spinner } from '../components/ui';
 import { safeReturnPath } from './validation';
 
 /** Shown when a signed-in account's profile could not be loaded (offline, blip). Never treated as "new account". */
@@ -10,14 +10,14 @@ export function ProfileRetry() {
   const { reloadProfile, signOut } = useAuth();
   const [busy, setBusy] = useState(false);
   return (
-    <main className="mx-auto max-w-reading stack gap-base p-s6">
-      <h1 className="text-h2">We could not load your account</h1>
+    <Page width="reading">
+      <PageHeader title="We could not load your account" />
       <p className="text-slate">This is usually a connection problem. Your progress is safe. Check your internet and try again.</p>
       <div className="row-actions">
         <Button loading={busy} onClick={() => { setBusy(true); void (reloadProfile?.() ?? Promise.resolve()).finally(() => setBusy(false)); }}>Try again</Button>
         <Button variant="ghost" onClick={() => void signOut()}>Sign out</Button>
       </div>
-    </main>
+    </Page>
   );
 }
 

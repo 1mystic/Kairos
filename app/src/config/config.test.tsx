@@ -49,7 +49,7 @@ describe('remote config cache', () => {
 
   it('serves stale cache immediately while revalidating', async () => {
     const storage = memStorage();
-    storage.setItem(CONFIG_CACHE_KEY, JSON.stringify({ exam_calendar: { at: 0, data: calDoc({ date: '2027-01-21' }) } }));
+    storage.setItem(CONFIG_CACHE_KEY, JSON.stringify({ exam_calendar: { at: clock - CONFIG_TTL_MS - 1, data: calDoc({ date: '2027-01-21' }) } }));
     setConfigEnv({ fetchDoc: async () => calDoc({ date: '2027-01-23' }), storage, now: () => clock });
     render(<Probe />);
     expect(screen.getByText('remote:2027-01-21')).toBeInTheDocument();
