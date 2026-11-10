@@ -9,7 +9,7 @@
     "B"
    ]
   },
-  "solution": "Replicas copy data and can answer reads, but every write still goes through the primary, and async replicas can lag. Check: write throughput stays bounded by one primary.\n\n*Verified by: second-derivation.*",
+  "solution": "Replicas copy data and can answer reads, but every write still goes through the primary, and async replicas can lag. Check: write throughput stays bounded by one primary.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -66,7 +66,7 @@
     "C"
    ]
   },
-  "solution": "Duplication trades storage and write complexity for faster reads.\n\n*Verified by: second-derivation.*",
+  "solution": "Duplication trades storage and write complexity for faster reads.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -123,7 +123,7 @@
     "B"
    ]
   },
-  "solution": "Statelessness means the server does not remember the client between calls, so any instance can serve any request.\n\n*Verified by: second-derivation.*",
+  "solution": "Statelessness means the server does not remember the client between calls, so any instance can serve any request.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -178,7 +178,7 @@
   "answer": {
    "value": 10.0
   },
-  "solution": "$2^{10}=1024\\ge1000$ and $2^9=512<1000$, so 10 rounds.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$2^{10}=1024\\ge1000$ and $2^9=512<1000$, so 10 rounds.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -217,7 +217,7 @@
     "C"
    ]
   },
-  "solution": "Nodes gossip who is alive and which ranges they own, tolerating failures without a central registry.\n\n*Verified by: second-derivation.*",
+  "solution": "Nodes gossip who is alive and which ranges they own, tolerating failures without a central registry.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -273,7 +273,7 @@
    "value": 0.00819372,
    "tol": 0.0005
   },
-  "solution": "$kn/m=0.7$; $1-e^{-0.7}=0.5034$; $0.5034^7\\approx0.0082$.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$kn/m=0.7$; $1-e^{-0.7}=0.5034$; $0.5034^7\\approx0.0082$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -312,7 +312,7 @@
     "B"
    ]
   },
-  "solution": "Command Query Responsibility Segregation separates write and read models.\n\n*Verified by: second-derivation.*",
+  "solution": "Command Query Responsibility Segregation separates write and read models.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -369,7 +369,7 @@
     "A"
    ]
   },
-  "solution": "Batch jobs trade latency for throughput and simplicity.\n\n*Verified by: second-derivation.*",
+  "solution": "Batch jobs trade latency for throughput and simplicity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -426,7 +426,7 @@
     "C"
    ]
   },
-  "solution": "When a popular entry expires, concurrent misses recompute it simultaneously. Mitigations include request coalescing (single-flight), jittered TTLs and early refresh.\n\n*Verified by: second-derivation.*",
+  "solution": "When a popular entry expires, concurrent misses recompute it simultaneously. Mitigations include request coalescing (single-flight), jittered TTLs and early refresh.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -483,7 +483,7 @@
     "B"
    ]
   },
-  "solution": "Adaptive bitrate streaming lets players switch quality as bandwidth changes.\n\n*Verified by: second-derivation.*",
+  "solution": "Adaptive bitrate streaming lets players switch quality as bandwidth changes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -540,7 +540,7 @@
     "A"
    ]
   },
-  "solution": "Client-side discovery puts lookup and balancing logic in the client; server-side discovery delegates it to a router.\n\n*Verified by: second-derivation.*",
+  "solution": "Client-side discovery puts lookup and balancing logic in the client; server-side discovery delegates it to a router.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -597,7 +597,7 @@
     "A"
    ]
   },
-  "solution": "A bigger single machine is simple but bounded and still one failure domain; horizontal scaling adds machines at the cost of distribution complexity.\n\n*Verified by: second-derivation.*",
+  "solution": "A bigger single machine is simple but bounded and still one failure domain; horizontal scaling adds machines at the cost of distribution complexity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -652,7 +652,7 @@
   "answer": {
    "value": 20.0
   },
-  "solution": "$\\log_2 10^6\\approx19.93$, so 20 hops.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$\\log_2 10^6\\approx19.93$, so 20 hops.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -691,7 +691,7 @@
     "A"
    ]
   },
-  "solution": "That is the core of the CAP argument: with divergent sides, either one side stops answering or answers can contradict. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "That is the core of the CAP argument: with divergent sides, either one side stops answering or answers can contradict. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -748,7 +748,7 @@
     "B"
    ]
   },
-  "solution": "A predicate on a transformed value does not match an index built on the raw value. Index the expression or normalise on write.\n\n*Verified by: second-derivation.*",
+  "solution": "A predicate on a transformed value does not match an index built on the raw value. Index the expression or normalise on write.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -804,7 +804,7 @@
    "value": 800.0,
    "tol": 1
   },
-  "solution": "Little's law: $L=\\lambda W$, so $\\lambda=L/W=200/0.25=800$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Little's law: $L=\\lambda W$, so $\\lambda=L/W=200/0.25=800$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -843,7 +843,7 @@
     "B"
    ]
   },
-  "solution": "Waiting for retransmission would add delay; small losses are tolerable.\n\n*Verified by: second-derivation.*",
+  "solution": "Waiting for retransmission would add delay; small losses are tolerable.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -902,7 +902,7 @@
     "C"
    ]
   },
-  "solution": "Randomness gives resilience and probabilistic spread, at the price of redundant messages and no simultaneity.\n\n*Verified by: second-derivation.*",
+  "solution": "Randomness gives resilience and probabilistic spread, at the price of redundant messages and no simultaneity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -957,7 +957,7 @@
   "answer": {
    "value": 2000.0
   },
-  "solution": "Equal rotation gives $10000/5=2000$ requests per server.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Equal rotation gives $10000/5=2000$ requests per server.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -996,7 +996,7 @@
     "D"
    ]
   },
-  "solution": "Receipts flow back from recipients and update the message state.\n\n*Verified by: second-derivation.*",
+  "solution": "Receipts flow back from recipients and update the message state.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1053,7 +1053,7 @@
     "A"
    ]
   },
-  "solution": "A different fingerprint means the content differs from what was fingerprinted. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "A different fingerprint means the content differs from what was fingerprinted. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1108,7 +1108,7 @@
   "answer": {
    "value": 80.0
   },
-  "solution": "The handshake takes about one round trip: 80 ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "The handshake takes about one round trip: 80 ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1145,7 +1145,7 @@
   "answer": {
    "value": 3.0
   },
-  "solution": "$100^3=10^6$, so $h=3$ levels suffice.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$100^3=10^6$, so $h=3$ levels suffice.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1184,7 +1184,7 @@
     "A"
    ]
   },
-  "solution": "New containers or runtimes must load code before handling the first request.\n\n*Verified by: second-derivation.*",
+  "solution": "New containers or runtimes must load code before handling the first request.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1241,7 +1241,7 @@
     "C"
    ]
   },
-  "solution": "Single-key lookups at low latency map to key-value stores.\n\n*Verified by: second-derivation.*",
+  "solution": "Single-key lookups at low latency map to key-value stores.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1298,7 +1298,7 @@
     "A"
    ]
   },
-  "solution": "A shorter TTL bounds staleness but raises origin load, so freshness is bought with more origin traffic. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "A shorter TTL bounds staleness but raises origin load, so freshness is bought with more origin traffic. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1355,7 +1355,7 @@
     "D"
    ]
   },
-  "solution": "Imbalanced arcs come from few random positions. More virtual nodes reduce variance (balance improves roughly with the square root of the number of positions).\n\n*Verified by: second-derivation.*",
+  "solution": "Imbalanced arcs come from few random positions. More virtual nodes reduce variance (balance improves roughly with the square root of the number of positions).\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1412,7 +1412,7 @@
     "D"
    ]
   },
-  "solution": "The receiver recomputes the checksum and compares it with the transmitted value.\n\n*Verified by: second-derivation.*",
+  "solution": "The receiver recomputes the checksum and compares it with the transmitted value.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1469,7 +1469,7 @@
     "A"
    ]
   },
-  "solution": "Heterogeneous attributes fit self-describing documents, while sparse wide tables waste space and complicate schema changes.\n\n*Verified by: second-derivation.*",
+  "solution": "Heterogeneous attributes fit self-describing documents, while sparse wide tables waste space and complicate schema changes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1525,7 +1525,7 @@
    "value": 0.8,
    "tol": 0.01
   },
-  "solution": "A key stays only if $h \\bmod 4=h \\bmod 5$, which holds for 4 of every 20 residues, so 20% stay and 80% (0.8) move.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "A key stays only if $h \\bmod 4=h \\bmod 5$, which holds for 4 of every 20 residues, so 20% stay and 80% (0.8) move.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1562,7 +1562,7 @@
   "answer": {
    "value": 6.0
   },
-  "solution": "Missing 3 consecutive intervals of 2 s each means 6 s after the last heartbeat is received.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Missing 3 consecutive intervals of 2 s each means 6 s after the last heartbeat is received.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1601,7 +1601,7 @@
     "A"
    ]
   },
-  "solution": "A durable stream absorbs spikes and allows multiple consumers (indexing, alerting, archiving).\n\n*Verified by: second-derivation.*",
+  "solution": "A durable stream absorbs spikes and allows multiple consumers (indexing, alerting, archiving).\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1658,7 +1658,7 @@
     "A"
    ]
   },
-  "solution": "Availability should reflect whether users' requests succeed, so use a request-level indicator such as the fraction of requests served without error. Pings can pass while the application behind them is failing. Check: the user-facing outcome is the definition of the SLO.\n\n*Verified by: second-derivation.*",
+  "solution": "Availability should reflect whether users' requests succeed, so use a request-level indicator such as the fraction of requests served without error. Pings can pass while the application behind them is failing. Check: the user-facing outcome is the definition of the SLO.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1717,7 +1717,7 @@
     "C"
    ]
   },
-  "solution": "Asynchrony is the source of these challenges.\n\n*Verified by: second-derivation.*",
+  "solution": "Asynchrony is the source of these challenges.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1774,7 +1774,7 @@
     "C"
    ]
   },
-  "solution": "Queries that include the shard key go to one shard; those that do not must query every shard and merge results.\n\n*Verified by: second-derivation.*",
+  "solution": "Queries that include the shard key go to one shard; those that do not must query every shard and merge results.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1829,7 +1829,7 @@
   "answer": {
    "value": 120000.0
   },
-  "solution": "Backlog grows at $1200-1000=200$ per second for $600$ s: $200\\times600=120{,}000$ messages.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Backlog grows at $1200-1000=200$ per second for $600$ s: $200\\times600=120{,}000$ messages.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1868,7 +1868,7 @@
     "D"
    ]
   },
-  "solution": "Without per-client memory there is no affinity to maintain or lose.\n\n*Verified by: second-derivation.*",
+  "solution": "Without per-client memory there is no affinity to maintain or lose.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1925,7 +1925,7 @@
     "D"
    ]
   },
-  "solution": "Employee requests leaving the company network pass through a forward proxy where policy and logging apply.\n\n*Verified by: second-derivation.*",
+  "solution": "Employee requests leaving the company network pass through a forward proxy where policy and logging apply.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -1980,7 +1980,7 @@
   "answer": {
    "value": 30000.0
   },
-  "solution": "$500\\times60=30{,}000$ messages per minute.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$500\\times60=30{,}000$ messages per minute.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2017,7 +2017,7 @@
   "answer": {
    "value": 3.0
   },
-  "solution": "A majority of 5 is $\\lfloor5/2\\rfloor+1=3$.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "A majority of 5 is $\\lfloor5/2\\rfloor+1=3$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2056,7 +2056,7 @@
     "A"
    ]
   },
-  "solution": "When facts change often and must be consistent, single-copy storage avoids anomalies.\n\n*Verified by: second-derivation.*",
+  "solution": "When facts change often and must be consistent, single-copy storage avoids anomalies.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2111,7 +2111,7 @@
   "answer": {
    "value": 120.0
   },
-  "solution": "In parallel the total is the slowest call, 120 ms, versus $80+120+50=250$ ms sequentially.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "In parallel the total is the slowest call, 120 ms, versus $80+120+50=250$ ms sequentially.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2150,7 +2150,7 @@
     "C"
    ]
   },
-  "solution": "Recomputing from corrupt data would hide the error. Replication provides a good copy to repair from.\n\n*Verified by: second-derivation.*",
+  "solution": "Recomputing from corrupt data would hide the error. Replication provides a good copy to repair from.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2207,7 +2207,7 @@
     "B"
    ]
   },
-  "solution": "Producers publish facts; consumers react independently.\n\n*Verified by: second-derivation.*",
+  "solution": "Producers publish facts; consumers react independently.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2266,7 +2266,7 @@
     "D"
    ]
   },
-  "solution": "Expiry, explicit invalidation and write-through all bound staleness. Caching forever maximises it.\n\n*Verified by: second-derivation.*",
+  "solution": "Expiry, explicit invalidation and write-through all bound staleness. Caching forever maximises it.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2323,7 +2323,7 @@
     "B"
    ]
   },
-  "solution": "Money correctness matters more than always answering. Likes, caches and DNS resolvers tolerate stale values.\n\n*Verified by: second-derivation.*",
+  "solution": "Money correctness matters more than always answering. Likes, caches and DNS resolvers tolerate stale values.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2382,7 +2382,7 @@
     "C"
    ]
   },
-  "solution": "Async improves decoupling but demands idempotency and observability.\n\n*Verified by: second-derivation.*",
+  "solution": "Async improves decoupling but demands idempotency and observability.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2439,7 +2439,7 @@
     "B"
    ]
   },
-  "solution": "LRU tracks recency of access and evicts the oldest-accessed entry. LFU uses counts; FIFO uses insertion order.\n\n*Verified by: second-derivation.*",
+  "solution": "LRU tracks recency of access and evicts the oldest-accessed entry. LFU uses counts; FIFO uses insertion order.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2496,7 +2496,7 @@
     "D"
    ]
   },
-  "solution": "Each service owns its logic and data and communicates over lightweight protocols.\n\n*Verified by: second-derivation.*",
+  "solution": "Each service owns its logic and data and communicates over lightweight protocols.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2553,7 +2553,7 @@
     "B"
    ]
   },
-  "solution": "Synchronous calls block until completion; asynchronous ones return immediately and result arrives later.\n\n*Verified by: second-derivation.*",
+  "solution": "Synchronous calls block until completion; asynchronous ones return immediately and result arrives later.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2608,7 +2608,7 @@
   "answer": {
    "value": 3.0
   },
-  "solution": "Majority is 4, so up to $7-4=3$ nodes may fail.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Majority is 4, so up to $7-4=3$ nodes may fail.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2647,7 +2647,7 @@
     "A"
    ]
   },
-  "solution": "A single atomic write plus a relay avoids the dual-write inconsistency.\n\n*Verified by: second-derivation.*",
+  "solution": "A single atomic write plus a relay avoids the dual-write inconsistency.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2704,7 +2704,7 @@
     "C"
    ]
   },
-  "solution": "Efficiency, schemas and streaming make gRPC attractive internally.\n\n*Verified by: second-derivation.*",
+  "solution": "Efficiency, schemas and streaming make gRPC attractive internally.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2761,7 +2761,7 @@
     "C"
    ]
   },
-  "solution": "Read-heavy, write-light workloads favour materialised or denormalised views.\n\n*Verified by: second-derivation.*",
+  "solution": "Read-heavy, write-light workloads favour materialised or denormalised views.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2818,7 +2818,7 @@
     "B"
    ]
   },
-  "solution": "Event time versus processing time and fault-tolerant state make streaming harder.\n\n*Verified by: second-derivation.*",
+  "solution": "Event time versus processing time and fault-tolerant state make streaming harder.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2875,7 +2875,7 @@
     "A"
    ]
   },
-  "solution": "A scan makes many cold items recent, pushing out hot items under LRU; LFU keeps items with high counts. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "A scan makes many cold items recent, pushing out hot items under LRU; LFU keeps items with high counts. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2932,7 +2932,7 @@
     "D"
    ]
   },
-  "solution": "Consensus provides agreement and a consistent order of commands among replicas even when a minority fail.\n\n*Verified by: second-derivation.*",
+  "solution": "Consensus provides agreement and a consistent order of commands among replicas even when a minority fail.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -2989,7 +2989,7 @@
     "B"
    ]
   },
-  "solution": "Peers share resources directly, giving resilience and scalability.\n\n*Verified by: second-derivation.*",
+  "solution": "Peers share resources directly, giving resilience and scalability.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3046,7 +3046,7 @@
     "A"
    ]
   },
-  "solution": "The user-facing path needs only to record the intent; background workers send the email with retries.\n\n*Verified by: second-derivation.*",
+  "solution": "The user-facing path needs only to record the intent; background workers send the email with retries.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3103,7 +3103,7 @@
     "D"
    ]
   },
-  "solution": "Cross-service consistency requires coordination such as sagas with compensating actions.\n\n*Verified by: second-derivation.*",
+  "solution": "Cross-service consistency requires coordination such as sagas with compensating actions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3162,7 +3162,7 @@
     "D"
    ]
   },
-  "solution": "State must live outside the instance (shared store) or travel with the request (token).\n\n*Verified by: second-derivation.*",
+  "solution": "State must live outside the instance (shared store) or travel with the request (token).\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3221,7 +3221,7 @@
     "D"
    ]
   },
-  "solution": "Collisions are possible in principle, so equal checksums give strong evidence, not proof. End-to-end checks catch corruption at any hop.\n\n*Verified by: second-derivation.*",
+  "solution": "Collisions are possible in principle, so equal checksums give strong evidence, not proof. End-to-end checks catch corruption at any hop.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3278,7 +3278,7 @@
     "C"
    ]
   },
-  "solution": "Bounded, backed-off retries and breakers protect overloaded services.\n\n*Verified by: second-derivation.*",
+  "solution": "Bounded, backed-off retries and breakers protect overloaded services.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3335,7 +3335,7 @@
     "C"
    ]
   },
-  "solution": "With a limit of N per minute, N requests just before the boundary and N just after fall within a short span, giving about 2N in a short interval.\n\n*Verified by: second-derivation.*",
+  "solution": "With a limit of N per minute, N requests just before the boundary and N just after fall within a short span, giving about 2N in a short interval.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3392,7 +3392,7 @@
     "C"
    ]
   },
-  "solution": "CRCs are easy to forge. An attacker cannot recompute an HMAC without the key.\n\n*Verified by: second-derivation.*",
+  "solution": "CRCs are easy to forge. An attacker cannot recompute an HMAC without the key.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3449,7 +3449,7 @@
     "C"
    ]
   },
-  "solution": "A selective equality filter benefits from an index lookup instead of a full scan.\n\n*Verified by: second-derivation.*",
+  "solution": "A selective equality filter benefits from an index lookup instead of a full scan.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3506,7 +3506,7 @@
     "A"
    ]
   },
-  "solution": "Fewer round trips matter on high-latency links; aggregation or GraphQL lets the client fetch a tailored payload.\n\n*Verified by: second-derivation.*",
+  "solution": "Fewer round trips matter on high-latency links; aggregation or GraphQL lets the client fetch a tailored payload.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3565,7 +3565,7 @@
     "D"
    ]
   },
-  "solution": "Dead-letter queues isolate failures and allow replay; they do not provide exactly-once semantics. Check: each correct option is about isolating or reprocessing failures.\n\n*Verified by: second-derivation.*",
+  "solution": "Dead-letter queues isolate failures and allow replay; they do not provide exactly-once semantics. Check: each correct option is about isolating or reprocessing failures.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3622,7 +3622,7 @@
     "D"
    ]
   },
-  "solution": "Billing is per execution; the provider handles provisioning and scaling.\n\n*Verified by: second-derivation.*",
+  "solution": "Billing is per execution; the provider handles provisioning and scaling.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3678,7 +3678,7 @@
    "value": 600.0,
    "tol": 1
   },
-  "solution": "$100\\times10^6\\times12=1.2\\times10^9$ links; $\\times500$ B $=6\\times10^{11}$ B = 600 GB.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$100\\times10^6\\times12=1.2\\times10^9$ links; $\\times500$ B $=6\\times10^{11}$ B = 600 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3717,7 +3717,7 @@
     "C"
    ]
   },
-  "solution": "A negative answer skips the file entirely; only 'maybe' answers cost a disk read.\n\n*Verified by: second-derivation.*",
+  "solution": "A negative answer skips the file entirely; only 'maybe' answers cost a disk read.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3773,7 +3773,7 @@
    "value": 8.14286,
    "tol": 0.1
   },
-  "solution": "$0.95/0.05=19$ and $0.7/0.3\\approx2.333$, so the ratio is about 8.1.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$0.95/0.05=19$ and $0.7/0.3\\approx2.333$, so the ratio is about 8.1.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3811,7 +3811,7 @@
    "value": 99.99,
    "tol": 0.01
   },
-  "solution": "Failure needs both down: $0.01^2=10^{-4}$, so availability is $1-10^{-4}=99.99\\%$. Check: redundancy squares the failure probability.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Failure needs both down: $0.01^2=10^{-4}$, so availability is $1-10^{-4}=99.99\\%$. Check: redundancy squares the failure probability.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3850,7 +3850,7 @@
     "A"
    ]
   },
-  "solution": "Queues smooth bursts (load levelling). They do not make consumers faster, and a persistent overload still grows the backlog.\n\n*Verified by: second-derivation.*",
+  "solution": "Queues smooth bursts (load levelling). They do not make consumers faster, and a persistent overload still grows the backlog.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3907,7 +3907,7 @@
     "C"
    ]
   },
-  "solution": "Spread is O(log N) rounds: log2(1000) is about 10 for pure doubling, and a few more rounds to reach the last nodes in the randomised case.\n\n*Verified by: second-derivation.*",
+  "solution": "Spread is O(log N) rounds: log2(1000) is about 10 for pure doubling, and a few more rounds to reach the last nodes in the randomised case.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -3966,7 +3966,7 @@
     "D"
    ]
   },
-  "solution": "Write-back trades durability for speed; write-through favours consistency and durability.\n\n*Verified by: second-derivation.*",
+  "solution": "Write-back trades durability for speed; write-through favours consistency and durability.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4023,7 +4023,7 @@
     "B"
    ]
   },
-  "solution": "A load balancer spreads requests over a pool of backends so no single server is overloaded and failed servers are bypassed.\n\n*Verified by: second-derivation.*",
+  "solution": "A load balancer spreads requests over a pool of backends so no single server is overloaded and failed servers are bypassed.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4082,7 +4082,7 @@
     "C"
    ]
   },
-  "solution": "Serverless trades control for convenience.\n\n*Verified by: second-derivation.*",
+  "solution": "Serverless trades control for convenience.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4139,7 +4139,7 @@
     "A"
    ]
   },
-  "solution": "With N nodes, a single failure cuts capacity by 1/N, whereas one big machine failing removes everything. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "With N nodes, a single failure cuts capacity by 1/N, whereas one big machine failing removes everything. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4194,7 +4194,7 @@
   "answer": {
    "value": 250.0
   },
-  "solution": "$10^9/(4\\times10^6)=250$ chunks.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$10^9/(4\\times10^6)=250$ chunks.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4235,7 +4235,7 @@
     "D"
    ]
   },
-  "solution": "A primary-replica SQL cluster is centralised; the others are decentralised designs.\n\n*Verified by: second-derivation.*",
+  "solution": "A primary-replica SQL cluster is centralised; the others are decentralised designs.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4292,7 +4292,7 @@
     "D"
    ]
   },
-  "solution": "Periodic probes mark failing servers out of rotation so users are not routed to them. They do not alter the servers.\n\n*Verified by: second-derivation.*",
+  "solution": "Periodic probes mark failing servers out of rotation so users are not routed to them. They do not alter the servers.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4349,7 +4349,7 @@
     "B"
    ]
   },
-  "solution": "Graph databases store relationships as first-class edges, so multi-hop traversals avoid repeated joins. Check: the other families are optimised for time-ordered points, simple lookups and geometry respectively.\n\n*Verified by: second-derivation.*",
+  "solution": "Graph databases store relationships as first-class edges, so multi-hop traversals avoid repeated joins. Check: the other families are optimised for time-ordered points, simple lookups and geometry respectively.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4405,7 +4405,7 @@
    "value": 32.85,
    "tol": 0.05
   },
-  "solution": "$18\\times365\\times5=32{,}850$ TB $=32.85$ PB, about 32.9.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$18\\times365\\times5=32{,}850$ TB $=32.85$ PB, about 32.9.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4444,7 +4444,7 @@
     "C"
    ]
   },
-  "solution": "Pub/sub fans out a message to all subscriptions; competing consumers inside one subscription share the work.\n\n*Verified by: second-derivation.*",
+  "solution": "Pub/sub fans out a message to all subscriptions; competing consumers inside one subscription share the work.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4501,7 +4501,7 @@
     "B"
    ]
   },
-  "solution": "Add replicas behind a load balancer to remove both limits.\n\n*Verified by: second-derivation.*",
+  "solution": "Add replicas behind a load balancer to remove both limits.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4558,7 +4558,7 @@
     "A"
    ]
   },
-  "solution": "Cross-region round trips add tens to hundreds of milliseconds to each write. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Cross-region round trips add tens to hundreds of milliseconds to each write. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4614,7 +4614,7 @@
    "value": 300.0,
    "tol": 1
   },
-  "solution": "One copy is $2\\times10^8\\times500=10^{11}$ B = 100 GB; three copies give 300 GB.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "One copy is $2\\times10^8\\times500=10^{11}$ B = 100 GB; three copies give 300 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4653,7 +4653,7 @@
     "B"
    ]
   },
-  "solution": "Stateless tiers scale out; the data tier then needs its own scaling.\n\n*Verified by: second-derivation.*",
+  "solution": "Stateless tiers scale out; the data tier then needs its own scaling.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4710,7 +4710,7 @@
     "B"
    ]
   },
-  "solution": "Normalised schemas keep one copy of each fact, improving integrity.\n\n*Verified by: second-derivation.*",
+  "solution": "Normalised schemas keep one copy of each fact, improving integrity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4766,7 +4766,7 @@
    "value": 800.0,
    "tol": 0.5
   },
-  "solution": "With $L=64$ and $W=0.08$ s, $\\lambda=L/W=800$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "With $L=64$ and $W=0.08$ s, $\\lambda=L/W=800$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4805,7 +4805,7 @@
     "C"
    ]
   },
-  "solution": "A circuit breaker stops calling a failing dependency for a while, preventing cascading failure and allowing recovery.\n\n*Verified by: second-derivation.*",
+  "solution": "A circuit breaker stops calling a failing dependency for a while, preventing cascading failure and allowing recovery.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4861,7 +4861,7 @@
    "value": 40.0,
    "tol": 0.1
   },
-  "solution": "Average $=0.9\\times20+0.1\\times220=18+22=40$ ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Average $=0.9\\times20+0.1\\times220=18+22=40$ ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4900,7 +4900,7 @@
     "D"
    ]
   },
-  "solution": "Selecting half the table through an index costs more than scanning it. Indexes pay off on selective predicates.\n\n*Verified by: second-derivation.*",
+  "solution": "Selecting half the table through an index costs more than scanning it. Indexes pay off on selective predicates.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -4957,7 +4957,7 @@
     "C"
    ]
   },
-  "solution": "Fraud blocking needs immediate decisions.\n\n*Verified by: second-derivation.*",
+  "solution": "Fraud blocking needs immediate decisions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5012,7 +5012,7 @@
   "answer": {
    "value": 100.0
   },
-  "solution": "The bucket holds 100 tokens at time 0 and no time passes, so only 100 requests are accepted; the other 50 are rejected.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "The bucket holds 100 tokens at time 0 and no time passes, so only 100 requests are accepted; the other 50 are rejected.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5051,7 +5051,7 @@
     "C"
    ]
   },
-  "solution": "Cached objects remain available (often with stale-if-error behaviour) even if the origin is down.\n\n*Verified by: second-derivation.*",
+  "solution": "Cached objects remain available (often with stale-if-error behaviour) even if the origin is down.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5110,7 +5110,7 @@
     "C"
    ]
   },
-  "solution": "That last property describes peer-to-peer, not client-server.\n\n*Verified by: second-derivation.*",
+  "solution": "That last property describes peer-to-peer, not client-server.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5167,7 +5167,7 @@
     "A"
    ]
   },
-  "solution": "That is why large clusters use gossip-style or hierarchical failure detection. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "That is why large clusters use gossip-style or hierarchical failure detection. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5223,7 +5223,7 @@
    "value": 6944.44,
    "tol": 1
   },
-  "solution": "Average $\\approx2315$; peak $\\approx3\\times2315=6944$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Average $\\approx2315$; peak $\\approx3\\times2315=6944$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5264,7 +5264,7 @@
     "C"
    ]
   },
-  "solution": "ACID stands for atomicity, consistency, isolation and durability; no latency promise is part of it. Check: expand the acronym and compare with the false statement.\n\n*Verified by: second-derivation.*",
+  "solution": "ACID stands for atomicity, consistency, isolation and durability; no latency promise is part of it. Check: expand the acronym and compare with the false statement.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5321,7 +5321,7 @@
     "C"
    ]
   },
-  "solution": "Failure detection based on silence cannot distinguish a crashed node from a slow or unreachable one.\n\n*Verified by: second-derivation.*",
+  "solution": "Failure detection based on silence cannot distinguish a crashed node from a slow or unreachable one.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5378,7 +5378,7 @@
     "A"
    ]
   },
-  "solution": "The router performs lookup, hiding discovery from the client.\n\n*Verified by: second-derivation.*",
+  "solution": "The router performs lookup, hiding discovery from the client.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5435,7 +5435,7 @@
     "B"
    ]
   },
-  "solution": "Changing N in the modulus remaps most keys. Consistent hashing limits this movement. Check: a key stays in place only if hash mod N equals hash mod (N+1), which is rare.\n\n*Verified by: second-derivation.*",
+  "solution": "Changing N in the modulus remaps most keys. Consistent hashing limits this movement. Check: a key stays in place only if hash mod N equals hash mod (N+1), which is rare.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5492,7 +5492,7 @@
     "A"
    ]
   },
-  "solution": "Two buyers must not both succeed for one seat, which needs a single authoritative, up-to-date view.\n\n*Verified by: second-derivation.*",
+  "solution": "Two buyers must not both succeed for one seat, which needs a single authoritative, up-to-date view.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5549,7 +5549,7 @@
     "D"
    ]
   },
-  "solution": "A skewed key can remain a hot shard under any hash because it is a single key. Isolating or sub-sharding the large tenant addresses the actual skew.\n\n*Verified by: second-derivation.*",
+  "solution": "A skewed key can remain a hot shard under any hash because it is a single key. Isolating or sub-sharding the large tenant addresses the actual skew.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5608,7 +5608,7 @@
     "C"
    ]
   },
-  "solution": "REST's strengths are uniformity and ecosystem, not guaranteed speed.\n\n*Verified by: second-derivation.*",
+  "solution": "REST's strengths are uniformity and ecosystem, not guaranteed speed.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5665,7 +5665,7 @@
     "B"
    ]
   },
-  "solution": "For an M/M/1 queue the waiting-time factor is $\\rho/(1-\\rho)$: 2.33 at 70% and 19 at 95%, about 8x. Delay explodes near saturation, so keep headroom. Check: as utilisation approaches 100% the denominator approaches zero.\n\n*Verified by: second-derivation.*",
+  "solution": "For an M/M/1 queue the waiting-time factor is $\\rho/(1-\\rho)$: 2.33 at 70% and 19 at 95%, about 8x. Delay explodes near saturation, so keep headroom. Check: as utilisation approaches 100% the denominator approaches zero.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5722,7 +5722,7 @@
     "B"
    ]
   },
-  "solution": "Acknowledging early means readers of other replicas can see old values until replication catches up, trading consistency for latency. Check: synchronous replication would wait for replicas, adding latency but removing staleness.\n\n*Verified by: second-derivation.*",
+  "solution": "Acknowledging early means readers of other replicas can see old values until replication catches up, trading consistency for latency. Check: synchronous replication would wait for replicas, adding latency but removing staleness.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5778,7 +5778,7 @@
    "value": 19.9,
    "tol": 0.1
   },
-  "solution": "Mean $=(99\\times10+1000)/100=19.9$ ms, while the maximum is 1,000 ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Mean $=(99\\times10+1000)/100=19.9$ ms, while the maximum is 1,000 ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5817,7 +5817,7 @@
     "C"
    ]
   },
-  "solution": "Random pairwise exchange spreads updates epidemically without central coordination.\n\n*Verified by: second-derivation.*",
+  "solution": "Random pairwise exchange spreads updates epidemically without central coordination.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5874,7 +5874,7 @@
     "C"
    ]
   },
-  "solution": "Heartbeats suppress elections; missing them after an election timeout triggers one.\n\n*Verified by: second-derivation.*",
+  "solution": "Heartbeats suppress elections; missing them after an election timeout triggers one.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5931,7 +5931,7 @@
     "C"
    ]
   },
-  "solution": "PACELC: if Partition, choose Availability or Consistency; Else, choose Latency or Consistency. Waiting for more replicas to confirm raises consistency but also latency.\n\n*Verified by: second-derivation.*",
+  "solution": "PACELC: if Partition, choose Availability or Consistency; Else, choose Latency or Consistency. Waiting for more replicas to confirm raises consistency but also latency.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -5988,7 +5988,7 @@
     "C"
    ]
   },
-  "solution": "Intermittent event processing benefits from scale-to-zero and per-use pricing.\n\n*Verified by: second-derivation.*",
+  "solution": "Intermittent event processing benefits from scale-to-zero and per-use pricing.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6045,7 +6045,7 @@
     "D"
    ]
   },
-  "solution": "A single leader orders entries and replicates the log; followers apply committed entries.\n\n*Verified by: second-derivation.*",
+  "solution": "A single leader orders entries and replicates the log; followers apply committed entries.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6104,7 +6104,7 @@
     "D"
    ]
   },
-  "solution": "Extra web servers help only the web tier. Anything shared (one primary, one lock, one partition) stays a single point of contention. Check: each correct item is a component that all web servers still funnel into.\n\n*Verified by: second-derivation.*",
+  "solution": "Extra web servers help only the web tier. Anything shared (one primary, one lock, one partition) stays a single point of contention. Check: each correct item is a component that all web servers still funnel into.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6161,7 +6161,7 @@
     "B"
    ]
   },
-  "solution": "Repeating GET, PUT or DELETE leaves the same server state; POST generally creates new resources each time.\n\n*Verified by: second-derivation.*",
+  "solution": "Repeating GET, PUT or DELETE leaves the same server state; POST generally creates new resources each time.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6218,7 +6218,7 @@
     "C"
    ]
   },
-  "solution": "Read-heavy and write-heavy systems need different architectures.\n\n*Verified by: second-derivation.*",
+  "solution": "Read-heavy and write-heavy systems need different architectures.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6275,7 +6275,7 @@
     "A"
    ]
   },
-  "solution": "Estimates inform whether you need one machine or a thousand; a small error does not change that.\n\n*Verified by: second-derivation.*",
+  "solution": "Estimates inform whether you need one machine or a thousand; a small error does not change that.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6332,7 +6332,7 @@
     "C"
    ]
   },
-  "solution": "Two concurrent requests can both read the same count before either writes. An atomic operation removes that race. Check: the race window is between the read and the write.\n\n*Verified by: second-derivation.*",
+  "solution": "Two concurrent requests can both read the same count before either writes. An atomic operation removes that race. Check: the race window is between the read and the write.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6389,7 +6389,7 @@
     "B"
    ]
   },
-  "solution": "Write-through writes synchronously to both, so the cache and store stay consistent.\n\n*Verified by: second-derivation.*",
+  "solution": "Write-through writes synchronously to both, so the cache and store stay consistent.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6446,7 +6446,7 @@
     "D"
    ]
   },
-  "solution": "CAP stands for Consistency, Availability and Partition tolerance.\n\n*Verified by: second-derivation.*",
+  "solution": "CAP stands for Consistency, Availability and Partition tolerance.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6503,7 +6503,7 @@
     "D"
    ]
   },
-  "solution": "A lone balancer makes the whole service depend on one machine, so you run several with failover. Check: apply 'what single event takes the service down?'\n\n*Verified by: second-derivation.*",
+  "solution": "A lone balancer makes the whole service depend on one machine, so you run several with failover. Check: apply 'what single event takes the service down?'\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6560,7 +6560,7 @@
     "D"
    ]
   },
-  "solution": "Counting active requests accounts for long-running ones, so busy servers are avoided. Round robin ignores how long requests take. Check: round robin can stack several long requests on one server by chance.\n\n*Verified by: second-derivation.*",
+  "solution": "Counting active requests accounts for long-running ones, so busy servers are avoided. Round robin ignores how long requests take. Check: round robin can stack several long requests on one server by chance.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6619,7 +6619,7 @@
     "C"
    ]
   },
-  "solution": "A registry adds indirection between names and addresses, supporting elasticity and health-aware routing.\n\n*Verified by: second-derivation.*",
+  "solution": "A registry adds indirection between names and addresses, supporting elasticity and health-aware routing.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6676,7 +6676,7 @@
     "A"
    ]
   },
-  "solution": "Equality on the leading column city narrows the range, and within one city the entries are already ordered by signup_date, avoiding a sort. Check: leftmost-prefix rule.\n\n*Verified by: second-derivation.*",
+  "solution": "Equality on the leading column city narrows the range, and within one city the entries are already ordered by signup_date, avoiding a sort. Check: leftmost-prefix rule.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6733,7 +6733,7 @@
     "C"
    ]
   },
-  "solution": "The split trades server load, offline ability and update complexity.\n\n*Verified by: second-derivation.*",
+  "solution": "The split trades server load, offline ability and update complexity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6790,7 +6790,7 @@
     "B"
    ]
   },
-  "solution": "Moving from scope to detail keeps the design grounded.\n\n*Verified by: second-derivation.*",
+  "solution": "Moving from scope to detail keeps the design grounded.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6847,7 +6847,7 @@
     "A"
    ]
   },
-  "solution": "Memory is far faster than disk (nanoseconds versus microseconds to milliseconds), so serving from RAM lowers latency. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Memory is far faster than disk (nanoseconds versus microseconds to milliseconds), so serving from RAM lowers latency. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6906,7 +6906,7 @@
     "C"
    ]
   },
-  "solution": "Tiering and retention control cost.\n\n*Verified by: second-derivation.*",
+  "solution": "Tiering and retention control cost.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -6963,7 +6963,7 @@
     "C"
    ]
   },
-  "solution": "Scoping the problem is part of the evaluation.\n\n*Verified by: second-derivation.*",
+  "solution": "Scoping the problem is part of the evaluation.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7018,7 +7018,7 @@
   "answer": {
    "value": 8.0
   },
-  "solution": "$12/1.5=8$ shards at minimum (more for headroom).\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$12/1.5=8$ shards at minimum (more for headroom).\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7057,7 +7057,7 @@
     "D"
    ]
   },
-  "solution": "A forward proxy acts for clients (for example to filter or anonymise); a reverse proxy acts for servers.\n\n*Verified by: second-derivation.*",
+  "solution": "A forward proxy acts for clients (for example to filter or anonymise); a reverse proxy acts for servers.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7112,7 +7112,7 @@
   "answer": {
    "value": 9.0
   },
-  "solution": "$12000/1500=8$ nodes plus 1 spare gives 9.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$12000/1500=8$ nodes plus 1 spare gives 9.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7153,7 +7153,7 @@
     "C"
    ]
   },
-  "solution": "The diagram shows the major components and their connections.\n\n*Verified by: second-derivation.*",
+  "solution": "The diagram shows the major components and their connections.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7210,7 +7210,7 @@
     "A"
    ]
   },
-  "solution": "UDP sends independent datagrams with minimal overhead.\n\n*Verified by: second-derivation.*",
+  "solution": "UDP sends independent datagrams with minimal overhead.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7267,7 +7267,7 @@
     "A"
    ]
   },
-  "solution": "Clients request; servers hold resources and respond.\n\n*Verified by: second-derivation.*",
+  "solution": "Clients request; servers hold resources and respond.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7322,7 +7322,7 @@
   "answer": {
    "value": 18.0
   },
-  "solution": "Needed: $40000/2500=16$ servers, plus 2 spares gives 18.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Needed: $40000/2500=16$ servers, plus 2 spares gives 18.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7361,7 +7361,7 @@
     "C"
    ]
   },
-  "solution": "Gossip converges over time but offers no immediate global agreement.\n\n*Verified by: second-derivation.*",
+  "solution": "Gossip converges over time but offers no immediate global agreement.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7418,7 +7418,7 @@
     "A"
    ]
   },
-  "solution": "That is exactly a false positive. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "That is exactly a false positive. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7475,7 +7475,7 @@
     "A"
    ]
   },
-  "solution": "The slowest stage (40 items/s) bottlenecks the flow; the other stages wait. Check: a queue before stage 2 grows if stage 1 feeds it faster than 40 per second.\n\n*Verified by: second-derivation.*",
+  "solution": "The slowest stage (40 items/s) bottlenecks the flow; the other stages wait. Check: a queue before stage 2 grows if stage 1 feeds it faster than 40 per second.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7534,7 +7534,7 @@
     "D"
    ]
   },
-  "solution": "A Bloom filter stores only bits, so it cannot enumerate elements; as it fills, more bits are 1 and false positives rise.\n\n*Verified by: second-derivation.*",
+  "solution": "A Bloom filter stores only bits, so it cannot enumerate elements; as it fills, more bits are 1 and false positives rise.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7591,7 +7591,7 @@
     "C"
    ]
   },
-  "solution": "Concurrent buyers need atomic conditional updates.\n\n*Verified by: second-derivation.*",
+  "solution": "Concurrent buyers need atomic conditional updates.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7650,7 +7650,7 @@
     "C"
    ]
   },
-  "solution": "Vertical scaling is simple and keeps single-node semantics but is bounded.\n\n*Verified by: second-derivation.*",
+  "solution": "Vertical scaling is simple and keeps single-node semantics but is bounded.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7705,7 +7705,7 @@
   "answer": {
    "value": 1.0
   },
-  "solution": "$R+W=4>N=3$, so every read quorum intersects every write quorum: answer 1.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$R+W=4>N=3$, so every read quorum intersects every write quorum: answer 1.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7743,7 +7743,7 @@
    "value": 525.6,
    "tol": 1
   },
-  "solution": "Allowed downtime $=(1-0.999)\\times525600=525.6\\approx526$ minutes (about 8.8 hours).\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Allowed downtime $=(1-0.999)\\times525600=525.6\\approx526$ minutes (about 8.8 hours).\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7782,7 +7782,7 @@
     "D"
    ]
   },
-  "solution": "Registries must be highly available, and clients should degrade gracefully on cached data.\n\n*Verified by: second-derivation.*",
+  "solution": "Registries must be highly available, and clients should degrade gracefully on cached data.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7839,7 +7839,7 @@
     "B"
    ]
   },
-  "solution": "Write-back acknowledges from cache and flushes later, so unflushed data is at risk.\n\n*Verified by: second-derivation.*",
+  "solution": "Write-back acknowledges from cache and flushes later, so unflushed data is at risk.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7896,7 +7896,7 @@
     "C"
    ]
   },
-  "solution": "Path-based routing needs to read the HTTP request, which is a layer 7 capability. Layer 4 sees only addresses and ports. Check: URL paths are not visible in TCP headers.\n\n*Verified by: second-derivation.*",
+  "solution": "Path-based routing needs to read the HTTP request, which is a layer 7 capability. Layer 4 sees only addresses and ports. Check: URL paths are not visible in TCP headers.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7952,7 +7952,7 @@
    "value": 5.5,
    "tol": 0.05
   },
-  "solution": "Old: $0.9+10.1=11.0$ ms; new: $0.99+1.01=2.0$ ms; ratio $11/2=5.5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Old: $0.9+10.1=11.0$ ms; new: $0.99+1.01=2.0$ ms; ratio $11/2=5.5$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -7991,7 +7991,7 @@
     "B"
    ]
   },
-  "solution": "REST is resource-oriented and uses GET, POST, PUT, DELETE semantics.\n\n*Verified by: second-derivation.*",
+  "solution": "REST is resource-oriented and uses GET, POST, PUT, DELETE semantics.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8048,7 +8048,7 @@
     "C"
    ]
   },
-  "solution": "Persistent bidirectional connections enable immediate delivery.\n\n*Verified by: second-derivation.*",
+  "solution": "Persistent bidirectional connections enable immediate delivery.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8107,7 +8107,7 @@
     "C"
    ]
   },
-  "solution": "Reverse proxies serve the backend side. Hiding clients' identity is a forward proxy function.\n\n*Verified by: second-derivation.*",
+  "solution": "Reverse proxies serve the backend side. Hiding clients' identity is a forward proxy function.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8163,7 +8163,7 @@
    "value": 18.0,
    "tol": 0.01
   },
-  "solution": "$2\\times10^6\\times3\\times10^6=6\\times10^{12}$ B = 6 TB per copy; times 3 replicas gives 18 TB per day.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$2\\times10^6\\times3\\times10^6=6\\times10^{12}$ B = 6 TB per copy; times 3 replicas gives 18 TB per day.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8200,7 +8200,7 @@
   "answer": {
    "value": 15.0
   },
-  "solution": "Each of 5 partitions has 1 primary and 2 copies: $5\\times3=15$ nodes. (The stateless tier needs only 14 and no replication.)\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Each of 5 partitions has 1 primary and 2 copies: $5\\times3=15$ nodes. (The stateless tier needs only 14 and no replication.)\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8241,7 +8241,7 @@
     "C"
    ]
   },
-  "solution": "Weaker consistency buys speed and availability while introducing staleness and conflicts.\n\n*Verified by: second-derivation.*",
+  "solution": "Weaker consistency buys speed and availability while introducing staleness and conflicts.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8297,7 +8297,7 @@
    "value": 9.58506,
    "tol": 0.05
   },
-  "solution": "$-\\ln 0.01=4.605$; $(\\ln2)^2=0.4805$; ratio $=9.585$, about 9.6 bits per element.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$-\\ln 0.01=4.605$; $(\\ln2)^2=0.4805$; ratio $=9.585$, about 9.6 bits per element.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8335,7 +8335,7 @@
    "value": 200.0,
    "tol": 0.01
   },
-  "solution": "Each client sends 0.2 requests per second; 1,000 clients give $1000/5=200$ requests per second even when there is no data.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Each client sends 0.2 requests per second; 1,000 clients give $1000/5=200$ requests per second even when there is no data.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8374,7 +8374,7 @@
     "B"
    ]
   },
-  "solution": "Push suits typical users; for very high fan-out, merge celebrity content on read.\n\n*Verified by: second-derivation.*",
+  "solution": "Push suits typical users; for very high fan-out, merge celebrity content on read.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8429,7 +8429,7 @@
   "answer": {
    "value": 3.0
   },
-  "solution": "Need $R>N-W=2$, so the smallest integer is $R=3$.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Need $R>N-W=2$, so the smallest integer is $R=3$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8468,7 +8468,7 @@
     "D"
    ]
   },
-  "solution": "Frequent bidirectional low-latency messaging benefits from a persistent connection.\n\n*Verified by: second-derivation.*",
+  "solution": "Frequent bidirectional low-latency messaging benefits from a persistent connection.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8525,7 +8525,7 @@
     "A"
    ]
   },
-  "solution": "No state needs to be moved or rebuilt, so traffic simply shifts. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "No state needs to be moved or rebuilt, so traffic simply shifts. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8582,7 +8582,7 @@
     "B"
    ]
   },
-  "solution": "Changing the modulus remaps most keys. Consistent hashing or a directory/virtual-shard layer reduces data movement. Check: same argument as modulus remapping for caches.\n\n*Verified by: second-derivation.*",
+  "solution": "Changing the modulus remaps most keys. Consistent hashing or a directory/virtual-shard layer reduces data movement. Check: same argument as modulus remapping for caches.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8639,7 +8639,7 @@
     "B"
    ]
   },
-  "solution": "Counters tolerate temporary lag; money, unique seats and last-item stock need correctness.\n\n*Verified by: second-derivation.*",
+  "solution": "Counters tolerate temporary lag; money, unique seats and last-item stock need correctness.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8694,7 +8694,7 @@
   "answer": {
    "value": 40.0
   },
-  "solution": "Refill adds $10\\times4=40$ tokens, below the capacity 100, so it holds 40.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Refill adds $10\\times4=40$ tokens, below the capacity 100, so it holds 40.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8735,7 +8735,7 @@
     "C"
    ]
   },
-  "solution": "Microservices increase operational overhead (deployment, monitoring, networking).\n\n*Verified by: second-derivation.*",
+  "solution": "Microservices increase operational overhead (deployment, monitoring, networking).\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8792,7 +8792,7 @@
     "A"
    ]
   },
-  "solution": "Peers contribute resources, so each new peer adds capacity.\n\n*Verified by: second-derivation.*",
+  "solution": "Peers contribute resources, so each new peer adds capacity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8849,7 +8849,7 @@
     "D"
    ]
   },
-  "solution": "The client re-issues a request after each response, giving near-real-time updates over plain HTTP.\n\n*Verified by: second-derivation.*",
+  "solution": "The client re-issues a request after each response, giving near-real-time updates over plain HTTP.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8906,7 +8906,7 @@
     "A"
    ]
   },
-  "solution": "Requirements drive all later choices.\n\n*Verified by: second-derivation.*",
+  "solution": "Requirements drive all later choices.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -8963,7 +8963,7 @@
     "A"
    ]
   },
-  "solution": "Teams set SLOs as targets, typically stricter than the SLA they promise customers, so they have a margin. Check: SLA = agreement (contract); SLO = objective (target).\n\n*Verified by: second-derivation.*",
+  "solution": "Teams set SLOs as targets, typically stricter than the SLA they promise customers, so they have a margin. Check: SLA = agreement (contract); SLO = objective (target).\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9019,7 +9019,7 @@
    "value": 99.501,
    "tol": 0.01
   },
-  "solution": "$0.999^5=0.99501$, i.e. about 99.50%.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$0.999^5=0.99501$, i.e. about 99.50%.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9058,7 +9058,7 @@
     "D"
    ]
   },
-  "solution": "In cache-aside the application owns the load-and-fill logic. In read-through the cache does it on behalf of the app.\n\n*Verified by: second-derivation.*",
+  "solution": "In cache-aside the application owns the load-and-fill logic. In read-through the cache does it on behalf of the app.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9115,7 +9115,7 @@
     "D"
    ]
   },
-  "solution": "Slow, predictable growth on a monolithic database favours the cheap, simple vertical step, buying time to design horizontal scaling. Check: simplicity matters when headroom exists.\n\n*Verified by: second-derivation.*",
+  "solution": "Slow, predictable growth on a monolithic database favours the cheap, simple vertical step, buying time to design horizontal scaling. Check: simplicity matters when headroom exists.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9172,7 +9172,7 @@
     "C"
    ]
   },
-  "solution": "Store state in databases or object storage, not in function memory.\n\n*Verified by: second-derivation.*",
+  "solution": "Store state in databases or object storage, not in function memory.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9229,7 +9229,7 @@
     "A"
    ]
   },
-  "solution": "Millions of open sockets use memory and file descriptors and complicate deployment and failover.\n\n*Verified by: second-derivation.*",
+  "solution": "Millions of open sockets use memory and file descriptors and complicate deployment and failover.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9286,7 +9286,7 @@
     "C"
    ]
   },
-  "solution": "Non-critical side effects should not block or fail the critical path.\n\n*Verified by: second-derivation.*",
+  "solution": "Non-critical side effects should not block or fail the critical path.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9342,7 +9342,7 @@
    "value": 6.0,
    "tol": 0.01
   },
-  "solution": "Average $=0.95\\times1+0.05\\times101=0.95+5.05=6.0$ ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Average $=0.95\\times1+0.05\\times101=0.95+5.05=6.0$ ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9381,7 +9381,7 @@
     "A"
    ]
   },
-  "solution": "Bits are shared among elements, so clearing them can break other entries. Counting variants store counters.\n\n*Verified by: second-derivation.*",
+  "solution": "Bits are shared among elements, so clearing them can break other entries. Counting variants store counters.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9436,7 +9436,7 @@
   "answer": {
    "value": 7.0
   },
-  "solution": "$10\\times0.693=6.93$, so $k=7$.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$10\\times0.693=6.93$, so $k=7$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9474,7 +9474,7 @@
    "value": 99.7003,
    "tol": 0.01
   },
-  "solution": "In series the availabilities multiply: $0.999^3=0.997003$, i.e. about 99.70%. Check: each 0.1% of unavailability adds roughly, giving about 0.3% total.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "In series the availabilities multiply: $0.999^3=0.997003$, i.e. about 99.70%. Check: each 0.1% of unavailability adds roughly, giving about 0.3% total.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9512,7 +9512,7 @@
    "value": 6800.0,
    "tol": 1
   },
-  "solution": "Ideal $=8\\times1000=8000$; with 85% scaling efficiency: $8000\\times0.85=6800$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Ideal $=8\\times1000=8000$; with 85% scaling efficiency: $8000\\times0.85=6800$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9551,7 +9551,7 @@
     "D"
    ]
   },
-  "solution": "Synchronous double writes slow writes but keep the cache fresh and the data durable.\n\n*Verified by: second-derivation.*",
+  "solution": "Synchronous double writes slow writes but keep the cache fresh and the data durable.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9608,7 +9608,7 @@
     "A"
    ]
   },
-  "solution": "When state must stay in memory for speed, snapshots or replicated logs allow recovery.\n\n*Verified by: second-derivation.*",
+  "solution": "When state must stay in memory for speed, snapshots or replicated logs allow recovery.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9665,7 +9665,7 @@
     "C"
    ]
   },
-  "solution": "Instances register and renew; if renewals stop, the entry expires.\n\n*Verified by: second-derivation.*",
+  "solution": "Instances register and renew; if renewals stop, the entry expires.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9722,7 +9722,7 @@
     "C"
    ]
   },
-  "solution": "Cache hits are answered at the proxy; only misses go to the backend.\n\n*Verified by: second-derivation.*",
+  "solution": "Cache hits are answered at the proxy; only misses go to the backend.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9779,7 +9779,7 @@
     "A"
    ]
   },
-  "solution": "Adding parallel workers raises throughput while each request still takes the same time, so A holds and R states why.\n\n*Verified by: second-derivation.*",
+  "solution": "Adding parallel workers raises throughput while each request still takes the same time, so A holds and R states why.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9836,7 +9836,7 @@
     "A"
    ]
   },
-  "solution": "Databases must remember data between requests; state is their purpose.\n\n*Verified by: second-derivation.*",
+  "solution": "Databases must remember data between requests; state is their purpose.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9893,7 +9893,7 @@
     "A"
    ]
   },
-  "solution": "Only the failed node's arc changes ownership; other assignments remain, which is the point of consistent hashing.\n\n*Verified by: second-derivation.*",
+  "solution": "Only the failed node's arc changes ownership; other assignments remain, which is the point of consistent hashing.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -9952,7 +9952,7 @@
     "D"
    ]
   },
-  "solution": "Hedging, timeouts with graceful degradation and smaller fan-out all cut the chance that one slow backend delays the whole response. Check: the response time is the maximum over backends, so each correct option reduces that maximum.\n\n*Verified by: second-derivation.*",
+  "solution": "Hedging, timeouts with graceful degradation and smaller fan-out all cut the chance that one slow backend delays the whole response. Check: the response time is the maximum over backends, so each correct option reduces that maximum.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10009,7 +10009,7 @@
     "B"
    ]
   },
-  "solution": "Multiple nodes need balancing, data partitioning and consistency handling.\n\n*Verified by: second-derivation.*",
+  "solution": "Multiple nodes need balancing, data partitioning and consistency handling.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10066,7 +10066,7 @@
     "C"
    ]
   },
-  "solution": "A queue buffers messages so producers and consumers can run, fail and scale independently.\n\n*Verified by: second-derivation.*",
+  "solution": "A queue buffers messages so producers and consumers can run, fail and scale independently.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10125,7 +10125,7 @@
     "D"
    ]
   },
-  "solution": "Each correct option adds an independent copy in a separate failure domain. Same-rack replicas share power and network, so one fault takes them all. Check: ask 'what single event removes every copy?'; only the third answer has an answer.\n\n*Verified by: second-derivation.*",
+  "solution": "Each correct option adds an independent copy in a separate failure domain. Same-rack replicas share power and network, so one fault takes them all. Check: ask 'what single event removes every copy?'; only the third answer has an answer.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10181,7 +10181,7 @@
    "value": 48.0,
    "tol": 0.1
   },
-  "solution": "$6000\\times8000=4.8\\times10^7$ B/s = 48 MB/s.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$6000\\times8000=4.8\\times10^7$ B/s = 48 MB/s.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10220,7 +10220,7 @@
     "A"
    ]
   },
-  "solution": "Per-record overhead is amortised over many records. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Per-record overhead is amortised over many records. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10276,7 +10276,7 @@
    "value": 3.75,
    "tol": 0.05
   },
-  "solution": "Data $=2\\times10^6\\times1500=3\\times10^9$ B = 3 GB; with 25% overhead: $3\\times1.25=3.75$ GB, about 3.8.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Data $=2\\times10^6\\times1500=3\\times10^9$ B = 3 GB; with 25% overhead: $3\\times1.25=3.75$ GB, about 3.8.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10313,7 +10313,7 @@
   "answer": {
    "value": 60000.0
   },
-  "solution": "$1000\\times60=60{,}000$ events per window.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$1000\\times60=60{,}000$ events per window.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10352,7 +10352,7 @@
     "C"
    ]
   },
-  "solution": "Read-your-writes can be provided by pinning recent writers to the primary (or a replica known to be caught up) while other users still read from replicas. Check: the other options either give up scaling or are unreliable.\n\n*Verified by: second-derivation.*",
+  "solution": "Read-your-writes can be provided by pinning recent writers to the primary (or a replica known to be caught up) while other users still read from replicas. Check: the other options either give up scaling or are unreliable.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10409,7 +10409,7 @@
     "A"
    ]
   },
-  "solution": "The proxy is the single public entry point and can enforce policy before traffic reaches private backends.\n\n*Verified by: second-derivation.*",
+  "solution": "The proxy is the single public entry point and can enforce policy before traffic reaches private backends.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10466,7 +10466,7 @@
     "A"
    ]
   },
-  "solution": "Capping per-client request volume prevents one client from consuming all capacity. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Capping per-client request volume prevents one client from consuming all capacity. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10523,7 +10523,7 @@
     "B"
    ]
   },
-  "solution": "Different data have different needs; choosing a store per access pattern is common practice.\n\n*Verified by: second-derivation.*",
+  "solution": "Different data have different needs; choosing a store per access pattern is common practice.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10580,7 +10580,7 @@
     "A"
    ]
   },
-  "solution": "NoSQL is an umbrella term; the choice depends on the family.\n\n*Verified by: second-derivation.*",
+  "solution": "NoSQL is an umbrella term; the choice depends on the family.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10637,7 +10637,7 @@
     "B"
    ]
   },
-  "solution": "Blob storage plus CDN is the standard pattern for media.\n\n*Verified by: second-derivation.*",
+  "solution": "Blob storage plus CDN is the standard pattern for media.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10694,7 +10694,7 @@
     "D"
    ]
   },
-  "solution": "A token bucket accumulates tokens up to its capacity, so a quiet client can later send a burst up to that capacity, while the refill rate bounds the average.\n\n*Verified by: second-derivation.*",
+  "solution": "A token bucket accumulates tokens up to its capacity, so a quiet client can later send a burst up to that capacity, while the refill rate bounds the average.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10751,7 +10751,7 @@
     "B"
    ]
   },
-  "solution": "It is a session guarantee weaker than strong consistency but valuable for user experience.\n\n*Verified by: second-derivation.*",
+  "solution": "It is a session guarantee weaker than strong consistency but valuable for user experience.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10808,7 +10808,7 @@
     "B"
    ]
   },
-  "solution": "Long-running, non-interactive work should not hold the user's request open.\n\n*Verified by: second-derivation.*",
+  "solution": "Long-running, non-interactive work should not hold the user's request open.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10865,7 +10865,7 @@
     "B"
    ]
   },
-  "solution": "Network partitions cannot be ruled out, so partition tolerance is not optional; the real choice when one occurs is consistency or availability. Check: a single-node database appears 'CA' only because there is no distribution.\n\n*Verified by: second-derivation.*",
+  "solution": "Network partitions cannot be ruled out, so partition tolerance is not optional; the real choice when one occurs is consistency or availability. Check: a single-node database appears 'CA' only because there is no distribution.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10924,7 +10924,7 @@
     "C"
    ]
   },
-  "solution": "SQL provides relations, transactions and constraints, at the cost of upfront schema design.\n\n*Verified by: second-derivation.*",
+  "solution": "SQL provides relations, transactions and constraints, at the cost of upfront schema design.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -10981,7 +10981,7 @@
     "A"
    ]
   },
-  "solution": "Most DNS lookups are single small datagrams; TCP is used for large responses or zone transfers. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Most DNS lookups are single small datagrams; TCP is used for large responses or zone transfers. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11038,7 +11038,7 @@
     "D"
    ]
   },
-  "solution": "Latency distributions are long-tailed, so a mean can look healthy while 1% of requests are very slow. Check: with 99 requests at 10 ms and one at 1,000 ms the mean is about 20 ms but p99 is near the slow request.\n\n*Verified by: second-derivation.*",
+  "solution": "Latency distributions are long-tailed, so a mean can look healthy while 1% of requests are very slow. Check: with 99 requests at 10 ms and one at 1,000 ms the mean is about 20 ms but p99 is near the slow request.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11094,7 +11094,7 @@
    "value": 200.0,
    "tol": 0.01
   },
-  "solution": "$50000\\times4=200{,}000$ Mbps $=200$ Gbps.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$50000\\times4=200{,}000$ Mbps $=200$ Gbps.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11135,7 +11135,7 @@
     "D"
    ]
   },
-  "solution": "Externalised state, good partitioning and buffering via queues let capacity grow with nodes. Pinning users to one server ties load to that machine and defeats balancing. Check: each correct choice removes a dependency on one machine.\n\n*Verified by: second-derivation.*",
+  "solution": "Externalised state, good partitioning and buffering via queues let capacity grow with nodes. Pinning users to one server ties load to that machine and defeats balancing. Check: each correct choice removes a dependency on one machine.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11194,7 +11194,7 @@
     "D"
    ]
   },
-  "solution": "Layer 4 forwards connections without parsing HTTP, so it is cheaper and protocol-agnostic. Content-based routing needs layer 7. Check: the false option requires application-level parsing.\n\n*Verified by: second-derivation.*",
+  "solution": "Layer 4 forwards connections without parsing HTTP, so it is cheaper and protocol-agnostic. Content-based routing needs layer 7. Check: the false option requires application-level parsing.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11251,7 +11251,7 @@
     "B"
    ]
   },
-  "solution": "Network delay or GC pauses can delay a heartbeat, so aggressive timeouts may declare healthy nodes dead.\n\n*Verified by: second-derivation.*",
+  "solution": "Network delay or GC pauses can delay a heartbeat, so aggressive timeouts may declare healthy nodes dead.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11306,7 +11306,7 @@
   "answer": {
    "value": 10000.0
   },
-  "solution": "Normalised: $3\\times3=9$ ms per view; denormalised: 4 ms; saving $5$ ms $\\times2000=10{,}000$ ms of database time per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Normalised: $3\\times3=9$ ms per view; denormalised: 4 ms; saving $5$ ms $\\times2000=10{,}000$ ms of database time per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11345,7 +11345,7 @@
     "C"
    ]
   },
-  "solution": "Redundant copies create update anomalies unless all are changed together.\n\n*Verified by: second-derivation.*",
+  "solution": "Redundant copies create update anomalies unless all are changed together.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11402,7 +11402,7 @@
     "A"
    ]
   },
-  "solution": "Central servers make security and consistency easier but concentrate load. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Central servers make security and consistency easier but concentrate load. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11459,7 +11459,7 @@
     "B"
    ]
   },
-  "solution": "After the HTTP upgrade handshake the connection stays open for bidirectional messages.\n\n*Verified by: second-derivation.*",
+  "solution": "After the HTTP upgrade handshake the connection stays open for bidirectional messages.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11516,7 +11516,7 @@
     "C"
    ]
   },
-  "solution": "Same key hashes to the same partition, preserving relative order for that key; ordering across keys is not guaranteed.\n\n*Verified by: second-derivation.*",
+  "solution": "Same key hashes to the same partition, preserving relative order for that key; ordering across keys is not guaranteed.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11573,7 +11573,7 @@
     "C"
    ]
   },
-  "solution": "Unique ids encoded in base 62 are collision-free by construction. Random codes need a check against the store.\n\n*Verified by: second-derivation.*",
+  "solution": "Unique ids encoded in base 62 are collision-free by construction. Random codes need a check against the store.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11630,7 +11630,7 @@
     "D"
    ]
   },
-  "solution": "A 4-node cluster needs 3 for a majority and tolerates 1 failure, the same as a 3-node cluster. A 5-node cluster tolerates 2.\n\n*Verified by: second-derivation.*",
+  "solution": "A 4-node cluster needs 3 for a majority and tolerates 1 failure, the same as a 3-node cluster. A 5-node cluster tolerates 2.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11687,7 +11687,7 @@
     "D"
    ]
   },
-  "solution": "TCP delivers bytes in order, so later data waits for the missing segment.\n\n*Verified by: second-derivation.*",
+  "solution": "TCP delivers bytes in order, so later data waits for the missing segment.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11744,7 +11744,7 @@
     "A"
    ]
   },
-  "solution": "Fan-out of one event to many consumers is a core strength. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Fan-out of one event to many consumers is a core strength. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11801,7 +11801,7 @@
     "A"
    ]
   },
-  "solution": "One-way streaming over HTTP traverses proxies easily; full duplex is not needed.\n\n*Verified by: second-derivation.*",
+  "solution": "One-way streaming over HTTP traverses proxies easily; full duplex is not needed.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11857,7 +11857,7 @@
    "value": 300000.0,
    "tol": 1
   },
-  "solution": "$3\\times10^6\\times0.2\\times0.5=300{,}000$ GB-seconds.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$3\\times10^6\\times0.2\\times0.5=300{,}000$ GB-seconds.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11896,7 +11896,7 @@
     "A"
    ]
   },
-  "solution": "Monotonic keys like timestamps route all current traffic to one shard. A hashed or composite key spreads writes.\n\n*Verified by: second-derivation.*",
+  "solution": "Monotonic keys like timestamps route all current traffic to one shard. A hashed or composite key spreads writes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11952,7 +11952,7 @@
    "value": 52.56,
    "tol": 0.1
   },
-  "solution": "Allowed downtime $=0.0001\\times525600=52.56\\approx52.6$ minutes. Check: one more nine divides the 526 minutes of three nines by ten.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Allowed downtime $=0.0001\\times525600=52.56\\approx52.6$ minutes. Check: one more nine divides the 526 minutes of three nines by ten.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -11991,7 +11991,7 @@
     "A"
    ]
   },
-  "solution": "Giving up some relational features makes partitioning simpler. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Giving up some relational features makes partitioning simpler. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12047,7 +12047,7 @@
    "value": 0.1,
    "tol": 0.005
   },
-  "solution": "The new server takes over roughly an equal share of $1/(9+1)=0.1$ of the keys, all from neighbours.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "The new server takes over roughly an equal share of $1/(9+1)=0.1$ of the keys, all from neighbours.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12086,7 +12086,7 @@
     "B"
    ]
   },
-  "solution": "LSM trees append writes to memory tables and flush/merge sorted files, trading some read cost and compaction work for fast writes.\n\n*Verified by: second-derivation.*",
+  "solution": "LSM trees append writes to memory tables and flush/merge sorted files, trading some read cost and compaction work for fast writes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12143,7 +12143,7 @@
     "C"
    ]
   },
-  "solution": "At-least-once delivery means duplicates are possible.\n\n*Verified by: second-derivation.*",
+  "solution": "At-least-once delivery means duplicates are possible.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12200,7 +12200,7 @@
     "B"
    ]
   },
-  "solution": "Auto-scaling of compute can overwhelm fixed-capacity dependencies; cap concurrency and smooth load.\n\n*Verified by: second-derivation.*",
+  "solution": "Auto-scaling of compute can overwhelm fixed-capacity dependencies; cap concurrency and smooth load.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12257,7 +12257,7 @@
     "A"
    ]
   },
-  "solution": "Write-through helps read freshness, not write speed, so it is not an optimisation for write-heavy loads; write-back or batching targets that.\n\n*Verified by: second-derivation.*",
+  "solution": "Write-through helps read freshness, not write speed, so it is not an optimisation for write-heavy loads; write-back or batching targets that.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12314,7 +12314,7 @@
     "D"
    ]
   },
-  "solution": "Each node talks to a few peers per round, yet the epidemic spread reaches everyone in O(log N) rounds.\n\n*Verified by: second-derivation.*",
+  "solution": "Each node talks to a few peers per round, yet the epidemic spread reaches everyone in O(log N) rounds.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12371,7 +12371,7 @@
     "A"
    ]
   },
-  "solution": "Separating tiers lets each be scaled and changed independently.\n\n*Verified by: second-derivation.*",
+  "solution": "Separating tiers lets each be scaled and changed independently.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12428,7 +12428,7 @@
     "D"
    ]
   },
-  "solution": "Weights let the balancer send proportionally more requests to larger machines. Plain round robin treats all servers equally. Check: with weights 4:1:1 the big server gets 4/6 of requests.\n\n*Verified by: second-derivation.*",
+  "solution": "Weights let the balancer send proportionally more requests to larger machines. Plain round robin treats all servers equally. Check: with weights 4:1:1 the big server gets 4/6 of requests.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12485,7 +12485,7 @@
     "A"
    ]
   },
-  "solution": "If two sets each have more than N/2 members they cannot be disjoint, so the overlapping node carries the latest committed information. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "If two sets each have more than N/2 members they cannot be disjoint, so the overlapping node carries the latest committed information. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12542,7 +12542,7 @@
     "B"
    ]
   },
-  "solution": "A DHT assigns key ranges to peers and routes lookups in O(log N) hops.\n\n*Verified by: second-derivation.*",
+  "solution": "A DHT assigns key ranges to peers and routes lookups in O(log N) hops.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12599,7 +12599,7 @@
     "A"
    ]
   },
-  "solution": "If every selected and filtered column is in the index, the engine reads only the index. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "If every selected and filtered column is in the index, the engine reads only the index. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12656,7 +12656,7 @@
     "C"
    ]
   },
-  "solution": "Honouring robots.txt and spacing requests is both ethical and practical.\n\n*Verified by: second-derivation.*",
+  "solution": "Honouring robots.txt and spacing requests is both ethical and practical.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12713,7 +12713,7 @@
     "A"
    ]
   },
-  "solution": "True exactly-once delivery over unreliable networks is impractical; effective exactly-once comes from dedupe or idempotency on top of redelivery. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "True exactly-once delivery over unreliable networks is impractical; effective exactly-once comes from dedupe or idempotency on top of redelivery. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12769,7 +12769,7 @@
    "value": 78.0,
    "tol": 0.01
   },
-  "solution": "Estimate $=30+0.6\\times80=30+48=78$ requests, so the next request is allowed (under 100).\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Estimate $=30+0.6\\times80=30+48=78$ requests, so the next request is allowed (under 100).\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12808,7 +12808,7 @@
     "B"
    ]
   },
-  "solution": "Indexes accelerate reads but each write must update them too. Check: more indexes means more structures to keep in sync per write.\n\n*Verified by: second-derivation.*",
+  "solution": "Indexes accelerate reads but each write must update them too. Check: more indexes means more structures to keep in sync per write.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12865,7 +12865,7 @@
     "D"
    ]
   },
-  "solution": "In-memory state dies with the server. Externalising sessions (shared store or signed tokens) removes the issue.\n\n*Verified by: second-derivation.*",
+  "solution": "In-memory state dies with the server. Externalising sessions (shared store or signed tokens) removes the issue.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12921,7 +12921,7 @@
    "value": 100.0,
    "tol": 0.1
   },
-  "solution": "$0.2\\times500=100$ GB.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$0.2\\times500=100$ GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -12960,7 +12960,7 @@
     "A"
    ]
   },
-  "solution": "That is the typical document-modelling trade-off. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "That is the typical document-modelling trade-off. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13017,7 +13017,7 @@
     "C"
    ]
   },
-  "solution": "Hop-by-hop checks do not protect data while it sits in routers, disks or memory between the checks.\n\n*Verified by: second-derivation.*",
+  "solution": "Hop-by-hop checks do not protect data while it sits in routers, disks or memory between the checks.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13074,7 +13074,7 @@
     "D"
    ]
   },
-  "solution": "Write-back acknowledges after the cache write and flushes asynchronously; it is fast but can lose recent writes on failure.\n\n*Verified by: second-derivation.*",
+  "solution": "Write-back acknowledges after the cache write and flushes asynchronously; it is fast but can lose recent writes on failure.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13131,7 +13131,7 @@
     "A"
    ]
   },
-  "solution": "Pull CDNs fetch on demand and keep the copy for later requests; push CDNs rely on you uploading content in advance.\n\n*Verified by: second-derivation.*",
+  "solution": "Pull CDNs fetch on demand and keep the copy for later requests; push CDNs rely on you uploading content in advance.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13188,7 +13188,7 @@
     "D"
    ]
   },
-  "solution": "A cold cache sends nearly every request to the database. Pre-warming hot data and gradual traffic ramp avoid the overload. Check: hit rate is the quantity that collapsed.\n\n*Verified by: second-derivation.*",
+  "solution": "A cold cache sends nearly every request to the database. Pre-warming hot data and gradual traffic ramp avoid the overload. Check: hit rate is the quantity that collapsed.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13244,7 +13244,7 @@
    "value": 2.0,
    "tol": 0.01
   },
-  "solution": "$10^6\\times2\\times10^9=2\\times10^{15}$ B = 2 PB.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$10^6\\times2\\times10^9=2\\times10^{15}$ B = 2 PB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13283,7 +13283,7 @@
     "D"
    ]
   },
-  "solution": "Latency is a duration for one unit of work; throughput is a rate. Check: units differ (seconds vs operations per second).\n\n*Verified by: second-derivation.*",
+  "solution": "Latency is a duration for one unit of work; throughput is a rate. Check: units differ (seconds vs operations per second).\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13340,7 +13340,7 @@
     "B"
    ]
   },
-  "solution": "There is no perfect design; reasoning from requirements is the point.\n\n*Verified by: second-derivation.*",
+  "solution": "There is no perfect design; reasoning from requirements is the point.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13397,7 +13397,7 @@
     "D"
    ]
   },
-  "solution": "Strong consistency means reads reflect the latest acknowledged write.\n\n*Verified by: second-derivation.*",
+  "solution": "Strong consistency means reads reflect the latest acknowledged write.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13454,7 +13454,7 @@
     "D"
    ]
   },
-  "solution": "Many NoSQL systems trade rich queries and strict schemas for scale-out and flexibility.\n\n*Verified by: second-derivation.*",
+  "solution": "Many NoSQL systems trade rich queries and strict schemas for scale-out and flexibility.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13511,7 +13511,7 @@
     "B"
    ]
   },
-  "solution": "A server-side layer protects data and keeps logic consistent across clients.\n\n*Verified by: second-derivation.*",
+  "solution": "A server-side layer protects data and keeps logic consistent across clients.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13568,7 +13568,7 @@
     "A"
    ]
   },
-  "solution": "Encrypted headers are unreadable without decryption, so header routing requires TLS termination (or inspection) at the balancer. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Encrypted headers are unreadable without decryption, so header routing requires TLS termination (or inspection) at the balancer. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13627,7 +13627,7 @@
     "C"
    ]
   },
-  "solution": "Single-loss detection yields many false alarms. Tuning, jitter and richer payloads improve reliability.\n\n*Verified by: second-derivation.*",
+  "solution": "Single-loss detection yields many false alarms. Tuning, jitter and richer payloads improve reliability.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13684,7 +13684,7 @@
     "C"
    ]
   },
-  "solution": "Latency targets are qualities of the system, whereas the others are features.\n\n*Verified by: second-derivation.*",
+  "solution": "Latency targets are qualities of the system, whereas the others are features.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13741,7 +13741,7 @@
     "D"
    ]
   },
-  "solution": "Read-through puts the load-on-miss logic inside the cache layer.\n\n*Verified by: second-derivation.*",
+  "solution": "Read-through puts the load-on-miss logic inside the cache layer.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13798,7 +13798,7 @@
     "D"
    ]
   },
-  "solution": "Only a majority (3 of 5) can elect a leader and commit, so there can never be two committing groups; this is how split-brain is avoided.\n\n*Verified by: second-derivation.*",
+  "solution": "Only a majority (3 of 5) can elect a leader and commit, so there can never be two committing groups; this is how split-brain is avoided.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13855,7 +13855,7 @@
     "A"
    ]
   },
-  "solution": "Many proxies (for example NGINX or HAProxy) both proxy and balance; balancing is one of the reverse proxy's functions. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Many proxies (for example NGINX or HAProxy) both proxy and balance; balancing is one of the reverse proxy's functions. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13912,7 +13912,7 @@
     "A"
    ]
   },
-  "solution": "Overlapping waits with useful work improves latency and throughput. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Overlapping waits with useful work improves latency and throughput. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -13969,7 +13969,7 @@
     "B"
    ]
   },
-  "solution": "Asynchronous replication acknowledges before the replica has the data, so the promoted node can be behind by a few writes. Check: synchronous replication would remove the gap at the cost of write latency.\n\n*Verified by: second-derivation.*",
+  "solution": "Asynchronous replication acknowledges before the replica has the data, so the promoted node can be behind by a few writes. Check: synchronous replication would remove the gap at the cost of write latency.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14026,7 +14026,7 @@
     "D"
    ]
   },
-  "solution": "Chunking enables parallelism, resume and deduplication.\n\n*Verified by: second-derivation.*",
+  "solution": "Chunking enables parallelism, resume and deduplication.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14085,7 +14085,7 @@
     "D"
    ]
   },
-  "solution": "UDP provides no ordering; QUIC implements reliability, multiplexing and encryption over UDP.\n\n*Verified by: second-derivation.*",
+  "solution": "UDP provides no ordering; QUIC implements reliability, multiplexing and encryption over UDP.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14144,7 +14144,7 @@
     "C"
    ]
   },
-  "solution": "Good keys balance load, have many values and match query patterns. Monotonic keys concentrate writes.\n\n*Verified by: second-derivation.*",
+  "solution": "Good keys balance load, have many values and match query patterns. Monotonic keys concentrate writes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14201,7 +14201,7 @@
     "B"
    ]
   },
-  "solution": "SQL excels at joins and transactions on structured data.\n\n*Verified by: second-derivation.*",
+  "solution": "SQL excels at joins and transactions on structured data.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14258,7 +14258,7 @@
     "D"
    ]
   },
-  "solution": "Piece exchange shifts bandwidth cost to the swarm, so origin load grows much slower than user count.\n\n*Verified by: second-derivation.*",
+  "solution": "Piece exchange shifts bandwidth cost to the swarm, so origin load grows much slower than user count.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14314,7 +14314,7 @@
    "value": 6.89655,
    "tol": 0.02
   },
-  "solution": "Speedup $=1/(s+(1-s)/p)=1/(0.05+0.95/10)=1/0.145\\approx 6.90$. Check: even with infinite processors the limit is $1/0.05=20$, so 6.9 on 10 is plausible.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Speedup $=1/(s+(1-s)/p)=1/(0.05+0.95/10)=1/0.145\\approx 6.90$. Check: even with infinite processors the limit is $1/0.05=20$, so 6.9 on 10 is plausible.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14353,7 +14353,7 @@
     "B"
    ]
   },
-  "solution": "Premature distribution adds cost without benefit; modular monoliths evolve into services later.\n\n*Verified by: second-derivation.*",
+  "solution": "Premature distribution adds cost without benefit; modular monoliths evolve into services later.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14412,7 +14412,7 @@
     "C"
    ]
   },
-  "solution": "WebSockets reuse one connection after the handshake.\n\n*Verified by: second-derivation.*",
+  "solution": "WebSockets reuse one connection after the handshake.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14469,7 +14469,7 @@
     "A"
    ]
   },
-  "solution": "Bloom filters have no false negatives: if any of the element's bits is 0, it was never added.\n\n*Verified by: second-derivation.*",
+  "solution": "Bloom filters have no false negatives: if any of the element's bits is 0, it was never added.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14526,7 +14526,7 @@
     "C"
    ]
   },
-  "solution": "Without central control, lookup, security and churn are harder.\n\n*Verified by: second-derivation.*",
+  "solution": "Without central control, lookup, security and churn are harder.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14583,7 +14583,7 @@
     "C"
    ]
   },
-  "solution": "RDBMSs use tables with a declared schema, SQL, joins and ACID transactions.\n\n*Verified by: second-derivation.*",
+  "solution": "RDBMSs use tables with a declared schema, SQL, joins and ACID transactions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14640,7 +14640,7 @@
     "C"
    ]
   },
-  "solution": "All bits for an absent element can happen to be set by other elements.\n\n*Verified by: second-derivation.*",
+  "solution": "All bits for an absent element can happen to be set by other elements.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14696,7 +14696,7 @@
    "value": 219.0,
    "tol": 1
   },
-  "solution": "Per day $=10^{11}$ B = 0.1 TB; 730 days $=73$ TB; times 3 copies $=219$ TB.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Per day $=10^{11}$ B = 0.1 TB; 730 days $=73$ TB; times 3 copies $=219$ TB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14735,7 +14735,7 @@
     "B"
    ]
   },
-  "solution": "Backoff avoids hammering providers; DLQs capture permanent failures.\n\n*Verified by: second-derivation.*",
+  "solution": "Backoff avoids hammering providers; DLQs capture permanent failures.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14792,7 +14792,7 @@
     "A"
    ]
   },
-  "solution": "Correctness of every byte is required; TCP handles retransmission and ordering.\n\n*Verified by: second-derivation.*",
+  "solution": "Correctness of every byte is required; TCP handles retransmission and ordering.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14849,7 +14849,7 @@
     "A"
    ]
   },
-  "solution": "An index holds sorted keys with row pointers, so lookups are logarithmic instead of linear.\n\n*Verified by: second-derivation.*",
+  "solution": "An index holds sorted keys with row pointers, so lookups are logarithmic instead of linear.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14906,7 +14906,7 @@
     "D"
    ]
   },
-  "solution": "TCP uses handshakes, acknowledgements and retransmission to deliver an ordered byte stream.\n\n*Verified by: second-derivation.*",
+  "solution": "TCP uses handshakes, acknowledgements and retransmission to deliver an ordered byte stream.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -14963,7 +14963,7 @@
     "A"
    ]
   },
-  "solution": "Edge servers near users reduce round-trip distance and absorb most requests that would otherwise hit the origin.\n\n*Verified by: second-derivation.*",
+  "solution": "Edge servers near users reduce round-trip distance and absorb most requests that would otherwise hit the origin.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15022,7 +15022,7 @@
     "D"
    ]
   },
-  "solution": "Lambda combines batch and speed layers; the duplicated logic is a known drawback.\n\n*Verified by: second-derivation.*",
+  "solution": "Lambda combines batch and speed layers; the duplicated logic is a known drawback.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15079,7 +15079,7 @@
     "C"
    ]
   },
-  "solution": "Spatial partitioning lets the system query only nearby cells.\n\n*Verified by: second-derivation.*",
+  "solution": "Spatial partitioning lets the system query only nearby cells.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15136,7 +15136,7 @@
     "B"
    ]
   },
-  "solution": "REST is easy to explore, cache and debug using ordinary HTTP tooling.\n\n*Verified by: second-derivation.*",
+  "solution": "REST is easy to explore, cache and debug using ordinary HTTP tooling.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15193,7 +15193,7 @@
     "D"
    ]
   },
-  "solution": "RPC exposes operations (methods) rather than resources.\n\n*Verified by: second-derivation.*",
+  "solution": "RPC exposes operations (methods) rather than resources.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15249,7 +15249,7 @@
    "value": 500.0,
    "tol": 1
   },
-  "solution": "Only misses reach the origin: $10000\\times(1-0.95)=500$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Only misses reach the origin: $10000\\times(1-0.95)=500$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15288,7 +15288,7 @@
     "A"
    ]
   },
-  "solution": "A shared database couples services through schema and locking.\n\n*Verified by: second-derivation.*",
+  "solution": "A shared database couples services through schema and locking.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15345,7 +15345,7 @@
     "B"
    ]
   },
-  "solution": "Fingerprinted URLs sidestep invalidation entirely: the new name is a cache miss that fetches the new file, and old URLs can stay cached forever. Check: purge-based fixes work but are slower and error-prone.\n\n*Verified by: second-derivation.*",
+  "solution": "Fingerprinted URLs sidestep invalidation entirely: the new name is a cache miss that fetches the new file, and old URLs can stay cached forever. Check: purge-based fixes work but are slower and error-prone.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15402,7 +15402,7 @@
     "C"
    ]
   },
-  "solution": "Match the guarantee to the cost of being wrong: errors in money are unacceptable, while a like count that lags briefly is harmless. Check: ask what happens if a reader sees a value that is a few seconds old.\n\n*Verified by: second-derivation.*",
+  "solution": "Match the guarantee to the cost of being wrong: errors in money are unacceptable, while a like count that lags briefly is harmless. Check: ask what happens if a reader sees a value that is a few seconds old.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15461,7 +15461,7 @@
     "D"
    ]
   },
-  "solution": "Ring-based placement supports replication to successors, and a single hot key still lands on one node. Remapping is limited, not total.\n\n*Verified by: second-derivation.*",
+  "solution": "Ring-based placement supports replication to successors, and a single hot key still lands on one node. Remapping is limited, not total.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15518,7 +15518,7 @@
     "B"
    ]
   },
-  "solution": "Sharding is horizontal partitioning across nodes; replication, by contrast, copies the same data.\n\n*Verified by: second-derivation.*",
+  "solution": "Sharding is horizontal partitioning across nodes; replication, by contrast, copies the same data.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15575,7 +15575,7 @@
     "A"
    ]
   },
-  "solution": "Decentralisation removes the central point whose failure stops everything. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Decentralisation removes the central point whose failure stops everything. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15632,7 +15632,7 @@
     "B"
    ]
   },
-  "solution": "Observability closes the loop for reliability.\n\n*Verified by: second-derivation.*",
+  "solution": "Observability closes the loop for reliability.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15689,7 +15689,7 @@
     "C"
    ]
   },
-  "solution": "State is rebuilt by replaying events, providing a complete audit trail.\n\n*Verified by: second-derivation.*",
+  "solution": "State is rebuilt by replaying events, providing a complete audit trail.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15746,7 +15746,7 @@
     "B"
    ]
   },
-  "solution": "A system can be quick for one request yet fail to grow with load, or slow per request yet scale linearly. Check: adding machines changes capacity (scalability) while a single call's latency may stay the same.\n\n*Verified by: second-derivation.*",
+  "solution": "A system can be quick for one request yet fail to grow with load, or slow per request yet scale linearly. Check: adding machines changes capacity (scalability) while a single call's latency may stay the same.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15803,7 +15803,7 @@
     "D"
    ]
   },
-  "solution": "Retries are inevitable in async systems; idempotency makes them safe.\n\n*Verified by: second-derivation.*",
+  "solution": "Retries are inevitable in async systems; idempotency makes them safe.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15860,7 +15860,7 @@
     "C"
    ]
   },
-  "solution": "Publishers do not depend on subscribers, so the system extends easily.\n\n*Verified by: second-derivation.*",
+  "solution": "Publishers do not depend on subscribers, so the system extends easily.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15917,7 +15917,7 @@
     "A"
    ]
   },
-  "solution": "Addresses change when instances are replaced, so static configuration soon points to nothing. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Addresses change when instances are replaced, so static configuration soon points to nothing. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -15973,7 +15973,7 @@
    "value": 2314.81,
    "tol": 1
   },
-  "solution": "Total $=2\\times10^8$ requests per day; $/86400\\approx2315$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Total $=2\\times10^8$ requests per day; $/86400\\approx2315$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16012,7 +16012,7 @@
     "C"
    ]
   },
-  "solution": "Known, popular, rarely-changing large files can be pre-positioned. Personalised data should not be cached at shared edges.\n\n*Verified by: second-derivation.*",
+  "solution": "Known, popular, rarely-changing large files can be pre-positioned. Personalised data should not be cached at shared edges.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16069,7 +16069,7 @@
     "A"
    ]
   },
-  "solution": "Decentralised exchange removes the single bottleneck present in central monitoring. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Decentralised exchange removes the single bottleneck present in central monitoring. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16124,7 +16124,7 @@
   "answer": {
    "value": 9.0
   },
-  "solution": "Writes land on the primary of each shard: $36000/4000=9$ shards.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Writes land on the primary of each shard: $36000/4000=9$ shards.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16163,7 +16163,7 @@
     "D"
    ]
   },
-  "solution": "Instances start, stop and move, so hard-coded addresses break; a registry maps service names to live instances.\n\n*Verified by: second-derivation.*",
+  "solution": "Instances start, stop and move, so hard-coded addresses break; a registry maps service names to live instances.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16220,7 +16220,7 @@
     "A"
    ]
   },
-  "solution": "Accepting writes on both sides and reconciling later gives availability and eventual consistency. Check: any later merge step is evidence that replicas diverged during the partition.\n\n*Verified by: second-derivation.*",
+  "solution": "Accepting writes on both sides and reconciling later gives availability and eventual consistency. Check: any later merge step is evidence that replicas diverged during the partition.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16277,7 +16277,7 @@
     "A"
    ]
   },
-  "solution": "No latency requirement and a large full-dataset computation favour batch.\n\n*Verified by: second-derivation.*",
+  "solution": "No latency requirement and a large full-dataset computation favour batch.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16334,7 +16334,7 @@
     "D"
    ]
   },
-  "solution": "Deduplicating URLs prevents wasted work and loops.\n\n*Verified by: second-derivation.*",
+  "solution": "Deduplicating URLs prevents wasted work and loops.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16391,7 +16391,7 @@
     "C"
    ]
   },
-  "solution": "Anything every request passes through must be redundant. Check: apply the single-point-of-failure test.\n\n*Verified by: second-derivation.*",
+  "solution": "Anything every request passes through must be redundant. Check: apply the single-point-of-failure test.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16448,7 +16448,7 @@
     "D"
    ]
   },
-  "solution": "Redundancy lets another replica take over when one fails. A bigger server is still a single point of failure.\n\n*Verified by: second-derivation.*",
+  "solution": "Redundancy lets another replica take over when one fails. A bigger server is still a single point of failure.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16505,7 +16505,7 @@
     "D"
    ]
   },
-  "solution": "A read-dominated load is relieved by offloading reads to caches or replicas; sharding is far more complex and is justified only when writes or data size exceed a node. Check: removing 95% of read work from the primary leaves about 5% of the original query rate if the cache is effective.\n\n*Verified by: second-derivation.*",
+  "solution": "A read-dominated load is relieved by offloading reads to caches or replicas; sharding is far more complex and is justified only when writes or data size exceed a node. Check: removing 95% of read work from the primary leaves about 5% of the original query rate if the cache is effective.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16562,7 +16562,7 @@
     "A"
    ]
   },
-  "solution": "For uniform hashes, a fraction N/(N+1) of keys changes server when N increases to N+1. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "For uniform hashes, a fraction N/(N+1) of keys changes server when N increases to N+1. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16619,7 +16619,7 @@
     "B"
    ]
   },
-  "solution": "With mod N, changing N moves most keys; on a hash ring only keys adjacent to the changed node move (about 1/N on average).\n\n*Verified by: second-derivation.*",
+  "solution": "With mod N, changing N moves most keys; on a hash ring only keys adjacent to the changed node move (about 1/N on average).\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16678,7 +16678,7 @@
     "C"
    ]
   },
-  "solution": "Shared caches should hold content identical for many users. Private per-user data risks being served to others. Check: ask whether the response is the same for every requester.\n\n*Verified by: second-derivation.*",
+  "solution": "Shared caches should hold content identical for many users. Private per-user data risks being served to others. Check: ask whether the response is the same for every requester.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16735,7 +16735,7 @@
     "B"
    ]
   },
-  "solution": "The problem is reaction time versus startup time. Headroom, predictive scaling and buffering cover the gap.\n\n*Verified by: second-derivation.*",
+  "solution": "The problem is reaction time versus startup time. Headroom, predictive scaling and buffering cover the gap.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16792,7 +16792,7 @@
     "C"
    ]
   },
-  "solution": "A permanent redirect may be cached by browsers, bypassing the service; a temporary one keeps requests flowing through it.\n\n*Verified by: second-derivation.*",
+  "solution": "A permanent redirect may be cached by browsers, bypassing the service; a temporary one keeps requests flowing through it.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16849,7 +16849,7 @@
     "A"
    ]
   },
-  "solution": "The product $0.9995\\times0.999\\approx0.9985$ is below 0.9995, so A holds and R is the reason. Check: multiplying by a number below 1 always lowers the result.\n\n*Verified by: second-derivation.*",
+  "solution": "The product $0.9995\\times0.999\\approx0.9985$ is below 0.9995, so A holds and R is the reason. Check: multiplying by a number below 1 always lowers the result.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16906,7 +16906,7 @@
     "C"
    ]
   },
-  "solution": "Keys and servers are hashed to the same ring; ownership goes to the next server position in the chosen direction.\n\n*Verified by: second-derivation.*",
+  "solution": "Keys and servers are hashed to the same ring; ownership goes to the next server position in the chosen direction.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -16962,7 +16962,7 @@
    "value": 2.0,
    "tol": 0.01
   },
-  "solution": "Small fleet: $8\\times1=8$. Big fleet: $4\\times2.5=10$. The small fleet is cheaper by $10-8=2$ units.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Small fleet: $8\\times1=8$. Big fleet: $4\\times2.5=10$. The small fleet is cheaper by $10-8=2$ units.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17001,7 +17001,7 @@
     "A"
    ]
   },
-  "solution": "Writes are divided among shard primaries, so capacity scales with the number of shards, unlike replication alone. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Writes are divided among shard primaries, so capacity scales with the number of shards, unlike replication alone. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17058,7 +17058,7 @@
     "D"
    ]
   },
-  "solution": "Atomic cross-node updates need coordination (2PC) or compensating steps (saga). Uncoordinated writes can leave money debited but not credited. Check: ask what happens if the process crashes between the two writes.\n\n*Verified by: second-derivation.*",
+  "solution": "Atomic cross-node updates need coordination (2PC) or compensating steps (saga). Uncoordinated writes can leave money debited but not credited. Check: ask what happens if the process crashes between the two writes.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17115,7 +17115,7 @@
     "B"
    ]
   },
-  "solution": "With few points per server, arc lengths vary widely. Many virtual nodes average this out and allow weighting by capacity.\n\n*Verified by: second-derivation.*",
+  "solution": "With few points per server, arc lengths vary widely. Many virtual nodes average this out and allow weighting by capacity.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17172,7 +17172,7 @@
     "C"
    ]
   },
-  "solution": "The async request-reply pattern avoids long blocking connections.\n\n*Verified by: second-derivation.*",
+  "solution": "The async request-reply pattern avoids long blocking connections.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17228,7 +17228,7 @@
    "value": 3521.61,
    "tol": 0.05
   },
-  "solution": "$62^7=3{,}521{,}614{,}606{,}208$, about 3,521.6 billion; the question asks for billions, so 3521.6.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "$62^7=3{,}521{,}614{,}606{,}208$, about 3,521.6 billion; the question asks for billions, so 3521.6.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17267,7 +17267,7 @@
     "C"
    ]
   },
-  "solution": "Stateless, CPU-bound servers scale out: identical copies share the load behind a balancer. The other options leave the saturated CPU on one machine. Check: capacity grows with instance count only if requests can go to any instance, which statelessness guarantees.\n\n*Verified by: second-derivation.*",
+  "solution": "Stateless, CPU-bound servers scale out: identical copies share the load behind a balancer. The other options leave the saturated CPU on one machine. Check: capacity grows with instance count only if requests can go to any instance, which statelessness guarantees.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17324,7 +17324,7 @@
     "A"
    ]
   },
-  "solution": "Hardware has an upper bound per machine, which is exactly why vertical scaling is capped and designs eventually scale out. R states that bound, so it explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Hardware has an upper bound per machine, which is exactly why vertical scaling is capped and designs eventually scale out. R states that bound, so it explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17381,7 +17381,7 @@
     "D"
    ]
   },
-  "solution": "Streams process unbounded data incrementally.\n\n*Verified by: second-derivation.*",
+  "solution": "Streams process unbounded data incrementally.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17438,7 +17438,7 @@
     "A"
    ]
   },
-  "solution": "Idle functions need not hold resources, which is why cold starts exist. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Idle functions need not hold resources, which is why cold starts exist. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17497,7 +17497,7 @@
     "C"
    ]
   },
-  "solution": "Indexes take space, help lookups and ranges, and can enforce uniqueness, but they cost write time. Check: the false statement contradicts the maintenance cost.\n\n*Verified by: second-derivation.*",
+  "solution": "Indexes take space, help lookups and ranges, and can enforce uniqueness, but they cost write time. Check: the false statement contradicts the maintenance cost.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17554,7 +17554,7 @@
     "D"
    ]
   },
-  "solution": "Caching pays when entries are re-read; read-heavy hot sets have high hit rates.\n\n*Verified by: second-derivation.*",
+  "solution": "Caching pays when entries are re-read; read-heavy hot sets have high hit rates.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17611,7 +17611,7 @@
     "A"
    ]
   },
-  "solution": "Retried requests are then safe. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Retried requests are then safe. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17668,7 +17668,7 @@
     "C"
    ]
   },
-  "solution": "A leaky bucket drains queued requests at a fixed rate, producing smooth output. Token buckets permit bursts.\n\n*Verified by: second-derivation.*",
+  "solution": "A leaky bucket drains queued requests at a fixed rate, producing smooth output. Token buckets permit bursts.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17725,7 +17725,7 @@
     "A"
    ]
   },
-  "solution": "An expiry field checked on lookup, plus background cleanup, enforces it. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "An expiry field checked on lookup, plus background cleanup, enforces it. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17784,7 +17784,7 @@
     "D"
    ]
   },
-  "solution": "429 with retry guidance is the standard signal; limits per identity protect other clients. Check: crashing is never a rate limiting strategy.\n\n*Verified by: second-derivation.*",
+  "solution": "429 with retry guidance is the standard signal; limits per identity protect other clients. Check: crashing is never a rate limiting strategy.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17841,7 +17841,7 @@
     "A"
    ]
   },
-  "solution": "Idempotence means repeating gives the same resulting state, which is the defining property of PUT. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Idempotence means repeating gives the same resulting state, which is the defining property of PUT. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17898,7 +17898,7 @@
     "A"
    ]
   },
-  "solution": "Without shared state, a client spread across gateways gets the limit on each. Use a shared store (for example Redis) or route a client consistently to one gateway.\n\n*Verified by: second-derivation.*",
+  "solution": "Without shared state, a client spread across gateways gets the limit on each. Use a shared store (for example Redis) or route a client consistently to one gateway.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -17955,7 +17955,7 @@
     "B"
    ]
   },
-  "solution": "Probabilities of all components being up multiply, so each hard dependency reduces the total. Redundancy (parallel) is what raises it. Check: with ten 99.9% services in series the product is about 99.0%.\n\n*Verified by: second-derivation.*",
+  "solution": "Probabilities of all components being up multiply, so each hard dependency reduces the total. Redundancy (parallel) is what raises it. Check: with ten 99.9% services in series the product is about 99.0%.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18012,7 +18012,7 @@
     "B"
    ]
   },
-  "solution": "Smaller verification units localise corruption and enable targeted repair.\n\n*Verified by: second-derivation.*",
+  "solution": "Smaller verification units localise corruption and enable targeted repair.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18069,7 +18069,7 @@
     "A"
    ]
   },
-  "solution": "Periodic signals allow failures to be detected through their absence.\n\n*Verified by: second-derivation.*",
+  "solution": "Periodic signals allow failures to be detected through their absence.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18126,7 +18126,7 @@
     "A"
    ]
   },
-  "solution": "That is why latency, partial failure and retries become design concerns. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "That is why latency, partial failure and retries become design concerns. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18183,7 +18183,7 @@
     "C"
    ]
   },
-  "solution": "Reverse proxies terminate connections, can cache, balance load and shield the origin servers.\n\n*Verified by: second-derivation.*",
+  "solution": "Reverse proxies terminate connections, can cache, balance load and shield the origin servers.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18240,7 +18240,7 @@
     "B"
    ]
   },
-  "solution": "Stale entries point to terminated instances. Short TTLs and retries with refresh limit the damage.\n\n*Verified by: second-derivation.*",
+  "solution": "Stale entries point to terminated instances. Short TTLs and retries with refresh limit the damage.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18297,7 +18297,7 @@
     "A"
    ]
   },
-  "solution": "Held requests occupy connection slots, so scale planning is needed even though empty responses are fewer. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution": "Held requests occupy connection slots, so scale planning is needed even though empty responses are fewer. R explains A.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18354,7 +18354,7 @@
     "D"
    ]
   },
-  "solution": "Share-nothing work divides freely; global shared state forces coordination.\n\n*Verified by: second-derivation.*",
+  "solution": "Share-nothing work divides freely; global shared state forces coordination.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18413,7 +18413,7 @@
     "C"
    ]
   },
-  "solution": "Denormalisation helps reads and burdens writes.\n\n*Verified by: second-derivation.*",
+  "solution": "Denormalisation helps reads and burdens writes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18469,7 +18469,7 @@
    "value": 9.0,
    "tol": 0.01
   },
-  "solution": "Write-through: $1+9=10$ ms; write-back: 1 ms; difference 9 ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution": "Write-through: $1+9=10$ ms; write-back: 1 ms; difference 9 ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18510,7 +18510,7 @@
     "D"
    ]
   },
-  "solution": "CAP's trade-off is forced when a partition happens; outside partitions a system can be both consistent and available. Its C is linearizability and A means every request to a live node gets a response. Check: the second statement overstates the theorem.\n\n*Verified by: second-derivation.*",
+  "solution": "CAP's trade-off is forced when a partition happens; outside partitions a system can be both consistent and available. Its C is linearizability and A means every request to a live node gets a response. Check: the second statement overstates the theorem.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18567,7 +18567,7 @@
     "C"
    ]
   },
-  "solution": "At-least-once means a message may be redelivered (for example after a missed acknowledgement), so handlers must tolerate repeats, typically with idempotency keys.\n\n*Verified by: second-derivation.*",
+  "solution": "At-least-once means a message may be redelivered (for example after a missed acknowledgement), so handlers must tolerate repeats, typically with idempotency keys.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18624,7 +18624,7 @@
     "B"
    ]
   },
-  "solution": "Eventual consistency promises convergence, not timing.\n\n*Verified by: second-derivation.*",
+  "solution": "Eventual consistency promises convergence, not timing.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18681,7 +18681,7 @@
     "C"
    ]
   },
-  "solution": "Sharding spreads distinct keys. A single hot key still maps to one shard, so that shard remains the bottleneck. Fixes split the key (for example into several sub-counters summed on read) or aggregate updates before writing. Check: throughput for one key is bounded by one node regardless of cluster size.\n\n*Verified by: second-derivation.*",
+  "solution": "Sharding spreads distinct keys. A single hot key still maps to one shard, so that shard remains the bottleneck. Fixes split the key (for example into several sub-counters summed on read) or aggregate updates before writing. Check: throughput for one key is bounded by one node regardless of cluster size.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18738,7 +18738,7 @@
     "C"
    ]
   },
-  "solution": "Refusing requests to avoid divergence preserves consistency at the cost of availability. Check: if both sides kept accepting writes, replicas would diverge (AP).\n\n*Verified by: second-derivation.*",
+  "solution": "Refusing requests to avoid divergence preserves consistency at the cost of availability. Check: if both sides kept accepting writes, replicas would diverge (AP).\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",
@@ -18795,7 +18795,7 @@
     "B"
    ]
   },
-  "solution": "Time series databases are optimised for append-heavy timestamped data, range scans, downsampling and retention. Check: the access pattern is time-ordered.\n\n*Verified by: second-derivation.*",
+  "solution": "Time series databases are optimised for append-heavy timestamped data, range scans, downsampling and retention. Check: the access pattern is time-ordered.\n\n*Verified by: independent second derivation (see the Check sentence) against the owner's study notes and standard references.*",
   "solution_source": "in_house",
   "tax": {
    "subject": "SD",

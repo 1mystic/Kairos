@@ -41,12 +41,20 @@ def other_stems() -> set[str]:
     return s
 
 
+def via_text(it: dict) -> str:
+    if it["via"] == "recomputed-by-code":
+        return "recomputed by script (the stored answer is the computed value)"
+    if "Check:" in it["sol"]:
+        return "independent second derivation (see the Check sentence) against the owner's study notes and standard references"
+    return "definition-level cross-check against the owner's study notes and standard references"
+
+
 def to_question(it: dict) -> dict:
     subj = it["ch"].split(".")[0]
     skill = it["skill"]
     q = {
         "id": dsl.qid(it["stem"]), "type": it["type"], "stem": it["stem"], "images": [],
-        "answer": it["answer"], "solution": it["sol"] + f"\n\n*Verified by: {it['via']}.*", "solution_source": "in_house",
+        "answer": it["answer"], "solution": it["sol"] + f"\n\n*Verified by: {via_text(it)}.*", "solution_source": "in_house",
         "tax": {"subject": subj, "chapter": it["ch"], "topics": [], "concepts": []},
         "skills": [skill], "appearances": [], "in_syllabus": {EXAM[subj]: {"2026": True}},
         "difficulty": {"label": it["d"], "b": DIFF_B[it["d"]], "n": 0},

@@ -1,0 +1,6976 @@
+[
+ {
+  "id": "q_008b51a2d11e",
+  "type": "SCQ",
+  "stem": "By the common rule of thumb, what does PSI of 0.43 indicate?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Typical bands are below 0.10 stable, 0.10 to 0.25 moderate, and 0.25 or more significant.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A measurement error"
+   },
+   {
+    "key": "B",
+    "text": "No drift"
+   },
+   {
+    "key": "C",
+    "text": "Moderate drift needing no action"
+   },
+   {
+    "key": "D",
+    "text": "Significant drift (PSI at or above 0.25), warranting investigation or retraining"
+   }
+  ]
+ },
+ {
+  "id": "q_0379d98d7e1d",
+  "type": "NVQ",
+  "stem": "A classifier produces 80 true positives, 20 false positives and 40 false negatives. What is its precision? Give a decimal.",
+  "images": [],
+  "answer": {
+   "value": 0.8,
+   "tol": 0.001
+  },
+  "solution": "Precision $=TP/(TP+FP)=80/100=0.8$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_06c050d9f790",
+  "type": "SCQ",
+  "stem": "A real-time email filter has a 15 ms inference budget. Which serving mode is appropriate?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Per-message decisions in the delivery path need synchronous low-latency scoring.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Weekly retraining only"
+   },
+   {
+    "key": "B",
+    "text": "Online real-time inference with a lightweight model"
+   },
+   {
+    "key": "C",
+    "text": "An offline batch job over the day"
+   },
+   {
+    "key": "D",
+    "text": "Manual review"
+   }
+  ]
+ },
+ {
+  "id": "q_082519e82d0d",
+  "type": "SCQ",
+  "stem": "What is training-serving skew?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "If training uses data or logic different from serving, offline metrics will not reflect production.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A slow network"
+   },
+   {
+    "key": "B",
+    "text": "A GPU hardware fault"
+   },
+   {
+    "key": "C",
+    "text": "A misspelt column name only"
+   },
+   {
+    "key": "D",
+    "text": "A mismatch between how features are computed in training and in production serving"
+   }
+  ]
+ },
+ {
+  "id": "q_08276155f5a3",
+  "type": "MSQ",
+  "stem": "Select all risks if features are computed differently in training and serving.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Skew breaks the model's assumptions without raising obvious errors.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Offline metrics may not match online performance"
+   },
+   {
+    "key": "B",
+    "text": "Silent accuracy degradation after deployment"
+   },
+   {
+    "key": "C",
+    "text": "Hard-to-debug prediction differences"
+   },
+   {
+    "key": "D",
+    "text": "Lower storage cost guaranteed"
+   }
+  ]
+ },
+ {
+  "id": "q_0b2645e0486d",
+  "type": "SCQ",
+  "stem": "Which design reduces both cost and latency for repeat-card checks?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Precomputed aggregates give sub-10 ms lookups.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Recompute aggregates from raw logs on each request"
+   },
+   {
+    "key": "B",
+    "text": "Store nothing"
+   },
+   {
+    "key": "C",
+    "text": "Cache and precompute per-card and per-merchant risk aggregates in an online feature store"
+   },
+   {
+    "key": "D",
+    "text": "Query the data lake synchronously"
+   }
+  ]
+ },
+ {
+  "id": "q_0ced8443806b",
+  "type": "SCQ",
+  "stem": "For an email spam filter, which error is usually more harmful to users?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Missing a genuine email (an interview invitation, say) is costlier than seeing some spam, so thresholds are set conservatively.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A false negative: spam in the inbox"
+   },
+   {
+    "key": "B",
+    "text": "Both are always identical"
+   },
+   {
+    "key": "C",
+    "text": "Neither matters"
+   },
+   {
+    "key": "D",
+    "text": "A false positive: a legitimate email sent to the spam folder"
+   }
+  ]
+ },
+ {
+  "id": "q_0d13e5e4456d",
+  "type": "SCQ",
+  "stem": "In a multi-tenant RAG system, why apply access-control filters during retrieval rather than after?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Security must be enforced before candidates are formed, and it keeps result counts predictable.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Filters corrupt embeddings"
+   },
+   {
+    "key": "B",
+    "text": "Post-filtering can leak data or return too few results after discarding unauthorised candidates; pre-filtering enforces security within the index"
+   },
+   {
+    "key": "C",
+    "text": "Access control is unnecessary"
+   },
+   {
+    "key": "D",
+    "text": "Filtering after retrieval is always faster and safer"
+   }
+  ]
+ },
+ {
+  "id": "q_0e2740bec673",
+  "type": "NVQ",
+  "stem": "A document is ranked 1st by dense retrieval and 3rd by BM25. With Reciprocal Rank Fusion $\\sum 1/(k+r)$ and $k=60$, what is its fused score? Give 5 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.0322665,
+   "tol": 2e-05
+  },
+  "solution": "$1/61+1/63=0.016393+0.015873=0.032266$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1033e3c80b60",
+  "type": "INT",
+  "stem": "A moderation threshold produces 30 false negatives and 400 false positives. A false negative costs 50 units and a false positive costs 1 unit. What is the total expected cost $C_{FN}\\cdot FN+C_{FP}\\cdot FP$?",
+  "images": [],
+  "answer": {
+   "value": 1900.0
+  },
+  "solution": "$50\\times30+1\\times400=1500+400=1900$ units.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_11464ce53281",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Random train-test splitting of user interaction logs can overstate performance for a model that will predict future behaviour.\n\n**Reason (R):** Information from the future can leak into the training set when the split ignores time order.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A time-based split mimics deployment; random splits can place later events in training and earlier ones in test.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_1269189f69b8",
+  "type": "SCQ",
+  "stem": "A video platform's goal is long-term user satisfaction, but the team trains on click-through rate. What is the risk?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Proxy metrics can diverge from the true goal; add watch time, surveys or long-term metrics.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Optimising a proxy such as clicks can reward clickbait that lowers satisfaction"
+   },
+   {
+    "key": "B",
+    "text": "Clicks are always perfectly aligned with satisfaction"
+   },
+   {
+    "key": "C",
+    "text": "CTR cannot be measured"
+   },
+   {
+    "key": "D",
+    "text": "There is no risk"
+   }
+  ]
+ },
+ {
+  "id": "q_13a43d725c65",
+  "type": "SCQ",
+  "stem": "Why are prefill and decode treated differently when sizing LLM serving?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Different bottlenecks imply different optimal batch sizes and sometimes separate pools.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Prefill is compute-bound over the whole prompt, while decode is memory-bandwidth-bound one token at a time"
+   },
+   {
+    "key": "B",
+    "text": "Decode is compute-bound and prefill is network-bound"
+   },
+   {
+    "key": "C",
+    "text": "Neither uses the GPU"
+   },
+   {
+    "key": "D",
+    "text": "They are identical"
+   }
+  ]
+ },
+ {
+  "id": "q_13bef80c47b0",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Rather than fixed rules alone, fraud systems combine a model with a fallback rule engine.\n\n**Reason (R):** The rule engine provides deterministic safety when the model is unavailable or uncertain.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Each covers the other's weakness.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_159a48db2719",
+  "type": "SCQ",
+  "stem": "Why are features such as 'transactions in the last 5 minutes' computed with in-memory sliding windows?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Fast-changing velocity features need streaming computation.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They change every second and must be fresh, which a batch-refreshed store cannot provide"
+   },
+   {
+    "key": "B",
+    "text": "Because models cannot read stored features"
+   },
+   {
+    "key": "C",
+    "text": "They never change"
+   },
+   {
+    "key": "D",
+    "text": "To save disk space only"
+   }
+  ]
+ },
+ {
+  "id": "q_1660da5952ef",
+  "type": "NVQ",
+  "stem": "A payment system handles 500,000 transactions per day. What is the average rate in requests per second? Give 2 decimals (86,400 s per day).",
+  "images": [],
+  "answer": {
+   "value": 5.78704,
+   "tol": 0.01
+  },
+  "solution": "$500000/86400=5.79$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_18dac331a730",
+  "type": "NVQ",
+  "stem": "Expected-revenue ranking uses $P(\\text{click})\\times P(\\text{purchase}\\mid\\text{click})\\times\\text{price}\\times(1-\\text{return rate})$. For $P(click)=0.05$, $P(purchase|click)=0.10$, price 40 and return rate 0.2, what is the utility?",
+  "images": [],
+  "answer": {
+   "value": 0.16,
+   "tol": 0.001
+  },
+  "solution": "$0.05\\times0.10\\times40\\times0.8=0.16$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1f926ad18158",
+  "type": "SCQ",
+  "stem": "A spam filter team optimises overall accuracy on a stream where 2% of mail is spam. Why is accuracy a poor sole metric?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "With heavy imbalance, majority-class prediction scores high accuracy; use precision, recall or cost-weighted metrics.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Accuracy cannot be computed"
+   },
+   {
+    "key": "B",
+    "text": "A model that labels everything as not-spam is 98% accurate but useless"
+   },
+   {
+    "key": "C",
+    "text": "Accuracy is always correct for imbalanced data"
+   },
+   {
+    "key": "D",
+    "text": "Accuracy ignores true negatives only"
+   }
+  ]
+ },
+ {
+  "id": "q_229f8a01835f",
+  "type": "SCQ",
+  "stem": "Fraud labels from chargebacks can take 30 to 90 days to finalise. How can drift be monitored sooner?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Fast proxies for the delayed truth let teams react before final labels arrive.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use early surrogate signals such as 3-D Secure failures, instant dispute notices and manual review outcomes"
+   },
+   {
+    "key": "B",
+    "text": "Use random labels"
+   },
+   {
+    "key": "C",
+    "text": "Ignore labels"
+   },
+   {
+    "key": "D",
+    "text": "Wait for chargebacks only"
+   }
+  ]
+ },
+ {
+  "id": "q_2739a3c6cd70",
+  "type": "MSQ",
+  "stem": "Select all signals that are useful as implicit feedback for a video recommender.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Behavioural signals indicate preference; skips are strong negatives.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Watch time fraction"
+   },
+   {
+    "key": "B",
+    "text": "Clicks"
+   },
+   {
+    "key": "C",
+    "text": "Skips within a couple of seconds"
+   },
+   {
+    "key": "D",
+    "text": "The video's file name only"
+   }
+  ]
+ },
+ {
+  "id": "q_27b59ebeefd7",
+  "type": "SCQ",
+  "stem": "What does a fallback engine do in an ML serving path?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "It acts as a circuit breaker so the service still decides.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Labels data"
+   },
+   {
+    "key": "B",
+    "text": "Trains the model"
+   },
+   {
+    "key": "C",
+    "text": "Stores features"
+   },
+   {
+    "key": "D",
+    "text": "Applies deterministic rules when the model times out, errors or returns an uncertain score"
+   }
+  ]
+ },
+ {
+  "id": "q_28531364e0d4",
+  "type": "SCQ",
+  "stem": "Why combine dense vector search with BM25 keyword search in enterprise RAG?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The two retrievers fail differently, so fusion improves recall.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Dense search cannot rank"
+   },
+   {
+    "key": "B",
+    "text": "Hybrid search is always slower for no gain"
+   },
+   {
+    "key": "C",
+    "text": "BM25 captures semantics better"
+   },
+   {
+    "key": "D",
+    "text": "Dense retrieval captures meaning but can miss exact tokens such as part numbers or error codes, which BM25 matches"
+   }
+  ]
+ },
+ {
+  "id": "q_2c6c668220d3",
+  "type": "SCQ",
+  "stem": "A recommender trained on its own past recommendations gradually narrows what it shows. What is this problem and a mitigation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Models influence the data they later train on; exploration injects unbiased signal.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Network jitter"
+   },
+   {
+    "key": "B",
+    "text": "A feedback loop; add exploration (for example bandit layers) and debiasing of logged data"
+   },
+   {
+    "key": "C",
+    "text": "Overfitting to hardware"
+   },
+   {
+    "key": "D",
+    "text": "Label noise only"
+   }
+  ]
+ },
+ {
+  "id": "q_2d1b0a7161f6",
+  "type": "SCQ",
+  "stem": "What does an online feature store provide?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Online stores (for example in-memory key-value) serve feature vectors in milliseconds.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Model training hardware"
+   },
+   {
+    "key": "B",
+    "text": "Long-term raw log archiving"
+   },
+   {
+    "key": "C",
+    "text": "A user interface"
+   },
+   {
+    "key": "D",
+    "text": "Low-latency lookup of precomputed features at serving time"
+   }
+  ]
+ },
+ {
+  "id": "q_2ffac34c55e7",
+  "type": "MSQ",
+  "stem": "Select all failure modes that RAG evaluation should measure.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "RAG quality depends on retrieval and grounded generation.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Retrieval recall (relevant chunks present in the shortlist)"
+   },
+   {
+    "key": "B",
+    "text": "Faithfulness of the answer to the retrieved context"
+   },
+   {
+    "key": "C",
+    "text": "Citation correctness"
+   },
+   {
+    "key": "D",
+    "text": "The colour of the chat window"
+   }
+  ]
+ },
+ {
+  "id": "q_330d6b5f60dc",
+  "type": "SCQ",
+  "stem": "For a payment fraud decision with a 50 ms p99 SLA, the model server exceeds 35 ms. What should the system do?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A hard internal time limit protects the SLA; the fallback uses deterministic checks.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Wait indefinitely"
+   },
+   {
+    "key": "B",
+    "text": "Skip logging"
+   },
+   {
+    "key": "C",
+    "text": "Time out and let the fallback rules decide, while logging the event"
+   },
+   {
+    "key": "D",
+    "text": "Approve everything silently"
+   }
+  ]
+ },
+ {
+  "id": "q_33cc74d9331f",
+  "type": "SCQ",
+  "stem": "When should the spam filter hand a message to the fallback rules instead of trusting the model?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Borderline predictions are where heuristics (authentication results, blocklists) add safety.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Always for every message"
+   },
+   {
+    "key": "B",
+    "text": "When the model errors, times out or returns a score in an uncertain band such as 0.4 to 0.6"
+   },
+   {
+    "key": "C",
+    "text": "Only when the score is exactly 1"
+   },
+   {
+    "key": "D",
+    "text": "Never"
+   }
+  ]
+ },
+ {
+  "id": "q_34de9eb33d9d",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Pre-computing item embeddings in batch lowers online latency.\n\n**Reason (R):** The heavy item encoder does not have to run during requests.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Only the cheap lookup and dot product remain online.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_361cce7c9c20",
+  "type": "SCQ",
+  "stem": "What is feature hashing used for in high-cardinality categorical features?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Hashing bounds memory at the cost of some collisions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Making features unique per row"
+   },
+   {
+    "key": "B",
+    "text": "Mapping many category values into a fixed-size space so the embedding table has bounded memory"
+   },
+   {
+    "key": "C",
+    "text": "Increasing cardinality"
+   },
+   {
+    "key": "D",
+    "text": "Encrypting labels"
+   }
+  ]
+ },
+ {
+  "id": "q_36cf3b01e520",
+  "type": "SCQ",
+  "stem": "How can you prevent training-serving skew when building a training set from logged traffic?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Recomputing from today's state leaks the future and changes values; logged features are point-in-time correct.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Log the exact feature vector used at serving time and train on those logged features"
+   },
+   {
+    "key": "B",
+    "text": "Guess feature values"
+   },
+   {
+    "key": "C",
+    "text": "Use different code for training"
+   },
+   {
+    "key": "D",
+    "text": "Recompute features later from current database state"
+   }
+  ]
+ },
+ {
+  "id": "q_38714d9307c5",
+  "type": "SCQ",
+  "stem": "What does focal loss do?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Its modulating factor $(1-p_t)^\\gamma$ shrinks the contribution of confident predictions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Removes the need for labels"
+   },
+   {
+    "key": "B",
+    "text": "Down-weights well-classified (easy) examples so training focuses on hard, rare positives"
+   },
+   {
+    "key": "C",
+    "text": "Always lowers training time"
+   },
+   {
+    "key": "D",
+    "text": "Increases weight of easy negatives"
+   }
+  ]
+ },
+ {
+  "id": "q_391c0897850f",
+  "type": "SCQ",
+  "stem": "Why does a feature store usually keep both an online and an offline view?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Shared definitions across both views prevent training-serving skew.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Offline for point-in-time training data, online for low-latency serving, with consistent definitions between them"
+   },
+   {
+    "key": "B",
+    "text": "Because models need two copies"
+   },
+   {
+    "key": "C",
+    "text": "They are unrelated"
+   },
+   {
+    "key": "D",
+    "text": "To double the cost"
+   }
+  ]
+ },
+ {
+  "id": "q_3b5de8c74b51",
+  "type": "MSQ",
+  "stem": "Select all techniques that increase effective GPU utilisation in large-scale training.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Overlap, packing and non-blocking checkpoints reduce idle time.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Overlapping gradient communication with backward computation"
+   },
+   {
+    "key": "B",
+    "text": "Packing short sequences instead of padding"
+   },
+   {
+    "key": "C",
+    "text": "Asynchronous checkpointing to host memory"
+   },
+   {
+    "key": "D",
+    "text": "Running one GPU at a time"
+   }
+  ]
+ },
+ {
+  "id": "q_3c5b2e335f10",
+  "type": "NVQ",
+  "stem": "A search system receives 100,000,000 queries per day with a 3.5x peak factor. What is the peak queries per second? Round to the nearest integer.",
+  "images": [],
+  "answer": {
+   "value": 4050.93,
+   "tol": 1
+  },
+  "solution": "Average $=1157.4$; peak $=1157.4\\times3.5\\approx4051$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3d617a0aeb33",
+  "type": "SCQ",
+  "stem": "What are the two broad stages of a large-scale recommender?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Retrieval gives cheap coverage; ranking gives precision on a short list.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Training and labelling"
+   },
+   {
+    "key": "B",
+    "text": "Caching and logging"
+   },
+   {
+    "key": "C",
+    "text": "Encoding and compressing"
+   },
+   {
+    "key": "D",
+    "text": "Candidate retrieval (narrowing millions to hundreds) and ranking (scoring the candidates precisely)"
+   }
+  ]
+ },
+ {
+  "id": "q_454226a02250",
+  "type": "SCQ",
+  "stem": "A feed ranker times out. What is a sensible fail-open behaviour?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A degraded but valid feed is better than failure for a non-critical product.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Show nothing forever"
+   },
+   {
+    "key": "B",
+    "text": "Serve a simple fallback such as a reverse-chronological or popular feed"
+   },
+   {
+    "key": "C",
+    "text": "Block the user"
+   },
+   {
+    "key": "D",
+    "text": "Show an error page"
+   }
+  ]
+ },
+ {
+  "id": "q_45e0ff7e643d",
+  "type": "NVQ",
+  "stem": "Mixed-precision Adam training stores FP16 weights (2 bytes), FP16 gradients (2 bytes) and 12 bytes of optimiser state per parameter. For a 7-billion-parameter model, how many GB (1 GB = $10^9$ B) of model state?",
+  "images": [],
+  "answer": {
+   "value": 112.0,
+   "tol": 0.5
+  },
+  "solution": "$16$ bytes per parameter $\\times7\\times10^9=112\\times10^9$ B = 112 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_474f14afb11f",
+  "type": "SCQ",
+  "stem": "Why does a two-tower design suit candidate retrieval?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Decoupled towers avoid running the item network at request time.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Item embeddings can be precomputed offline and indexed for approximate nearest neighbour search"
+   },
+   {
+    "key": "B",
+    "text": "It needs no embeddings"
+   },
+   {
+    "key": "C",
+    "text": "It scores every item with a deep model per request"
+   },
+   {
+    "key": "D",
+    "text": "It forbids caching"
+   }
+  ]
+ },
+ {
+  "id": "q_4da068cc144e",
+  "type": "INT",
+  "stem": "A 10,000-token document is split into 500-token chunks with 100-token overlap (stride 400, last chunk may be shorter). How many chunks result?",
+  "images": [],
+  "answer": {
+   "value": 25.0
+  },
+  "solution": "Stride 400: chunks start at 0, 400, ..., so $\\lceil(10000-500)/400\\rceil+1=24+1=25$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4e7815e9d49e",
+  "type": "SCQ",
+  "stem": "Why is watch time better modelled with censoring-aware methods than plain squared error?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Survival-style models account for partial observations.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Watch time is always exactly known"
+   },
+   {
+    "key": "B",
+    "text": "MSE handles censoring automatically"
+   },
+   {
+    "key": "C",
+    "text": "Users who stop watching have unfinished, censored observations, which a plain regression treats as exact"
+   },
+   {
+    "key": "D",
+    "text": "Censoring only applies to text"
+   }
+  ]
+ },
+ {
+  "id": "q_4f9b5ac21480",
+  "type": "NVQ",
+  "stem": "Focal loss is $-\\alpha_t(1-p_t)^\\gamma\\log(p_t)$. For $\\alpha_t=1$, $\\gamma=2$ and a correctly classified example with $p_t=0.9$, what is the loss? Use natural log and give 5 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.00105361,
+   "tol": 2e-05
+  },
+  "solution": "$(0.1)^2\\times(-\\ln0.9)=0.01\\times0.10536=0.00105$; compare with plain cross-entropy 0.10536, a 100x reduction.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4fdb170e1ae6",
+  "type": "NVQ",
+  "stem": "With ZeRO stage 3 the 112 GB of model state is partitioned across 64 GPUs. How many GB per GPU (ignoring activations)? Give 2 decimals.",
+  "images": [],
+  "answer": {
+   "value": 1.75,
+   "tol": 0.01
+  },
+  "solution": "$112/64=1.75$ GB per GPU.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4fed864a955a",
+  "type": "NVQ",
+  "stem": "Using a 10x surge multiplier on the 5.79 average, what is the peak rate in requests per second? Round to the nearest integer.",
+  "images": [],
+  "answer": {
+   "value": 57.8704,
+   "tol": 1
+  },
+  "solution": "$5.787\\times10\\approx58$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_50b6b9417876",
+  "type": "SCQ",
+  "stem": "For a moderation model failure, which fail mode fits the highest-severity category?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Risk asymmetry: letting severe harm through costs more than delaying content.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Fail-open: publish everything"
+   },
+   {
+    "key": "B",
+    "text": "Fail-closed: hold or block content pending review"
+   },
+   {
+    "key": "C",
+    "text": "Delete all users"
+   },
+   {
+    "key": "D",
+    "text": "Ignore failures"
+   }
+  ]
+ },
+ {
+  "id": "q_50b9ccd3e0ed",
+  "type": "SCQ",
+  "stem": "Why monitor the distribution of model output scores, not only accuracy?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Prediction drift is a label-free early warning.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Accuracy is available instantly in all domains"
+   },
+   {
+    "key": "B",
+    "text": "Scores never change"
+   },
+   {
+    "key": "C",
+    "text": "Scores are labels"
+   },
+   {
+    "key": "D",
+    "text": "Labels may arrive late, but score shifts are visible immediately and often signal drift early"
+   }
+  ]
+ },
+ {
+  "id": "q_51aeb1b2e30c",
+  "type": "NVQ",
+  "stem": "With the same counts (80 TP, 20 FP, 40 FN), what is the recall? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.666667,
+   "tol": 0.001
+  },
+  "solution": "Recall $=TP/(TP+FN)=80/120=0.667$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_551fe838ebe1",
+  "type": "NVQ",
+  "stem": "An embedding table has 50 million items, 128 dimensions each, stored as float32 (4 bytes). How many GB (1 GB = $10^9$ B) does it take?",
+  "images": [],
+  "answer": {
+   "value": 25.6,
+   "tol": 0.1
+  },
+  "solution": "$5\\times10^7\\times128\\times4=2.56\\times10^{10}$ B = 25.6 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_5744e3f0ee92",
+  "type": "NVQ",
+  "stem": "To detect an absolute lift of 0.01 on a baseline conversion of 0.10 with a two-sided 5% test and 80% power, use $n\\approx2(z_{\\alpha/2}+z_\\beta)^2p(1-p)/\\delta^2$ per group with $z_{\\alpha/2}=1.96$ and $z_\\beta=0.8416$. About how many users per group? Round to the nearest hundred.",
+  "images": [],
+  "answer": {
+   "value": 14100.0,
+   "tol": 100
+  },
+  "solution": "$2(2.8016)^2(0.09)/0.0001=2\\times7.849\\times0.09/0.0001\\approx14{,}129$, so about 14,100 per group.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_595eeeb0980e",
+  "type": "SCQ",
+  "stem": "Before choosing a model, which step of an ML system design comes first?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The objective, target and constraints determine every later choice.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Pick the largest available model"
+   },
+   {
+    "key": "B",
+    "text": "Start labelling randomly"
+   },
+   {
+    "key": "C",
+    "text": "Buy GPUs"
+   },
+   {
+    "key": "D",
+    "text": "Clarify the product goal, the prediction target and the constraints (latency, cost, data)"
+   }
+  ]
+ },
+ {
+  "id": "q_5a59eb1ff0e0",
+  "type": "MSQ",
+  "stem": "Select all items that belong in the problem framing step of ML system design.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Framing is about what to predict, how success is measured and what limits apply; hyperparameters come later.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Defining the prediction target and how its labels will be obtained"
+   },
+   {
+    "key": "B",
+    "text": "Choosing business and model metrics"
+   },
+   {
+    "key": "C",
+    "text": "Stating latency, throughput and cost constraints"
+   },
+   {
+    "key": "D",
+    "text": "Tuning the learning rate of the final model"
+   }
+  ]
+ },
+ {
+  "id": "q_5c14262e7045",
+  "type": "NVQ",
+  "stem": "100 million chunks are embedded with 1,536 dimensions in float32 (4 bytes). How many GB (1 GB = $10^9$ B) is the raw vector store?",
+  "images": [],
+  "answer": {
+   "value": 614.4,
+   "tol": 0.5
+  },
+  "solution": "$10^8\\times1536\\times4=6.144\\times10^{11}$ B = 614.4 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_5dfe67789189",
+  "type": "SCQ",
+  "stem": "What problem does paged KV-cache management solve?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Allocating cache in fixed-size blocks, like OS paging, packs sequences efficiently.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Memory fragmentation and waste from variable-length sequences"
+   },
+   {
+    "key": "B",
+    "text": "Token pricing"
+   },
+   {
+    "key": "C",
+    "text": "Network jitter"
+   },
+   {
+    "key": "D",
+    "text": "Slow disks"
+   }
+  ]
+ },
+ {
+  "id": "q_5e9bec13b616",
+  "type": "SCQ",
+  "stem": "In multi-task ranking, how are objectives such as like, share and watch time usually combined?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A weighted sum expresses the product's relative value of each outcome.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "By taking only the first prediction"
+   },
+   {
+    "key": "B",
+    "text": "By ignoring all but clicks"
+   },
+   {
+    "key": "C",
+    "text": "By random choice"
+   },
+   {
+    "key": "D",
+    "text": "As a weighted utility of the predicted outcomes"
+   }
+  ]
+ },
+ {
+  "id": "q_5fd2da43bbdd",
+  "type": "NVQ",
+  "stem": "A model trained on negative-downsampled data (negatives kept with fraction $\\beta=0.1$) outputs $p'=0.5$. Using $p=\\beta p'/(1-p'+\\beta p')$, what is the corrected probability? Give 4 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.0909091,
+   "tol": 0.0005
+  },
+  "solution": "$p=0.1\\times0.5/(1-0.5+0.05)=0.05/0.55=0.0909$. Check: odds $p'/(1-p')=1$ scale by $\\beta$ to odds $0.1$, and $0.1/1.1=0.0909$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_63103ac9d55a",
+  "type": "NVQ",
+  "stem": "Actual demand is 10, 0, 5, 20 and the forecasts are 8, 2, 5, 25. What is WAPE $=\\sum|y-\\hat y|/\\sum|y|$? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.257143,
+   "tol": 0.001
+  },
+  "solution": "Errors: 2, 2, 0, 5 sum to 9; actuals sum to 35; $9/35=0.257$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_63f640206691",
+  "type": "MSQ",
+  "stem": "Select all reasons fraud systems need drift monitoring.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Adversarial, non-stationary data requires monitoring.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Fraudsters adapt their tactics over time"
+   },
+   {
+    "key": "B",
+    "text": "Ground-truth labels arrive late, so proxies are needed early"
+   },
+   {
+    "key": "C",
+    "text": "Feature distributions can shift with seasonal events"
+   },
+   {
+    "key": "D",
+    "text": "Fraud patterns are permanently fixed"
+   }
+  ]
+ },
+ {
+  "id": "q_6586910894d6",
+  "type": "SCQ",
+  "stem": "Why must probabilities be recalibrated after training on downsampled negatives?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The model sees an artificially high positive rate; applying the Bayes adjustment restores true odds.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Downsampling inflates the predicted positive probability relative to the true base rate, so thresholds and expected-cost calculations would be wrong"
+   },
+   {
+    "key": "B",
+    "text": "Downsampling lowers probabilities"
+   },
+   {
+    "key": "C",
+    "text": "Recalibration is only cosmetic"
+   },
+   {
+    "key": "D",
+    "text": "It makes the model deeper"
+   }
+  ]
+ },
+ {
+  "id": "q_6637d9b05c4d",
+  "type": "NVQ",
+  "stem": "A blocking stage must find true duplicate pairs. Out of 500 true duplicates, its top-k candidate lists contain 430 of them. What is recall@k as a decimal?",
+  "images": [],
+  "answer": {
+   "value": 0.86,
+   "tol": 0.001
+  },
+  "solution": "Recall@k $=430/500=0.86$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_682b4ed13107",
+  "type": "SCQ",
+  "stem": "In streaming anomaly detection, why distinguish drift from anomalies?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A shifted normal needs a refreshed model of normal.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Anomalies update the baseline"
+   },
+   {
+    "key": "B",
+    "text": "Drift always triggers pages"
+   },
+   {
+    "key": "C",
+    "text": "Drift should update the baseline of normal, while anomalies should trigger alerts; conflating them causes alert fatigue or missed incidents"
+   },
+   {
+    "key": "D",
+    "text": "They are the same thing"
+   }
+  ]
+ },
+ {
+  "id": "q_68357f8e12dd",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** On a loss spike or NaN gradients, rolling back to a recent checkpoint and skipping the offending batch is a common recovery strategy.\n\n**Reason (R):** Continuing from corrupted parameters can destroy previous progress.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Reloading a recent healthy state limits the damage.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_69da72772e0e",
+  "type": "SCQ",
+  "stem": "A team has weak labelled data for rare defect types. Which approach is suited?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Rare, diverse failures are hard to cover by supervised labels alone; models of normal data can flag deviations.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use accuracy only"
+   },
+   {
+    "key": "B",
+    "text": "Ignore rare defects"
+   },
+   {
+    "key": "C",
+    "text": "Unsupervised anomaly detection (for example reconstruction error) plus augmentation for the few labelled classes"
+   },
+   {
+    "key": "D",
+    "text": "Collect millions of labels before any model"
+   }
+  ]
+ },
+ {
+  "id": "q_71ef8b66235b",
+  "type": "INT",
+  "stem": "A conveyor delivers 50 units per second. How many milliseconds of time per unit does that leave for inspection?",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "$1000/50=20$ ms per unit.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_75f7fe59fe39",
+  "type": "NVQ",
+  "stem": "The pinball (quantile) loss for quantile $\\tau$ is $\\max(\\tau(y-\\hat y),(\\tau-1)(y-\\hat y))$. For $\\tau=0.9$, true $y=10$ and prediction $\\hat y=8$, what is the loss?",
+  "images": [],
+  "answer": {
+   "value": 1.8,
+   "tol": 0.001
+  },
+  "solution": "$y-\\hat y=2$; $0.9\\times2=1.8$ versus $(-0.1)\\times2=-0.2$; the max is 1.8.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_795c06818993",
+  "type": "SCQ",
+  "stem": "Why include an exploration mechanism (for example a bandit layer) in a recommender?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Without exploration the model only learns about what it already shows.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To avoid logging"
+   },
+   {
+    "key": "B",
+    "text": "To gather data on items the current model would not show, reducing feedback-loop bias and helping cold start"
+   },
+   {
+    "key": "C",
+    "text": "To make recommendations random for all users"
+   },
+   {
+    "key": "D",
+    "text": "To reduce model size"
+   }
+  ]
+ },
+ {
+  "id": "q_7e271b50c8a1",
+  "type": "SCQ",
+  "stem": "Why use different thresholds per policy category in a content moderation system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "High-severity harms warrant higher recall, low-severity ones may favour precision.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Categories are identical"
+   },
+   {
+    "key": "B",
+    "text": "Categories differ in severity and base rates, so each needs its own precision and recall trade-off"
+   },
+   {
+    "key": "C",
+    "text": "One global threshold is always optimal"
+   },
+   {
+    "key": "D",
+    "text": "Thresholds do not matter"
+   }
+  ]
+ },
+ {
+  "id": "q_8509e3713fe1",
+  "type": "SCQ",
+  "stem": "A product manager asks for 99.99% availability on a spam filter that depends on an ML model server. Which design element directly supports this goal?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The model is a dependency; a deterministic fallback keeps the service answering when it is unavailable.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A single model server"
+   },
+   {
+    "key": "B",
+    "text": "A rule-based fallback engine that handles requests when the model fails, times out or is uncertain"
+   },
+   {
+    "key": "C",
+    "text": "Removing monitoring"
+   },
+   {
+    "key": "D",
+    "text": "Retraining every hour"
+   }
+  ]
+ },
+ {
+  "id": "q_856142caf0a8",
+  "type": "NVQ",
+  "stem": "Training FLOPs per token are about $6N$ for $N$ parameters. For $N=10^{12}$ and a step of 4,000,000 tokens, how many $10^{19}$ FLOPs does one step need? Give one decimal.",
+  "images": [],
+  "answer": {
+   "value": 2.4,
+   "tol": 0.05
+  },
+  "solution": "$6\\times10^{12}\\times4\\times10^6=2.4\\times10^{19}$ FLOPs, i.e. 2.4 units of $10^{19}$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_86fe7070969d",
+  "type": "SCQ",
+  "stem": "With thresholds block at P(fraud) of at least 0.85, step-up authentication between 0.30 and 0.85, and approve below 0.30, what happens to a transaction scored 0.60?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "0.60 lies in the middle band, which triggers a challenge rather than a block.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It is sent to step-up authentication (for example 3-D Secure)"
+   },
+   {
+    "key": "B",
+    "text": "It is approved silently"
+   },
+   {
+    "key": "C",
+    "text": "It is blocked"
+   },
+   {
+    "key": "D",
+    "text": "It is ignored"
+   }
+  ]
+ },
+ {
+  "id": "q_8a8b3bd1d89e",
+  "type": "NVQ",
+  "stem": "With the same counts, what is the F1 score? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.727273,
+   "tol": 0.001
+  },
+  "solution": "$F_1=2PR/(P+R)=2(0.8)(0.667)/(1.467)=0.727$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8b447453c583",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Candidate retrieval should favour recall, while ranking should favour precision.\n\n**Reason (R):** Items missing from the candidate list can never be ranked, whereas the ranker can sort a short list carefully.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Cheap broad retrieval first, careful ranking last.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_8b6dd05cbd23",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Prepending document-level context (such as title and section) to a chunk before embedding can improve retrieval.\n\n**Reason (R):** A short chunk alone may lack the context needed to match a query.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Contextual embeddings disambiguate otherwise generic chunks.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_8c5a1aa6ef3d",
+  "type": "NVQ",
+  "stem": "Brute-force scoring of 800,000,000 items at 0.1 ms each would take how many seconds if done sequentially?",
+  "images": [],
+  "answer": {
+   "value": 80000.0,
+   "tol": 1
+  },
+  "solution": "$8\\times10^8\\times0.1$ ms $=8\\times10^7$ ms $=80{,}000$ s.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8cb65e95b0c8",
+  "type": "SCQ",
+  "stem": "Why are explicit skips and plain non-clicks treated differently in recommendation training data?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Implicit and explicit negatives carry different confidence and are often weighted differently.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Skips are positive labels"
+   },
+   {
+    "key": "B",
+    "text": "They are identical in meaning"
+   },
+   {
+    "key": "C",
+    "text": "Non-clicks are always explicit"
+   },
+   {
+    "key": "D",
+    "text": "A skip is a stronger negative signal, while a non-click may just mean the item was not noticed"
+   }
+  ]
+ },
+ {
+  "id": "q_8dd2d5f47a4b",
+  "type": "NVQ",
+  "stem": "A pipeline of $p=8$ stages runs $m=32$ micro-batches per step. The idle bubble fraction is $(p-1)/(m+p-1)$. What is it? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.179487,
+   "tol": 0.001
+  },
+  "solution": "$7/(32+7)=7/39=0.179$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8f024e7b9e36",
+  "type": "SCQ",
+  "stem": "Why is a gradient-boosted tree model often chosen for low-latency tabular scoring such as fraud?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Boosted trees compile to fast code and fit tabular features well.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It needs a GPU cluster"
+   },
+   {
+    "key": "B",
+    "text": "It cannot handle numeric features"
+   },
+   {
+    "key": "C",
+    "text": "It is slower than any neural network"
+   },
+   {
+    "key": "D",
+    "text": "It is accurate on tabular data and cheap to run on CPU with sub-10 ms inference"
+   }
+  ]
+ },
+ {
+  "id": "q_8f090a110844",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** In spam filtering, thresholds are usually set conservatively so that only high-probability spam is moved to the spam folder.\n\n**Reason (R):** A false positive harms users more than a false negative.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Therefore precision is prioritised over recall at the decision threshold.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_901ac2de0dd4",
+  "type": "SCQ",
+  "stem": "How does data drift differ from concept drift?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Either can degrade a model, and they are monitored differently.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Data drift changes the labels only"
+   },
+   {
+    "key": "B",
+    "text": "Concept drift only affects hardware"
+   },
+   {
+    "key": "C",
+    "text": "Data drift is a change in the input distribution; concept drift is a change in the input-output relationship"
+   },
+   {
+    "key": "D",
+    "text": "They are identical"
+   }
+  ]
+ },
+ {
+  "id": "q_93d8c9324337",
+  "type": "NVQ",
+  "stem": "Each email contributes 10 KB of sanitised metadata (1 KB = 1,000 B). At 2,893 requests per second, what is the ingestion bandwidth in MB per second (1 MB = $10^6$ B)? Give 2 decimals.",
+  "images": [],
+  "answer": {
+   "value": 28.93,
+   "tol": 0.01
+  },
+  "solution": "$2893\\times10{,}000=2.893\\times10^7$ B/s = 28.93 MB/s.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_940ccef50ecf",
+  "type": "SCQ",
+  "stem": "What does continuous batching improve over static batching in LLM serving?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Per-iteration scheduling avoids idle slots from finished sequences.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It makes every request wait for the longest one"
+   },
+   {
+    "key": "B",
+    "text": "It removes the need for a GPU"
+   },
+   {
+    "key": "C",
+    "text": "GPUs stay busy because new requests join the batch as soon as any sequence finishes"
+   },
+   {
+    "key": "D",
+    "text": "It disables KV caching"
+   }
+  ]
+ },
+ {
+  "id": "q_9442d97afb3a",
+  "type": "NVQ",
+  "stem": "A stream of 100,000,000 emails per day arrives. What is the average request rate per second (86,400 s per day)? Round to the nearest integer.",
+  "images": [],
+  "answer": {
+   "value": 1157.41,
+   "tol": 1
+  },
+  "solution": "$10^8/86400\\approx1157$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_9734c5916b12",
+  "type": "MSQ",
+  "stem": "Select all ways to cope with severe class imbalance (positives under 2%).",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Resampling, loss shaping and weighting address skew, while accuracy hides it.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Downsample negatives and recalibrate probabilities"
+   },
+   {
+    "key": "B",
+    "text": "Use a loss that down-weights easy examples such as focal loss"
+   },
+   {
+    "key": "C",
+    "text": "Use class weights"
+   },
+   {
+    "key": "D",
+    "text": "Evaluate only with accuracy"
+   }
+  ]
+ },
+ {
+  "id": "q_975b74711ae5",
+  "type": "SCQ",
+  "stem": "Why does a diversity filter after ranking improve a feed?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Re-ranking for variety counters redundancy among top-scored items.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It increases model size"
+   },
+   {
+    "key": "B",
+    "text": "Pure score ranking can show many near-identical items; diversification improves long-term satisfaction"
+   },
+   {
+    "key": "C",
+    "text": "It removes the ranker"
+   },
+   {
+    "key": "D",
+    "text": "It lowers latency"
+   }
+  ]
+ },
+ {
+  "id": "q_98cd460fdf61",
+  "type": "SCQ",
+  "stem": "A burst arrives that exceeds the GPU fleet's capacity. Which behaviour is preferable?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Graceful degradation protects latency for admitted requests.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Crash all servers"
+   },
+   {
+    "key": "B",
+    "text": "Accept unlimited requests with no limit"
+   },
+   {
+    "key": "C",
+    "text": "Silently drop random tokens"
+   },
+   {
+    "key": "D",
+    "text": "Queue with backpressure and shed excess load gracefully while autoscaling"
+   }
+  ]
+ },
+ {
+  "id": "q_9919f00142ee",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A PSI-based alert can trigger an automated retraining job.\n\n**Reason (R):** A large shift between live and training distributions suggests the model may be out of date.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Thresholds on PSI are a common retrain trigger.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_9a3a73ac3f4d",
+  "type": "NVQ",
+  "stem": "An EWMA baseline is $S_t=\\alpha x_t+(1-\\alpha)S_{t-1}$. With $\\alpha=0.3$, $S_{t-1}=100$ and a new value $x_t=120$, what is $S_t$?",
+  "images": [],
+  "answer": {
+   "value": 106.0,
+   "tol": 0.01
+  },
+  "solution": "$0.3\\times120+0.7\\times100=36+70=106$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_9a57267473c2",
+  "type": "SCQ",
+  "stem": "In an ads system, which failure mode is recommended when the model is down?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Blind bidding can exhaust advertiser spend on unvalued impressions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Bid maximum on everything"
+   },
+   {
+    "key": "B",
+    "text": "Randomise prices"
+   },
+   {
+    "key": "C",
+    "text": "Ignore the budget"
+   },
+   {
+    "key": "D",
+    "text": "Fail-closed in the sense of lowering or withholding bids rather than bidding blindly"
+   }
+  ]
+ },
+ {
+  "id": "q_9d8db6a425ec",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A feature store reduces duplicated feature engineering across teams.\n\n**Reason (R):** It centralises feature definitions that many models can reuse consistently.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Shared definitions mean one implementation serves training and serving for all consumers.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_9eb7df379d15",
+  "type": "MSQ",
+  "stem": "Select all guardrail layers commonly placed around an LLM application.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Defence in depth covers inputs, outputs and usage.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Input filtering for prompt injection and policy violations"
+   },
+   {
+    "key": "B",
+    "text": "Output moderation or validation before returning"
+   },
+   {
+    "key": "C",
+    "text": "Per-user rate limits and cost budgets"
+   },
+   {
+    "key": "D",
+    "text": "Trusting every user instruction"
+   }
+  ]
+ },
+ {
+  "id": "q_9fe8a7e1f62b",
+  "type": "SCQ",
+  "stem": "What does a cross-encoder reranker do that a bi-encoder retriever does not?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Joint encoding is more accurate but too expensive for the full corpus, so it reranks a shortlist.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It stores embeddings only"
+   },
+   {
+    "key": "B",
+    "text": "It reads the query and each chunk together, so it can model their interaction more precisely, at higher cost"
+   },
+   {
+    "key": "C",
+    "text": "It never uses the query"
+   },
+   {
+    "key": "D",
+    "text": "It searches the whole corpus first"
+   }
+  ]
+ },
+ {
+  "id": "q_a014a112ba27",
+  "type": "NVQ",
+  "stem": "Using the average of about 1,157 requests per second and a 2.5x peak multiplier, what is the peak requests per second? Round to the nearest integer.",
+  "images": [],
+  "answer": {
+   "value": 2893.52,
+   "tol": 2
+  },
+  "solution": "Peak $\\approx1157\\times2.5\\approx2893$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a53e8d3750a4",
+  "type": "NVQ",
+  "stem": "KV-cache memory per sequence is $2\\times L\\times H\\times D\\times S\\times\\text{bytes}$. For $L=32$ layers, $H=32$ heads, $D=128$, $S=4096$ tokens and 2 bytes (FP16), how many GB (1 GB = $10^9$ B)? Give 2 decimals.",
+  "images": [],
+  "answer": {
+   "value": 2.14748,
+   "tol": 0.01
+  },
+  "solution": "$2\\times32\\times32\\times128\\times4096\\times2=2.147\\times10^9$ B = 2.15 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a954be8eb482",
+  "type": "MSQ",
+  "stem": "Select all fail-mode choices that match their domain risk asymmetry.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Choose the safe default per domain; unchecked approval in payments is not a safe fallback.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Fail-open to BM25 results in search when the ranker times out"
+   },
+   {
+    "key": "B",
+    "text": "Fail-closed for high-severity content moderation"
+   },
+   {
+    "key": "C",
+    "text": "Fail-to-manual-lane for a defect inspection model failure"
+   },
+   {
+    "key": "D",
+    "text": "Fail-open in a payment system by approving everything with no check"
+   }
+  ]
+ },
+ {
+  "id": "q_ad3ba06948f8",
+  "type": "SCQ",
+  "stem": "A fraud model needs 'transactions by this card in the last 5 minutes'. Where should it be computed?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Fast-changing velocity features need streaming computation, slow-changing ones can be precomputed.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "With in-memory sliding-window counters updated by the event stream, while static features come from the feature store"
+   },
+   {
+    "key": "B",
+    "text": "Taken from last month's batch only"
+   },
+   {
+    "key": "C",
+    "text": "Not used at all"
+   },
+   {
+    "key": "D",
+    "text": "Recomputed by scanning the transaction table on each request"
+   }
+  ]
+ },
+ {
+  "id": "q_aded83c83f74",
+  "type": "SCQ",
+  "stem": "How can a brand new item with no interactions be recommended at all?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Content features provide an initial representation before behaviour data exists.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Assign a random user id"
+   },
+   {
+    "key": "B",
+    "text": "Wait a year"
+   },
+   {
+    "key": "C",
+    "text": "It cannot be recommended ever"
+   },
+   {
+    "key": "D",
+    "text": "Use content-based embeddings from its text or images, and give it exploration traffic"
+   }
+  ]
+ },
+ {
+  "id": "q_af34684f4e90",
+  "type": "NVQ",
+  "stem": "A cache of known spam hashes and trusted senders handles 30% of a peak load of 2,893 requests per second before the model. How many requests per second reach the model? Round to the nearest integer.",
+  "images": [],
+  "answer": {
+   "value": 2025.1,
+   "tol": 1
+  },
+  "solution": "$2893\\times0.7\\approx2025$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b15a671e5dfb",
+  "type": "SCQ",
+  "stem": "A cache layer in front of a recommender stores whole feeds keyed by user with a 5 to 15 minute TTL. What is the main trade-off?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Short TTLs and event-driven invalidation bound staleness.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Lower load and latency versus slightly stale recommendations, mitigated by invalidating on high-intent events"
+   },
+   {
+    "key": "B",
+    "text": "No trade-off exists"
+   },
+   {
+    "key": "C",
+    "text": "Caches remove the need for models"
+   },
+   {
+    "key": "D",
+    "text": "Caches always make results fresher"
+   }
+  ]
+ },
+ {
+  "id": "q_b3a50b26b631",
+  "type": "NVQ",
+  "stem": "For a cost-per-click ad, expected revenue per thousand impressions is $P(click)\\times\\text{bid}\\times1000$. With $P(click)=0.02$ and a bid of 0.50 dollars per click, what is the eCPM in dollars?",
+  "images": [],
+  "answer": {
+   "value": 10.0,
+   "tol": 0.01
+  },
+  "solution": "$0.02\\times0.50\\times1000=10$ dollars per thousand impressions.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b4ba4b1a31ae",
+  "type": "SCQ",
+  "stem": "Why does an ads auction rank by expected value rather than by predicted click probability alone?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "eCPM (expected revenue per thousand impressions) combines probability and bid; miscalibration misprices the auction.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Bids are ignored always"
+   },
+   {
+    "key": "B",
+    "text": "Price depends on bid and probabilities together, so calibration error directly changes advertiser cost and revenue"
+   },
+   {
+    "key": "C",
+    "text": "Clicks are irrelevant"
+   },
+   {
+    "key": "D",
+    "text": "Calibration does not matter"
+   }
+  ]
+ },
+ {
+  "id": "q_b69b8b57c2e8",
+  "type": "NVQ",
+  "stem": "Training data has 1 positive per 100 negatives. After downsampling negatives with sampling fraction $\\beta=0.1$, the positive-to-negative ratio becomes 1 to what number of negatives?",
+  "images": [],
+  "answer": {
+   "value": 10.0,
+   "tol": 0.01
+  },
+  "solution": "Keeping 10% of negatives turns 100 negatives into 10, so the ratio is 1:10.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DATA",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b9d247c55158",
+  "type": "NVQ",
+  "stem": "Peak per-GPU throughput is $1.979\\times10^{15}$ FLOP/s and utilisation (MFU) is 60%, on 10,000 GPUs. For a step of $2.4\\times10^{19}$ FLOPs, how many seconds does a step take? Give 2 decimals.",
+  "images": [],
+  "answer": {
+   "value": 2.02122,
+   "tol": 0.01
+  },
+  "solution": "Cluster rate $=10^4\\times0.6\\times1.979\\times10^{15}=1.187\\times10^{19}$ FLOP/s; time $=2.4/1.187=2.02$ s.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_bc295176e68b",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Training on a 1:10 positive-to-negative ratio instead of the natural 1:100 ratio usually requires recalibrating output probabilities.\n\n**Reason (R):** The model learns a base rate that differs from the real one.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The adjusted prior shifts the output odds, which the Bayes correction undoes.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_bd29ae1be1b6",
+  "type": "SCQ",
+  "stem": "Why does an ETA system fall back to historical averages when live traffic is missing?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Fail-open keeps the product functional with lower accuracy.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Live traffic is never needed"
+   },
+   {
+    "key": "B",
+    "text": "Historical averages are always more accurate"
+   },
+   {
+    "key": "C",
+    "text": "It saves no cost"
+   },
+   {
+    "key": "D",
+    "text": "A degraded estimate is better than blocking the request"
+   }
+  ]
+ },
+ {
+  "id": "q_bdcce8657c01",
+  "type": "SCQ",
+  "stem": "Static item features (genre, text embedding) and session features (last three clicks) are both needed to rank. Which split is standard?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Slow-changing features can be precomputed in batch; fast-changing context must be fresh.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Ignore session context"
+   },
+   {
+    "key": "B",
+    "text": "Compute item embeddings on each request"
+   },
+   {
+    "key": "C",
+    "text": "Compute everything offline once a year"
+   },
+   {
+    "key": "D",
+    "text": "Precompute item embeddings offline and compute session context online at request time"
+   }
+  ]
+ },
+ {
+  "id": "q_bfa5450cb049",
+  "type": "INT",
+  "stem": "A p99 latency budget of 50 ms is split into feature lookup 5 ms, model inference 15 ms, decision 5 ms. How many milliseconds remain for network and other overhead?",
+  "images": [],
+  "answer": {
+   "value": 25.0
+  },
+  "solution": "$50-5-15-5=25$ ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_bfe47d03a9b9",
+  "type": "SCQ",
+  "stem": "What is concept drift?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The same features now imply different labels.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The input data format is fixed"
+   },
+   {
+    "key": "B",
+    "text": "The relationship between inputs and the target changes over time (for example spammers change tactics)"
+   },
+   {
+    "key": "C",
+    "text": "The GPU gets hotter"
+   },
+   {
+    "key": "D",
+    "text": "The model file is renamed"
+   }
+  ]
+ },
+ {
+  "id": "q_c126ddaaf044",
+  "type": "NVQ",
+  "stem": "Baseline score-bin shares are 0.70, 0.10 and 0.20; live shares are 0.40, 0.30 and 0.30. Using $PSI=\\sum(P_i-Q_i)\\ln(P_i/Q_i)$ (P live, Q baseline), what is PSI? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.428154,
+   "tol": 0.002
+  },
+  "solution": "Terms: $(-0.30)\\ln(0.4/0.7)=0.168$; $0.20\\ln3=0.220$; $0.10\\ln1.5=0.041$; total $0.428$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_c251180e0113",
+  "type": "INT",
+  "stem": "One CPU core runs an INT8 spam model at 100 requests per second. How many cores are needed for 2,893 requests per second (round up)?",
+  "images": [],
+  "answer": {
+   "value": 29.0
+  },
+  "solution": "$2893/100=28.93$, so 29 cores.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_c6ff83dea738",
+  "type": "MSQ",
+  "stem": "Select all measures that make a classifier more robust to adversarial evasion.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Evasion is an arms race; training on perturbations and updating quickly help.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Adversarial data augmentation such as leetspeak and homoglyph perturbations"
+   },
+   {
+    "key": "B",
+    "text": "Frequent retraining on fresh feedback"
+   },
+   {
+    "key": "C",
+    "text": "Combining fast lexical filters with a deep model"
+   },
+   {
+    "key": "D",
+    "text": "Never updating the model"
+   }
+  ]
+ },
+ {
+  "id": "q_c7b39ae69eb5",
+  "type": "NVQ",
+  "stem": "A GPU costs 2.50 dollars per hour and sustains 2,500 generated tokens per second. What is the compute cost per million tokens in dollars? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 0.277778,
+   "tol": 0.001
+  },
+  "solution": "Tokens per hour $=9\\times10^6$; cost per million $=2.5/9=0.278$ dollars.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ca7fd8d92f03",
+  "type": "MSQ",
+  "stem": "Select all model-side tricks to meet a strict CPU latency budget.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Quantisation, distillation and compilation reduce inference cost; more layers increase it.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "INT8 quantisation"
+   },
+   {
+    "key": "B",
+    "text": "Distilling a large model into a smaller one"
+   },
+   {
+    "key": "C",
+    "text": "Compiling trees or exporting to an optimised runtime such as ONNX"
+   },
+   {
+    "key": "D",
+    "text": "Adding more layers"
+   }
+  ]
+ },
+ {
+  "id": "q_ce3bc415bc00",
+  "type": "SCQ",
+  "stem": "What does linear learning-rate scaling suggest when the global batch grows from 256 to 2,048 with base learning rate 0.1?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The heuristic scales the rate in proportion to batch size; warm-up stabilises early steps.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Scale the learning rate by the same factor to 0.8, usually with warm-up"
+   },
+   {
+    "key": "B",
+    "text": "Set it to zero"
+   },
+   {
+    "key": "C",
+    "text": "Use 0.0125"
+   },
+   {
+    "key": "D",
+    "text": "Keep 0.1 always"
+   }
+  ]
+ },
+ {
+  "id": "q_cfd6ad04c5bb",
+  "type": "SCQ",
+  "stem": "A moderation team has a fixed human review budget. Which sampling approach gets more value per review?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Uncertain items provide the most information per label.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Reviewing nothing"
+   },
+   {
+    "key": "B",
+    "text": "Active learning that sends the most uncertain or highest-impact items to reviewers"
+   },
+   {
+    "key": "C",
+    "text": "Random sampling only"
+   },
+   {
+    "key": "D",
+    "text": "Reviewing the most confident items"
+   }
+  ]
+ },
+ {
+  "id": "q_d03f13cabe1c",
+  "type": "NVQ",
+  "stem": "In speculative decoding, with draft acceptance rate $\\alpha=0.8$ and $k=4$ drafted tokens, the expected tokens produced per verification step is $(1-\\alpha^{k+1})/(1-\\alpha)$. What is it? Give 3 decimals.",
+  "images": [],
+  "answer": {
+   "value": 3.3616,
+   "tol": 0.002
+  },
+  "solution": "$(1-0.8^5)/0.2=(1-0.32768)/0.2=3.362$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d2978de7345b",
+  "type": "SCQ",
+  "stem": "Why place tensor-parallel groups within a single node?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Layer-level collectives happen several times per layer, so they belong on the fastest links.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Tensor parallelism needs no communication"
+   },
+   {
+    "key": "B",
+    "text": "Intra-node links are slower than the network"
+   },
+   {
+    "key": "C",
+    "text": "It reduces model size"
+   },
+   {
+    "key": "D",
+    "text": "Tensor parallelism needs frequent, high-bandwidth communication that fast intra-node links (NVLink) provide"
+   }
+  ]
+ },
+ {
+  "id": "q_d4926d75a331",
+  "type": "SCQ",
+  "stem": "Why validate blocking recall@k separately from end-to-end precision in a duplicate detection system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Duplicates not retrieved by blocking can never be scored.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A low-recall blocking stage silently caps overall recall regardless of how good the pairwise scorer is"
+   },
+   {
+    "key": "B",
+    "text": "Precision and recall are the same"
+   },
+   {
+    "key": "C",
+    "text": "Blocking does not affect results"
+   },
+   {
+    "key": "D",
+    "text": "The scorer always fixes missed candidates"
+   }
+  ]
+ },
+ {
+  "id": "q_d4bb99a83113",
+  "type": "SCQ",
+  "stem": "How should cached retrieval results be handled when a source document is deleted?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Targeted invalidation prevents serving removed content.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Ignore deletions"
+   },
+   {
+    "key": "B",
+    "text": "Wait for TTL only"
+   },
+   {
+    "key": "C",
+    "text": "Invalidate cache entries keyed by tenant and document id, driven by change-data-capture events"
+   },
+   {
+    "key": "D",
+    "text": "Delete the whole cache every second"
+   }
+  ]
+ },
+ {
+  "id": "q_d5630176e636",
+  "type": "NVQ",
+  "stem": "A two-stage system spends 5 ms on ANN retrieval and then ranks 500 candidates at 0.05 ms each. What is the total latency in ms?",
+  "images": [],
+  "answer": {
+   "value": 30.0,
+   "tol": 0.01
+  },
+  "solution": "$5+500\\times0.05=5+25=30$ ms.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d6dbbb4c5bf6",
+  "type": "NVQ",
+  "stem": "Quantising those vectors to int8 (1 byte per dimension) gives how many GB?",
+  "images": [],
+  "answer": {
+   "value": 153.6,
+   "tol": 0.5
+  },
+  "solution": "$10^8\\times1536=1.536\\times10^{11}$ B = 153.6 GB, a 75% reduction.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.RAG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_da57d5452eff",
+  "type": "MSQ",
+  "stem": "Select all components typically on a low-latency recommendation serving path.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Training happens offline and is not in the request path.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Cache layer"
+   },
+   {
+    "key": "B",
+    "text": "ANN candidate retrieval"
+   },
+   {
+    "key": "C",
+    "text": "Online feature store lookup"
+   },
+   {
+    "key": "D",
+    "text": "Offline GPU training cluster"
+   }
+  ]
+ },
+ {
+  "id": "q_db0a556d64bc",
+  "type": "NVQ",
+  "stem": "The same table is compressed with product quantization into 16 bytes per vector. What is the new size in GB?",
+  "images": [],
+  "answer": {
+   "value": 0.8,
+   "tol": 0.01
+  },
+  "solution": "$5\\times10^7\\times16=8\\times10^8$ B = 0.8 GB, a 32x reduction versus 25.6 GB.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FEAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_dccf07e29b9b",
+  "type": "INT",
+  "stem": "A search-ranking case study lists monthly costs of 1,950; 900; 2,200; 750; 800; 300; 350 dollars. What is the total, and thus how many dollars below an 8,000 dollar budget is it?",
+  "images": [],
+  "answer": {
+   "value": 750.0
+  },
+  "solution": "Total $=7250$; headroom $=8000-7250=750$ dollars.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_dd4bd2fb0835",
+  "type": "SCQ",
+  "stem": "Why is recalibration needed for fraud models trained at a 1:10 fraud-to-legitimate ratio when real fraud is below 0.1%?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Downsampled training changes the prior; correcting it restores meaningful probabilities.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Without it, predicted probabilities greatly overstate true fraud risk and thresholds mis-fire"
+   },
+   {
+    "key": "B",
+    "text": "Models cannot learn without it"
+   },
+   {
+    "key": "C",
+    "text": "It speeds up inference"
+   },
+   {
+    "key": "D",
+    "text": "It removes label delay"
+   }
+  ]
+ },
+ {
+  "id": "q_de775f158117",
+  "type": "SCQ",
+  "stem": "In a two-tower recommender, how is the match score between user and item computed?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Separate towers produce embeddings; the dot product allows precomputing item vectors and fast ANN search.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MODEL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "As a dot product of the user tower output and the item tower output"
+   },
+   {
+    "key": "B",
+    "text": "As the sum of ids"
+   },
+   {
+    "key": "C",
+    "text": "As a database join"
+   },
+   {
+    "key": "D",
+    "text": "As the length of the user name"
+   }
+  ]
+ },
+ {
+  "id": "q_e050b1bfe3bc",
+  "type": "SCQ",
+  "stem": "In near-duplicate product detection, why are uncertain pairs sent to human review instead of auto-merged?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Precision matters more than recall for irreversible actions.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Humans are faster than models"
+   },
+   {
+    "key": "B",
+    "text": "Merging is always safe"
+   },
+   {
+    "key": "C",
+    "text": "Models cannot output scores"
+   },
+   {
+    "key": "D",
+    "text": "A wrong auto-merge corrupts product pages, while a missed duplicate is only a minor nuisance"
+   }
+  ]
+ },
+ {
+  "id": "q_e54f2b93298f",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** In fraud detection, declining a legitimate payment can cost more than allowing one fraudulent charge.\n\n**Reason (R):** A false positive causes customer friction and lost revenue, whereas a single fraudulent charge has bounded loss.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "That is why thresholds and step-up authentication are tuned against both costs, not only to maximise catches.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_e5d0b0cf11d5",
+  "type": "MSQ",
+  "stem": "Select all useful operational metrics for an ML serving system.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Latency, errors and score distributions reveal health and drift.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.MON",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "p99 latency"
+   },
+   {
+    "key": "B",
+    "text": "Error and timeout rate"
+   },
+   {
+    "key": "C",
+    "text": "Prediction score distribution"
+   },
+   {
+    "key": "D",
+    "text": "The model's file name"
+   }
+  ]
+ },
+ {
+  "id": "q_e6839f5216c3",
+  "type": "SCQ",
+  "stem": "Spammers insert zero-width characters and look-alike letters. What preprocessing helps?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Normalising text removes cheap obfuscation before the model sees it.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.CLF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Remove the model"
+   },
+   {
+    "key": "B",
+    "text": "Unicode normalisation and OCR for image-only bodies before tokenisation"
+   },
+   {
+    "key": "C",
+    "text": "Lower the learning rate"
+   },
+   {
+    "key": "D",
+    "text": "Increase cache TTL"
+   }
+  ]
+ },
+ {
+  "id": "q_e973d4de389c",
+  "type": "SCQ",
+  "stem": "In a design problem, an explicit cost cap such as 3,000 dollars per month most directly influences which choice?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Hard budgets prune expensive offline training, GPU serving and large stores first.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAME",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The font size"
+   },
+   {
+    "key": "B",
+    "text": "Which components are affordable, for example lightweight CPU models instead of persistent GPU clusters"
+   },
+   {
+    "key": "C",
+    "text": "The colour of the dashboard"
+   },
+   {
+    "key": "D",
+    "text": "The programming language of the UI"
+   }
+  ]
+ },
+ {
+  "id": "q_ead386c5d02b",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Quantising model weights to INT8 or INT4 can allow larger batches or bigger models per GPU.\n\n**Reason (R):** Lower-precision weights occupy less memory.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Freed memory can hold more KV cache or parameters, with some quality trade-off.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_f0de029b4d93",
+  "type": "NVQ",
+  "stem": "Using the same cluster rate of $1.1874\\times10^{19}$ FLOP/s, how many days to train on $10^{13}$ tokens with $N=10^{12}$ parameters ($6NT$ FLOPs)? Round to one decimal.",
+  "images": [],
+  "answer": {
+   "value": 58.4845,
+   "tol": 0.1
+  },
+  "solution": "FLOPs $=6\\times10^{12}\\times10^{13}=6\\times10^{25}$; seconds $=6\\times10^{25}/1.1874\\times10^{19}=5.05\\times10^6$; days $=58.5$.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.DIST",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_f1cc98deae13",
+  "type": "SCQ",
+  "stem": "What is a reasonable behaviour when the fraud model server fails?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A rule-based fallback keeps the business running with bounded risk.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.FRAUD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Approve everything without any check or log"
+   },
+   {
+    "key": "B",
+    "text": "Crash the gateway"
+   },
+   {
+    "key": "C",
+    "text": "Apply deterministic hard checks (for example AVS/CVV and IP-location rules) and flag transactions for asynchronous review if none is breached"
+   },
+   {
+    "key": "D",
+    "text": "Block all payments"
+   }
+  ]
+ },
+ {
+  "id": "q_f3436a4e92cf",
+  "type": "SCQ",
+  "stem": "An offline metric improves but the online A/B test shows no lift. What is the most plausible explanation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Offline evaluation is a proxy; online experiments measure the real outcome.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The A/B test is always wrong"
+   },
+   {
+    "key": "B",
+    "text": "The offline metric or data did not reflect the production setting (for example skew, bias or proxy mismatch)"
+   },
+   {
+    "key": "C",
+    "text": "Offline metrics are exact predictors"
+   },
+   {
+    "key": "D",
+    "text": "Users are random"
+   }
+  ]
+ },
+ {
+  "id": "q_f3f5dbc905ff",
+  "type": "SCQ",
+  "stem": "Why is a funnel (retrieve hundreds of candidates, then rank) used instead of scoring the whole catalogue?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Cheap coverage first, expensive precision last: the funnel keeps latency within budget.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.SERVE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Retrieval is more accurate than ranking"
+   },
+   {
+    "key": "B",
+    "text": "Catalogues are always small"
+   },
+   {
+    "key": "C",
+    "text": "Ranking models cannot score items"
+   },
+   {
+    "key": "D",
+    "text": "Scoring hundreds of millions of items per request with a heavy model is far too slow"
+   }
+  ]
+ },
+ {
+  "id": "q_f4c94733097a",
+  "type": "NVQ",
+  "stem": "A service has an average of 10,000 requests in flight and a mean request duration of 4 seconds. By Little's law, what throughput in requests per second does it sustain?",
+  "images": [],
+  "answer": {
+   "value": 2500.0,
+   "tol": 1
+  },
+  "solution": "$\\lambda=L/W=10000/4=2500$ requests per second.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.LLMOPS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_f65d5df1d981",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Logged recommendation data has position bias, so raw click rates overstate the quality of items shown at the top.\n\n**Reason (R):** Items shown higher get more attention regardless of relevance.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Inverse propensity weighting is one correction for such bias.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.EVAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_f8bde650e95a",
+  "type": "NVQ",
+  "stem": "A homepage funnel goes from 500,000,000 products to 500 candidates. By what factor does retrieval reduce the number of items to score?",
+  "images": [],
+  "answer": {
+   "value": 1000000.0,
+   "tol": 1
+  },
+  "solution": "$5\\times10^8/500=1{,}000{,}000$, a millionfold reduction.\n\n*Verified by: recomputed by script (the stored answer is the computed value).*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_fdcc03542b80",
+  "type": "SCQ",
+  "stem": "Why use Reciprocal Rank Fusion rather than adding raw scores from different retrievers?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "RRF sums $1/(k+\\text{rank})$ over retrievers, so scale differences do not matter.\n\n*Verified by: definition-level cross-check against the owner's study notes and standard references.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "MSD",
+   "chapter": "MSD.REC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "ML_SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Raw scores come from different scales, whereas RRF uses only ranks and needs no calibration"
+   },
+   {
+    "key": "B",
+    "text": "Ranks are more precise than scores"
+   },
+   {
+    "key": "C",
+    "text": "RRF needs labelled data"
+   },
+   {
+    "key": "D",
+    "text": "Scores cannot be sorted"
+   }
+  ]
+ }
+]
