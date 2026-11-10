@@ -47,7 +47,7 @@ export const clampField = (k: Exclude<keyof RoadmapConfig, 'phases'>, v: number)
 export const clampPhase = (v: number): number => clamp(v, RANGES.phase, 1);
 
 /** Every field clamped into its allowed range. Phase order is checked separately (see phaseErrors). */
-export function clampRoadmap(c: Partial<RoadmapConfig> & { phases?: Partial<Record<EditablePhase, number>> }): RoadmapConfig {
+export function clampRoadmap(c: Partial<Omit<RoadmapConfig, 'phases'>> & { phases?: Partial<Record<EditablePhase, number>> }): RoadmapConfig {
   const phases = { ...DEFAULT_ROADMAP.phases };
   for (const id of EDITABLE_PHASES) phases[id] = clamp(c.phases?.[id], RANGES.phase, DEFAULT_ROADMAP.phases[id]);
   return {

@@ -110,10 +110,10 @@ describe('manage exams page', () => {
     await userEvent.click(within(dsaCard).getByRole('button', { name: 'Remove' }));
     const dlg = await screen.findByRole('dialog', { name: /Remove DSA Interview/ });
     await userEvent.click(within(dlg).getByRole('button', { name: 'Keep it' }));
-    expect((await store.getProfile() as { profiles: unknown[] }).profiles).toHaveLength(3);
+    expect((await store.getProfile() as unknown as { profiles: unknown[] }).profiles).toHaveLength(3);
     await userEvent.click(within(await screen.findByRole('article', { name: 'DSA Interview' })).getByRole('button', { name: 'Remove' }));
     await userEvent.click(within(await screen.findByRole('dialog')).getByRole('button', { name: /^Remove DSA Interview/ }));
-    await waitFor(async () => expect((await store.getProfile() as { profiles: Array<{ exam: string }> }).profiles.map((p) => p.exam)).toEqual(['JEE_MAIN', 'IAT']));
+    await waitFor(async () => expect((await store.getProfile() as unknown as { profiles: Array<{ exam: string }> }).profiles.map((p) => p.exam)).toEqual(['JEE_MAIN', 'IAT']));
   });
   it('Change date opens the sitting block and saves a new own date', async () => {
     const { db, store } = await seedGuest({ profiles: [iat, dsa], activeExam: 'IAT', exam: 'IAT.0', examDate: '2027-06-01' });

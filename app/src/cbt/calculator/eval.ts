@@ -114,7 +114,7 @@ export function evaluate(src: string, mode: AngleMode = 'deg'): number {
       for (;;) {
         const top = ops[ops.length - 1];
         if (!top || top.t === 'lp') break;
-        const higher = top.t === 'fn' || PREC[top.v]! > PREC[tk.v]! || (PREC[top.v]! === PREC[tk.v]! && !RIGHT.has(tk.v));
+        const higher = top.t === 'fn' || (top.t === 'op' && (PREC[top.v]! > PREC[tk.v]! || (PREC[top.v]! === PREC[tk.v]! && !RIGHT.has(tk.v))));
         // a prefix operator never pops anything before it
         if (!higher || tk.v === 'neg') break;
         reduce(ops.pop()!);

@@ -58,7 +58,7 @@ describe('stores', () => {
     expect(f.queries.at(-1)).toMatchObject({ field: 'submittedAt' });
     const l = new LocalStore(createMemoryLocalDb());
     for (let i = 0; i < 130; i++) await l.putMock(`m${i}`, { id: `m${i}`, paperId: 'p', submittedAt: i });
-    expect(await l.listMocks({ limit: 5 })).toHaveLength(130);
+    expect(await l.listMocks()).toHaveLength(130);
   });
   it('cloud saveProfile reports the written fields to onProfileSaved', async () => {
     const seen: unknown[] = [];
