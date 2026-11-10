@@ -303,6 +303,63 @@
   "version": 1
  },
  {
+  "id": "q_050baf8bfaca",
+  "type": "SCQ",
+  "stem": "In CQRS, commands and queries are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Command Query Responsibility Segregation separates write and read models.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "executed on clients only"
+   },
+   {
+    "key": "B",
+    "text": "handled by separate models, so the read side can be optimised independently of the write side"
+   },
+   {
+    "key": "C",
+    "text": "forbidden"
+   },
+   {
+    "key": "D",
+    "text": "merged into a single model always"
+   }
+  ]
+ },
+ {
   "id": "q_053629f55547",
   "type": "SCQ",
   "stem": "Batch processing is typically characterised by",
@@ -413,6 +470,63 @@
    {
     "key": "D",
     "text": "A misspelled key"
+   }
+  ]
+ },
+ {
+  "id": "q_05910ec3c82d",
+  "type": "SCQ",
+  "stem": "How is a video prepared for adaptive streaming?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Adaptive bitrate streaming lets players switch quality as bandwidth changes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It is converted to text"
+   },
+   {
+    "key": "B",
+    "text": "It is transcoded into several bitrates and split into short segments that the player chooses between"
+   },
+   {
+    "key": "C",
+    "text": "It is stored as one huge file only"
+   },
+   {
+    "key": "D",
+    "text": "It is sent unchanged to all devices"
    }
   ]
  },
@@ -529,6 +643,43 @@
     "text": "It cannot increase CPU"
    }
   ]
+ },
+ {
+  "id": "q_069800014f26",
+  "type": "INT",
+  "stem": "A DHT with 1,000,000 peers routes in about $\\log_2 N$ hops. How many hops, rounded up to an integer?",
+  "images": [],
+  "answer": {
+   "value": 20.0
+  },
+  "solution": "$\\log_2 10^6\\approx19.93$, so 20 hops.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_07b406d1f4c3",
@@ -836,6 +987,63 @@
   "version": 1
  },
  {
+  "id": "q_0bb13678f05e",
+  "type": "SCQ",
+  "stem": "For a chat app, how should delivery status (sent, delivered, read) be modelled?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Receipts flow back from recipients and update the message state.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "As a client-side guess"
+   },
+   {
+    "key": "B",
+    "text": "It cannot be tracked"
+   },
+   {
+    "key": "C",
+    "text": "As a single counter shared by all chats"
+   },
+   {
+    "key": "D",
+    "text": "As acknowledgement events from the recipient's device that update a per-message state"
+   }
+  ]
+ },
+ {
   "id": "q_0cba7cdcca95",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** A checksum mismatch indicates the data was altered or damaged.\n\n**Reason (R):** A checksum is a fingerprint recomputed from the received data and compared with the original value.\n\nChoose the correct option.",
@@ -965,6 +1173,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_0d1ecfed16bd",
+  "type": "SCQ",
+  "stem": "What is a cold start?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "New containers or runtimes must load code before handling the first request.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Extra latency when a function instance must be initialised for a request after being idle"
+   },
+   {
+    "key": "B",
+    "text": "A cache flush"
+   },
+   {
+    "key": "C",
+    "text": "A frozen database"
+   },
+   {
+    "key": "D",
+    "text": "A network cable fault"
+   }
+  ]
  },
  {
   "id": "q_0d721d01b6b7",
@@ -1327,6 +1592,63 @@
   "version": 1
  },
  {
+  "id": "q_10ae73db6f50",
+  "type": "SCQ",
+  "stem": "In a logging and monitoring system, why are logs usually shipped through a message queue or stream before storage?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A durable stream absorbs spikes and allows multiple consumers (indexing, alerting, archiving).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To buffer bursts and decouple producers from storage and processing"
+   },
+   {
+    "key": "B",
+    "text": "Logs cannot be stored directly"
+   },
+   {
+    "key": "C",
+    "text": "To make logs bigger"
+   },
+   {
+    "key": "D",
+    "text": "To remove timestamps"
+   }
+  ]
+ },
+ {
   "id": "q_10eb4d8ace03",
   "type": "SCQ",
   "stem": "A team measures availability only by whether the load balancer answers health pings, and reports 99.99%. Users still see frequent failed checkouts. What is the best conclusion?",
@@ -1380,6 +1702,65 @@
    {
     "key": "D",
     "text": "Availability is a hardware metric, so checkout errors are irrelevant"
+   }
+  ]
+ },
+ {
+  "id": "q_10f2d9fd1797",
+  "type": "MSQ",
+  "stem": "Select all challenges of event-driven systems.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Asynchrony is the source of these challenges.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Eventual consistency between services"
+   },
+   {
+    "key": "B",
+    "text": "Debugging and tracing flows across events"
+   },
+   {
+    "key": "C",
+    "text": "Handling duplicate or out-of-order events"
+   },
+   {
+    "key": "D",
+    "text": "Strict synchronous guarantees by default"
    }
   ]
  },
@@ -1817,6 +2198,63 @@
   ]
  },
  {
+  "id": "q_14981113908c",
+  "type": "SCQ",
+  "stem": "In an event-driven architecture, components communicate by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Producers publish facts; consumers react independently.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "sharing a single variable"
+   },
+   {
+    "key": "B",
+    "text": "producing and reacting to events, usually asynchronously"
+   },
+   {
+    "key": "C",
+    "text": "emailing reports"
+   },
+   {
+    "key": "D",
+    "text": "calling each other directly and waiting"
+   }
+  ]
+ },
+ {
   "id": "q_17eefb76eb78",
   "type": "MSQ",
   "stem": "Select all ways to reduce the chance of serving stale data from a cache.",
@@ -2049,6 +2487,63 @@
   ]
  },
  {
+  "id": "q_1a0b68a73aa4",
+  "type": "SCQ",
+  "stem": "Microservices are best described as",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Each service owns its logic and data and communicates over lightweight protocols.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a single database shared by all code"
+   },
+   {
+    "key": "B",
+    "text": "a kind of hardware"
+   },
+   {
+    "key": "C",
+    "text": "one large codebase deployed as a unit"
+   },
+   {
+    "key": "D",
+    "text": "small, independently deployable services, each focused on one business capability"
+   }
+  ]
+ },
+ {
   "id": "q_1a73501a9538",
   "type": "SCQ",
   "stem": "In synchronous communication, the caller",
@@ -2141,6 +2636,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_1a84197a14e2",
+  "type": "SCQ",
+  "stem": "An order service must update its database and publish an 'OrderPlaced' event reliably, without losing either. Which pattern is used?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A single atomic write plus a relay avoids the dual-write inconsistency.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Transactional outbox: write the event to an outbox table in the same transaction and relay it to the broker"
+   },
+   {
+    "key": "B",
+    "text": "Publish first, never write"
+   },
+   {
+    "key": "C",
+    "text": "Use two independent writes with no retry"
+   },
+   {
+    "key": "D",
+    "text": "Write the database, then hope the publish succeeds"
+   }
+  ]
  },
  {
   "id": "q_1de0b3cf8cce",
@@ -2428,6 +2980,63 @@
   ]
  },
  {
+  "id": "q_2056b1a8cda2",
+  "type": "SCQ",
+  "stem": "In a peer-to-peer architecture, each node",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Peers share resources directly, giving resilience and scalability.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "is only a server"
+   },
+   {
+    "key": "B",
+    "text": "can act as both client and server, with no central server required"
+   },
+   {
+    "key": "C",
+    "text": "is only a client"
+   },
+   {
+    "key": "D",
+    "text": "must contact a central master for each message"
+   }
+  ]
+ },
+ {
   "id": "q_212e1074b75e",
   "type": "SCQ",
   "stem": "Which is a typical reason to choose a queue for sending confirmation emails after checkout?",
@@ -2481,6 +3090,63 @@
    {
     "key": "D",
     "text": "Checkout cannot work without email"
+   }
+  ]
+ },
+ {
+  "id": "q_2149189efb86",
+  "type": "SCQ",
+  "stem": "What new problem appears when an operation spans two microservices with separate databases?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Cross-service consistency requires coordination such as sagas with compensating actions.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Data is automatically consistent"
+   },
+   {
+    "key": "B",
+    "text": "There is no network latency"
+   },
+   {
+    "key": "C",
+    "text": "Calls can never fail"
+   },
+   {
+    "key": "D",
+    "text": "No single ACID transaction; you need sagas or similar patterns and must handle partial failure"
    }
   ]
  },
@@ -2599,6 +3265,63 @@
    {
     "key": "D",
     "text": "Checksums are often verified end to end, not only per hop"
+   }
+  ]
+ },
+ {
+  "id": "q_247e716b6135",
+  "type": "SCQ",
+  "stem": "Which practice reduces cascading failures in a distributed design?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Bounded, backed-off retries and breakers protect overloaded services.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "No timeouts"
+   },
+   {
+    "key": "B",
+    "text": "Synchronous calls to everything"
+   },
+   {
+    "key": "C",
+    "text": "Timeouts, retries with exponential backoff and circuit breakers"
+   },
+   {
+    "key": "D",
+    "text": "Unlimited immediate retries"
    }
   ]
  },
@@ -2888,6 +3611,101 @@
     "text": "Letting operators replay failed messages after a fix"
    }
   ]
+ },
+ {
+  "id": "q_281cc0c4d82d",
+  "type": "SCQ",
+  "stem": "In a serverless (function-as-a-service) model, you typically pay",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Billing is per execution; the provider handles provisioning and scaling.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "for idle servers all month"
+   },
+   {
+    "key": "B",
+    "text": "nothing ever"
+   },
+   {
+    "key": "C",
+    "text": "a fixed hardware price"
+   },
+   {
+    "key": "D",
+    "text": "for the compute time and invocations actually used"
+   }
+  ]
+ },
+ {
+  "id": "q_29512f2819b1",
+  "type": "NVQ",
+  "stem": "A URL shortener creates 100 million new links a month. Each record is about 500 bytes. How many GB of new data per year (1 GB = $10^9$ B), before replication?",
+  "images": [],
+  "answer": {
+   "value": 600.0,
+   "tol": 1
+  },
+  "solution": "$100\\times10^6\\times12=1.2\\times10^9$ links; $\\times500$ B $=6\\times10^{11}$ B = 600 GB.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_29ef6a4b8e64",
@@ -3253,6 +4071,65 @@
   ]
  },
  {
+  "id": "q_307780b829b0",
+  "type": "MSQ",
+  "stem": "Select all trade-offs of serverless.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Serverless trades control for convenience.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Reduced operational burden for infrastructure"
+   },
+   {
+    "key": "B",
+    "text": "Possible cold-start latency"
+   },
+   {
+    "key": "C",
+    "text": "Execution time and resource limits per invocation"
+   },
+   {
+    "key": "D",
+    "text": "Unlimited control over the underlying OS"
+   }
+  ]
+ },
+ {
   "id": "q_309a8ef75fa4",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Horizontal scaling improves fault tolerance in addition to capacity.\n\n**Reason (R):** Losing one of many nodes removes only a fraction of the capacity.\n\nChoose the correct option.",
@@ -3345,6 +4222,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_3118578080de",
+  "type": "MSQ",
+  "stem": "Select all systems or protocols commonly associated with P2P designs.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "A primary-replica SQL cluster is centralised; the others are decentralised designs.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "BitTorrent file sharing"
+   },
+   {
+    "key": "B",
+    "text": "Blockchain networks"
+   },
+   {
+    "key": "C",
+    "text": "A single-primary SQL database cluster with one master"
+   },
+   {
+    "key": "D",
+    "text": "Distributed hash tables"
+   }
+  ]
  },
  {
   "id": "q_322c8dd9fa76",
@@ -3461,6 +4397,44 @@
   ]
  },
  {
+  "id": "q_33621e03c0e9",
+  "type": "NVQ",
+  "stem": "Storage grows by 18 TB per day (with replicas). How many PB (1 PB = $10^{15}$ B) are needed after 5 years of 365 days? Give one decimal.",
+  "images": [],
+  "answer": {
+   "value": 32.85,
+   "tol": 0.05
+  },
+  "solution": "$18\\times365\\times5=32{,}850$ TB $=32.85$ PB, about 32.9.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_366729e06d8f",
   "type": "SCQ",
   "stem": "In a publish-subscribe model, a single published message is",
@@ -3514,6 +4488,63 @@
    {
     "key": "D",
     "text": "delivered to exactly one random subscriber in all cases"
+   }
+  ]
+ },
+ {
+  "id": "q_367f123e071d",
+  "type": "SCQ",
+  "stem": "What is the main risk in a design where all clients connect to one server instance?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Add replicas behind a load balancer to remove both limits.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clients cannot connect at all"
+   },
+   {
+    "key": "B",
+    "text": "That server is a bottleneck and a single point of failure"
+   },
+   {
+    "key": "C",
+    "text": "Servers become stateless automatically"
+   },
+   {
+    "key": "D",
+    "text": "Latency becomes zero"
    }
   ]
  },
@@ -3613,6 +4644,63 @@
   "version": 1
  },
  {
+  "id": "q_39f67ebca2f9",
+  "type": "SCQ",
+  "stem": "Under client-server, a popular feature's request load grows 10x. Which change generally scales the server tier without redesign?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Stateless tiers scale out; the data tier then needs its own scaling.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Ask clients to retry less politely"
+   },
+   {
+    "key": "B",
+    "text": "Make the application tier stateless and add instances behind a load balancer"
+   },
+   {
+    "key": "C",
+    "text": "Move all state into each server's memory"
+   },
+   {
+    "key": "D",
+    "text": "Replace HTTP"
+   }
+  ]
+ },
+ {
   "id": "q_3cbef878f865",
   "type": "SCQ",
   "stem": "What is the goal of normalisation?",
@@ -3706,6 +4794,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_3df70c894e6b",
+  "type": "SCQ",
+  "stem": "A downstream service is failing and each caller keeps retrying, making it worse. Which pattern helps?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A circuit breaker stops calling a failing dependency for a while, preventing cascading failure and allowing recovery.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Increase request size"
+   },
+   {
+    "key": "B",
+    "text": "More aggressive immediate retries"
+   },
+   {
+    "key": "C",
+    "text": "Circuit breaker with timeouts and backoff"
+   },
+   {
+    "key": "D",
+    "text": "Remove all timeouts"
+   }
+  ]
  },
  {
   "id": "q_3f060f645abf",
@@ -3954,6 +5099,65 @@
   ]
  },
  {
+  "id": "q_42d61b322b95",
+  "type": "MSQ",
+  "stem": "Select all properties of the client-server pattern.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "That last property describes peer-to-peer, not client-server.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clients initiate requests and servers respond"
+   },
+   {
+    "key": "B",
+    "text": "Servers can be scaled behind load balancers"
+   },
+   {
+    "key": "C",
+    "text": "Clients can be many and heterogeneous (web, mobile)"
+   },
+   {
+    "key": "D",
+    "text": "Every client must act as a server"
+   }
+  ]
+ },
+ {
   "id": "q_43157753f7a2",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Sending heartbeats through a central monitor can itself limit scalability.\n\n**Reason (R):** All heartbeat traffic converges on one component, which becomes a load and failure bottleneck.\n\nChoose the correct option.",
@@ -4009,6 +5213,44 @@
     "text": "A is false but R is true"
    }
   ]
+ },
+ {
+  "id": "q_43283188028b",
+  "type": "NVQ",
+  "stem": "In the previous setting peak traffic is 3x the average. What peak requests per second? Round to the nearest integer.",
+  "images": [],
+  "answer": {
+   "value": 6944.44,
+   "tol": 1
+  },
+  "solution": "Average $\\approx2315$; peak $\\approx3\\times2315=6944$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_433a6240536b",
@@ -4737,6 +5979,63 @@
   ]
  },
  {
+  "id": "q_49e7ff13aed8",
+  "type": "SCQ",
+  "stem": "Which workload suits serverless best?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Intermittent event processing benefits from scale-to-zero and per-use pricing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A database primary"
+   },
+   {
+    "key": "B",
+    "text": "A constant 24/7 high-throughput compute job"
+   },
+   {
+    "key": "C",
+    "text": "Spiky, event-driven tasks such as resizing images when uploaded"
+   },
+   {
+    "key": "D",
+    "text": "A long-lived stateful game server"
+   }
+  ]
+ },
+ {
   "id": "q_4a189d51cd61",
   "type": "SCQ",
   "stem": "In Raft, what is the leader's role?",
@@ -4906,6 +6205,120 @@
    {
     "key": "D",
     "text": "None"
+   }
+  ]
+ },
+ {
+  "id": "q_4f780fe24a0a",
+  "type": "SCQ",
+  "stem": "Why ask about the read-to-write ratio early?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Read-heavy and write-heavy systems need different architectures.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It only matters for security"
+   },
+   {
+    "key": "B",
+    "text": "It sets the server brand"
+   },
+   {
+    "key": "C",
+    "text": "It shapes caching, replication, indexing and storage choices"
+   },
+   {
+    "key": "D",
+    "text": "It decides the colour scheme"
+   }
+  ]
+ },
+ {
+  "id": "q_4fab562693e3",
+  "type": "SCQ",
+  "stem": "Why is it acceptable to use round numbers (for example 100,000 seconds per day) in back-of-the-envelope estimates?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Estimates inform whether you need one machine or a thousand; a small error does not change that.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The goal is the order of magnitude to guide design, not precise values"
+   },
+   {
+    "key": "B",
+    "text": "Round numbers are exact"
+   },
+   {
+    "key": "C",
+    "text": "Precision is mandatory"
+   },
+   {
+    "key": "D",
+    "text": "Estimates never matter"
    }
   ]
  },
@@ -5311,6 +6724,120 @@
   ]
  },
  {
+  "id": "q_55d6293f698d",
+  "type": "SCQ",
+  "stem": "A thin client versus a thick client: which statement is accurate?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The split trades server load, offline ability and update complexity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A thick client has no logic"
+   },
+   {
+    "key": "B",
+    "text": "They are identical"
+   },
+   {
+    "key": "C",
+    "text": "A thin client leaves most logic on the server, a thick client does more processing locally"
+   },
+   {
+    "key": "D",
+    "text": "A thin client stores the whole database"
+   }
+  ]
+ },
+ {
+  "id": "q_560c25a73ee7",
+  "type": "SCQ",
+  "stem": "Which order best matches a sound interview flow?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Moving from scope to detail keeps the design grounded.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Deep dive, requirements, estimation"
+   },
+   {
+    "key": "B",
+    "text": "Requirements, capacity estimation, high-level design, data model and APIs, deep dive, bottlenecks and trade-offs"
+   },
+   {
+    "key": "C",
+    "text": "Bottlenecks first, then requirements"
+   },
+   {
+    "key": "D",
+    "text": "Data model only"
+   }
+  ]
+ },
+ {
   "id": "q_568b389bf643",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** An in-memory database such as a cache store usually offers lower read latency than a disk-based database.\n\n**Reason (R):** RAM access is orders of magnitude faster than disk access.\n\nChoose the correct option.",
@@ -5364,6 +6891,122 @@
    {
     "key": "D",
     "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_583fb86c2291",
+  "type": "MSQ",
+  "stem": "Select all good practices for tiered log storage.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Tiering and retention control cost.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Keep recent logs in fast searchable storage"
+   },
+   {
+    "key": "B",
+    "text": "Archive older logs to cheaper cold storage"
+   },
+   {
+    "key": "C",
+    "text": "Apply retention policies to delete expired logs"
+   },
+   {
+    "key": "D",
+    "text": "Keep all logs forever on the fastest tier"
+   }
+  ]
+ },
+ {
+  "id": "q_584eb3c4aa82",
+  "type": "SCQ",
+  "stem": "An interviewer asks you to design a service but gives vague requirements. What is the best response?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Scoping the problem is part of the evaluation.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Start coding immediately"
+   },
+   {
+    "key": "B",
+    "text": "Choose the most complex architecture"
+   },
+   {
+    "key": "C",
+    "text": "State assumptions and ask clarifying questions, confirming scale, latency and consistency needs"
+   },
+   {
+    "key": "D",
+    "text": "Refuse to proceed"
    }
   ]
  },
@@ -5462,6 +7105,102 @@
   ]
  },
  {
+  "id": "q_5c2f0fa22284",
+  "type": "INT",
+  "stem": "A system needs 12,000 write operations per second at peak. Each node can sustain 1,500 writes per second at the target load. With N+1 redundancy (one extra node), how many nodes?",
+  "images": [],
+  "answer": {
+   "value": 9.0
+  },
+  "solution": "$12000/1500=8$ nodes plus 1 spare gives 9.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_5d2655653b4c",
+  "type": "MSQ",
+  "stem": "Select all items that belong in a high-level design block diagram for a typical web service.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "The diagram shows the major components and their connections.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clients and load balancers"
+   },
+   {
+    "key": "B",
+    "text": "Application servers and services"
+   },
+   {
+    "key": "C",
+    "text": "Databases, caches and queues as needed"
+   },
+   {
+    "key": "D",
+    "text": "A list of the interviewer's hobbies"
+   }
+  ]
+ },
+ {
   "id": "q_5dde755d0184",
   "type": "SCQ",
   "stem": "Which protocol is connectionless with no delivery guarantee?",
@@ -5515,6 +7254,63 @@
    {
     "key": "D",
     "text": "HTTP/1.1 over TCP"
+   }
+  ]
+ },
+ {
+  "id": "q_60ae8e66eb08",
+  "type": "SCQ",
+  "stem": "In the client-server model, the server's role is to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Clients request; servers hold resources and respond.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "process client requests, manage resources such as data, and return results"
+   },
+   {
+    "key": "B",
+    "text": "render the user's screen directly on the client device"
+   },
+   {
+    "key": "C",
+    "text": "initiate every connection to clients"
+   },
+   {
+    "key": "D",
+    "text": "act only as a network cable"
    }
   ]
  },
@@ -5782,6 +7578,63 @@
    {
     "key": "D",
     "text": "Adding more elements increases the false-positive rate"
+   }
+  ]
+ },
+ {
+  "id": "q_6502a91c5e7b",
+  "type": "SCQ",
+  "stem": "For an e-commerce checkout, which approach prevents overselling the last unit of an item?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Concurrent buyers need atomic conditional updates.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Let clients decide"
+   },
+   {
+    "key": "B",
+    "text": "Cache the stock forever"
+   },
+   {
+    "key": "C",
+    "text": "Reserve or decrement inventory atomically inside a transaction or with an optimistic version check"
+   },
+   {
+    "key": "D",
+    "text": "Read the stock, then write it later without checks"
    }
   ]
  },
@@ -6186,6 +8039,63 @@
   ]
  },
  {
+  "id": "q_6f1ee207fa91",
+  "type": "SCQ",
+  "stem": "In a chat application, how are messages usually pushed to online clients with low latency?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Persistent bidirectional connections enable immediate delivery.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "By email"
+   },
+   {
+    "key": "B",
+    "text": "By page refresh only"
+   },
+   {
+    "key": "C",
+    "text": "Over persistent connections such as WebSockets"
+   },
+   {
+    "key": "D",
+    "text": "By clients polling once a day"
+   }
+  ]
+ },
+ {
   "id": "q_6f4e03ceac12",
   "type": "MSQ",
   "stem": "Select all tasks commonly performed by a reverse proxy.",
@@ -6243,6 +8153,44 @@
     "text": "Hiding the client's identity from the destination for outbound traffic"
    }
   ]
+ },
+ {
+  "id": "q_6f81e761dd69",
+  "type": "NVQ",
+  "stem": "A photo service stores 2 million new photos a day, 3 MB each (1 MB = $10^6$ B), with 3 replicas. How many TB (1 TB = $10^{12}$ B) are added per day, counting replicas?",
+  "images": [],
+  "answer": {
+   "value": 18.0,
+   "tol": 0.01
+  },
+  "solution": "$2\\times10^6\\times3\\times10^6=6\\times10^{12}$ B = 6 TB per copy; times 3 replicas gives 18 TB per day.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_6f8aaf45afa4",
@@ -6415,6 +8363,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_731b7a283f95",
+  "type": "SCQ",
+  "stem": "A news feed uses fan-out on write (push) for all users. A celebrity with 50 million followers posts. What goes wrong and what is the standard fix?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Push suits typical users; for very high fan-out, merge celebrity content on read.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The database shrinks"
+   },
+   {
+    "key": "B",
+    "text": "Writing to 50 million feeds at once is very expensive; use a hybrid where celebrity posts are pulled at read time"
+   },
+   {
+    "key": "C",
+    "text": "Nothing goes wrong"
+   },
+   {
+    "key": "D",
+    "text": "Followers cannot read"
+   }
+  ]
  },
  {
   "id": "q_73ab52800eb1",
@@ -6719,6 +8724,122 @@
   "version": 1
  },
  {
+  "id": "q_77d10dd063c4",
+  "type": "MSQ",
+  "stem": "Select all benefits of microservices.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Microservices increase operational overhead (deployment, monitoring, networking).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Independent deployment and scaling per service"
+   },
+   {
+    "key": "B",
+    "text": "Technology flexibility per service"
+   },
+   {
+    "key": "C",
+    "text": "Fault isolation if designed with timeouts and breakers"
+   },
+   {
+    "key": "D",
+    "text": "Lower operational complexity than a monolith"
+   }
+  ]
+ },
+ {
+  "id": "q_7c41c013e484",
+  "type": "SCQ",
+  "stem": "What is a major advantage of P2P over client-server?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Peers contribute resources, so each new peer adds capacity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "No single point of failure and capacity grows as peers join"
+   },
+   {
+    "key": "B",
+    "text": "Simpler security"
+   },
+   {
+    "key": "C",
+    "text": "Guaranteed consistency"
+   },
+   {
+    "key": "D",
+    "text": "Zero bandwidth use"
+   }
+  ]
+ },
+ {
   "id": "q_7c9e63f1507d",
   "type": "SCQ",
   "stem": "In long polling, the server",
@@ -6772,6 +8893,63 @@
    {
     "key": "D",
     "text": "holds the client's request open until new data is available or a timeout occurs"
+   }
+  ]
+ },
+ {
+  "id": "q_7d98dd97f3e3",
+  "type": "SCQ",
+  "stem": "What should be the first step in a system design interview?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Requirements drive all later choices.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clarify functional and non-functional requirements and scope"
+   },
+   {
+    "key": "B",
+    "text": "Draw the database schema"
+   },
+   {
+    "key": "C",
+    "text": "Pick a cloud vendor"
+   },
+   {
+    "key": "D",
+    "text": "Choose the programming language"
    }
   ]
  },
@@ -6831,6 +9009,44 @@
     "text": "An SLA is internal and an SLO has penalties"
    }
   ]
+ },
+ {
+  "id": "q_7f4dbb62e119",
+  "type": "NVQ",
+  "stem": "A request passes sequentially through 5 services, each 99.9% available. What is the end-to-end availability as a percentage rounded to two decimals?",
+  "images": [],
+  "answer": {
+   "value": 99.501,
+   "tol": 0.01
+  },
+  "solution": "$0.999^5=0.99501$, i.e. about 99.50%.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_7fa4a26d3a96",
@@ -6943,6 +9159,63 @@
    {
     "key": "D",
     "text": "Scale up (bigger instance) while planning replicas or partitioning for later"
+   }
+  ]
+ },
+ {
+  "id": "q_80e65d00a7bb",
+  "type": "SCQ",
+  "stem": "Why are serverless functions usually designed to be stateless?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Store state in databases or object storage, not in function memory.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They cannot read data"
+   },
+   {
+    "key": "B",
+    "text": "State is illegal"
+   },
+   {
+    "key": "C",
+    "text": "Instances are ephemeral and may be created or destroyed at any time, so durable state must live elsewhere"
+   },
+   {
+    "key": "D",
+    "text": "They have unlimited local disk"
    }
   ]
  },
@@ -7900,6 +10173,44 @@
   ]
  },
  {
+  "id": "q_952b99cfcecf",
+  "type": "NVQ",
+  "stem": "Each request averages 8 KB in response size (1 KB = 1,000 B). At 6,000 requests per second, what is the egress bandwidth in MB per second (1 MB = $10^6$ B)?",
+  "images": [],
+  "answer": {
+   "value": 48.0,
+   "tol": 0.1
+  },
+  "solution": "$6000\\times8000=4.8\\times10^7$ B/s = 48 MB/s.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_952fa7154ad2",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Batch jobs are usually more efficient per record than processing records one by one.\n\n**Reason (R):** They amortise start-up costs and can optimise I/O over large chunks.\n\nChoose the correct option.",
@@ -8317,6 +10628,63 @@
   ]
  },
  {
+  "id": "q_9a4c89216322",
+  "type": "SCQ",
+  "stem": "Why are photos and videos stored in object storage rather than in the relational database?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Blob storage plus CDN is the standard pattern for media.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Object storage is slower for large files by design"
+   },
+   {
+    "key": "B",
+    "text": "Object storage is cheaper and scales for large blobs, while the database holds metadata and references"
+   },
+   {
+    "key": "C",
+    "text": "Databases cannot store text"
+   },
+   {
+    "key": "D",
+    "text": "Blobs must be indexed by SQL"
+   }
+  ]
+ },
+ {
   "id": "q_9b9c59cdc5e8",
   "type": "SCQ",
   "stem": "Which rate limiting algorithm allows short bursts above the average rate while enforcing a long-run rate?",
@@ -8718,6 +11086,44 @@
   ]
  },
  {
+  "id": "q_a1455167c67c",
+  "type": "NVQ",
+  "stem": "A video site serves 50,000 concurrent streams at 4 Mbps each. What is the outbound bandwidth in Gbps?",
+  "images": [],
+  "answer": {
+   "value": 200.0,
+   "tol": 0.01
+  },
+  "solution": "$50000\\times4=200{,}000$ Mbps $=200$ Gbps.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_a29c1a663ff7",
   "type": "MSQ",
   "stem": "Select all techniques that typically increase a system's ability to scale out.",
@@ -8987,6 +11393,63 @@
   ]
  },
  {
+  "id": "q_a4ab0a37f7e0",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Client-server architectures centralise control of resources.\n\n**Reason (R):** The server holds and governs the data and logic that clients request.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Central servers make security and consistency easier but concentrate load. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_a612939ee253",
   "type": "SCQ",
   "stem": "A WebSocket connection is",
@@ -9097,6 +11560,63 @@
    {
     "key": "D",
     "text": "Use a different queue per message"
+   }
+  ]
+ },
+ {
+  "id": "q_a6ee0c16ad2e",
+  "type": "SCQ",
+  "stem": "Which approach avoids collisions when generating short URL codes in a distributed shortener?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Unique ids encoded in base 62 are collision-free by construction. Random codes need a check against the store.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use random codes with no uniqueness check"
+   },
+   {
+    "key": "B",
+    "text": "Use the current second only"
+   },
+   {
+    "key": "C",
+    "text": "Pre-allocate unique id ranges to each server and encode ids in base 62"
+   },
+   {
+    "key": "D",
+    "text": "Use the first 7 letters of the long URL"
    }
   ]
  },
@@ -9215,6 +11735,63 @@
   ]
  },
  {
+  "id": "q_ab44be3b8e1d",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Event-driven architecture suits workloads where multiple independent reactions follow one occurrence.\n\n**Reason (R):** A single event can be consumed in parallel by several subscribers.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Fan-out of one event to many consumers is a core strength. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_ab6f478fa402",
   "type": "SCQ",
   "stem": "A dashboard only needs server-to-client price updates and must work through restrictive corporate proxies. Which choice is a good fit?",
@@ -9270,6 +11847,44 @@
     "text": "A custom UDP protocol"
    }
   ]
+ },
+ {
+  "id": "q_abaed6639f9f",
+  "type": "NVQ",
+  "stem": "A function is invoked 3 million times a month, runs 200 ms each at 0.5 GB memory. Compute usage is invocations x seconds x GB. How many GB-seconds is that?",
+  "images": [],
+  "answer": {
+   "value": 300000.0,
+   "tol": 1
+  },
+  "solution": "$3\\times10^6\\times0.2\\times0.5=300{,}000$ GB-seconds.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_ad158f2bd7ba",
@@ -9519,6 +12134,120 @@
   ]
  },
  {
+  "id": "q_b11e3f073813",
+  "type": "SCQ",
+  "stem": "Why must event consumers be idempotent?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "At-least-once delivery means duplicates are possible.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Events are never repeated"
+   },
+   {
+    "key": "B",
+    "text": "Consumers run once per year"
+   },
+   {
+    "key": "C",
+    "text": "Brokers may redeliver events, so processing the same event twice must not corrupt state"
+   },
+   {
+    "key": "D",
+    "text": "Because JSON requires it"
+   }
+  ]
+ },
+ {
+  "id": "q_b1e3ceac15f4",
+  "type": "SCQ",
+  "stem": "A function triggered by queue messages scales out to 1,000 concurrent instances and overwhelms a downstream database. What should you do?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Auto-scaling of compute can overwhelm fixed-capacity dependencies; cap concurrency and smooth load.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Disable retries and ignore"
+   },
+   {
+    "key": "B",
+    "text": "Limit function concurrency or add buffering and backpressure to protect the database"
+   },
+   {
+    "key": "C",
+    "text": "Remove the database"
+   },
+   {
+    "key": "D",
+    "text": "Increase function memory only"
+   }
+  ]
+ },
+ {
   "id": "q_b228a5dc549c",
   "type": "SCQ",
   "stem": "A team uses write-through caching for a write-heavy workload and sees write latency double. Which statement best explains it?",
@@ -9629,6 +12358,63 @@
    {
     "key": "D",
     "text": "Per-node load stays small while information reaches all nodes in about logarithmic time"
+   }
+  ]
+ },
+ {
+  "id": "q_b3516f85221c",
+  "type": "SCQ",
+  "stem": "Which is a typical three-tier layout?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Separating tiers lets each be scaled and changed independently.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Presentation (client), application logic (servers), data (database)"
+   },
+   {
+    "key": "B",
+    "text": "Cache, cache, cache"
+   },
+   {
+    "key": "C",
+    "text": "Two clients and one cable"
+   },
+   {
+    "key": "D",
+    "text": "Database, database, database"
    }
   ]
  },
@@ -9747,6 +12533,63 @@
   ]
  },
  {
+  "id": "q_b38b17e801af",
+  "type": "SCQ",
+  "stem": "How do distributed hash tables (DHTs) help P2P networks?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A DHT assigns key ranges to peers and routes lookups in O(log N) hops.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They encrypt files"
+   },
+   {
+    "key": "B",
+    "text": "They map keys to responsible peers so lookups need no central index"
+   },
+   {
+    "key": "C",
+    "text": "They compress video"
+   },
+   {
+    "key": "D",
+    "text": "They elect a master"
+   }
+  ]
+ },
+ {
   "id": "q_b3fc3f86aff5",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** A covering index can answer a query without reading the table rows.\n\n**Reason (R):** It contains all the columns that the query needs.\n\nChoose the correct option.",
@@ -9800,6 +12643,63 @@
    {
     "key": "D",
     "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_b4028f05e673",
+  "type": "SCQ",
+  "stem": "Why must a crawler respect politeness policies per host?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Honouring robots.txt and spacing requests is both ethical and practical.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To speed the crawler up"
+   },
+   {
+    "key": "B",
+    "text": "It does not matter"
+   },
+   {
+    "key": "C",
+    "text": "To avoid overloading sites and being blocked, using per-host rate limits and robots.txt"
+   },
+   {
+    "key": "D",
+    "text": "Because DNS requires it"
    }
   ]
  },
@@ -10011,6 +12911,44 @@
     "text": "They lose their sessions and must log in again"
    }
   ]
+ },
+ {
+  "id": "q_b64d07d362c7",
+  "type": "NVQ",
+  "stem": "A read-heavy service has 5,000 reads per second and caches the hottest 20% of a 500 GB dataset (use 1 GB = $10^9$ B). How many GB of cache memory are needed for the hot data alone?",
+  "images": [],
+  "answer": {
+   "value": 100.0,
+   "tol": 0.1
+  },
+  "solution": "$0.2\\times500=100$ GB.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_b76bdf40f36d",
@@ -10298,6 +13236,44 @@
   ]
  },
  {
+  "id": "q_b977aa82b493",
+  "type": "NVQ",
+  "stem": "A video catalogue has 1 million hours of video, stored at an average of 2 GB per hour across all renditions (use 1 GB = $10^9$ B). How many PB (1 PB = $10^{15}$ B) is that?",
+  "images": [],
+  "answer": {
+   "value": 2.0,
+   "tol": 0.01
+  },
+  "solution": "$10^6\\times2\\times10^9=2\\times10^{15}$ B = 2 PB.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_bafadc9e54a0",
   "type": "SCQ",
   "stem": "Which statement correctly distinguishes latency from throughput?",
@@ -10351,6 +13327,63 @@
    {
     "key": "D",
     "text": "Latency is the time for one operation; throughput is the number of operations completed per unit time"
+   }
+  ]
+ },
+ {
+  "id": "q_bb2f4f680bfc",
+  "type": "SCQ",
+  "stem": "Which statement reflects good trade-off discussion?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "There is no perfect design; reasoning from requirements is the point.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Avoid choosing"
+   },
+   {
+    "key": "B",
+    "text": "Name the options, state what each gains and costs for these requirements, then justify a choice"
+   },
+   {
+    "key": "C",
+    "text": "Declare one technology always best"
+   },
+   {
+    "key": "D",
+    "text": "List buzzwords"
    }
   ]
  },
@@ -10469,6 +13502,63 @@
   ]
  },
  {
+  "id": "q_bf0a1c439a8d",
+  "type": "SCQ",
+  "stem": "Why do mobile apps often talk to a backend API rather than directly to the database?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "A server-side layer protects data and keeps logic consistent across clients.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_CS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "APIs are free of rules"
+   },
+   {
+    "key": "B",
+    "text": "To enforce authentication, validation and business rules centrally and avoid exposing credentials"
+   },
+   {
+    "key": "C",
+    "text": "Databases cannot accept connections"
+   },
+   {
+    "key": "D",
+    "text": "It makes apps slower deliberately"
+   }
+  ]
+ },
+ {
   "id": "q_bf644d5ac51e",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Terminating TLS at a layer 7 load balancer lets it route on HTTP headers.\n\n**Reason (R):** The balancer must decrypt the traffic to read the request headers.\n\nChoose the correct option.",
@@ -10581,6 +13671,63 @@
    {
     "key": "D",
     "text": "Declare failure after a single lost message on a lossy network"
+   }
+  ]
+ },
+ {
+  "id": "q_c01b17d3b6e5",
+  "type": "SCQ",
+  "stem": "Which is a non-functional requirement?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Latency targets are qualities of the system, whereas the others are features.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Users can upload a photo"
+   },
+   {
+    "key": "B",
+    "text": "Users can comment on a post"
+   },
+   {
+    "key": "C",
+    "text": "The system must respond within 200 ms at the 99th percentile"
+   },
+   {
+    "key": "D",
+    "text": "Users can follow others"
    }
   ]
  },
@@ -10870,6 +14017,63 @@
   ]
  },
  {
+  "id": "q_c51c5d2e5134",
+  "type": "SCQ",
+  "stem": "In a cloud file storage service, how are large uploads handled reliably?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Chunking enables parallelism, resume and deduplication.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Email the file"
+   },
+   {
+    "key": "B",
+    "text": "Upload only one byte at a time"
+   },
+   {
+    "key": "C",
+    "text": "Upload as one request with no retries"
+   },
+   {
+    "key": "D",
+    "text": "Split into chunks uploaded independently and resumable, with the metadata updated on completion"
+   }
+  ]
+ },
+ {
   "id": "q_c6a96a8d76b8",
   "type": "MSQ",
   "stem": "Select all true statements about TCP and UDP.",
@@ -11045,6 +14249,63 @@
   ]
  },
  {
+  "id": "q_c854afefb08b",
+  "type": "SCQ",
+  "stem": "A file sharing network wants to distribute a 4 GB file to 10,000 users without a huge origin bandwidth bill. Which approach helps?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Piece exchange shifts bandwidth cost to the swarm, so origin load grows much slower than user count.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Ban uploading"
+   },
+   {
+    "key": "B",
+    "text": "Split the file into 2 parts only"
+   },
+   {
+    "key": "C",
+    "text": "Make each user download only from the origin"
+   },
+   {
+    "key": "D",
+    "text": "Let downloaders also upload pieces they already have to other peers"
+   }
+  ]
+ },
+ {
   "id": "q_c891d5719f2b",
   "type": "NVQ",
   "stem": "A job has a serial fraction of 5% that cannot be parallelised; the rest scales perfectly. By Amdahl's law, what is the speedup on 10 processors? Give a number rounded to two decimals.",
@@ -11081,6 +14342,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_c8e83e8f924f",
+  "type": "SCQ",
+  "stem": "A 4-person startup with a new product and unclear boundaries is considering 30 microservices. What is the likely best advice?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Premature distribution adds cost without benefit; modular monoliths evolve into services later.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Avoid modularity entirely"
+   },
+   {
+    "key": "B",
+    "text": "Start with a well-structured monolith and extract services when boundaries and scale needs are clear"
+   },
+   {
+    "key": "C",
+    "text": "Use one table for everything"
+   },
+   {
+    "key": "D",
+    "text": "Always start with 30 services"
+   }
+  ]
  },
  {
   "id": "q_c97f7fef88ee",
@@ -11199,6 +14517,63 @@
   ]
  },
  {
+  "id": "q_ca6102627f8d",
+  "type": "SCQ",
+  "stem": "What is a major challenge of P2P systems?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Without central control, lookup, security and churn are harder.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Central logging is trivial"
+   },
+   {
+    "key": "B",
+    "text": "No networking needed"
+   },
+   {
+    "key": "C",
+    "text": "Discovery, trust and consistency among untrusted, unreliable peers"
+   },
+   {
+    "key": "D",
+    "text": "Peers never leave"
+   }
+  ]
+ },
+ {
   "id": "q_cb064d499bfb",
   "type": "SCQ",
   "stem": "Which statement about relational (SQL) databases is correct?",
@@ -11309,6 +14684,101 @@
    {
     "key": "D",
     "text": "Both equally"
+   }
+  ]
+ },
+ {
+  "id": "q_cb9a19b61a8d",
+  "type": "NVQ",
+  "stem": "Messages: 500 million per day, average 200 bytes each, retained for 2 years (730 days), stored with 3 copies (1 TB = $10^{12}$ B). How many TB?",
+  "images": [],
+  "answer": {
+   "value": 219.0,
+   "tol": 1
+  },
+  "solution": "Per day $=10^{11}$ B = 0.1 TB; 730 days $=73$ TB; times 3 copies $=219$ TB.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_cc108c6e131b",
+  "type": "SCQ",
+  "stem": "A notification system must retry failed push deliveries. What is a sound design?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Backoff avoids hammering providers; DLQs capture permanent failures.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Block the sender until success"
+   },
+   {
+    "key": "B",
+    "text": "Queue per channel with retries using exponential backoff and a dead-letter queue"
+   },
+   {
+    "key": "C",
+    "text": "Drop failures silently"
+   },
+   {
+    "key": "D",
+    "text": "Retry immediately in an infinite loop"
    }
   ]
  },
@@ -11600,6 +15070,63 @@
   ]
  },
  {
+  "id": "q_ce90d4efac21",
+  "type": "SCQ",
+  "stem": "A ride-sharing app must find drivers near a rider quickly. Which data structure approach is typical?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Spatial partitioning lets the system query only nearby cells.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A single list of all drivers scanned linearly"
+   },
+   {
+    "key": "B",
+    "text": "Using random drivers"
+   },
+   {
+    "key": "C",
+    "text": "A geospatial index such as geohash or quadtree cells with periodically updated driver locations"
+   },
+   {
+    "key": "D",
+    "text": "Sorting drivers by name"
+   }
+  ]
+ },
+ {
   "id": "q_cf0013d0acc7",
   "type": "SCQ",
   "stem": "A public API will be used by many third-party developers with simple tools like curl. Which style is often preferred?",
@@ -11750,6 +15277,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_d28ae9a55ae8",
+  "type": "SCQ",
+  "stem": "Why does each microservice usually own its own data store?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A shared database couples services through schema and locking.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To keep services loosely coupled so one team can change its schema without breaking others"
+   },
+   {
+    "key": "B",
+    "text": "To increase joins across services"
+   },
+   {
+    "key": "C",
+    "text": "Because databases cannot be shared at all"
+   },
+   {
+    "key": "D",
+    "text": "To avoid backups"
+   }
+  ]
  },
  {
   "id": "q_d2ade5647cbf",
@@ -11982,6 +15566,177 @@
   ]
  },
  {
+  "id": "q_d5173b38eb94",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** P2P networks can be more resilient to single-node failure than client-server systems.\n\n**Reason (R):** No peer is indispensable because others hold copies and can route around failures.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Decentralisation removes the central point whose failure stops everything. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_P2P",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_d54e3f417780",
+  "type": "SCQ",
+  "stem": "Why include monitoring and alerting in a design?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Observability closes the loop for reliability.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To avoid testing"
+   },
+   {
+    "key": "B",
+    "text": "To detect failures, performance regressions and anomalies quickly"
+   },
+   {
+    "key": "C",
+    "text": "To replace the database"
+   },
+   {
+    "key": "D",
+    "text": "To increase request size"
+   }
+  ]
+ },
+ {
+  "id": "q_d5fb11ce1c1d",
+  "type": "SCQ",
+  "stem": "What does event sourcing store?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "State is rebuilt by replaying events, providing a complete audit trail.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Only the latest state"
+   },
+   {
+    "key": "B",
+    "text": "Only error logs"
+   },
+   {
+    "key": "C",
+    "text": "The sequence of events that changed state, from which current state is derived"
+   },
+   {
+    "key": "D",
+    "text": "Only user passwords"
+   }
+  ]
+ },
+ {
   "id": "q_d6972b16c3da",
   "type": "SCQ",
   "stem": "Which statement best describes the difference between scalability and raw performance?",
@@ -12096,6 +15851,63 @@
   ]
  },
  {
+  "id": "q_d8c6e8085937",
+  "type": "SCQ",
+  "stem": "What is a key benefit of event-driven decoupling?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Publishers do not depend on subscribers, so the system extends easily.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_EVENT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Order of events is irrelevant"
+   },
+   {
+    "key": "B",
+    "text": "All components run in one process"
+   },
+   {
+    "key": "C",
+    "text": "New consumers can be added without changing producers"
+   },
+   {
+    "key": "D",
+    "text": "Producers must know every consumer"
+   }
+  ]
+ },
+ {
   "id": "q_d98b9dc04ab3",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Hard-coding instance IP addresses in clients is fragile in a dynamically scaled environment.\n\n**Reason (R):** Instances can be replaced or rescheduled and receive new addresses.\n\nChoose the correct option.",
@@ -12151,6 +15963,44 @@
     "text": "A is false but R is true"
    }
   ]
+ },
+ {
+  "id": "q_d99fa9c1d739",
+  "type": "NVQ",
+  "stem": "A service has 10 million daily active users and each makes 20 requests a day on average. What is the average requests per second? Round to the nearest integer (use 86,400 s per day).",
+  "images": [],
+  "answer": {
+   "value": 2314.81,
+   "tol": 1
+  },
+  "solution": "Total $=2\\times10^8$ requests per day; $/86400\\approx2315$ requests per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.ESTIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_dada114fadd8",
@@ -12471,6 +16321,63 @@
    {
     "key": "D",
     "text": "Blocking a payment in real time"
+   }
+  ]
+ },
+ {
+  "id": "q_dd22b4955d5e",
+  "type": "SCQ",
+  "stem": "A web crawler must avoid fetching the same page repeatedly. What helps most?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Deduplicating URLs prevents wasted work and loops.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "No tracking"
+   },
+   {
+    "key": "B",
+    "text": "Fetching everything again every second"
+   },
+   {
+    "key": "C",
+    "text": "Random sleeps only"
+   },
+   {
+    "key": "D",
+    "text": "A visited-URL set, often a Bloom filter or database check, plus URL normalisation"
    }
   ]
  },
@@ -12876,6 +16783,63 @@
   ]
  },
  {
+  "id": "q_e1bbcc855265",
+  "type": "SCQ",
+  "stem": "In a URL shortener's redirect path, which status code is typically used when you want browsers to re-check the short link each time (allowing link analytics and later changes)?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A permanent redirect may be cached by browsers, bypassing the service; a temporary one keeps requests flowing through it.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "200 OK with body"
+   },
+   {
+    "key": "B",
+    "text": "404 Not Found"
+   },
+   {
+    "key": "C",
+    "text": "302 Found (temporary redirect)"
+   },
+   {
+    "key": "D",
+    "text": "301 Moved Permanently"
+   }
+  ]
+ },
+ {
   "id": "q_e2c2bdeaa584",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Adding a hard dependency on a 99.9%-available service to a 99.95%-available service cannot leave the combined availability at 99.95%.\n\n**Reason (R):** For components in series, availability is the product of the components' availabilities.\n\nChoose the correct option.",
@@ -13256,6 +17220,44 @@
   ]
  },
  {
+  "id": "q_ec609238085a",
+  "type": "NVQ",
+  "stem": "A URL shortener uses 7-character codes from 62 symbols (a-z, A-Z, 0-9). How many billion distinct codes exist? Give one decimal.",
+  "images": [],
+  "answer": {
+   "value": 3521.61,
+   "tol": 0.05
+  },
+  "solution": "$62^7=3{,}521{,}614{,}606{,}208$, about 3,521.6 billion; the question asks for billions, so 3521.6.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_eca058177d41",
   "type": "SCQ",
   "stem": "A web tier is CPU-bound at peak and the application keeps no per-user data in memory. Which change scales it most directly?",
@@ -13427,6 +17429,63 @@
   ]
  },
  {
+  "id": "q_ef6c3d412f5a",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Serverless platforms can scale a function down to zero instances when idle.\n\n**Reason (R):** Billing and capacity follow actual invocations rather than provisioned servers.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Idle functions need not hold resources, which is why cold starts exist. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_SERVERLESS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_efde1c2adbb3",
   "type": "MSQ",
   "stem": "Select all true statements about database indexes.",
@@ -13543,6 +17602,63 @@
   ]
  },
  {
+  "id": "q_f05294dae0ab",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Making operations idempotent simplifies retry logic.\n\n**Reason (R):** Repeating an idempotent operation does not change the outcome beyond the first execution.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Retried requests are then safe. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TEMPLATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_f3203ec09b4c",
   "type": "SCQ",
   "stem": "Which algorithm smooths bursty traffic into a constant outflow rate?",
@@ -13596,6 +17712,63 @@
    {
     "key": "D",
     "text": "Token bucket with huge capacity"
+   }
+  ]
+ },
+ {
+  "id": "q_f3e957456796",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Link expiration in a URL shortener can be implemented with a TTL or an expiry timestamp checked at redirect time.\n\n**Reason (R):** The service can refuse or delete links whose expiry time has passed.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "An expiry field checked on lookup, plus background cleanup, enforces it. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CASES",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -13940,6 +18113,63 @@
    {
     "key": "D",
     "text": "To order database transactions"
+   }
+  ]
+ },
+ {
+  "id": "q_f75e3f57edca",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** In a microservices architecture, network calls replace in-process function calls.\n\n**Reason (R):** Services are separate deployable units communicating over a network.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "That is why latency, partial failure and retries become design concerns. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PAT_MICRO",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
