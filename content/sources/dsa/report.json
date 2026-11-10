@@ -1,0 +1,623 @@
+{
+ "verify": {
+  "3sum": {
+   "b": true,
+   "o": true
+  },
+  "accounts-merge": {
+   "b": true,
+   "o": true
+  },
+  "basic-calculator-ii": {
+   "b": true,
+   "o": true
+  },
+  "best-time-to-buy-and-sell-stock": {
+   "b": true,
+   "o": true
+  },
+  "binary-search": {
+   "b": true,
+   "o": true
+  },
+  "binary-tree-level-order-traversal": {
+   "b": true,
+   "o": true
+  },
+  "burst-balloons": {
+   "b": true,
+   "o": true
+  },
+  "cache-with-time-limit": {
+   "b": true,
+   "o": true
+  },
+  "cheapest-flights-within-k-stops": {
+   "b": true,
+   "o": true
+  },
+  "chunk-array": {
+   "b": true,
+   "o": true
+  },
+  "climbing-stairs": {
+   "b": true,
+   "o": true
+  },
+  "clone-graph": {
+   "b": true,
+   "o": true
+  },
+  "coin-change": {
+   "b": true,
+   "o": true
+  },
+  "combination-sum": {
+   "b": true,
+   "o": true
+  },
+  "container-with-most-water": {
+   "b": true,
+   "o": true
+  },
+  "contains-duplicate": {
+   "b": true,
+   "o": true
+  },
+  "copy-list-with-random-pointer": {
+   "b": true,
+   "o": true
+  },
+  "count-primes": {
+   "b": true,
+   "o": true
+  },
+  "counting-bits": {
+   "b": true,
+   "o": true
+  },
+  "course-schedule": {
+   "b": true,
+   "o": true
+  },
+  "course-schedule-ii": {
+   "b": true,
+   "o": true
+  },
+  "curry": {
+   "b": true,
+   "o": true
+  },
+  "daily-temperatures": {
+   "b": true,
+   "o": true
+  },
+  "debounce": {
+   "b": true,
+   "o": true
+  },
+  "decode-string": {
+   "b": true,
+   "o": true
+  },
+  "design-add-and-search-words-data-structure": {
+   "b": true,
+   "o": true
+  },
+  "design-browser-history": {
+   "b": true,
+   "o": true
+  },
+  "design-circular-queue": {
+   "b": true,
+   "o": true
+  },
+  "design-hashmap": {
+   "b": true,
+   "o": true
+  },
+  "design-hit-counter": {
+   "b": true,
+   "o": true
+  },
+  "design-twitter": {
+   "b": true,
+   "o": true
+  },
+  "edit-distance": {
+   "b": true,
+   "o": true
+  },
+  "evaluate-reverse-polish-notation": {
+   "b": true,
+   "o": true
+  },
+  "event-emitter": {
+   "b": true,
+   "o": true
+  },
+  "find-median-from-data-stream": {
+   "b": true,
+   "o": true
+  },
+  "find-peak-element": {
+   "b": true,
+   "o": true
+  },
+  "find-the-index-of-the-first-occurrence-in-a-string": {
+   "b": true,
+   "o": true
+  },
+  "flatten-deeply-nested-array": {
+   "b": true,
+   "o": true
+  },
+  "flood-fill": {
+   "b": true,
+   "o": true
+  },
+  "function-composition": {
+   "b": true,
+   "o": true
+  },
+  "generate-parentheses": {
+   "b": true,
+   "o": true
+  },
+  "group-anagrams": {
+   "b": true,
+   "o": true
+  },
+  "group-by": {
+   "b": true,
+   "o": true
+  },
+  "house-robber": {
+   "b": true,
+   "o": true
+  },
+  "implement-queue-using-stacks": {
+   "b": true,
+   "o": true
+  },
+  "implement-trie-prefix-tree": {
+   "b": true,
+   "o": true
+  },
+  "insert-delete-getrandom-o1": {
+   "b": true,
+   "o": true
+  },
+  "invert-binary-tree": {
+   "b": true,
+   "o": true
+  },
+  "join-two-arrays-by-id": {
+   "b": true,
+   "o": true
+  },
+  "k-closest-points-to-origin": {
+   "b": true,
+   "o": true
+  },
+  "koko-eating-bananas": {
+   "b": true,
+   "o": true
+  },
+  "kth-largest-element-in-an-array": {
+   "b": true,
+   "o": true
+  },
+  "largest-rectangle-in-histogram": {
+   "b": true,
+   "o": true
+  },
+  "lfu-cache": {
+   "b": true,
+   "o": true
+  },
+  "linked-list-cycle": {
+   "b": true,
+   "o": true
+  },
+  "longest-common-prefix": {
+   "b": true,
+   "o": true
+  },
+  "longest-common-subsequence": {
+   "b": true,
+   "o": true
+  },
+  "longest-consecutive-sequence": {
+   "b": true,
+   "o": true
+  },
+  "longest-increasing-path-in-a-matrix": {
+   "b": true,
+   "o": true
+  },
+  "longest-increasing-subsequence": {
+   "b": true,
+   "o": true
+  },
+  "longest-substring-without-repeating-characters": {
+   "b": true,
+   "o": true
+  },
+  "lowest-common-ancestor-of-a-binary-tree": {
+   "b": true,
+   "o": true
+  },
+  "lru-cache": {
+   "b": true,
+   "o": true
+  },
+  "maximum-depth-of-binary-tree": {
+   "b": true,
+   "o": true
+  },
+  "maximum-frequency-stack": {
+   "b": true,
+   "o": true
+  },
+  "maximum-product-subarray": {
+   "b": true,
+   "o": true
+  },
+  "maximum-subarray": {
+   "b": true,
+   "o": true
+  },
+  "median-of-two-sorted-arrays": {
+   "b": true,
+   "o": true
+  },
+  "meeting-rooms-ii": {
+   "b": true,
+   "o": true
+  },
+  "memoize": {
+   "b": true,
+   "o": true
+  },
+  "merge-intervals": {
+   "b": true,
+   "o": true
+  },
+  "merge-k-sorted-lists": {
+   "b": true,
+   "o": true
+  },
+  "merge-two-sorted-lists": {
+   "b": true,
+   "o": true
+  },
+  "min-cost-to-connect-all-points": {
+   "b": true,
+   "o": true
+  },
+  "min-stack": {
+   "b": true,
+   "o": true
+  },
+  "minimum-window-substring": {
+   "b": true,
+   "o": true
+  },
+  "n-queens": {
+   "b": true,
+   "o": true
+  },
+  "network-delay-time": {
+   "b": true,
+   "o": true
+  },
+  "number-of-1-bits": {
+   "b": true,
+   "o": true
+  },
+  "number-of-islands": {
+   "b": true,
+   "o": true
+  },
+  "number-of-recent-calls": {
+   "b": true,
+   "o": true
+  },
+  "powx-n": {
+   "b": true,
+   "o": true
+  },
+  "product-of-array-except-self": {
+   "b": true,
+   "o": true
+  },
+  "promise-pool": {
+   "b": true,
+   "o": true
+  },
+  "promise-time-limit": {
+   "b": true,
+   "o": true
+  },
+  "random-pick-index": {
+   "b": true,
+   "o": true
+  },
+  "random-pick-with-weight": {
+   "b": true,
+   "o": true
+  },
+  "redundant-connection": {
+   "b": true,
+   "o": true
+  },
+  "regular-expression-matching": {
+   "b": true,
+   "o": true
+  },
+  "reverse-bits": {
+   "b": true,
+   "o": true
+  },
+  "reverse-linked-list": {
+   "b": true,
+   "o": true
+  },
+  "search-in-rotated-sorted-array": {
+   "b": true,
+   "o": true
+  },
+  "search-suggestions-system": {
+   "b": true,
+   "o": true
+  },
+  "serialize-and-deserialize-binary-tree": {
+   "b": true,
+   "o": true
+  },
+  "shuffle-an-array": {
+   "b": true,
+   "o": true
+  },
+  "simplify-path": {
+   "b": true,
+   "o": true
+  },
+  "single-number": {
+   "b": true,
+   "o": true
+  },
+  "sliding-window-maximum": {
+   "b": true,
+   "o": true
+  },
+  "snapshot-array": {
+   "b": true,
+   "o": true
+  },
+  "sort-by": {
+   "b": true,
+   "o": true
+  },
+  "sort-colors": {
+   "b": true,
+   "o": true
+  },
+  "sqrtx": {
+   "b": true,
+   "o": true
+  },
+  "subarray-sum-equals-k": {
+   "b": true,
+   "o": true
+  },
+  "sum-of-two-integers": {
+   "b": true,
+   "o": true
+  },
+  "task-scheduler": {
+   "b": true,
+   "o": true
+  },
+  "text-justification": {
+   "b": true,
+   "o": true
+  },
+  "throttle": {
+   "b": true,
+   "o": true
+  },
+  "time-based-key-value-store": {
+   "b": true,
+   "o": true
+  },
+  "top-k-frequent-elements": {
+   "b": true,
+   "o": true
+  },
+  "trapping-rain-water": {
+   "b": true,
+   "o": true
+  },
+  "two-sum": {
+   "b": true,
+   "o": true
+  },
+  "valid-anagram": {
+   "b": true,
+   "o": true
+  },
+  "valid-palindrome": {
+   "b": true,
+   "o": true
+  },
+  "valid-parentheses": {
+   "b": true,
+   "o": true
+  },
+  "validate-binary-search-tree": {
+   "b": true,
+   "o": true
+  },
+  "word-break": {
+   "b": true,
+   "o": true
+  },
+  "word-search": {
+   "b": true,
+   "o": true
+  }
+ },
+ "skipped": {
+  "3sum": [
+   "dryrun: failed validation"
+  ],
+  "accounts-merge": [
+   "dryrun: output not small/unambiguous"
+  ],
+  "cache-with-time-limit": [
+   "dryrun: non-deterministic or no test"
+  ],
+  "clone-graph": [
+   "dryrun: test too long"
+  ],
+  "combination-sum": [
+   "brute: no clean distractors for 'exponential, all orders'"
+  ],
+  "copy-list-with-random-pointer": [
+   "dryrun: test too long"
+  ],
+  "debounce": [
+   "dryrun: non-deterministic or no test"
+  ],
+  "design-add-and-search-words-data-structure": [
+   "time: no clean distractors for 'O(L) … O(26^L) worst'",
+   "dryrun: failed validation"
+  ],
+  "design-browser-history": [
+   "dryrun: output not small/unambiguous"
+  ],
+  "design-hit-counter": [
+   "time: no clean distractors for 'O(300) per query'",
+   "space: no clean distractors for 'O(300)'"
+  ],
+  "find-median-from-data-stream": [
+   "time: no clean distractors for 'O(log n) add, O(1) median'"
+  ],
+  "find-peak-element": [
+   "dryrun: failed validation"
+  ],
+  "join-two-arrays-by-id": [
+   "dryrun: output not small/unambiguous"
+  ],
+  "longest-increasing-path-in-a-matrix": [
+   "dryrun: failed validation"
+  ],
+  "median-of-two-sorted-arrays": [
+   "dryrun: failed validation"
+  ],
+  "n-queens": [
+   "dryrun: output not small/unambiguous"
+  ],
+  "number-of-1-bits": [
+   "brute: no clean distractors for 'O(32)'"
+  ],
+  "promise-pool": [
+   "time: no clean distractors for 'optimal throughput'",
+   "brute: no clean distractors for 'batch-bound'",
+   "dryrun: non-deterministic or no test"
+  ],
+  "promise-time-limit": [
+   "dryrun: non-deterministic or no test"
+  ],
+  "random-pick-index": [
+   "brute: no clean distractors for 'O(n) time + O(n) memory per pick'",
+   "dryrun: non-deterministic or no test"
+  ],
+  "random-pick-with-weight": [
+   "brute: no clean distractors for 'O(1) pick, O(sum w) memory'",
+   "dryrun: non-deterministic or no test"
+  ],
+  "reverse-bits": [
+   "time: no clean distractors for 'O(log 32)'",
+   "brute: no clean distractors for 'O(32)'"
+  ],
+  "search-suggestions-system": [
+   "dryrun: output not small/unambiguous"
+  ],
+  "shuffle-an-array": [
+   "dryrun: non-deterministic or no test"
+  ],
+  "snapshot-array": [
+   "time: no clean distractors for 'O(1) snap, O(log s) get'"
+  ],
+  "sort-by": [
+   "time: no clean distractors for 'n fn calls'"
+  ],
+  "sum-of-two-integers": [
+   "time: no clean distractors for 'O(32)'",
+   "brute: no clean distractors for 'O(32)'"
+  ],
+  "task-scheduler": [
+   "space: no clean distractors for 'O(26)'"
+  ],
+  "text-justification": [
+   "dryrun: output not small/unambiguous"
+  ],
+  "throttle": [
+   "dryrun: non-deterministic or no test"
+  ]
+ },
+ "warnings": [
+  "shuffle-an-array [b] claims O(n²) but loop depth is 1",
+  "top-k-frequent-elements [o] claims O(n) but nested for-loop depth is 2"
+ ],
+ "invalid": [
+  "q_dsa3sumDryrun: stem: raw HTML tag not allowed (markdown only)",
+  "q_dsaDesignAddAndSearchWordsDataStructureDryrun: stem: unbalanced '$' delimiter",
+  "q_dsaFindPeakElementDryrun: stem: raw HTML tag not allowed (markdown only)",
+  "q_dsaLongestIncreasingPathInAMatrixDryrun: stem: raw HTML tag not allowed (markdown only)",
+  "q_dsaMedianOfTwoSortedArraysDryrun: stem: raw HTML tag not allowed (markdown only)"
+ ],
+ "counts": {
+  "total": 547,
+  "by_kind": {
+   "brute": 110,
+   "pattern": 117,
+   "space": 115,
+   "time": 109,
+   "dryrun": 96
+  },
+  "by_chapter": {
+   "ALG.ARR": 45,
+   "ALG.BACK": 18,
+   "ALG.BIT": 20,
+   "ALG.BSEARCH": 28,
+   "ALG.DESIGN": 61,
+   "ALG.DP": 59,
+   "ALG.GRAPH": 39,
+   "ALG.GREEDY": 14,
+   "ALG.HEAP": 14,
+   "ALG.JS": 61,
+   "ALG.LL": 24,
+   "ALG.MATH": 20,
+   "ALG.SLIDE": 15,
+   "ALG.STACK": 40,
+   "ALG.STR": 14,
+   "ALG.TREE": 30,
+   "ALG.TRIE": 12,
+   "ALG.TWOP": 24,
+   "ALG.UF": 9
+  },
+  "by_type": {
+   "SCQ": 535,
+   "NVQ": 12
+  }
+ },
+ "verify_summary": {
+  "problems": 117,
+  "b_pass": 117,
+  "o_pass": 117
+ }
+}

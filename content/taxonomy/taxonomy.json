@@ -3616,6 +3616,297 @@
      ]
     }
    ]
+  },
+  {
+   "id": "ALG",
+   "name": "Algorithms & Data Structures",
+   "chapters": [
+    {
+     "id": "ALG.ARR",
+     "name": "Arrays & hashing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.TWOP",
+     "name": "Two pointers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.SLIDE",
+     "name": "Sliding window",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.STACK",
+     "name": "Stacks & monotonic stack",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.BSEARCH",
+     "name": "Binary search",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.LL",
+     "name": "Linked lists",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.TREE",
+     "name": "Trees",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.GRAPH",
+     "name": "Graphs (BFS, DFS, shortest paths)",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.UF",
+     "name": "Union-find",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.HEAP",
+     "name": "Heaps & top-k",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.DP",
+     "name": "Dynamic programming",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.BACK",
+     "name": "Backtracking",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.GREEDY",
+     "name": "Greedy & intervals",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.TRIE",
+     "name": "Tries",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.BIT",
+     "name": "Bit manipulation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.MATH",
+     "name": "Math & randomisation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.DESIGN",
+     "name": "Data-structure design",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.STR",
+     "name": "String algorithms",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.JS",
+     "name": "JavaScript utilities & async",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    }
+   ]
   }
  ]
 }
