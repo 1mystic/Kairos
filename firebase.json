@@ -160,6 +160,33 @@
             "value": "no-cache"
           }
         ]
+      },
+      {
+        "source": "/dryrun/**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy-Report-Only",
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https: http://127.0.0.1:8765 http://localhost:*; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+          }
+        ]
+      },
+      {
+        "source": "/dryrun/**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/dryrun/@(|index.html)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
       }
     ]
   },

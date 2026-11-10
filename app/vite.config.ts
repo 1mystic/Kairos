@@ -17,7 +17,7 @@ export default defineConfig({
         // SPA fallback: any navigation is answered offline with the precached index.html (the app shell), EXCEPT
         // bank / image files and Firebase's reserved /__/ paths (the Auth popup/redirect handler must hit the network).
         navigateFallback: 'index.html',
-        navigateFallbackDenylist: [/^\/bank\//, /^\/img\//, /^\/__\//, /^\/robots\.txt$/, /^\/sitemap\.xml$/],
+        navigateFallbackDenylist: [/^\/bank\//, /^\/dryrun\//, /^\/img\//, /^\/__\//, /^\/robots\.txt$/, /^\/sitemap\.xml$/],
         runtimeCaching: [
           {
             // lazy route chunks (hashed, immutable): cached on first use
