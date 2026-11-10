@@ -57,6 +57,120 @@
   ]
  },
  {
+  "id": "q_0085777e2326",
+  "type": "SCQ",
+  "stem": "Why might you denormalise a schema?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Duplication trades storage and write complexity for faster reads.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To make writes simpler in every case"
+   },
+   {
+    "key": "B",
+    "text": "To enforce stronger integrity"
+   },
+   {
+    "key": "C",
+    "text": "To avoid expensive joins and speed up reads by duplicating some data"
+   },
+   {
+    "key": "D",
+    "text": "To save storage"
+   }
+  ]
+ },
+ {
+  "id": "q_008ba7dccf81",
+  "type": "SCQ",
+  "stem": "In a stateless service, each request",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Statelessness means the server does not remember the client between calls, so any instance can serve any request.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "depends on server memory of earlier requests"
+   },
+   {
+    "key": "B",
+    "text": "carries all the information needed to process it; the server keeps no client state between requests"
+   },
+   {
+    "key": "C",
+    "text": "cannot use a database"
+   },
+   {
+    "key": "D",
+    "text": "must go to the same server every time"
+   }
+  ]
+ },
+ {
   "id": "q_00f31fb0366d",
   "type": "INT",
   "stem": "In an idealised push gossip model each informed node tells one new, uninformed node per round, so the number of informed nodes doubles each round. Starting with 1 informed node, what is the minimum number of rounds to inform at least 1,000 nodes?",
@@ -189,6 +303,63 @@
   "version": 1
  },
  {
+  "id": "q_053629f55547",
+  "type": "SCQ",
+  "stem": "Batch processing is typically characterised by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Batch jobs trade latency for throughput and simplicity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "processing large volumes of accumulated data at scheduled intervals, with higher latency to results"
+   },
+   {
+    "key": "B",
+    "text": "processing every event within milliseconds"
+   },
+   {
+    "key": "C",
+    "text": "having no schedule"
+   },
+   {
+    "key": "D",
+    "text": "never storing data"
+   }
+  ]
+ },
+ {
   "id": "q_0557afc10823",
   "type": "SCQ",
   "stem": "What is a cache stampede?",
@@ -299,6 +470,63 @@
    {
     "key": "D",
     "text": "Nobody selects"
+   }
+  ]
+ },
+ {
+  "id": "q_061b95f5282b",
+  "type": "SCQ",
+  "stem": "Which is a drawback of vertical scaling compared with horizontal scaling?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A bigger single machine is simple but bounded and still one failure domain; horizontal scaling adds machines at the cost of distribution complexity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It has a hard hardware ceiling and leaves a single point of failure"
+   },
+   {
+    "key": "B",
+    "text": "It requires distributed coordination"
+   },
+   {
+    "key": "C",
+    "text": "It needs a load balancer in every case"
+   },
+   {
+    "key": "D",
+    "text": "It cannot increase CPU"
    }
   ]
  },
@@ -455,6 +683,63 @@
   "version": 1
  },
  {
+  "id": "q_08a12c750ec9",
+  "type": "SCQ",
+  "stem": "Why is UDP often used for live voice or video calls?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Waiting for retransmission would add delay; small losses are tolerable.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "UDP guarantees order"
+   },
+   {
+    "key": "B",
+    "text": "Late packets are useless, so low latency matters more than retransmitting lost ones"
+   },
+   {
+    "key": "C",
+    "text": "TCP cannot carry audio"
+   },
+   {
+    "key": "D",
+    "text": "UDP encrypts by default"
+   }
+  ]
+ },
+ {
   "id": "q_0941aaee7809",
   "type": "MSQ",
   "stem": "Select all properties of gossip protocols.",
@@ -608,6 +893,43 @@
   ]
  },
  {
+  "id": "q_0d1294a6a8a1",
+  "type": "INT",
+  "stem": "A TCP connection needs 1 round trip for the handshake before the first data byte can be sent (ignoring TLS). On a 80 ms round trip link, how many ms before the client can start sending data?",
+  "images": [],
+  "answer": {
+   "value": 80.0
+  },
+  "solution": "The handshake takes about one round trip: 80 ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_0d16979508e7",
   "type": "INT",
   "stem": "A B-tree index has a fanout of about 100 child pointers per node and indexes 1,000,000 keys. Roughly how many levels (node reads) does a lookup need, taking the smallest integer $h$ with $100^h \\ge 10^6$?",
@@ -643,6 +965,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_0d721d01b6b7",
+  "type": "SCQ",
+  "stem": "An app looks up user sessions by id with sub-millisecond latency at huge volume. Which store type fits best?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Single-key lookups at low latency map to key-value stores.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A full-text search engine"
+   },
+   {
+    "key": "B",
+    "text": "A relational data warehouse"
+   },
+   {
+    "key": "C",
+    "text": "An in-memory key-value store"
+   },
+   {
+    "key": "D",
+    "text": "A graph database"
+   }
+  ]
  },
  {
   "id": "q_0d92c68d59ac",
@@ -812,6 +1191,63 @@
    {
     "key": "D",
     "text": "Whether the received data matches what was sent, detecting accidental corruption"
+   }
+  ]
+ },
+ {
+  "id": "q_0f51eac5da37",
+  "type": "SCQ",
+  "stem": "A product catalogue has wildly different attributes per product category and is mostly read by id or category. Which design is most natural?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Heterogeneous attributes fit self-describing documents, while sparse wide tables waste space and complicate schema changes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A document store with one flexible document per product"
+   },
+   {
+    "key": "B",
+    "text": "A graph database for all of it"
+   },
+   {
+    "key": "C",
+    "text": "One relational table with a column for every attribute of every category"
+   },
+   {
+    "key": "D",
+    "text": "A text file per product on one server"
    }
   ]
  },
@@ -1042,6 +1478,63 @@
   "version": 1
  },
  {
+  "id": "q_120f2bdf2627",
+  "type": "SCQ",
+  "stem": "Why are stateless services easier to scale horizontally?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Without per-client memory there is no affinity to maintain or lose.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They need no network"
+   },
+   {
+    "key": "B",
+    "text": "They avoid databases entirely"
+   },
+   {
+    "key": "C",
+    "text": "They use less CPU always"
+   },
+   {
+    "key": "D",
+    "text": "Any instance can handle any request, so instances can be added, removed or replaced freely"
+   }
+  ]
+ },
+ {
   "id": "q_12124ba93f4e",
   "type": "SCQ",
   "stem": "A company wants to block access to certain websites for employees and log their traffic. Which component fits?",
@@ -1163,6 +1656,100 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_134b171e95ab",
+  "type": "SCQ",
+  "stem": "Which scenario justifies keeping data normalised even in a high-scale system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "When facts change often and must be consistent, single-copy storage avoids anomalies.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Frequently updated shared data where integrity matters, such as account balances"
+   },
+   {
+    "key": "B",
+    "text": "Static reference data that never changes"
+   },
+   {
+    "key": "C",
+    "text": "Read-only analytics snapshots"
+   },
+   {
+    "key": "D",
+    "text": "Precomputed feeds"
+   }
+  ]
+ },
+ {
+  "id": "q_140384990c45",
+  "type": "INT",
+  "stem": "A request calls three downstream services in sequence taking 80, 120 and 50 ms. Calling them in parallel (they are independent) instead takes about how many ms, ignoring overhead?",
+  "images": [],
+  "answer": {
+   "value": 120.0
+  },
+  "solution": "In parallel the total is the slowest call, 120 ms, versus $80+120+50=250$ ms sequentially.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -1346,6 +1933,65 @@
   ]
  },
  {
+  "id": "q_18822002c752",
+  "type": "MSQ",
+  "stem": "Select all challenges introduced by asynchronous processing.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Async improves decoupling but demands idempotency and observability.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Harder debugging and tracing across components"
+   },
+   {
+    "key": "B",
+    "text": "Handling duplicates, retries and ordering"
+   },
+   {
+    "key": "C",
+    "text": "Eventual rather than immediate results"
+   },
+   {
+    "key": "D",
+    "text": "Callers are always blocked"
+   }
+  ]
+ },
+ {
   "id": "q_19a7adbaf28c",
   "type": "SCQ",
   "stem": "Which eviction policy removes the item that has not been accessed for the longest time?",
@@ -1403,6 +2049,63 @@
   ]
  },
  {
+  "id": "q_1a73501a9538",
+  "type": "SCQ",
+  "stem": "In synchronous communication, the caller",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Synchronous calls block until completion; asynchronous ones return immediately and result arrives later.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "always uses a queue"
+   },
+   {
+    "key": "B",
+    "text": "waits for the response before continuing"
+   },
+   {
+    "key": "C",
+    "text": "runs in a different process only"
+   },
+   {
+    "key": "D",
+    "text": "never receives a response"
+   }
+  ]
+ },
+ {
   "id": "q_1a794d5c8202",
   "type": "INT",
   "stem": "A cluster of 7 voting nodes uses majority quorums. What is the largest number of node failures it can tolerate while still making progress?",
@@ -1438,6 +2141,177 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_1de0b3cf8cce",
+  "type": "SCQ",
+  "stem": "Why is gRPC often chosen for service-to-service calls inside a microservices system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Efficiency, schemas and streaming make gRPC attractive internally.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It only works in browsers"
+   },
+   {
+    "key": "B",
+    "text": "It requires XML"
+   },
+   {
+    "key": "C",
+    "text": "It uses compact binary serialisation over HTTP/2 with generated typed clients"
+   },
+   {
+    "key": "D",
+    "text": "It cannot stream"
+   }
+  ]
+ },
+ {
+  "id": "q_1e2c276fc8cc",
+  "type": "SCQ",
+  "stem": "A news feed read path joins 6 tables and is slow at high read volume while writes are rare. What is the usual remedy?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Read-heavy, write-light workloads favour materialised or denormalised views.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Add more joins"
+   },
+   {
+    "key": "B",
+    "text": "Normalise further"
+   },
+   {
+    "key": "C",
+    "text": "Denormalise or precompute the feed into a read-optimised table or cache"
+   },
+   {
+    "key": "D",
+    "text": "Remove the primary keys"
+   }
+  ]
+ },
+ {
+  "id": "q_1ef017baf9c1",
+  "type": "SCQ",
+  "stem": "What is the main complexity of stream processing compared with batch?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Event time versus processing time and fault-tolerant state make streaming harder.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It needs no state"
+   },
+   {
+    "key": "B",
+    "text": "Handling late or out-of-order events, state and exactly-once semantics"
+   },
+   {
+    "key": "C",
+    "text": "It is always cheaper"
+   },
+   {
+    "key": "D",
+    "text": "It cannot scale"
+   }
+  ]
  },
  {
   "id": "q_204568a69a99",
@@ -1607,6 +2481,65 @@
    {
     "key": "D",
     "text": "Checkout cannot work without email"
+   }
+  ]
+ },
+ {
+  "id": "q_245250ea3048",
+  "type": "MSQ",
+  "stem": "Select all ways to make a stateful web tier effectively stateless.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "State must live outside the instance (shared store) or travel with the request (token).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Store sessions in a shared cache or database"
+   },
+   {
+    "key": "B",
+    "text": "Use signed tokens such as JWTs that the client presents"
+   },
+   {
+    "key": "C",
+    "text": "Keep sessions only in each server's RAM with sticky routing"
+   },
+   {
+    "key": "D",
+    "text": "Include needed context in each request"
    }
   ]
  },
@@ -1837,6 +2770,63 @@
    {
     "key": "D",
     "text": "Increase the page title length"
+   }
+  ]
+ },
+ {
+  "id": "q_26b0bd1f464d",
+  "type": "SCQ",
+  "stem": "A mobile client needs data that would require 5 REST calls per screen, causing latency on poor networks. Which approach directly reduces round trips?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Fewer round trips matter on high-latency links; aggregation or GraphQL lets the client fetch a tailored payload.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Offer an aggregated endpoint or a query language such as GraphQL that returns exactly the needed fields in one call"
+   },
+   {
+    "key": "B",
+    "text": "Add more REST endpoints with finer granularity"
+   },
+   {
+    "key": "C",
+    "text": "Increase the server's disk"
+   },
+   {
+    "key": "D",
+    "text": "Switch to polling every second"
    }
   ]
  },
@@ -2147,6 +3137,65 @@
   ]
  },
  {
+  "id": "q_2f9982f8fdd9",
+  "type": "MSQ",
+  "stem": "Select all true statements about cache write policies.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Write-back trades durability for speed; write-through favours consistency and durability.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Write-through keeps cache and store consistent on every write"
+   },
+   {
+    "key": "B",
+    "text": "Write-back improves write latency and can coalesce multiple writes"
+   },
+   {
+    "key": "C",
+    "text": "Write-back is the safest policy for durability"
+   },
+   {
+    "key": "D",
+    "text": "Cache-aside leaves cache population to the application"
+   }
+  ]
+ },
+ {
   "id": "q_304e19df3e4c",
   "type": "SCQ",
   "stem": "What is the main job of a load balancer?",
@@ -2200,6 +3249,63 @@
    {
     "key": "D",
     "text": "Store the application's data"
+   }
+  ]
+ },
+ {
+  "id": "q_309a8ef75fa4",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Horizontal scaling improves fault tolerance in addition to capacity.\n\n**Reason (R):** Losing one of many nodes removes only a fraction of the capacity.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "With N nodes, a single failure cuts capacity by 1/N, whereas one big machine failing removes everything. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -2412,6 +3518,63 @@
   ]
  },
  {
+  "id": "q_3861d7e3013f",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Strong consistency across regions increases write latency.\n\n**Reason (R):** A write must be confirmed by replicas far away before it is acknowledged.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Cross-region round trips add tens to hundreds of milliseconds to each write. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_38f8648d1ae1",
   "type": "NVQ",
   "stem": "A table stores 200 million rows of 500 bytes each (use 1 GB = $10^9$ bytes). With one primary and 2 replicas (3 full copies in total), how many GB of raw table storage are needed in total?",
@@ -2448,6 +3611,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_3cbef878f865",
+  "type": "SCQ",
+  "stem": "What is the goal of normalisation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Normalised schemas keep one copy of each fact, improving integrity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Maximise read speed at any cost"
+   },
+   {
+    "key": "B",
+    "text": "Reduce data redundancy and update anomalies by storing each fact once"
+   },
+   {
+    "key": "C",
+    "text": "Duplicate data into every table"
+   },
+   {
+    "key": "D",
+    "text": "Remove all keys"
+   }
+  ]
  },
  {
   "id": "q_3dcd7078c5b3",
@@ -2579,6 +3799,63 @@
    {
     "key": "D",
     "text": "of little help for queries because it has low selectivity"
+   }
+  ]
+ },
+ {
+  "id": "q_414ca086d106",
+  "type": "SCQ",
+  "stem": "Which use case suits stream processing?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Fraud blocking needs immediate decisions.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Nightly data warehouse loads"
+   },
+   {
+    "key": "B",
+    "text": "Monthly invoice generation"
+   },
+   {
+    "key": "C",
+    "text": "Detecting a fraudulent card transaction within a second"
+   },
+   {
+    "key": "D",
+    "text": "Computing quarterly financial statements"
    }
   ]
  },
@@ -2964,6 +4241,63 @@
   ]
  },
  {
+  "id": "q_46a46e254f09",
+  "type": "SCQ",
+  "stem": "Which feature most needs strong consistency?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Two buyers must not both succeed for one seat, which needs a single authoritative, up-to-date view.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Preventing double-booking of the same airline seat"
+   },
+   {
+    "key": "B",
+    "text": "A video's view count"
+   },
+   {
+    "key": "C",
+    "text": "A profile picture cache"
+   },
+   {
+    "key": "D",
+    "text": "A list of suggested videos"
+   }
+  ]
+ },
+ {
   "id": "q_47896487f98a",
   "type": "SCQ",
   "stem": "A multi-tenant database is sharded by tenant_id, but one tenant is 40% of the traffic. What is the best remedy?",
@@ -3017,6 +4351,65 @@
    {
     "key": "D",
     "text": "Give the large tenant its own shard or split its data across several shards with a sub-key"
+   }
+  ]
+ },
+ {
+  "id": "q_47c137bdcaa6",
+  "type": "MSQ",
+  "stem": "Select all advantages of REST over RPC for public APIs.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "REST's strengths are uniformity and ecosystem, not guaranteed speed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Uniform interface that is widely understood"
+   },
+   {
+    "key": "B",
+    "text": "Responses can leverage HTTP caching"
+   },
+   {
+    "key": "C",
+    "text": "Works with simple tools like browsers and curl"
+   },
+   {
+    "key": "D",
+    "text": "Always lower latency than any RPC"
    }
   ]
  },
@@ -3460,6 +4853,63 @@
   ]
  },
  {
+  "id": "q_4cac75c447c0",
+  "type": "SCQ",
+  "stem": "Which HTTP methods are conventionally idempotent?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Repeating GET, PUT or DELETE leaves the same server state; POST generally creates new resources each time.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "POST only"
+   },
+   {
+    "key": "B",
+    "text": "GET, PUT and DELETE"
+   },
+   {
+    "key": "C",
+    "text": "POST and PATCH always"
+   },
+   {
+    "key": "D",
+    "text": "None"
+   }
+  ]
+ },
+ {
   "id": "q_50a7625ad87b",
   "type": "SCQ",
   "stem": "A rate limiter built on read-then-write operations in a shared store lets clients exceed limits under concurrency. What fixes it?",
@@ -3513,6 +4963,63 @@
    {
     "key": "D",
     "text": "Disable the limiter"
+   }
+  ]
+ },
+ {
+  "id": "q_523c5a1b55f9",
+  "type": "SCQ",
+  "stem": "In a write-through cache, a write is considered complete when",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Write-through writes synchronously to both, so the cache and store stay consistent.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "neither"
+   },
+   {
+    "key": "B",
+    "text": "both the cache and the backing store have been updated"
+   },
+   {
+    "key": "C",
+    "text": "only the database has been written"
+   },
+   {
+    "key": "D",
+    "text": "only the cache has been written"
    }
   ]
  },
@@ -3955,6 +5462,63 @@
   ]
  },
  {
+  "id": "q_5dde755d0184",
+  "type": "SCQ",
+  "stem": "Which protocol is connectionless with no delivery guarantee?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "UDP sends independent datagrams with minimal overhead.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "UDP"
+   },
+   {
+    "key": "B",
+    "text": "TLS"
+   },
+   {
+    "key": "C",
+    "text": "TCP"
+   },
+   {
+    "key": "D",
+    "text": "HTTP/1.1 over TCP"
+   }
+  ]
+ },
+ {
   "id": "q_60c155c60767",
   "type": "INT",
   "stem": "Peak traffic is 40,000 requests per second. One server handles 2,500 requests per second at the target utilisation. You also want two spare servers (N+2) for failures. How many servers do you provision?",
@@ -4222,6 +5786,102 @@
   ]
  },
  {
+  "id": "q_660110dee6d4",
+  "type": "MSQ",
+  "stem": "Select all reasons a team might scale vertically first.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Vertical scaling is simple and keeps single-node semantics but is bounded.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Simplicity: no code changes or data partitioning"
+   },
+   {
+    "key": "B",
+    "text": "Low operational complexity for a small team"
+   },
+   {
+    "key": "C",
+    "text": "Strong transactional guarantees on one node are retained"
+   },
+   {
+    "key": "D",
+    "text": "It has unlimited headroom"
+   }
+  ]
+ },
+ {
+  "id": "q_67542040bba5",
+  "type": "INT",
+  "stem": "A store has 3 replicas and writes need W=2 acknowledgements. A read contacts R=2 replicas. Is $R+W>N$? Enter 1 if yes (reads are guaranteed to overlap the latest write), 0 if no.",
+  "images": [],
+  "answer": {
+   "value": 1.0
+  },
+  "solution": "$R+W=4>N=3$, so every read quorum intersects every write quorum: answer 1.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_6b1b611a24a2",
   "type": "NVQ",
   "stem": "A service promises 99.9% availability (three nines). Using a 365-day year, how many minutes of downtime per year does that allow? Round to the nearest minute.",
@@ -4313,6 +5973,63 @@
    {
     "key": "D",
     "text": "Clients keep a local cached copy of the last known instances and the registry runs as a replicated cluster"
+   }
+  ]
+ },
+ {
+  "id": "q_6c4fdfc36c61",
+  "type": "SCQ",
+  "stem": "What is the main risk of write-back (write-behind) caching compared with write-through?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Write-back acknowledges from cache and flushes later, so unflushed data is at risk.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "No caching benefit"
+   },
+   {
+    "key": "B",
+    "text": "Recent writes can be lost if the cache fails before they are flushed"
+   },
+   {
+    "key": "C",
+    "text": "Stale reads are guaranteed"
+   },
+   {
+    "key": "D",
+    "text": "Slower writes"
    }
   ]
  },
@@ -4412,6 +6129,63 @@
   "version": 1
  },
  {
+  "id": "q_6ebf604cc45e",
+  "type": "SCQ",
+  "stem": "Which statement describes REST?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "REST is resource-oriented and uses GET, POST, PUT, DELETE semantics.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It forbids HTTP"
+   },
+   {
+    "key": "B",
+    "text": "It models resources identified by URLs and manipulated with standard HTTP methods"
+   },
+   {
+    "key": "C",
+    "text": "It requires binary protocols only"
+   },
+   {
+    "key": "D",
+    "text": "It exposes only verbs such as doStuff()"
+   }
+  ]
+ },
+ {
   "id": "q_6f4e03ceac12",
   "type": "MSQ",
   "stem": "Select all tasks commonly performed by a reverse proxy.",
@@ -4471,6 +6245,102 @@
   ]
  },
  {
+  "id": "q_6f8aaf45afa4",
+  "type": "INT",
+  "stem": "A stateless tier needs 12 servers at peak plus 2 spares. If instead each of 5 stateful nodes holds 1/5 of the state and you need each to be replicated twice (2 extra copies), how many state-holding nodes are required in total (primary plus copies)?",
+  "images": [],
+  "answer": {
+   "value": 15.0
+  },
+  "solution": "Each of 5 partitions has 1 primary and 2 copies: $5\\times3=15$ nodes. (The stateless tier needs only 14 and no replication.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_71045495301b",
+  "type": "MSQ",
+  "stem": "Select all consequences of choosing eventual consistency.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Weaker consistency buys speed and availability while introducing staleness and conflicts.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Lower write latency and higher availability are often possible"
+   },
+   {
+    "key": "B",
+    "text": "Readers may briefly see stale data"
+   },
+   {
+    "key": "C",
+    "text": "Concurrent updates may need conflict resolution"
+   },
+   {
+    "key": "D",
+    "text": "Linearizability is guaranteed"
+   }
+  ]
+ },
+ {
   "id": "q_72b48381dedf",
   "type": "NVQ",
   "stem": "For a target false-positive rate of 1% with the optimal $k$, a Bloom filter needs $m/n=-\\ln p/(\\ln 2)^2$ bits per element. How many bits per element is that? Give one decimal.",
@@ -4499,6 +6369,44 @@
   "difficulty": {
    "label": "H",
    "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_72bbc377d0bd",
+  "type": "NVQ",
+  "stem": "A client uses plain short polling every 5 seconds. On average, how many requests per second do 1,000 such clients generate in total, even when there is no new data?",
+  "images": [],
+  "answer": {
+   "value": 200.0,
+   "tol": 0.01
+  },
+  "solution": "Each client sends 0.2 requests per second; 1,000 clients give $1000/5=200$ requests per second even when there is no data.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -4544,6 +6452,120 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_73e9ac354554",
+  "type": "SCQ",
+  "stem": "Which application most strongly favours WebSockets?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Frequent bidirectional low-latency messaging benefits from a persistent connection.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A static blog page"
+   },
+   {
+    "key": "B",
+    "text": "A nightly file download"
+   },
+   {
+    "key": "C",
+    "text": "A one-time form submission"
+   },
+   {
+    "key": "D",
+    "text": "A live chat or collaborative editor with frequent two-way messages"
+   }
+  ]
+ },
+ {
+  "id": "q_74cd428be3b3",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Stateless designs simplify failover.\n\n**Reason (R):** Any surviving instance can immediately serve requests that were headed to a failed one.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "No state needs to be moved or rebuilt, so traffic simply shifts. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
  },
  {
   "id": "q_750fbdbbdd9f",
@@ -4603,6 +6625,63 @@
   ]
  },
  {
+  "id": "q_76718665c53d",
+  "type": "SCQ",
+  "stem": "Which feature is best suited to eventual consistency?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Counters tolerate temporary lag; money, unique seats and last-item stock need correctness.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Seat reservation for a numbered seat"
+   },
+   {
+    "key": "B",
+    "text": "A social media like or view counter"
+   },
+   {
+    "key": "C",
+    "text": "Account balance debits"
+   },
+   {
+    "key": "D",
+    "text": "Inventory decrement for the last item"
+   }
+  ]
+ },
+ {
   "id": "q_76aff63b53a4",
   "type": "INT",
   "stem": "A token bucket (capacity 100, refill 10 tokens per second) is empty at $t=0$. How many tokens does it hold at $t=4$ s with no requests?",
@@ -4638,6 +6717,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_7c9e63f1507d",
+  "type": "SCQ",
+  "stem": "In long polling, the server",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The client re-issues a request after each response, giving near-real-time updates over plain HTTP.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "pushes data without any request"
+   },
+   {
+    "key": "B",
+    "text": "answers immediately with no data always"
+   },
+   {
+    "key": "C",
+    "text": "closes the TCP stack"
+   },
+   {
+    "key": "D",
+    "text": "holds the client's request open until new data is available or a timeout occurs"
+   }
+  ]
  },
  {
   "id": "q_7eceb8d85af5",
@@ -4750,6 +6886,177 @@
    {
     "key": "D",
     "text": "Cache-aside (lazy loading)"
+   }
+  ]
+ },
+ {
+  "id": "q_801cbb4fd3f7",
+  "type": "SCQ",
+  "stem": "A legacy single-node relational database is at 70% CPU and growth is 5% per quarter. What is the most pragmatic first step?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Slow, predictable growth on a monolithic database favours the cheap, simple vertical step, buying time to design horizontal scaling. Check: simplicity matters when headroom exists.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Immediately rewrite as 100 microservices"
+   },
+   {
+    "key": "B",
+    "text": "Move to a peer-to-peer design"
+   },
+   {
+    "key": "C",
+    "text": "Ignore growth"
+   },
+   {
+    "key": "D",
+    "text": "Scale up (bigger instance) while planning replicas or partitioning for later"
+   }
+  ]
+ },
+ {
+  "id": "q_80f807a9ba4d",
+  "type": "SCQ",
+  "stem": "What is a downside of WebSockets for a large-scale service?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Millions of open sockets use memory and file descriptors and complicate deployment and failover.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Each client holds a long-lived connection, requiring connection-aware load balancing and resource planning"
+   },
+   {
+    "key": "B",
+    "text": "They need no server resources"
+   },
+   {
+    "key": "C",
+    "text": "They only work on localhost"
+   },
+   {
+    "key": "D",
+    "text": "They cannot send data"
+   }
+  ]
+ },
+ {
+  "id": "q_811038f94eae",
+  "type": "SCQ",
+  "stem": "A checkout calls payment, inventory and email synchronously in a chain. Email is slow and occasionally down. What improves checkout reliability most?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Non-critical side effects should not block or fail the critical path.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Add a longer timeout to the user's browser"
+   },
+   {
+    "key": "B",
+    "text": "Retry email in a loop inside the request"
+   },
+   {
+    "key": "C",
+    "text": "Send the email asynchronously via a queue after the order is stored"
+   },
+   {
+    "key": "D",
+    "text": "Remove inventory checks"
    }
   ]
  },
@@ -4962,6 +7269,120 @@
   "version": 1
  },
  {
+  "id": "q_88d0b4e4d129",
+  "type": "SCQ",
+  "stem": "What is the main cost of write-through caching?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Synchronous double writes slow writes but keep the cache fresh and the data durable.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Stale cache entries after writes"
+   },
+   {
+    "key": "B",
+    "text": "No benefit for reads"
+   },
+   {
+    "key": "C",
+    "text": "Data loss on cache crash"
+   },
+   {
+    "key": "D",
+    "text": "Higher write latency, because each write waits for the backing store"
+   }
+  ]
+ },
+ {
+  "id": "q_891afbebdfdb",
+  "type": "SCQ",
+  "stem": "A game server keeps match state in memory for low latency and cannot be fully stateless. How can you limit the impact of a server failure?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "When state must stay in memory for speed, snapshots or replicated logs allow recovery.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Periodically checkpoint match state to durable storage and let another server restore it"
+   },
+   {
+    "key": "B",
+    "text": "Use a larger server"
+   },
+   {
+    "key": "C",
+    "text": "Run matches in the client browser cookie"
+   },
+   {
+    "key": "D",
+    "text": "Never checkpoint"
+   }
+  ]
+ },
+ {
   "id": "q_89d463d6336e",
   "type": "SCQ",
   "stem": "How do registries usually learn that a service instance has died?",
@@ -5133,6 +7554,63 @@
   ]
  },
  {
+  "id": "q_8c135d840744",
+  "type": "SCQ",
+  "stem": "Which system is inherently stateful?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Databases must remember data between requests; state is their purpose.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A database server holding data"
+   },
+   {
+    "key": "B",
+    "text": "A static file server with immutable files"
+   },
+   {
+    "key": "C",
+    "text": "A stateless proxy"
+   },
+   {
+    "key": "D",
+    "text": "A pure function endpoint that returns a hash of its input"
+   }
+  ]
+ },
+ {
   "id": "q_8c3877fdf8a1",
   "type": "SCQ",
   "stem": "A server fails on a consistent-hashing ring (no replicas). Which keys are affected?",
@@ -5245,6 +7723,63 @@
    {
     "key": "D",
     "text": "Reducing fan-out width where possible"
+   }
+  ]
+ },
+ {
+  "id": "q_906af95b5925",
+  "type": "SCQ",
+  "stem": "Which is a drawback of horizontal scaling compared with vertical scaling?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Multiple nodes need balancing, data partitioning and consistency handling.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It has a hard ceiling at one machine"
+   },
+   {
+    "key": "B",
+    "text": "It adds the complexity of distributed state, coordination and failures"
+   },
+   {
+    "key": "C",
+    "text": "It always reduces availability"
+   },
+   {
+    "key": "D",
+    "text": "It cannot add capacity"
    }
   ]
  },
@@ -5365,6 +7900,63 @@
   ]
  },
  {
+  "id": "q_952fa7154ad2",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Batch jobs are usually more efficient per record than processing records one by one.\n\n**Reason (R):** They amortise start-up costs and can optimise I/O over large chunks.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Per-record overhead is amortised over many records. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_957f93a28819",
   "type": "NVQ",
   "stem": "A cache holds 2 million entries averaging 1.5 KB each (1 KB = 1000 B). With 25% additional overhead for keys and metadata, how many GB of memory are needed? Give one decimal.",
@@ -5393,6 +7985,43 @@
   "difficulty": {
    "label": "H",
    "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_95cedf23c75d",
+  "type": "INT",
+  "stem": "A stream of 1,000 events per second is aggregated in 1-minute tumbling windows. How many events does each window contain?",
+  "images": [],
+  "answer": {
+   "value": 60000.0
+  },
+  "solution": "$1000\\times60=60{,}000$ events per window.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -5574,6 +8203,120 @@
   ]
  },
  {
+  "id": "q_98a770eb60ca",
+  "type": "SCQ",
+  "stem": "A team needs strong transactions for orders but flexible storage for product reviews. What is a sensible approach?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Different data have different needs; choosing a store per access pattern is common practice.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use one database for everything regardless of fit"
+   },
+   {
+    "key": "B",
+    "text": "Polyglot persistence: relational store for orders, a document or key-value store for reviews"
+   },
+   {
+    "key": "C",
+    "text": "Store reviews in a spreadsheet"
+   },
+   {
+    "key": "D",
+    "text": "Store orders in a cache only"
+   }
+  ]
+ },
+ {
+  "id": "q_9a3df9779c23",
+  "type": "SCQ",
+  "stem": "Which is a true statement about NoSQL databases?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "NoSQL is an umbrella term; the choice depends on the family.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They come in several families (key-value, document, wide-column, graph) with different trade-offs"
+   },
+   {
+    "key": "B",
+    "text": "They cannot store JSON"
+   },
+   {
+    "key": "C",
+    "text": "They all provide full ACID joins"
+   },
+   {
+    "key": "D",
+    "text": "They never scale horizontally"
+   }
+  ]
+ },
+ {
   "id": "q_9b9c59cdc5e8",
   "type": "SCQ",
   "stem": "Which rate limiting algorithm allows short bursts above the average rate while enforcing a long-run rate?",
@@ -5631,6 +8374,120 @@
   ]
  },
  {
+  "id": "q_9caab00f4d00",
+  "type": "SCQ",
+  "stem": "What does 'read-your-writes' consistency guarantee?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "It is a session guarantee weaker than strong consistency but valuable for user experience.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Writes are never replicated"
+   },
+   {
+    "key": "B",
+    "text": "A client always sees its own earlier writes"
+   },
+   {
+    "key": "C",
+    "text": "All clients always see the same value"
+   },
+   {
+    "key": "D",
+    "text": "Reads are always slower"
+   }
+  ]
+ },
+ {
+  "id": "q_9d15ac240888",
+  "type": "SCQ",
+  "stem": "Which operation is best handled asynchronously?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Long-running, non-interactive work should not hold the user's request open.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Checking a password on login"
+   },
+   {
+    "key": "B",
+    "text": "Generating a monthly report and emailing it to the user"
+   },
+   {
+    "key": "C",
+    "text": "Validating form syntax"
+   },
+   {
+    "key": "D",
+    "text": "Reading the user's balance for display"
+   }
+  ]
+ },
+ {
   "id": "q_9d18a6cad346",
   "type": "SCQ",
   "stem": "Why is 'CA' not a practical choice for a distributed system spanning several machines?",
@@ -5684,6 +8541,122 @@
    {
     "key": "D",
     "text": "CA systems cannot store data"
+   }
+  ]
+ },
+ {
+  "id": "q_9e0ba82c6eb7",
+  "type": "MSQ",
+  "stem": "Select all valid reasons to prefer SQL.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "SQL provides relations, transactions and constraints, at the cost of upfront schema design.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The data is highly relational and queried in varied ways"
+   },
+   {
+    "key": "B",
+    "text": "You need multi-statement transactions with strong guarantees"
+   },
+   {
+    "key": "C",
+    "text": "The schema is stable and integrity constraints matter"
+   },
+   {
+    "key": "D",
+    "text": "You want to avoid ever defining a schema"
+   }
+  ]
+ },
+ {
+  "id": "q_9eaba14918f1",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** DNS queries typically use UDP.\n\n**Reason (R):** A small request-response over UDP avoids connection setup and is usually sufficient.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Most DNS lookups are single small datagrams; TCP is used for large responses or zone transfers. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -5920,6 +8893,157 @@
   ]
  },
  {
+  "id": "q_a3d50ba27149",
+  "type": "INT",
+  "stem": "A normalised design needs 3 table reads (3 ms each) per page view; a denormalised design needs 1 read of 4 ms. At 2,000 page views per second, how many ms of database read time per second does denormalisation save?",
+  "images": [],
+  "answer": {
+   "value": 10000.0
+  },
+  "solution": "Normalised: $3\\times3=9$ ms per view; denormalised: 4 ms; saving $5$ ms $\\times2000=10{,}000$ ms of database time per second.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a4772ae78df4",
+  "type": "SCQ",
+  "stem": "A customer renames their account. In a denormalised orders table that copies the customer name into each order row, what problem arises?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Redundant copies create update anomalies unless all are changed together.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The orders table disappears"
+   },
+   {
+    "key": "B",
+    "text": "Joins become required"
+   },
+   {
+    "key": "C",
+    "text": "Many rows must be updated, and copies can become inconsistent"
+   },
+   {
+    "key": "D",
+    "text": "Nothing; one update fixes all"
+   }
+  ]
+ },
+ {
+  "id": "q_a612939ee253",
+  "type": "SCQ",
+  "stem": "A WebSocket connection is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "After the HTTP upgrade handshake the connection stays open for bidirectional messages.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "only usable for file downloads"
+   },
+   {
+    "key": "B",
+    "text": "a persistent, full-duplex channel where both client and server can send messages at any time"
+   },
+   {
+    "key": "C",
+    "text": "a single request-response exchange"
+   },
+   {
+    "key": "D",
+    "text": "one-way from client to server only"
+   }
+  ]
+ },
+ {
   "id": "q_a63163659da2",
   "type": "SCQ",
   "stem": "A partitioned log guarantees order only within a partition. How do you ensure all events of one order id are processed in order?",
@@ -6034,6 +9158,120 @@
   ]
  },
  {
+  "id": "q_a93b6fb7177b",
+  "type": "SCQ",
+  "stem": "What is head-of-line blocking in TCP?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "TCP delivers bytes in order, so later data waits for the missing segment.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "UDP blocks TCP"
+   },
+   {
+    "key": "B",
+    "text": "The router drops all packets"
+   },
+   {
+    "key": "C",
+    "text": "Packets are delivered out of order"
+   },
+   {
+    "key": "D",
+    "text": "A lost packet delays delivery of later packets until it is retransmitted"
+   }
+  ]
+ },
+ {
+  "id": "q_ab6f478fa402",
+  "type": "SCQ",
+  "stem": "A dashboard only needs server-to-client price updates and must work through restrictive corporate proxies. Which choice is a good fit?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "One-way streaming over HTTP traverses proxies easily; full duplex is not needed.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Server-Sent Events or long polling over plain HTTP"
+   },
+   {
+    "key": "B",
+    "text": "Raw TCP sockets"
+   },
+   {
+    "key": "C",
+    "text": "Email"
+   },
+   {
+    "key": "D",
+    "text": "A custom UDP protocol"
+   }
+  ]
+ },
+ {
   "id": "q_ad158f2bd7ba",
   "type": "SCQ",
   "stem": "A social app shards a posts table by created_date (one shard per month). What problem is likely?",
@@ -6129,6 +9367,63 @@
   "version": 1
  },
  {
+  "id": "q_ae3723e96a3f",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Many NoSQL databases scale horizontally more easily than a traditional single-node SQL database.\n\n**Reason (R):** They are built around partitioning data across nodes and relax features such as cross-partition joins and transactions.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Giving up some relational features makes partitioning simpler. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_ae61c52026a9",
   "type": "NVQ",
   "stem": "On a consistent-hashing ring with 9 equal-load servers, one more is added. Assuming good balance, what fraction of the keys is expected to move to the new server? Give a decimal.",
@@ -6220,6 +9515,63 @@
    {
     "key": "D",
     "text": "B-tree indexes only"
+   }
+  ]
+ },
+ {
+  "id": "q_b228a5dc549c",
+  "type": "SCQ",
+  "stem": "A team uses write-through caching for a write-heavy workload and sees write latency double. Which statement best explains it?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Write-through helps read freshness, not write speed, so it is not an optimisation for write-heavy loads; write-back or batching targets that.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Each write now waits for both the cache and the database, so write-through adds work to the write path"
+   },
+   {
+    "key": "B",
+    "text": "The cache is too large"
+   },
+   {
+    "key": "C",
+    "text": "Write-through makes writes asynchronous"
+   },
+   {
+    "key": "D",
+    "text": "Reads are slower"
    }
   ]
  },
@@ -6604,6 +9956,120 @@
   ]
  },
  {
+  "id": "q_b5f2e470539b",
+  "type": "SCQ",
+  "stem": "A web app stores login sessions in each server's memory and uses sticky sessions. A server crashes. What happens to its users?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "In-memory state dies with the server. Externalising sessions (shared store or signed tokens) removes the issue.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_STATE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Their sessions move automatically"
+   },
+   {
+    "key": "B",
+    "text": "Nothing changes"
+   },
+   {
+    "key": "C",
+    "text": "They are logged in to all servers"
+   },
+   {
+    "key": "D",
+    "text": "They lose their sessions and must log in again"
+   }
+  ]
+ },
+ {
+  "id": "q_b76bdf40f36d",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Document databases often favour denormalised, embedded data.\n\n**Reason (R):** Embedding related data in one document lets it be read in a single access without joins.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "That is the typical document-modelling trade-off. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_b812cc99f2e0",
   "type": "SCQ",
   "stem": "Why is an end-to-end checksum still valuable when each network link already uses its own error detection?",
@@ -6889,6 +10355,120 @@
   ]
  },
  {
+  "id": "q_bc52093cab95",
+  "type": "SCQ",
+  "stem": "Under strong consistency, after a write is acknowledged,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Strong consistency means reads reflect the latest acknowledged write.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "writes are lost"
+   },
+   {
+    "key": "B",
+    "text": "only one client can read"
+   },
+   {
+    "key": "C",
+    "text": "reads may return any older value indefinitely"
+   },
+   {
+    "key": "D",
+    "text": "every subsequent read returns that write (or a newer one)"
+   }
+  ]
+ },
+ {
+  "id": "q_bdc549644656",
+  "type": "SCQ",
+  "stem": "Which requirement most strongly suggests a NoSQL store?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Many NoSQL systems trade rich queries and strict schemas for scale-out and flexibility.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Strict referential integrity across ten tables"
+   },
+   {
+    "key": "B",
+    "text": "Multi-row ACID transfers between accounts"
+   },
+   {
+    "key": "C",
+    "text": "Ad hoc analytics with many joins"
+   },
+   {
+    "key": "D",
+    "text": "Massive horizontal scaling with flexible or evolving schemas and simple access patterns"
+   }
+  ]
+ },
+ {
   "id": "q_bf644d5ac51e",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Terminating TLS at a layer 7 load balancer lets it route on HTTP headers.\n\n**Reason (R):** The balancer must decrypt the traffic to read the request headers.\n\nChoose the correct option.",
@@ -7001,6 +10581,63 @@
    {
     "key": "D",
     "text": "Declare failure after a single lost message on a lossy network"
+   }
+  ]
+ },
+ {
+  "id": "q_c30cdcb0f88f",
+  "type": "SCQ",
+  "stem": "In a read-through cache, on a cache miss",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Read-through puts the load-on-miss logic inside the cache layer.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the request fails"
+   },
+   {
+    "key": "B",
+    "text": "the application must write to the cache"
+   },
+   {
+    "key": "C",
+    "text": "the database is bypassed forever"
+   },
+   {
+    "key": "D",
+    "text": "the cache itself loads the data from the data store, stores it and returns it"
    }
   ]
  },
@@ -7119,6 +10756,63 @@
   ]
  },
  {
+  "id": "q_c49d6250a3ee",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Asynchronous processing can improve responsiveness for I/O-bound tasks.\n\n**Reason (R):** While waiting for I/O the system can continue working on other tasks instead of blocking.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Overlapping waits with useful work improves latency and throughput. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_c4a7fb70dee0",
   "type": "SCQ",
   "stem": "A primary database replicates asynchronously to a replica. The primary fails right after acknowledging a write. What is the risk when the replica is promoted?",
@@ -7172,6 +10866,65 @@
    {
     "key": "D",
     "text": "The replica will contain extra writes the primary never had"
+   }
+  ]
+ },
+ {
+  "id": "q_c6a96a8d76b8",
+  "type": "MSQ",
+  "stem": "Select all true statements about TCP and UDP.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "UDP provides no ordering; QUIC implements reliability, multiplexing and encryption over UDP.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "TCP provides congestion control"
+   },
+   {
+    "key": "B",
+    "text": "UDP has lower per-packet overhead"
+   },
+   {
+    "key": "C",
+    "text": "UDP guarantees that packets arrive in order"
+   },
+   {
+    "key": "D",
+    "text": "QUIC builds reliability on top of UDP"
    }
   ]
  },
@@ -7235,6 +10988,63 @@
   ]
  },
  {
+  "id": "q_c81be756a300",
+  "type": "SCQ",
+  "stem": "Which requirement most strongly suggests a relational (SQL) database?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "SQL excels at joins and transactions on structured data.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SQL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A cache for session tokens only"
+   },
+   {
+    "key": "B",
+    "text": "Complex multi-table queries with ACID transactions, such as financial records"
+   },
+   {
+    "key": "C",
+    "text": "Schema-less ingestion of a huge variety of documents with no relations"
+   },
+   {
+    "key": "D",
+    "text": "Storing a billion immutable log lines with no queries"
+   }
+  ]
+ },
+ {
   "id": "q_c891d5719f2b",
   "type": "NVQ",
   "stem": "A job has a serial fraction of 5% that cannot be parallelised; the rest scales perfectly. By Amdahl's law, what is the speedup on 10 processors? Give a number rounded to two decimals.",
@@ -7271,6 +11081,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_c97f7fef88ee",
+  "type": "MSQ",
+  "stem": "Select all true statements about polling approaches.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "WebSockets reuse one connection after the handshake.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Short polling wastes requests when there is no new data"
+   },
+   {
+    "key": "B",
+    "text": "Long polling reduces empty responses compared with short polling"
+   },
+   {
+    "key": "C",
+    "text": "Server-Sent Events provide a one-way server-to-client stream over HTTP"
+   },
+   {
+    "key": "D",
+    "text": "WebSockets use a new HTTP request for every message"
+   }
+  ]
  },
  {
   "id": "q_c9ada75a3f2b",
@@ -7444,6 +11313,63 @@
   ]
  },
  {
+  "id": "q_ccde838b19a4",
+  "type": "SCQ",
+  "stem": "Which application most needs TCP's guarantees?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Correctness of every byte is required; TCP handles retransmission and ordering.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "File transfer or web page loading where every byte must arrive in order"
+   },
+   {
+    "key": "B",
+    "text": "A live sports video stream with tolerance to loss"
+   },
+   {
+    "key": "C",
+    "text": "A DNS lookup response only"
+   },
+   {
+    "key": "D",
+    "text": "A live game position update at 60 Hz"
+   }
+  ]
+ },
+ {
   "id": "q_cd11e76080fa",
   "type": "SCQ",
   "stem": "Why does an index speed up a query that filters on an indexed column?",
@@ -7501,6 +11427,63 @@
   ]
  },
  {
+  "id": "q_cd1925c48e2e",
+  "type": "SCQ",
+  "stem": "Which protocol provides reliable, ordered delivery with connection setup?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "TCP uses handshakes, acknowledgements and retransmission to deliver an ordered byte stream.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NET",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ARP"
+   },
+   {
+    "key": "B",
+    "text": "ICMP echo only"
+   },
+   {
+    "key": "C",
+    "text": "UDP"
+   },
+   {
+    "key": "D",
+    "text": "TCP"
+   }
+  ]
+ },
+ {
   "id": "q_cd3627bc248c",
   "type": "SCQ",
   "stem": "What is the primary benefit of using a CDN for static assets?",
@@ -7554,6 +11537,179 @@
    {
     "key": "D",
     "text": "It makes the origin database consistent"
+   }
+  ]
+ },
+ {
+  "id": "q_ce3b13b799af",
+  "type": "MSQ",
+  "stem": "Select all true statements about the lambda architecture idea.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Lambda combines batch and speed layers; the duplicated logic is a known drawback.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It combines a batch layer for completeness with a speed layer for freshness"
+   },
+   {
+    "key": "B",
+    "text": "It can require maintaining logic in two code paths"
+   },
+   {
+    "key": "C",
+    "text": "It eliminates all latency"
+   },
+   {
+    "key": "D",
+    "text": "A serving layer merges the views"
+   }
+  ]
+ },
+ {
+  "id": "q_cf0013d0acc7",
+  "type": "SCQ",
+  "stem": "A public API will be used by many third-party developers with simple tools like curl. Which style is often preferred?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "REST is easy to explore, cache and debug using ordinary HTTP tooling.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Shared database access"
+   },
+   {
+    "key": "B",
+    "text": "REST over HTTP with JSON"
+   },
+   {
+    "key": "C",
+    "text": "A custom binary RPC"
+   },
+   {
+    "key": "D",
+    "text": "Raw TCP"
+   }
+  ]
+ },
+ {
+  "id": "q_d03cabaa2809",
+  "type": "SCQ",
+  "stem": "RPC style APIs are primarily organised around",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "RPC exposes operations (methods) rather than resources.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "database indexes"
+   },
+   {
+    "key": "B",
+    "text": "web page layout"
+   },
+   {
+    "key": "C",
+    "text": "DNS records"
+   },
+   {
+    "key": "D",
+    "text": "actions or procedures that a client calls remotely"
    }
   ]
  },
@@ -7883,6 +12039,63 @@
   ]
  },
  {
+  "id": "q_d7755d4a28e0",
+  "type": "SCQ",
+  "stem": "A producer publishes events, and consumers must not double-apply them. Which technique addresses duplicates caused by retries?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Retries are inevitable in async systems; idempotency makes them safe.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Increase queue size"
+   },
+   {
+    "key": "B",
+    "text": "Disable acknowledgements"
+   },
+   {
+    "key": "C",
+    "text": "Use random delays"
+   },
+   {
+    "key": "D",
+    "text": "Idempotent handlers keyed by a unique event id"
+   }
+  ]
+ },
+ {
   "id": "q_d98b9dc04ab3",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Hard-coding instance IP addresses in clients is fragile in a dynamically scaled environment.\n\n**Reason (R):** Instances can be replaced or rescheduled and receive new addresses.\n\nChoose the correct option.",
@@ -8201,6 +12414,63 @@
    {
     "key": "D",
     "text": "CP"
+   }
+  ]
+ },
+ {
+  "id": "q_dcd4a1d0cfee",
+  "type": "SCQ",
+  "stem": "Which use case suits batch processing?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "No latency requirement and a large full-dataset computation favour batch.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Recomputing recommendations for all users overnight"
+   },
+   {
+    "key": "B",
+    "text": "Live dashboard of the last 10 seconds"
+   },
+   {
+    "key": "C",
+    "text": "Instant chat delivery"
+   },
+   {
+    "key": "D",
+    "text": "Blocking a payment in real time"
    }
   ]
  },
@@ -8549,6 +12819,63 @@
   ]
  },
  {
+  "id": "q_e164564c766c",
+  "type": "SCQ",
+  "stem": "A service autoscales out when CPU > 70%, but latency still rises during bursts because new instances take 3 minutes to warm. What is the best improvement?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The problem is reaction time versus startup time. Headroom, predictive scaling and buffering cover the gap.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Increase the heartbeat interval"
+   },
+   {
+    "key": "B",
+    "text": "Scale proactively or keep spare warm capacity and use queues to absorb the burst"
+   },
+   {
+    "key": "C",
+    "text": "Lower the CPU target to 99%"
+   },
+   {
+    "key": "D",
+    "text": "Remove autoscaling"
+   }
+  ]
+ },
+ {
   "id": "q_e2c2bdeaa584",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Adding a hard dependency on a 99.9%-available service to a 99.95%-available service cannot leave the combined availability at 99.95%.\n\n**Reason (R):** For components in series, availability is the product of the components' availabilities.\n\nChoose the correct option.",
@@ -8661,6 +12988,44 @@
     "text": "a random server each time"
    }
   ]
+ },
+ {
+  "id": "q_e90a7893af9d",
+  "type": "NVQ",
+  "stem": "A single server costs 1.0 unit and delivers 1 unit of capacity. A server with twice the capacity costs 2.5 units. To serve 8 units of capacity, by how many cost units is an all-small-servers fleet cheaper than an all-big-servers fleet?",
+  "images": [],
+  "answer": {
+   "value": 2.0,
+   "tol": 0.01
+  },
+  "solution": "Small fleet: $8\\times1=8$. Big fleet: $4\\times2.5=10$. The small fleet is cheaper by $10-8=2$ units.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_e9966630dfa8",
@@ -8834,6 +13199,63 @@
   ]
  },
  {
+  "id": "q_ebf748e8dbdf",
+  "type": "SCQ",
+  "stem": "How should a REST API respond when a client submits a long-running job?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The async request-reply pattern avoids long blocking connections.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_ASYNC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Silently ignore it"
+   },
+   {
+    "key": "B",
+    "text": "Return an error"
+   },
+   {
+    "key": "C",
+    "text": "Return 202 Accepted with a job id and let the client poll or receive a callback"
+   },
+   {
+    "key": "D",
+    "text": "Hold the HTTP connection open for an hour"
+   }
+  ]
+ },
+ {
   "id": "q_eca058177d41",
   "type": "SCQ",
   "stem": "A web tier is CPU-bound at peak and the application keeps no per-user data in memory. Which change scales it most directly?",
@@ -8948,6 +13370,63 @@
   ]
  },
  {
+  "id": "q_ee8b24fa0aaa",
+  "type": "SCQ",
+  "stem": "Stream processing is typically characterised by",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Streams process unbounded data incrementally.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_BATCH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "running only once a day"
+   },
+   {
+    "key": "B",
+    "text": "requiring all data to be present first"
+   },
+   {
+    "key": "C",
+    "text": "never producing output"
+   },
+   {
+    "key": "D",
+    "text": "processing events continuously as they arrive for low-latency results"
+   }
+  ]
+ },
+ {
   "id": "q_efde1c2adbb3",
   "type": "MSQ",
   "stem": "Select all true statements about database indexes.",
@@ -9003,6 +13482,63 @@
    {
     "key": "D",
     "text": "Adding an index never changes write performance"
+   }
+  ]
+ },
+ {
+  "id": "q_eff766a9a632",
+  "type": "SCQ",
+  "stem": "Which workload benefits most from a read-through cache?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Caching pays when entries are re-read; read-heavy hot sets have high hit rates.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Data that changes on every read"
+   },
+   {
+    "key": "B",
+    "text": "Write-once, never-read logs"
+   },
+   {
+    "key": "C",
+    "text": "Random one-off lookups of unique items"
+   },
+   {
+    "key": "D",
+    "text": "Read-heavy data with a hot working set"
    }
   ]
  },
@@ -9119,6 +13655,63 @@
    {
     "key": "D",
     "text": "Apply per-user or per-API-key limits rather than one global limit"
+   }
+  ]
+ },
+ {
+  "id": "q_f480adfc31e1",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A PUT request is expected to be idempotent.\n\n**Reason (R):** Sending the same PUT multiple times sets the resource to the same state.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Idempotence means repeating gives the same resulting state, which is the defining property of PUT. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_API",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -9465,6 +14058,217 @@
   ]
  },
  {
+  "id": "q_f93f9a0f3701",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Long polling still consumes a server connection per waiting client.\n\n**Reason (R):** The request stays open until data is ready or a timeout occurs.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Held requests occupy connection slots, so scale planning is needed even though empty responses are fewer. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_PUSH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_f961a29f3275",
+  "type": "SCQ",
+  "stem": "Which workload is naturally easiest to scale horizontally?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Share-nothing work divides freely; global shared state forces coordination.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_SCALE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A single-leader write path with strict ordering"
+   },
+   {
+    "key": "B",
+    "text": "A single global counter updated by every request"
+   },
+   {
+    "key": "C",
+    "text": "A job that needs one huge shared memory image"
+   },
+   {
+    "key": "D",
+    "text": "Stateless request handlers that share nothing"
+   }
+  ]
+ },
+ {
+  "id": "q_fac837bfb7b3",
+  "type": "MSQ",
+  "stem": "Select all costs of denormalisation.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Denormalisation helps reads and burdens writes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_NORM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Extra storage for duplicated data"
+   },
+   {
+    "key": "B",
+    "text": "More complex writes that must keep copies in sync"
+   },
+   {
+    "key": "C",
+    "text": "Risk of inconsistent copies"
+   },
+   {
+    "key": "D",
+    "text": "Slower reads in all cases"
+   }
+  ]
+ },
+ {
+  "id": "q_fd45519b1efa",
+  "type": "NVQ",
+  "stem": "A write to the cache takes 1 ms and a write to the database takes 9 ms. How long does one write take under write-through if the two writes are sequential? Under write-back the caller waits only for the cache. By how many ms is a write-through write slower than a write-back write?",
+  "images": [],
+  "answer": {
+   "value": 9.0,
+   "tol": 0.01
+  },
+  "solution": "Write-through: $1+9=10$ ms; write-back: 1 ms; difference 9 ms.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_WRITE",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_fde09335aa7e",
   "type": "MSQ",
   "stem": "Select all correct statements about the CAP theorem.",
@@ -9577,6 +14381,63 @@
    {
     "key": "D",
     "text": "Messages arriving before they are sent"
+   }
+  ]
+ },
+ {
+  "id": "q_ff3ece0e0624",
+  "type": "SCQ",
+  "stem": "Under eventual consistency, if no new updates are made,",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Eventual consistency promises convergence, not timing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.TO_CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "reads are always up to date"
+   },
+   {
+    "key": "B",
+    "text": "all replicas will eventually converge to the same value, with no bound on when"
+   },
+   {
+    "key": "C",
+    "text": "replicas never agree"
+   },
+   {
+    "key": "D",
+    "text": "all writes are rejected"
    }
   ]
  },
