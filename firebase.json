@@ -64,7 +64,7 @@
         ]
       },
       {
-        "source": "/@(signin|signup|forgot|complete-profile|privacy|terms|settings|practice|mocks|exam|upload|analysis|plan|roadmap|admin|diagnostic|onboarding)",
+        "source": "/@(signin|signup|forgot|complete-profile|privacy|terms|settings|practice|mocks|exam|upload|analysis|plan|roadmap|admin|diagnostic|onboarding|exams|dsa|bank)",
         "headers": [
           {
             "key": "X-Frame-Options",
@@ -77,7 +77,7 @@
         ]
       },
       {
-        "source": "/@(signin|signup|forgot|complete-profile|privacy|terms|settings|practice|mocks|exam|upload|analysis|plan|roadmap|admin|diagnostic|onboarding)/**",
+        "source": "/@(signin|signup|forgot|complete-profile|privacy|terms|settings|practice|mocks|exam|upload|analysis|plan|roadmap|admin|diagnostic|onboarding|exams|dsa)/**",
         "headers": [
           {
             "key": "X-Frame-Options",
