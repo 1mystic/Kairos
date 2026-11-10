@@ -1,5 +1,6 @@
 import type { Ambition } from '@kairos/core';
 import { toYmd, type UserProfile } from '../lib/profile';
+import { activeProfile, profilesOf, toProfileFields, type ExamProfile, type ExamProfiles } from '../exams/model';
 import type { GuestProfile, Profile, UserStore } from '../store/types';
 
 /**
@@ -16,8 +17,15 @@ export interface ExamSel {
 }
 
 export interface OnboardingProfile {
-  /** nearest first; [0] is the primary exam (its date is `examDate`) */
+  /**
+   * The ACTIVE exam's sitting as a plan input: [] when there is no active exam or it has no date (interview tracks).
+   * The plan, preview and "days to go" all use this; it is never more than one entry.
+   */
   exams: ExamSel[];
+  /** every exam profile of the student (up to 7), in the order they chose them */
+  profiles: ExamProfile[];
+  /** exam id of the active profile; null until the student picks an exam */
+  examId: string | null;
   ambition: Ambition;
   /** 0 = Sunday ... 6 = Saturday */
   minutesPerWeekday: Record<number, number>;
@@ -31,6 +39,8 @@ export const DEFAULT_MINUTES: Record<number, number> = { 0: 180, 1: 120, 2: 120,
 
 export const emptyOnboarding = (): OnboardingProfile => ({
   exams: [],
+  profiles: [],
+  examId: null,
   ambition: 'competitive',
   minutesPerWeekday: { ...DEFAULT_MINUTES },
   offDay: 0,
@@ -67,8 +77,13 @@ export function parseProfile(p: Profile | null | undefined): OnboardingProfile {
   const q = p as Partial<UserProfile & GuestProfile>;
   const minutes: Record<number, number> = { ...DEFAULT_MINUTES };
   for (let d = 0; d < 7; d++) minutes[d] = Math.max(0, Math.round(num(q.minutesPerWeekday?.[String(d)], minutes[d]!)));
+  const ep = profilesOf(q);
+  const act = activeProfile(ep);
+  const exams: ExamSel[] = act && act.kind !== 'none' && act.date ? [{ exam: act.exam, session: act.kind === 'calendar' ? act.session ?? 1 : 0, date: act.date }] : [];
   return {
-    exams: decodeExams(q.exam, q.examDate),
+    exams,
+    profiles: ep.profiles,
+    examId: ep.active,
     ambition: q.ambition === 'comfortable' || q.ambition === 'top' || q.ambition === 'competitive' ? q.ambition : base.ambition,
     minutesPerWeekday: minutes,
     offDay: q.offDay === null ? null : typeof q.offDay === 'number' ? q.offDay : base.offDay,
@@ -78,12 +93,17 @@ export function parseProfile(p: Profile | null | undefined): OnboardingProfile {
   };
 }
 
-export type ProfileFields = Partial<Pick<UserProfile, 'onboarded' | 'exam' | 'examDate' | 'ambition' | 'minutesPerWeekday' | 'offDay' | 'chaptersDone' | 'lang'>>;
+export type ProfileFields = Partial<Pick<UserProfile, 'onboarded' | 'exam' | 'examDate' | 'ambition' | 'minutesPerWeekday' | 'offDay' | 'chaptersDone' | 'lang' | 'profiles' | 'activeExam'>>;
 
 /** Typed patch -> the cloud-allowed field names. Only keys present in `patch` are written. */
 export function toFields(patch: Partial<OnboardingProfile>): ProfileFields {
   const f: ProfileFields = {};
-  if (patch.exams) Object.assign(f, encodeExams(patch.exams));
+  // `profiles` (with `examId` = the active one) wins: it writes profiles + activeExam + the packed fields of the active profile.
+  if (patch.profiles && patch.profiles.length > 0) {
+    const active = patch.examId && patch.profiles.some((p) => p.exam === patch.examId) ? patch.examId : patch.profiles[0]!.exam;
+    const out = toProfileFields({ profiles: patch.profiles, active });
+    if (out) Object.assign(f, out);
+  } else if (patch.exams) Object.assign(f, encodeExams(patch.exams));
   if (patch.ambition) f.ambition = patch.ambition;
   if (patch.minutesPerWeekday) f.minutesPerWeekday = Object.fromEntries(Object.entries(patch.minutesPerWeekday).map(([k, v]) => [k, v]));
   if (patch.offDay !== undefined) f.offDay = patch.offDay;
@@ -100,6 +120,12 @@ export async function saveOnboardingFields(store: UserStore, fields: ProfileFiel
     return;
   }
   await store.saveProfile(fields);
+}
+
+/** One write of the exam profiles: profiles + activeExam + packed exam/examDate of the active one. No-op for an empty list. */
+export async function saveExamState(store: UserStore, state: ExamProfiles, now = Date.now()): Promise<void> {
+  const f = toProfileFields(state);
+  if (f) await saveOnboardingFields(store, f as ProfileFields, now);
 }
 
 /** Local date of an instant, with the day starting at 04:00 (a student up at 01:00 is still on "yesterday"). */

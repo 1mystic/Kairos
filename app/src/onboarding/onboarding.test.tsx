@@ -6,7 +6,7 @@ import { fakeFs } from '../store/testUtils';
 import { Harness, TAX } from '../plan/harness.test-util';
 import { OnboardingPage } from './Onboarding';
 import { buildPreview } from './preview';
-import { dateError, emptyDraft, examErrors, sameEveryDay, weekendsHeavier } from './draft';
+import { dateError, emptyDraft, examErrors, examsOk, sameEveryDay, weekendsHeavier } from './draft';
 import { decodeExams, encodeExams, parseProfile, saveOnboardingFields, toFields } from './profileModel';
 
 const TODAY = '2026-11-08';
@@ -53,10 +53,12 @@ describe('draft validation and presets', () => {
     expect(dateError('2027-02-30', TODAY)).toMatch(/valid/);
     expect(dateError('2027-02-14', TODAY)).toBeUndefined();
     const d = emptyDraft();
-    expect(examErrors(d, TODAY).first).toBeTruthy();
-    d.first.date = '2027-02-14';
-    d.second = { ...d.first };
-    expect(examErrors(d, TODAY).second).toMatch(/different/);
+    expect(examsOk(d, TODAY)).toBe(false); // at least one exam is required
+    d.picks = [{ exam: 'JEE_MAIN', sel: 0, date: '' }];
+    expect(examErrors(d, TODAY).JEE_MAIN).toBeTruthy();
+    d.picks = [{ exam: 'JEE_MAIN', sel: 0, date: '2027-02-14' }, { exam: 'DSA_INTERVIEW', sel: 0, date: '', none: true }];
+    expect(examErrors(d, TODAY)).toEqual({}); // "No date yet" never has a date error
+    expect(examsOk(d, TODAY)).toBe(true);
   });
   it('presets', () => {
     const m = { 0: 0, 1: 100, 2: 30, 3: 30, 4: 30, 5: 30, 6: 30 };
@@ -98,6 +100,8 @@ describe('plan preview', () => {
 });
 
 async function fillDate(date: string) {
+  const jee = screen.getByRole('checkbox', { name: /^JEE Main/ }) as HTMLInputElement;
+  if (!jee.checked) await userEvent.click(jee);
   await userEvent.click(screen.getByRole('radio', { name: /My own date/ }));
   const input = screen.getByLabelText('Exam date') as HTMLInputElement;
   await userEvent.clear(input);
@@ -110,8 +114,9 @@ describe('onboarding screen', () => {
   it('step 1: needs a valid date, shows live days to go, shows calendar status', async () => {
     render(<Harness><OnboardingPage taxonomy={TAX} today={TODAY} onDone={() => {}} /></Harness>);
     await screen.findByText(/Set up your plan/);
+    expect(screen.getByRole('button', { name: 'Next' })).toBeDisabled(); // no exam chosen yet
+    await userEvent.click(screen.getByRole('checkbox', { name: /^JEE Main/ }));
     expect(screen.getAllByText('Expected').length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Date not announced yet/).length).toBe(2);
     expect(screen.getByRole('button', { name: 'Next' })).toBeDisabled();
     await fillDate('2027-02-16');
     expect(await screen.findByText(/days to go/)).toHaveTextContent('100 days to go');

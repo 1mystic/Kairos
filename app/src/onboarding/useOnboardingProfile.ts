@@ -5,6 +5,21 @@ import { parseProfile, saveOnboardingFields, toFields, type OnboardingProfile } 
 
 const subs = new Set<() => void>();
 const notify = () => subs.forEach((f) => f());
+/** Tell every mounted profile hook to re-read (after any profile write from outside `save`). */
+export const notifyProfileChanged = notify;
+
+/** A number that changes whenever the profile was written (exam switch, onboarding save). Lets other hooks re-run. */
+export function useProfileVersion(): number {
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    const bump = () => setV((n) => n + 1);
+    subs.add(bump);
+    return () => {
+      subs.delete(bump);
+    };
+  }, []);
+  return v;
+}
 
 export interface OnboardingProfileApi {
   loading: boolean;
@@ -52,5 +67,5 @@ export function useOnboardingProfile(): OnboardingProfileApi {
   );
   const refresh = useCallback(() => setTick((t) => t + 1), []);
   const profile = useMemo(() => parseProfile(raw.profile), [raw.profile]);
-  return { loading: raw.loading, profile, onboarded: profile.onboarded || profile.exams.length > 0, hasExam: profile.exams.length > 0, save, refresh };
+  return { loading: raw.loading, profile, onboarded: profile.onboarded || profile.examId !== null, hasExam: profile.examId !== null, save, refresh };
 }
