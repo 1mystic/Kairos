@@ -286,7 +286,9 @@ export function PickerView({ tax, manifest, mastery = {}, initialExam = 'JEE_MAI
           </Section>
         );
       })}
-      {subjects.every((s) => !s.chapters.some((c) => !q || c.name.toLowerCase().includes(q))) && (
+      {subjects.length === 0 ? (
+        <EmptyState title="Questions coming soon">We are still adding questions for {EXAMS.find((e) => e.id === exam)?.label ?? 'this exam'}. Pick another exam above, or check back soon.</EmptyState>
+      ) : subjects.every((s) => !s.chapters.some((c) => !q || c.name.toLowerCase().includes(q))) && (
         <EmptyState title="No chapters match">Try a different search.</EmptyState>
       )}
     </Page>

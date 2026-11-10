@@ -77,7 +77,7 @@ export function TodaySessionScreen() {
         const now = Date.now();
         const date = planDate(new Date(now));
         const view = plan.state.kind === 'ready' ? plan.state.view : null;
-        const exam = view?.ctx.exam.exam ?? profile.profile.exams[0]?.exam;
+        const exam = view?.ctx.exam.exam ?? profile.profile.examId ?? undefined;
         if (!exam) return set({ kind: 'no_exam' });
         const examOf = view?.ctx.syllabus.examOf ?? {};
         const { infos, manifest, version } = await loadChapterInfos(exam);

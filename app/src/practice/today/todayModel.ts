@@ -42,7 +42,7 @@ export interface CardModel {
 export interface CardInput {
   loading: boolean;
   /** plan hook state kind */
-  planKind: 'loading' | 'none' | 'passed' | 'ready' | 'error';
+  planKind: 'loading' | 'none' | 'passed' | 'ready' | 'error' | 'steady';
   plan: DayPlan | null;
   names: Readonly<Record<string, string>>;
   /** link of today's mock (from taskLink), when the plan has one */
@@ -55,6 +55,8 @@ export interface CardInput {
   /** auto-suggestion used when the plan is unavailable but the exam is known */
   suggestion: Suggestion | null;
   hasExam: boolean;
+  /** the mastery suggestion finished loading (steady-practice profiles show "coming soon" when it is empty) */
+  suggestionReady?: boolean;
   errorMessage?: string;
 }
 
@@ -106,6 +108,29 @@ export function cardModel(i: CardInput): CardModel {
       reason: 'Tell us your exam and date, and Kairos builds each day\'s practice for you.',
       primary: { label: 'Pick your exam', to: '/onboarding' },
       secondary: { label: 'Quick start', to: '/practice' },
+      planLink: false,
+    });
+  }
+  if (i.planKind === 'steady') {
+    // active exam without a date (interview track): a steady daily session from mastery and new chapters
+    const s = i.suggestion;
+    if (!s && !i.suggestionReady) return base(i, { variant: 'loading', headline: '', primary: { label: "Start today's session", to: TODAY_ROUTE }, planLink: false });
+    if (s && s.questions > 0) {
+      return base(i, {
+        variant: i.buffered ? 'continue' : 'suggest',
+        headline: i.buffered ? `Continue: ${i.buffered.done} of ${i.buffered.total} questions done` : `${s.questions} questions · about ${fmtMin(s.estMin)}`,
+        reason: s.summary,
+        chips: s.focus.slice(0, MAX_CHIPS).map((f) => ({ label: f.name, reason: f.reason })),
+        progress: i.buffered,
+        primary: { label: i.buffered ? 'Continue' : "Start today's session", to: TODAY_ROUTE },
+        planLink: false,
+      });
+    }
+    return base(i, {
+      variant: 'rest',
+      headline: `${i.examLabel ?? 'This track'}: questions coming soon`,
+      reason: 'We are still adding questions for this track. Your profile is set up, and practice shows up here as soon as it is published.',
+      primary: { label: 'Browse practice', to: '/practice' },
       planLink: false,
     });
   }

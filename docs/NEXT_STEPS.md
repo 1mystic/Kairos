@@ -11,7 +11,11 @@ All build work is done and pushed (`main`, tag `checkpoint-session3-end`+). The 
 - **Adding a route? Add its path to `app/src/shell/lazyRoutes.tsx` too** (lazy route table lists paths by hand; a missing path shows the 404 page: this broke `/practice/today` once). `app/src/shell/lazyRoutes.test.ts` checks the table against every `*Routes` module.
 - Colours audited for WCAG AA (`python3 scripts/contrast_audit.py brand/tokens.css`); Home has the solid-brand "Today's session" hero (`app/src/practice/today/`).
 - **DSA hub + problem viewer** (`app/src/dsa/`, `dsaRoutes`): `/dsa` (hub), `/dsa/t/:track` (track list, `all` = every problem), `/dsa/p/:slug` (viewer embedding `/dryrun/index.html?embed=1#/p/<slug>`). Orchestrator still has to mount `dsaRoutes` in App.tsx and add the three paths to `lazyRoutes.tsx`. Progress is DryRun's `localStorage['dr-done']`.
+- **Multi-exam profiles (task M)**: onboarding step 1 is "choose your exams" (entrance exams + interview prep, multi-select), an exam switcher in the shell, `/exams` manage page, and DSA Interview / System Design / AI-ML System Design registered as interview tracks (no date needed: steady-practice plan, "questions coming soon" until bank v5). Data: profile `profiles` + `activeExam` (packed `exam`/`examDate` still written for the active exam), plans keyed `${exam}~${date}`, `state/pace` as `byExam`. Code in `app/src/exams/`. Written without running tests/tsc.
 - Still to do: enable Google sign-in in the console, test a real email sign-up + Google sign-in on the live site, create `admins/<uid>`, owner inputs in section 5, remaining screenshots, backlog.
+
+## 0. Rules change to deploy: profiles/activeExam
+`firestore.rules` now allows the owner to update `profiles` (list, <= 7) and `activeExam` (string, <= 20) on `users/{uid}`. Run `pnpm test:rules` (new file `firestore-tests/src/profiles.rules.test.ts`), then `pnpm deploy:rules` BEFORE deploying the app: until the rules are live, a profile write with the new fields is rejected (switching exams and onboarding saves would fail for signed-in students).
 
 ## 1. Firebase console (owner, ~10 min)
 1. **Authentication → Sign-in method → Google → Enable** (set the public-facing name "Kairos" and the support email). Email/Password is already enabled.

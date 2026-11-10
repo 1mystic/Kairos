@@ -19,10 +19,11 @@ export function useTodayCard(): { model: CardModel; retry(): void } {
   const store = useStore();
   const [buffered, setBuffered] = useState<{ done: number; total: number } | null>(null);
   const [suggestion, setSuggestion] = useState<Suggestion | null>(null);
+  const [suggestionReady, setSuggestionReady] = useState(false);
   const [nonce, setNonce] = useState(0);
 
   const planKind = plan.state.kind;
-  const exam = profile.profile.exams[0]?.exam;
+  const exam = profile.profile.examId ?? undefined;
   const chaptersDone = profile.profile.chaptersDone;
 
   useEffect(() => {
@@ -41,15 +42,22 @@ export function useTodayCard(): { model: CardModel; retry(): void } {
 
   // plan failed: suggest from mastery so the card still has something useful
   useEffect(() => {
-    if (planKind !== 'error' || !exam || profile.loading) return;
+    if ((planKind !== 'error' && planKind !== 'steady') || !exam || profile.loading) return;
     let live = true;
+    setSuggestionReady(false);
     (async () => {
       try {
         const now = Date.now();
         const [{ infos }, ctx] = await Promise.all([loadChapterInfos(exam), loadTodayContext(store, now)]);
-        if (live) setSuggestion(suggestSession({ exam, mastery: ctx.mastery, chaptersDone, chapters: infos, seen: ctx.seenByChapter, now, seed: now }));
+        if (live) {
+          setSuggestion(suggestSession({ exam, mastery: ctx.mastery, chaptersDone, chapters: infos, seen: ctx.seenByChapter, now, seed: now }));
+          setSuggestionReady(true);
+        }
       } catch {
-        if (live) setSuggestion(null);
+        if (live) {
+          setSuggestion(null);
+          setSuggestionReady(true);
+        }
       }
     })();
     return () => {
@@ -75,10 +83,11 @@ export function useTodayCard(): { model: CardModel; retry(): void } {
         status: plan.status,
         buffered,
         suggestion,
+        suggestionReady,
         hasExam: profile.hasExam || !!exam,
         ...(errorMessage ? { errorMessage } : {}),
       }),
-    [plan.loading, profile.loading, planKind, plan.plan, view, mockLink, plan.daysLeft, plan.examLabel, plan.status, buffered, suggestion, profile.hasExam, exam, errorMessage],
+    [plan.loading, profile.loading, planKind, plan.plan, view, mockLink, plan.daysLeft, plan.examLabel, plan.status, buffered, suggestion, profile.hasExam, exam, errorMessage, suggestionReady],
   );
 
   const refresh = plan.refresh;

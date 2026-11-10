@@ -7,6 +7,8 @@ import { ThemeToggle } from '../components/ThemeToggle';
 import {
   CalendarIcon, ChartIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon,
 } from '../components/icons';
+import { ExamSwitcher } from '../exams/ExamSwitcher';
+import { useActiveExam } from '../exams/useActiveExam';
 import { useGuest } from '../store/StoreProvider';
 import { SITE_NAME } from '../shell/useDocumentTitle';
 
@@ -108,6 +110,25 @@ function TabBar() {
   );
 }
 
+/**
+ * The page area. Switching the active exam remounts the page (new key), so every screen re-reads the profile and follows the new
+ * exam without a reload. A running exam or practice session is never remounted: its URL keeps the key fixed.
+ */
+function ExamKeyedOutlet() {
+  const { activeExam } = useActiveExam();
+  const { pathname } = useLocation();
+  const prev = useRef<string | null>(null);
+  const [gen, setGen] = useState(0);
+  // only a real switch (one exam to another) remounts; the first load of the profile does not
+  useEffect(() => {
+    if (!activeExam) return;
+    if (prev.current && prev.current !== activeExam) setGen((g) => g + 1);
+    prev.current = activeExam;
+  }, [activeExam]);
+  const running = pathname.startsWith('/exam/') || /^\/practice\/[^/]+\/[^/]+/.test(pathname) || pathname.startsWith('/practice/today');
+  return <Outlet key={running ? 'running' : `exam-${gen}`} />;
+}
+
 /** App chrome: top bar + bottom tab bar on mobile, slim left sidebar from 1024px. */
 export function AppLayout() {
   const { user, resendVerification } = useAuth();
@@ -134,13 +155,14 @@ export function AppLayout() {
       {wide ? (
         <aside className="sidebar">
           <Link to="/" aria-label="Kairos home" className="brand"><LogoMark /><span className="brand-text"><span className="text-h3 font-bold">Kairos</span><span className="text-caption text-slate">The right question, at the right time</span></span></Link>
+          <ExamSwitcher variant="sidebar" />
           <SidebarNav />
           <div className="mt-auto stack items-center gap-tight xl:flex-row xl:justify-between"><AccountMenu up /><ThemeToggle /></div>
         </aside>
       ) : (
         <header className="topbar">
           <Link to="/" aria-label="Kairos home" className="row-inline"><LogoMark /><span className="text-h3 font-bold text-ink">Kairos</span></Link>
-          <div className="row-inline"><ThemeToggle /><AccountMenu /></div>
+          <div className="row-inline"><ExamSwitcher variant="topbar" /><ThemeToggle /><AccountMenu /></div>
         </header>
       )}
       <div className="shell-main" id="main" tabIndex={-1} ref={main}>
@@ -152,7 +174,7 @@ export function AppLayout() {
             </Banner>
           </div>
         )}
-        <Outlet />
+        <ExamKeyedOutlet />
       </div>
       {!wide && <TabBar />}
     </div>

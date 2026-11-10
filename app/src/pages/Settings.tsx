@@ -102,7 +102,7 @@ export function Settings() {
           )}
         </SettingsSection>
 
-        <SettingsSection id="plan" title="Exam and plan" description="Your exam date and how Kairos paces you." active={tab === 'plan'}>
+        <SettingsSection id="plan" title="Exam and plan" description="Your exams, their dates and how Kairos paces you." active={tab === 'plan'}>
           <ExamPlanRows />
         </SettingsSection>
 
