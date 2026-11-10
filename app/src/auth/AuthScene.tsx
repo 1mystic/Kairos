@@ -60,7 +60,7 @@ export function AuthScene() {
   // Pointer parallax: ring + decorative arcs shift a few px toward the pointer (hover devices only, transform via CSS vars).
   useEffect(() => {
     const panel = root.current?.closest<HTMLElement>('.auth-brand');
-    if (!panel || reduced() || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (!panel || reduced() || !window.matchMedia?.('(hover: hover) and (pointer: fine)').matches) return;
     let raf = 0;
     let nx = 0;
     let ny = 0;

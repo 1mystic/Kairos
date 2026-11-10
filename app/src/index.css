@@ -298,7 +298,7 @@
   .brand-text { display: none; flex-direction: column; min-width: 0; }
   .brand-text > * { line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .brand-text > :nth-child(2) { display: none; } /* tagline never fits one line in the 240px rail: wordmark only */
-  @media (hover: hover) and (pointer: fine) { .brand:hover { background: transparent; } .brand:hover .brand-text > :first-child { color: var(--primary); } }
+  @media (hover: hover) { .brand:hover { background: transparent; } .brand:hover .brand-text > :first-child { color: var(--primary); } }
   .menu-item { display: flex; align-items: center; gap: var(--space-3); width: 100%; min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius-btn); font: 500 var(--fs-small)/1.4 var(--font-ui); color: var(--ink); text-decoration: none; text-align: left; cursor: pointer; }
   @keyframes fade { from { opacity: 0; } }
   @keyframes rise { from { opacity: 0; transform: translateY(var(--space-2)); } }

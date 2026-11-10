@@ -150,8 +150,7 @@ describe('routes', () => {
   });
   it('no border or shadow utilities in dsa sources', async () => {
     const { readdirSync, readFileSync } = await import('node:fs');
-    const { fileURLToPath } = await import('node:url');
-    const dir = fileURLToPath(new URL('..', import.meta.url));
+    const dir = `${process.cwd()}/src/dsa/`;
     for (const f of readdirSync(dir).filter((n) => /\.tsx$/.test(n))) {
       expect(readFileSync(dir + f, 'utf8'), f).not.toMatch(/['"` ](?:border|shadow|ring|outline)(?:-[\w]+)*['"` ]/);
     }
