@@ -257,7 +257,7 @@ def solution_text(p: dict, slug: str, lead: str) -> str:
     parts = [lead, f"**Idea ({p['pat']}):** {p['trick']}"]
     if p.get("real"):
         parts.append(f"**Where it shows up:** {p['real']}")
-    parts.append(f"[Watch the animated trace](/dsa/{slug})")
+    parts.append(f"[Watch the animated trace](/dsa/p/{slug})")
     return "\n\n".join(parts)
 
 

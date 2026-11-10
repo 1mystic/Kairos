@@ -63,3 +63,15 @@ describe('renderContentHtml', () => {
     expect(r('a\r\n\r\nb')).toBe('<div class="kc-p">a</div><div class="kc-p">b</div>');
   });
 });
+
+describe('renderContentHtml internal links', () => {
+  const html = (md: string) => renderContentHtml(md, { imageHtml: () => '' });
+  it('renders links to the app own pages', () => {
+    expect(html('[Watch the trace](/dsa/p/two-sum)')).toContain('<a class="text-link" href="/dsa/p/two-sum">Watch the trace</a>');
+  });
+  it('leaves external, protocol-relative and script links as plain text', () => {
+    for (const bad of ['[x](https://evil.com)', '[x](//evil.com/a)', '[x](javascript:alert(1))', '[x](/a b)']) {
+      expect(html(bad)).not.toContain('<a ');
+    }
+  });
+});

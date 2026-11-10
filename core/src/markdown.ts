@@ -45,6 +45,11 @@ const PLACEHOLDER_RE = /(\d+)/g;
 
 function inline(escaped: string, stash: (html: string) => string): string {
   let s = escaped.replace(/`([^`]+)`/g, (_m, c: string) => stash(`<code>${c}</code>`));
+  // Links to the app's OWN pages only: `[text](/path)` (a single leading slash; letters, digits, - _ . / only). External URLs,
+  // protocol-relative `//host`, `javascript:` and anything else stay plain text, so content can never link off-site.
+  s = s.replace(/\[([^\]\n]+)\]\((\/(?!\/)[A-Za-z0-9_\-./]*)\)/g, (_m, t: string, h: string) =>
+    stash(`<a class="text-link" href="${h}">${t}</a>`),
+  );
   s = s.replace(/\*\*(?=\S)(.+?)(?<=\S)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/\*(?=\S)(.+?)(?<=\S)\*/g, '<em>$1</em>');
   return s;
