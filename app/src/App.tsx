@@ -12,7 +12,7 @@ import { PublicEntry } from './pages/PublicEntry';
 import { Settings } from './pages/Settings';
 import { uploadRoutes } from './upload/routes';
 import {
-  lazyAdminRoutes, lazyAnalysisRoutes, lazyCbtExamRoutes, lazyCbtPageRoutes, lazyDiagnosticRoutes,
+  lazyAdminRoutes, lazyAnalysisRoutes, lazyCbtExamRoutes, lazyDsaRoutes, lazyCbtPageRoutes, lazyDiagnosticRoutes,
   lazyOnboardingRoutes, lazyPlanRoutes, lazyPracticeRoutes, lazyRoadmapRoutes,
 } from './shell/lazyRoutes';
 import { ErrorBoundary } from './shell/ErrorBoundary';
@@ -29,6 +29,7 @@ import { firebaseConfigError } from './lib/firebase';
 const appLayoutRoutes = [
   ...lazyPracticeRoutes,
   ...lazyAnalysisRoutes,
+  ...lazyDsaRoutes,
   ...lazyDiagnosticRoutes,
   ...uploadRoutes,
   ...lazyCbtPageRoutes,

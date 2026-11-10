@@ -28,6 +28,10 @@ export const lazyPracticeRoutes = lazyGroup(
   () => import('../practice/routes').then((m) => m.practiceRoutes),
   ['/practice', '/practice/today', '/practice/summary/:sessionId', '/practice/:exam/:chapter'],
 );
+export const lazyDsaRoutes = lazyGroup(
+  () => import('../dsa/routes').then((m) => m.dsaRoutes),
+  ['/dsa', '/dsa/t/:track', '/dsa/p/:slug'],
+);
 export const lazyAnalysisRoutes = lazyGroup(
   () => import('../analysis/routes').then((m) => m.analysisRoutes),
   ['/analysis', '/analysis/mock/:mockId'],
