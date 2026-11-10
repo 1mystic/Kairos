@@ -151,7 +151,7 @@ describe('exam calendar editing', () => {
 describe('announcement tab', () => {
   it('builds the contract document and publishes clear as active:false', async () => {
     expect(buildAnnouncementDoc({ active: true, title: ' Hi ', body: 'b', link: '', tone: 'important', expiry: '' })).toEqual({ active: true, title: 'Hi', body: 'b', link: null, tone: 'important', expiresAt: null });
-    const publishConfig = vi.fn(async (..._a: unknown[]) => {});
+    const publishConfig = vi.fn<AdminData['publishConfig']>(async () => {});
     render(wrap(fakeData({ publishConfig, getConfig: async () => ({ active: true, title: 'Live', body: 'x', link: null, tone: 'info', expiresAt: null }) }), 'a1', <AnnouncementTab uid="a1" />));
     await userEvent.click(await screen.findByRole('button', { name: 'Clear announcement' }));
     await waitFor(() => expect(publishConfig).toHaveBeenCalledTimes(1));
