@@ -1,8 +1,8 @@
 import type { MasteryDoc, PlannerTopicMeta, TopicMastery } from '@kairos/core';
 import { secondaryOnlyTopics } from '@kairos/core';
-import { GATE_SUBJECT_LABELS, type Taxonomy, type TaxChapter } from '../practice/taxonomy';
+import { EXAMS, GATE_SUBJECT_LABELS, type Taxonomy, type TaxChapter } from '../practice/taxonomy';
 
-export const EXAM_LABELS: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IAT', GATE_DA: 'GATE DA' };
+export const EXAM_LABELS: Record<string, string> = Object.fromEntries(EXAMS.map((e) => [e.id, e.label]));
 export const examLabel = (id: string): string => EXAM_LABELS[id] ?? id;
 
 /** Total marks per paper (docs/01 table), for the marks-cost estimates. */

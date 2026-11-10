@@ -5,6 +5,9 @@ export const EXAMS = [
   { id: 'NEET_UG', label: 'NEET UG', blurb: 'Physics, Chemistry, Biology' },
   { id: 'IAT', label: 'IAT', blurb: 'IISER Aptitude Test' },
   { id: 'GATE_DA', label: 'GATE DA', blurb: 'Data Science & AI: maths, ML, programming, databases' },
+  { id: 'DSA_INTERVIEW', label: 'DSA Interview', blurb: 'Data structures and algorithms for coding interviews' },
+  { id: 'SYS_DESIGN', label: 'System Design', blurb: 'Designing scalable systems for interviews' },
+  { id: 'ML_SYS_DESIGN', label: 'AI/ML System Design', blurb: 'Designing ML and AI systems for interviews' },
 ] as const;
 export type ExamId = (typeof EXAMS)[number]['id'];
 export const examLabel = (id: string) => EXAMS.find((e) => e.id === id)?.label ?? id;

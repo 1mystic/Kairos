@@ -18,15 +18,25 @@ export interface Taxonomy {
   subjects: TaxSubject[];
 }
 
+/**
+ * The exam registry. `kind: 'exam'` has an official sitting (calendar or own date); `kind: 'interview'` is an interview-prep track
+ * with no official date (a target date is optional). Keep the order: entrance exams first, then interview tracks.
+ */
 export const EXAMS = [
-  { id: 'JEE_MAIN', label: 'JEE Main' },
-  { id: 'NEET_UG', label: 'NEET UG' },
-  { id: 'IAT', label: 'IAT' },
-  { id: 'GATE_DA', label: 'GATE DA' },
+  { id: 'JEE_MAIN', label: 'JEE Main', kind: 'exam' },
+  { id: 'NEET_UG', label: 'NEET UG', kind: 'exam' },
+  { id: 'IAT', label: 'IAT', kind: 'exam' },
+  { id: 'GATE_DA', label: 'GATE DA', kind: 'exam' },
+  { id: 'DSA_INTERVIEW', label: 'DSA Interview', kind: 'interview' },
+  { id: 'SYS_DESIGN', label: 'System Design', kind: 'interview' },
+  { id: 'ML_SYS_DESIGN', label: 'AI/ML System Design', kind: 'interview' },
 ] as const;
 
 /** Long names, for headings and the landing page. */
-export const EXAM_LONG_NAMES: Record<string, string> = { JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IISER Aptitude Test', GATE_DA: 'GATE Data Science & AI' };
+export const EXAM_LONG_NAMES: Record<string, string> = {
+  JEE_MAIN: 'JEE Main', NEET_UG: 'NEET UG', IAT: 'IISER Aptitude Test', GATE_DA: 'GATE Data Science & AI',
+  DSA_INTERVIEW: 'Data Structures & Algorithms interviews', SYS_DESIGN: 'System Design interviews', ML_SYS_DESIGN: 'AI/ML System Design interviews',
+};
 
 /** Subject names for the GATE DA taxonomy ids (the other subjects take their name from the taxonomy). */
 export const GATE_SUBJECT_LABELS: Record<string, string> = {
@@ -35,6 +45,10 @@ export const GATE_SUBJECT_LABELS: Record<string, string> = {
 };
 export type ExamId = (typeof EXAMS)[number]['id'];
 export const isExamId = (s: string | undefined): s is ExamId => EXAMS.some((e) => e.id === s);
+export type ExamKindOf = (typeof EXAMS)[number]['kind'];
+/** True for interview-prep tracks (no official exam date). */
+export const isInterviewExam = (s: string | undefined | null): boolean => EXAMS.some((e) => e.id === s && e.kind === 'interview');
+export const examKindOf = (s: string | undefined | null): ExamKindOf | undefined => EXAMS.find((e) => e.id === s)?.kind;
 
 /**
  * Primary exam id from the profile's PACKED exam string ("JEE_MAIN.1", "JEE_MAIN.2+NEET_UG.1@2027-05-03").
