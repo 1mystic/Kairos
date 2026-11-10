@@ -57,6 +57,138 @@
   ]
  },
  {
+  "id": "q_00f31fb0366d",
+  "type": "INT",
+  "stem": "In an idealised push gossip model each informed node tells one new, uninformed node per round, so the number of informed nodes doubles each round. Starting with 1 informed node, what is the minimum number of rounds to inform at least 1,000 nodes?",
+  "images": [],
+  "answer": {
+   "value": 10.0
+  },
+  "solution": "$2^{10}=1024\\ge1000$ and $2^9=512<1000$, so 10 rounds.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_03aecee60205",
+  "type": "SCQ",
+  "stem": "Gossip is commonly used for which purpose in distributed databases?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Nodes gossip who is alive and which ranges they own, tolerating failures without a central registry.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Executing SQL joins"
+   },
+   {
+    "key": "B",
+    "text": "Rendering web pages"
+   },
+   {
+    "key": "C",
+    "text": "Cluster membership and failure detection information sharing"
+   },
+   {
+    "key": "D",
+    "text": "Compressing logs"
+   }
+  ]
+ },
+ {
+  "id": "q_04f0833fc50c",
+  "type": "NVQ",
+  "stem": "A Bloom filter has $m=10{,}000$ bits, $n=1{,}000$ inserted elements and $k=7$ hash functions. Using $p\\approx(1-e^{-kn/m})^k$, what is the false-positive rate as a decimal rounded to 4 places?",
+  "images": [],
+  "answer": {
+   "value": 0.00819372,
+   "tol": 0.0005
+  },
+  "solution": "$kn/m=0.7$; $1-e^{-0.7}=0.5034$; $0.5034^7\\approx0.0082$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_0557afc10823",
   "type": "SCQ",
   "stem": "What is a cache stampede?",
@@ -110,6 +242,63 @@
    {
     "key": "D",
     "text": "A misspelled key"
+   }
+  ]
+ },
+ {
+  "id": "q_060761763256",
+  "type": "SCQ",
+  "stem": "In client-side discovery, who chooses the instance to call?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Client-side discovery puts lookup and balancing logic in the client; server-side discovery delegates it to a router.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The client queries the registry and selects an instance itself"
+   },
+   {
+    "key": "B",
+    "text": "A load balancer always selects"
+   },
+   {
+    "key": "C",
+    "text": "The database selects"
+   },
+   {
+    "key": "D",
+    "text": "Nobody selects"
    }
   ]
  },
@@ -266,6 +455,65 @@
   "version": 1
  },
  {
+  "id": "q_0941aaee7809",
+  "type": "MSQ",
+  "stem": "Select all properties of gossip protocols.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Randomness gives resilience and probabilistic spread, at the price of redundant messages and no simultaneity.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Robust to node failures because there is no single coordinator"
+   },
+   {
+    "key": "B",
+    "text": "Convergence time is probabilistic rather than exactly bounded"
+   },
+   {
+    "key": "C",
+    "text": "Message overhead can be redundant because nodes may re-share known data"
+   },
+   {
+    "key": "D",
+    "text": "Guarantees every node learns an update at the same instant"
+   }
+  ]
+ },
+ {
   "id": "q_0acee33ac9d8",
   "type": "INT",
   "stem": "Round-robin sends requests in order to 5 identical servers. Out of 10,000 requests, how many does each server receive?",
@@ -301,6 +549,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_0cba7cdcca95",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A checksum mismatch indicates the data was altered or damaged.\n\n**Reason (R):** A checksum is a fingerprint recomputed from the received data and compared with the original value.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A different fingerprint means the content differs from what was fingerprinted. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
  },
  {
   "id": "q_0d16979508e7",
@@ -454,6 +759,63 @@
   ]
  },
  {
+  "id": "q_0f2b849f315b",
+  "type": "SCQ",
+  "stem": "What does a checksum let a receiver check?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The receiver recomputes the checksum and compares it with the transmitted value.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Whether the sender is trustworthy"
+   },
+   {
+    "key": "B",
+    "text": "How fast the network is"
+   },
+   {
+    "key": "C",
+    "text": "Whether the data is compressed"
+   },
+   {
+    "key": "D",
+    "text": "Whether the received data matches what was sent, detecting accidental corruption"
+   }
+  ]
+ },
+ {
   "id": "q_0fed5e1fc77e",
   "type": "NVQ",
   "stem": "Keys are placed by hash(key) mod N and you grow from N=4 to N=5 servers. Assuming uniform hashes, what fraction of keys changes server? Give a decimal.",
@@ -467,6 +829,43 @@
   "tax": {
    "subject": "SD",
    "chapter": "SD.CHASH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_102789cd7e22",
+  "type": "INT",
+  "stem": "Nodes send a heartbeat every 2 seconds and a node is declared failed after 3 consecutive missed heartbeats. What is the longest time in seconds, after the last heartbeat arrived, before the failure is declared (assume no jitter and declaration at the third miss)?",
+  "images": [],
+  "answer": {
+   "value": 6.0
+  },
+  "solution": "Missing 3 consecutive intervals of 2 s each means 6 s after the last heartbeat is received.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
    "topics": [],
    "concepts": []
   },
@@ -549,6 +948,63 @@
   ]
  },
  {
+  "id": "q_10f95b9c19b5",
+  "type": "SCQ",
+  "stem": "Which query becomes expensive after sharding orders by customer_id?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Queries that include the shard key go to one shard; those that do not must query every shard and merge results.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Fetching one customer's orders"
+   },
+   {
+    "key": "B",
+    "text": "Inserting one new order"
+   },
+   {
+    "key": "C",
+    "text": "Finding all orders across all customers placed today (a scatter-gather across shards)"
+   },
+   {
+    "key": "D",
+    "text": "Updating one order by customer_id and order id"
+   }
+  ]
+ },
+ {
   "id": "q_10fac77d06be",
   "type": "INT",
   "stem": "Messages arrive at 1,200 per second for 10 minutes while consumers handle 1,000 per second. How many messages are waiting in the queue at the end of the burst?",
@@ -584,6 +1040,194 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_12124ba93f4e",
+  "type": "SCQ",
+  "stem": "A company wants to block access to certain websites for employees and log their traffic. Which component fits?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Employee requests leaving the company network pass through a forward proxy where policy and logging apply.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A message queue"
+   },
+   {
+    "key": "B",
+    "text": "A CDN"
+   },
+   {
+    "key": "C",
+    "text": "A reverse proxy in the data centre only"
+   },
+   {
+    "key": "D",
+    "text": "A forward proxy with access policies"
+   }
+  ]
+ },
+ {
+  "id": "q_12838dffe717",
+  "type": "INT",
+  "stem": "A cluster has 500 nodes, each sending one heartbeat per second to a central monitor. How many heartbeat messages per minute does the monitor receive?",
+  "images": [],
+  "answer": {
+   "value": 30000.0
+  },
+  "solution": "$500\\times60=30{,}000$ messages per minute.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_13098f6622ac",
+  "type": "INT",
+  "stem": "A Raft cluster has 5 nodes. What is the minimum number of nodes that must acknowledge an entry for it to be committed (a majority)?",
+  "images": [],
+  "answer": {
+   "value": 3.0
+  },
+  "solution": "A majority of 5 is $\\lfloor5/2\\rfloor+1=3$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1416bb9437f9",
+  "type": "SCQ",
+  "stem": "A replicated storage node finds a chunk whose checksum no longer matches. What is the usual response?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Recomputing from corrupt data would hide the error. Replication provides a good copy to repair from.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Recompute the checksum from the bad data and accept it"
+   },
+   {
+    "key": "B",
+    "text": "Ignore it"
+   },
+   {
+    "key": "C",
+    "text": "Discard the bad copy and re-replicate it from a healthy replica"
+   },
+   {
+    "key": "D",
+    "text": "Delete all replicas"
+   }
+  ]
  },
  {
   "id": "q_17eefb76eb78",
@@ -759,6 +1403,43 @@
   ]
  },
  {
+  "id": "q_1a794d5c8202",
+  "type": "INT",
+  "stem": "A cluster of 7 voting nodes uses majority quorums. What is the largest number of node failures it can tolerate while still making progress?",
+  "images": [],
+  "answer": {
+   "value": 3.0
+  },
+  "solution": "Majority is 4, so up to $7-4=3$ nodes may fail.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_204568a69a99",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** LFU can keep a popular item cached longer than LRU after a one-time scan of many other items.\n\n**Reason (R):** LFU evicts based on access frequency, while LRU evicts based on recency only.\n\nChoose the correct option.",
@@ -812,6 +1493,63 @@
    {
     "key": "D",
     "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_2049e3efa7be",
+  "type": "SCQ",
+  "stem": "What do consensus algorithms such as Paxos and Raft let a group of nodes do?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Consensus provides agreement and a consistent order of commands among replicas even when a minority fail.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Choose the fastest node permanently"
+   },
+   {
+    "key": "B",
+    "text": "Avoid using a network"
+   },
+   {
+    "key": "C",
+    "text": "Compress their network traffic"
+   },
+   {
+    "key": "D",
+    "text": "Agree on a single value or an ordered log of operations despite some node failures"
    }
   ]
  },
@@ -873,6 +1611,65 @@
   ]
  },
  {
+  "id": "q_2475a49721b5",
+  "type": "MSQ",
+  "stem": "Select all true statements about checksums and hashes.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Collisions are possible in principle, so equal checksums give strong evidence, not proof. End-to-end checks catch corruption at any hop.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A cryptographic hash such as SHA-256 can serve as a checksum"
+   },
+   {
+    "key": "B",
+    "text": "CRC32 is designed to detect accidental errors, not malicious changes"
+   },
+   {
+    "key": "C",
+    "text": "Equal checksums prove two inputs are identical with certainty"
+   },
+   {
+    "key": "D",
+    "text": "Checksums are often verified end to end, not only per hop"
+   }
+  ]
+ },
+ {
   "id": "q_24e4ba541044",
   "type": "SCQ",
   "stem": "What is the main weakness of a fixed window counter?",
@@ -926,6 +1723,63 @@
    {
     "key": "D",
     "text": "It cannot count requests at all"
+   }
+  ]
+ },
+ {
+  "id": "q_25229fdde416",
+  "type": "SCQ",
+  "stem": "Which is appropriate to detect tampering by an active attacker, rather than accidental errors?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "CRCs are easy to forge. An attacker cannot recompute an HMAC without the key.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A longer timeout"
+   },
+   {
+    "key": "B",
+    "text": "CRC32 alone"
+   },
+   {
+    "key": "C",
+    "text": "A keyed hash such as HMAC (or a digital signature)"
+   },
+   {
+    "key": "D",
+    "text": "A simple parity bit"
    }
   ]
  },
@@ -1042,6 +1896,63 @@
    {
     "key": "D",
     "text": "Letting operators replay failed messages after a fix"
+   }
+  ]
+ },
+ {
+  "id": "q_29ef6a4b8e64",
+  "type": "SCQ",
+  "stem": "A storage engine checks a Bloom filter before reading each on-disk file for a key. What does this save?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A negative answer skips the file entirely; only 'maybe' answers cost a disk read.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Network latency to clients"
+   },
+   {
+    "key": "B",
+    "text": "All writes"
+   },
+   {
+    "key": "C",
+    "text": "Disk reads for files that certainly do not contain the key"
+   },
+   {
+    "key": "D",
+    "text": "The memory for the filter"
    }
   ]
  },
@@ -1179,6 +2090,63 @@
   ]
  },
  {
+  "id": "q_2f91c830e7fb",
+  "type": "SCQ",
+  "stem": "A 1,000-node cluster uses gossip every 1 second with fan-out 1. Roughly how long until an update is known to almost all nodes?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Spread is O(log N) rounds: log2(1000) is about 10 for pure doubling, and a few more rounds to reach the last nodes in the randomised case.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "About 1,000 seconds"
+   },
+   {
+    "key": "B",
+    "text": "Instantaneously"
+   },
+   {
+    "key": "C",
+    "text": "On the order of ten to twenty seconds (logarithmic in cluster size)"
+   },
+   {
+    "key": "D",
+    "text": "Several hours"
+   }
+  ]
+ },
+ {
   "id": "q_304e19df3e4c",
   "type": "SCQ",
   "stem": "What is the main job of a load balancer?",
@@ -1234,6 +2202,43 @@
     "text": "Store the application's data"
    }
   ]
+ },
+ {
+  "id": "q_3116a096e04c",
+  "type": "INT",
+  "stem": "A 1 GB file (1 GB = $10^9$ B) is split into 4 MB chunks (1 MB = $10^6$ B), each with its own checksum. How many chunks are there?",
+  "images": [],
+  "answer": {
+   "value": 250.0
+  },
+  "solution": "$10^9/(4\\times10^6)=250$ chunks.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_322c8dd9fa76",
@@ -1672,6 +2677,63 @@
   ]
  },
  {
+  "id": "q_43157753f7a2",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Sending heartbeats through a central monitor can itself limit scalability.\n\n**Reason (R):** All heartbeat traffic converges on one component, which becomes a load and failure bottleneck.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "That is why large clusters use gossip-style or hierarchical failure detection. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_433a6240536b",
   "type": "MSQ",
   "stem": "Select all properties guaranteed by ACID transactions.",
@@ -1731,6 +2793,120 @@
   ]
  },
  {
+  "id": "q_4490054b909b",
+  "type": "SCQ",
+  "stem": "Why might a node that is alive be declared dead by a heartbeat monitor?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Failure detection based on silence cannot distinguish a crashed node from a slow or unreachable one.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The monitor cannot count"
+   },
+   {
+    "key": "B",
+    "text": "Heartbeats are always lost"
+   },
+   {
+    "key": "C",
+    "text": "A network partition or long pause delayed its heartbeats"
+   },
+   {
+    "key": "D",
+    "text": "Alive nodes cannot send heartbeats"
+   }
+  ]
+ },
+ {
+  "id": "q_4573965d0628",
+  "type": "SCQ",
+  "stem": "Which is an example of server-side discovery?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The router performs lookup, hiding discovery from the client.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clients call a load balancer or router that consults the registry and forwards the request"
+   },
+   {
+    "key": "B",
+    "text": "The client holds a list and picks an instance"
+   },
+   {
+    "key": "C",
+    "text": "Hard-coded IPs in source code"
+   },
+   {
+    "key": "D",
+    "text": "Reading a printed list"
+   }
+  ]
+ },
+ {
   "id": "q_46966598d930",
   "type": "SCQ",
   "stem": "With IP-hash balancing, what happens to existing client-to-server mapping when a server is added using a simple hash(ip) mod N?",
@@ -1784,6 +2960,63 @@
    {
     "key": "D",
     "text": "No client changes server"
+   }
+  ]
+ },
+ {
+  "id": "q_47896487f98a",
+  "type": "SCQ",
+  "stem": "A multi-tenant database is sharded by tenant_id, but one tenant is 40% of the traffic. What is the best remedy?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A skewed key can remain a hot shard under any hash because it is a single key. Isolating or sub-sharding the large tenant addresses the actual skew.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Reduce replication to zero"
+   },
+   {
+    "key": "B",
+    "text": "Add more tiny tenants"
+   },
+   {
+    "key": "C",
+    "text": "Hash tenant_id with a different function"
+   },
+   {
+    "key": "D",
+    "text": "Give the large tenant its own shard or split its data across several shards with a sub-key"
    }
   ]
  },
@@ -1940,6 +3173,120 @@
   "version": 1
  },
  {
+  "id": "q_49a8ace46b76",
+  "type": "SCQ",
+  "stem": "How does a gossip protocol spread information?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Random pairwise exchange spreads updates epidemically without central coordination.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Nodes vote on every message"
+   },
+   {
+    "key": "B",
+    "text": "Only the leader may send updates"
+   },
+   {
+    "key": "C",
+    "text": "Each node periodically exchanges state with a randomly chosen peer"
+   },
+   {
+    "key": "D",
+    "text": "A central server broadcasts to all nodes"
+   }
+  ]
+ },
+ {
+  "id": "q_49dc75a505e5",
+  "type": "SCQ",
+  "stem": "What typically happens when a leader's heartbeats to followers stop in Raft?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Heartbeats suppress elections; missing them after an election timeout triggers one.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clients pick a leader"
+   },
+   {
+    "key": "B",
+    "text": "The cluster deletes its logs"
+   },
+   {
+    "key": "C",
+    "text": "Followers time out and start a new election"
+   },
+   {
+    "key": "D",
+    "text": "Followers shut down"
+   }
+  ]
+ },
+ {
   "id": "q_49dd56b28eb3",
   "type": "SCQ",
   "stem": "PACELC extends CAP. What additional trade-off does it name for the normal case with no partition?",
@@ -1993,6 +3340,63 @@
    {
     "key": "D",
     "text": "Throughput versus security"
+   }
+  ]
+ },
+ {
+  "id": "q_4a189d51cd61",
+  "type": "SCQ",
+  "stem": "In Raft, what is the leader's role?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A single leader orders entries and replicates the log; followers apply committed entries.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It stores nothing"
+   },
+   {
+    "key": "B",
+    "text": "It is chosen at random for every request"
+   },
+   {
+    "key": "C",
+    "text": "It only sends heartbeats and never stores data"
+   },
+   {
+    "key": "D",
+    "text": "It accepts client commands, appends them to its log and replicates them to followers"
    }
   ]
  },
@@ -2284,6 +3688,65 @@
   ]
  },
  {
+  "id": "q_54c7465df4a4",
+  "type": "MSQ",
+  "stem": "Select all benefits of using a service registry.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "A registry adds indirection between names and addresses, supporting elasticity and health-aware routing.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Services can scale up and down without clients changing configuration"
+   },
+   {
+    "key": "B",
+    "text": "Unhealthy instances can be removed from lookups"
+   },
+   {
+    "key": "C",
+    "text": "Clients can use logical service names"
+   },
+   {
+    "key": "D",
+    "text": "It removes the need for any network"
+   }
+  ]
+ },
+ {
   "id": "q_551af30ad1b6",
   "type": "SCQ",
   "stem": "A query filters on city and then sorts by signup_date. Which composite index helps most?",
@@ -2398,6 +3861,100 @@
   ]
  },
  {
+  "id": "q_596619b40ac9",
+  "type": "INT",
+  "stem": "A dataset of 12 TB must be split so that each shard holds at most 1.5 TB at the planned load, with no replication. What is the minimum number of shards?",
+  "images": [],
+  "answer": {
+   "value": 8.0
+  },
+  "solution": "$12/1.5=8$ shards at minimum (more for headroom).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_5b5c1fc79568",
+  "type": "SCQ",
+  "stem": "Which proxy sits in front of clients and forwards their requests to the internet?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A forward proxy acts for clients (for example to filter or anonymise); a reverse proxy acts for servers.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A DNS root server"
+   },
+   {
+    "key": "B",
+    "text": "A database replica"
+   },
+   {
+    "key": "C",
+    "text": "A reverse proxy"
+   },
+   {
+    "key": "D",
+    "text": "A forward proxy"
+   }
+  ]
+ },
+ {
   "id": "q_60c155c60767",
   "type": "INT",
   "stem": "Peak traffic is 40,000 requests per second. One server handles 2,500 requests per second at the target utilisation. You also want two spare servers (N+2) for failures. How many servers do you provision?",
@@ -2433,6 +3990,120 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_625a976fbeba",
+  "type": "SCQ",
+  "stem": "What kind of consistency does gossip-based dissemination provide?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Gossip converges over time but offers no immediate global agreement.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Serializable transactions"
+   },
+   {
+    "key": "B",
+    "text": "Strong linearizability immediately"
+   },
+   {
+    "key": "C",
+    "text": "Eventual consistency: all nodes converge if updates stop"
+   },
+   {
+    "key": "D",
+    "text": "None, nodes diverge forever"
+   }
+  ]
+ },
+ {
+  "id": "q_62e4f05f2696",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A Bloom filter can report an element as present even though it was never added.\n\n**Reason (R):** Different elements can set the same bits, so all positions checked for a new element may already be 1.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "That is exactly a false positive. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
  },
  {
   "id": "q_63481b32a9d6",
@@ -2492,6 +4163,65 @@
   ]
  },
  {
+  "id": "q_64cfd3992056",
+  "type": "MSQ",
+  "stem": "Select all true statements about Bloom filters.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "A Bloom filter stores only bits, so it cannot enumerate elements; as it fills, more bits are 1 and false positives rise.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "They use far less memory than storing the full set"
+   },
+   {
+    "key": "B",
+    "text": "Lookup time depends on the number of hash functions, not on the set size"
+   },
+   {
+    "key": "C",
+    "text": "They can return the stored elements"
+   },
+   {
+    "key": "D",
+    "text": "Adding more elements increases the false-positive rate"
+   }
+  ]
+ },
+ {
   "id": "q_6b1b611a24a2",
   "type": "NVQ",
   "stem": "A service promises 99.9% availability (three nines). Using a 365-day year, how many minutes of downtime per year does that allow? Round to the nearest minute.",
@@ -2528,6 +4258,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_6c3cbe626ee4",
+  "type": "SCQ",
+  "stem": "The registry itself becomes unavailable. Which design keeps services working?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Registries must be highly available, and clients should degrade gracefully on cached data.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Switch to random IP guessing"
+   },
+   {
+    "key": "B",
+    "text": "Every call fails until the registry returns"
+   },
+   {
+    "key": "C",
+    "text": "Disable health checks"
+   },
+   {
+    "key": "D",
+    "text": "Clients keep a local cached copy of the last known instances and the registry runs as a replicated cluster"
+   }
+  ]
  },
  {
   "id": "q_6d887baa7a23",
@@ -2623,6 +4410,197 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_6f4e03ceac12",
+  "type": "MSQ",
+  "stem": "Select all tasks commonly performed by a reverse proxy.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Reverse proxies serve the backend side. Hiding clients' identity is a forward proxy function.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "TLS termination"
+   },
+   {
+    "key": "B",
+    "text": "Caching of responses"
+   },
+   {
+    "key": "C",
+    "text": "Load balancing across backends"
+   },
+   {
+    "key": "D",
+    "text": "Hiding the client's identity from the destination for outbound traffic"
+   }
+  ]
+ },
+ {
+  "id": "q_72b48381dedf",
+  "type": "NVQ",
+  "stem": "For a target false-positive rate of 1% with the optimal $k$, a Bloom filter needs $m/n=-\\ln p/(\\ln 2)^2$ bits per element. How many bits per element is that? Give one decimal.",
+  "images": [],
+  "answer": {
+   "value": 9.58506,
+   "tol": 0.05
+  },
+  "solution": "$-\\ln 0.01=4.605$; $(\\ln2)^2=0.4805$; ratio $=9.585$, about 9.6 bits per element.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_73ab52800eb1",
+  "type": "INT",
+  "stem": "A replicated store has N=5 replicas. Writes wait for W=3 acknowledgements. What is the smallest R such that $R+W>N$ (so reads overlap the latest write)?",
+  "images": [],
+  "answer": {
+   "value": 3.0
+  },
+  "solution": "Need $R>N-W=2$, so the smallest integer is $R=3$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_750fbdbbdd9f",
+  "type": "SCQ",
+  "stem": "Users are sharded by hash(user_id) mod 16. What is the main drawback if you later change to 20 shards?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Changing the modulus remaps most keys. Consistent hashing or a directory/virtual-shard layer reduces data movement. Check: same argument as modulus remapping for caches.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Only one shard changes"
+   },
+   {
+    "key": "B",
+    "text": "Most rows change shard, causing a large data migration"
+   },
+   {
+    "key": "C",
+    "text": "No rows move"
+   },
+   {
+    "key": "D",
+    "text": "Queries stop being possible"
+   }
+  ]
  },
  {
   "id": "q_76aff63b53a4",
@@ -2814,6 +4792,100 @@
   "version": 1
  },
  {
+  "id": "q_84b4b0731d31",
+  "type": "SCQ",
+  "stem": "Can you delete an element from a standard Bloom filter by clearing its bits?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Bits are shared among elements, so clearing them can break other entries. Counting variants store counters.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "No; clearing bits may remove other elements' evidence, creating false negatives (use a counting Bloom filter)"
+   },
+   {
+    "key": "B",
+    "text": "Yes, but only on Tuesdays"
+   },
+   {
+    "key": "C",
+    "text": "Deleting is the only operation it supports"
+   },
+   {
+    "key": "D",
+    "text": "Yes, always safely"
+   }
+  ]
+ },
+ {
+  "id": "q_84c7a8cc3b66",
+  "type": "INT",
+  "stem": "The optimal number of hash functions is $k=(m/n)\\ln 2$. For $m/n=10$ bits per element, what is the nearest integer $k$?",
+  "images": [],
+  "answer": {
+   "value": 7.0
+  },
+  "solution": "$10\\times0.693=6.93$, so $k=7$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_86861f0d0bb6",
   "type": "NVQ",
   "stem": "A request must pass through three components in series, each independently available 99.9% of the time. What is the end-to-end availability, as a percentage rounded to two decimals?",
@@ -2888,6 +4960,120 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_89d463d6336e",
+  "type": "SCQ",
+  "stem": "How do registries usually learn that a service instance has died?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Instances register and renew; if renewals stop, the entry expires.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "By asking users"
+   },
+   {
+    "key": "B",
+    "text": "They never learn"
+   },
+   {
+    "key": "C",
+    "text": "Through health checks or missed heartbeats and registration leases (TTLs)"
+   },
+   {
+    "key": "D",
+    "text": "By guessing"
+   }
+  ]
+ },
+ {
+  "id": "q_8b4067ec819c",
+  "type": "SCQ",
+  "stem": "How does a reverse proxy cache reduce backend load?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Cache hits are answered at the proxy; only misses go to the backend.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It makes responses uncacheable"
+   },
+   {
+    "key": "B",
+    "text": "It compresses the database"
+   },
+   {
+    "key": "C",
+    "text": "It serves repeated requests for the same cacheable response without contacting the backend"
+   },
+   {
+    "key": "D",
+    "text": "It forwards every request to the backend regardless"
+   }
+  ]
  },
  {
   "id": "q_8b997b52707f",
@@ -3274,6 +5460,63 @@
   ]
  },
  {
+  "id": "q_971337dd8d0f",
+  "type": "SCQ",
+  "stem": "Why can a reverse proxy protect backend servers?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The proxy is the single public entry point and can enforce policy before traffic reaches private backends.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Clients never connect to them directly, so the proxy can filter, rate limit and absorb attacks"
+   },
+   {
+    "key": "B",
+    "text": "It turns off the firewall"
+   },
+   {
+    "key": "C",
+    "text": "It makes servers public"
+   },
+   {
+    "key": "D",
+    "text": "It deletes the servers' data"
+   }
+  ]
+ },
+ {
   "id": "q_978e23d1af23",
   "type": "ASSERT_REASON",
   "stem": "**Assertion (A):** Rate limiting helps protect a service from denial-of-service-style overload by a single client.\n\n**Reason (R):** It caps how many requests each client can make in a time window.\n\nChoose the correct option.",
@@ -3620,6 +5863,63 @@
   ]
  },
  {
+  "id": "q_a396db1b44d3",
+  "type": "SCQ",
+  "stem": "What is the main trade-off in choosing the heartbeat timeout?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Network delay or GC pauses can delay a heartbeat, so aggressive timeouts may declare healthy nodes dead.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A long timeout is always better"
+   },
+   {
+    "key": "B",
+    "text": "A short timeout detects failure fast but risks false positives; a long one is safer but slower to react"
+   },
+   {
+    "key": "C",
+    "text": "A short timeout is always better"
+   },
+   {
+    "key": "D",
+    "text": "Timeouts have no effect"
+   }
+  ]
+ },
+ {
   "id": "q_a63163659da2",
   "type": "SCQ",
   "stem": "A partitioned log guarantees order only within a partition. How do you ensure all events of one order id are processed in order?",
@@ -3673,6 +5973,120 @@
    {
     "key": "D",
     "text": "Use a different queue per message"
+   }
+  ]
+ },
+ {
+  "id": "q_a8e73f4bc894",
+  "type": "SCQ",
+  "stem": "Why do consensus clusters usually have an odd number of nodes?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A 4-node cluster needs 3 for a majority and tolerates 1 failure, the same as a 3-node cluster. A 5-node cluster tolerates 2.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Odd numbers are required by TCP"
+   },
+   {
+    "key": "B",
+    "text": "Even sizes cannot elect a leader at all"
+   },
+   {
+    "key": "C",
+    "text": "It makes the network faster"
+   },
+   {
+    "key": "D",
+    "text": "An extra node to make an even size adds no fault tolerance but adds cost"
+   }
+  ]
+ },
+ {
+  "id": "q_ad158f2bd7ba",
+  "type": "SCQ",
+  "stem": "A social app shards a posts table by created_date (one shard per month). What problem is likely?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Monotonic keys like timestamps route all current traffic to one shard. A hashed or composite key spreads writes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "All new writes hit the newest shard, creating a hot spot"
+   },
+   {
+    "key": "B",
+    "text": "Writes spread evenly across shards"
+   },
+   {
+    "key": "C",
+    "text": "Old posts cannot be read"
+   },
+   {
+    "key": "D",
+    "text": "Shards cannot be added"
    }
   ]
  },
@@ -3810,6 +6224,63 @@
   ]
  },
  {
+  "id": "q_b2bb9dba7f21",
+  "type": "SCQ",
+  "stem": "What is the main scalability advantage of gossip over all-to-all messaging?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Each node talks to a few peers per round, yet the epidemic spread reaches everyone in O(log N) rounds.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It needs a central coordinator"
+   },
+   {
+    "key": "B",
+    "text": "It sends more messages per node as the cluster grows"
+   },
+   {
+    "key": "C",
+    "text": "It never converges"
+   },
+   {
+    "key": "D",
+    "text": "Per-node load stays small while information reaches all nodes in about logarithmic time"
+   }
+  ]
+ },
+ {
   "id": "q_b36b9305833c",
   "type": "SCQ",
   "stem": "Servers differ: one has 4 times the capacity of the others. Which algorithm accounts for that?",
@@ -3863,6 +6334,63 @@
    {
     "key": "D",
     "text": "Weighted round robin (or weighted least connections)"
+   }
+  ]
+ },
+ {
+  "id": "q_b38041afc154",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** With majority quorums, two different quorums always overlap in at least one node.\n\n**Reason (R):** Any two sets of more than half of the nodes must share a member.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "If two sets each have more than N/2 members they cannot be disjoint, so the overlapping node carries the latest committed information. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -4072,6 +6600,63 @@
    {
     "key": "D",
     "text": "Indexes force full table scans"
+   }
+  ]
+ },
+ {
+  "id": "q_b812cc99f2e0",
+  "type": "SCQ",
+  "stem": "Why is an end-to-end checksum still valuable when each network link already uses its own error detection?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Hop-by-hop checks do not protect data while it sits in routers, disks or memory between the checks.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Because checksums slow transfers deliberately"
+   },
+   {
+    "key": "B",
+    "text": "End-to-end checks make link checks illegal"
+   },
+   {
+    "key": "C",
+    "text": "Errors can occur in intermediate devices or memory between links, so only an end-to-end check covers the whole path"
+   },
+   {
+    "key": "D",
+    "text": "Links never fail"
    }
   ]
  },
@@ -4361,6 +6946,179 @@
   ]
  },
  {
+  "id": "q_bfc128d13e7f",
+  "type": "MSQ",
+  "stem": "Select all good practices for heartbeat-based failure detection.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Single-loss detection yields many false alarms. Tuning, jitter and richer payloads improve reliability.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Use timeouts longer than typical network jitter"
+   },
+   {
+    "key": "B",
+    "text": "Randomise election or retry timers to avoid synchronised storms"
+   },
+   {
+    "key": "C",
+    "text": "Make heartbeats carry useful health data such as load"
+   },
+   {
+    "key": "D",
+    "text": "Declare failure after a single lost message on a lossy network"
+   }
+  ]
+ },
+ {
+  "id": "q_c36c430443de",
+  "type": "SCQ",
+  "stem": "A 5-node Raft cluster is split by a partition into groups of 2 and 3. What happens?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Only a majority (3 of 5) can elect a leader and commit, so there can never be two committing groups; this is how split-brain is avoided.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CONS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both groups commit independently"
+   },
+   {
+    "key": "B",
+    "text": "The group of 2 elects a leader and commits"
+   },
+   {
+    "key": "C",
+    "text": "Neither group can ever recover"
+   },
+   {
+    "key": "D",
+    "text": "The group of 3 can elect a leader and commit; the group of 2 cannot make progress"
+   }
+  ]
+ },
+ {
+  "id": "q_c48ef4479ae2",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** A reverse proxy and a load balancer are often the same software component in practice.\n\n**Reason (R):** Reverse proxies can distribute incoming requests among several backend servers.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Many proxies (for example NGINX or HAProxy) both proxy and balance; balancing is one of the reverse proxy's functions. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
   "id": "q_c4a7fb70dee0",
   "type": "SCQ",
   "stem": "A primary database replicates asynchronously to a replica. The primary fails right after acknowledging a write. What is the risk when the replica is promoted?",
@@ -4418,6 +7176,65 @@
   ]
  },
  {
+  "id": "q_c7a51c57a266",
+  "type": "MSQ",
+  "stem": "Select all considerations when choosing a shard key.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "Good keys balance load, have many values and match query patterns. Monotonic keys concentrate writes.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It should spread data and traffic evenly"
+   },
+   {
+    "key": "B",
+    "text": "It should appear in the most common queries so they hit one shard"
+   },
+   {
+    "key": "C",
+    "text": "It should have high cardinality"
+   },
+   {
+    "key": "D",
+    "text": "It should be a constantly increasing timestamp for even distribution"
+   }
+  ]
+ },
+ {
   "id": "q_c891d5719f2b",
   "type": "NVQ",
   "stem": "A job has a serial fraction of 5% that cannot be parallelised; the rest scales perfectly. By Amdahl's law, what is the speedup on 10 processors? Give a number rounded to two decimals.",
@@ -4454,6 +7271,63 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_c9ada75a3f2b",
+  "type": "SCQ",
+  "stem": "What does a Bloom filter answer when it says an element is NOT present?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Bloom filters have no false negatives: if any of the element's bits is 0, it was never added.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The element is definitely not in the set"
+   },
+   {
+    "key": "B",
+    "text": "It may be present"
+   },
+   {
+    "key": "C",
+    "text": "The filter is full"
+   },
+   {
+    "key": "D",
+    "text": "The element is probably in the set"
+   }
+  ]
  },
  {
   "id": "q_cb064d499bfb",
@@ -4509,6 +7383,63 @@
    {
     "key": "D",
     "text": "They never support indexes"
+   }
+  ]
+ },
+ {
+  "id": "q_cb5e3dac4009",
+  "type": "SCQ",
+  "stem": "What is the one kind of error a standard Bloom filter can make?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "All bits for an absent element can happen to be set by other elements.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.BLOOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "False negatives"
+   },
+   {
+    "key": "B",
+    "text": "Neither"
+   },
+   {
+    "key": "C",
+    "text": "False positives (saying 'maybe present' for an absent element)"
+   },
+   {
+    "key": "D",
+    "text": "Both equally"
    }
   ]
  },
@@ -4838,6 +7769,63 @@
   ]
  },
  {
+  "id": "q_d36e7a1a6ca4",
+  "type": "SCQ",
+  "stem": "What is database sharding?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Sharding is horizontal partitioning across nodes; replication, by contrast, copies the same data.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Compressing tables in place"
+   },
+   {
+    "key": "B",
+    "text": "Splitting a large dataset into independent partitions (shards) placed on different nodes, each holding a subset of the rows"
+   },
+   {
+    "key": "C",
+    "text": "Encrypting each row separately"
+   },
+   {
+    "key": "D",
+    "text": "Copying the whole database to every node"
+   }
+  ]
+ },
+ {
   "id": "q_d6972b16c3da",
   "type": "SCQ",
   "stem": "Which statement best describes the difference between scalability and raw performance?",
@@ -4891,6 +7879,63 @@
    {
     "key": "D",
     "text": "Scalability is only about reducing latency for a single user"
+   }
+  ]
+ },
+ {
+  "id": "q_d98b9dc04ab3",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Hard-coding instance IP addresses in clients is fragile in a dynamically scaled environment.\n\n**Reason (R):** Instances can be replaced or rescheduled and receive new addresses.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Addresses change when instances are replaced, so static configuration soon points to nothing. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -4952,6 +7997,157 @@
   ]
  },
  {
+  "id": "q_db966506c9eb",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Gossip-based membership avoids a central heartbeat monitor bottleneck.\n\n**Reason (R):** Failure information is spread peer to peer instead of converging on one node.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Decentralised exchange removes the single bottleneck present in central monitoring. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.GOSSIP",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
+   }
+  ]
+ },
+ {
+  "id": "q_dc1e6f4336e8",
+  "type": "INT",
+  "stem": "Peak write load is 36,000 writes per second. One shard node sustains 4,000 writes per second at target utilisation. With 3 replicas per shard (writes go to the primary only), how many shards are needed?",
+  "images": [],
+  "answer": {
+   "value": 9.0
+  },
+  "solution": "Writes land on the primary of each shard: $36000/4000=9$ shards.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_dc2dbd007745",
+  "type": "SCQ",
+  "stem": "What problem does service discovery solve?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Instances start, stop and move, so hard-coded addresses break; a registry maps service names to live instances.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Encrypting service traffic"
+   },
+   {
+    "key": "B",
+    "text": "Storing user data"
+   },
+   {
+    "key": "C",
+    "text": "Compiling code"
+   },
+   {
+    "key": "D",
+    "text": "Letting services find each other's current network locations dynamically as instances come and go"
+   }
+  ]
+ },
+ {
   "id": "q_dc8266952fed",
   "type": "SCQ",
   "stem": "A shopping-cart service must stay writable during a partition and merge conflicting carts later. Which CAP choice is this?",
@@ -5005,6 +8201,63 @@
    {
     "key": "D",
     "text": "CP"
+   }
+  ]
+ },
+ {
+  "id": "q_dd4380b679fa",
+  "type": "SCQ",
+  "stem": "A single reverse proxy fronts the entire service. What is the main risk and the usual mitigation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Anything every request passes through must be redundant. Check: apply the single-point-of-failure test.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It cannot cache; remove it"
+   },
+   {
+    "key": "B",
+    "text": "It cannot terminate TLS; replace it"
+   },
+   {
+    "key": "C",
+    "text": "It is a single point of failure; run redundant proxies behind a virtual IP or DNS balancing"
+   },
+   {
+    "key": "D",
+    "text": "It increases database size; shard it"
    }
   ]
  },
@@ -5406,6 +8659,63 @@
    {
     "key": "D",
     "text": "a random server each time"
+   }
+  ]
+ },
+ {
+  "id": "q_e9966630dfa8",
+  "type": "ASSERT_REASON",
+  "stem": "**Assertion (A):** Sharding a database can increase total write throughput.\n\n**Reason (R):** Each shard has its own primary that handles a share of the writes.\n\nChoose the correct option.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Writes are divided among shard primaries, so capacity scales with the number of shards, unlike replication alone. R explains A.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SHARD",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both A and R are true and R is the correct explanation of A"
+   },
+   {
+    "key": "B",
+    "text": "Both A and R are true but R is not the correct explanation of A"
+   },
+   {
+    "key": "C",
+    "text": "A is true but R is false"
+   },
+   {
+    "key": "D",
+    "text": "A is false but R is true"
    }
   ]
  },
@@ -5923,6 +9233,234 @@
    {
     "key": "D",
     "text": "Availability only depends on the slowest component"
+   }
+  ]
+ },
+ {
+  "id": "q_f577622fac2e",
+  "type": "SCQ",
+  "stem": "Why store checksums per chunk rather than one checksum for a large file in a storage system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Smaller verification units localise corruption and enable targeted repair.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.CKSUM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Checksums cannot cover large files"
+   },
+   {
+    "key": "B",
+    "text": "A corrupted chunk can be detected and repaired from a replica without re-reading the whole file"
+   },
+   {
+    "key": "C",
+    "text": "Per-chunk checksums use no space"
+   },
+   {
+    "key": "D",
+    "text": "It prevents all failures"
+   }
+  ]
+ },
+ {
+  "id": "q_f6add04c44f0",
+  "type": "SCQ",
+  "stem": "What is the purpose of heartbeat messages in a distributed system?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Periodic signals allow failures to be detected through their absence.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.HB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "To let components detect that peers are alive and healthy"
+   },
+   {
+    "key": "B",
+    "text": "To transfer large files"
+   },
+   {
+    "key": "C",
+    "text": "To encrypt data at rest"
+   },
+   {
+    "key": "D",
+    "text": "To order database transactions"
+   }
+  ]
+ },
+ {
+  "id": "q_f830dda25d14",
+  "type": "SCQ",
+  "stem": "Which proxy sits in front of web servers and accepts client requests on their behalf?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Reverse proxies terminate connections, can cache, balance load and shield the origin servers.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.PROXY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A VPN client"
+   },
+   {
+    "key": "B",
+    "text": "A forward proxy"
+   },
+   {
+    "key": "C",
+    "text": "A reverse proxy"
+   },
+   {
+    "key": "D",
+    "text": "A mail relay only"
+   }
+  ]
+ },
+ {
+  "id": "q_f85fd8e0ab47",
+  "type": "SCQ",
+  "stem": "What can go wrong if clients cache discovery results for too long?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Stale entries point to terminated instances. Short TTLs and retries with refresh limit the damage.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "SD",
+   "chapter": "SD.SVCDISC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "SYS_DESIGN": {
+    "2026": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Nothing; caching is harmless"
+   },
+   {
+    "key": "B",
+    "text": "They may call instances that no longer exist"
+   },
+   {
+    "key": "C",
+    "text": "DNS stops working everywhere"
+   },
+   {
+    "key": "D",
+    "text": "Services run out of memory by design"
    }
   ]
  },

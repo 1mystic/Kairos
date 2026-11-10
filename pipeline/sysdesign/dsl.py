@@ -72,7 +72,7 @@ def N(d, stem, value, tol, sol, skill="calculation", integer=False, s=None):
         v = float(f"{v:.6g}")
         ans = {"value": v, "tol": tol}
         typ = "NVQ"
-    nums = [float(x.replace(",", "")) for x in re.findall(r"(?<![\w.])\d[\d,]*\.?\d*", sol.replace("{,}", "")) if x.strip(",")]
+    nums = [float(x.replace(",", "")) for x in re.findall(r"(?<![\d.])\d[\d,]*\.?\d*", sol.replace("{,}", "")) if x.strip(",")]
     assert any(abs(n - v) <= max(tol, 0.006 * abs(v)) for n in nums), f"solution lacks answer {v}: {stem[:50]}"
     _reg(typ, d, stem, None, ans, sol, "recomputed-by-code", skill, s)
 
