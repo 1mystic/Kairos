@@ -18,7 +18,10 @@ import { blueprintsForExam } from '../diagnostic/examBank';
 import { useExamCalendar, useRoadmapDefaults } from '../config';
 import { CALENDAR, findEntry, prettyDate } from '../onboarding/calendarData';
 import { parseRoadmapState, resolveRoadmap } from '../roadmap/model';
-import { planDate, saveOnboardingFields, toFields, parseProfile, type ExamSel, type OnboardingProfile } from '../onboarding/profileModel';
+import { planDate, saveExamState, saveOnboardingFields, toFields, parseProfile, type ExamSel, type OnboardingProfile } from '../onboarding/profileModel';
+import { useProfileVersion } from '../onboarding/useOnboardingProfile';
+import { updateProfile } from '../exams/model';
+import { getPlanFor, legacyOwnerOf, planKey, readPaceFor, withPaceFor } from './keys';
 import { loadTaxonomy, type Taxonomy } from '../practice/taxonomy';
 import { useStore } from '../store';
 import type { PlanDoc, SessionDoc } from '../store/types';
@@ -137,6 +140,8 @@ export type PlanState =
   | { kind: 'loading' }
   | { kind: 'none' }
   | { kind: 'passed'; exam: ExamSel }
+  /** the active exam has no date (interview track, or no date yet): no phase plan, a steady daily session instead */
+  | { kind: 'steady'; exam: string }
   | { kind: 'ready'; view: PlanView }
   | { kind: 'error'; message: string };
 
@@ -192,6 +197,8 @@ export function useTodayPlan(): TodayPlan {
   const writtenRef = useRef<StoredPlan | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dirty = useRef(false);
+  // re-plan when the profile changes under us (exam switch, date change)
+  const profileVersion = useProfileVersion();
 
   const flush = useCallback(async () => {
     if (timer.current) clearTimeout(timer.current);
@@ -199,7 +206,7 @@ export function useTodayPlan(): TodayPlan {
     const v = viewRef.current;
     if (!dirty.current || !v) return;
     dirty.current = false;
-    await store.putPlan(v.today, JSON.parse(JSON.stringify(v.plan)) as PlanDoc).catch(() => {
+    await store.putPlan(planKey(v.ctx.exam.exam, v.today), JSON.parse(JSON.stringify(v.plan)) as PlanDoc).catch(() => {
       dirty.current = true;
     });
     writtenRef.current = v.plan;
@@ -234,18 +241,22 @@ export function useTodayPlan(): TodayPlan {
               : null,
           );
         const es = examState(profile, today);
-        if (es.kind === 'none') return live && setState({ kind: 'none' });
+        if (es.kind === 'none') return live && setState(profile.examId ? { kind: 'steady', exam: profile.examId } : { kind: 'none' });
         if (es.kind === 'passed') return live && setState({ kind: 'passed', exam: es.exam });
 
         const [tax, mastery, paceRaw, roadmapRaw] = await Promise.all([env.loadTax(), store.getState('mastery').catch(() => null), store.getState('pace').catch(() => null), store.getState('roadmap').catch(() => null)]);
         const scheduleConfig = resolveRoadmap(parseRoadmapState(roadmapRaw), roadmapDefaults).schedule;
-        let pace = readPaceState(paceRaw);
+        const examId = es.exam.exam;
+        const ownerGuess = profile.profiles[0]?.exam ?? examId;
+        const paceDoc = paceRaw as Record<string, unknown> | null;
+        const owner = legacyOwnerOf(paceDoc, ownerGuess);
+        let pace = readPaceState(readPaceFor(paceDoc, examId, ownerGuess));
         const re = exampleReanchor(profile, pace, env.calendar);
         let exams = profile.exams;
         let dirtyPace = false;
         if (re.exams) {
           exams = re.exams;
-          await saveOnboardingFields(store, toFields({ exams }));
+          await saveExamState(store, updateProfile({ profiles: profile.profiles, active: profile.examId }, exams[0]!.exam, { date: exams[0]!.date }));
           pace = { ...pace, anchor: { date: re.exams[0]!.date, status: 'official' } };
           dirtyPace = true;
         }
@@ -253,7 +264,7 @@ export function useTodayPlan(): TodayPlan {
         const dates = Array.from({ length: 8 }, (_, i) => addDays(today, -i));
         const [sessions, planDocs, available] = await Promise.all([
           store.listSessions({ since: now.getTime() - 22 * DAY_MS, limit: 40 }).catch((): SessionDoc[] => []),
-          Promise.all(dates.map((d) => store.getPlan(d).catch(() => null))),
+          Promise.all(dates.map((d) => getPlanFor(store, examId, d, examId === owner))),
           env.loadAvailable([...new Set(exams.map((e) => e.exam))]),
         ]);
         const mockShape = await (env.loadMockShape?.(es.exam.exam) ?? Promise.resolve(null)).catch(() => null);
@@ -269,9 +280,13 @@ export function useTodayPlan(): TodayPlan {
         if (!live) return; // superseded run (calendar/roadmap config arrived, StrictMode): never write twice
         const snap = due ? buildSnapshot({ ctx, bundle, tax, mastery: mastery as MasteryDoc | null, yesterday, fuState, prev: pace }) : null;
         const planWrites = env.getPlanWrites(today);
-        const r = await commitDay({ store, today, plan: res.plan, stored, planWritesToday: planWrites, snapshot: snap });
+        const r = await commitDay({
+          store, today, plan: res.plan, stored, planWritesToday: planWrites, snapshot: snap,
+          planId: planKey(examId, today),
+          wrapPace: (st) => withPaceFor(paceDoc, examId, st as unknown as Record<string, unknown>, ownerGuess),
+        });
         if (r.planWritten && stored) env.bumpPlanWrites(today);
-        if (!snap && dirtyPace) await store.putState('pace', pace as Record<string, unknown>);
+        if (!snap && dirtyPace) await store.putState('pace', JSON.parse(JSON.stringify(withPaceFor(paceDoc, examId, pace as unknown as Record<string, unknown>, ownerGuess))) as Record<string, unknown>);
         writtenRef.current = r.planWritten ? res.plan : stored;
         const view: PlanView = {
           today,
@@ -296,7 +311,7 @@ export function useTodayPlan(): TodayPlan {
     return () => {
       live = false;
     };
-  }, [store, env, nonce, roadmapDefaults]);
+  }, [store, env, nonce, roadmapDefaults, profileVersion]);
 
   const refresh = useCallback(() => {
     void flush().then(() => setNonce((n) => n + 1));
@@ -320,8 +335,13 @@ export function useTodayPlan(): TodayPlan {
 
   const patchPace = useCallback(
     async (fn: (p: PaceState) => PaceState) => {
-      const cur = readPaceState(await store.getState('pace').catch(() => null));
-      await store.putState('pace', fn(cur) as Record<string, unknown>);
+      const v = viewRef.current;
+      if (!v) return;
+      const exam = v.ctx.exam.exam;
+      const raw = (await store.getState('pace').catch(() => null)) as Record<string, unknown> | null;
+      const guess = v.profile.profiles[0]?.exam ?? exam;
+      const cur = readPaceState(readPaceFor(raw, exam, guess));
+      await store.putState('pace', JSON.parse(JSON.stringify(withPaceFor(raw, exam, fn(cur) as unknown as Record<string, unknown>, guess))) as Record<string, unknown>);
       setNonce((n) => n + 1);
     },
     [store],
@@ -341,7 +361,7 @@ export function useTodayPlan(): TodayPlan {
     plan: view?.plan ?? null,
     pace: view?.bundle.pace ?? null,
     daysLeft: view?.ctx.daysLeft ?? null,
-    examLabel: view ? examLabel(view.ctx.exam.exam) : state.kind === 'passed' ? examLabel(state.exam.exam) : null,
+    examLabel: view ? examLabel(view.ctx.exam.exam) : state.kind === 'passed' ? examLabel(state.exam.exam) : state.kind === 'steady' ? examLabel(state.exam) : null,
     status: view?.bundle.pace.status ?? null,
     refresh,
     tick,
@@ -350,8 +370,9 @@ export function useTodayPlan(): TodayPlan {
     async acceptRollForward(date) {
       if (!rf?.next) return;
       const p = parseProfile(await store.getProfile());
-      const exams = p.exams.map((e) => (e.exam === rf.entry.exam && e.session === rf.entry.session ? { ...e, session: rf.next!.session, date } : e));
-      await patchProfile({ exams });
+      const hit = p.profiles.find((x) => x.exam === rf.entry.exam && x.kind === 'calendar' && x.session === rf.entry.session);
+      if (hit) await saveExamState(store, updateProfile({ profiles: p.profiles, active: p.examId }, hit.exam, { session: rf.next.session, date }));
+      setNonce((n) => n + 1);
       setRfDismissed(true);
     },
     dismissRollForward: () => setRfDismissed(true),

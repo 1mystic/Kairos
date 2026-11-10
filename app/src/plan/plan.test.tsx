@@ -33,7 +33,7 @@ function mkView(minutes: number, done: string[] = []): PlanView {
   const setup = { exams: [{ exam: 'JEE_MAIN', session: 0, date: '2027-02-16' }], ambition: 'competitive' as const, minutesPerWeekday: Object.fromEntries([0, 1, 2, 3, 4, 5, 6].map((d) => [d, minutes])), offDay: null, chaptersDone: done };
   const ctx = buildPlanContext({ setup, tax: TAX, today: TODAY, mastery: null, sessions: [], recentPlans: [], pace: {}, fu: 1 })!;
   const r = todayPlan(ctx);
-  return { today: TODAY, ctx, plan: r.plan, horizon: r.horizon, bundle: computeTodayPace(ctx), yesterday: { planned: 50, done: 41 }, nextMock: ctx.fromToday.find((d) => d.kind === 'mock') ?? null, parked: [], profile: { exams: setup.exams, ambition: 'competitive', minutesPerWeekday: setup.minutesPerWeekday, offDay: null, chaptersDone: [], lang: 'en', onboarded: true }, reanchor: null, tax: TAX };
+  return { today: TODAY, ctx, plan: r.plan, horizon: r.horizon, bundle: computeTodayPace(ctx), yesterday: { planned: 50, done: 41 }, nextMock: ctx.fromToday.find((d) => d.kind === 'mock') ?? null, parked: [], profile: { exams: setup.exams, profiles: [{ exam: 'JEE_MAIN', kind: 'custom', date: '2027-02-16' }], examId: 'JEE_MAIN', ambition: 'competitive', minutesPerWeekday: setup.minutesPerWeekday, offDay: null, chaptersDone: [], lang: 'en', onboarded: true }, reanchor: null, tax: TAX };
 }
 
 describe('today card for each pace status', () => {
@@ -108,10 +108,11 @@ describe('plan page', () => {
     expect(screen.getByRole('heading', { name: "Today's tasks" })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'This week' })).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /Start/ })[0]!.getAttribute('href')).toMatch(/^\/practice\/JEE_MAIN\/[A-Z]+\.[A-Z0-9]+\?size=\d+&bands=/);
-    const plan = (await store.getPlan(TODAY)) as unknown as StoredPlan;
+    const plan = (await store.getPlan(`JEE_MAIN~${TODAY}`)) as unknown as StoredPlan;
     expect(plan.tasks.length).toBeGreaterThan(0);
+    expect(await store.getPlan(TODAY)).toBeNull(); // new writes are keyed by exam
     expect(await store.listPaceLog()).toHaveLength(1);
-    expect((await store.getState('pace'))?.snapshotDate).toBe(TODAY);
+    expect(((await store.getState('pace')) as { byExam: Record<string, { snapshotDate?: string }> }).byExam.JEE_MAIN?.snapshotDate).toBe(TODAY);
     first.unmount();
     let puts = 0;
     const orig = store.db.put.bind(store.db);
@@ -126,14 +127,14 @@ describe('plan page', () => {
     const store = await seed(db);
     render(page(db));
     const boxes = await screen.findAllByRole('checkbox');
-    const before = (await store.getPlan(TODAY)) as unknown as StoredPlan;
+    const before = (await store.getPlan(`JEE_MAIN~${TODAY}`)) as unknown as StoredPlan;
     expect(before.tasks.every((t) => t.status === 'todo')).toBe(true);
     await userEvent.click(boxes[0]!);
     expect(boxes[0]).toHaveAttribute('aria-checked', 'true');
-    expect(((await store.getPlan(TODAY)) as unknown as StoredPlan).tasks.every((t) => t.status === 'todo')).toBe(true);
+    expect(((await store.getPlan(`JEE_MAIN~${TODAY}`)) as unknown as StoredPlan).tasks.every((t) => t.status === 'todo')).toBe(true);
     Object.defineProperty(document, 'visibilityState', { value: 'hidden', configurable: true });
     document.dispatchEvent(new Event('visibilitychange'));
-    await waitFor(async () => expect(((await store.getPlan(TODAY)) as unknown as StoredPlan).tasks.filter((t) => t.status === 'done')).toHaveLength(1));
+    await waitFor(async () => expect(((await store.getPlan(`JEE_MAIN~${TODAY}`)) as unknown as StoredPlan).tasks.filter((t) => t.status === 'done')).toHaveLength(1));
     Object.defineProperty(document, 'visibilityState', { value: 'visible', configurable: true });
     expect(screen.getByText(/1\/\d+ done/)).toBeInTheDocument();
   });
@@ -193,7 +194,7 @@ describe('roll-forward and re-anchor', () => {
     const a = render(page(db, env));
     expect(await screen.findByText(/JEE Main now has a expected date: 4 Apr 2027|Exam date changed|your plan was re-anchored/i)).toBeInTheDocument();
     expect(await store.getProfile()).toMatchObject({ examDate: '2027-04-04' });
-    expect((await store.getState('pace'))?.anchor).toMatchObject({ date: '2027-04-04' });
+    expect(((await store.getState('pace')) as { byExam: Record<string, { anchor?: unknown }> }).byExam.JEE_MAIN?.anchor).toMatchObject({ date: '2027-04-04' });
     a.unmount();
     render(page(db, env));
     await screen.findByRole('heading', { name: 'Today' });

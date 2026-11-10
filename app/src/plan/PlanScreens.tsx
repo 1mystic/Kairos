@@ -9,6 +9,7 @@ import { useStore } from '../store';
 import type { PlanDoc } from '../store/types';
 import { addDays } from '@kairos/core';
 import { taskLink, type StoredPlan } from './engine';
+import { getPlanFor } from './keys';
 import { examLabel } from './syllabus';
 import { STATUS_WORDS, fmtMin, groupTasks, taskMeta, taskTitle, todayLine } from './format';
 import './plan.css';
@@ -271,6 +272,17 @@ function Passed({ label }: { label: string }) {
   );
 }
 
+/** The active exam has no date: no phase plan, so Today's session is the plan (steady daily practice from mastery and new chapters). */
+function Steady({ label }: { label: string }) {
+  return (
+    <Page width="reading" className="page-center">
+      <EmptyState icon={CalendarIcon} title={`Steady practice for ${label}`} action={<><LinkButton to="/practice/today">Start today's session</LinkButton><LinkButton to="/exams" variant="secondary">Add a target date</LinkButton></>}>
+        With no date there is no countdown to plan backwards from. Each day Kairos builds a session that fits your time from what you know and what is new. Add a target date any time to get a full plan.
+      </EmptyState>
+    </Page>
+  );
+}
+
 function PlanSkeleton() {
   return (
     <PageSkeleton cards={3} cols={3} />
@@ -285,6 +297,7 @@ export function PlanPage() {
   if (state.kind === 'loading') return <PlanSkeleton />;
   if (state.kind === 'none') return <NoExam />;
   if (state.kind === 'passed') return <>{rfModal}<Passed label={t.examLabel ?? 'Your exam'} /></>;
+  if (state.kind === 'steady') return <Steady label={t.examLabel ?? 'your exam'} />;
   if (state.kind === 'error')
     return (
       <Page width="reading" className="page-center">
@@ -323,13 +336,18 @@ export function DayPage() {
   const t = useTodayPlan();
   const store = useStore();
   const [stored, setStored] = useState<{ date: string; doc: PlanDoc | null } | undefined>();
+  const readyView = t.state.kind === 'ready' ? t.state.view : null;
+  const examId = readyView?.ctx.exam.exam;
+  const legacy = !!readyView && readyView.profile.profiles[0]?.exam === examId;
   useEffect(() => {
+    if (!examId) return;
     let live = true;
-    store.getPlan(date).then((doc) => live && setStored({ date, doc }), () => live && setStored({ date, doc: null }));
+    getPlanFor(store, examId, date, legacy).then((doc) => live && setStored({ date, doc }), () => live && setStored({ date, doc: null }));
     return () => { live = false; };
-  }, [store, date]);
-  if (t.state.kind === 'loading' || stored?.date !== date) return <PlanSkeleton />;
+  }, [store, date, examId, legacy]);
+  if (t.state.kind === 'loading') return <PlanSkeleton />;
   if (t.state.kind === 'none') return <NoExam />;
+  if (t.state.kind === 'steady') return <Steady label={t.examLabel ?? 'your exam'} />;
   if (t.state.kind === 'error')
     return (
       <Page width="reading" className="page-center">
@@ -337,6 +355,7 @@ export function DayPage() {
       </Page>
     );
   if (t.state.kind !== 'ready') return <Passed label={t.examLabel ?? 'Your exam'} />;
+  if (stored?.date !== date) return <PlanSkeleton />;
   const view = t.state.view;
   const doc = stored.doc as StoredPlan | null;
   const preview = view.horizon.find((d) => d.date === date);

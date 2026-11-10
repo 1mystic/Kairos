@@ -524,6 +524,10 @@ export interface CommitArgs {
   /** replan-driven plan writes already made today (ticks are not counted) */
   planWritesToday: number;
   snapshot: { log: PaceLogDoc; state: PaceState } | null;
+  /** plan doc id (default: the date). The multi-exam app passes `${exam}~${date}` (plan/keys.ts) */
+  planId?: string;
+  /** wraps the pace snapshot into the whole state/pace doc (default: the snapshot itself, the old flat shape) */
+  wrapPace?: (state: PaceState) => Record<string, unknown>;
 }
 export interface CommitResult {
   planWritten: boolean;
@@ -538,13 +542,13 @@ export async function commitDay(a: CommitArgs): Promise<CommitResult> {
   let snapshotWritten = false;
   const changed = !a.stored || stableStringify(a.stored) !== stableStringify(a.plan);
   if (changed && (!a.stored || a.planWritesToday < PLAN_WRITE_CAP)) {
-    await a.store.putPlan(a.today, jsonClean(a.plan) as unknown as PlanDoc);
+    await a.store.putPlan(a.planId ?? a.today, jsonClean(a.plan) as unknown as PlanDoc);
     planWritten = true;
     writes++;
   }
   if (a.snapshot) {
     await a.store.putPaceLog(a.today, jsonClean(a.snapshot.log));
-    await a.store.putState('pace', jsonClean(a.snapshot.state) as Record<string, unknown>);
+    await a.store.putState('pace', jsonClean(a.wrapPace ? a.wrapPace(a.snapshot.state) : (a.snapshot.state as Record<string, unknown>)));
     snapshotWritten = true;
     writes += 2;
   }
