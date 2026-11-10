@@ -21,6 +21,10 @@ export interface UserProfile extends Omit<NewProfile, 'consent' | 'onboarded'> {
   offDay?: number | null;
   chaptersDone?: string[];
   lang?: 'en' | 'hi';
+  /** exam profiles (exams/model.ts): at most 7 maps {exam, kind, session?, date}; absent on older accounts */
+  profiles?: Array<Record<string, unknown>>;
+  /** exam id of the active profile (<= 20 chars) */
+  activeExam?: string;
 }
 
 export interface ProfileInput {

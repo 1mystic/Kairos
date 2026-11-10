@@ -1,4 +1,5 @@
 import { MAX_IMAGES, MAX_IMAGE_B64_CHARS, MAX_NEW_PER_DAY, MAX_QUESTIONS, checkDocSize, type UserQuestion } from '@kairos/core';
+import { parseProfiles, serialiseProfiles } from '../exams/model';
 import { chunkOps } from './batching';
 import { imageIdsOf, startOfLocalDay, toStoredQuestion, type BankStore } from './bank';
 import type { FirestoreStore } from './FirestoreStore';
@@ -69,6 +70,12 @@ export function onboardingFields(p: GuestProfile | null): Record<string, unknown
   if (Array.isArray(p.chaptersDone)) out.chaptersDone = p.chaptersDone.filter((c) => typeof c === 'string').slice(0, 400);
   if (p.lang === 'en' || p.lang === 'hi') out.lang = p.lang;
   if (typeof p.onboarded === 'boolean') out.onboarded = p.onboarded;
+  // exam profiles (rules: profiles is a list of <= 7, activeExam a string of <= 20 chars)
+  const profiles = parseProfiles(p.profiles);
+  if (profiles.length > 0) {
+    out.profiles = serialiseProfiles(profiles);
+    if (typeof p.activeExam === 'string' && p.activeExam.length > 0 && p.activeExam.length <= 20) out.activeExam = p.activeExam;
+  }
   return out;
 }
 

@@ -31,7 +31,7 @@ export interface MockDoc {
   [k: string]: unknown;
 }
 
-/** users/{uid}/plans/{date}. `date` is YYYY-MM-DD, `tasks` <= 200. */
+/** users/{uid}/plans/{id}. `id` is `${exam}~YYYY-MM-DD` (older docs: plain YYYY-MM-DD); `date` inside is YYYY-MM-DD, `tasks` <= 200. */
 export interface PlanDoc {
   date?: string;
   tasks?: unknown[];
@@ -59,6 +59,9 @@ export interface GuestProfile {
   chaptersDone?: string[];
   lang?: 'en' | 'hi';
   onboarded?: boolean;
+  /** exam profiles + active exam (exams/model.ts). Optional: older guests only have the packed exam/examDate. */
+  profiles?: Array<Record<string, unknown>>;
+  activeExam?: string;
 }
 
 export type Profile = UserProfile | GuestProfile;
@@ -81,7 +84,7 @@ export interface UserStore {
   kind: 'local' | 'cloud';
   getProfile(): Promise<Profile | null>;
   /** Guest: replaces the guest profile. Cloud: updates only the editable fields allowed by firestore.rules. */
-  saveProfile(p: GuestProfile | Partial<Pick<UserProfile, 'displayName' | 'onboarded' | 'exam' | 'examDate' | 'ambition' | 'minutesPerWeekday' | 'offDay' | 'chaptersDone' | 'lang'>>): Promise<void>;
+  saveProfile(p: GuestProfile | Partial<Pick<UserProfile, 'displayName' | 'onboarded' | 'exam' | 'examDate' | 'ambition' | 'minutesPerWeekday' | 'offDay' | 'chaptersDone' | 'lang' | 'profiles' | 'activeExam'>>): Promise<void>;
   getState(doc: StateDocName): Promise<Record<string, unknown> | null>;
   putState(doc: StateDocName, data: Record<string, unknown>): Promise<void>;
   addSession(s: SessionDoc): Promise<void>;

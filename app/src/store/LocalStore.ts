@@ -1,7 +1,7 @@
 import { DATA_STORES, LOCAL_STORES, type LocalDb, type LocalStoreName } from './localDb';
 import type { GuestProfile, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
-export const ONBOARDING_KEYS = ['exam', 'examDate', 'ambition', 'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang', 'onboarded'] as const;
+export const ONBOARDING_KEYS = ['exam', 'examDate', 'ambition', 'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang', 'onboarded', 'profiles', 'activeExam'] as const;
 
 export interface LocalMeta {
   /** ids already uploaded, keyed "sessions/<id>" etc. Makes migration retries idempotent. */

@@ -65,7 +65,7 @@ service cloud.firestore {
       let d = incoming();
       return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
           'displayName', 'onboarded', 'updatedAt', 'exam', 'examDate', 'ambition',
-          'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang'])
+          'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang', 'profiles', 'activeExam'])
         && d.updatedAt == request.time
         && (!hasField('displayName') || (d.displayName is string && d.displayName.size() >= 1
                                     && d.displayName.size() <= 80))
@@ -77,7 +77,10 @@ service cloud.firestore {
         && (!hasField('minutesPerWeekday') || d.minutesPerWeekday is map)
         && (!hasField('offDay') || d.offDay == null || (d.offDay is int && d.offDay >= 0 && d.offDay <= 6))
         && (!hasField('chaptersDone') || (d.chaptersDone is list && d.chaptersDone.size() <= 400))
-        && (!hasField('lang') || d.lang in ['en', 'hi']);
+        && (!hasField('lang') || d.lang in ['en', 'hi'])
+        // exam profiles (app/src/exams/model.ts): up to 7 maps, and the active exam id
+        && (!hasField('profiles') || (d.profiles is list && d.profiles.size() <= 7))
+        && (!hasField('activeExam') || (d.activeExam is string && d.activeExam.size() <= 20));
     }
 
     match /users/{uid} {
