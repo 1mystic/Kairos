@@ -84,7 +84,7 @@ export function ExamSwitcher({ variant = 'sidebar' }: { variant?: 'sidebar' | 't
         <ChevronDownIcon width={16} height={16} className="shrink-0" aria-hidden />
       </button>
       {open && (
-        <div id={menuId} role="menu" aria-label="Your exams" className={`menu ${sidebar ? 'left-0 mt-s2' : 'right-0 mt-s2'}`}>
+        <div id={menuId} role="menu" aria-label="Your exams" className={sidebar ? 'menu menu-inline' : 'menu right-0 mt-s2'}>
           {profiles.map((p) => (
             <button key={p.exam} type="button" role="menuitemradio" aria-checked={p.exam === state.active} className="menu-item" onClick={() => void pick(p.exam)}>
               <span className="min-w-0 flex-1"><span className="block truncate">{examLabel(p.exam)}</span><span className="block text-caption text-slate tabular">{daysWords(p, today)}</span></span>
