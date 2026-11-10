@@ -1,0 +1,2178 @@
+{
+ "version": 1,
+ "license": "Original work of the Kairos project, derived from owner-authored study notes",
+ "tracks": {
+  "SYS_DESIGN": [
+   "sd_url_shortener",
+   "sd_chat",
+   "sd_news_feed",
+   "sd_video_streaming",
+   "sd_ecommerce",
+   "sd_ride_sharing",
+   "sd_file_storage",
+   "sd_web_crawler",
+   "sd_notification",
+   "sd_logging_monitoring"
+  ],
+  "ML_SYS_DESIGN": [
+   "msd_spam_abuse",
+   "msd_video_recs",
+   "msd_fraud",
+   "msd_product_recs",
+   "msd_distributed_training",
+   "msd_enterprise_rag",
+   "msd_search_ranking",
+   "msd_content_moderation"
+  ]
+ },
+ "problems": [
+  {
+   "id": "sd_url_shortener",
+   "title": "URL shortener",
+   "track": "SYS_DESIGN",
+   "difficulty": "E",
+   "prompt": "Design a service that turns long URLs into short links and redirects visitors who open a short link. Links may be custom or expire. Expect heavy read traffic and a need for durability over years.",
+   "requirements": {
+    "functional": [
+     "Create a short URL for a long URL",
+     "Redirect a short URL to the original",
+     "Optional custom aliases",
+     "Optional expiry",
+     "Optional click analytics"
+    ],
+    "nonFunctional": [
+     "Availability of at least 99.9%",
+     "Redirect latency in milliseconds",
+     "Millions of requests per day",
+     "Links stay valid for years",
+     "Abuse and phishing protection"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "100 million new links per month",
+     "Read to write ratio 10:1",
+     "Average record 500 bytes",
+     "Retention 5 years"
+    ],
+    "tasks": [
+     "Write rate: 100e6/(30*86400) = 38.6 per second on average",
+     "Read rate at 10:1 = 386 per second",
+     "Storage over 5 years = 3.0 TB before replication",
+     "Number of characters in a base-62 code to hold 6e9 links: 6 (62^6 = 5.7e10)"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "States functional and non-functional requirements and scope",
+     "why": "Shows that the design is driven by needs, not habit"
+    },
+    {
+     "point": "Estimates read/write QPS and storage",
+     "why": "Establishes that reads dominate and storage is modest"
+    },
+    {
+     "point": "Defines API: create(longUrl, alias, ttl) and GET /{code}",
+     "why": "Clear contract before internals"
+    },
+    {
+     "point": "Chooses a unique code strategy (counter or id ranges in base 62, or hash plus collision check)",
+     "why": "Core deep-dive area for this problem"
+    },
+    {
+     "point": "Explains key-value or simple relational store keyed by code",
+     "why": "Access pattern is point lookup by key"
+    },
+    {
+     "point": "Adds cache for hot links and a CDN or edge where useful",
+     "why": "Reads dominate; caching gives large gains"
+    },
+    {
+     "point": "Discusses redirect status choice (301 vs 302) and analytics impact",
+     "why": "Shows understanding of browser caching effects"
+    },
+    {
+     "point": "Handles expiry and cleanup",
+     "why": "Required functional feature"
+    },
+    {
+     "point": "Addresses scaling: stateless app tier, replicated store, sharding by code",
+     "why": "Shows growth path"
+    },
+    {
+     "point": "Mentions abuse prevention: rate limits, malware checks",
+     "why": "Non-functional security requirement"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Scope, custom aliases, expiry, analytics, scale"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS, storage, code length"
+    },
+    {
+     "step": "API and data model",
+     "notes": "Row: code, longUrl, createdAt, expiresAt, ownerId"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Clients, load balancer, stateless API servers, cache, key-value store, id allocator"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Unique id allocation without a single bottleneck; cache sizing"
+    },
+    {
+     "step": "Bottlenecks and failures",
+     "notes": "Replication, cache stampede control, hot link handling"
+    }
+   ],
+   "tradeoffs": [
+    "Counter plus base-62 versus hashing: predictability and collisions versus simplicity",
+    "301 versus 302: fewer hits versus analytics control",
+    "Strong versus eventual consistency for newly created links"
+   ],
+   "followUps": [
+    "How do you prevent guessable codes?",
+    "How do you support analytics at scale without slowing redirects?",
+    "How would you handle a viral link?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.ESTIM",
+    "SD.CACHE",
+    "SD.SHARD"
+   ],
+   "source": "hb:Q1"
+  },
+  {
+   "id": "sd_chat",
+   "title": "Chat application",
+   "track": "SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design a messaging service supporting one-to-one and group chats, online presence and delivery receipts, with images and voice notes. Messages must not be lost and should arrive in near real time.",
+   "requirements": {
+    "functional": [
+     "One-to-one and group conversations",
+     "Online and offline status",
+     "Sent, delivered and read statuses",
+     "Media messages",
+     "Push notifications when offline"
+    ],
+    "nonFunctional": [
+     "Low latency delivery",
+     "Millions of concurrent connections",
+     "High availability, with consistency prioritised for message order",
+     "Durability: no lost messages"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "50 million daily active users",
+     "40 messages sent per user per day",
+     "Average message 200 bytes, media stored separately",
+     "Retention 2 years"
+    ],
+    "tasks": [
+     "Average message rate = 50e6*40/86400 = 23148 per second",
+     "Peak at 3x = 69444 per second",
+     "Text storage per day = 400 GB",
+     "Text storage over 2 years with 3 copies = 876 TB"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Chooses persistent connections (WebSocket) for real-time delivery",
+     "why": "Core to the latency requirement"
+    },
+    {
+     "point": "Describes connection gateway tier and mapping of user to gateway",
+     "why": "Needed to route a message to the right connection"
+    },
+    {
+     "point": "Uses a durable store with per-conversation ordering (sequence numbers)",
+     "why": "Messages must not be lost or reordered"
+    },
+    {
+     "point": "Handles offline users with storage plus push notification",
+     "why": "Functional requirement"
+    },
+    {
+     "point": "Models delivery and read receipts as acknowledgements",
+     "why": "Explicit feature"
+    },
+    {
+     "point": "Separates media upload to object storage with CDN, sending only references in chat",
+     "why": "Large blobs do not belong in the message path"
+    },
+    {
+     "point": "Explains group fan-out and limits on group size",
+     "why": "Shows cost awareness"
+    },
+    {
+     "point": "Presence service with heartbeats and expiry",
+     "why": "Online status requirement"
+    },
+    {
+     "point": "Partitions data by conversation id",
+     "why": "Keeps ordered messages on one shard"
+    },
+    {
+     "point": "Discusses end-to-end encryption and its impact on server features",
+     "why": "Security trade-off"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "1:1 vs groups, media, receipts, retention"
+    },
+    {
+     "step": "Estimate",
+     "notes": "message rate, connections, storage"
+    },
+    {
+     "step": "API",
+     "notes": "WebSocket send/ack/receive; REST for history and media"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Gateways, chat service, message store, presence, notification service, object storage"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Ordering, delivery guarantees, offline sync, group fan-out"
+    },
+    {
+     "step": "Failure handling",
+     "notes": "Gateway failure, reconnection, duplicate suppression with message ids"
+    }
+   ],
+   "tradeoffs": [
+    "At-least-once delivery with dedupe versus at-most-once",
+    "Fan-out on write versus on read for large groups",
+    "Consistency versus availability for ordering"
+   ],
+   "followUps": [
+    "How do you handle multi-device sync?",
+    "How do you scale presence?",
+    "How do you support message search?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.TO_PUSH",
+    "SD.MQ",
+    "SD.SHARD"
+   ],
+   "source": "hb:Q2"
+  },
+  {
+   "id": "sd_news_feed",
+   "title": "Social media feed",
+   "track": "SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design the core of a photo and video sharing network: uploads, follows, likes and comments, and a feed of posts from people each user follows. Feed latency matters and uploaded media must never be lost.",
+   "requirements": {
+    "functional": [
+     "Upload images and videos",
+     "Like, comment and share",
+     "Follow and unfollow",
+     "Generate a feed from followed accounts",
+     "Tag users"
+    ],
+    "nonFunctional": [
+     "High availability",
+     "Low feed latency",
+     "Millions of concurrent users",
+     "Durable media",
+     "Eventual consistency acceptable for feeds"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "100 million daily active users",
+     "20 feed requests per user per day",
+     "Average post 2 MB of media",
+     "10 million new posts per day"
+    ],
+    "tasks": [
+     "Feed read rate = 100e6*20/86400 = 23148 per second",
+     "Peak at 3x = 69444 per second",
+     "New media per day = 20 TB",
+     "Media over 3 years with 3 copies = 65.7 PB"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Separates metadata store from media in object storage plus CDN",
+     "why": "Right store for each data type"
+    },
+    {
+     "point": "Explains feed generation: fan-out on write, on read, or hybrid",
+     "why": "Central design question"
+    },
+    {
+     "point": "Handles celebrity accounts with pull or hybrid approach",
+     "why": "Avoids write amplification"
+    },
+    {
+     "point": "Caches precomputed feeds with sensible TTL and invalidation",
+     "why": "Latency requirement"
+    },
+    {
+     "point": "Models the follow graph with appropriate storage",
+     "why": "Needed for feed and fan-out"
+    },
+    {
+     "point": "Uses asynchronous workers for fan-out and media processing",
+     "why": "Decouples upload from heavy work"
+    },
+    {
+     "point": "Ranks the feed (recency, engagement signals) at a high level",
+     "why": "Product quality"
+    },
+    {
+     "point": "Plans sharding of posts and users",
+     "why": "Scale"
+    },
+    {
+     "point": "Treats likes and counters with eventual consistency or sharded counters",
+     "why": "Hot item handling"
+    },
+    {
+     "point": "Discusses media durability and replication",
+     "why": "Non-functional requirement"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Feed ranking vs chronological, media types"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS, storage"
+    },
+    {
+     "step": "API",
+     "notes": "POST /posts, GET /feed, POST /follow, POST /like"
+    },
+    {
+     "step": "High-level design",
+     "notes": "API tier, post service, graph service, feed service with cache, object storage and CDN, queue and workers"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Hybrid fan-out, feed cache, ranking"
+    },
+    {
+     "step": "Scale",
+     "notes": "Shard by user or post id, replicate, hot key handling"
+    }
+   ],
+   "tradeoffs": [
+    "Push versus pull fan-out",
+    "Freshness versus cost of precomputation",
+    "Strong versus eventual consistency for counters"
+   ],
+   "followUps": [
+    "How do you delete a post everywhere?",
+    "How do you keep the feed fresh for active users?",
+    "How do you detect abuse?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.CACHE",
+    "SD.PAT_EVENT",
+    "SD.CDN"
+   ],
+   "source": "hb:Q3"
+  },
+  {
+   "id": "sd_video_streaming",
+   "title": "Video streaming service",
+   "track": "SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design an on-demand video platform: users upload videos with metadata, search them, stream them and interact through likes and comments. View counts are recorded. Uploaded videos must never be lost.",
+   "requirements": {
+    "functional": [
+     "Upload videos with titles, tags, thumbnails",
+     "Stream on demand",
+     "Search by keyword",
+     "Like, dislike, comment, share",
+     "Count views"
+    ],
+    "nonFunctional": [
+     "Availability 99.99%",
+     "Smooth playback with low start-up latency",
+     "Horizontal scalability",
+     "Durable storage of uploads"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "100,000 hours of video uploaded per day",
+     "About 2 GB per hour across all renditions",
+     "2 million concurrent streams at 3 Mbps average"
+    ],
+    "tasks": [
+     "Storage per day = 100000*2 GB = 200 TB",
+     "Storage per year = 73.0 PB before replication",
+     "Peak egress = 2e6*3 Mbps = 6 Tbps",
+     "Why a CDN is mandatory at this egress rate"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Processes uploads asynchronously: transcode into several bitrates and segments",
+     "why": "Enables adaptive streaming"
+    },
+    {
+     "point": "Stores originals and renditions in durable object storage",
+     "why": "Durability requirement"
+    },
+    {
+     "point": "Serves video through a CDN with adaptive bitrate protocols",
+     "why": "Latency and egress"
+    },
+    {
+     "point": "Separates metadata store from blobs",
+     "why": "Different access patterns"
+    },
+    {
+     "point": "Designs search with an inverted index fed from metadata",
+     "why": "Functional requirement"
+    },
+    {
+     "point": "Counts views with batching or streaming aggregation",
+     "why": "Avoids hot-row contention"
+    },
+    {
+     "point": "Chooses resumable chunked upload",
+     "why": "Large files and flaky networks"
+    },
+    {
+     "point": "Thumbnail and preview generation as pipeline steps",
+     "why": "Product feature"
+    },
+    {
+     "point": "Cache popularity tiers: hot videos at edge, cold in origin",
+     "why": "Cost control"
+    },
+    {
+     "point": "Plans failure handling for the transcoding pipeline with retries and dead-letter queue",
+     "why": "Reliability"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Live vs on-demand, scale, devices"
+    },
+    {
+     "step": "Estimate",
+     "notes": "storage, egress, QPS"
+    },
+    {
+     "step": "API",
+     "notes": "Upload init/chunk/complete, GET manifest, search"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Upload service, queue, transcoder workers, object storage, metadata DB, CDN, search index, view counter pipeline"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Transcoding pipeline and adaptive bitrate"
+    },
+    {
+     "step": "Cost",
+     "notes": "Storage tiers, CDN offload, codecs"
+    }
+   ],
+   "tradeoffs": [
+    "More renditions versus storage cost",
+    "Push versus pull CDN for popular content",
+    "Exact versus approximate view counts"
+   ],
+   "followUps": [
+    "How would you add live streaming?",
+    "How do you do recommendations?",
+    "How do you handle copyright detection?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.CDN",
+    "SD.TO_BATCH",
+    "SD.MQ"
+   ],
+   "source": "hb:Q4"
+  },
+  {
+   "id": "sd_ecommerce",
+   "title": "E-commerce platform",
+   "track": "SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design the backend of an online marketplace: sellers list products, shoppers search, fill carts, place orders and write reviews. The site must handle sales spikes without overselling.",
+   "requirements": {
+    "functional": [
+     "Seller product listings",
+     "Cart and wishlist",
+     "Search by keyword, category, brand",
+     "Place orders for one or more products",
+     "Ratings and reviews"
+    ],
+    "nonFunctional": [
+     "High scalability",
+     "Availability 99.9%",
+     "Low latency for pages, search and checkout",
+     "Durable orders and listings"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "2 million orders per day",
+     "Sale peak is 10x average",
+     "100 million products at 5 KB each"
+    ],
+    "tasks": [
+     "Average orders per second = 2e6/86400 = 23.1",
+     "Peak = 231 per second",
+     "Catalogue size = 100e6*5 KB = 500 GB"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Splits into services: catalogue, search, cart, order, payment, inventory",
+     "why": "Clear boundaries"
+    },
+    {
+     "point": "Uses search index for discovery, not the primary DB",
+     "why": "Right tool for text and facets"
+    },
+    {
+     "point": "Caches catalogue and product pages; CDN for images",
+     "why": "Read-heavy browsing"
+    },
+    {
+     "point": "Ensures inventory is decremented atomically or reserved to prevent overselling",
+     "why": "Correctness during spikes"
+    },
+    {
+     "point": "Describes checkout as a saga across inventory, payment and order services",
+     "why": "No single ACID transaction across services"
+    },
+    {
+     "point": "Makes payment calls idempotent with retries",
+     "why": "Avoids double charges"
+    },
+    {
+     "point": "Uses a relational store for orders and payments",
+     "why": "Transactions required"
+    },
+    {
+     "point": "Handles carts with fast key-value storage",
+     "why": "Low-latency, loss-tolerant state"
+    },
+    {
+     "point": "Plans flash-sale traffic with queues, rate limits and autoscaling",
+     "why": "Peak handling"
+    },
+    {
+     "point": "Addresses eventual consistency between catalogue changes and search index",
+     "why": "Shows awareness of lag"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "B2C vs marketplace, peak events"
+    },
+    {
+     "step": "Estimate",
+     "notes": "orders, catalogue, search"
+    },
+    {
+     "step": "API",
+     "notes": "search, cart, checkout, order status"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Gateway, services, relational order DB, search cluster, cache, queue"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Inventory reservation and the checkout saga"
+    },
+    {
+     "step": "Resilience",
+     "notes": "Circuit breakers, retries, degradation"
+    }
+   ],
+   "tradeoffs": [
+    "Reserve at cart time versus at payment",
+    "Strong consistency for inventory versus availability",
+    "Denormalised product documents for search"
+   ],
+   "followUps": [
+    "How do you do recommendations?",
+    "How do you handle refunds?",
+    "How do you prevent fake reviews?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.PAT_MICRO",
+    "SD.TO_SQL",
+    "SD.TO_ASYNC"
+   ],
+   "source": "hb:Q5"
+  },
+  {
+   "id": "sd_ride_sharing",
+   "title": "Ride-sharing service",
+   "track": "SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design the backend of a ride-hailing app: riders see nearby drivers, request rides, get matched in real time, see fare and ETA estimates and track the trip live.",
+   "requirements": {
+    "functional": [
+     "Show nearby available drivers",
+     "Request ride with pickup and drop-off",
+     "Match rider and driver in real time",
+     "Estimate fare and ETA",
+     "Live tracking"
+    ],
+    "nonFunctional": [
+     "Scales to millions of users and rides",
+     "Low latency for matching and tracking",
+     "Availability about 99.9%",
+     "Consistent view for rider and driver"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "1 million drivers online",
+     "Each reports location every 4 seconds",
+     "Each location update is 100 bytes"
+    ],
+    "tasks": [
+     "Location updates per second = 1e6/4 = 250000",
+     "Ingest bandwidth = 25 MB per second",
+     "Location data per day if all retained = 2.2 TB",
+     "Why this write rate favours an in-memory geospatial store"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Ingests driver locations through a scalable pipeline",
+     "why": "Highest write volume in the system"
+    },
+    {
+     "point": "Indexes drivers geospatially (geohash, quadtree or similar) in memory",
+     "why": "Fast nearby queries"
+    },
+    {
+     "point": "Defines matching: candidate selection, scoring (distance, ETA), offer with timeout",
+     "why": "Core logic"
+    },
+    {
+     "point": "Ensures one driver cannot be assigned to two rides (atomic state transition)",
+     "why": "Consistency requirement"
+    },
+    {
+     "point": "Uses WebSocket or push channels for real-time updates",
+     "why": "Live tracking"
+    },
+    {
+     "point": "Separates trip state in a transactional store",
+     "why": "Durable record of rides"
+    },
+    {
+     "point": "Computes ETA and fare through a routing and pricing service",
+     "why": "Functional requirement"
+    },
+    {
+     "point": "Shards by geographic region",
+     "why": "Locality of queries"
+    },
+    {
+     "point": "Handles surge pricing from demand and supply signals",
+     "why": "Real-world feature"
+    },
+    {
+     "point": "Plans failures: retry offer to next driver, recover trip state",
+     "why": "Reliability"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Ride types, regions, pooled rides"
+    },
+    {
+     "step": "Estimate",
+     "notes": "location updates, ride requests"
+    },
+    {
+     "step": "API",
+     "notes": "update location, request ride, accept ride, trip updates"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Location service, geo index, matching service, trip service, routing, pricing, notification"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Geo index and matching with locking"
+    },
+    {
+     "step": "Scale",
+     "notes": "Region shards, hot city handling"
+    }
+   ],
+   "tradeoffs": [
+    "Frequent updates versus battery and bandwidth",
+    "Match quality versus match speed",
+    "Consistency of driver state versus availability"
+   ],
+   "followUps": [
+    "How do you support pooled rides?",
+    "How do you handle GPS noise?",
+    "How do you do dynamic pricing?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.SHARD",
+    "SD.TO_PUSH",
+    "SD.CONS"
+   ],
+   "source": "hb:Q6"
+  },
+  {
+   "id": "sd_file_storage",
+   "title": "File storage and sync service",
+   "track": "SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design a cloud drive: users upload and download files, share links or invitations, search by name or content and keep multiple devices in sync.",
+   "requirements": {
+    "functional": [
+     "Upload and download files of various sizes",
+     "Share via link or invitation",
+     "Search files and folders",
+     "Synchronise across devices"
+    ],
+    "nonFunctional": [
+     "Scales to billions of files",
+     "Low-latency transfers and search",
+     "High availability",
+     "Strong consistency of synchronised views",
+     "Durability of user files"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "50 million users",
+     "Average 2 GB stored per user",
+     "Average file 1 MB"
+    ],
+    "tasks": [
+     "Total stored data = 50e6*2 GB = 100 PB",
+     "Number of files = 50e6*2000 = 1.0e+11",
+     "Metadata at 500 bytes per file in TB: 50"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Splits files into chunks with content hashes",
+     "why": "Enables resumable upload, dedupe and delta sync"
+    },
+    {
+     "point": "Stores chunks in object storage and metadata in a database",
+     "why": "Right stores"
+    },
+    {
+     "point": "Syncs devices via change journal or version numbers",
+     "why": "Consistency of views"
+    },
+    {
+     "point": "Resolves conflicts (last-writer or branch copies)",
+     "why": "Concurrent edits"
+    },
+    {
+     "point": "Provides sharing with permission checks",
+     "why": "Functional requirement"
+    },
+    {
+     "point": "Builds a search index over names and extracted text",
+     "why": "Search requirement"
+    },
+    {
+     "point": "Uses notifications or long polling to push changes to clients",
+     "why": "Fast sync"
+    },
+    {
+     "point": "Replicates data across zones for durability",
+     "why": "Non-functional requirement"
+    },
+    {
+     "point": "Uses checksums to verify integrity",
+     "why": "Detects corruption"
+    },
+    {
+     "point": "Shards metadata by user id",
+     "why": "Scales the metadata tier"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "File size limits, sharing model, versioning"
+    },
+    {
+     "step": "Estimate",
+     "notes": "storage, metadata, transfer"
+    },
+    {
+     "step": "API",
+     "notes": "upload chunks, commit, list changes, share"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Client sync agent, API, metadata DB, block store, notification service, search"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Chunking, dedupe, sync protocol"
+    },
+    {
+     "step": "Failure handling",
+     "notes": "Resume, integrity repair, offline edits"
+    }
+   ],
+   "tradeoffs": [
+    "Chunk size: dedupe efficiency versus metadata overhead",
+    "Conflict policy simplicity versus data safety",
+    "Strong metadata consistency versus availability"
+   ],
+   "followUps": [
+    "How do you do delta sync for large files?",
+    "How do you handle deletion and recovery?",
+    "How do you do encryption?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.CKSUM",
+    "SD.TO_CONS",
+    "SD.SHARD"
+   ],
+   "source": "hb:Q7"
+  },
+  {
+   "id": "sd_web_crawler",
+   "title": "Web crawler",
+   "track": "SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design a crawler that fetches web pages at scale, avoids duplicates, respects site rules, prioritises important or fresh URLs and stores the content for later processing.",
+   "requirements": {
+    "functional": [
+     "Fetch URLs efficiently",
+     "Handle several content types",
+     "Prioritise URLs by importance or freshness",
+     "Store crawled data"
+    ],
+    "nonFunctional": [
+     "Scales to billions of pages",
+     "Low fetch and processing latency per page",
+     "High throughput",
+     "Politeness to sites"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "1 billion pages per month",
+     "Average page 100 KB"
+    ],
+    "tasks": [
+     "Pages per second = 1e9/(30*86400) = 386",
+     "Download bandwidth = 38.6 MB per second",
+     "Raw storage per month = 100 TB"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Maintains a URL frontier with priorities",
+     "why": "Controls crawl order"
+    },
+    {
+     "point": "Enforces per-host politeness and robots.txt",
+     "why": "Avoids overloading sites"
+    },
+    {
+     "point": "Deduplicates URLs (normalisation, Bloom filter or hash set)",
+     "why": "Prevents repeated work"
+    },
+    {
+     "point": "Detects duplicate content with fingerprints",
+     "why": "Avoids storing mirrors"
+    },
+    {
+     "point": "Uses distributed fetchers partitioned by host",
+     "why": "Scale and politeness"
+    },
+    {
+     "point": "Caches DNS results",
+     "why": "Latency and load"
+    },
+    {
+     "point": "Parses links and queues new URLs asynchronously",
+     "why": "Pipeline separation"
+    },
+    {
+     "point": "Handles traps and failures with depth limits and retries with backoff",
+     "why": "Robustness"
+    },
+    {
+     "point": "Schedules recrawl by change frequency",
+     "why": "Freshness"
+    },
+    {
+     "point": "Stores raw pages in object storage and metadata in a database",
+     "why": "Efficient storage"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Scope, freshness, content types"
+    },
+    {
+     "step": "Estimate",
+     "notes": "pages per second, bandwidth, storage"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Seed URLs, frontier, fetcher pool, parser, dedupe, content store"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Frontier with per-host queues and priorities"
+    },
+    {
+     "step": "Dedup",
+     "notes": "URL set and content fingerprints"
+    },
+    {
+     "step": "Failure handling",
+     "notes": "Retries, traps, politeness violations"
+    }
+   ],
+   "tradeoffs": [
+    "BFS versus priority-driven crawling",
+    "Bloom filter memory saving versus false positives (skipped pages)",
+    "Freshness versus load on sites"
+   ],
+   "followUps": [
+    "How do you crawl JavaScript-heavy pages?",
+    "How do you detect near-duplicates?",
+    "How do you distribute across data centres?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.BLOOM",
+    "SD.CHASH",
+    "SD.RATE"
+   ],
+   "source": "hb:Q8"
+  },
+  {
+   "id": "sd_notification",
+   "title": "Notification system",
+   "track": "SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design a system that sends email, SMS, push and in-app notifications, including scheduled and bulk campaigns, with retries for failed deliveries.",
+   "requirements": {
+    "functional": [
+     "Multiple channels",
+     "Transactional, promotional and informational types",
+     "Scheduling",
+     "Bulk sends",
+     "Automatic retries"
+    ],
+    "nonFunctional": [
+     "Millions of notifications per minute at peak",
+     "Availability 99.99%",
+     "Low latency for high-priority messages",
+     "Reliable delivery"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "20 million notifications per minute at peak",
+     "Average payload 1 KB"
+    ],
+    "tasks": [
+     "Peak rate = 20e6/60 = 333333 per second",
+     "Peak bandwidth = 333 MB per second",
+     "Messages per hour at peak = 1.2e+09"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Accepts requests through an API and stores them durably before sending",
+     "why": "No loss on crash"
+    },
+    {
+     "point": "Uses queues per channel and priority",
+     "why": "Isolates slow providers, protects urgent traffic"
+    },
+    {
+     "point": "Implements retries with exponential backoff and a dead-letter queue",
+     "why": "Reliability"
+    },
+    {
+     "point": "Makes sends idempotent with deduplication keys",
+     "why": "Avoids duplicates"
+    },
+    {
+     "point": "Respects user preferences, quiet hours and unsubscribes",
+     "why": "Compliance and UX"
+    },
+    {
+     "point": "Rate limits per provider and per user",
+     "why": "Provider quotas and spam control"
+    },
+    {
+     "point": "Templating and personalisation service",
+     "why": "Functional requirement"
+    },
+    {
+     "point": "Scheduler for future delivery",
+     "why": "Functional requirement"
+    },
+    {
+     "point": "Tracks delivery status and provider callbacks",
+     "why": "Observability"
+    },
+    {
+     "point": "Scales workers horizontally",
+     "why": "Throughput"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Channels, priority levels, volume"
+    },
+    {
+     "step": "Estimate",
+     "notes": "peak rate, bandwidth"
+    },
+    {
+     "step": "API",
+     "notes": "send(userId, template, channel, priority, scheduleAt)"
+    },
+    {
+     "step": "High-level design",
+     "notes": "API, validation, preference service, queues, channel workers, provider adapters, status store"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Retry and idempotency"
+    },
+    {
+     "step": "Scale",
+     "notes": "Partitioned queues, autoscaled workers"
+    }
+   ],
+   "tradeoffs": [
+    "At-least-once with dedupe versus at-most-once",
+    "Priority queues versus fairness",
+    "Provider failover versus cost"
+   ],
+   "followUps": [
+    "How do you avoid notification fatigue?",
+    "How do you handle a provider outage?",
+    "How do you support A/B tests on content?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.MQ",
+    "SD.RATE",
+    "SD.TO_ASYNC"
+   ],
+   "source": "hb:Q9"
+  },
+  {
+   "id": "sd_logging_monitoring",
+   "title": "Logging and monitoring system",
+   "track": "SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design a platform that collects logs and metrics from many services, supports flexible search, archives old data cheaply and raises alerts on patterns or thresholds.",
+   "requirements": {
+    "functional": [
+     "Collect logs from apps, servers and databases",
+     "Multiple formats",
+     "Archive to cold storage",
+     "Query by time, level, source",
+     "Alerts on patterns and thresholds"
+    ],
+    "nonFunctional": [
+     "Scales horizontally with data volume",
+     "Low-latency ingestion for real-time monitoring",
+     "Availability 99.99%",
+     "Durable log storage with replication"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "10,000 servers",
+     "Each emits 200 log lines per second",
+     "Average line 300 bytes"
+    ],
+    "tasks": [
+     "Ingest rate = 10000*200*300 = 600 MB per second",
+     "Per day = 51.8 TB",
+     "30 days of hot retention = 1.56 PB before replication"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Uses agents on hosts to ship logs to a durable stream",
+     "why": "Decouples producers from storage"
+    },
+    {
+     "point": "Buffers through a partitioned queue or log",
+     "why": "Absorbs bursts"
+    },
+    {
+     "point": "Parses and normalises formats in stream processors",
+     "why": "Multiple formats"
+    },
+    {
+     "point": "Indexes recent data for fast search",
+     "why": "Query requirement"
+    },
+    {
+     "point": "Tiers storage: hot, warm, cold with retention policies",
+     "why": "Cost control"
+    },
+    {
+     "point": "Evaluates alert rules in a streaming engine",
+     "why": "Real-time alerting"
+    },
+    {
+     "point": "Stores metrics in a time-series store with downsampling",
+     "why": "Efficient metrics"
+    },
+    {
+     "point": "Handles backpressure and agent-side buffering",
+     "why": "No log loss during spikes"
+    },
+    {
+     "point": "Replicates data across zones",
+     "why": "Durability"
+    },
+    {
+     "point": "Defends against alert noise with deduplication and rate limits",
+     "why": "Operational usability"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Clarify",
+     "notes": "Logs versus metrics versus traces, retention"
+    },
+    {
+     "step": "Estimate",
+     "notes": "ingest rate, retention storage"
+    },
+    {
+     "step": "High-level design",
+     "notes": "Agents, stream, processors, hot index, cold archive, alert engine, query API"
+    },
+    {
+     "step": "Deep dive",
+     "notes": "Indexing cost versus query flexibility"
+    },
+    {
+     "step": "Scale",
+     "notes": "Partitioning by source and time"
+    },
+    {
+     "step": "Failure handling",
+     "notes": "Agent buffering, replay"
+    }
+   ],
+   "tradeoffs": [
+    "Full-text index versus cheaper sampled storage",
+    "Hot retention length versus cost",
+    "Real-time alerting versus accuracy"
+   ],
+   "followUps": [
+    "How do you control cardinality in metrics?",
+    "How do you add distributed tracing?",
+    "How do you secure sensitive log data?"
+   ],
+   "chapters": [
+    "SD.CASES",
+    "SD.MQ",
+    "SD.TO_BATCH",
+    "SD.IDX"
+   ],
+   "source": "hb:Q10"
+  },
+  {
+   "id": "msd_spam_abuse",
+   "title": "Spam and abuse email classifier",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "M",
+   "prompt": "Design a real-time spam detection pipeline for an email service handling 100 million emails a day. Every message must be classified before it reaches the inbox, the service must survive model failures and the infrastructure budget is 3,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Classify each incoming email as spam or not spam",
+     "Ingest user feedback (mark as spam, not spam)",
+     "Keep delivering when the model fails"
+    ],
+    "nonFunctional": [
+     "Inference under 15 ms",
+     "Monthly cost at most 3,000 dollars",
+     "Fault tolerant with deterministic fallback",
+     "Detect quality drift"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "100 million emails per day",
+     "Peak multiplier 2.5",
+     "10 KB metadata per email",
+     "One CPU core serves 100 requests per second with an INT8 model"
+    ],
+    "tasks": [
+     "Average rate = 1157 per second",
+     "Peak rate = 2894 per second",
+     "Peak ingest = 28.9 MB per second",
+     "Cores at peak = 29",
+     "Model load after a 30% cache hit = 2025 per second"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "States objectives: precision-first thresholds because false positives hurt more",
+     "why": "Shows metric reasoning"
+    },
+    {
+     "point": "Real-time serving path with lightweight model (GBDT or small transformer)",
+     "why": "Meets 15 ms"
+    },
+    {
+     "point": "Cache of known-spam hashes and sender reputation",
+     "why": "Cuts model load"
+    },
+    {
+     "point": "Fallback rule engine (SPF/DKIM/DMARC, blocklists, URL patterns) for timeouts and uncertain scores",
+     "why": "Availability"
+    },
+    {
+     "point": "Feedback via event stream into labelled data",
+     "why": "Adapts to new tactics"
+    },
+    {
+     "point": "Drift monitor on score distributions (PSI) and feedback rates",
+     "why": "Detects concept drift"
+    },
+    {
+     "point": "Logs serving features to avoid training-serving skew",
+     "why": "Correct training data"
+    },
+    {
+     "point": "Input normalisation (Unicode, OCR) against evasion",
+     "why": "Adversarial robustness"
+    },
+    {
+     "point": "Cost control: drop offline GPU training and feature store in the minimal design, retrain on cheap spot jobs",
+     "why": "Budget compliance"
+    },
+    {
+     "point": "Defines monitoring, A/B or shadow evaluation before rollout",
+     "why": "Safe deployment"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Targets, metrics, constraints"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS, cores, bandwidth, cost"
+    },
+    {
+     "step": "Serving path",
+     "notes": "Gateway, cache, features, model server, fallback, delivery"
+    },
+    {
+     "step": "Feedback loop",
+     "notes": "Stream of user labels, drift monitor, retrain trigger"
+    },
+    {
+     "step": "Cost",
+     "notes": "Minimal topology under 3,000 dollars"
+    },
+    {
+     "step": "Risks",
+     "notes": "Evasion, drift, false positives"
+    }
+   ],
+   "tradeoffs": [
+    "Precision versus recall at the threshold",
+    "Model size versus the 15 ms budget",
+    "Real-time feedback versus daily batch labels"
+   ],
+   "followUps": [
+    "How do you personalise per user?",
+    "How do you handle image-only spam?",
+    "How do you roll out a new model safely?"
+   ],
+   "chapters": [
+    "MSD.CLF",
+    "MSD.MON",
+    "MSD.SERVE"
+   ],
+   "source": "ml1 + cs7"
+  },
+  {
+   "id": "msd_video_recs",
+   "title": "Video recommendation (homepage)",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design the homepage recommender for a video platform with over 800 million videos. The home request must return 20 personalised videos within 50 ms, learn from streaming engagement and stay within 6,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Return 20 personalised videos per home request",
+     "Learn from clicks, watch time and skips",
+     "Cache popular feeds"
+    ],
+    "nonFunctional": [
+     "50 ms latency",
+     "Under 2% positive engagement rate",
+     "Dual pipeline: offline embeddings plus real-time ranking",
+     "Cost at most 6,000 dollars per month"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "800 million candidate videos",
+     "Brute-force scoring 0.1 ms per item",
+     "ANN retrieval 5 ms, ranking 0.05 ms per candidate on 500 candidates"
+    ],
+    "tasks": [
+     "Brute force time = 800e6*0.1 ms = 80000 s",
+     "Two-stage latency = 5 + 500*0.05 = 30 ms",
+     "Cost sample: 8*0.30*730 = 1752 dollars per month for CPU rankers"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Funnel: ANN retrieval to hundreds, then ranking to 20",
+     "why": "Meets latency"
+    },
+    {
+     "point": "Two-tower model with item embeddings computed in batch",
+     "why": "Fast dot-product retrieval"
+    },
+    {
+     "point": "Online feature store for embeddings and user context",
+     "why": "Low-latency lookups"
+    },
+    {
+     "point": "Real-time ranker using fresh context",
+     "why": "Personalisation"
+    },
+    {
+     "point": "Cache of compiled feeds with short TTL and event-driven invalidation",
+     "why": "Latency and load"
+    },
+    {
+     "point": "Streaming ingestion of engagement events",
+     "why": "Fresh training data"
+    },
+    {
+     "point": "Handles imbalance via negative downsampling and recalibration",
+     "why": "Correct probabilities"
+    },
+    {
+     "point": "Differentiates implicit and explicit negatives",
+     "why": "Better labels"
+    },
+    {
+     "point": "Exploration or diversity to avoid feedback loops",
+     "why": "Long-term quality"
+    },
+    {
+     "point": "Cost decisions: spot GPUs for batch, no always-on training cluster",
+     "why": "Budget"
+    },
+    {
+     "point": "Metrics: offline recall@k and NDCG, online watch time and retention via A/B",
+     "why": "Evaluation"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Objective: satisfaction, not only clicks"
+    },
+    {
+     "step": "Estimate",
+     "notes": "Funnel arithmetic, latency budget"
+    },
+    {
+     "step": "Retrieval",
+     "notes": "Two-tower, ANN index (HNSW or IVF-PQ)"
+    },
+    {
+     "step": "Ranking",
+     "notes": "Multi-objective model on 100-500 candidates"
+    },
+    {
+     "step": "Data loop",
+     "notes": "Stream, resampler, retraining"
+    },
+    {
+     "step": "Serving",
+     "notes": "Cache, fallbacks, cost"
+    }
+   ],
+   "tradeoffs": [
+    "Freshness versus cache hit rate",
+    "Retrieval recall versus ANN latency",
+    "Engagement versus diversity"
+   ],
+   "followUps": [
+    "How do you handle new videos?",
+    "How do you avoid clickbait?",
+    "How would you evaluate offline?"
+   ],
+   "chapters": [
+    "MSD.REC",
+    "MSD.SERVE",
+    "MSD.DATA",
+    "MSD.FEAT"
+   ],
+   "source": "ml2"
+  },
+  {
+   "id": "msd_fraud",
+   "title": "Real-time payment fraud detection",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design a fraud engine that scores each of 500,000 daily payment transactions with a p99 latency under 50 ms. Payments must continue if the model is unavailable, and the budget is 4,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Approve, step-up or block each transaction",
+     "Ingest transactions and chargebacks as streams",
+     "Keep operating when the model fails"
+    ],
+    "nonFunctional": [
+     "p99 under 50 ms",
+     "Fallback rules",
+     "Drift detection with delayed labels",
+     "Budget 4,000 dollars per month"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "500,000 transactions per day",
+     "Peak multiplier 10",
+     "Fraud rate below 0.1%",
+     "Latency budget: features 5 ms, model 15 ms, decision 5 ms"
+    ],
+    "tasks": [
+     "Average rate = 5.79 per second",
+     "Peak rate = 58 per second",
+     "Remaining latency budget = 25 ms"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Streaming ingestion and in-memory velocity counters",
+     "why": "Fresh features"
+    },
+    {
+     "point": "Online feature store for static entity features",
+     "why": "Sub-10 ms lookups"
+    },
+    {
+     "point": "Quantised tree or small neural model on CPU",
+     "why": "Latency"
+    },
+    {
+     "point": "Three-zone thresholds: approve, step-up authentication, block",
+     "why": "Balances friction and loss"
+    },
+    {
+     "point": "Fallback rules (AVS, CVV, IP geo, velocity) with timeout cutoff",
+     "why": "Fault tolerance"
+    },
+    {
+     "point": "Downsampling with probability recalibration",
+     "why": "Rare positives"
+    },
+    {
+     "point": "Surrogate labels for drift monitoring while chargebacks mature",
+     "why": "Delayed ground truth"
+    },
+    {
+     "point": "Drift monitor with alerts and retrain trigger",
+     "why": "Adversarial environment"
+    },
+    {
+     "point": "Audit logging and explainability for disputes",
+     "why": "Compliance"
+    },
+    {
+     "point": "Cost design: ephemeral spot retraining",
+     "why": "Budget"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Costs of false positives and negatives"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS and latency budget"
+    },
+    {
+     "step": "Serving",
+     "notes": "Stream, features, model, fallback, decision"
+    },
+    {
+     "step": "Data and labels",
+     "notes": "Delayed chargebacks, surrogates, recalibration"
+    },
+    {
+     "step": "Monitoring",
+     "notes": "PSI, review overrides"
+    },
+    {
+     "step": "Cost",
+     "notes": "Minimal architecture"
+    }
+   ],
+   "tradeoffs": [
+    "Fail-open with review versus fail-closed",
+    "Threshold placement per merchant segment",
+    "Model complexity versus the latency SLA"
+   ],
+   "followUps": [
+    "How do you handle new fraud patterns?",
+    "How do you reduce false declines?",
+    "How do you use graph features?"
+   ],
+   "chapters": [
+    "MSD.FRAUD",
+    "MSD.DATA",
+    "MSD.MON"
+   ],
+   "source": "ml3"
+  },
+  {
+   "id": "msd_product_recs",
+   "title": "Product recommendations for e-commerce",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design a recommendation engine for the home and product pages of a store with 500 million SKUs and 300 million users, answering within 50 ms, learning from streaming interactions and costing at most 6,500 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Personalised candidates on home and product pages",
+     "Use cart and recent clicks as context",
+     "Learn from clicks, add-to-cart, purchases"
+    ],
+    "nonFunctional": [
+     "p99 under 50 ms",
+     "Purchase rate under 1.5%",
+     "Dual pipeline",
+     "Cost cap 6,500 dollars per month"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "200 million requests per day",
+     "Peak multiplier 3.5",
+     "128-dimensional embeddings compressed to 16 bytes",
+     "12 CPU nodes at 0.24 dollars per hour"
+    ],
+    "tasks": [
+     "Average rate = 2315 per second",
+     "Peak rate = 8102 per second",
+     "CPU cost = 12*0.24*730 = 2102.40 dollars per month",
+     "Compression ratio = 32x"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Funnel from 500M items to hundreds of candidates and then to a handful",
+     "why": "Latency"
+    },
+    {
+     "point": "Batch-computed item embeddings in an online feature store",
+     "why": "Fast retrieval"
+    },
+    {
+     "point": "Real-time ranker using cart and recent clicks",
+     "why": "Context"
+    },
+    {
+     "point": "Utility ranking: click x purchase x price x (1 - return rate)",
+     "why": "Business value"
+    },
+    {
+     "point": "Cache with invalidation on high-intent actions",
+     "why": "Freshness"
+    },
+    {
+     "point": "Resampling and recalibration for rare purchases",
+     "why": "Imbalance"
+    },
+    {
+     "point": "Drift monitoring for seasonal shifts",
+     "why": "Stability"
+    },
+    {
+     "point": "ANN index choice and quantisation",
+     "why": "Memory"
+    },
+    {
+     "point": "Cold start via content embeddings",
+     "why": "New products"
+    },
+    {
+     "point": "Cost table with line items under the cap",
+     "why": "Budget"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Objectives and constraints"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS, memory, cost"
+    },
+    {
+     "step": "Retrieval and ranking",
+     "notes": "Two-tower plus ranker"
+    },
+    {
+     "step": "Data loop",
+     "notes": "Streams and resampling"
+    },
+    {
+     "step": "Serving",
+     "notes": "Cache and fallbacks"
+    },
+    {
+     "step": "Cost",
+     "notes": "Component budget"
+    }
+   ],
+   "tradeoffs": [
+    "Revenue versus relevance in the utility",
+    "Cache TTL versus freshness",
+    "Index memory versus recall"
+   ],
+   "followUps": [
+    "How do you evaluate offline?",
+    "How do you handle substitutes versus complements?",
+    "How do you avoid popularity bias?"
+   ],
+   "chapters": [
+    "MSD.REC",
+    "MSD.FEAT",
+    "MSD.SERVE"
+   ],
+   "source": "ml4"
+  },
+  {
+   "id": "msd_distributed_training",
+   "title": "Distributed training of a trillion-parameter LLM",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design the training system for a language model with about one trillion parameters on a cluster of 10,000 GPUs with a fast interconnect. Target at least 60% model FLOPs utilisation, tolerate hardware faults and keep the control plane within 12,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Pre-train and fine-tune a 1T-parameter model",
+     "Checkpoint and recover from faults",
+     "Stream training telemetry"
+    ],
+    "nonFunctional": [
+     "MFU of at least 60%",
+     "Memory for 16 TB of model state",
+     "Fault tolerance (stragglers, silent corruption, loss spikes)",
+     "Control plane at most 12,000 dollars per month"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "N = 1e12 parameters",
+     "4,000,000 tokens per step",
+     "Peak 1.979e15 FLOP/s per GPU",
+     "Mixed precision with Adam: 16 bytes per parameter of model state"
+    ],
+    "tasks": [
+     "FLOPs per step = 6*N*tokens = 2.4e+19",
+     "Step time at 60% MFU = 2.02 s",
+     "Model state = 16*N = 16 TB",
+     "ZeRO-3 per GPU over 10,000 GPUs = 1.6 GB"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "3D parallelism: tensor within node, pipeline across nodes, data parallel across replicas",
+     "why": "Fits model and bandwidth"
+    },
+    {
+     "point": "Memory partitioning (ZeRO or FSDP)",
+     "why": "Optimiser state fits"
+    },
+    {
+     "point": "Overlap communication with computation",
+     "why": "Utilisation"
+    },
+    {
+     "point": "Topology-aware placement of ranks",
+     "why": "Use fast links for chatty collectives"
+    },
+    {
+     "point": "Sequence packing and efficient attention kernels",
+     "why": "Remove wasted FLOPs"
+    },
+    {
+     "point": "Lower precision (FP8 or BF16) with master weights",
+     "why": "Throughput"
+    },
+    {
+     "point": "Asynchronous checkpointing to host memory then storage",
+     "why": "Minimise stall"
+    },
+    {
+     "point": "Straggler and fault detection with automatic replacement",
+     "why": "Large cluster reliability"
+    },
+    {
+     "point": "Loss-spike detection with rollback and batch skipping",
+     "why": "Training stability"
+    },
+    {
+     "point": "Data pipeline with prefetch and validation",
+     "why": "Avoid GPU starvation"
+    },
+    {
+     "point": "Telemetry stream and low-cost control plane",
+     "why": "Budget"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Throughput, MFU, reliability targets"
+    },
+    {
+     "step": "Compute and memory math",
+     "notes": "6N per token, 16N bytes"
+    },
+    {
+     "step": "Parallelism plan",
+     "notes": "TP, PP, DP, ZeRO"
+    },
+    {
+     "step": "Communication",
+     "notes": "Overlap, topology"
+    },
+    {
+     "step": "Reliability",
+     "notes": "Checkpointing, faults, rollback"
+    },
+    {
+     "step": "Operations",
+     "notes": "Telemetry and cost"
+    }
+   ],
+   "tradeoffs": [
+    "Pipeline bubble versus memory",
+    "Checkpoint frequency versus stall",
+    "Precision versus stability"
+   ],
+   "followUps": [
+    "How do you debug a slow node?",
+    "How do you pick micro-batch counts?",
+    "How would you add MoE layers?"
+   ],
+   "chapters": [
+    "MSD.DIST",
+    "MSD.MODEL",
+    "MSD.MON"
+   ],
+   "source": "ml5"
+  },
+  {
+   "id": "msd_enterprise_rag",
+   "title": "Enterprise RAG assistant",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design a retrieval-augmented generation backend over 100 million document chunks for many organisations. Retrieval and reranking must finish under 60 ms p99 within a first-token target of 250 ms, handle live document updates and enforce tenant access control, with a budget of 10,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Retrieve and rank relevant chunks for a query",
+     "Ingest document additions, edits and deletions",
+     "Capture user grounding feedback"
+    ],
+    "nonFunctional": [
+     "p99 under 60 ms for retrieval plus rerank",
+     "Tenant isolation and access control",
+     "Budget 10,000 dollars per month",
+     "Fresh and correct content"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "100 million chunks",
+     "50 million queries per day, peak factor 3.5",
+     "1,536-dimension vectors, float32 or int8"
+    ],
+    "tasks": [
+     "Average rate = 579 per second",
+     "Peak = 2025 per second",
+     "float32 index = 614 GB",
+     "int8 index = 154 GB"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Hybrid retrieval: dense ANN plus BM25 fused with RRF",
+     "why": "Semantic and exact-match recall"
+    },
+    {
+     "point": "Cross-encoder reranker on a shortlist",
+     "why": "Precision"
+    },
+    {
+     "point": "Pre-filtering by tenant ACL inside the index",
+     "why": "Security and predictable results"
+    },
+    {
+     "point": "Offline chunking and contextual embeddings in batch",
+     "why": "Quality and latency"
+    },
+    {
+     "point": "CDC-driven ingestion with invalidation of caches by tenant and document",
+     "why": "Freshness and deletions"
+    },
+    {
+     "point": "Cache for frequent queries",
+     "why": "Latency and cost"
+    },
+    {
+     "point": "Fallback to lexical search on timeouts",
+     "why": "Availability"
+    },
+    {
+     "point": "Index quantisation to fit memory",
+     "why": "Cost"
+    },
+    {
+     "point": "Evaluation: retrieval recall, faithfulness, citation accuracy",
+     "why": "Quality measurement"
+    },
+    {
+     "point": "Score normalisation across domains before fusion",
+     "why": "Fair fusion"
+    },
+    {
+     "point": "Latency budget table across stages",
+     "why": "Meets SLA"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Quality and security requirements"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS, index memory, latency"
+    },
+    {
+     "step": "Ingestion",
+     "notes": "Chunking, embeddings, CDC"
+    },
+    {
+     "step": "Retrieval",
+     "notes": "Hybrid, filters, RRF"
+    },
+    {
+     "step": "Rerank and assemble",
+     "notes": "Cross-encoder, context packing"
+    },
+    {
+     "step": "Operations",
+     "notes": "Cache, fallback, evaluation, cost"
+    }
+   ],
+   "tradeoffs": [
+    "Chunk size versus precision and context",
+    "Reranker depth versus latency",
+    "Index quantisation versus recall"
+   ],
+   "followUps": [
+    "How do you evaluate answer faithfulness?",
+    "How do you handle very long documents?",
+    "How do you prevent prompt injection from documents?"
+   ],
+   "chapters": [
+    "MSD.RAG",
+    "MSD.LLMOPS",
+    "MSD.SERVE"
+   ],
+   "source": "ml6"
+  },
+  {
+   "id": "msd_search_ranking",
+   "title": "Search ranking",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design the ranking stage of a large e-commerce search over 1 billion items handling 100 million queries a day with p99 under 50 ms and a budget of 8,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Rank search results per query",
+     "Learn from clicks and conversions",
+     "Return results even on component failure"
+    ],
+    "nonFunctional": [
+     "p99 under 50 ms",
+     "Conversion rate under 1%",
+     "Hybrid sparse and dense retrieval",
+     "Budget 8,000 dollars per month"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "100 million queries per day",
+     "Peak factor 3.5",
+     "Latency budget: cache 2, retrieval 12, features 5, cross-encoder 18, rules 3, network 10 ms"
+    ],
+    "tasks": [
+     "Average = 1157 per second",
+     "Peak = 4051 per second",
+     "Budget sum = 50 ms",
+     "Cost matrix total = 7250 dollars"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Hybrid retrieval with RRF to 100-500 candidates",
+     "why": "Recall"
+    },
+    {
+     "point": "Cross-encoder or gradient-boosted re-rank with contextual features",
+     "why": "Precision"
+    },
+    {
+     "point": "Expected-revenue utility",
+     "why": "Business objective"
+    },
+    {
+     "point": "Query cache and CDC invalidation on stock or price changes",
+     "why": "Freshness"
+    },
+    {
+     "point": "Handles click position bias and negative downsampling with recalibration",
+     "why": "Training data quality"
+    },
+    {
+     "point": "Fail-open to BM25 on timeouts",
+     "why": "Availability"
+    },
+    {
+     "point": "Per-stage latency budget",
+     "why": "Meets SLA"
+    },
+    {
+     "point": "ANN index with quantisation",
+     "why": "Memory"
+    },
+    {
+     "point": "Drift monitoring for seasonal intent",
+     "why": "Stability"
+    },
+    {
+     "point": "Online evaluation with interleaving or A/B",
+     "why": "Measurement"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Relevance and revenue"
+    },
+    {
+     "step": "Estimate",
+     "notes": "QPS, budget"
+    },
+    {
+     "step": "Retrieval",
+     "notes": "Sparse plus dense, fusion"
+    },
+    {
+     "step": "Rerank",
+     "notes": "Features, model"
+    },
+    {
+     "step": "Data loop",
+     "notes": "Streaming feedback, resampling"
+    },
+    {
+     "step": "Cost and failure",
+     "notes": "Cost table, fallbacks"
+    }
+   ],
+   "tradeoffs": [
+    "Relevance versus revenue",
+    "Cross-encoder cost versus quality",
+    "Caching versus personalisation"
+   ],
+   "followUps": [
+    "How do you handle query understanding?",
+    "How do you debias position effects?",
+    "How do you personalise?"
+   ],
+   "chapters": [
+    "MSD.CASES",
+    "MSD.REC",
+    "MSD.EVAL"
+   ],
+   "source": "cs1"
+  },
+  {
+   "id": "msd_content_moderation",
+   "title": "Content moderation",
+   "track": "ML_SYS_DESIGN",
+   "difficulty": "H",
+   "prompt": "Design a moderation pipeline for 200 million pieces of text, image and video content per day across several policy categories, with automated decisions, human review for borderline cases and a budget of 11,000 dollars per month.",
+   "requirements": {
+    "functional": [
+     "Classify content per policy category",
+     "Route borderline items to human review",
+     "Adapt to evasion"
+    ],
+    "nonFunctional": [
+     "Minimise false negatives and false positives",
+     "Per-severity thresholds",
+     "Adversarial robustness",
+     "Budget 11,000 dollars per month"
+    ]
+   },
+   "estimation": {
+    "given": [
+     "200 million items per day",
+     "False negative cost 50, false positive cost 1 (relative units)",
+     "Cost matrix items sum to 10,200 dollars"
+    ],
+    "tasks": [
+     "Average rate = 2315 per second",
+     "Cost at 30 FN and 400 FP = 1900",
+     "Budget headroom = 800 dollars"
+    ]
+   },
+   "rubric": [
+    {
+     "point": "Two-speed pipeline: fast lexical filters then deep multimodal model",
+     "why": "Cost and latency"
+    },
+    {
+     "point": "Per-category thresholds tuned to cost and base rate",
+     "why": "Different risks"
+    },
+    {
+     "point": "Fail-closed for high-severity, fail-open with review for low",
+     "why": "Risk asymmetry"
+    },
+    {
+     "point": "Human review queue with active learning",
+     "why": "Efficient labels"
+    },
+    {
+     "point": "Adversarial augmentation and rapid retraining",
+     "why": "Arms race"
+    },
+    {
+     "point": "Multi-label focal loss for rare categories",
+     "why": "Imbalance"
+    },
+    {
+     "point": "Calibration and periodic threshold re-tuning",
+     "why": "Base rate shifts"
+    },
+    {
+     "point": "Appeals and audit trails",
+     "why": "Fairness and compliance"
+    },
+    {
+     "point": "Video handled via sampled frames and audio transcripts",
+     "why": "Cost control"
+    },
+    {
+     "point": "Metrics per category: precision, recall, review load",
+     "why": "Evaluation"
+    }
+   ],
+   "referenceOutline": [
+    {
+     "step": "Frame",
+     "notes": "Policies, severities, costs"
+    },
+    {
+     "step": "Estimate",
+     "notes": "Volume, review capacity"
+    },
+    {
+     "step": "Pipeline",
+     "notes": "Filters, models, thresholds, queue"
+    },
+    {
+     "step": "Learning loop",
+     "notes": "Active learning, retraining"
+    },
+    {
+     "step": "Robustness",
+     "notes": "Evasion handling"
+    },
+    {
+     "step": "Cost and governance",
+     "notes": "Budget, appeals"
+    }
+   ],
+   "tradeoffs": [
+    "Precision versus recall per category",
+    "Automation versus reviewer load",
+    "Latency of review versus user experience"
+   ],
+   "followUps": [
+    "How do you handle multilingual content?",
+    "How do you measure reviewer agreement?",
+    "How do you respond to a new abuse trend?"
+   ],
+   "chapters": [
+    "MSD.CLF",
+    "MSD.EVAL",
+    "MSD.CASES"
+   ],
+   "source": "cs7"
+  }
+ ]
+}

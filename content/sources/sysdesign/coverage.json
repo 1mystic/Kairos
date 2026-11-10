@@ -1,0 +1,1027 @@
+{
+ "questions": {
+  "cs1 Search ranking": {
+   "chapters": [
+    "MSD.CASES",
+    "MSD.REC"
+   ],
+   "ids": [
+    "q_3c5b2e335f10",
+    "q_dccf07e29b9b",
+    "q_fdcc03542b80"
+   ]
+  },
+  "cs1,cs7,cs8 fail modes": {
+   "chapters": [
+    "MSD.CASES"
+   ],
+   "ids": [
+    "q_a954be8eb482"
+   ]
+  },
+  "cs10 Anomaly detection": {
+   "chapters": [
+    "MSD.MON"
+   ],
+   "ids": [
+    "q_682b4ed13107",
+    "q_9a3a73ac3f4d"
+   ]
+  },
+  "cs2 Feed ranking": {
+   "chapters": [
+    "MSD.EVAL",
+    "MSD.FRAME",
+    "MSD.MODEL",
+    "MSD.MON",
+    "MSD.REC"
+   ],
+   "ids": [
+    "q_1269189f69b8",
+    "q_2c6c668220d3",
+    "q_454226a02250",
+    "q_4e7815e9d49e",
+    "q_5e9bec13b616",
+    "q_795c06818993",
+    "q_975b74711ae5",
+    "q_f65d5df1d981"
+   ]
+  },
+  "cs3 Ads CTR": {
+   "chapters": [
+    "MSD.CASES",
+    "MSD.FEAT"
+   ],
+   "ids": [
+    "q_361cce7c9c20",
+    "q_9a57267473c2",
+    "q_b3a50b26b631",
+    "q_b4ba4b1a31ae"
+   ]
+  },
+  "cs4 ETA": {
+   "chapters": [
+    "MSD.CASES"
+   ],
+   "ids": [
+    "q_75f7fe59fe39",
+    "q_bd29ae1be1b6"
+   ]
+  },
+  "cs5 Duplicate detection": {
+   "chapters": [
+    "MSD.CASES",
+    "MSD.EVAL"
+   ],
+   "ids": [
+    "q_6637d9b05c4d",
+    "q_d4926d75a331",
+    "q_e050b1bfe3bc"
+   ]
+  },
+  "cs6 Demand forecasting": {
+   "chapters": [
+    "MSD.CASES",
+    "MSD.REC"
+   ],
+   "ids": [
+    "q_63103ac9d55a",
+    "q_aded83c83f74"
+   ]
+  },
+  "cs7 Moderation": {
+   "chapters": [
+    "MSD.CLF",
+    "MSD.EVAL"
+   ],
+   "ids": [
+    "q_0379d98d7e1d",
+    "q_1033e3c80b60",
+    "q_50b6b9417876",
+    "q_51aeb1b2e30c",
+    "q_7e271b50c8a1",
+    "q_8a8b3bd1d89e",
+    "q_c6ff83dea738",
+    "q_cfd6ad04c5bb"
+   ]
+  },
+  "cs8 Visual defect": {
+   "chapters": [
+    "MSD.CASES",
+    "MSD.MODEL"
+   ],
+   "ids": [
+    "q_69da72772e0e",
+    "q_71ef8b66235b"
+   ]
+  },
+  "cs9 LLM serving": {
+   "chapters": [
+    "MSD.LLMOPS"
+   ],
+   "ids": [
+    "q_13a43d725c65",
+    "q_5dfe67789189",
+    "q_940ccef50ecf",
+    "q_98cd460fdf61",
+    "q_a53e8d3750a4",
+    "q_c7b39ae69eb5",
+    "q_d03f13cabe1c",
+    "q_ead386c5d02b",
+    "q_f4c94733097a"
+   ]
+  },
+  "hb:F1 Scalability": {
+   "chapters": [
+    "SD.SCAL"
+   ],
+   "ids": [
+    "q_4a344d57220b",
+    "q_60c155c60767",
+    "q_87a0edd330ff",
+    "q_a29c1a663ff7",
+    "q_c891d5719f2b",
+    "q_d6972b16c3da",
+    "q_dfb64d7eb44f",
+    "q_eca058177d41",
+    "q_ee701b839da3",
+    "q_ff4b4f6a660a"
+   ]
+  },
+  "hb:F10 Database Indexes": {
+   "chapters": [
+    "SD.IDX"
+   ],
+   "ids": [
+    "q_08047375b1a9",
+    "q_0d16979508e7",
+    "q_2669080a0fea",
+    "q_3f1494589e6b",
+    "q_551af30ad1b6",
+    "q_ae861aaa598b",
+    "q_b3fc3f86aff5",
+    "q_b58cd7cade32",
+    "q_cd11e76080fa",
+    "q_efde1c2adbb3"
+   ]
+  },
+  "hb:F11 Caching": {
+   "chapters": [
+    "SD.CACHE"
+   ],
+   "ids": [
+    "q_0557afc10823",
+    "q_17eefb76eb78",
+    "q_19a7adbaf28c",
+    "q_204568a69a99",
+    "q_6ea035081c67",
+    "q_7fa4a26d3a96",
+    "q_817fb0885718",
+    "q_957f93a28819",
+    "q_b8e86379fad0",
+    "q_b962ac4b9ebf"
+   ]
+  },
+  "hb:F12 Consistent Hashing": {
+   "chapters": [
+    "SD.CHASH"
+   ],
+   "ids": [
+    "q_0ddda37289d7",
+    "q_0fed5e1fc77e",
+    "q_8c3877fdf8a1",
+    "q_ae61c52026a9",
+    "q_d36dfac483d8",
+    "q_e007969dce71",
+    "q_e09d10c64fbc",
+    "q_e68d60e8964e",
+    "q_ebe3402cae20"
+   ]
+  },
+  "hb:F13 Database Sharding": {
+   "chapters": [
+    "SD.SHARD"
+   ],
+   "ids": [
+    "q_10f95b9c19b5",
+    "q_47896487f98a",
+    "q_596619b40ac9",
+    "q_750fbdbbdd9f",
+    "q_ad158f2bd7ba",
+    "q_c7a51c57a266",
+    "q_d36e7a1a6ca4",
+    "q_dc1e6f4336e8",
+    "q_e9966630dfa8"
+   ]
+  },
+  "hb:F14 Consensus Algorithms": {
+   "chapters": [
+    "SD.CONS"
+   ],
+   "ids": [
+    "q_13098f6622ac",
+    "q_1a794d5c8202",
+    "q_2049e3efa7be",
+    "q_4a189d51cd61",
+    "q_73ab52800eb1",
+    "q_a8e73f4bc894",
+    "q_b38041afc154",
+    "q_c36c430443de"
+   ]
+  },
+  "hb:F15 Proxy Servers": {
+   "chapters": [
+    "SD.PROXY"
+   ],
+   "ids": [
+    "q_12124ba93f4e",
+    "q_5b5c1fc79568",
+    "q_6f4e03ceac12",
+    "q_8b4067ec819c",
+    "q_971337dd8d0f",
+    "q_c48ef4479ae2",
+    "q_dd4380b679fa",
+    "q_f830dda25d14"
+   ]
+  },
+  "hb:F16 Heartbeats": {
+   "chapters": [
+    "SD.HB"
+   ],
+   "ids": [
+    "q_102789cd7e22",
+    "q_12838dffe717",
+    "q_43157753f7a2",
+    "q_4490054b909b",
+    "q_49dc75a505e5",
+    "q_a396db1b44d3",
+    "q_bfc128d13e7f",
+    "q_f6add04c44f0"
+   ]
+  },
+  "hb:F17 Checksums": {
+   "chapters": [
+    "SD.CKSUM"
+   ],
+   "ids": [
+    "q_0cba7cdcca95",
+    "q_0f2b849f315b",
+    "q_1416bb9437f9",
+    "q_2475a49721b5",
+    "q_25229fdde416",
+    "q_3116a096e04c",
+    "q_b812cc99f2e0",
+    "q_f577622fac2e"
+   ]
+  },
+  "hb:F18 Service Discovery": {
+   "chapters": [
+    "SD.SVCDISC"
+   ],
+   "ids": [
+    "q_060761763256",
+    "q_4573965d0628",
+    "q_54c7465df4a4",
+    "q_6c3cbe626ee4",
+    "q_89d463d6336e",
+    "q_d98b9dc04ab3",
+    "q_dc2dbd007745",
+    "q_f85fd8e0ab47"
+   ]
+  },
+  "hb:F19 Bloom Filters": {
+   "chapters": [
+    "SD.BLOOM"
+   ],
+   "ids": [
+    "q_04f0833fc50c",
+    "q_29ef6a4b8e64",
+    "q_62e4f05f2696",
+    "q_64cfd3992056",
+    "q_72b48381dedf",
+    "q_84b4b0731d31",
+    "q_84c7a8cc3b66",
+    "q_c9ada75a3f2b",
+    "q_cb5e3dac4009"
+   ]
+  },
+  "hb:F2 Availability": {
+   "chapters": [
+    "SD.AVAIL"
+   ],
+   "ids": [
+    "q_10eb4d8ace03",
+    "q_2b3f9da935cc",
+    "q_6b1b611a24a2",
+    "q_7eceb8d85af5",
+    "q_86861f0d0bb6",
+    "q_90969ecf7421",
+    "q_adfe637f648c",
+    "q_dd72700af751",
+    "q_e2c2bdeaa584",
+    "q_f508058d5451"
+   ]
+  },
+  "hb:F20 Gossip Protocol": {
+   "chapters": [
+    "SD.GOSSIP"
+   ],
+   "ids": [
+    "q_00f31fb0366d",
+    "q_03aecee60205",
+    "q_0941aaee7809",
+    "q_2f91c830e7fb",
+    "q_49a8ace46b76",
+    "q_625a976fbeba",
+    "q_b2bb9dba7f21",
+    "q_db966506c9eb"
+   ]
+  },
+  "hb:F3 Latency vs Throughput": {
+   "chapters": [
+    "SD.LATTP"
+   ],
+   "ids": [
+    "q_0852aaf601e6",
+    "q_2a66225300ac",
+    "q_3dcd7078c5b3",
+    "q_48e0e5ebb964",
+    "q_4951493fd742",
+    "q_63481b32a9d6",
+    "q_8b997b52707f",
+    "q_905939b486f0",
+    "q_9f7900ac66a6",
+    "q_bafadc9e54a0"
+   ]
+  },
+  "hb:F4 CAP Theorem": {
+   "chapters": [
+    "SD.CAP"
+   ],
+   "ids": [
+    "q_07b406d1f4c3",
+    "q_1801e0cb4a70",
+    "q_48fc4a12534e",
+    "q_49dd56b28eb3",
+    "q_52ccfebd54ee",
+    "q_9d18a6cad346",
+    "q_d2e9c041d31a",
+    "q_dc8266952fed",
+    "q_fde09335aa7e",
+    "q_ff8addde8d6d"
+   ]
+  },
+  "hb:F5 Load Balancers": {
+   "chapters": [
+    "SD.LB"
+   ],
+   "ids": [
+    "q_0acee33ac9d8",
+    "q_304e19df3e4c",
+    "q_322c8dd9fa76",
+    "q_46966598d930",
+    "q_53521ca62ba4",
+    "q_53d1e471baab",
+    "q_6d887baa7a23",
+    "q_a380a6b9c52a",
+    "q_b36b9305833c",
+    "q_bf644d5ac51e"
+   ]
+  },
+  "hb:F6 Databases": {
+   "chapters": [
+    "SD.DB"
+   ],
+   "ids": [
+    "q_005a66b6a5a3",
+    "q_326827fbfbc7",
+    "q_38f8648d1ae1",
+    "q_433a6240536b",
+    "q_568b389bf643",
+    "q_961085278178",
+    "q_c4a7fb70dee0",
+    "q_cb064d499bfb",
+    "q_eb637a034585",
+    "q_ffba2e6c53be"
+   ]
+  },
+  "hb:F7 CDN": {
+   "chapters": [
+    "SD.CDN"
+   ],
+   "ids": [
+    "q_0d92c68d59ac",
+    "q_3f060f645abf",
+    "q_42759e8997ff",
+    "q_b8ed7cc8c6e5",
+    "q_cd3627bc248c",
+    "q_d2836f5a9630",
+    "q_d2ade5647cbf",
+    "q_dada114fadd8",
+    "q_e0db26e04be1"
+   ]
+  },
+  "hb:F8 Message Queues": {
+   "chapters": [
+    "SD.MQ"
+   ],
+   "ids": [
+    "q_10fac77d06be",
+    "q_212e1074b75e",
+    "q_26c3fad28cc3",
+    "q_2dda230b2c31",
+    "q_366729e06d8f",
+    "q_9075cdbe47d7",
+    "q_a63163659da2",
+    "q_b4689f9aa299",
+    "q_fec08fd0d781"
+   ]
+  },
+  "hb:F9 Rate Limiting": {
+   "chapters": [
+    "SD.RATE"
+   ],
+   "ids": [
+    "q_24e4ba541044",
+    "q_4177ad14bf52",
+    "q_50a7625ad87b",
+    "q_76aff63b53a4",
+    "q_978e23d1af23",
+    "q_9b9c59cdc5e8",
+    "q_b552f2d91823",
+    "q_f3203ec09b4c",
+    "q_f47bff141508",
+    "q_f4e4f62e9045"
+   ]
+  },
+  "hb:P1 Client-Server": {
+   "chapters": [
+    "SD.PAT_CS"
+   ],
+   "ids": [
+    "q_367f123e071d",
+    "q_39f67ebca2f9",
+    "q_42d61b322b95",
+    "q_55d6293f698d",
+    "q_60ae8e66eb08",
+    "q_a4ab0a37f7e0",
+    "q_b3516f85221c",
+    "q_bf0a1c439a8d"
+   ]
+  },
+  "hb:P2 Microservices": {
+   "chapters": [
+    "SD.PAT_MICRO"
+   ],
+   "ids": [
+    "q_1a0b68a73aa4",
+    "q_2149189efb86",
+    "q_3df70c894e6b",
+    "q_77d10dd063c4",
+    "q_7f4dbb62e119",
+    "q_c8e83e8f924f",
+    "q_d28ae9a55ae8",
+    "q_f75e3f57edca"
+   ]
+  },
+  "hb:P3 Serverless": {
+   "chapters": [
+    "SD.PAT_SERVERLESS"
+   ],
+   "ids": [
+    "q_0d1ecfed16bd",
+    "q_281cc0c4d82d",
+    "q_307780b829b0",
+    "q_49e7ff13aed8",
+    "q_80e65d00a7bb",
+    "q_abaed6639f9f",
+    "q_b1e3ceac15f4",
+    "q_ef6c3d412f5a"
+   ]
+  },
+  "hb:P4 Event-Driven": {
+   "chapters": [
+    "SD.PAT_EVENT"
+   ],
+   "ids": [
+    "q_050baf8bfaca",
+    "q_10f2d9fd1797",
+    "q_14981113908c",
+    "q_1a84197a14e2",
+    "q_ab44be3b8e1d",
+    "q_b11e3f073813",
+    "q_d5fb11ce1c1d",
+    "q_d8c6e8085937"
+   ]
+  },
+  "hb:P5 Peer-to-Peer": {
+   "chapters": [
+    "SD.PAT_P2P"
+   ],
+   "ids": [
+    "q_069800014f26",
+    "q_2056b1a8cda2",
+    "q_3118578080de",
+    "q_7c41c013e484",
+    "q_b38b17e801af",
+    "q_c854afefb08b",
+    "q_ca6102627f8d",
+    "q_d5173b38eb94"
+   ]
+  },
+  "hb:Q1 URL shortener": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_29512f2819b1",
+    "q_a6ee0c16ad2e",
+    "q_e1bbcc855265",
+    "q_ec609238085a",
+    "q_f3e957456796"
+   ]
+  },
+  "hb:Q10 Logging and monitoring": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_10ae73db6f50",
+    "q_583fb86c2291"
+   ]
+  },
+  "hb:Q2 Chat": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_0bb13678f05e",
+    "q_6f1ee207fa91"
+   ]
+  },
+  "hb:Q3 Social feed": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_731b7a283f95",
+    "q_9a4c89216322"
+   ]
+  },
+  "hb:Q4 Video streaming": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_05910ec3c82d",
+    "q_b977aa82b493"
+   ]
+  },
+  "hb:Q5 E-commerce": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_6502a91c5e7b"
+   ]
+  },
+  "hb:Q6 Ride sharing": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_ce90d4efac21"
+   ]
+  },
+  "hb:Q7 File storage": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_c51c5d2e5134"
+   ]
+  },
+  "hb:Q8 Web crawler": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_b4028f05e673",
+    "q_dd22b4955d5e"
+   ]
+  },
+  "hb:Q9 Notification system": {
+   "chapters": [
+    "SD.CASES"
+   ],
+   "ids": [
+    "q_cc108c6e131b"
+   ]
+  },
+  "hb:T1 Vertical vs Horizontal Scaling": {
+   "chapters": [
+    "SD.TO_SCALE"
+   ],
+   "ids": [
+    "q_061b95f5282b",
+    "q_309a8ef75fa4",
+    "q_660110dee6d4",
+    "q_801cbb4fd3f7",
+    "q_906af95b5925",
+    "q_e164564c766c",
+    "q_e90a7893af9d",
+    "q_f961a29f3275"
+   ]
+  },
+  "hb:T10 Normalization vs Denormalization": {
+   "chapters": [
+    "SD.TO_NORM"
+   ],
+   "ids": [
+    "q_0085777e2326",
+    "q_134b171e95ab",
+    "q_1e2c276fc8cc",
+    "q_3cbef878f865",
+    "q_a3d50ba27149",
+    "q_a4772ae78df4",
+    "q_b76bdf40f36d",
+    "q_fac837bfb7b3"
+   ]
+  },
+  "hb:T11 TCP vs UDP": {
+   "chapters": [
+    "SD.TO_NET"
+   ],
+   "ids": [
+    "q_08a12c750ec9",
+    "q_0d1294a6a8a1",
+    "q_5dde755d0184",
+    "q_9eaba14918f1",
+    "q_a93b6fb7177b",
+    "q_c6a96a8d76b8",
+    "q_ccde838b19a4",
+    "q_cd1925c48e2e"
+   ]
+  },
+  "hb:T2 Strong vs Eventual Consistency": {
+   "chapters": [
+    "SD.TO_CONS"
+   ],
+   "ids": [
+    "q_3861d7e3013f",
+    "q_46a46e254f09",
+    "q_67542040bba5",
+    "q_71045495301b",
+    "q_76718665c53d",
+    "q_9caab00f4d00",
+    "q_bc52093cab95",
+    "q_ff3ece0e0624"
+   ]
+  },
+  "hb:T3 Stateful vs Stateless Design": {
+   "chapters": [
+    "SD.TO_STATE"
+   ],
+   "ids": [
+    "q_008ba7dccf81",
+    "q_120f2bdf2627",
+    "q_245250ea3048",
+    "q_6f8aaf45afa4",
+    "q_74cd428be3b3",
+    "q_891afbebdfdb",
+    "q_8c135d840744",
+    "q_b5f2e470539b"
+   ]
+  },
+  "hb:T4 Read-through vs Write-through Cache": {
+   "chapters": [
+    "SD.TO_WRITE"
+   ],
+   "ids": [
+    "q_2f9982f8fdd9",
+    "q_523c5a1b55f9",
+    "q_6c4fdfc36c61",
+    "q_88d0b4e4d129",
+    "q_b228a5dc549c",
+    "q_c30cdcb0f88f",
+    "q_eff766a9a632",
+    "q_fd45519b1efa"
+   ]
+  },
+  "hb:T5 SQL vs NoSQL": {
+   "chapters": [
+    "SD.TO_SQL"
+   ],
+   "ids": [
+    "q_0d721d01b6b7",
+    "q_0f51eac5da37",
+    "q_98a770eb60ca",
+    "q_9a3df9779c23",
+    "q_9e0ba82c6eb7",
+    "q_ae3723e96a3f",
+    "q_bdc549644656",
+    "q_c81be756a300"
+   ]
+  },
+  "hb:T6 REST vs RPC": {
+   "chapters": [
+    "SD.TO_API"
+   ],
+   "ids": [
+    "q_1de0b3cf8cce",
+    "q_26b0bd1f464d",
+    "q_47c137bdcaa6",
+    "q_4cac75c447c0",
+    "q_6ebf604cc45e",
+    "q_cf0013d0acc7",
+    "q_d03cabaa2809",
+    "q_f480adfc31e1"
+   ]
+  },
+  "hb:T7 Synchronous vs Asynchronous": {
+   "chapters": [
+    "SD.TO_ASYNC"
+   ],
+   "ids": [
+    "q_140384990c45",
+    "q_18822002c752",
+    "q_1a73501a9538",
+    "q_811038f94eae",
+    "q_9d15ac240888",
+    "q_c49d6250a3ee",
+    "q_d7755d4a28e0",
+    "q_ebf748e8dbdf"
+   ]
+  },
+  "hb:T8 Batch vs Stream Processing": {
+   "chapters": [
+    "SD.TO_BATCH"
+   ],
+   "ids": [
+    "q_053629f55547",
+    "q_1ef017baf9c1",
+    "q_414ca086d106",
+    "q_952fa7154ad2",
+    "q_95cedf23c75d",
+    "q_ce3b13b799af",
+    "q_dcd4a1d0cfee",
+    "q_ee8b24fa0aaa"
+   ]
+  },
+  "hb:T9 Long Polling vs WebSockets": {
+   "chapters": [
+    "SD.TO_PUSH"
+   ],
+   "ids": [
+    "q_72bbc377d0bd",
+    "q_73e9ac354554",
+    "q_7c9e63f1507d",
+    "q_80f807a9ba4d",
+    "q_a612939ee253",
+    "q_ab6f478fa402",
+    "q_c97f7fef88ee",
+    "q_f93f9a0f3701"
+   ]
+  },
+  "hb:Template + Tips": {
+   "chapters": [
+    "SD.TEMPLATE"
+   ],
+   "ids": [
+    "q_247e716b6135",
+    "q_4f780fe24a0a",
+    "q_560c25a73ee7",
+    "q_584eb3c4aa82",
+    "q_5d2655653b4c",
+    "q_7d98dd97f3e3",
+    "q_bb2f4f680bfc",
+    "q_c01b17d3b6e5",
+    "q_d54e3f417780",
+    "q_f05294dae0ab"
+   ]
+  },
+  "hb:Template step 2 (capacity estimation)": {
+   "chapters": [
+    "SD.ESTIM"
+   ],
+   "ids": [
+    "q_33621e03c0e9",
+    "q_43283188028b",
+    "q_4fab562693e3",
+    "q_5c2f0fa22284",
+    "q_6f81e761dd69",
+    "q_952b99cfcecf",
+    "q_a1455167c67c",
+    "q_b64d07d362c7",
+    "q_cb9a19b61a8d",
+    "q_d99fa9c1d739"
+   ]
+  },
+  "ml1 PSI example; cs3/cs6/cs10 drift": {
+   "chapters": [
+    "MSD.MON"
+   ],
+   "ids": [
+    "q_901ac2de0dd4"
+   ]
+  },
+  "ml1 PSI; cs7 precision/recall; cs5 recall@k": {
+   "chapters": [
+    "MSD.EVAL"
+   ],
+   "ids": [
+    "q_5744e3f0ee92",
+    "q_f3436a4e92cf"
+   ]
+  },
+  "ml1 Spam classifier": {
+   "chapters": [
+    "MSD.CLF",
+    "MSD.DATA",
+    "MSD.FEAT",
+    "MSD.FRAME",
+    "MSD.MON",
+    "MSD.SERVE"
+   ],
+   "ids": [
+    "q_008b51a2d11e",
+    "q_06c050d9f790",
+    "q_082519e82d0d",
+    "q_08276155f5a3",
+    "q_0ced8443806b",
+    "q_1f926ad18158",
+    "q_27b59ebeefd7",
+    "q_33cc74d9331f",
+    "q_36cf3b01e520",
+    "q_391c0897850f",
+    "q_50b9ccd3e0ed",
+    "q_8509e3713fe1",
+    "q_8f090a110844",
+    "q_93d8c9324337",
+    "q_9442d97afb3a",
+    "q_9919f00142ee",
+    "q_a014a112ba27",
+    "q_af34684f4e90",
+    "q_bfe47d03a9b9",
+    "q_c126ddaaf044",
+    "q_c251180e0113",
+    "q_e5d0b0cf11d5",
+    "q_e6839f5216c3",
+    "q_e973d4de389c"
+   ]
+  },
+  "ml2 Video recs": {
+   "chapters": [
+    "MSD.DATA",
+    "MSD.FEAT",
+    "MSD.MODEL",
+    "MSD.REC",
+    "MSD.SERVE"
+   ],
+   "ids": [
+    "q_2739a3c6cd70",
+    "q_34de9eb33d9d",
+    "q_38714d9307c5",
+    "q_3d617a0aeb33",
+    "q_474f14afb11f",
+    "q_4f9b5ac21480",
+    "q_5fd2da43bbdd",
+    "q_8b447453c583",
+    "q_8c5a1aa6ef3d",
+    "q_8cb65e95b0c8",
+    "q_9734c5916b12",
+    "q_b15a671e5dfb",
+    "q_b69b8b57c2e8",
+    "q_bc295176e68b",
+    "q_bdcce8657c01",
+    "q_d5630176e636",
+    "q_da57d5452eff",
+    "q_de775f158117",
+    "q_f3f5dbc905ff"
+   ]
+  },
+  "ml2/ml3/ml4 imbalance; general data": {
+   "chapters": [
+    "MSD.DATA"
+   ],
+   "ids": [
+    "q_11464ce53281"
+   ]
+  },
+  "ml3 Fraud": {
+   "chapters": [
+    "MSD.DATA",
+    "MSD.FEAT",
+    "MSD.FRAME",
+    "MSD.FRAUD",
+    "MSD.MODEL",
+    "MSD.SERVE"
+   ],
+   "ids": [
+    "q_0b2645e0486d",
+    "q_13bef80c47b0",
+    "q_159a48db2719",
+    "q_1660da5952ef",
+    "q_229f8a01835f",
+    "q_2d1b0a7161f6",
+    "q_330d6b5f60dc",
+    "q_4fed864a955a",
+    "q_63f640206691",
+    "q_6586910894d6",
+    "q_86fe7070969d",
+    "q_8f024e7b9e36",
+    "q_ad3ba06948f8",
+    "q_bfa5450cb049",
+    "q_ca7fd8d92f03",
+    "q_dd4bd2fb0835",
+    "q_e54f2b93298f",
+    "q_f1cc98deae13"
+   ]
+  },
+  "ml3 feature store; ml2/ml4 item embeddings": {
+   "chapters": [
+    "MSD.FEAT"
+   ],
+   "ids": [
+    "q_9d8db6a425ec"
+   ]
+  },
+  "ml4 Amazon recs": {
+   "chapters": [
+    "MSD.FEAT",
+    "MSD.REC"
+   ],
+   "ids": [
+    "q_18dac331a730",
+    "q_551fe838ebe1",
+    "q_db0a556d64bc",
+    "q_f8bde650e95a"
+   ]
+  },
+  "ml5 Distributed training": {
+   "chapters": [
+    "MSD.DIST"
+   ],
+   "ids": [
+    "q_3b5de8c74b51",
+    "q_45e0ff7e643d",
+    "q_4fdb170e1ae6",
+    "q_68357f8e12dd",
+    "q_856142caf0a8",
+    "q_8dd2d5f47a4b",
+    "q_b9d247c55158",
+    "q_ce3bc415bc00",
+    "q_d2978de7345b",
+    "q_f0de029b4d93"
+   ]
+  },
+  "ml6 RAG": {
+   "chapters": [
+    "MSD.LLMOPS",
+    "MSD.RAG"
+   ],
+   "ids": [
+    "q_0d13e5e4456d",
+    "q_0e2740bec673",
+    "q_28531364e0d4",
+    "q_2ffac34c55e7",
+    "q_4da068cc144e",
+    "q_5c14262e7045",
+    "q_8b6dd05cbd23",
+    "q_9eb7df379d15",
+    "q_9fe8a7e1f62b",
+    "q_d4bb99a83113",
+    "q_d6dbbb4c5bf6"
+   ]
+  },
+  "ml:general framing + ml1-ml6 section 2": {
+   "chapters": [
+    "MSD.FRAME"
+   ],
+   "ids": [
+    "q_595eeeb0980e",
+    "q_5a59eb1ff0e0"
+   ]
+  }
+ },
+ "problems": {
+  "sd_url_shortener": "hb:Q1",
+  "sd_chat": "hb:Q2",
+  "sd_news_feed": "hb:Q3",
+  "sd_video_streaming": "hb:Q4",
+  "sd_ecommerce": "hb:Q5",
+  "sd_ride_sharing": "hb:Q6",
+  "sd_file_storage": "hb:Q7",
+  "sd_web_crawler": "hb:Q8",
+  "sd_notification": "hb:Q9",
+  "sd_logging_monitoring": "hb:Q10",
+  "msd_spam_abuse": "ml1 + cs7",
+  "msd_video_recs": "ml2",
+  "msd_fraud": "ml3",
+  "msd_product_recs": "ml4",
+  "msd_distributed_training": "ml5",
+  "msd_enterprise_rag": "ml6",
+  "msd_search_ranking": "cs1",
+  "msd_content_moderation": "cs7"
+ }
+}
