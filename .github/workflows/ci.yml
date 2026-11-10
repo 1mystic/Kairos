@@ -80,7 +80,7 @@ jobs:
           # committed manifest. Images are written to <out>/../img, so the
           # temp tree never touches app/public.
           out="$RUNNER_TEMP/bank-check/bank"
-          python -m pipeline.publish --version 4 --out "$out"
+          python -m pipeline.publish --version 5 --out "$out"
           python - "$out/v3/manifest.json" app/public/bank/v3/manifest.json <<'PY'
           import json, sys
           fresh, committed = (json.load(open(p)) for p in sys.argv[1:3])
@@ -94,7 +94,7 @@ jobs:
                       bad = True
                       print(f"STALE {key}: {path}: committed={b.get(path)} fresh={a.get(path)}")
           if bad:
-              sys.exit("Published bank differs from pipeline output. Re-run `python -m pipeline.publish --version 4 --force` and commit.")
+              sys.exit("Published bank differs from pipeline output. Re-run `python -m pipeline.publish --version 5 --force` and commit.")
           print("published bank matches pipeline output")
           PY
 
