@@ -55,7 +55,7 @@ export function Overview({ today }: { today: string }) {
         title="Overview"
         aside={
           <div className="row-actions">
-            <Tabs label="Range" tabs={RANGES} value={range} onChange={setRange} />
+            <Tabs label="Range" tabs={RANGES} value={range} onChange={(id) => setRange(id as typeof range)} />
             <Button variant="secondary" size="sm" loading={q.loading} onClick={q.reload}>Refresh</Button>
           </div>
         }

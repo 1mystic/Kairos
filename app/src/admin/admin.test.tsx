@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
@@ -26,7 +27,7 @@ const fakeData = (over: Partial<AdminData> = {}): AdminData => ({
   ...over,
 });
 const auth = (uid: string | null) => ({ user: uid ? { uid } : null, profile: null, loading: false }) as unknown as AuthContextValue;
-const wrap = (data: AdminData, uid: string | null, ui: JSX.Element) => (
+const wrap = (data: AdminData, uid: string | null, ui: ReactElement) => (
   <AuthContext.Provider value={auth(uid)}><AdminDataContext.Provider value={data}><MemoryRouter>{ui}</MemoryRouter></AdminDataContext.Provider></AuthContext.Provider>
 );
 
@@ -150,7 +151,7 @@ describe('exam calendar editing', () => {
 describe('announcement tab', () => {
   it('builds the contract document and publishes clear as active:false', async () => {
     expect(buildAnnouncementDoc({ active: true, title: ' Hi ', body: 'b', link: '', tone: 'important', expiry: '' })).toEqual({ active: true, title: 'Hi', body: 'b', link: null, tone: 'important', expiresAt: null });
-    const publishConfig = vi.fn(async () => {});
+    const publishConfig = vi.fn(async (..._a: unknown[]) => {});
     render(wrap(fakeData({ publishConfig, getConfig: async () => ({ active: true, title: 'Live', body: 'x', link: null, tone: 'info', expiresAt: null }) }), 'a1', <AnnouncementTab uid="a1" />));
     await userEvent.click(await screen.findByRole('button', { name: 'Clear announcement' }));
     await waitFor(() => expect(publishConfig).toHaveBeenCalledTimes(1));

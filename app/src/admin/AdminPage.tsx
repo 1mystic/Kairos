@@ -70,7 +70,7 @@ function Console({ uid }: { uid: string }) {
       <PageHeader title="Admin console" subtitle="App activity, exam dates and announcements. Aggregates only." />
       <TwoColumnPage nav={<StickySideNav label="Admin sections" items={NAV} active={tab} onSelect={(id) => setTab(id as TabId)} />}>
         <div className="stack gap-section min-w-0">
-          <div className="lg:hidden"><Tabs label="Admin sections" tabs={TABS} value={tab} onChange={setTab} /></div>
+          <div className="lg:hidden"><Tabs label="Admin sections" tabs={TABS} value={tab} onChange={(id) => setTab(id as TabId)} /></div>
           <Banner role="note">Changes here reach every user. Guests are never counted.</Banner>
           {tab === 'overview' && <Overview today={today} />}
           {tab === 'dates' && <ExamDates uid={uid} year={year} />}
