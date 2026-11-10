@@ -14,14 +14,18 @@ import { isExamId } from '../practice/taxonomy';
 
 export type ProfileKind = 'calendar' | 'custom' | 'none';
 
-export interface ExamProfile {
+/**
+ * A type alias, not an interface: profile lists are stored in `Array<Record<string, unknown>>` fields (UserProfile / GuestProfile),
+ * and only type aliases get the implicit index signature that makes them assignable there.
+ */
+export type ExamProfile = {
   exam: string;
   /** calendar: follows an exam_calendar session; custom: the student's own date; none: no date (interview tracks) */
   kind: ProfileKind;
   /** calendar session number (>= 1), calendar profiles only */
   session?: number;
   date?: string | null;
-}
+};
 
 export interface ExamProfiles {
   profiles: ExamProfile[];
