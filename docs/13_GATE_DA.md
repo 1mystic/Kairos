@@ -66,3 +66,6 @@ The owner supplied a 1,206-question GATE DA 2027 workbook (answer keys and worke
 
 ## Full mocks (authored)
 - `gate_da_mock_e` (GATE DA 2027 · Full Mock E): 65 original questions, `mini: false`, 100 marks, slots in blueprint section order (GA1 5, GA2 5, T1M-MCQ 12, T1M-MSQ 6, T1M-NAT 7, T2M-MCQ 11, T2M-MSQ 8, T2M-NAT 11). Source: `pipeline/gate_da/authored/mock_e.py` (keys `mocke_*`, listed in `MODULES` of `build_authored.py`); paper file `pipeline/fixtures/papers/gate_da_mock_e.json`. Technical split: PRS 13, LA 9, CO 4, PDS 8, DBW 6, ML 10, AI 5. Every numeric answer is recomputed by in-line asserts.
+
+## Authored full mocks
+- **Mock D** (`pipeline/fixtures/papers/gate_da_mock_d.json`, `mini: false`): 65 original questions, 100 marks, the 2026 per-type counts of the blueprint, slots in blueprint section order (GA1, GA2, T1M-MCQ, T1M-MSQ, T1M-NAT, T2M-MCQ, T2M-MSQ, T2M-NAT). Items live in `pipeline/gate_da/authored/mock_d.py` (keys `mockd_*`, every numeric answer recomputed by in-line asserts; module registered in `MODULES` of `build_authored.py`). Technical split: PRS 12, LA 8, CO 4, PDS 8, DBW 6, ML 11, AI 6. Needs `pipeline.publish` to ship.
