@@ -16,7 +16,7 @@ from ..validate import validate_question
 from . import authored
 
 OUT = ROOT / "pipeline" / "bank_src" / "gate_da_authored.json"
-MODULES = ["ga", "prs", "la", "co", "pds", "dbw", "ml", "ai", "extra"]
+MODULES = ["ga", "prs", "la", "co", "pds", "dbw", "ml", "ai", "extra", "mock_e"]
 DIFF_B = {"E": -0.9, "M": 0.1, "H": 1.1}
 
 

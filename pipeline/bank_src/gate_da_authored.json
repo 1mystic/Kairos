@@ -1,5 +1,47 @@
 [
  {
+  "id": "q_00ba67a73f73",
+  "type": "NVQ",
+  "stem": "The sample variance (with divisor $n-1$) of the observations $3,7,7,19$ is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    48.0,
+    48.0
+   ]
+  },
+  "solution": "Mean $=9$. Squared deviations: $36+4+4+100=144$. Variance $=144/3=48$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DESC",
+   "topics": [
+    "PRS.DESC.SD"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_01ad7badf7c8",
   "type": "SCQ",
   "stem": "A homogeneous system $Ax=0$ with $A\\in\\mathbb{R}^{4\\times6}$ of rank 4 has a solution space of dimension",
@@ -198,6 +240,125 @@
   "version": 1
  },
  {
+  "id": "q_05e5f494ba1a",
+  "type": "MSQ",
+  "stem": "One-dimensional ridge regression without intercept fits $y\\approx wx$ on $(x,y)=(1,2),(2,4),(3,7)$ by minimising $\\sum(y_i-wx_i)^2+\\lambda w^2$. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "$w_{\\lambda}=\\sum xy/(\\sum x^2+\\lambda)=31/(14+\\lambda)$. OLS: $31/14$; $\\lambda=14$: $31/28$, half of it. As $\\lambda\\to\\infty$, $w\\to0$. OLS minimises the training error, so ridge has larger (not smaller) training error. $31/(14+\\lambda)$ is never exactly 0. Correct: A, B.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.REG",
+   "topics": [
+    "ML.REG.RDG"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "With $\\lambda=14$ the ridge slope is exactly half of the ordinary least-squares slope"
+   },
+   {
+    "key": "B",
+    "text": "As $\\lambda\\to\\infty$ the ridge slope tends to 0"
+   },
+   {
+    "key": "C",
+    "text": "For $\\lambda=14$ the training squared error is smaller than that of the least-squares fit"
+   },
+   {
+    "key": "D",
+    "text": "Ridge regression sets the slope to exactly 0 for every finite $\\lambda>0$"
+   }
+  ]
+ },
+ {
+  "id": "q_066ca6218ba2",
+  "type": "SCQ",
+  "stem": "Five people P, Q, R, S and T sit in a row of five seats. P does not sit at either end. Q sits immediately to the left of R. T sits somewhere to the right of S (not necessarily adjacent). The number of different seating arrangements possible is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Treat QR as a block and count arrangements of P, QR, S, T respecting the end and order conditions: total (by enumeration) 6.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.ANAL",
+   "topics": [
+    "GA.ANAL.DED"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "6"
+   },
+   {
+    "key": "B",
+    "text": "10"
+   },
+   {
+    "key": "C",
+    "text": "4"
+   },
+   {
+    "key": "D",
+    "text": "8"
+   }
+  ]
+ },
+ {
   "id": "q_07a5f9d7c2a0",
   "type": "MSQ",
   "stem": "$Q$ is a real $n\\times n$ orthogonal matrix. Select all statements that are always true.",
@@ -257,6 +418,48 @@
     "text": "$Q^{-1}=Q^T$"
    }
   ]
+ },
+ {
+  "id": "q_0afb92e1c965",
+  "type": "NVQ",
+  "stem": "A file has 100,000 fixed-length records of 200 bytes each, stored unspanned in blocks of 4000 bytes and ordered on a key field. A single-level sparse (one entry per data block) primary index has entries of 16 bytes. The number of block accesses needed to fetch a record by binary search on the index followed by one data-block read is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    6.0,
+    6.0
+   ]
+  },
+  "solution": "Blocking factor $=\\lfloor4000/200\\rfloor=20$, so 5,000 data blocks and 5,000 index entries. Entries per index block $=\\lfloor4000/16\\rfloor=250$, so 20 index blocks. Binary search: $\\lceil\\log_2 20\\rceil=5$ accesses, plus 1 data block $=6$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [
+    "DBW.NF.IDX"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_0b1a1d0ae2a5",
@@ -629,6 +832,166 @@
   "version": 1
  },
  {
+  "id": "q_16d3c03ae1f8",
+  "type": "SCQ",
+  "stem": "Relation $R(A,B,C,D)$ has the functional dependencies $AB\\to C$, $C\\to D$, $D\\to A$. The number of candidate keys of $R$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$B$ appears in no right-hand side, so every key contains $B$. $\\{B\\}^+=\\{B\\}$. $\\{A,B\\}^+=ABCD$; $\\{B,C\\}^+$: $C\\to D\\to A$ gives $ABCD$; $\\{B,D\\}^+$: $D\\to A$, then $AB\\to C$: $ABCD$. All three are minimal: candidate keys $AB,BC,BD$.\n\n*Verified by: attribute closure computed by code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [
+    "DBW.NF.NF"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "3"
+   },
+   {
+    "key": "B",
+    "text": "2"
+   },
+   {
+    "key": "C",
+    "text": "4"
+   },
+   {
+    "key": "D",
+    "text": "1"
+   }
+  ]
+ },
+ {
+  "id": "q_173731f6bb85",
+  "type": "NVQ",
+  "stem": "The largest singular value of $A=\\begin{pmatrix}3&0\\\\4&5\\end{pmatrix}$ is ______. (Round off to two decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    6.702,
+    6.714
+   ]
+  },
+  "solution": "$A^TA=\\begin{pmatrix}25&20\\\\20&25\\end{pmatrix}$ has eigenvalues $45$ and $5$ (trace 50, det 225). $\\sigma_1=\\sqrt{45}\\approx6.708$ (check: $\\sigma_1\\sigma_2=15=|\\det A|$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.DEC",
+   "topics": [
+    "LA.DEC.SVD"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_193d6ca8d63c",
+  "type": "SCQ",
+  "stem": "The minimum value of $f(x,y)=x^2+2xy+3y^2-4x-2y$ over $\\mathbb{R}^2$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$f_x=2x+2y-4=0$, $f_y=2x+6y-2=0$ give $y=-1/2$, $x=5/2$. The Hessian $\\begin{pmatrix}2&2\\\\2&6\\end{pmatrix}$ has determinant 8 and positive trace, so it is positive definite. $f=6.25-2.5+0.75-10+1=-4.5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [
+    "CO.OPT.MM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$-3$"
+   },
+   {
+    "key": "B",
+    "text": "$-4.5$"
+   },
+   {
+    "key": "C",
+    "text": "$-6$"
+   },
+   {
+    "key": "D",
+    "text": "$-2.5$"
+   }
+  ]
+ },
+ {
   "id": "q_197679319e98",
   "type": "SCQ",
   "stem": "Using the same revenue table (2022-2024) as below, which region shows the highest percentage growth in revenue from 2022 to 2024?\n\n| Region | 2022 | 2023 | 2024 |\n|---|---|---|---|\n| North | 120 | 135 | 150 |\n| South | 90 | 99 | 126 |\n| East | 60 | 90 | 108 |",
@@ -705,6 +1068,48 @@
    "chapter": "DBW.REL",
    "topics": [
     "DBW.REL.TUP"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1ae22d7a68fb",
+  "type": "NVQ",
+  "stem": "The number of distinct arrangements of the letters of the word ALABAMA in which no two letters A are adjacent is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    6.0,
+    6.0
+   ]
+  },
+  "solution": "Arrange the 3 non-A letters L, B, M in $3!=6$ ways. This creates 4 gaps and the four A's must occupy all 4 gaps: $\\binom44=1$. Total $=6$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CNT",
+   "topics": [
+    "PRS.CNT.PC"
    ],
    "concepts": []
   },
@@ -1036,6 +1441,65 @@
   ]
  },
  {
+  "id": "q_1e5904269563",
+  "type": "SCQ",
+  "stem": "A town library recorded that after it extended its weekend opening hours, total borrowing rose by 18%, but borrowing by members under 16 fell. The librarian concluded that the longer hours had made the library less attractive to young readers.\n\nWhich one of the following, if true, most weakens the librarian's conclusion?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The conclusion attributes the fall to the longer hours. A competing explanation (a new school library drawing young members away) weakens the causal claim. The other options do not offer an alternative cause of the drop.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [
+    "GA.VERB.RC"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Adult members borrowed more books on weekends."
+   },
+   {
+    "key": "B",
+    "text": "The extended hours also applied to the reference section."
+   },
+   {
+    "key": "C",
+    "text": "A new school library opened nearby in the same month and many under-16 members moved to it."
+   },
+   {
+    "key": "D",
+    "text": "Borrowing by members under 16 had been rising in the previous year."
+   }
+  ]
+ },
+ {
   "id": "q_1e6dc6cbd564",
   "type": "SCQ",
   "stem": "The point $(2, 3)$ is rotated by $90^\\circ$ anticlockwise about the origin and the resulting point is then reflected in the $x$-axis. The final point is",
@@ -1280,6 +1744,48 @@
   "version": 1
  },
  {
+  "id": "q_219a09c889d4",
+  "type": "NVQ",
+  "stem": "A simple linear regression $y=\\beta_0+\\beta_1x$ is fitted by least squares to the points $(1,2),(2,3),(3,5),(4,4)$. The predicted $y$ at $x=6$ is ______. (Round off to one decimal place)",
+  "images": [],
+  "answer": {
+   "range": [
+    6.25,
+    6.35
+   ]
+  },
+  "solution": "$\\bar x=2.5$, $\\bar y=3.5$, $S_{xy}=4$, $S_{xx}=5$, so $\\beta_1=0.8$, $\\beta_0=3.5-2=1.5$. Prediction $=1.5+0.8\\cdot6=6.3$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.REG",
+   "topics": [
+    "ML.REG.SLR"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_21ee60806690",
   "type": "MSQ",
   "stem": "Which of the following sets are subspaces of $\\mathbb{R}^3$?",
@@ -1382,6 +1888,67 @@
   "version": 1
  },
  {
+  "id": "q_2addd8ac91aa",
+  "type": "MSQ",
+  "stem": "Let $A,B$ be events with $P(A)>0$ and $P(B)>0$. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "solution": "Mutually exclusive events with positive probabilities have $P(A\\cap B)=0\\ne P(A)P(B)$, so they are dependent. Independence of $A,B$ implies that of $A,B^c$ ($P(A)-P(A)P(B)=P(A)P(B^c)$). $P(A|B)=P(A)$ is equivalent to independence. Inclusion-exclusion with $P(A\\cap B)=0$ gives the sum. Correct: B, C, D.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [
+    "PRS.PROB.IND"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "If $A$ and $B$ are mutually exclusive, they are independent"
+   },
+   {
+    "key": "B",
+    "text": "If $A$ and $B$ are independent, then $A$ and $B^c$ are independent"
+   },
+   {
+    "key": "C",
+    "text": "If $A$ and $B$ are independent, then $P(A\\mid B)=P(A)$"
+   },
+   {
+    "key": "D",
+    "text": "If $P(A\\cap B)=0$, then $P(A\\cup B)=P(A)+P(B)$"
+   }
+  ]
+ },
+ {
   "id": "q_2b0c80f3ebb8",
   "type": "NVQ",
   "stem": "A balanced-parenthesis checker pushes each `(` on a stack and pops on `)`. For the input `(()(()))((()))()`, the maximum number of elements simultaneously on the stack is ______.",
@@ -1414,6 +1981,48 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_2bddbb6ccc9c",
+  "type": "NVQ",
+  "stem": "For $A=\\begin{pmatrix}2&1&0&0\\\\1&2&1&0\\\\0&1&2&1\\\\0&0&1&2\\end{pmatrix}$ the LU decomposition without pivoting gives $A=LU$ with $L$ unit lower triangular. The entry $U_{44}$ is ______. (Round off to two decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    1.245,
+    1.255
+   ]
+  },
+  "solution": "Pivots: $2,\\ \\tfrac32,\\ \\tfrac43,\\ \\tfrac54$ (each pivot is a ratio of leading minors $\\det_k/\\det_{k-1}$: $2,3,4,5$). So $U_{44}=5/4=1.25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.DEC",
+   "topics": [
+    "LA.DEC.LU"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -1676,6 +2285,48 @@
   "version": 1
  },
  {
+  "id": "q_318941d16ea6",
+  "type": "NVQ",
+  "stem": "A hash table has 11 slots (indices 0 to 10), hash function $h(k)=k \\bmod 11$ and uses linear probing. The keys 22, 33, 44, 12, 23, 1 are inserted in this order. The index at which key 1 is stored is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    5.0,
+    5.0
+   ]
+  },
+  "solution": "22 goes to 0; 33 collides at 0, goes to 1; 44 probes 0, 1, goes to 2; 12 ($h=1$) probes 1, 2, goes to 3; 23 ($h=1$) goes to 4; key 1 ($h=1$) probes 1,2,3,4 and lands at 5.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [
+    "PDS.DS.HASH"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_34f3a547aa51",
   "type": "NVQ",
   "stem": "An ER diagram has entities E1 (key k1, attribute a) and E2 (key k2, attributes b and a multivalued attribute m), and a many-to-many relationship R between E1 and E2 with a descriptive attribute d. The minimum number of relations in the standard relational mapping (one relation per entity, one per multivalued attribute, one per many-to-many relationship) is ______.",
@@ -1819,6 +2470,109 @@
   "version": 1
  },
  {
+  "id": "q_367c22983824",
+  "type": "MSQ",
+  "stem": "A fully connected feed-forward network has 4 inputs, one hidden layer of 5 units and 3 outputs, with a bias in every hidden and output unit. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Parameters: $(4+1)\\cdot5+(5+1)\\cdot3=25+18=43$. Composition of affine maps is affine. ReLU outputs 0 for non-positive inputs, so not strictly positive. With identical weights (and symmetric output weights) the hidden units are interchangeable, so gradients are identical (symmetry problem). Correct: A, B, D.\n\n*Verified by: second-derivation + parameter count by code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.NN",
+   "topics": [
+    "ML.NN.MLP"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The network has 43 trainable parameters"
+   },
+   {
+    "key": "B",
+    "text": "If all activation functions are linear, the network computes an affine function of its input, equivalent to a single linear layer"
+   },
+   {
+    "key": "C",
+    "text": "A ReLU unit always outputs a strictly positive value"
+   },
+   {
+    "key": "D",
+    "text": "If all weights of the hidden layer are initialised to the same constant, the hidden units receive identical gradients"
+   }
+  ]
+ },
+ {
+  "id": "q_368eacfa10da",
+  "type": "NVQ",
+  "stem": "A directed acyclic graph on vertices 1 to 7 has edges 1->3, 2->3, 3->4, 2->5, 5->6, 4->6, 7->5. The number of distinct topological orderings of its vertices is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    26.0,
+    26.0
+   ]
+  },
+  "solution": "Counting linear extensions (dynamic programming over subsets of placed vertices, cross-checked by enumerating all $7!$ permutations) gives 26.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [
+    "PDS.GRAPH.TRAV"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_36d0ee1513a0",
   "type": "NVQ",
   "stem": "The maximum value of $f(x)=2x^3-9x^2+12x+1$ on the interval $[0,3]$ is ______.",
@@ -1918,6 +2672,48 @@
     "text": "3"
    }
   ]
+ },
+ {
+  "id": "q_3b142164bbad",
+  "type": "NVQ",
+  "stem": "Two fair six-sided dice are rolled and $M$ is the larger of the two numbers shown. The variance of $M$ is ______. (Round off to two decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    1.965,
+    1.977
+   ]
+  },
+  "solution": "$P(M=k)=(2k-1)/36$. $E[M]=161/36\\approx4.472$, $E[M^2]=791/36\\approx21.972$. $\\mathrm{Var}(M)=21.972-20.001\\approx1.97$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [
+    "PRS.MOM.EXV"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
  },
  {
   "id": "q_3c48303512cc",
@@ -2249,6 +3045,46 @@
   ]
  },
  {
+  "id": "q_4148b96eb862",
+  "type": "NVQ",
+  "stem": "The coefficient of $x^4$ in the Maclaurin series of $f(x)=e^x\\cos x$ is ______. (Round off to three decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    -0.1673,
+    -0.1661
+   ]
+  },
+  "solution": "Multiply $(1+x+\\tfrac{x^2}{2}+\\tfrac{x^3}{6}+\\tfrac{x^4}{24})(1-\\tfrac{x^2}{2}+\\tfrac{x^4}{24})$: coefficient of $x^4$ is $\\tfrac1{24}-\\tfrac14+\\tfrac1{24}=-\\tfrac16\\approx-0.167$. Check: $e^x\\cos x=\\mathrm{Re}\\,e^{(1+i)x}$ and $(1+i)^4=-4$, giving $-4/24$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.TAY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_414ab41c50b2",
   "type": "SCQ",
   "stem": "The auditor's report was terse: three lines, no adjectives. As used here, 'terse' most nearly means",
@@ -2340,6 +3176,46 @@
   "difficulty": {
    "label": "H",
    "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4342c66be30b",
+  "type": "NVQ",
+  "stem": "What is the output of the following Python program?\n\n```python\ndef h(n):\n    if n == 0:\n        return 0\n    return h(n // 3) + n % 3\n\nprint(sum(h(k) for k in range(1, 28)))\n```",
+  "images": [],
+  "answer": {
+   "range": [
+    82.0,
+    82.0
+   ]
+  },
+  "solution": "`h(n)` is the sum of the base-3 digits of $n$. Over $0\\ldots26$ each of the three digits takes each value 0,1,2 equally often: $3\\cdot9\\cdot(0+1+2)=81$. Adding $k=27$ (digit sum 1) gives $81+1=82$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.PY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
    "n": 0
   },
   "source": {
@@ -2491,6 +3367,188 @@
    {
     "key": "D",
     "text": "(0, 0, 0, 0, 0)"
+   }
+  ]
+ },
+ {
+  "id": "q_461f46b1a989",
+  "type": "MSQ",
+  "stem": "A hard-margin linear SVM has $w=(3,4)$, $b=-2$ with margin hyperplanes $w^Tx+b=\\pm1$. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "Margin width $=2/\\|w\\|=2/5=0.4$. Distance of $(1,1)$ $=|3+4-2|/5=1$. The optimal hyperplane depends only on support vectors. Scaling $(w,b)$ by 2 leaves the set $\\{w^Tx+b=0\\}$ unchanged (only the margin hyperplanes' labels change). Correct: A, B.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [
+    "ML.CLS.SVM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The width of the margin (distance between the two margin hyperplanes) is 0.4"
+   },
+   {
+    "key": "B",
+    "text": "The distance of the point $(1,1)$ from the decision hyperplane is 1"
+   },
+   {
+    "key": "C",
+    "text": "Removing a training point that is not a support vector can change the optimal hyperplane"
+   },
+   {
+    "key": "D",
+    "text": "Replacing $(w,b)$ by $(6,8,-4)$ gives a different decision boundary"
+   }
+  ]
+ },
+ {
+  "id": "q_47020aa0730e",
+  "type": "MSQ",
+  "stem": "Relations R(A, B) and S(B, C) contain the tuples\n\nR: (1,a), (2,a), (3,b), (4,c)\n\nS: (a,x), (a,y), (b,z), (d,w)\n\nSelect all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Natural join: B=a gives $2\\times2=4$, B=b gives 1: 5 tuples. Left outer join adds the dangling tuple (4,c): 6. $\\pi_B(R)=\\{a,b,c\\}$, $\\pi_B(S)=\\{a,b,d\\}$, intersection $\\{a,b\\}$ has 2 tuples. Cross product $4\\times4=16$. Correct: A, B, D.\n\n*Verified by: executed on sqlite3.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [
+    "DBW.REL.ALGB"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$R\\bowtie S$ (natural join) has 5 tuples"
+   },
+   {
+    "key": "B",
+    "text": "The left outer join of R with S on B has 6 tuples"
+   },
+   {
+    "key": "C",
+    "text": "$\\pi_B(R)\\cap\\pi_B(S)$ has 3 tuples"
+   },
+   {
+    "key": "D",
+    "text": "$R\\times S$ has 16 tuples"
+   }
+  ]
+ },
+ {
+  "id": "q_480e95e86202",
+  "type": "MSQ",
+  "stem": "A Bayesian network over binary variables has edges A -> C, B -> C and C -> D. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C",
+    "D"
+   ]
+  },
+  "solution": "A and B are parents with no common ancestor: the collider C blocks the path, so A and B are marginally independent, but conditioning on C opens it (explaining away), so they are dependent given C. C blocks every path from A to D, so A and D are independent given C. Parameters: $1+1+4+2=8$ versus $2^4-1=15$. (Independence statements also checked by exact enumeration with sample CPTs.) Correct: A, C, D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "AI",
+   "chapter": "AI.UNC",
+   "topics": [
+    "AI.UNC.CI"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A and B are marginally independent"
+   },
+   {
+    "key": "B",
+    "text": "A and B are independent given C"
+   },
+   {
+    "key": "C",
+    "text": "A and D are independent given C"
+   },
+   {
+    "key": "D",
+    "text": "The network needs 8 free probability parameters, against 15 for the full joint table"
    }
   ]
  },
@@ -2668,6 +3726,65 @@
    {
     "key": "D",
     "text": "$\\frac{1}{6}$"
+   }
+  ]
+ },
+ {
+  "id": "q_4e74cdf9d0ff",
+  "type": "SCQ",
+  "stem": "What is the tightest asymptotic running time of the following code, in terms of $n$?\n\n```python\ncount = 0\nfor i in range(1, n):\n    j = i\n    while j < n:\n        j *= 2\n        count += 1\n```",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "For a given $i$ the inner loop runs about $\\log_2(n/i)$ times. $\\sum_{i=1}^{n}\\log_2(n/i)=\\log_2(n^n/n!)\\approx n\\log_2 e$ by Stirling, which is $\\Theta(n)$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [
+    "PDS.ALG.CPX"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(n^2)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n\\log n)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(\\log^2 n)$"
    }
   ]
  },
@@ -2973,6 +4090,66 @@
   ]
  },
  {
+  "id": "q_532c587f3c55",
+  "type": "MSQ",
+  "stem": "Let $X\\sim\\text{Uniform}(0,1)$ and $Y=X^2$. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C"
+   ]
+  },
+  "solution": "$E[X]=1/2$, $E[Y]=1/3$, $E[XY]=E[X^3]=1/4$, so $\\mathrm{Cov}=1/4-1/6=1/12\\neq0$. $E[Y^2]=E[X^4]=1/5$, $\\mathrm{Var}(Y)=1/5-1/9=4/45$. $Y$ is a function of $X$, so they are dependent. Correct: A, C.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [
+    "PRS.MOM.JNT"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\mathrm{Cov}(X,Y)=1/12$"
+   },
+   {
+    "key": "B",
+    "text": "$X$ and $Y$ are uncorrelated"
+   },
+   {
+    "key": "C",
+    "text": "$\\mathrm{Var}(Y)=4/45$"
+   },
+   {
+    "key": "D",
+    "text": "$X$ and $Y$ are independent"
+   }
+  ]
+ },
+ {
   "id": "q_543b923068a1",
   "type": "NVQ",
   "stem": "A Bayesian network over six binary variables has the parent sets A: none; B: A; C: A; D: B, C; E: D; F: D, E. The number of free parameters needed by its conditional probability tables is ______.",
@@ -3267,6 +4444,65 @@
   "version": 1
  },
  {
+  "id": "q_5a845b19262f",
+  "type": "SCQ",
+  "stem": "A decision-tree learner chooses the root split by information gain (entropy in bits). The training data with features X, Y and class C (1 or 0) are:\n\n| X | Y | C |\n|---|---|---|\n| a | p | 1 |\n| a | p | 1 |\n| a | q | 1 |\n| a | q | 0 |\n| b | p | 1 |\n| b | p | 0 |\n| b | q | 0 |\n| b | q | 0 |\n| b | p | 0 |\n| a | p | 1 |\n\nWhich feature is chosen at the root and what is its information gain?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Root entropy is 1 bit (5 vs 5). Split on X: a has 4 positive, 1 negative; b has 1 positive, 4 negative; both entropies $=0.722$, gain $=1-0.722=0.278$. Split on Y: p has 4+/2-, entropy 0.918 (weight 0.6); q has 1+/3-, entropy 0.811 (weight 0.4); weighted $0.876$, gain $0.124$. X wins.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [
+    "ML.CLS.DT"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Y, about 0.28 bits"
+   },
+   {
+    "key": "B",
+    "text": "Y, about 0.12 bits"
+   },
+   {
+    "key": "C",
+    "text": "X, about 0.12 bits"
+   },
+   {
+    "key": "D",
+    "text": "X, about 0.28 bits"
+   }
+  ]
+ },
+ {
   "id": "q_5de3870d314a",
   "type": "NVQ",
   "stem": "The function $f(x)=\\dfrac{\\sin 2x}{x}$ for $x\\ne0$ and $f(0)=a$ is continuous at $x=0$. The value of $a$ is ______.",
@@ -3509,6 +4745,65 @@
    {
     "key": "D",
     "text": "$f$ has exactly one local minimum"
+   }
+  ]
+ },
+ {
+  "id": "q_62d6bd3c9ca3",
+  "type": "SCQ",
+  "stem": "The rank of the matrix $$\\begin{pmatrix}1&2&0&1\\\\2&4&1&3\\\\3&6&1&4\\\\0&0&1&1\\end{pmatrix}$$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$R_3=R_1+R_2$ and $R_4=R_2-2R_1$, so only $R_1,R_2$ are independent (they are not proportional): rank $=2$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.PROJ",
+   "topics": [
+    "LA.PROJ.RK"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "2"
+   },
+   {
+    "key": "B",
+    "text": "4"
+   },
+   {
+    "key": "C",
+    "text": "3"
+   },
+   {
+    "key": "D",
+    "text": "1"
    }
   ]
  },
@@ -3822,6 +5117,66 @@
   "version": 1
  },
  {
+  "id": "q_695e2052d8c3",
+  "type": "MSQ",
+  "stem": "Keys 50, 30, 70, 20, 40, 60, 80, 35, 45 are inserted in this order into an initially empty binary search tree. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "Path 50-30-40-35 has 3 edges. Post-order: 20, 35, 45, 40, 30, 60, 80, 70, 50, so 60 is followed by 80. The in-order successor of 50 is the minimum of its right subtree, 60 (not 70). Leaves are 20, 35, 45, 60, 80, i.e. 5. Correct: A, B.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [
+    "PDS.DS.TREE"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The height of the tree (longest root-to-leaf path, counted in edges) is 3"
+   },
+   {
+    "key": "B",
+    "text": "In the post-order traversal, key 60 is immediately followed by key 80"
+   },
+   {
+    "key": "C",
+    "text": "The in-order successor of key 50 is key 70"
+   },
+   {
+    "key": "D",
+    "text": "The tree has exactly 4 leaf nodes"
+   }
+  ]
+ },
+ {
   "id": "q_69fd20f05820",
   "type": "NVQ",
   "stem": "For the partitioned matrix $\\begin{pmatrix}A&B\\\\0&D\\end{pmatrix}$ with $A=\\begin{pmatrix}2&1\\\\1&3\\end{pmatrix}$, $B=\\begin{pmatrix}4&3\\\\0&2\\end{pmatrix}$, $D=\\begin{pmatrix}5&2\\\\1&3\\end{pmatrix}$, the determinant is ______.",
@@ -3864,6 +5219,67 @@
   "version": 1
  },
  {
+  "id": "q_6a30bf6435dc",
+  "type": "MSQ",
+  "stem": "Let $A$ be the $3\\times2$ matrix with columns $(1,0,1)^T$ and $(1,1,0)^T$, and $P=A(A^TA)^{-1}A^T$. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "$P$ is the orthogonal projector onto the column space, so it is idempotent with trace equal to the rank 2; being a $3\\times3$ matrix of rank 2 it is singular ($\\det=0$). $(2,1,1)^T$ is the sum of the two columns, hence lies in the column space and is fixed. Correct: A, B, D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.PROJ",
+   "topics": [
+    "LA.PROJ.PM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$P^2=P$"
+   },
+   {
+    "key": "B",
+    "text": "$\\mathrm{trace}(P)=2$"
+   },
+   {
+    "key": "C",
+    "text": "$\\det P=1$"
+   },
+   {
+    "key": "D",
+    "text": "$P(2,1,1)^T=(2,1,1)^T$"
+   }
+  ]
+ },
+ {
   "id": "q_6df0b7b75d04",
   "type": "NVQ",
   "stem": "Training points (label): (1,1) A, (2,1) A, (1,3) B, (4,4) B, (5,4) B, (3,1) A, (0,0) A. Using Euclidean distance, the number of points of class A among the 5 nearest neighbours of the query $(3,3)$ is ______.",
@@ -3904,6 +5320,66 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_6f0a40887870",
+  "type": "MSQ",
+  "stem": "K-means (Lloyd's algorithm, $k=2$, Euclidean distance) is run on the 1-D data 1, 2, 9, 10, 25. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "Both assignment and mean-update steps cannot increase the SSE. From (1, 25): the final centroids are 5.5 and 25 (clusters {1,2,9,10} and {25}). From (1, 2): the clusters end at {1,2} and {9,10,25} (centroids 1.5, 14.67), a different local optimum (SSE about 160 versus 65). The update step uses the mean. Correct: A, B.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLU",
+   "topics": [
+    "ML.CLU.KM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The sum of squared distances to the assigned centroids never increases from one iteration to the next"
+   },
+   {
+    "key": "B",
+    "text": "Starting from initial centroids 1 and 25 it converges to {1,2,9,10} and {25}"
+   },
+   {
+    "key": "C",
+    "text": "Starting from initial centroids 1 and 2 it converges to the same clustering as from 1 and 25"
+   },
+   {
+    "key": "D",
+    "text": "The centroid-update step uses the median of each cluster"
+   }
+  ]
  },
  {
   "id": "q_72307cf6242e",
@@ -4007,6 +5483,65 @@
   "version": 1
  },
  {
+  "id": "q_7350eb4aeec1",
+  "type": "SCQ",
+  "stem": "The domain is $\\{1,2,3,4\\}$ and the predicate $R(x,y)$ is true exactly when $y\\equiv x^2\\pmod5$. Which one of the following sentences is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$R=\\{(1,1),(2,4),(3,4),(4,1)\\}$: a function, so each $x$ has exactly one $y$; the last sentence is true. First: every $x$ has some $y$, false. Second: $R(2,4)$ but $R(4,4)$ is false. Third: no single $y$ is the image of all $x$ ($1$ is the image of 1 and 4, $4$ of 2 and 3).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "AI",
+   "chapter": "AI.LOG",
+   "topics": [
+    "AI.LOG.PRED"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\forall x\\,\\forall y\\,[R(x,y)\\to R(y,y)]$"
+   },
+   {
+    "key": "B",
+    "text": "$\\exists x\\,\\forall y\\,\\neg R(x,y)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\exists y\\,\\forall x\\,R(x,y)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\forall x\\,\\forall y\\,\\forall z\\,[(R(x,y)\\wedge R(x,z))\\to y=z]$"
+   }
+  ]
+ },
+ {
   "id": "q_7355bc9822da",
   "type": "NVQ",
   "stem": "$X$ is normally distributed with mean 10 and variance 4. $P(8<X<12)$ is ______. (Round off to two decimal places)",
@@ -4105,6 +5640,186 @@
    {
     "key": "D",
     "text": "$\\sum_{n\\ge1}\\frac{1}{\\sqrt n}$"
+   }
+  ]
+ },
+ {
+  "id": "q_7679d553dccc",
+  "type": "MSQ",
+  "stem": "The attribute values $\\{10,20,30,60\\}$ are normalised. Z-scores use the population standard deviation. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "solution": "Min-max: $(30-10)/50=0.4$; $(60-10)/50=1$. Mean $=30$, population variance $=(400+100+0+900)/4=350$, $\\sigma\\approx18.71$. $z(10)=-20/18.71\\approx-1.07\\ne-1$; $z(60)=30/18.71\\approx1.60>1.5$. Correct: A, B, D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.XFM",
+   "topics": [
+    "DBW.XFM.NORM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Min-max normalisation to [0,1] maps 30 to 0.4"
+   },
+   {
+    "key": "B",
+    "text": "Min-max normalisation to [0,1] maps 60 to 1"
+   },
+   {
+    "key": "C",
+    "text": "The z-score of 10 is exactly $-1$"
+   },
+   {
+    "key": "D",
+    "text": "The z-score of 60 exceeds 1.5"
+   }
+  ]
+ },
+ {
+  "id": "q_780a227579cf",
+  "type": "MSQ",
+  "stem": "A search graph is undirected with edge costs S-A 1, S-B 4, A-B 2, A-G 6, B-G 3 (start S, goal G). A heuristic is given by $h(S)=6$, $h(A)=4$, $h(B)=3$, $h(G)=0$. A* graph search is run. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C"
+   ]
+  },
+  "solution": "True costs to G: $B:3$, $A:\\min(2+3,6)=5$, $S:\\min(1+5,4+3)=6$, so $h\\le h^*$ everywhere: admissible. Edge S-A violates consistency: $h(S)=6>1+h(A)=5$. A*: expand S ($f=6$); A has $f=5$, B has $f=7$; expand A (B improves to $g=3,f=6$; G $g=7$); expand B ($G$ improves to $g=6$); expand G. Optimal path S-A-B-G of cost 6. Correct: A, C.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "AI",
+   "chapter": "AI.SRCH",
+   "topics": [
+    "AI.SRCH.INF"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$h$ is admissible"
+   },
+   {
+    "key": "B",
+    "text": "$h$ is consistent"
+   },
+   {
+    "key": "C",
+    "text": "The nodes are expanded in the order S, A, B, G"
+   },
+   {
+    "key": "D",
+    "text": "The path returned is S-B-G"
+   }
+  ]
+ },
+ {
+  "id": "q_79c18976b45f",
+  "type": "SCQ",
+  "stem": "A logistic regression model has weights $w=(2,-1)$ and bias $b=0.5$. For the input $x=(1,3)$ with decision threshold 0.5, the predicted class and the probability of class 1 are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$z=2(1)-1(3)+0.5=-0.5$, $p=\\sigma(-0.5)=1/(1+e^{0.5})\\approx0.378<0.5$, so class 0.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [
+    "ML.CLS.LOG"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "class 1, $p\\approx0.62$"
+   },
+   {
+    "key": "B",
+    "text": "class 0, $p\\approx0.62$"
+   },
+   {
+    "key": "C",
+    "text": "class 0, $p\\approx0.38$"
+   },
+   {
+    "key": "D",
+    "text": "class 1, $p\\approx0.38$"
    }
   ]
  },
@@ -4225,6 +5940,107 @@
   "difficulty": {
    "label": "M",
    "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7fe3ab85050b",
+  "type": "SCQ",
+  "stem": "The point $(3,4)$ is reflected in the line $y=x$, the image is rotated $90^\\circ$ counter-clockwise about the origin, and the result is translated by $(+2,-1)$. The final coordinates are",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Reflection: $(3,4)\\to(4,3)$. Rotation by $90^\\circ$ CCW: $(x,y)\\to(-y,x)$ gives $(-3,4)$. Translation: $(-3+2,\\,4-1)=(-1,3)$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.SPAT",
+   "topics": [
+    "GA.SPAT.TRANS"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$(1,3)$"
+   },
+   {
+    "key": "B",
+    "text": "$(-1,-3)$"
+   },
+   {
+    "key": "C",
+    "text": "$(5,2)$"
+   },
+   {
+    "key": "D",
+    "text": "$(-1,3)$"
+   }
+  ]
+ },
+ {
+  "id": "q_81d7cd0ef6ad",
+  "type": "NVQ",
+  "stem": "The sum of the squares of the eigenvalues of $A=\\begin{pmatrix}1&2&0\\\\2&1&0\\\\0&0&3\\end{pmatrix}$ is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    19.0,
+    19.0
+   ]
+  },
+  "solution": "The upper block has eigenvalues $1\\pm2=3,-1$; the lower entry gives 3. Sum of squares $=9+1+9=19$ (equals $\\mathrm{tr}(A^2)=5+5+9$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [
+    "LA.EIG.EV"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
    "n": 0
   },
   "source": {
@@ -4464,6 +6280,65 @@
   "version": 1
  },
  {
+  "id": "q_86170ec71373",
+  "type": "SCQ",
+  "stem": "A Naive Bayes classifier (no smoothing) is trained on binary features $(F_1,F_2)$ with class label C:\n\n| $F_1$ | $F_2$ | C |\n|---|---|---|\n| 1 | 1 | + |\n| 1 | 0 | + |\n| 1 | 1 | + |\n| 0 | 1 | + |\n| 1 | 0 | + |\n| 0 | 0 | - |\n| 0 | 1 | - |\n| 1 | 0 | - |\n| 0 | 0 | - |\n\nFor the test point $(F_1,F_2)=(1,0)$, the posterior probability $P(C=+\\mid F_1=1,F_2=0)$ is closest to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Class '+' (5 rows): $P(+)=5/9$, $P(F_1{=}1|+)=4/5$, $P(F_2{=}0|+)=2/5$: score $8/45$. Class '-' (4 rows): $4/9\\cdot\\tfrac14\\cdot\\tfrac34=1/12$. Posterior $=\\frac{8/45}{8/45+1/12}=32/47\\approx0.68$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [
+    "ML.CLS.NB"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "0.82"
+   },
+   {
+    "key": "B",
+    "text": "0.35"
+   },
+   {
+    "key": "C",
+    "text": "0.68"
+   },
+   {
+    "key": "D",
+    "text": "0.52"
+   }
+  ]
+ },
+ {
   "id": "q_8628da9d5b5a",
   "type": "NVQ",
   "stem": "For the same five points (distance table below), complete-linkage agglomerative clustering is run until one cluster remains. The height of the final merge is ______.\n\n|  | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| 1 | 0 | 2 | 6 | 10 | 9 |\n| 2 | 2 | 0 | 5 | 9 | 8 |\n| 3 | 6 | 5 | 0 | 4 | 5 |\n| 4 | 10 | 9 | 4 | 0 | 3 |\n| 5 | 9 | 8 | 5 | 3 | 0 |",
@@ -4588,6 +6463,67 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_8b092a89ac11",
+  "type": "MSQ",
+  "stem": "$X\\sim\\text{Poisson}(2)$ and $Y\\sim\\text{Poisson}(3)$ are independent. Select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "$X+Y\\sim\\text{Poisson}(5)$ so $P(0)=e^{-5}$. $\\mathrm{Var}(X-Y)=2+3=5$. Given $X+Y=4$, $X\\sim\\text{Bin}(4,2/5)$ with mean $1.6$. $X-Y$ can be negative, so it is not Poisson. Correct: A, B, C.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DRV",
+   "topics": [
+    "PRS.DRV.POI"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$P(X+Y=0)=e^{-5}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\mathrm{Var}(X-Y)=5$"
+   },
+   {
+    "key": "C",
+    "text": "$E[X\\mid X+Y=4]=1.6$"
+   },
+   {
+    "key": "D",
+    "text": "$X-Y$ has a Poisson distribution"
+   }
+  ]
  },
  {
   "id": "q_8ba765771e10",
@@ -4914,6 +6850,48 @@
   ]
  },
  {
+  "id": "q_8dc52e310d6c",
+  "type": "NVQ",
+  "stem": "For $A=\\begin{pmatrix}5&-2\\\\4&-1\\end{pmatrix}$, the $(1,1)$ entry of $A^4$ is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    161.0,
+    161.0
+   ]
+  },
+  "solution": "Eigenvalues $1$ and $3$ with eigenvectors $(1,2)^T$ and $(1,1)^T$. $e_1=-(1,2)^T+2(1,1)^T$, so $A^4e_1=-(1,2)^T+2\\cdot81(1,1)^T=(161,160)^T$. The first component is 161.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [
+    "LA.EIG.EV"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_8e809de922e7",
   "type": "NVQ",
   "stem": "For the Emp table below, the query\n\n```sql\nSELECT COUNT(*) FROM (\n  SELECT dept FROM Emp WHERE dept IS NOT NULL\n  GROUP BY dept HAVING COUNT(*) >= 2 AND SUM(sal) > 100000);\n```\n\nreturns ______.\n\nEmp\n\n| id | name | dept | sal |\n|---|---|---|---|\n| 1 | Asha | 10 | 50000 |\n| 2 | Bhanu | 10 | 60000 |\n| 3 | Chitra | 20 | 45000 |\n| 4 | Dev | 20 | NULL |\n| 5 | Esha | 30 | 70000 |\n| 6 | Farid | NULL | 40000 |",
@@ -4996,6 +6974,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_8f67a9085b30",
+  "type": "SCQ",
+  "stem": "Which one of the following sentences is grammatically correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "'A number of' takes a plural verb (many applicants), and the noun must be plural. 'The number of' is singular. Only the first option satisfies both rules.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [
+    "GA.VERB.GRAM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A number of applicants has withdrawn from the course."
+   },
+   {
+    "key": "B",
+    "text": "A number of applicant have withdrawn from the course."
+   },
+   {
+    "key": "C",
+    "text": "A number of applicants have withdrawn from the course."
+   },
+   {
+    "key": "D",
+    "text": "The number of applicants have withdrawn from the course."
+   }
+  ]
  },
  {
   "id": "q_8ff4e940eb06",
@@ -5099,6 +7136,48 @@
   "version": 1
  },
  {
+  "id": "q_92a879795f70",
+  "type": "NVQ",
+  "stem": "PCA is applied to the four points $(1,2),(3,4),(5,8),(7,10)$ using the sample covariance matrix (divisor $n-1$). The percentage of the total variance explained by the first principal component is ______. (Round off to two decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    99.52,
+    99.58
+   ]
+  },
+  "solution": "Mean $(4,6)$. $S_{xx}=20$, $S_{yy}=40$, $S_{xy}=28$ (divided by 3). Eigenvalues of $\\begin{pmatrix}20&28\\\\28&40\\end{pmatrix}$: trace 60, det 16, $\\lambda_1=30+\\sqrt{884}\\approx59.73$. Fraction $=59.73/60\\approx99.55\\%$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [
+    "ML.DR.PCA"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_93dd8dd83a02",
   "type": "SCQ",
   "stem": "The radius of a right circular cylinder is increased by 10% and its height is decreased by 20%. The volume of the cylinder",
@@ -5154,6 +7233,124 @@
    {
     "key": "D",
     "text": "decreases by 1.2%"
+   }
+  ]
+ },
+ {
+  "id": "q_958693537c51",
+  "type": "SCQ",
+  "stem": "The committee's decision, far from being ______, was reached only after months of consultation with all stakeholders. Choose the word that best fills the blank.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "'Far from being ...' contrasts with 'after months of consultation', so the blank needs a word meaning rushed: 'hasty'.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [
+    "GA.VERB.VOC"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "unanimous"
+   },
+   {
+    "key": "B",
+    "text": "deliberate"
+   },
+   {
+    "key": "C",
+    "text": "hasty"
+   },
+   {
+    "key": "D",
+    "text": "public"
+   }
+  ]
+ },
+ {
+  "id": "q_95c7079d4699",
+  "type": "SCQ",
+  "stem": "An undirected weighted graph has edges (with weights): A-B 4, A-C 2, B-C 1, B-D 5, C-D 8, C-E 10, D-E 2, D-F 6, E-F 3. The sum of the shortest-path distances from A to all vertices (A, B, C, D, E, F) is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Dijkstra from A: $C=2$, $B=\\min(4,2+1)=3$, $D=3+5=8$, $E=8+2=10$, $F=\\min(8+6,10+3)=13$. Sum $=0+3+2+8+10+13=36$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [
+    "PDS.GRAPH.SP"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "38"
+   },
+   {
+    "key": "B",
+    "text": "34"
+   },
+   {
+    "key": "C",
+    "text": "40"
+   },
+   {
+    "key": "D",
+    "text": "36"
    }
   ]
  },
@@ -5257,6 +7454,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_96becc27d4ed",
+  "type": "SCQ",
+  "stem": "Random variables $X,Y$ have $\\mathrm{Var}(X)=4$, $\\mathrm{Var}(Y)=9$ and $\\mathrm{Cov}(X,Y)=-1$. The value of $\\mathrm{Var}(2X-3Y+5)$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\mathrm{Var}(2X-3Y)=4\\cdot4+9\\cdot9+2(2)(-3)\\mathrm{Cov}(X,Y)=16+81+12=109$; the constant does not matter.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [
+    "PRS.MOM.JNT"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "85"
+   },
+   {
+    "key": "B",
+    "text": "121"
+   },
+   {
+    "key": "C",
+    "text": "109"
+   },
+   {
+    "key": "D",
+    "text": "97"
+   }
+  ]
  },
  {
   "id": "q_977f62ff4858",
@@ -5545,6 +7801,48 @@
   "version": 1
  },
  {
+  "id": "q_9c15bdccfea0",
+  "type": "NVQ",
+  "stem": "A random variable $X$ has pdf $f(x)=\\tfrac38x^2$ for $0\\le x\\le2$ and 0 otherwise. The value of $E[X\\mid X>1]$ is ______. (Round off to two decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    1.601,
+    1.613
+   ]
+  },
+  "solution": "$P(X>1)=1-1/8=7/8$. $\\int_1^2x\\cdot\\tfrac38x^2dx=\\tfrac38\\cdot\\tfrac{16-1}{4}=\\tfrac{45}{32}$. Ratio $=\\tfrac{45}{32}\\cdot\\tfrac87=\\tfrac{45}{28}\\approx1.607$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CRV",
+   "topics": [
+    "PRS.CRV.CPDF"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_9cbe5ce801dd",
   "type": "NVQ",
   "stem": "A directed graph has the weighted edges: S→A (7), S→B (2), B→A (3), A→C (1), B→C (8), B→D (5), C→T (4), D→T (9), D→C (2). The length of a shortest path from S to T is ______.",
@@ -5585,6 +7883,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_9cc15f32fd7f",
+  "type": "SCQ",
+  "stem": "$X$ is exponentially distributed with rate $0.5$ (mean 2). The value of $P(X>5\\mid X>2)$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "By memorylessness $P(X>5|X>2)=P(X>3)=e^{-0.5\\cdot3}=e^{-1.5}\\approx0.223$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CRV",
+   "topics": [
+    "PRS.CRV.EXP"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$e^{-1.5}$"
+   },
+   {
+    "key": "B",
+    "text": "$e^{-1}$"
+   },
+   {
+    "key": "C",
+    "text": "$e^{-2.5}$"
+   },
+   {
+    "key": "D",
+    "text": "$1-e^{-1.5}$"
+   }
+  ]
  },
  {
   "id": "q_a227900de380",
@@ -6153,6 +8510,124 @@
   "version": 1
  },
  {
+  "id": "q_b07372549968",
+  "type": "SCQ",
+  "stem": "Three pens and two notebooks cost Rs 70, while two pens and three notebooks cost Rs 80. The cost of one notebook, in rupees, is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Solve $3p+2n=70,\\ 2p+3n=80$. Eliminating $p$: $5n=3\\cdot80-2\\cdot70=100$, so $n=20$ (and $p=10$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [
+    "GA.QUANT.NUMC"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "20"
+   },
+   {
+    "key": "B",
+    "text": "25"
+   },
+   {
+    "key": "C",
+    "text": "30"
+   },
+   {
+    "key": "D",
+    "text": "15"
+   }
+  ]
+ },
+ {
+  "id": "q_b0c881eab704",
+  "type": "SCQ",
+  "stem": "The quadratic form $q(x)=2x_1^2+2x_2^2+2x_3^2+2a\\,x_1x_2+2a\\,x_2x_3$ is positive definite for",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The matrix is $\\begin{pmatrix}2&a&0\\\\a&2&a\\\\0&a&2\\end{pmatrix}$ with leading minors $2$, $4-a^2$, $8-4a^2$. All positive iff $a^2<2$ (eigenvalues $2,\\,2\\pm\\sqrt2 a$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [
+    "LA.MAT.QF"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$-2<a<2$"
+   },
+   {
+    "key": "B",
+    "text": "$-1<a<1$"
+   },
+   {
+    "key": "C",
+    "text": "$a>0$"
+   },
+   {
+    "key": "D",
+    "text": "$-\\sqrt2<a<\\sqrt2$"
+   }
+  ]
+ },
+ {
   "id": "q_b11ee2167061",
   "type": "SCQ",
   "stem": "Three distinct positive single-digit integers, written in strictly decreasing order from left to right, have sum 9 and product 24. The middle integer is",
@@ -6252,6 +8727,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_b321c1e5ba4f",
+  "type": "SCQ",
+  "stem": "The value of $\\displaystyle\\lim_{x\\to0}\\frac{e^{3x}-1-3x}{x^2}$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$e^{3x}=1+3x+\\tfrac{9x^2}{2}+\\cdots$, so the numerator is $\\tfrac92x^2+O(x^3)$ and the limit is $9/2$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [
+    "CO.LIM.LIM"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$3$"
+   },
+   {
+    "key": "B",
+    "text": "$9$"
+   },
+   {
+    "key": "C",
+    "text": "$3/2$"
+   },
+   {
+    "key": "D",
+    "text": "$9/2$"
+   }
+  ]
  },
  {
   "id": "q_b689b3eb40d8",
@@ -6601,6 +9135,124 @@
   "version": 1
  },
  {
+  "id": "q_bd8e89c8a452",
+  "type": "SCQ",
+  "stem": "Let $T(1)=1$ and $T(n)=2T(n/2)+\\dfrac{n}{\\log_2 n}$ for $n=2^k$, $k\\ge1$. Then $T(n)$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Divide by $n=2^k$: $t_k=t_{k-1}+1/k$ with $t_0=1$, so $t_k=1+H_k=\\Theta(\\ln k)=\\Theta(\\log\\log n)$. Hence $T(n)=\\Theta(n\\log\\log n)$ (the Master theorem does not apply as the driving term is not polynomially smaller than $n$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [
+    "PDS.ALG.DC"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(n\\log n)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n/\\log n)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(n\\log\\log n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_be3464223356",
+  "type": "SCQ",
+  "stem": "Which one of the following propositional formulas is a tautology?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The first is hypothetical syllogism: whenever $p\\to q$ and $q\\to r$ hold, $p\\to r$ holds. Each of the others fails for some assignment (e.g. $p=F,q=T$ for the second and fourth; $p=T,q=F$ for the third).\n\n*Verified by: truth table by code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "AI",
+   "chapter": "AI.LOG",
+   "topics": [
+    "AI.LOG.PROP"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$(p\\to q)\\to(q\\to p)$"
+   },
+   {
+    "key": "B",
+    "text": "$((p\\to q)\\wedge(q\\to r))\\to(p\\to r)$"
+   },
+   {
+    "key": "C",
+    "text": "$(p\\to q)\\to(\\neg p\\to\\neg q)$"
+   },
+   {
+    "key": "D",
+    "text": "$(p\\vee q)\\to(p\\wedge q)$"
+   }
+  ]
+ },
+ {
   "id": "q_bf0fe75b398c",
   "type": "SCQ",
   "stem": "$X_1,\\ldots,X_{50}$ are i.i.d. exponential with mean 1 (variance 1). By the Central Limit Theorem, the sample mean $\\bar X$ is approximately normal with",
@@ -6742,6 +9394,65 @@
   "version": 1
  },
  {
+  "id": "q_c21b74c6e3bb",
+  "type": "SCQ",
+  "stem": "Relation R has a single column a with values 1, 2, 3. Relation S has a single column b with values 2 and NULL. The query\n\n```sql\nSELECT COUNT(*) FROM R WHERE a NOT IN (SELECT b FROM S);\n```\n\nreturns",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "`a NOT IN (2, NULL)` expands to `a<>2 AND a<>NULL`. The second conjunct is UNKNOWN for every `a`, so the predicate is never TRUE (it is FALSE for a=2 and UNKNOWN for 1 and 3). No row qualifies: the count is 0. (With NOT EXISTS the answer would be 2.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [
+    "DBW.REL.SQL"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1"
+   },
+   {
+    "key": "B",
+    "text": "2"
+   },
+   {
+    "key": "C",
+    "text": "0"
+   },
+   {
+    "key": "D",
+    "text": "3"
+   }
+  ]
+ },
+ {
   "id": "q_c35b42d5db26",
   "type": "NVQ",
   "stem": "Ridge regression for the model $y=wx$ minimises $\\sum_i (y_i-wx_i)^2+\\lambda w^2$. For data $(1,2),(2,3),(3,7)$ and $\\lambda=2$, the optimal $w$ is ______. (Round off to two decimal places)",
@@ -6782,6 +9493,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_c49af1f876fd",
+  "type": "SCQ",
+  "stem": "A $3\\times3$ real matrix $A$ has eigenvalues $2,-1,4$. The value of $\\det(2A^{-1})$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\det A=2\\cdot(-1)\\cdot4=-8$. $\\det(2A^{-1})=2^3/\\det A=8/(-8)=-1$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [
+    "LA.EIG.DET"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1$"
+   },
+   {
+    "key": "B",
+    "text": "$-8$"
+   },
+   {
+    "key": "C",
+    "text": "$-1$"
+   },
+   {
+    "key": "D",
+    "text": "$-4$"
+   }
+  ]
  },
  {
   "id": "q_c4f88c7f2c43",
@@ -7009,6 +9779,124 @@
   ]
  },
  {
+  "id": "q_c7d5089e5e0e",
+  "type": "SCQ",
+  "stem": "A vessel contains 60 litres of a milk-and-water mixture in the ratio 5 : 1. How many litres of water must be added so that the ratio of milk to water becomes 5 : 3?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Milk $=50$ L, water $=10$ L. For $5:3$ with milk fixed, water must be $30$ L, so add $20$ L.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [
+    "GA.QUANT.NUMC"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "20"
+   },
+   {
+    "key": "B",
+    "text": "15"
+   },
+   {
+    "key": "C",
+    "text": "30"
+   },
+   {
+    "key": "D",
+    "text": "25"
+   }
+  ]
+ },
+ {
+  "id": "q_c8cb1974f22d",
+  "type": "SCQ",
+  "stem": "The next term of the series 3, 8, 15, 24, 35, ... is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The terms are $n^2-1$ for $n=2,3,4,\\ldots$; the next is $7^2-1=48$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.ANAL",
+   "topics": [
+    "GA.ANAL.NREL"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "50"
+   },
+   {
+    "key": "B",
+    "text": "47"
+   },
+   {
+    "key": "C",
+    "text": "48"
+   },
+   {
+    "key": "D",
+    "text": "46"
+   }
+  ]
+ },
+ {
   "id": "q_c8d61e23f0ab",
   "type": "MSQ",
   "stem": "For events $A,B$: $P(A)=0.5$, $P(B)=0.4$ and $P(A\\cup B)=0.7$. Select all correct statements.",
@@ -7170,6 +10058,125 @@
   "version": 1
  },
  {
+  "id": "q_c97e64866f58",
+  "type": "MSQ",
+  "stem": "For the data set $\\{2,3,5,5,10\\}$, select all correct statements.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "Median of $\\{2,3,5,5,100\\}$ is still 5. Variance is shift-invariant. Standard deviation is non-negative and scales by $|{-2}|=2$. Mean $=25/5=5=$ mode, not strictly greater. Correct: A, B.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DESC",
+   "topics": [
+    "PRS.DESC.CT"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Replacing the largest value 10 by 100 leaves the median unchanged"
+   },
+   {
+    "key": "B",
+    "text": "Adding 7 to every observation leaves the sample variance unchanged"
+   },
+   {
+    "key": "C",
+    "text": "Multiplying every observation by $-2$ multiplies the standard deviation by $-2$"
+   },
+   {
+    "key": "D",
+    "text": "The mean of the data set is strictly greater than its mode"
+   }
+  ]
+ },
+ {
+  "id": "q_cb124e174fd1",
+  "type": "SCQ",
+  "stem": "In k-nearest-neighbour classification, as $k$ is increased from 1 towards the training-set size $n$, which statement is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$k=1$ gives a very flexible boundary (low bias, high variance). Averaging over more neighbours smooths the boundary, reducing variance but increasing bias; at $k=n$ the prediction is the majority class everywhere.\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [
+    "ML.CLS.KNN"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both bias and variance increase."
+   },
+   {
+    "key": "B",
+    "text": "Bias increases and variance decreases."
+   },
+   {
+    "key": "C",
+    "text": "Both bias and variance decrease."
+   },
+   {
+    "key": "D",
+    "text": "Bias decreases and variance increases."
+   }
+  ]
+ },
+ {
   "id": "q_cfd48ab0583a",
   "type": "NVQ",
   "stem": "An initially empty queue undergoes the operations enqueue(5), enqueue(8), dequeue, enqueue(1), enqueue(9), dequeue, dequeue, enqueue(4), enqueue(7). The sum of the elements remaining in the queue is ______.",
@@ -7210,6 +10217,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_d0497b69f69c",
+  "type": "SCQ",
+  "stem": "The table gives the sales (in thousand units) of four products over three years.\n\n| Product | Year 1 | Year 2 | Year 3 |\n|---|---|---|---|\n| P1 | 120 | 150 | 180 |\n| P2 | 200 | 210 | 252 |\n| P3 | 90 | 135 | 162 |\n| P4 | 160 | 152 | 190 |\n\nThe percentage growth in the combined sales of all four products from Year 2 to Year 3 is closest to",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Year 2 total $=150+210+135+152=647$; Year 3 total $=180+252+162+190=784$. Growth $=137/647\\approx21.2\\%$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [
+    "GA.QUANT.DI"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "21.2%"
+   },
+   {
+    "key": "B",
+    "text": "20.0%"
+   },
+   {
+    "key": "C",
+    "text": "18.9%"
+   },
+   {
+    "key": "D",
+    "text": "22.5%"
+   }
+  ]
  },
  {
   "id": "q_d0e52a1a5d19",
@@ -7475,6 +10541,65 @@
   "version": 1
  },
  {
+  "id": "q_d3189d9edfc5",
+  "type": "SCQ",
+  "stem": "A data warehouse cube has three dimensions with the hierarchies Time (day < month < year), Location (city < country) and Product (a single level, item). Counting the apex cuboid (all dimensions aggregated to ALL), the total number of cuboids that can be materialised is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Each dimension with $L$ levels can be at one of $L+1$ states (its $L$ levels or ALL). Total $=(3+1)(2+1)(1+1)=24$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.DW",
+   "topics": [
+    "DBW.DW.HIER"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "12"
+   },
+   {
+    "key": "B",
+    "text": "24"
+   },
+   {
+    "key": "C",
+    "text": "27"
+   },
+   {
+    "key": "D",
+    "text": "18"
+   }
+  ]
+ },
+ {
   "id": "q_d4ee36027756",
   "type": "NVQ",
   "stem": "Labels $(1,0,1)$ are predicted with probabilities $(0.9,0.2,0.6)$ by a binary classifier. The average binary cross-entropy (natural logarithm) is ______. (Round off to two decimal places)",
@@ -7660,6 +10785,65 @@
   ]
  },
  {
+  "id": "q_d7112a612d9d",
+  "type": "SCQ",
+  "stem": "A sample of $n=36$ observations is drawn from $N(\\mu,\\sigma^2)$ with known $\\sigma^2=144$. The sample mean is 52. Using $z_{0.975}=1.96$, the 95% confidence interval for $\\mu$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Standard error $=\\sigma/\\sqrt n=12/6=2$. Half-width $=1.96\\times2=3.92$. Interval $52\\pm3.92=(48.08,55.92)$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.INF",
+   "topics": [
+    "PRS.INF.CI"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "(49.57, 54.43)"
+   },
+   {
+    "key": "B",
+    "text": "(48.08, 55.92)"
+   },
+   {
+    "key": "C",
+    "text": "(46.08, 57.92)"
+   },
+   {
+    "key": "D",
+    "text": "(40.24, 63.76)"
+   }
+  ]
+ },
+ {
   "id": "q_d7fd26e9aa19",
   "type": "NVQ",
   "stem": "Machines M1, M2 and M3 produce 50%, 30% and 20% of the items in a factory, and 2%, 3% and 5% of their respective items are defective. An item picked at random is found defective. The probability that it was produced by M3 is ______. (Round off to two decimal places)",
@@ -7828,6 +11012,48 @@
   "version": 1
  },
  {
+  "id": "q_dc48931fc929",
+  "type": "NVQ",
+  "stem": "A search tree has branching factor 3 (every node has exactly 3 children) and the goal lies at depth 4. Iterative deepening depth-first search runs depth-limited searches with limits 0, 1, 2, 3, 4 and counts every node generation (the root counts once per iteration, nodes are regenerated in every iteration). The total number of nodes generated by the end of the limit-4 iteration is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    179.0,
+    179.0
+   ]
+  },
+  "solution": "A depth-limited search with limit $L$ generates $(3^{L+1}-1)/2$ nodes: $1,4,13,40,121$. Total $=179$. Equivalently $\\sum_{d=0}^{4}(5-d)3^d=5+12+27+54+81=179$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "AI",
+   "chapter": "AI.SRCH",
+   "topics": [
+    "AI.SRCH.UNINF"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_dd31462cfd9a",
   "type": "NVQ",
   "stem": "The dimension of the subspace of $\\mathbb{R}^3$ spanned by $(1,2,3),(2,4,6),(1,0,1),(0,2,2)$ is ______.",
@@ -7860,6 +11086,107 @@
   "difficulty": {
    "label": "E",
    "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_de2da95d26e6",
+  "type": "SCQ",
+  "stem": "A random variable $X$ has mean 50 and standard deviation 5 (distribution unknown). By Chebyshev's inequality, a lower bound on $P(40<X<60)$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$P(|X-50|<2\\sigma)\\ge 1-1/2^2=0.75$ (here $k=10/5=2$).\n\n*Verified by: second-derivation.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [
+    "PRS.MOM.EXV"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "0.95"
+   },
+   {
+    "key": "B",
+    "text": "0.75"
+   },
+   {
+    "key": "C",
+    "text": "0.50"
+   },
+   {
+    "key": "D",
+    "text": "0.25"
+   }
+  ]
+ },
+ {
+  "id": "q_df588cc2438c",
+  "type": "NVQ",
+  "stem": "Urn 1 holds 3 red and 2 blue balls; Urn 2 holds 1 red and 4 blue balls. An urn is chosen with equal probability and a ball is drawn from it and found red (not replaced). A second ball is then drawn from the same urn. The probability that it is also red is ______. (Round off to three decimal places)",
+  "images": [],
+  "answer": {
+   "range": [
+    0.373,
+    0.377
+   ]
+  },
+  "solution": "$P(R_1)=\\tfrac12\\cdot\\tfrac35+\\tfrac12\\cdot\\tfrac15=0.4$. $P(R_1R_2)=\\tfrac12\\cdot\\tfrac35\\cdot\\tfrac24+\\tfrac12\\cdot\\tfrac15\\cdot0=0.15$. Ratio $=0.15/0.4=0.375$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [
+    "PRS.PROB.BAYES"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "H",
+   "b": 1.1,
    "n": 0
   },
   "source": {
@@ -8012,6 +11339,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_e252ef4950dc",
+  "type": "SCQ",
+  "stem": "The postfix expression `12 3 / 2 - 5 3 - *` is evaluated using a stack (`/` is integer division). The value left on the stack is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "`12 3 /` gives 4; `4 2 -` gives 2; `5 3 -` gives 2; `2 2 *` gives 4. Equivalent infix: $(12/3-2)\\cdot(5-3)=4$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [
+    "PDS.DS.STK"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "10"
+   },
+   {
+    "key": "B",
+    "text": "2"
+   },
+   {
+    "key": "C",
+    "text": "4"
+   },
+   {
+    "key": "D",
+    "text": "8"
+   }
+  ]
  },
  {
   "id": "q_e39887b0d9e5",
@@ -8214,6 +11600,48 @@
   "version": 1
  },
  {
+  "id": "q_e5ad9c1113c7",
+  "type": "NVQ",
+  "stem": "The minimum value of $f(x)=x^3-12x+5$ on the interval $[0,3]$ is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    -11.0,
+    -11.0
+   ]
+  },
+  "solution": "$f'(x)=3x^2-12=0\\Rightarrow x=2$ in the interval. $f(0)=5$, $f(2)=-11$, $f(3)=-4$. Minimum $=-11$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [
+    "CO.OPT.OPT"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
   "id": "q_e60411f8443f",
   "type": "NVQ",
   "stem": "A fair coin is tossed repeatedly until two heads occur in succession (HH). The expected number of tosses is ______.",
@@ -8354,6 +11782,65 @@
    {
     "key": "D",
     "text": "$X$ and $Y$ are marginally independent"
+   }
+  ]
+ },
+ {
+  "id": "q_e8c0c90e4fcc",
+  "type": "SCQ",
+  "stem": "The mean of five numbers is 12. When one of the numbers, 8, is removed, the mean of the remaining four numbers is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Sum $=60$. After removing 8, sum $=52$ over 4 numbers: mean $=13$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [
+    "GA.QUANT.STAT"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "E",
+   "b": -0.9,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "13"
+   },
+   {
+    "key": "B",
+    "text": "14"
+   },
+   {
+    "key": "C",
+    "text": "12.5"
+   },
+   {
+    "key": "D",
+    "text": "11.5"
    }
   ]
  },
@@ -8863,6 +12350,65 @@
   },
   "status": "verified",
   "version": 1
+ },
+ {
+  "id": "q_f307f14038c9",
+  "type": "SCQ",
+  "stem": "Consider $x+y+z=6$, $x+2y+3z=10$, $x+2y+kz=m$. The system has infinitely many solutions if and only if",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Subtracting rows 2 and 3 gives $(k-3)z=m-10$. If $k\\ne3$ the solution is unique. If $k=3$: $m\\ne10$ is inconsistent; $m=10$ makes the third equation redundant (rank 2 < 3 unknowns), so infinitely many solutions.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.SYS",
+   "topics": [
+    "LA.SYS.SOL"
+   ],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.1,
+   "n": 0
+  },
+  "source": {
+   "kind": "authored",
+   "license": "Original work of the Kairos project"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$k\\neq3$ and $m=10$"
+   },
+   {
+    "key": "B",
+    "text": "$k=3$ and $m\\ne10$"
+   },
+   {
+    "key": "C",
+    "text": "$k\\ne3$ for every $m$"
+   },
+   {
+    "key": "D",
+    "text": "$k=3$ and $m=10$"
+   }
+  ]
  },
  {
   "id": "q_f3b2d936512d",
