@@ -289,8 +289,8 @@ importers:
   firestore-tests:
     devDependencies:
       '@firebase/rules-unit-testing':
-        specifier: ^5
-        version: 5.0.2(firebase@12.19.0)
+        specifier: ^6
+        version: 6.0.0(firebase@12.19.0)
       firebase:
         specifier: ^12
         version: 12.19.0
@@ -1286,11 +1286,11 @@ packages:
     peerDependencies:
       '@firebase/app': 0.x
 
-  '@firebase/rules-unit-testing@5.0.2':
-    resolution: {integrity: sha512-g053AaFcuf4gpAQbwRK/GIIGfPHhpomW3qkIYLi4xnaTUrf65yGP+0TPdojoXfB/ejrfevkXmMs5qXOTSwdN6A==}
-    engines: {node: '>=20.0.0'}
+  '@firebase/rules-unit-testing@6.0.0':
+    resolution: {integrity: sha512-BsBqAoClN55cj9rVIruzA1vHzxl2WyS2+G/r93hjp7wM0UatlVHblvp5SPLCKylWBFMHWL4/JdFnFnYwrLdJjg==}
+    engines: {node: '>=24.12.0'}
     peerDependencies:
-      firebase: ^12.0.0
+      firebase: ^13.0.0
 
   '@firebase/storage-compat@0.4.5':
     resolution: {integrity: sha512-vO0tFPxXbKDKdlTu8tYT08S9t9ezUTJYEdLCULpWxWq2aq6zojwN1QmAB+1a50AI/g47GlWUJn1XPncm/PDZsw==}
@@ -4907,7 +4907,7 @@ snapshots:
       '@firebase/util': 1.15.3
       tslib: 2.9.1
 
-  '@firebase/rules-unit-testing@5.0.2(firebase@12.19.0)':
+  '@firebase/rules-unit-testing@6.0.0(firebase@12.19.0)':
     dependencies:
       firebase: 12.19.0
 
