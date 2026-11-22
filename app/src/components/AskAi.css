@@ -1,13 +1,16 @@
-/* Ask AI split button: two joined parts in one pill. Flat: the chevron part is a deeper tint, no borders. */
-.ask-split { display: inline-flex; align-items: stretch; border-radius: var(--radius-pill); }
+/* Ask AI split button: two joined parts in one pill, tinted with the brand colour so it stands out on cards in both themes.
+   Flat: no borders or shadows; a 2px gap shows the card between the parts. Text is --primary on a light primary tint
+   (light ~5.5:1, dark ~6:1). It stays quieter than the solid primary action (Check / Next) on the same card. */
+.ask-split { display: inline-flex; align-items: stretch; gap: 2px; border-radius: var(--radius-pill); }
 .ask-split .ask-split-main, .ask-split .ask-split-more {
-  color: var(--ink); background: var(--surface-2); border-radius: 0;
+  color: var(--primary); font-weight: 600; border-radius: 0;
+  background: color-mix(in srgb, var(--primary) 16%, var(--surface));
 }
 .ask-split .ask-split-main { padding: 0 var(--space-4) 0 var(--space-5); border-radius: var(--radius-pill) 0 0 var(--radius-pill); }
-.ask-split .ask-split-more { min-width: 44px; padding: 0 var(--space-3) 0 var(--space-3); background: var(--surface-3); border-radius: 0 var(--radius-pill) var(--radius-pill) 0; }
-.ask-split .ask-split-main:active { background: var(--tint-active); }
-.ask-split .ask-split-more:active { background: var(--tint-active); }
+.ask-split .ask-split-more { min-width: 44px; padding: 0 var(--space-3); border-radius: 0 var(--radius-pill) var(--radius-pill) 0; background: color-mix(in srgb, var(--primary) 26%, var(--surface)); }
+.ask-split .ask-split-main:active { background: color-mix(in srgb, var(--primary) 30%, var(--surface)); }
+.ask-split .ask-split-more:active { background: color-mix(in srgb, var(--primary) 38%, var(--surface)); }
 @media (hover: hover) and (pointer: fine) {
-  .ask-split .ask-split-main:hover { background: var(--tint-hover); }
-  .ask-split .ask-split-more:hover { background: var(--tint-active); }
+  .ask-split .ask-split-main:hover { background: color-mix(in srgb, var(--primary) 23%, var(--surface)); }
+  .ask-split .ask-split-more:hover { background: color-mix(in srgb, var(--primary) 33%, var(--surface)); }
 }
