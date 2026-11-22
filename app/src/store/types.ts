@@ -68,9 +68,9 @@ export type Profile = UserProfile | GuestProfile;
 
 /** Which assistant the student pasted the explanation from. */
 export type AiProvider = 'gemini' | 'chatgpt' | 'google' | 'claude' | 'perplexity' | 'other';
-/** users/{uid}/ai_notes/{qid}: one pasted AI explanation per question. `updatedAt` is epoch ms. */
-export interface AiNote { qid: string; text: string; provider: AiProvider; updatedAt: number /* ms epoch */ }
-/** Max characters kept for one AI note. putAiNote clips longer text. */
+/** users/{uid}/ai_notes/{qid}: one pasted AI explanation per question. `updatedAt` is the display time in epoch ms (the stored client `savedAt`, else the server time). */
+export interface AiNote { qid: string; text: string; provider: AiProvider; updatedAt: number /* ms epoch */; savedAt?: number }
+/** Max UTF-16 length (string.length, what firestore.rules measure) kept for one AI note. putAiNote clips longer text. */
 export const AI_NOTE_MAX = 20000;
 export type StateDocName = 'mastery' | 'pace' | 'roadmap';
 

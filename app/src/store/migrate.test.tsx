@@ -203,7 +203,7 @@ describe('FirestoreStore.listSessions query', () => {
 });
 
 describe('MigrationDialog decide-later', () => {
-  const state = { phase: 'ask' as const, plan: { status: 'ask' as const, counts: { sessions: 2, mocks: 1, plans: 0, paceLog: 0, questions: 4 }, skippedSessions: 0, onboarding: 'kept-account' as const } };
+  const state = { phase: 'ask' as const, plan: { status: 'ask' as const, counts: { sessions: 2, mocks: 1, plans: 0, paceLog: 0, questions: 4, aiNotes: 3 }, skippedSessions: 0, onboarding: 'kept-account' as const } };
   const mount = () => {
     const h = { onAdd: vi.fn(), onDiscard: vi.fn(), onRetry: vi.fn(), onClose: vi.fn(), onLater: vi.fn() };
     render(<MigrationDialog state={state} {...h} />);

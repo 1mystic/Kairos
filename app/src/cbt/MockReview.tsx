@@ -26,7 +26,7 @@ const fmtDelta = (m: number): string => {
 type Filter = 'all' | 'wrong' | 'skipped';
 
 /** Per-question review as full-width rows (same anatomy as the practice log): your answer vs correct, solution on demand. */
-export function MockReview({ mock, questions }: { mock: MockDoc; questions: ReadonlyMap<string, Question | PublicQuestion> | undefined }) {
+export function MockReview({ mock, questions, exam }: { mock: MockDoc; questions: ReadonlyMap<string, Question | PublicQuestion> | undefined; exam?: string }) {
   const a = readAnalysis(mock);
   const responses = (mock.responses as { qid: string; answer: Response | null }[] | undefined) ?? [];
   const [open, setOpen] = useState<string | null>(null);
@@ -73,7 +73,7 @@ export function MockReview({ mock, questions }: { mock: MockDoc; questions: Read
                     </Button>
                   )}
                 </div>
-                {q && showing && <div className="mock-row-body"><QuestionView question={q} variant="review" showSolution selected={keys} /><AiHelp question={q} given={describeResponse(mine)} /></div>}
+                {q && showing && <div className="mock-row-body"><QuestionView question={q} variant="review" showSolution selected={keys} /><AiHelp question={q} given={describeResponse(mine)} exam={exam} /></div>}
               </li>
             );
           })}

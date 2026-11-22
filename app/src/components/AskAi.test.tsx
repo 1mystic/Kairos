@@ -11,7 +11,7 @@ const q = {
 } as unknown as Question;
 
 const open = vi.fn();
-const writeText = vi.fn(async () => undefined);
+const writeText = vi.fn<(text: string) => Promise<void>>(async () => undefined);
 
 beforeEach(() => {
   localStorage.clear();

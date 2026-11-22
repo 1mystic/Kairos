@@ -12,10 +12,19 @@ export function isAiProvider(p: unknown): p is AiProvider {
   return typeof p === 'string' && (AI_PROVIDERS as readonly string[]).includes(p);
 }
 
-/** Trim, reject empty, clip to AI_NOTE_MAX code points (never splits a surrogate pair). */
+/** Clip to `max` UTF-16 units (string.length, as firestore.rules count) without splitting a surrogate pair. */
+export function clipUtf16(s: string, max: number): string {
+  if (s.length <= max) return s;
+  let end = max;
+  const c = s.charCodeAt(end - 1);
+  if (c >= 0xd800 && c <= 0xdbff) end -= 1; // lone high surrogate at the cut
+  return s.slice(0, end);
+}
+
+/** Trim, reject empty, clip to AI_NOTE_MAX UTF-16 units (never splits a surrogate pair). */
 export function normaliseAiNoteInput(note: { text: string; provider: AiProvider }): { text: string; provider: AiProvider } {
   if (!isAiProvider(note.provider)) throw new Error(`Bad AI provider: ${String(note.provider)}`);
-  const text = Array.from(String(note.text ?? '').trim()).slice(0, AI_NOTE_MAX).join('');
+  const text = clipUtf16(String(note.text ?? '').trim(), AI_NOTE_MAX);
   if (text.length === 0) throw new Error('AI note is empty');
   return { text, provider: note.provider };
 }

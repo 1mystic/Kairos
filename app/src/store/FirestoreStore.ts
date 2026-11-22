@@ -22,6 +22,13 @@ const toMs = (v: unknown): number => {
   return Date.now();
 };
 
+const AI_NOTE_EXPORT_MAX = 2000;
+/** Doc -> AiNote: the display time prefers the client savedAt, else the server updatedAt. */
+const toAiNote = (qid: string, d: Data): AiNote => ({
+  qid, text: String(d.text ?? ''), provider: d.provider as AiProvider,
+  updatedAt: typeof d.savedAt === 'number' && d.savedAt > 0 ? d.savedAt : toMs(d.updatedAt),
+});
+
 /** The only Firestore surface FirestoreStore touches. Tests inject a fake. */
 export interface FsAdapter {
   get(path: string): Promise<Data | null>;
@@ -199,13 +206,17 @@ export class FirestoreStore implements UserStore {
     assertAiNoteQid(qid);
     const d = await this.fs.get(this.p(`ai_notes/${qid}`));
     if (!d) return null;
-    return { qid, text: String(d.text ?? ''), provider: d.provider as AiProvider, updatedAt: toMs(d.updatedAt) };
+    return toAiNote(qid, d);
   }
-  /** ONE write: a full set of the doc with updatedAt = server time. */
+  /** Export only: every AI note (capped at AI_NOTE_EXPORT_MAX). */
+  async listAiNotes(): Promise<AiNote[]> {
+    return (await this.fs.list(this.p('ai_notes'), { limit: AI_NOTE_EXPORT_MAX })).map((r) => toAiNote(r.id, r.data));
+  }
+  /** ONE write: a full set of the doc with updatedAt = server time and savedAt = client time (kept on migration). */
   async putAiNote(qid: string, note: { text: string; provider: AiProvider }) {
     assertAiNoteQid(qid);
     const n = normaliseAiNoteInput(note);
-    await this.fs.set(this.p(`ai_notes/${qid}`), { text: n.text, provider: n.provider, updatedAt: SERVER_TIME });
+    await this.fs.set(this.p(`ai_notes/${qid}`), { text: n.text, provider: n.provider, updatedAt: SERVER_TIME, savedAt: Date.now() });
   }
   async deleteAiNote(qid: string) {
     assertAiNoteQid(qid);

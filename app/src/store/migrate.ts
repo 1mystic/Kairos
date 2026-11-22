@@ -1,7 +1,7 @@
 import { MAX_IMAGES, MAX_IMAGE_B64_CHARS, MAX_NEW_PER_DAY, MAX_QUESTIONS, checkDocSize, type UserQuestion } from '@kairos/core';
 import { parseProfiles, serialiseProfiles } from '../exams/model';
 import { SERVER_TIME } from './bankCloud';
-import { AI_NOTE_QID } from './aiNotes';
+import { AI_NOTE_QID, clipUtf16 } from './aiNotes';
 import { chunkOps } from './batching';
 import { imageIdsOf, startOfLocalDay, toStoredQuestion, type BankStore } from './bank';
 import type { FirestoreStore } from './FirestoreStore';
@@ -34,7 +34,7 @@ export type OnboardingOutcome = 'none' | 'copy' | 'kept-account';
 export interface MigrationPlan {
   /** none: nothing local. upload: cloud is empty, safe to upload. ask: cloud has data, ask the user. */
   status: 'none' | 'upload' | 'ask';
-  counts: { sessions: number; mocks: number; plans: number; paceLog: number; questions: number };
+  counts: { sessions: number; mocks: number; plans: number; paceLog: number; questions: number; aiNotes: number };
   /** sessions older than 60 days that will not be uploaded */
   skippedSessions: number;
   onboarding: OnboardingOutcome;
@@ -103,13 +103,13 @@ export async function inspectMigration(local: LocalStore, cloud: FirestoreStore,
   const questions = deps.bank && meta.migratedTo !== cloud.uid ? (await deps.bank.local.listQuestions()).length : 0;
   const onboarding = await onboardingOutcome(local, cloud, meta);
   if (!(await local.hasData()) && questions === 0 && onboarding === 'none') {
-    return { status: 'none', counts: { sessions: 0, mocks: 0, plans: 0, paceLog: 0, questions: 0 }, skippedSessions: 0, onboarding: 'none' };
+    return { status: 'none', counts: { sessions: 0, mocks: 0, plans: 0, paceLog: 0, questions: 0, aiNotes: 0 }, skippedSessions: 0, onboarding: 'none' };
   }
   const g = await gather(local, now - SESSION_CAP_DAYS * DAY_MS);
   const status = (await cloud.hasData()) ? 'ask' : 'upload';
   return {
     status,
-    counts: { sessions: g.sessions.length, mocks: g.mocks.length, plans: g.plans.length, paceLog: g.paceLog.length, questions },
+    counts: { sessions: g.sessions.length, mocks: g.mocks.length, plans: g.plans.length, paceLog: g.paceLog.length, questions, aiNotes: g.aiNotes.length },
     skippedSessions: g.skippedSessions,
     onboarding,
   };
@@ -232,8 +232,11 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
   const noteOps: Op[] = g.aiNotes
     .filter((n) => AI_NOTE_QID.test(n.qid) && fresh('ai_notes', n.qid))
     .flatMap((n) => {
-      const text = Array.from(String(n.text ?? '').trim()).slice(0, AI_NOTE_MAX).join('');
-      return text.length > 0 ? [{ key: `ai_notes/${n.qid}`, path: `ai_notes/${n.qid}`, data: { text, provider: n.provider, updatedAt: SERVER_TIME } }] : [];
+      const text = clipUtf16(String(n.text ?? '').trim(), AI_NOTE_MAX);
+      const data: Record<string, unknown> = { text, provider: n.provider, updatedAt: SERVER_TIME };
+      if (typeof n.savedAt === 'number' && Number.isInteger(n.savedAt) && n.savedAt > 0) data.savedAt = Math.min(n.savedAt, Date.now());
+      else if (Number.isInteger(n.updatedAt) && n.updatedAt > 0) data.savedAt = Math.min(n.updatedAt, Date.now());
+      return text.length > 0 ? [{ key: `ai_notes/${n.qid}`, path: `ai_notes/${n.qid}`, data }] : [];
     });
   for (const chunk of chunkOps(noteOps.filter((o) => !done[o.key]), AI_NOTE_BATCH)) {
     await cloud.batchWrite(chunk.map(({ path, data }) => ({ path, data })));

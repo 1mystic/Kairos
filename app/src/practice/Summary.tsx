@@ -140,7 +140,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
                 <p className="text-small text-slate">
                   Your answer: {r.given || 'none'}. Correct answer: {correctAnswerText(r.q)}.
                 </p>
-                <AiHelp question={r.q} given={r.given ?? ''} />
+                <AiHelp question={r.q} given={r.given ?? ''} exam={String(session.exam ?? '') || undefined} />
               </div>
             </Card>
           ))}
@@ -226,7 +226,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
               <p className="text-slate" role="status">Nothing here. Try another filter.</p>
             ) : (
               <ul className="slog" aria-label="Questions">
-                {shown.map(({ r, n }) => <RowItem key={r.q.id} r={r} n={n} flagged={flaggedIds.has(r.q.id)} />)}
+                {shown.map(({ r, n }) => <RowItem key={r.q.id} r={r} n={n} flagged={flaggedIds.has(r.q.id)} exam={String(session.exam ?? '') || undefined} />)}
               </ul>
             )}
           </div>
@@ -236,7 +236,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
   );
 }
 
-function RowItem({ r, n, flagged }: { r: ReviewRow; n: number; flagged: boolean }) {
+function RowItem({ r, n, flagged, exam }: { r: ReviewRow; n: number; flagged: boolean; exam?: string }) {
   const [open, setOpen] = useState(false);
   const ok = r.outcome === 'correct';
   const verdict = ok ? 'correct' : r.outcome === 'skipped' ? 'skipped' : 'not quite';
@@ -261,7 +261,7 @@ function RowItem({ r, n, flagged }: { r: ReviewRow; n: number; flagged: boolean 
       {open && (
         <div className="slog-body">
           <QuestionView question={r.q} variant="review" showSolution selected={r.q.type === 'NVQ' || r.q.type === 'INT' ? [] : r.given ? r.given.split(',') : []} />
-          <AiHelp question={r.q} given={r.given ?? ''} />
+          <AiHelp question={r.q} given={r.given ?? ''} exam={exam} />
         </div>
       )}
     </li>

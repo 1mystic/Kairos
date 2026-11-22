@@ -358,7 +358,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
                 onSelect={isChecked || isNumeric || selfCheck ? undefined : (keys) => setValue([...keys].sort().join(','))}
                 showSolution={isChecked || revealed}
               />
-              {!paused && (isChecked || revealed) && <AiHelp question={q} given={selfCheck ? undefined : answer} />}
+              {!paused && (isChecked || revealed) && <AiHelp question={q} given={selfCheck ? undefined : answer} exam={base.exam} />}
               {selfCheck && revealed && !q.solution && (
                 <p className="text-small text-slate">No solution saved for this question. Work it out and grade yourself honestly.</p>
               )}

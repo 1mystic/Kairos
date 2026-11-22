@@ -92,6 +92,21 @@ describe('users/{uid}/ai_notes/{qid}', () => {
     await seed();
     await assertFails(updateDoc(ref(), { text: 'new', updatedAt: new Date('2020-01-01') }));
   });
+  it('accepts an optional integer savedAt (client time) on create and update', async () => {
+    await assertSucceeds(setDoc(ref(), note({ savedAt: Date.now() })));
+    await assertSucceeds(setDoc(ref(), note({ savedAt: 1 })));
+    await assertSucceeds(updateDoc(ref(), { text: 'edited', savedAt: Date.now(), updatedAt: serverTimestamp() }));
+    await assertSucceeds(setDoc(ref(), note({ savedAt: Date.now() + 5 * 60000 })));
+  });
+  it('rejects a non-int, non-positive or far-future savedAt', async () => {
+    await assertFails(setDoc(ref(), note({ savedAt: String(Date.now()) })));
+    await assertFails(setDoc(ref(), note({ savedAt: Date.now() + 0.5 })));
+    await assertFails(setDoc(ref(), note({ savedAt: 0 })));
+    await assertFails(setDoc(ref(), note({ savedAt: -5 })));
+    await assertFails(setDoc(ref(), note({ savedAt: Date.now() + 3600_000 })));
+    await seed();
+    await assertFails(updateDoc(ref(), { savedAt: Date.now() + 3600_000, updatedAt: serverTimestamp() }));
+  });
   it('rejects bad doc ids', async () => {
     for (const id of ['x_abc', 'q_', 'abc', 'q-abc', 'q_' + 'a'.repeat(65), 'Q_abc', 'q_ab.c']) {
       await assertFails(setDoc(ref(alice(), id), note()));

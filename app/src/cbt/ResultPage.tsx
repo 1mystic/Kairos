@@ -100,7 +100,7 @@ export function ResultPage() {
           ]}
         />
         {tab === 'summary' && <MockResultSummary mock={mock} />}
-        {tab === 'answers' && <MockReview mock={mock} questions={questions} />}
+        {tab === 'answers' && <MockReview mock={mock} questions={questions} exam={exam.data?.model.exam} />}
         {tab === 'report' && <MockReport mock={mock} questions={questions as never} />}
       </div>
     </Page>

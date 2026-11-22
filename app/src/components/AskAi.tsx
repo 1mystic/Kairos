@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import type { PublicQuestion, Question } from '@kairos/core';
 import { aiTarget, buildAiPrompt, DEFAULT_PROVIDER, PROVIDERS, providerLabel, type PromptOptions } from '../lib/askAi';
 import type { AiProvider } from '../store/types';
+import './AskAi.css';
 import { CheckIcon, ChevronDownIcon, SparkIcon } from './icons';
 
 const KEY = 'kairos.askAi.provider';
@@ -97,15 +98,15 @@ export function AskAiButton({ question, onAsk, ...opts }: AskAiProps) {
   return (
     <div className="stack-label" data-testid="ask-ai">
       <div className="relative inline-flex" ref={box} onKeyDown={onKey}>
-        <div className="row gap-s1">
-          <button type="button" className="btn btn-secondary" onClick={() => ask(provider)} aria-label={`Ask AI, opens ${providerLabel(provider)}`}>
+        <div className="ask-split">
+          <button type="button" className="btn ask-split-main" onClick={() => ask(provider)} aria-label={`Ask AI, opens ${providerLabel(provider)}`}>
             <SparkIcon width={20} height={20} aria-hidden />
             Ask AI
           </button>
           <button
             ref={trigger}
             type="button"
-            className="btn btn-secondary btn-icon"
+            className="btn ask-split-more"
             aria-label="Choose an AI"
             aria-haspopup="menu"
             aria-expanded={open}

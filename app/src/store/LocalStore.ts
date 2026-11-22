@@ -70,7 +70,8 @@ export class LocalStore implements UserStore {
   async putAiNote(qid: string, note: { text: string; provider: AiNote['provider'] }): Promise<void> {
     assertAiNoteQid(qid);
     const n = normaliseAiNoteInput(note);
-    const rec: AiNote = { qid, text: n.text, provider: n.provider, updatedAt: Date.now() };
+    const now = Date.now();
+    const rec: AiNote = { qid, text: n.text, provider: n.provider, updatedAt: now, savedAt: now };
     await this.db.put('ai_notes', qid, rec);
   }
   async deleteAiNote(qid: string): Promise<void> {

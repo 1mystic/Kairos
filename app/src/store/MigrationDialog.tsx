@@ -13,7 +13,7 @@ export function MigrationDialog({ state, onAdd, onDiscard, onRetry, onClose, onL
   const later = () => { setConfirm(false); onLater(); };
   if (state.phase === 'ask') {
     const { counts } = state.plan;
-    const parts = [`${counts.sessions} sessions`, `${counts.mocks} mocks`, ...(counts.questions > 0 ? [`${counts.questions} uploaded questions`] : [])];
+    const parts = [`${counts.sessions} sessions`, `${counts.mocks} mocks`, ...(counts.questions > 0 ? [`${counts.questions} uploaded questions`] : []), ...(counts.aiNotes > 0 ? [`${counts.aiNotes} saved AI explanations`] : [])];
     return (
       <Modal title="Add this device's progress to your account?" onClose={later} dismissLabel="Decide later">
         <p className="text-slate">
