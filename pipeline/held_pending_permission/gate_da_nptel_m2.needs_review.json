@@ -1,0 +1,719 @@
+[
+ {
+  "n": 2,
+  "id": "q_8abf2482c98b",
+  "chapter": "PDS.GRAPH",
+  "marks_inferred": 1,
+  "stem": "Which of the following is/are always true about the Floyd-Warshall algorithm?",
+  "options": [
+   {
+    "key": "A",
+    "text": "If the shortest path entry $SP[i][i]$ in the resultant matrix is negative, then it represents the graph has a negative weight cycle"
+   },
+   {
+    "key": "B",
+    "text": "The time complexity of Floyd-Warshall is $O(V^2)$, where $V$ is the number of vertices in the graph."
+   },
+   {
+    "key": "C",
+    "text": "It works correctly if the graph has negative edge weights but does not have negative weight cycles."
+   },
+   {
+    "key": "D",
+    "text": "The formula to compute the shortest path is $SP_k[i, j] = \\min(SP_{k-1}[i, j], SP_{k-1}[i, k] + SP_{k-1}[k, j])$"
+   }
+  ],
+  "pdf_key": [
+   "A",
+   "C"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "A true (a negative diagonal entry means a closed walk of negative weight). B false (triple loop, $O(V^3)$). C true. D is the standard Floyd-Warshall recurrence, so it is true as printed. Correct set by reasoning: A, C, D; the PDF key omits D. (Conceptual, not code-checkable; flagged because D is textbook-correct.)"
+ },
+ {
+  "n": 5,
+  "id": "q_a153cf2715bc",
+  "chapter": "PDS.DS",
+  "marks_inferred": 1,
+  "stem": "Which one of the following sequences when stored in an array at locations $A[1],\\ldots,A[10]$ forms a max-heap?",
+  "options": [
+   {
+    "key": "A",
+    "text": "23, 17, 10, 6, 13, 14, 1, 5, 7, 12"
+   },
+   {
+    "key": "B",
+    "text": "23, 17, 14, 7, 13, 10, 1, 5, 6, 12"
+   },
+   {
+    "key": "C",
+    "text": "23, 17, 14, 6, 13, 10, 1, 5, 7, 15"
+   },
+   {
+    "key": "D",
+    "text": "23, 14, 17, 1, 10, 13, 16, 12, 7, 5"
+   }
+  ],
+  "pdf_key": [
+   "A"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "Check A[i] >= A[2i], A[2i+1]. Option A: node 3 (value 10) has child A[6]=14 > 10, so A is NOT a max-heap. Option B: 23>=17,14; 17>=7,13; 14>=10,1; 7>=5,6; 13>=12: valid max-heap. C: A[5]=13 has child A[10]=15 > 13, not a heap. D: A[2]=14 has child A[5]=10 fine but A[4]=1 has child A[8]=12 > 1, not a heap. Correct key B; PDF key A.",
+  "recomputed": [
+   "B"
+  ]
+ },
+ {
+  "n": 8,
+  "id": "q_966779af1bbc",
+  "chapter": "PDS.DS",
+  "marks_inferred": 2,
+  "stem": "Let S be a stack and Q be a queue... Initially elements A, B, C, D, E, F, G are pushed onto stack S in reverse order (starting from G). What would be the value of Result after 5 enqueues of pops, 2 pushes of dequeues, and 1 pop?",
+  "options": [
+   {
+    "key": "A",
+    "text": "A"
+   },
+   {
+    "key": "B",
+    "text": "B"
+   },
+   {
+    "key": "C",
+    "text": "E"
+   },
+   {
+    "key": "D",
+    "text": "G"
+   },
+   {
+    "key": "E",
+    "text": "F"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "broken_context",
+  "derivation": "Stem is truncated ('Let S be a stack and Q be a queue...'): the definition of Result and the exact operation semantics are missing. Not reproducible."
+ },
+ {
+  "n": 10,
+  "id": "q_230dd23fbd24",
+  "chapter": "PDS.DS",
+  "marks_inferred": 2,
+  "stem": "Consider the given hash table with hash function $h(\\text{key}) = \\text{key} \\bmod 5$ which uses linear probing for resolving collisions. The final hash table has elements at index 0 to 4: 35, 11, 20, 23, 14 respectively. Which options correspond to possible orders of insertion?",
+  "options": [
+   {
+    "key": "A",
+    "text": "11, 23, 35, 20, 14"
+   },
+   {
+    "key": "B",
+    "text": "14, 35, 23, 11, 20"
+   },
+   {
+    "key": "C",
+    "text": "23, 35, 14, 20, 11"
+   },
+   {
+    "key": "D",
+    "text": "23, 20, 35, 11, 14"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "Simulated all four orders with linear probing. A: 11->1, 23->3, 35->0, 20->(0 taken)->1 taken->2, 14->4 gives [35,11,20,23,14]: valid. B: 14->4, 35->0, 23->3, 11->1, 20->(0,1 taken)->2 gives [35,11,20,23,14]: valid. C: 23->3,35->0,14->4,20->(0 taken)->1, 11->(1 taken)->2 gives [35,20,11,23,14]: invalid. D: 23->3,20->0,35->(0 taken)->1: invalid. Correct set A, B (question asks 'which options', plural); PDF key lists only B.",
+  "recomputed": [
+   "A",
+   "B"
+  ]
+ },
+ {
+  "n": 11,
+  "id": "q_7ce0f6d3fb56",
+  "chapter": "DBW.REL",
+  "marks_inferred": 1,
+  "stem": "Consider the relational schema Order, Product, and User. If they have 10, 6, and 8 rows respectively, what is the maximum number of rows returned by a RIGHT OUTER JOIN of Orders and Users? ______.",
+  "options": null,
+  "pdf_key": 17,
+  "reason": "broken_context",
+  "derivation": "Schema (columns, keys, join condition) is not given and the relation names are inconsistent (Order/Orders, User/Users). The answer depends on whether the join is on a foreign key; PDF key 17 cannot be derived from the stem as printed."
+ },
+ {
+  "n": 15,
+  "id": "q_8058de7a92d9",
+  "chapter": "DBW.NF",
+  "marks_inferred": 2,
+  "stem": "Consider schemas I, II, III, IV with given functional dependencies. Which one of the relational schemas is in 3NF but not in BCNF?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Schema I"
+   },
+   {
+    "key": "B",
+    "text": "Schema II"
+   },
+   {
+    "key": "C",
+    "text": "Schema III"
+   },
+   {
+    "key": "D",
+    "text": "Schema IV"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "broken_context",
+  "derivation": "The four schemas and their functional dependencies are not included in the PDF."
+ },
+ {
+  "n": 16,
+  "id": "q_bb71e5a0e65b",
+  "chapter": "DBW.REL",
+  "marks_inferred": 1,
+  "stem": "Consider a database that has the relation schema CR(StudentName, CourseName). An instance of the schema CR is given. The number of rows resulting from $T2 \\leftarrow CR \\div T1$ is ______.",
+  "options": null,
+  "pdf_key": 4,
+  "reason": "broken_context",
+  "derivation": "The instance of CR and the definition of T1 are not included."
+ },
+ {
+  "n": 17,
+  "id": "q_66ae0e1853c7",
+  "chapter": "DBW.REL",
+  "marks_inferred": 1,
+  "stem": "Consider the table employee(empId, name, department, salary) and two queries 1 and 2 to find employees who get higher salary than anyone in department 5. Which statement is TRUE?",
+  "options": [
+   {
+    "key": "A",
+    "text": "1 is the correct query"
+   },
+   {
+    "key": "B",
+    "text": "2 is the correct query"
+   },
+   {
+    "key": "C",
+    "text": "Both 1 and 2 produce the same answer"
+   },
+   {
+    "key": "D",
+    "text": "Neither 1 nor 2 is the correct query"
+   }
+  ],
+  "pdf_key": [
+   "A"
+  ],
+  "reason": "broken_context",
+  "derivation": "Queries 1 and 2 are not included."
+ },
+ {
+  "n": 18,
+  "id": "q_9b403160b639",
+  "chapter": "DBW.REL",
+  "marks_inferred": 1,
+  "stem": "Consider the following transaction involving two bank accounts $x$ and $y$. The constraint that the sum of the accounts before and after the transaction should remain constant is that of:",
+  "options": [
+   {
+    "key": "A",
+    "text": "Atomicity"
+   },
+   {
+    "key": "B",
+    "text": "Consistency"
+   },
+   {
+    "key": "C",
+    "text": "Isolation"
+   },
+   {
+    "key": "D",
+    "text": "Durability"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "broken_context",
+  "derivation": "The transaction code ('the following transaction') is not included. The answer (Consistency) is derivable from the constraint wording alone, but the stem as printed refers to missing content."
+ },
+ {
+  "n": 19,
+  "id": "q_36737ea8e51e",
+  "chapter": "DBW.REL",
+  "marks_inferred": 1,
+  "stem": "Consider the relational schema Students and Enroll. The number of tuples are 120 and 8 respectively. What are the maximum and minimum number of tuples that can be present in the natural join?",
+  "options": [
+   {
+    "key": "A",
+    "text": "8, 8"
+   },
+   {
+    "key": "B",
+    "text": "120, 8"
+   },
+   {
+    "key": "C",
+    "text": "960, 8"
+   },
+   {
+    "key": "D",
+    "text": "960, 120"
+   }
+  ],
+  "pdf_key": [
+   "A"
+  ],
+  "reason": "broken_context",
+  "derivation": "Attributes and keys of Students and Enroll are not given; the max/min depends on the shared attributes and foreign-key constraint."
+ },
+ {
+  "n": 20,
+  "id": "q_4a205b3a5ac9",
+  "chapter": "DBW.NF",
+  "marks_inferred": 2,
+  "stem": "Let $R(A, B, C, D)$ be a relational schema with functional dependencies: $A \\to B$, $B \\to C$, $C \\to D$ and $D \\to B$. The decomposition of $R$ into $(A, B)$, $(B, C)$, $(B, D)$:",
+  "options": [
+   {
+    "key": "A",
+    "text": "gives a lossless join, and is dependency preserving"
+   },
+   {
+    "key": "B",
+    "text": "gives a lossless join, but is not dependency preserving"
+   },
+   {
+    "key": "C",
+    "text": "does not give a lossless join but is dependency preserving"
+   },
+   {
+    "key": "D",
+    "text": "does not give a lossless join and is not dependency preserving"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "Chase: rows for (A,B),(B,C),(B,D); A->B, B->C, C->D, D->B give an all-distinguished row (row (A,B) becomes a,a,a,a) so the join is lossless. Dependency preservation: projections give A->B on (A,B), B->C and C->B on (B,C) (C+=CDB), B->D and D->B on (B,D). Then C->B and B->D give C->D, and D->B, B->C, A->B are present directly, so every FD is preserved. Correct key A (lossless and dependency preserving); PDF key B.",
+  "recomputed": [
+   "A"
+  ]
+ },
+ {
+  "n": 23,
+  "id": "q_ffb7108bc5ca",
+  "chapter": "GA.QUANT",
+  "marks_inferred": 1,
+  "stem": "In an engineering college of 10,000 students, 1,500 like neither their core branches nor other branches. The number of students who like their core branches is 1/4th of the number of students who like other branches. 500 like both. The number of students who like their core branches is:",
+  "options": [
+   {
+    "key": "A",
+    "text": "1,800"
+   },
+   {
+    "key": "B",
+    "text": "3,500"
+   },
+   {
+    "key": "C",
+    "text": "1,600"
+   },
+   {
+    "key": "D",
+    "text": "1,500"
+   }
+  ],
+  "pdf_key": [
+   "C"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "Let c = core-likers, o = other-likers, o = 4c. |union| = 10000-1500 = 8500 = c + o - 500, so 5c = 9000, c = 1800 (option A). If instead 'like core branches' were exclusive of 'like both' (c + o + 500 = 8500, o = 4c) then c = 1600 (option C), which is what the PDF key matches, but the printed stem ('500 like both' as an overlap in the counts) gives 1,800. Ambiguous stem; PDF key C vs recomputed A.",
+  "recomputed": [
+   "val",
+   1800.0
+  ]
+ },
+ {
+  "n": 24,
+  "id": "q_f09242425134",
+  "chapter": "GA.QUANT",
+  "marks_inferred": 2,
+  "stem": "The pie charts depict shares of power generation (2007 vs 2023). Assuming total electricity generated remains the same, what is the percentage increase in the share of renewable sources (Hydro, Solar, Wind) over this period?",
+  "options": [
+   {
+    "key": "A",
+    "text": "25"
+   },
+   {
+    "key": "B",
+    "text": "50"
+   },
+   {
+    "key": "C",
+    "text": "77.5"
+   },
+   {
+    "key": "D",
+    "text": "62.5"
+   }
+  ],
+  "pdf_key": [
+   "C"
+  ],
+  "reason": "figure",
+  "derivation": "Depends on two pie charts that are not in the PDF."
+ },
+ {
+  "n": 25,
+  "id": "q_0a9fcfaf75f7",
+  "chapter": "GA.VERB",
+  "marks_inferred": 1,
+  "stem": "Based on the G.K. Chesterton passage about \"A Piece of Chalk\", which statement is true?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The author carries a mirror in his pocket."
+   },
+   {
+    "key": "B",
+    "text": "The author had decided to write a poem on epics."
+   },
+   {
+    "key": "C",
+    "text": "The pocket-knife is described as the infant of the sword."
+   },
+   {
+    "key": "D",
+    "text": "Epics are described as too inconvenient to write."
+   }
+  ],
+  "pdf_key": [
+   "C"
+  ],
+  "reason": "broken_context",
+  "derivation": "The passage is not included in the PDF."
+ },
+ {
+  "n": 28,
+  "id": "q_f18ff01bcee1",
+  "chapter": "GA.QUANT",
+  "marks_inferred": 2,
+  "stem": "If two distinct non-zero real variables $x$ and $y$ are such that $(x + y)$ is proportional to $x(x - y)$, then the value of $\\frac{x^2 + y^2}{x^2 - y^2}$ is:",
+  "options": [
+   {
+    "key": "A",
+    "text": "depends on $x$ and $y$"
+   },
+   {
+    "key": "B",
+    "text": "depends only on $x$ and not on $y$"
+   },
+   {
+    "key": "C",
+    "text": "depends only on $y$ and not on $x$"
+   },
+   {
+    "key": "D",
+    "text": "is a constant"
+   }
+  ],
+  "pdf_key": [
+   "D"
+  ],
+  "reason": "suspicious_key",
+  "derivation": "As printed, x+y = k x(x-y) is a curve, and along it (x^2+y^2)/(x^2-y^2) takes different values (checked numerically for k=1: t=y/x gives (1+t^2)/(1-t^2) varying), so 'is a constant' (key D) is false. The intended original is probably '(x+y) proportional to (x-y)' (typo 'x(x-y)'), for which the ratio depends only on the proportionality constant. Quarantined as a probable misprint."
+ },
+ {
+  "n": 29,
+  "id": "q_0ae4ce8414e9",
+  "chapter": "GA.QUANT",
+  "marks_inferred": 2,
+  "stem": "A rectangular paper sheet of $54\\pi$ cm $\\times$ 4 cm is taken and folded into a cylinder. A cube with same surface area is taken. The ratio of cylinder volume to cube volume is:",
+  "options": [
+   {
+    "key": "A",
+    "text": "$1/\\pi$"
+   },
+   {
+    "key": "B",
+    "text": "$2/\\pi$"
+   },
+   {
+    "key": "C",
+    "text": "$3/\\pi$"
+   },
+   {
+    "key": "D",
+    "text": "$4/\\pi$"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "suspicious_key",
+  "derivation": "As printed (54 pi cm x 4 cm) no option results (circumference 4, height 54 pi gives ratio 0.1796; circumference 54 pi gives other values). With the likely intended sheet 54 cm x 4 cm (area 216, cube side 6, volume 216; cylinder with circumference 4 and height 54 has volume 216/pi) the ratio is 1/pi, option A, not the PDF key B (2/pi). Misprint plus mismatching key."
+ },
+ {
+  "n": 30,
+  "id": "q_871c2dad10c9",
+  "chapter": "GA.QUANT",
+  "marks_inferred": 2,
+  "stem": "The pie chart shows macronutrients for a 2,000 kcal diet. The total fat in grams consumed is:",
+  "options": [
+   {
+    "key": "A",
+    "text": "44.4"
+   },
+   {
+    "key": "B",
+    "text": "77.8"
+   },
+   {
+    "key": "C",
+    "text": "100"
+   },
+   {
+    "key": "D",
+    "text": "3,600"
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "figure",
+  "derivation": "Depends on a pie chart not present in the PDF."
+ },
+ {
+  "n": 34,
+  "id": "q_df1dd66a65f5",
+  "chapter": "CO.LIM",
+  "marks_inferred": 2,
+  "stem": "Let $f: \\mathbb{R} \\to \\mathbb{R}$, $f(x) = \\dfrac{e^x - e^{-x}}{2}$. Find the number of true statements among the following: $f$ is onto, $f$ is one-one, $f^{-1}(x) = \\ln(x + \\sqrt{x^2+1})$, $f^{-1}$ doesn't exist, $f(x) \\ge 0$ for all $x \\in \\mathbb{R}$. ______.",
+  "options": null,
+  "pdf_key": 4,
+  "reason": "key_mismatch",
+  "derivation": "f = sinh. onto: true. one-one: true. f^{-1}(x)=ln(x+sqrt(x^2+1)): true. 'f^{-1} doesn't exist': false (f is bijective). 'f(x)>=0 for all x': false (f(-1)<0). Count = 3; PDF key 4.",
+  "recomputed": 3.0
+ },
+ {
+  "n": 36,
+  "id": "q_ec76fb5ac2d5",
+  "chapter": "CO.LIM",
+  "marks_inferred": 2,
+  "stem": "Suppose $f(0) = 4$, $g(0) = 3$, $f'(0) = 3$, $f'(3) = -1$, $g'(0) = -2$. Which are true?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$(f \\circ g)'(0) = 2$"
+   },
+   {
+    "key": "B",
+    "text": "$(f/g)(0) = 17/9$"
+   },
+   {
+    "key": "C",
+    "text": "$(fg)'(0) = -6$"
+   },
+   {
+    "key": "D",
+    "text": "$(f/g)(0) = -17/9$"
+   }
+  ],
+  "pdf_key": [
+   "B",
+   "C"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "A: (f o g)'(0) = f'(g(0)) g'(0) = f'(3)(-2) = 2: TRUE. B: (f/g)(0) = 4/3, not 17/9: false. C: (fg)'(0) = f'(0)g(0)+f(0)g'(0) = 9-8 = 1, not -6: false. D: 4/3 != -17/9: false. Correct key A only; PDF key B, C.",
+  "recomputed": [
+   "A"
+  ]
+ },
+ {
+  "n": 49,
+  "id": "q_36824422453d",
+  "chapter": "PRS.CRV",
+  "marks_inferred": 2,
+  "stem": "$f_{XY}(x, y) = 6xy^2$ for $0 \\le x, y \\le 1$. Choose correct options:",
+  "options": [
+   {
+    "key": "A",
+    "text": "$f_X(x) = 3x$"
+   },
+   {
+    "key": "B",
+    "text": "$f_{Y|X}(y|x) = 3xy^2$"
+   },
+   {
+    "key": "C",
+    "text": "$f_{Y|X}(y|x) = 3y^2$"
+   },
+   {
+    "key": "D",
+    "text": "$E[Y|X=x] = 3/4$"
+   }
+  ],
+  "pdf_key": [
+   "A",
+   "C",
+   "D"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "f_X(x) = int_0^1 6xy^2 dy = 2x, so A (3x) is FALSE. f_{Y|X}(y|x) = 6xy^2/(2x) = 3y^2: C true, B false. E[Y|X=x] = int_0^1 y*3y^2 dy = 3/4: D true. Correct key C, D; PDF key A, C, D.",
+  "recomputed": [
+   "C",
+   "D"
+  ]
+ },
+ {
+  "n": 52,
+  "id": "q_d1b586acc150",
+  "chapter": "LA.MAT",
+  "marks_inferred": 1,
+  "stem": "Assertion: If $A^2 + A = I$ then $A^{-1} = A + I$. Reason: If $AB = I$ then $A^{-1} = B$.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Assertion is true and Reason is true. Reason is correct explanation."
+   },
+   {
+    "key": "B",
+    "text": "Assertion is true and Reason is true. Reason is not correct explanation."
+   },
+   {
+    "key": "C",
+    "text": "Both are false."
+   },
+   {
+    "key": "D",
+    "text": "Assertion is true. Reason is false."
+   },
+   {
+    "key": "E",
+    "text": "Assertion is false. Reason is true."
+   }
+  ],
+  "pdf_key": [
+   "D"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "A(A+I) = A^2 + A = I, so A is invertible with inverse A+I: Assertion true. Reason: for square matrices AB = I implies B = A^{-1}, which is exactly the step used, so the Reason is true and is the correct explanation (option A). The PDF key D calls the Reason false, which holds only if non-square matrices are allowed; but the Assertion's A is square. Ambiguous; PDF key D vs reasoned A."
+ },
+ {
+  "n": 54,
+  "id": "q_150bf9677881",
+  "chapter": "LA.MAT",
+  "marks_inferred": 2,
+  "stem": "$v = (3, 1, 2)$, anti-clockwise rotation about y-axis by $45^\\circ$. New point $(a, b, c)$. Find $\\sqrt{2}(a + b + c - 1)$. ______.",
+  "options": null,
+  "pdf_key": 6,
+  "reason": "key_mismatch",
+  "derivation": "Right-hand-rule rotation about +y by 45 deg: x' = x cos + z sin, z' = -x sin + z cos. (a,b,c) = (5/sqrt2, 1, -1/sqrt2); a+b+c-1 = 4/sqrt2; times sqrt2 = 4. The PDF key 6 corresponds to the opposite sense (x' = x cos - z sin, z' = x sin + z cos): (1/sqrt2, 1, 5/sqrt2), giving 6. 'Anti-clockwise about the y-axis' is convention dependent; code gives 4 (right-hand rule) and 6 (opposite); PDF key 6.",
+  "recomputed": 4.0
+ },
+ {
+  "n": 58,
+  "id": "q_6c279976a94d",
+  "chapter": "LA.SYS",
+  "marks_inferred": 2,
+  "stem": "$k$ linear equations in $n$ variables $Ax = b$. Which are true?",
+  "options": [
+   {
+    "key": "A",
+    "text": "If $n = k$, at most one solution."
+   },
+   {
+    "key": "B",
+    "text": "If $n > k$, you can always solve."
+   },
+   {
+    "key": "C",
+    "text": "If $n > k$, nullity of $A$ is non-zero."
+   },
+   {
+    "key": "D",
+    "text": "If $n < k$, for some $b$ no solution."
+   },
+   {
+    "key": "E",
+    "text": "If $n < k$, only solution to $Ax = 0$ is $x = 0$."
+   }
+  ],
+  "pdf_key": [
+   "C"
+  ],
+  "reason": "key_mismatch",
+  "derivation": "A false (singular square matrix can have infinitely many solutions or none). B false (inconsistent systems exist). C true (rank <= k < n so nullity >= n-k > 0). D true: rank <= n < k, so the column space is a proper subspace of R^k and some b is outside it. E false (e.g. zero matrix). Correct key C, D; PDF key C only.",
+  "recomputed": [
+   "C",
+   "D"
+  ]
+ },
+ {
+  "n": 62,
+  "id": "q_bd570da99010",
+  "chapter": "ML.DR",
+  "marks_inferred": 1,
+  "stem": "PCA directions from diagram (lines 1,2,3,4). Which correspond to PCs?",
+  "options": [
+   {
+    "key": "A",
+    "text": "(2) corresponds to first PC, (4) to second PC"
+   },
+   {
+    "key": "B",
+    "text": "(4) corresponds to first PC, (2) to second PC"
+   },
+   {
+    "key": "C",
+    "text": "(3) corresponds to first PC, (1) to second PC"
+   },
+   {
+    "key": "D",
+    "text": "(1) corresponds to first PC, (3) to second PC"
+   }
+  ],
+  "pdf_key": [
+   "A"
+  ],
+  "reason": "figure",
+  "derivation": "Depends on a diagram not present in the PDF."
+ },
+ {
+  "n": 64,
+  "id": "q_b9a7ac5ec95d",
+  "chapter": "ML.REG",
+  "marks_inferred": 1,
+  "stem": "Linear regression (weight in kg, height in m). Change weight unit to grams. Retrain model.",
+  "options": [
+   {
+    "key": "A",
+    "text": "$w_1$ increases by 1000, $w_2$ same."
+   },
+   {
+    "key": "B",
+    "text": "$w_1$ decreases by 1000, $w_2$ same."
+   },
+   {
+    "key": "C",
+    "text": "Both $w_1, w_2$ increase by 1000."
+   },
+   {
+    "key": "D",
+    "text": "Both $w_1, w_2$ unchanged."
+   }
+  ],
+  "pdf_key": [
+   "B"
+  ],
+  "reason": "broken_context",
+  "derivation": "The model equation (which variable is the target, which weights belong to weight and height) is not given. Also 'decreases by 1000' means divided by 1000, wording is loose."
+ }
+]

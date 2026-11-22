@@ -1,0 +1,2121 @@
+[
+ {
+  "id": "q_ff45d0701f4c",
+  "type": "SCQ",
+  "stem": "A list of $n$ strings, each of length $n$, is sorted in lexicographical order using the Merge Sort algorithm. What is its time complexity? Assume that comparing strings lexicographically takes $O(n)$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** Merge sort does $\\Theta(n\\log n)$ comparisons; each costs $O(n)$.\n\n**Work.** Total $=O(n\\log n)\\cdot O(n)=O(n^2\\log n)$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$O(n \\log n)$"
+   },
+   {
+    "key": "B",
+    "text": "$O(n^2 \\log n)$"
+   },
+   {
+    "key": "C",
+    "text": "$O(n^2)$"
+   },
+   {
+    "key": "D",
+    "text": "$O(\\log n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_f71e4979605e",
+  "type": "SCQ",
+  "stem": "Consider a graph $G$ with 7 vertices, where there exists a path between every pair of vertices. Which of the following is a possible listing of the degrees of vertices in graph $G$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "**Idea.** Degree sum must be even; a connected graph on 7 vertices needs every degree $\\ge 1$ and at least 6 edges.\n\n**Work.** A sums to 21 (odd), B sums to 25 (odd), C sums to 9 (odd): impossible. D sums to 12 and is realised by the path on 7 vertices, which is connected.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "2, 3, 4, 1, 6, 2, 3"
+   },
+   {
+    "key": "B",
+    "text": "4, 4, 4, 3, 4, 3, 3"
+   },
+   {
+    "key": "C",
+    "text": "1, 2, 1, 1, 1, 2, 1"
+   },
+   {
+    "key": "D",
+    "text": "1, 2, 2, 2, 2, 2, 1"
+   }
+  ]
+ },
+ {
+  "id": "q_75272fd12c1c",
+  "type": "SCQ",
+  "stem": "A binary search tree in which every node has either 0 or 2 children is referred as strictly binary tree. Such a tree with 21 leaves",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** In a strictly binary tree, internal nodes $=$ leaves $-1$.\n\n**Work.** Internal $=20$, so total $=21+20=41$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "has exactly 40 nodes"
+   },
+   {
+    "key": "B",
+    "text": "has exactly 41 nodes"
+   },
+   {
+    "key": "C",
+    "text": "has exactly 42 nodes"
+   },
+   {
+    "key": "D",
+    "text": "has exactly 43 nodes"
+   }
+  ]
+ },
+ {
+  "id": "q_2948041342ad",
+  "type": "SCQ",
+  "stem": "What is the worst-case time complexity of inserting $n$ elements into an empty linked list, if the linked list needs to be maintained in sorted order?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "**Idea.** Inserting into a sorted linked list needs a linear scan to find the position (no random access).\n\n**Work.** The $i$-th insertion costs $\\Theta(i)$ in the worst case, so the total is $\\sum_{i=1}^n \\Theta(i)=\\Theta(n^2)$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(n \\log n)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(1)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(n^2)$"
+   }
+  ]
+ },
+ {
+  "id": "q_0ddc58c2225e",
+  "type": "SCQ",
+  "stem": "The running time of an algorithm is represented by the following recurrence relation: $T(n) = T(n/3) + cn$ if $n > 1$, else $T(1)$. Which of the following represents the time complexity?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Master theorem with $a=1,b=3,f(n)=cn$.\n\n**Work.** $n^{\\log_3 1}=1$ and $f(n)=\\Omega(n^{\\epsilon})$ with the regularity condition $f(n/3)=cn/3\\le \\tfrac13 f(n)$, so $T(n)=\\Theta(n)$. Equivalently the series $cn(1+1/3+1/9+\\dots)=\\tfrac32 cn$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(\\log n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n^2)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(n^2 \\log n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_89b8f1861a2b",
+  "type": "NVQ",
+  "stem": "Consider the following Python function:\n\n```python\ndef simple_function(Y, n, x):\n    total = Y[0]\n    for loop_index in range(1, n):\n        total = x * total + Y[loop_index]\n    return total\n```\n\nLet $Z$ be an array of 10 elements with $Z[i] = 1$ for all $0 \\le i \\le 9$. The value returned by `simple_function(Z, 10, 2)` is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    1023.0,
+    1023.0
+   ]
+  },
+  "solution": "**Idea.** Horner's rule: the loop evaluates $\\sum_{i=0}^{9} Y[i]\\,x^{9-i}$.\n\n**Work.** With $Y[i]=1$, $x=2$: $2^9+2^8+\\dots+1=2^{10}-1=1023$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.PY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4419ae96c470",
+  "type": "SCQ",
+  "stem": "Which one of the options refers to the degree (or arity) of a relation in relational database systems?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Degree (arity) is the number of columns; cardinality is the number of tuples.\n\n**Work.** The number of attributes of the relation schema is the degree, option A. Option B is the cardinality.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Number of attributes of its relation schema."
+   },
+   {
+    "key": "B",
+    "text": "Number of tuples stored in the relation."
+   },
+   {
+    "key": "C",
+    "text": "Number of entries in the relation."
+   },
+   {
+    "key": "D",
+    "text": "Number of distinct domains of its relation schema."
+   }
+  ]
+ },
+ {
+  "id": "q_101c27fd90d3",
+  "type": "NVQ",
+  "stem": "Consider a relation $R(A, B, C, D, E)$ with the following functional dependencies: $AB \\to C$, $BC \\to D$, $C \\to E$. The number of super keys in the relation $R$ is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    8.0,
+    8.0
+   ]
+  },
+  "solution": "**Idea.** $A$ and $B$ appear on no right-hand side, so every key contains $AB$.\n\n**Work.** $AB^+=ABCDE$, so $AB$ is the only candidate key. Super keys are the supersets of $AB$: $2^3=8$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_878e309295df",
+  "type": "SCQ",
+  "stem": "Relation $R$ has eight attributes $ABCDEFGH$. $F = \\{CH \\to G,\\ A \\to BC,\\ B \\to CFH,\\ E \\to A,\\ F \\to EG\\}$. How many candidate keys does the relation $R$ have?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** $D$ appears on no right-hand side, so every key contains $D$.\n\n**Work.** $D$ plus one of $A,B,E,F$ determines everything: $A\\to BC$, $B\\to CFH$, $F\\to EG$, $E\\to A$ form a cycle $A\\to B\\to F\\to E\\to A$, so $\\{A,B,E,F\\}$ are mutually equivalent and each of $AD,BD,DE,DF$ is a key. $C,G,H$ alone cannot replace them. So there are 4 candidate keys.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "3"
+   },
+   {
+    "key": "B",
+    "text": "4"
+   },
+   {
+    "key": "C",
+    "text": "5"
+   },
+   {
+    "key": "D",
+    "text": "6"
+   }
+  ]
+ },
+ {
+  "id": "q_dc893ab8d733",
+  "type": "SCQ",
+  "stem": "Based only on the conversation below, identify the logically correct inference: \"Even if I had known that you were in the hospital, I would not have gone there to see you\", Ramya told Josephine.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "**Idea.** A past counterfactual 'Even if I had known...' implies the speaker did not know.\n\n**Work.** Ramya says she would not have gone even had she known, so she did not know. Options A and B add unsupported facts; C contradicts the counterfactual.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Ramya and Josephine were once close friends; but now, they are not"
+   },
+   {
+    "key": "B",
+    "text": "Josephine was in the hospital due to an injury to her leg"
+   },
+   {
+    "key": "C",
+    "text": "Ramya knew that Josephine was in the hospital."
+   },
+   {
+    "key": "D",
+    "text": "Ramya did not know that Josephine was in the hospital."
+   }
+  ]
+ },
+ {
+  "id": "q_7f3c3f2a3011",
+  "type": "SCQ",
+  "stem": "Two wizards try to create a spell using water, air, fire, and earth by mixing them in all possible orders independently. How many attempts does each wizard make before concluding it doesn't work?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Each wizard tries every ordering of 4 distinct ingredients, independently of the other.\n\n**Work.** $4!=24$ attempts each (the other wizard does not add to one wizard's count).\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "24"
+   },
+   {
+    "key": "B",
+    "text": "48"
+   },
+   {
+    "key": "C",
+    "text": "16"
+   },
+   {
+    "key": "D",
+    "text": "12"
+   }
+  ]
+ },
+ {
+  "id": "q_1c300d906dd8",
+  "type": "SCQ",
+  "stem": "A shop has 4 distinct flavors of ice-cream. In how many ways can one purchase 3 scoops?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** Scoops of the same flavour may repeat and order does not matter, so count multisets of size 3 from 4 flavours.\n\n**Work.** $\\binom{3+4-1}{3}=\\binom{6}{3}=20$. (Assumes repetition of flavours is allowed, as the options suggest.)\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "4"
+   },
+   {
+    "key": "B",
+    "text": "20"
+   },
+   {
+    "key": "C",
+    "text": "24"
+   },
+   {
+    "key": "D",
+    "text": "48"
+   }
+  ]
+ },
+ {
+  "id": "q_adff010c560a",
+  "type": "SCQ",
+  "stem": "If $\\rightarrow$ denotes increasing order of intensity, [dry $\\rightarrow$ arid $\\rightarrow$ parched] is analogous to [diet $\\rightarrow$ fast $\\rightarrow$ ...]. Fill the blank:",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Find the intensity ladder for abstaining from food.\n\n**Work.** Dry, arid, parched are increasing degrees of dryness; diet, fast, starve are increasing degrees of food restriction. Feast is the opposite; reject and deny are not degrees of this scale.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "starve"
+   },
+   {
+    "key": "B",
+    "text": "reject"
+   },
+   {
+    "key": "C",
+    "text": "feast"
+   },
+   {
+    "key": "D",
+    "text": "deny"
+   }
+  ]
+ },
+ {
+  "id": "q_7b5a014e116d",
+  "type": "NVQ",
+  "stem": "Suppose $x + y = 16$. What is the value of $xy$ when $x^3 + y^3$ is minimum? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    64.0,
+    64.0
+   ]
+  },
+  "solution": "**Idea.** Use $x^3+y^3=(x+y)^3-3xy(x+y)$.\n\n**Work.** $=4096-48xy$, which is smallest when $xy$ is largest. With $x+y=16$, $xy=x(16-x)$ is maximal at $x=y=8$, giving $xy=64$ (and the minimum value $1024$).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_29a2ec0826cf",
+  "type": "NVQ",
+  "stem": "Find the value of the following limit: $\\lim_{x \\to 0^+} \\dfrac{\\sqrt{x}}{1 - e^{2\\sqrt{x}}}$ ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    -0.5,
+    -0.5
+   ]
+  },
+  "solution": "**Idea.** Substitute $u=\\sqrt{x}\\to 0^+$.\n\n**Work.** $\\dfrac{u}{1-e^{2u}}$ with $1-e^{2u}\\sim -2u$, so the limit is $-\\tfrac12$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_33cb183babb3",
+  "type": "NVQ",
+  "stem": "Find the area of the rectangle with largest perimeter that can be inscribed in a circle of unit radius. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    2.0,
+    2.0
+   ]
+  },
+  "solution": "**Idea.** A rectangle inscribed in a circle has diagonal $2$: sides $a,b$ with $a^2+b^2=4$.\n\n**Work.** Perimeter $2(a+b)$ is maximal when $a=b=\\sqrt2$ (a square), so the area is $2$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_64fa5f4a1fbc",
+  "type": "SCQ",
+  "stem": "Let $f: \\mathbb{R} \\to \\mathbb{R}$ such that $f(x + y) = f(x) + f(y)$ for all $x, y$. $f$ is continuous at $x = 0$. Which statement is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Additivity transfers continuity at one point to every point.\n\n**Work.** $f(0)=0$, and $f(x+h)-f(x)=f(h)\\to f(0)=0$ as $h\\to0$, so $f$ is continuous at every $x$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$f$ is continuous everywhere"
+   },
+   {
+    "key": "B",
+    "text": "$f$ is continuous only when $x \\in \\mathbb{N}$"
+   },
+   {
+    "key": "C",
+    "text": "$f$ is continuous only when $x \\in \\mathbb{Z}$"
+   },
+   {
+    "key": "D",
+    "text": "$f$ is continuous only when $x \\in \\mathbb{Q}$"
+   }
+  ]
+ },
+ {
+  "id": "q_dd4ebf326932",
+  "type": "MSQ",
+  "stem": "Which of the following are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "**Idea.** Evaluate each limit.\n\n**Work.** A: exponential beats polynomial, limit $0$: true. B: $\\frac{(x-3)(x+3)}{(x-3)(x^2+3x+9)}\\to\\frac{6}{27}=\\frac29$: true. C: as $x\\to-\\infty$, $e^{x}\\to0^+$ so $7/e^x\\to\\infty$: false. D: $\\frac{(x+2)^2}{(2-x)(2+x)}=\\frac{x+2}{2-x}\\to0$, not $-2$: false.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\lim_{x \\to \\infty} \\dfrac{x^2}{e^x} = 0$"
+   },
+   {
+    "key": "B",
+    "text": "$\\lim_{x \\to 3} \\dfrac{x^2 - 9}{x^3 - 27} = \\dfrac{2}{9}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\lim_{x \\to -\\infty} \\dfrac{7}{e^x} = 0$"
+   },
+   {
+    "key": "D",
+    "text": "$\\lim_{x \\to -2} \\dfrac{(x+2)^2}{4 - x^2} = -2$"
+   }
+  ]
+ },
+ {
+  "id": "q_919cb411cc3d",
+  "type": "SCQ",
+  "stem": "Consider $f: [0, \\infty) \\to \\mathbb{R}$ defined as $f(x) = x + \\sqrt{x}$. Which is a first-order linear approximation for $f$ around $x = 1$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "**Idea.** $L(x)=f(1)+f'(1)(x-1)$.\n\n**Work.** $f(1)=2$, $f'(x)=1+\\tfrac{1}{2\\sqrt x}$ so $f'(1)=\\tfrac32$. $L(x)=2+\\tfrac32(x-1)=\\tfrac{3x+1}{2}$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.TAY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{6x+1}{4}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{x+3}{2}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{3x+1}{2}$"
+   },
+   {
+    "key": "D",
+    "text": "$3x-1$"
+   }
+  ]
+ },
+ {
+  "id": "q_d06ed6815922",
+  "type": "NVQ",
+  "stem": "How many points of discontinuity does the curve $y = \\dfrac{1}{u^2 + u - 2}$ have if $u = \\dfrac{1}{x-1}$? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    3.0,
+    3.0
+   ]
+  },
+  "solution": "**Idea.** $y$ is undefined where $u$ is undefined or the denominator vanishes.\n\n**Work.** $u^2+u-2=(u+2)(u-1)$. $u=1\\Rightarrow x=2$; $u=-2\\Rightarrow x=\\tfrac12$; and $u$ itself is undefined at $x=1$. Three points of discontinuity.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_63f79faff14f",
+  "type": "SCQ",
+  "stem": "Consider $f(x) = 3^x$. Find $f'(1)$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "**Idea.** $\\frac{d}{dx}a^x=a^x\\ln a$.\n\n**Work.** $f'(1)=3^1\\ln3=3\\ln 3$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\ln 3$"
+   },
+   {
+    "key": "B",
+    "text": "$3$"
+   },
+   {
+    "key": "C",
+    "text": "$1$"
+   },
+   {
+    "key": "D",
+    "text": "$3 \\ln 3$"
+   }
+  ]
+ },
+ {
+  "id": "q_41b58512b178",
+  "type": "NVQ",
+  "stem": "Out of 6 men and 8 women, form a committee of 3 men and 5 women. In how many ways? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    1120.0,
+    1120.0
+   ]
+  },
+  "solution": "**Idea.** Choose men and women independently.\n\n**Work.** $\\binom63\\binom85=20\\times56=1120$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CNT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_69bdec5ee0dc",
+  "type": "NVQ",
+  "stem": "57% wear neither ring nor necklace, 30% wear ring, 25% wear necklace. Probability a chosen student wears both? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.115,
+    0.125
+   ]
+  },
+  "solution": "**Idea.** Inclusion-exclusion.\n\n**Work.** $P(R\\cup N)=1-0.57=0.43$, so $P(R\\cap N)=0.30+0.25-0.43=0.12$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3e5f53f2f329",
+  "type": "NVQ",
+  "stem": "20 boxes (15 gifts, 5 empty). 5 boxes removed randomly. A person selects one from remaining. Probability it is empty? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.245,
+    0.255
+   ]
+  },
+  "solution": "**Idea.** Symmetry: the removed boxes are random, so the chosen remaining box is a uniformly random box of the 20.\n\n**Work.** $P=5/20=0.25$ (confirmed by conditioning on the number of empty boxes removed).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_b57b28301b86",
+  "type": "SCQ",
+  "stem": "Screws diameter normal distribution. Sample: 9.8, 10.2, 10.4, 9.8, 10.0, 10.2, 9.6. Find 95% confidence interval.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** Variance unknown, $n=7$: use the $t_6$ interval.\n\n**Work.** $\\bar x=10.0$, $s^2=0.48/6=0.08$, $s=0.2828$. Half-width $=t_{0.975,6}\\,s/\\sqrt7=2.447\\times0.1069=0.262$, giving $[9.74, 10.26]$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.INF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$[10.74, 11.26]$"
+   },
+   {
+    "key": "B",
+    "text": "$[9.74, 10.26]$"
+   },
+   {
+    "key": "C",
+    "text": "$[7.47, 8.26]$"
+   },
+   {
+    "key": "D",
+    "text": "$[7.98, 8.75]$"
+   }
+  ]
+ },
+ {
+  "id": "q_522cd446e11f",
+  "type": "NVQ",
+  "stem": "Waiting time exponential with expected 10 mins. Probability person waits $> 15$ mins? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.215,
+    0.225
+   ]
+  },
+  "solution": "**Idea.** Exponential with mean 10 has rate $0.1$; $P(T>t)=e^{-t/10}$.\n\n**Work.** $e^{-1.5}=0.2231\\approx0.22$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_27c9734b76aa",
+  "type": "SCQ",
+  "stem": "Joint distribution $f_{XY}(x, y) = \\dfrac{x+y}{9}$ for $x = 0, 1, 2$; $y = 0, 1$. What is $\\mathrm{Cov}(X, Y)$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** $\\mathrm{Cov}=E[XY]-E[X]E[Y]$.\n\n**Work.** $E[X]=13/9$, $E[Y]=6/9$, $E[XY]=\\tfrac{1\\cdot1\\cdot2+2\\cdot1\\cdot3}{9}=8/9$. $\\mathrm{Cov}=\\tfrac89-\\tfrac{78}{81}=-\\tfrac{6}{81}=-\\tfrac{2}{27}$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1/27$"
+   },
+   {
+    "key": "B",
+    "text": "$-2/27$"
+   },
+   {
+    "key": "C",
+    "text": "$2/27$"
+   },
+   {
+    "key": "D",
+    "text": "$-1/27$"
+   }
+  ]
+ },
+ {
+  "id": "q_0c0b6ec4e9fa",
+  "type": "SCQ",
+  "stem": "$f(x, y) = e^{-(x+y)}$ for $x, y \\ge 0$. What is $P(X + Y \\le 1)$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** $X,Y$ are independent Exp(1); $X+Y\\sim$ Gamma(2,1).\n\n**Work.** $P(X+Y\\le1)=1-e^{-1}(1+1)=1-2e^{-1}\\approx0.264$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1 - 2e^{-1}$"
+   },
+   {
+    "key": "B",
+    "text": "$1 - e^{-1}$"
+   },
+   {
+    "key": "C",
+    "text": "$e^{-2}$"
+   },
+   {
+    "key": "D",
+    "text": "$1 - e^{-4}$"
+   }
+  ]
+ },
+ {
+  "id": "q_807627107c30",
+  "type": "SCQ",
+  "stem": "$X_1 \\sim \\chi^2_8$, $X_2 \\sim \\chi^2_7$ independent. $Y = X_1 + X_2$. $\\mathrm{Var}(Y)$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "**Idea.** $\\mathrm{Var}(\\chi^2_k)=2k$ and variances add for independent variables.\n\n**Work.** $Y\\sim\\chi^2_{15}$, $\\mathrm{Var}=30$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "15"
+   },
+   {
+    "key": "B",
+    "text": "56"
+   },
+   {
+    "key": "C",
+    "text": "8"
+   },
+   {
+    "key": "D",
+    "text": "30"
+   }
+  ]
+ },
+ {
+  "id": "q_ea5e4b1cf54b",
+  "type": "NVQ",
+  "stem": "$X, Y, Z \\sim \\text{Geometric}(1/2)$ i.i.d. $U = \\min(X, Y, Z)$. Value of $1/P(U \\ge 3)$? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    64.0,
+    64.0
+   ]
+  },
+  "solution": "**Idea.** With support $\\{1,2,\\dots\\}$ and $p=\\tfrac12$, $P(X\\ge3)=(1-p)^2=\\tfrac14$. $U\\ge3$ iff all three are $\\ge3$.\n\n**Work.** $P(U\\ge3)=(\\tfrac14)^3=\\tfrac1{64}$, so $1/P=64$. (Assumes the trials-until-first-success convention.)\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_879be39ad023",
+  "type": "NVQ",
+  "stem": "Maximum rank of a $4 \\times 8$ matrix? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    4.0,
+    4.0
+   ]
+  },
+  "solution": "**Idea.** Rank is at most the smaller dimension.\n\n**Work.** $\\min(4,8)=4$, attained by a matrix with 4 independent rows.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_36f04ccd4cd4",
+  "type": "MSQ",
+  "stem": "If $A$ is orthogonal $n \\times n$ matrix, $b \\in \\mathbb{R}^n$, which are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B",
+    "C"
+   ]
+  },
+  "solution": "**Idea.** $A^TA=I$ means the columns are orthonormal and $A$ is invertible.\n\n**Work.** B is true; A is false because the columns are unit length by definition. $A$ invertible gives the unique solution $x=A^Tb$, so C is true and D, E are false.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$A$ has orthogonal columns which are not necessarily orthonormal."
+   },
+   {
+    "key": "B",
+    "text": "$A$ has orthonormal columns."
+   },
+   {
+    "key": "C",
+    "text": "$Ax = b$ has a unique solution."
+   },
+   {
+    "key": "D",
+    "text": "$Ax = b$ has no solutions."
+   },
+   {
+    "key": "E",
+    "text": "$Ax = b$ has infinitely many solutions."
+   }
+  ]
+ },
+ {
+  "id": "q_2b06a4b15811",
+  "type": "MSQ",
+  "stem": "$S_1, S_2$ subspaces, $S_1 \\cap S_2 = \\{0\\}$. $v = v_1 + v_2 = u_1 + u_2$ (with $v_1,u_1 \\in S_1$ and $v_2,u_2 \\in S_2$). Which are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "**Idea.** A trivial intersection makes the decomposition unique.\n\n**Work.** $v_1-u_1=u_2-v_2\\in S_1\\cap S_2=\\{0\\}$, so $v_1=u_1$ and $v_2=u_2$. $v_1=v_2$ or $u_1=u_2$ would force them both to be $0$, which is not generally true.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$v_1 = u_1$"
+   },
+   {
+    "key": "B",
+    "text": "$v_2 = u_2$"
+   },
+   {
+    "key": "C",
+    "text": "$v_1 = v_2$"
+   },
+   {
+    "key": "D",
+    "text": "$u_1 = u_2$"
+   }
+  ]
+ },
+ {
+  "id": "q_52e84ce65f33",
+  "type": "MSQ",
+  "stem": "$m \\times n$ matrix of rank $r$. Wrong entry for 1 element. Possible ranks?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "**Idea.** Changing one entry is a rank-one update, and rank changes by at most 1 under such an update.\n\n**Work.** Experiments with 400 random $4\\times4$ integer matrices and single-entry changes gave rank differences exactly $\\{-1,0,1\\}$. So $r$, $r+1$, $r-1$ are all possible, while $|k|>1$ is not.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$r$"
+   },
+   {
+    "key": "B",
+    "text": "$r+1$"
+   },
+   {
+    "key": "C",
+    "text": "$r-1$"
+   },
+   {
+    "key": "D",
+    "text": "$r \\pm k$, $0 < k \\le r$"
+   }
+  ]
+ },
+ {
+  "id": "q_0baf4e899101",
+  "type": "NVQ",
+  "stem": "Dimension of subspace from hyperplanes: $x_1 - 2x_2 + x_3 - x_4 = 0$, $x_1 + x_2 - x_3 + x_4 = 0$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    2.0,
+    2.0
+   ]
+  },
+  "solution": "**Idea.** Solution space dimension $=4-\\operatorname{rank}$.\n\n**Work.** The two normal vectors $(1,-2,1,-1)$ and $(1,1,-1,1)$ are not multiples of each other, so rank 2 and dimension $4-2=2$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_00d49f3b8023",
+  "type": "SCQ",
+  "stem": "Square matrix order 2, equal eigenvalues. $t$ trace, $d$ determinant. Which are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Equal eigenvalues $\\lambda,\\lambda$ of a real matrix are real, with $d=\\lambda^2$.\n\n**Work.** $d=\\lambda^2\\ge0$, so A is true and B is false. $\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$ has equal eigenvalues but is not zero or scalar (C, D false), and $\\begin{pmatrix}2&1\\\\-1&0\\end{pmatrix}$ (eigenvalue 1 twice) has unequal diagonal entries (E false). Assumes a real matrix.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$d \\ge 0$"
+   },
+   {
+    "key": "B",
+    "text": "$d < 0$"
+   },
+   {
+    "key": "C",
+    "text": "$A = 0$"
+   },
+   {
+    "key": "D",
+    "text": "$A$ is a scalar matrix"
+   },
+   {
+    "key": "E",
+    "text": "Diagonal entries are equal"
+   }
+  ]
+ },
+ {
+  "id": "q_57e6541d4f8a",
+  "type": "MSQ",
+  "stem": "Real idempotent matrix $A$ of order $n$. Which are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C",
+    "D",
+    "E"
+   ]
+  },
+  "solution": "**Idea.** $A^2=A$ forces eigenvalues in $\\{0,1\\}$ and $A$ is diagonalisable.\n\n**Work.** A: $(I-A)^2=I-2A+A^2=I-A$. B: false (e.g. $A=0$ or a projection). C: eigenvalues are $0$ or $1$, all real. D: for $y=Ax$, $Ay=A^2x=y$, so $y$ is an eigenvector with eigenvalue 1. E: trace $=$ number of eigenvalues equal to 1 $=$ rank. Checked on the idempotent $\\begin{pmatrix}1&1\\\\0&0\\end{pmatrix}$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$I - A$ is also idempotent."
+   },
+   {
+    "key": "B",
+    "text": "$A$ is always invertible."
+   },
+   {
+    "key": "C",
+    "text": "$A$ has $n$ real eigenvalues (including multiplicity)."
+   },
+   {
+    "key": "D",
+    "text": "All non-zero vectors in column space are eigenvectors of $A$."
+   },
+   {
+    "key": "E",
+    "text": "Rank of $A$ is equal to its trace."
+   }
+  ]
+ },
+ {
+  "id": "q_3f8eca0bbaae",
+  "type": "SCQ",
+  "stem": "$X$ is $n \\times d$ mean-centered design matrix. Expression for covariance matrix?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "**Idea.** The covariance of $d$ features is a $d\\times d$ matrix.\n\n**Work.** For mean-centred rows, $\\frac1n\\sum_i x_ix_i^T=\\frac{X^TX}{n}$. $XX^T$ is $n\\times n$, and the divisor is the number of samples $n$, not $d$.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{XX^T}{n}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{XX^T}{d}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{X^TX}{n}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{X^TX}{d}$"
+   }
+  ]
+ },
+ {
+  "id": "q_e13518e42298",
+  "type": "SCQ",
+  "stem": "For clustering problem with $n$ data-points and $k$ clusters, maximum number of cluster assignments?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "**Idea.** Each of the $n$ points independently picks one of $k$ clusters.\n\n**Work.** $k\\times k\\times\\dots\\times k=k^n$ assignments.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLU",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$k^n$"
+   },
+   {
+    "key": "B",
+    "text": "$n^k$"
+   },
+   {
+    "key": "C",
+    "text": "$n+k$"
+   },
+   {
+    "key": "D",
+    "text": "$k!$"
+   }
+  ]
+ },
+ {
+  "id": "q_10223b041535",
+  "type": "SCQ",
+  "stem": "Logistic regression decision boundary $w_0 + w_1x_1 + w_2x_2 = 0$. Predicted probability for $(x_1, x_2)$ is 0.7. Value of $w_0 + w_1x_1 + w_2x_2$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "**Idea.** $p=\\sigma(z)$ so $z=\\log\\frac{p}{1-p}$.\n\n**Work.** $z=\\log(0.7/0.3)\\approx0.847$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\log(0.7)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\log(0.7/0.3)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\log(0.3/0.7)$"
+   },
+   {
+    "key": "D",
+    "text": "$-\\log(0.7)$"
+   }
+  ]
+ }
+]
