@@ -38,6 +38,6 @@
     "typescript": "^5",
     "vite": "^7",
     "vite-plugin-pwa": "^1",
-    "vitest": "^3"
+    "vitest": "^5"
   }
 }
