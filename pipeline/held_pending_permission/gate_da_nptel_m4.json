@@ -1,0 +1,2377 @@
+[
+ {
+  "id": "q_61713d40d601",
+  "type": "SCQ",
+  "stem": "Suppose we run Prim's algorithm and Kruskal's algorithm on a graph $G$ which have edges with distinct weights and these two algorithms produce minimum cost spanning trees $T_P$ and $T_K$, with total minimum cost $C_p$ and $C_k$ respectively. Which of the following is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "With distinct edge weights the minimum spanning tree is unique, so any correct MST algorithm returns the same tree, hence the same cost.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$T_P$ and $T_K$ are always the same but $C_p$ may not be equal to $C_k$"
+   },
+   {
+    "key": "B",
+    "text": "$T_P$ may be different to $T_K$ but $C_p$ is always equal to $C_k$"
+   },
+   {
+    "key": "C",
+    "text": "$T_P$ and $T_K$ are always the same and $C_p$ is always equal to $C_k$"
+   },
+   {
+    "key": "D",
+    "text": "$T_P$ may be different to $T_K$ and $C_p$ may not be equal to $C_k$"
+   }
+  ]
+ },
+ {
+  "id": "q_8ce878b5aefe",
+  "type": "SCQ",
+  "stem": "$f_1(n) = 3n^2 + 2n$\n\n$f_2(n) = 3n + (\\log n)^2$\n\n$f_3(n) = \\log(\\log n) + (\\log n)^2$\n\n$f_4(n) = 10 \\log n$\n\n$f_5(n) = 2^n \\log n$\n\nArrange the above functions in increasing order of asymptotic complexity.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Growth classes: $f_4=\\Theta(\\log n)$, $f_3=\\Theta(\\log^2 n)$, $f_2=\\Theta(n)$, $f_1=\\Theta(n^2)$, $f_5=\\Theta(2^n\\log n)$. Increasing order: $f_4,f_3,f_2,f_1,f_5$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$f_3(n), f_4(n), f_2(n), f_1(n), f_5(n)$"
+   },
+   {
+    "key": "B",
+    "text": "$f_3(n), f_2(n), f_1(n), f_5(n), f_4(n)$"
+   },
+   {
+    "key": "C",
+    "text": "$f_4(n), f_3(n), f_2(n), f_1(n), f_5(n)$"
+   },
+   {
+    "key": "D",
+    "text": "$f_3(n), f_4(n), f_2(n), f_5(n), f_1(n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_3a942ee1b85a",
+  "type": "SCQ",
+  "stem": "Consider the recurrence function $T(n)$:\n\n$$T(n)=\\begin{cases}2T\\left(\\frac n2\\right)+1 & n>2\\\\ 2 & n\\le 2\\end{cases}$$\n\nThen $T(n)$ in terms of $\\Theta$ notation is?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Master theorem: $a=2$, $b=2$, $f(n)=1=O(n^{1-\\epsilon})$, so $T(n)=\\Theta(n^{\\log_2 2})=\\Theta(n)$. Exactly, $T(2^k)=3\\cdot2^{k-1}-1$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(\\log\\log n)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(\\log n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n\\log n)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_30ab18aaed4c",
+  "type": "NVQ",
+  "stem": "Consider the queues Q1 containing four elements and Q2 containing none. The only operations allowed on these two queues are Enqueue(Q, element) and Dequeue(Q). The minimum number of Enqueue operations on Q1 required to place the elements of Q1 in Q2 in reverse order without using any additional storage is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.0,
+    0.0
+   ]
+  },
+  "solution": "Move each element out of Q1 into Q2 (Dequeue on Q1, Enqueue on Q2); these cost no Enqueue on Q1. To insert each new element at the front of Q2, enqueue it at the back and rotate Q2 (Dequeue then Enqueue on Q2) so that it comes to the front. Only Q2 is rotated, so 0 Enqueue operations on Q1 are needed. A 0-1 BFS over all queue states confirms the minimum is 0.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_52127cbcd7d2",
+  "type": "SCQ",
+  "stem": "Let $G$ be a connected undirected weighted graph. Consider the following two statements.\n\nS1: There exists a minimum weight edge in $G$ which is present in every minimum spanning tree of $G$.\n\nS2: If every edge in $G$ has distinct weight, then $G$ has a unique minimum spanning tree.\n\nWhich one of the following options is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "S1 fails on a triangle with three equal weights: every edge is a minimum-weight edge but each is missing from some MST. S2 is true: distinct weights give a unique MST.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "S1 is false and S2 is true"
+   },
+   {
+    "key": "B",
+    "text": "Both S1 and S2 are false"
+   },
+   {
+    "key": "C",
+    "text": "S1 is true and S2 is false"
+   },
+   {
+    "key": "D",
+    "text": "Both S1 and S2 are true"
+   }
+  ]
+ },
+ {
+  "id": "q_287ff95017f1",
+  "type": "SCQ",
+  "stem": "If we perform the following operations on the max heap $[30, 20, 25, 5, 15, 23, 10, 3, 2]$ then the resulting max heap would be:\n\n```\ndelete max()\ninsert(24)\ndelete max()\n```",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "delete max: $[25,20,23,5,15,2,10,3]$. insert 24: $[25,24,23,20,15,2,10,3,5]$. delete max: move 5 to the root and sift down to get $[24,20,23,5,15,2,10,3]$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$[24, 20, 5, 15, 23, 10, 3, 2]$"
+   },
+   {
+    "key": "B",
+    "text": "$[24, 23, 20, 5, 15, 2, 10, 3]$"
+   },
+   {
+    "key": "C",
+    "text": "$[24, 20, 23, 5, 15, 2, 10, 3]$"
+   },
+   {
+    "key": "D",
+    "text": "$[24, 20, 23, 15, 10, 2, 5, 3]$"
+   }
+  ]
+ },
+ {
+  "id": "q_ce82f1162e14",
+  "type": "SCQ",
+  "stem": "An undirected graph $G$ has 19 vertices. The sum of the degrees of all the vertices in $G$ is $d$. The number of vertices of odd degree in $G$ is $k$. Which of these values are possible for $d$ and $k$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The degree sum is twice the number of edges, so $d$ is even, and the number of odd-degree vertices $k$ is even. Only $d=66,k=8$ satisfies both; it is realisable (for example eight vertices of degree 3 and eleven even-degree vertices summing to 42, checked with the Erdos-Gallai condition).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$d = 66$, $k = 9$"
+   },
+   {
+    "key": "B",
+    "text": "$d = 63$, $k = 9$"
+   },
+   {
+    "key": "C",
+    "text": "$d = 66$, $k = 8$"
+   },
+   {
+    "key": "D",
+    "text": "$d = 63$, $k = 8$"
+   }
+  ]
+ },
+ {
+  "id": "q_222e54ae0c6b",
+  "type": "SCQ",
+  "stem": "Consider the following statements S1 and S2 about the relational data model:\n\nS1: A relation schema can have at most one foreign key.\n\nS2: A foreign key in a relation schema R cannot be used to refer to tuples of R.\n\nWhich one of the following choices is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A relation may have several foreign keys, and a foreign key may reference the same relation (for example an employee's manager). Both statements are false.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both S1 and S2 are true"
+   },
+   {
+    "key": "B",
+    "text": "S1 is true and S2 is false"
+   },
+   {
+    "key": "C",
+    "text": "S1 is false and S2 is true"
+   },
+   {
+    "key": "D",
+    "text": "Both S1 and S2 are false"
+   }
+  ]
+ },
+ {
+  "id": "q_d8a3819d07ae",
+  "type": "NVQ",
+  "stem": "Consider an Entity-Relationship (ER) model in which entity sets $E_1$ and $E_2$ are connected by an $m : n$ relationship $R_{12}$. $E_1$ and $E_3$ are connected by a $1 : n$ relationship $R_{13}$. $E_1$ has two single-valued attributes $a_{11}$ and $a_{12}$ of which $a_{11}$ is the key attribute. $E_2$ has two single-valued attributes $a_{21}$ and $a_{22}$ of which $a_{21}$ is the key attribute. $E_3$ has two single-valued attributes $a_{31}$ and $a_{32}$ of which $a_{31}$ is the key attribute. The relationships do not have any attributes. If a relational model is derived from the above ER model, then the minimum number of relations that would be generated if all the relations are in 3NF is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    4.0,
+    4.0
+   ]
+  },
+  "solution": "One relation each for $E_1$, $E_2$, $E_3$, plus one for the $m:n$ relationship $R_{12}$. The $1:n$ relationship $R_{13}$ is absorbed into $E_3$ as a foreign key to $E_1$. Total $=4$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.ER",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a549be627742",
+  "type": "SCQ",
+  "stem": "Relation R has eight attributes ABCDEFGH. Fields of R contain only atomic values. Given functional dependencies $F = \\{CH \\to G, A \\to BC, B \\to CFH, E \\to A, F \\to EG\\}$, such that $F^+$ is exactly the set of FDs that hold for R. Determine the normal form of relation R.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "D never appears on a right-hand side, so it is in every key. $A^+$, $B^+$, $E^+$, $F^+$ each reach all of $ABCDEFGH$ with D added, so the candidate keys are $AD, BD, DE, DF$ and the prime attributes are $A,B,D,E,F$. $A\\to BC$ makes the non-prime attribute C depend on A, a proper part of the key $AD$: a partial dependency, so R is in 1NF but not 2NF.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "in 1NF, but not in 2NF."
+   },
+   {
+    "key": "B",
+    "text": "in 2NF, but not in 3NF."
+   },
+   {
+    "key": "C",
+    "text": "in 3NF, but not in BCNF."
+   },
+   {
+    "key": "D",
+    "text": "in BCNF."
+   }
+  ]
+ },
+ {
+  "id": "q_b6d5df574f1b",
+  "type": "SCQ",
+  "stem": "Which of the following query transformations (i.e., replacing the l.h.s. expression by the r.h.s expression) is incorrect? R1 and R2 are relations, C1 and C2 are selection conditions and A1 and A2 are attributes of R1.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Selections commute, selection distributes over union, and a selection that is applicable after a projection onto $A1$ can be pushed below it. The reverse, option D, is invalid when $C1$ uses attributes outside $A1$: the right-hand side is then not even well formed.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\sigma_{C1}(\\sigma_{C2}(R1)) \\to \\sigma_{C2}(\\sigma_{C1}(R1))$"
+   },
+   {
+    "key": "B",
+    "text": "$\\sigma_{C1}(\\pi_{A1}(R1)) \\to \\pi_{A1}(\\sigma_{C1}(R1))$"
+   },
+   {
+    "key": "C",
+    "text": "$\\sigma_{C1}(R1 \\cup R2) \\to \\sigma_{C1}(R1) \\cup \\sigma_{C1}(R2)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\pi_{A1}(\\sigma_{C1}(R1)) \\to \\sigma_{C1}(\\pi_{A1}(R1))$"
+   }
+  ]
+ },
+ {
+  "id": "q_ddcd3497ef4e",
+  "type": "SCQ",
+  "stem": "The employee information in a company is stored in the relation `Employee (name, sex, salary, deptName)`. Consider the following SQL query:\n\n```sql\nSELECT deptName FROM Employee WHERE sex = 'M' GROUP BY deptName HAVING avg (salary) > (SELECT avg (salary) FROM Employee)\n```\n\nIt returns the names of the department in which",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "WHERE keeps male rows only, so the HAVING average is over male employees of each department; the subquery averages over all employees (the whole company).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "the average salary is more than the average salary in the company"
+   },
+   {
+    "key": "B",
+    "text": "the average salary of male employees is more than the average salary of all male employees"
+   },
+   {
+    "key": "C",
+    "text": "the average salary of male employees is more than the average salary in the company"
+   },
+   {
+    "key": "D",
+    "text": "none of the above"
+   }
+  ]
+ },
+ {
+  "id": "q_019a700732cf",
+  "type": "SCQ",
+  "stem": "The relation book (title, price) contains the titles and prices of different books. Assuming that no two books have the same price, what does the following SQL query list?\n\n```sql\nSELECT title FROM book AS B WHERE (SELECT count(*) FROM book AS T WHERE T.price > B.price) < 5\n```",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "A book is listed when fewer than 5 books are more expensive, i.e. its rank from the top is 1 to 5: the five most expensive books.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Titles of the four most expensive books"
+   },
+   {
+    "key": "B",
+    "text": "Title of the fifth most inexpensive book"
+   },
+   {
+    "key": "C",
+    "text": "Title of the fifth most expensive book"
+   },
+   {
+    "key": "D",
+    "text": "Titles of the five most expensive books"
+   }
+  ]
+ },
+ {
+  "id": "q_53aed46052c8",
+  "type": "SCQ",
+  "stem": "If $Pe^{x} = Qe^{-x}$ for all real values of $x$, which one of the following statements is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$x=0$ gives $P=Q$; then $P(e^x-e^{-x})=0$ for all $x$ forces $P=0$, so $P=Q=0$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$P = Q = 0$"
+   },
+   {
+    "key": "B",
+    "text": "$P = Q = 1$"
+   },
+   {
+    "key": "C",
+    "text": "$P = 1; Q = -1$"
+   },
+   {
+    "key": "D",
+    "text": "$P/Q = 0$"
+   }
+  ]
+ },
+ {
+  "id": "q_6b7551afddad",
+  "type": "SCQ",
+  "stem": "If $\\rightarrow$ denotes increasing order of intensity, then the meaning of the words [walk $\\rightarrow$ jog $\\rightarrow$ sprint] is analogous to [bothered $\\rightarrow$ ______ $\\rightarrow$ daunted]. Which one of the given options is appropriate to fill the blank?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "'Fazed' means disconcerted or disturbed, a stronger feeling than 'bothered' and milder than 'daunted'. 'Phased', 'phrased' and 'fused' do not fit the scale.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "phased"
+   },
+   {
+    "key": "B",
+    "text": "phrased"
+   },
+   {
+    "key": "C",
+    "text": "fazed"
+   },
+   {
+    "key": "D",
+    "text": "fused"
+   }
+  ]
+ },
+ {
+  "id": "q_c420568b0dc0",
+  "type": "SCQ",
+  "stem": "For positive non-zero real variables $x$ and $y$, if $\\ln\\left(\\frac{x+y}{2}\\right) = \\frac12[\\ln(x) + \\ln(y)]$ then, the value of $\\frac xy + \\frac yx$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$\\frac{x+y}{2}=\\sqrt{xy}$ gives $(\\sqrt x-\\sqrt y)^2=0$, so $x=y$ and $\\frac xy+\\frac yx=2$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1"
+   },
+   {
+    "key": "B",
+    "text": "1/2"
+   },
+   {
+    "key": "C",
+    "text": "2"
+   },
+   {
+    "key": "D",
+    "text": "4"
+   }
+  ]
+ },
+ {
+  "id": "q_3a4ba947ef7b",
+  "type": "SCQ",
+  "stem": "A person sold two different items at the same price. He made 10% profit in one item, and 10% loss in the other item. In selling these two items, the person made a total of",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Let the selling price be $p$ each. Costs are $p/1.1$ and $p/0.9$, total $2p/0.99$. Revenue $2p$ is $0.99$ of the total cost, a 1% loss.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1% profit"
+   },
+   {
+    "key": "B",
+    "text": "2% profit"
+   },
+   {
+    "key": "C",
+    "text": "1% loss"
+   },
+   {
+    "key": "D",
+    "text": "2% loss"
+   }
+  ]
+ },
+ {
+  "id": "q_ef45f2f69c48",
+  "type": "SCQ",
+  "stem": "A cube is to be cut into 8 pieces of equal size and shape. Here, each cut should be straight and it should not stop till it reaches the other end of the cube. The minimum number of such cuts required is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$k$ planar cuts give at most $(k^3+5k+6)/6$ pieces: 4 for $k=2$, 8 for $k=3$. Three mutually perpendicular mid-plane cuts give 8 equal cubes, so 3 is the minimum.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.SPAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "3"
+   },
+   {
+    "key": "B",
+    "text": "4"
+   },
+   {
+    "key": "C",
+    "text": "7"
+   },
+   {
+    "key": "D",
+    "text": "8"
+   }
+  ]
+ },
+ {
+  "id": "q_5df49cd67e8e",
+  "type": "SCQ",
+  "stem": "Consider the relationships among P, Q, R, S, and T:\n\n- P is the brother of Q.\n- S is the daughter of Q.\n- T is the sister of S.\n- R is the mother of Q.\n\nThe following statements are made based on the relationships given above.\n\n(1) R is the grandmother of S.\n\n(2) P is the uncle of S and T.\n\n(3) R has only one son.\n\n(4) Q has only one daughter.\n\nWhich one of the following options is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "R is Q's mother and S is Q's daughter, so R is S's grandmother: (1) true. P is Q's brother, hence S's and T's uncle: (2) true. R's children include P and possibly Q, so (3) is not implied. T is also Q's daughter, so (4) is false. Only (1) and (2) are true.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.ANAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both (1) and (2) are true."
+   },
+   {
+    "key": "B",
+    "text": "Both (1) and (3) are true."
+   },
+   {
+    "key": "C",
+    "text": "Only (3) is true."
+   },
+   {
+    "key": "D",
+    "text": "Only (4) is true."
+   }
+  ]
+ },
+ {
+  "id": "q_503d2c68f320",
+  "type": "SCQ",
+  "stem": "For positive real variables $p$ and $q$, if $\\log(p^2 + q^2) = \\log p + \\log q + 2 \\log 3$, then, the value of $\\frac{p^4+q^4}{p^2q^2}$ is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$p^2+q^2=9pq$. Then $\\frac{p^4+q^4}{p^2q^2}=\\frac{(p^2+q^2)^2}{p^2q^2}-2=81-2=79$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "81"
+   },
+   {
+    "key": "B",
+    "text": "9"
+   },
+   {
+    "key": "C",
+    "text": "83"
+   },
+   {
+    "key": "D",
+    "text": "79"
+   }
+  ]
+ },
+ {
+  "id": "q_3f906377b95e",
+  "type": "NVQ",
+  "stem": "If $f(x) = (\\sin x)^{\\sqrt{\\pi}\\,x}$, find $f'(\\pi/2)$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.0,
+    0.0
+   ]
+  },
+  "solution": "$f'(x)=f(x)\\left[\\sqrt\\pi\\ln\\sin x+\\sqrt\\pi\\,x\\cot x\\right]$. At $x=\\pi/2$: $\\ln\\sin x=0$ and $\\cot x=0$, so $f'(\\pi/2)=0$ (the same holds if the exponent is read as $\\sqrt{\\pi x}$).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_e4903af30648",
+  "type": "NVQ",
+  "stem": "Let $f$ be a twice differentiable, real-valued function. Let $g(x) = f'(x)$ and $g'(x) = -f(x)$. If $f(5) = f'(5) = 2$, find $f^2(10) + g^2(10)$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    8.0,
+    8.0
+   ]
+  },
+  "solution": "$\\frac{d}{dx}\\left(f^2+g^2\\right)=2ff'+2gg'=2fg-2gf=0$, so $f^2+g^2$ is constant $=2^2+2^2=8$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_4f6e9aa353aa",
+  "type": "NVQ",
+  "stem": "For $x \\in \\mathbb R$, the function $f(x)$ satisfies the following identity: $2f(x) + f(1 - x) = x^2$. Find $f(4)$. Enter your answer correct to two decimal places. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    7.665,
+    7.675
+   ]
+  },
+  "solution": "$x=4$: $2f(4)+f(-3)=16$. $x=-3$: $2f(-3)+f(4)=9$. Solving: $f(4)=\\frac{23}{3}\\approx7.67$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_cc3059b093e0",
+  "type": "NVQ",
+  "stem": "Evaluate: $\\lim_{n\\to\\infty}\\frac{(n+2)!+(n+1)!}{(n+2)!-(n+1)!}$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    1.0,
+    1.0
+   ]
+  },
+  "solution": "Divide by $(n+1)!$: $\\frac{(n+2)+1}{(n+2)-1}=\\frac{n+3}{n+1}\\to1$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ac992193d9c1",
+  "type": "MSQ",
+  "stem": "Consider the function $f(x)=\\begin{cases}x\\sin\\left(\\frac1x\\right), & x\\ne0\\\\ 0, & x=0\\end{cases}$",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "D"
+   ]
+  },
+  "solution": "$|f(x)|\\le|x|\\to0$, so $f$ is continuous at 0. The difference quotient $\\frac{f(h)-f(0)}{h}=\\sin(1/h)$ oscillates between $-1$ and $1$ and has no limit, so $f$ is not differentiable at 0.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$f$ is continuous at $x = 0$"
+   },
+   {
+    "key": "B",
+    "text": "$f$ is not continuous at $x = 0$"
+   },
+   {
+    "key": "C",
+    "text": "$f$ is differentiable at $x = 0$"
+   },
+   {
+    "key": "D",
+    "text": "$f$ is not differentiable at $x = 0$"
+   }
+  ]
+ },
+ {
+  "id": "q_8ca12e572465",
+  "type": "SCQ",
+  "stem": "Consider a function $f : \\mathbb R \\to \\mathbb R$ that satisfies the following identity for all $x, y \\in \\mathbb R$: $f(x + y) = f(x) \\cdot f(y)$. If $f$ is differentiable at $x = 0$ with $f'(0) = 2$ and $f(0) \\neq 0$, which of the following is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$f(0)=f(0)^2$ with $f(0)\\neq0$ gives $f(0)=1$. Then $f'(x)=\\lim\\frac{f(x)f(h)-f(x)}{h}=f(x)f'(0)=2f(x)$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$f'(x) = f(x)$"
+   },
+   {
+    "key": "B",
+    "text": "$f'(x) = 2f(x)$"
+   },
+   {
+    "key": "C",
+    "text": "$f'(x) = 2f(x) - 1$"
+   },
+   {
+    "key": "D",
+    "text": "$f'(x) = f(x)/2$"
+   }
+  ]
+ },
+ {
+  "id": "q_f61feefaed7f",
+  "type": "SCQ",
+  "stem": "Consider: $f(x) = \\ln\\left(x + \\sqrt{1+x^2}\\right)$",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$f(-x)=\\ln\\left(\\sqrt{1+x^2}-x\\right)=\\ln\\frac{1}{\\sqrt{1+x^2}+x}=-f(x)$, so $f$ is odd.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$f$ is an even function"
+   },
+   {
+    "key": "B",
+    "text": "$f$ is an odd function"
+   },
+   {
+    "key": "C",
+    "text": "$f$ is neither even nor odd"
+   },
+   {
+    "key": "D",
+    "text": "None of the above"
+   }
+  ]
+ },
+ {
+  "id": "q_a1adcd9e8336",
+  "type": "SCQ",
+  "stem": "There are 5 hats numbered 1 to 5. These 5 hats should be distributed to 6 people with each person getting a maximum of one hat. What are the total number of ways in which the hats can be distributed to 6 persons?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Each distinct hat goes to a different person: $6\\cdot5\\cdot4\\cdot3\\cdot2={}^6P_5=720$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CNT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "120"
+   },
+   {
+    "key": "B",
+    "text": "24"
+   },
+   {
+    "key": "C",
+    "text": "30"
+   },
+   {
+    "key": "D",
+    "text": "720"
+   }
+  ]
+ },
+ {
+  "id": "q_39bfb1059a5e",
+  "type": "NVQ",
+  "stem": "The probability of a student passing a Statistics exam is 0.7, and the probability of the student passing a Mathematics exam is 0.6. If the probability of passing both exams is 0.5, what is the probability that the student passes at least one of the two exams? (Enter the answer correct to one decimal place). ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.75,
+    0.85
+   ]
+  },
+  "solution": "$P(S\\cup M)=0.7+0.6-0.5=0.8$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_2f173441f10c",
+  "type": "NVQ",
+  "stem": "A person has bought a bed from an online furniture store. The seller delivers the disassembled bed parts along with some screws to assemble it. The probability of a screw being defective is 0.1 independent of all other screws. To compensate for the manufacturing error, the seller sends two extra screws in the package where the bed needs exactly 8 screws to assemble. What is the probability that the buyer will be able to assemble the bed? (Enter the answer up to 2 decimal accuracy). ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.925,
+    0.935
+   ]
+  },
+  "solution": "10 screws, each good with probability 0.9; need at least 8 good: $\\binom{10}{8}0.9^8 0.1^2+\\binom{10}{9}0.9^9 0.1+0.9^{10}\\approx0.1937+0.3874+0.3487=0.9298\\approx0.93$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a2b65d5a9197",
+  "type": "SCQ",
+  "stem": "Suppose $X \\sim \\text{Normal}(\\mu, 4)$. For $n = 20$ i.i.d. samples of $X$, the observed sample mean is 5.2. What conclusion would a z-test reach if the null hypothesis assumes $\\mu = 5$ (against an alternative hypothesis $\\mu \\neq 5$) at a significance level of $\\alpha = 0.05$? Use $F_Z(-1.9599) = 0.025$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$z=\\frac{5.2-5}{2/\\sqrt{20}}\\approx0.447$, which lies inside $(-1.9599,1.9599)$, so $H_0$ is not rejected (the same conclusion holds if 4 is read as the standard deviation).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.INF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Accept $H_0$"
+   },
+   {
+    "key": "B",
+    "text": "Reject $H_0$"
+   },
+   {
+    "key": "C",
+    "text": "Inconclusive"
+   },
+   {
+    "key": "D",
+    "text": "Need more data"
+   }
+  ]
+ },
+ {
+  "id": "q_82e24752b1e1",
+  "type": "NVQ",
+  "stem": "The sample average of 60 data points is 35. After including a new data point with a value of 120, what is the updated sample average? (Answer the question correct to two decimal places.) ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    36.385,
+    36.395
+   ]
+  },
+  "solution": "$\\frac{60\\cdot35+120}{61}=\\frac{2220}{61}\\approx36.39$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DESC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_fd42fcfa72cf",
+  "type": "SCQ",
+  "stem": "Two friends, Meenal and Sonika, play a game. Meenal rolls a fair six-sided die once, and Sonika flips a fair coin once. Let $X$ be the outcome of the die and $Y$ be the value of the coin flip (where $Y = 1$ if heads and $Y = 0$ if tails). If the prize of the game is $Z = XY$, then find the expected prize value.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$X$ and $Y$ are independent: $E[XY]=E[X]E[Y]=3.5\\times0.5=1.75$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1.75"
+   },
+   {
+    "key": "B",
+    "text": "3.5"
+   },
+   {
+    "key": "C",
+    "text": "0.5"
+   },
+   {
+    "key": "D",
+    "text": "4"
+   }
+  ]
+ },
+ {
+  "id": "q_d2106858cec5",
+  "type": "SCQ",
+  "stem": "A 99% confidence interval for the mean of a population is calculated from a sample as (45.2, 54.8). What will happen to the interval if the confidence level is decreased to 95%, assuming the same sample statistics?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The half-width is $z\\cdot s/\\sqrt n$ with $z=2.576$ for 99% and $1.96$ for 95%; the interval shrinks about the same centre (50).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.INF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The interval will become wider."
+   },
+   {
+    "key": "B",
+    "text": "The interval will remain the same."
+   },
+   {
+    "key": "C",
+    "text": "The interval will become narrower."
+   },
+   {
+    "key": "D",
+    "text": "There is not enough information to determine the change."
+   }
+  ]
+ },
+ {
+  "id": "q_c3c8431339eb",
+  "type": "NVQ",
+  "stem": "A teacher observes that the cumulative distribution function (CDF) for the scores on a mathematics test is\n\n$$F(x)=\\begin{cases}0, & x<0\\\\ x^2, & 0\\le x\\le1\\\\ 1, & x>1\\end{cases}$$\n\nIf a student scores above 0.7, what is the conditional probability that they actually score above 0.9? Enter the answer correct up to two decimal places. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.365,
+    0.375
+   ]
+  },
+  "solution": "$P(X>0.9\\mid X>0.7)=\\frac{1-0.81}{1-0.49}=\\frac{0.19}{0.51}\\approx0.37$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_ac5efe5db304",
+  "type": "NVQ",
+  "stem": "A random sample of size 100 is collected from a normal population with mean $\\mu$ and variance $\\sigma^2$. Suppose the expected value and variance of the sample mean is 50 and 0.25 respectively, find the value of $\\mu + 10\\sigma$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    100.0,
+    100.0
+   ]
+  },
+  "solution": "$E[\\bar X]=\\mu=50$. $\\mathrm{Var}(\\bar X)=\\sigma^2/100=0.25$, so $\\sigma=5$ and $\\mu+10\\sigma=100$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CLT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_e2e42c327d7c",
+  "type": "SCQ",
+  "stem": "Let $M_{2\\times2}(\\mathbb R)$ represent the set of all $2 \\times 2$ real matrices. Consider the following sets:\n\n$V_1 = \\{A \\mid A \\in M_{2\\times2}(\\mathbb R)$ and $A$ is a diagonal matrix$\\}$\n\n$V_2 = \\{A \\mid A \\in M_{2\\times2}(\\mathbb R)$ and sum of diagonal elements of $A$ is equal to $1\\}$\n\nWhich of the following statements is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Diagonal matrices are closed under addition and scalar multiplication and contain 0. $V_2$ does not contain the zero matrix (trace 0), so it is not a subspace.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$V_1$ is a subspace of $M_{2\\times2}(\\mathbb R)$ but $V_2$ is not"
+   },
+   {
+    "key": "B",
+    "text": "$V_2$ is a subspace of $M_{2\\times2}(\\mathbb R)$ but $V_1$ is not"
+   },
+   {
+    "key": "C",
+    "text": "Both $V_1$ and $V_2$ are subspaces of $M_{2\\times2}(\\mathbb R)$"
+   },
+   {
+    "key": "D",
+    "text": "Neither $V_1$ nor $V_2$ are subspaces of $M_{2\\times2}(\\mathbb R)$"
+   }
+  ]
+ },
+ {
+  "id": "q_75b598da3e24",
+  "type": "NVQ",
+  "stem": "Let P be the projection matrix that projects vectors in $\\mathbb R^4$ onto the line $(1, 2, -1, 1)$. Compute the trace of P. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    1.0,
+    1.0
+   ]
+  },
+  "solution": "$P=\\frac{vv^T}{v^Tv}$, so $\\mathrm{tr}(P)=\\frac{v^Tv}{v^Tv}=1$ (the rank of a projection onto a line).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.PROJ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_43f11e259c17",
+  "type": "SCQ",
+  "stem": "The trace of a square matrix is the sum of its diagonal entries. Assume that A and B are two matrices compatible for multiplication such that AB and BA are both square matrices. Which of the following are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$\\mathrm{tr}(AB)=\\sum_{i,j}a_{ij}b_{ji}=\\mathrm{tr}(BA)$ always, even for non-square or non-commuting pairs, so only D holds.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\mathrm{tr}(AB) = \\mathrm{tr}(BA)$ only if A and B commute"
+   },
+   {
+    "key": "B",
+    "text": "$\\mathrm{tr}(AB) = \\mathrm{tr}(BA)$ only if A and B are square matrices"
+   },
+   {
+    "key": "C",
+    "text": "$\\mathrm{tr}(AB) \\neq \\mathrm{tr}(BA)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\mathrm{tr}(AB) = \\mathrm{tr}(BA)$"
+   }
+  ]
+ },
+ {
+  "id": "q_69b727a204c1",
+  "type": "NVQ",
+  "stem": "Let $U$ and $V$ be two-dimensional subspaces of $\\mathbb R^5$ and let $W = U \\cap V$. Find the number of possible dimensions of $W$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    3.0,
+    3.0
+   ]
+  },
+  "solution": "$\\dim W=\\dim U+\\dim V-\\dim(U+V)=4-\\dim(U+V)$ with $2\\le\\dim(U+V)\\le4$, so $\\dim W\\in\\{0,1,2\\}$: 3 possible values.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1e349b7c7e08",
+  "type": "MSQ",
+  "stem": "A square matrix A of order $n$ is diagonalizable if $\\mathbb R^n$ has a basis made up of the eigenvectors of A. Which of the following are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B",
+    "C"
+   ]
+  },
+  "solution": "A is false (the identity has a repeated root). B is a standard theorem. C: $A=PDP^{-1}$ gives $A+cI=P(D+cI)P^{-1}$. D is false: $\\begin{bmatrix}2&3\\\\0&5\\end{bmatrix}$ is diagonalizable but not symmetric.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The characteristic polynomial of a diagonalizable matrix has $n$ distinct roots."
+   },
+   {
+    "key": "B",
+    "text": "If a matrix has $n$ distinct eigenvalues, it is diagonalizable."
+   },
+   {
+    "key": "C",
+    "text": "If A is diagonalizable, A+cI is diagonalizable for any $c \\in \\mathbb R$."
+   },
+   {
+    "key": "D",
+    "text": "A diagonalizable matrix is symmetric."
+   }
+  ]
+ },
+ {
+  "id": "q_5bbef17d1700",
+  "type": "SCQ",
+  "stem": "Consider the following system:\n\n$x + 2y - 2z = b_1$\n\n$2x + 5y - 4z = b_2$\n\n$4x + 9y - 8z = b_3$\n\nWhat conditions should $b_1, b_2, b_3$ satisfy so that the system has at least one solution?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Row 3 $=2\\,$Row 1 $+$ Row 2 on the left, so the system is consistent iff $b_3=2b_1+b_2$, i.e. $2b_1+b_2-b_3=0$ (rank 2, not 3).\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.SYS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$2b_1 + b_2 - b_3 = 0$"
+   },
+   {
+    "key": "B",
+    "text": "$b_2 = 2b_1$"
+   },
+   {
+    "key": "C",
+    "text": "$b_3 = 4b_1$"
+   },
+   {
+    "key": "D",
+    "text": "This system always has a solution for any set of values."
+   }
+  ]
+ },
+ {
+  "id": "q_f5dedf1fc150",
+  "type": "MSQ",
+  "stem": "Which of the following can be the covariance matrix of a dataset in $\\mathbb R^2$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "D"
+   ]
+  },
+  "solution": "A covariance matrix is symmetric positive semidefinite. B has a negative variance, C is not symmetric. A is PSD, and D has $\\det=16-15.21=0.79>0$ with positive diagonal, so it is PSD.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\begin{bmatrix}1&0\\\\0&3\\end{bmatrix}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\begin{bmatrix}-2&0\\\\0&3\\end{bmatrix}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\begin{bmatrix}2&3.9\\\\3.9&8\\end{bmatrix}$"
+   }
+  ]
+ },
+ {
+  "id": "q_4a53172803d8",
+  "type": "NVQ",
+  "stem": "Consider a dataset in $\\mathbb R^5$ in the context of PCA with mean zero. The only non-zero eigenvalue of the covariance matrix of the dataset is 2. What is the least possible variance along the first principal component expressed as a percentage of the total variance? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    20.0,
+    20.0
+   ]
+  },
+  "solution": "The eigenvalue 2 may be repeated up to 5 times (m copies): total variance $2m$, first PC variance 2, share $1/m$. The least is $m=5$: $20\\%$.\n\nVerified by: recomputed-by-code.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_da9ea926f13c",
+  "type": "SCQ",
+  "stem": "You train a linear soft-margin SVM on a dataset with two features $x_1$ and $x_2$. If the dataset is linearly separable, which of the following is true about the margin?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A smaller C penalises slack less and weights $\\|w\\|^2$ more, giving a wider margin (and more tolerance for violations); a larger C approaches the hard margin. Moving points farther from the boundary does not shrink the margin.\n\nVerified by: key from source, conceptual.",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": null
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The margin increases as the regularization parameter C increases."
+   },
+   {
+    "key": "B",
+    "text": "The margin is independent of the regularization parameter C."
+   },
+   {
+    "key": "C",
+    "text": "The margin increases as the regularization parameter C decreases."
+   },
+   {
+    "key": "D",
+    "text": "The margin decreases as the data points are moved farther from the decision boundary."
+   }
+  ]
+ }
+]

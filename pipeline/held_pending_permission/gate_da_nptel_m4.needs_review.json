@@ -1,0 +1,638 @@
+[
+ {
+  "n": 2,
+  "id": "q_0bc3cade38b7",
+  "chapter": "PDS.DS",
+  "marks": 2,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['A', 'D'] vs recomputed ['B']",
+  "pdf_key": [
+   "A",
+   "D"
+  ],
+  "recomputed": [
+   "B"
+  ],
+  "derivation": "insert 95 into each option; only options reproducing the target heap qualify: B",
+  "stem": "Consider the max-heap $[95, 70, 61, 43, 47, 24, 47, 12, 31, 39]$ built by repeatedly inserting values into an empty heap. Suppose the last value inserted was 95. What was the heap structure before this value was inserted?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$[70, 47, 61, 39, 43, 24, 47, 12, 31]$"
+   },
+   {
+    "key": "B",
+    "text": "$[70, 47, 61, 43, 39, 24, 47, 12, 31]$"
+   },
+   {
+    "key": "C",
+    "text": "$[70, 61, 47, 39, 43, 24, 47, 12, 31]$"
+   },
+   {
+    "key": "D",
+    "text": "$[70, 47, 61, 43, 39, 24, 47, 31, 12]$"
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "id": "q_078c0b13af12",
+  "chapter": "PDS.ALG",
+  "marks": 1,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['D'] vs recomputed ['C']",
+  "pdf_key": [
+   "D"
+  ],
+  "recomputed": [
+   "C"
+  ],
+  "derivation": "insertion worst 1000000s (278 h), best 0.01s; merge sort n log n 0.27s always; quicksort/selection worst case n^2 = 1000000s so not 'always < 1 s'",
+  "stem": "Suppose a new generation CPU can process $10^{10}$ operations per second. Suppose you have to sort a list with $10^8$ elements. Which of the following is true?",
+  "options": [
+   {
+    "key": "A",
+    "text": "Insertion sort will always take several hours while Quicksort will always take less than 1 second."
+   },
+   {
+    "key": "B",
+    "text": "Insertion sort will always take several hours while Selection sort will always take less than 1 second."
+   },
+   {
+    "key": "C",
+    "text": "Insertion sort could take several hours while Merge sort will always take less than 1 second."
+   },
+   {
+    "key": "D",
+    "text": "Insertion sort could take several hours while Quicksort will always take less than 1 second."
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "id": "q_79e89cba396d",
+  "chapter": "PDS.ALG",
+  "marks": 2,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['D'] vs recomputed ['C']",
+  "pdf_key": [
+   "D"
+  ],
+  "recomputed": [
+   "C"
+  ],
+  "derivation": "smallest integer k with 10*n*log10(n) < 0.0001 n^2 at n=10^k is 6 (k=5: B=5e6 > A=1e6; k=6: B=6e7 < A=1e8)",
+  "stem": "Two alternative packages A and B are available for processing a database having $10^k$ records. Package A requires $0.0001n^2$ time units, and package B requires $10n\\log_{10}n$ time units to process $n$ records. What is the smallest value of $k$ for which package B will be preferred over A?",
+  "options": [
+   {
+    "key": "A",
+    "text": "12"
+   },
+   {
+    "key": "B",
+    "text": "10"
+   },
+   {
+    "key": "C",
+    "text": "6"
+   },
+   {
+    "key": "D",
+    "text": "5"
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "id": "q_e4bda39a61ee",
+  "chapter": "DBW.NF",
+  "marks": 2,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['A', 'B', 'D'] vs recomputed ['A', 'C', 'D']",
+  "pdf_key": [
+   "A",
+   "B",
+   "D"
+  ],
+  "recomputed": [
+   "A",
+   "C",
+   "D"
+  ],
+  "derivation": "attribute closure under F: PS+ and P+ include T,Q,R; R+={R}",
+  "stem": "Suppose the following functional dependencies hold on a relation U with attributes P, Q, R, S, and T:\n\n$P \\to QR$\n\n$RS \\to T$\n\nWhich of the following functional dependencies can be inferred from the above functional dependencies?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$PS \\to T$"
+   },
+   {
+    "key": "B",
+    "text": "$R \\to T$"
+   },
+   {
+    "key": "C",
+    "text": "$P \\to R$"
+   },
+   {
+    "key": "D",
+    "text": "$PS \\to Q$"
+   }
+  ]
+ },
+ {
+  "n": 15,
+  "id": "q_d01ed18bf8ed",
+  "chapter": "DBW.REL",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The relational algebra query and the relation instances (tuples of P, Q, R) are not present in the PDF; the question cannot be answered or reproduced.",
+  "pdf_key": [
+   1
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Consider the following relations: P(X, Y, Z), Q(X, Y, T), R(Y, V). How many tuples will be returned by the given relational algebra query? ______.",
+  "options": null
+ },
+ {
+  "n": 17,
+  "id": "q_b535bc4ec4de",
+  "chapter": "DBW.REL",
+  "marks": 1,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['B'] vs recomputed ['D']",
+  "pdf_key": [
+   "B"
+  ],
+  "recomputed": [
+   "D"
+  ],
+  "derivation": "history enumeration: only a read of an uncommitted write that commits first is non-recoverable (dirty read, D)",
+  "stem": "Which of the following scenarios may lead to an irrecoverable error in a database system?",
+  "options": [
+   {
+    "key": "A",
+    "text": "A transaction writes a data item after it is read by an uncommitted transaction"
+   },
+   {
+    "key": "B",
+    "text": "A transaction reads a data item after it is read by an uncommitted transaction"
+   },
+   {
+    "key": "C",
+    "text": "A transaction reads a data item after it is written by a committed transaction"
+   },
+   {
+    "key": "D",
+    "text": "A transaction reads a data item after it is written by an uncommitted transaction"
+   }
+  ]
+ },
+ {
+  "n": 18,
+  "id": "q_33494ed89882",
+  "chapter": "DBW.REL",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The interleaved schedule is not given (only the three transactions' own operations), so no serial order can be called 'the' correct serialization.",
+  "pdf_key": [
+   "A"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Consider the following schedule for transactions T1, T2 and T3:\n\nT1: Read(X), Read(Y), Write(Y)\n\nT2: Read(Y), Write(X)\n\nT3: Read(X), Write(X)\n\nWhich one of the schedules below is the correct serialization of the above?",
+  "options": [
+   {
+    "key": "A",
+    "text": "T1 - T3 - T2"
+   },
+   {
+    "key": "B",
+    "text": "T2 - T1 - T3"
+   },
+   {
+    "key": "C",
+    "text": "T2 - T3 - T1"
+   },
+   {
+    "key": "D",
+    "text": "T3 - T1 - T2"
+   }
+  ]
+ },
+ {
+  "n": 24,
+  "id": "q_3d152c91b02e",
+  "chapter": "GA.VERB",
+  "marks": 1,
+  "reason": "quarantine",
+  "detail": "Sentence S is garbled in the source ('Many millennia ago, a collided with the massive Eurasian Plate': the subject of the sentence is missing). The order SPRQ is derivable, but the stem as printed is defective.",
+  "pdf_key": [
+   "C"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Sequence the following sentences in a coherent passage.\n\nP: This fortuitous geological event generated a colossal amount of energy and heat that resulted in the rocks rising to an average height of 4 km across the contact zone.\n\nQ: Thus, the geophysicists tend to think of the Himalayas as an active geological event rather than as a static geological feature.\n\nR: The natural process of the cooling of this massive edifice absorbed large quantities of atmospheric carbon dioxide, altering the earth's atmosphere and making it better suited for life.\n\nS: Many millennia ago, a collided with the massive Eurasian Plate.",
+  "options": [
+   {
+    "key": "A",
+    "text": "QPSR"
+   },
+   {
+    "key": "B",
+    "text": "QSPR"
+   },
+   {
+    "key": "C",
+    "text": "SPRQ"
+   },
+   {
+    "key": "D",
+    "text": "SRPQ"
+   }
+  ]
+ },
+ {
+  "n": 27,
+  "id": "q_620b2ba551ee",
+  "chapter": "GA.ANAL",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The $4\\times4$ grid (positions of crosses and numbers in the first three rows) is not shown in the PDF; the answer depends on it.",
+  "pdf_key": [
+   "A"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "In a $4 \\times 4$ array, each cell of the first three rows has either a cross (X) or a number. The number in a cell represents the count of the immediate neighboring cells (left, right, top, bottom, diagonals) NOT having a cross (X). Given that the last row has no crosses (X), the sum of the four numbers to be filled in the last row is",
+  "options": [
+   {
+    "key": "A",
+    "text": "11"
+   },
+   {
+    "key": "B",
+    "text": "10"
+   },
+   {
+    "key": "C",
+    "text": "12"
+   },
+   {
+    "key": "D",
+    "text": "9"
+   }
+  ]
+ },
+ {
+  "n": 29,
+  "id": "q_28b061f47954",
+  "chapter": "GA.SPAT",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The map figure is not present in the PDF; the question cannot be reproduced.",
+  "pdf_key": [
+   "C"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "According to the map shown in the figure, which one of the following statements is correct?",
+  "options": [
+   {
+    "key": "A",
+    "text": "The library is located to the northwest of the canteen."
+   },
+   {
+    "key": "B",
+    "text": "The hospital is located to the east of the chemistry lab."
+   },
+   {
+    "key": "C",
+    "text": "The chemistry lab is to the southeast of the library."
+   },
+   {
+    "key": "D",
+    "text": "None of the above."
+   }
+  ]
+ },
+ {
+  "n": 35,
+  "id": "q_ec59026dc720",
+  "chapter": "CO.LIM",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The PDF key is 'A, E' but only options A-D are printed (option E does not exist). Among A-D only A is true ($a_n=1+1/n^2$ decreases to 1, and $b_n$ also decreases).",
+  "pdf_key": [
+   "A",
+   "E"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Consider a sequence $\\{a_n\\}$ with $a_n = \\frac{n^2+1}{n^2}$. Let $b_n$ be another sequence defined as $b_n = 2a_n^2 + 3a_n + 1$. Which of the following options are true?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\{a_n\\}$ is a decreasing, bounded sequence."
+   },
+   {
+    "key": "B",
+    "text": "$\\{a_n\\}$ is an increasing, bounded sequence."
+   },
+   {
+    "key": "C",
+    "text": "$\\{a_n\\}$ is an increasing, unbounded sequence."
+   },
+   {
+    "key": "D",
+    "text": "$\\{b_n\\}$ is an increasing, unbounded sequence."
+   }
+  ]
+ },
+ {
+  "n": 38,
+  "id": "q_d5adee941626",
+  "chapter": "CO.OPT",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The PDF key is 'C, F' but only options A-D are printed (option F does not exist). Among A-D only C is true ($f''(1)=2>0$; there is no global minimum since $f(-1)=-2<f(1)=2$).",
+  "pdf_key": [
+   "C",
+   "F"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Consider the function defined on $\\mathbb R \\setminus \\{0\\}$: $f(x) = x + \\frac1x$",
+  "options": [
+   {
+    "key": "A",
+    "text": "$f$ has a local maximum at $x = 1$"
+   },
+   {
+    "key": "B",
+    "text": "$f$ has a global maximum at $x = 1$"
+   },
+   {
+    "key": "C",
+    "text": "$f$ has a local minimum at $x = 1$"
+   },
+   {
+    "key": "D",
+    "text": "$f$ has a global minimum at $x = 1$"
+   }
+  ]
+ },
+ {
+  "n": 40,
+  "id": "q_53fa64e5978f",
+  "chapter": "CO.OPT",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "Ill-posed / suspicious key: oddness gives a local minimum at $-x_0$ in addition to the maximum at $x_0$, so A ('exactly one local extremum') is certainly false. With only the stated hypotheses, extrema counts are 2 or 4 (a local minimum may also occur in $(0,\\infty)$ after the maximum), so B and C are true only under an extra assumption not in the stem.",
+  "pdf_key": [
+   "A",
+   "C"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Consider $f : \\mathbb R \\to \\mathbb R$ such that $f$ is an odd, differentiable function. $f$ has exactly one local maximum in the interval $(0, \\infty)$ which occurs at some positive $x$. Which of the following statements are true if it is given that $f'(0) \\neq 0$.",
+  "options": [
+   {
+    "key": "A",
+    "text": "$f$ has exactly one local extremum"
+   },
+   {
+    "key": "B",
+    "text": "$f$ has exactly two local extrema"
+   },
+   {
+    "key": "C",
+    "text": "$f$ has exactly one local minimum"
+   },
+   {
+    "key": "D",
+    "text": "$f$ has exactly two local minima"
+   }
+  ]
+ },
+ {
+  "n": 48,
+  "id": "q_a75379044964",
+  "chapter": "PRS.INF",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "Options B, C and D are truncated ('...'), and the observed daily demand data needed for the test are not given.",
+  "pdf_key": [
+   "A"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "The demand for a particular spare part in a factory was found to vary from day-to-day. Test the hypothesis that the number of parts demanded does not depend on the day of the week.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Accept the null hypothesis and conclude that the number of spare parts demanded does not depend on the day of the week."
+   },
+   {
+    "key": "B",
+    "text": "Reject the null hypothesis..."
+   },
+   {
+    "key": "C",
+    "text": "..."
+   },
+   {
+    "key": "D",
+    "text": "..."
+   }
+  ]
+ },
+ {
+  "n": 53,
+  "id": "q_c8ddcf43a642",
+  "chapter": "LA.MAT",
+  "marks": 2,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['A'] vs recomputed ['A', 'B']",
+  "pdf_key": [
+   "A"
+  ],
+  "recomputed": [
+   "A",
+   "B"
+  ],
+  "derivation": "evaluate u^T A u at 50 random integer points",
+  "stem": "Consider the quadratic function in three variables: $f(x, y, z) = 3x^2 - 2y^2 + z^2 - 2xy + 4yz - 8zx$. If $u = [x\\ y\\ z]^T$ and $f(x, y, z) = u^TAu$, which of the following is/are A?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\begin{bmatrix}3&-1&-4\\\\-1&-2&2\\\\-4&2&1\\end{bmatrix}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\begin{bmatrix}3&4&-4\\\\-6&-2&3\\\\-4&1&1\\end{bmatrix}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\begin{bmatrix}3&0&-4\\\\-1&-2&2\\\\0&1&1\\end{bmatrix}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\begin{bmatrix}3&-2&1\\\\-1&1&2\\\\-4&0&1\\end{bmatrix}$"
+   }
+  ]
+ },
+ {
+  "n": 54,
+  "id": "q_7d40e05de7f4",
+  "chapter": "LA.DEC",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "Option D is the placeholder '...'. Also no printed option matches the recomputed LU factorisation (see mismatch).",
+  "pdf_key": [
+   "A"
+  ],
+  "recomputed": {
+   "L32": "-1/2",
+   "U33": "-1/2",
+   "x1": "0"
+  },
+  "derivation": "L32=-1/2, U33=-1/2, x=(0,2,-1); no listed option has U33=-0.5, option D is '...'",
+  "stem": "Consider the following system of linear equations:\n\n$x_1 + x_2 - 2x_3 = 4$\n\n$x_1 + 3x_2 - x_3 = 7$\n\n$2x_1 + x_2 - 5x_3 = 7$\n\nWhich one of the following is the correct combination of values for $L_{32}$, $U_{33}$ and $x_1$?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$L_{32} = 2, U_{33} = -0.5, x_1 = -1$"
+   },
+   {
+    "key": "B",
+    "text": "$L_{32} = 2, U_{33} = 2, x_1 = -1$"
+   },
+   {
+    "key": "C",
+    "text": "$L_{32} = -0.5, U_{33} = 2, x_1 = 0$"
+   },
+   {
+    "key": "D",
+    "text": "..."
+   }
+  ]
+ },
+ {
+  "n": 55,
+  "id": "q_d96d64610ac5",
+  "chapter": "LA.MAT",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "Undefined context: the matrix $A$ and the matrices $P$, $Q$ (and the stated properties) are never defined.",
+  "pdf_key": [
+   "C"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "What is $A^{300}$ equal to? (Based on specific matrix properties provided in standard questions).",
+  "options": [
+   {
+    "key": "A",
+    "text": "A"
+   },
+   {
+    "key": "B",
+    "text": "P"
+   },
+   {
+    "key": "C",
+    "text": "Q"
+   },
+   {
+    "key": "D",
+    "text": "P + Q"
+   }
+  ]
+ },
+ {
+  "n": 57,
+  "id": "q_1b9162593399",
+  "chapter": "LA.MAT",
+  "marks": 1,
+  "reason": "answer_mismatch",
+  "detail": "PDF key ['B'] vs recomputed ['A', 'B']",
+  "pdf_key": [
+   "B"
+  ],
+  "recomputed": [
+   "A",
+   "B"
+  ],
+  "derivation": "random 3x3 integer matrices: cyclic shifts BCA, CAB equal tr(ABC); BAC, ACB do not",
+  "stem": "Let A, B, C be three square matrices. Which of the following is equal to $\\mathrm{tr}(ABC)$?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\mathrm{tr}(BCA)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\mathrm{tr}(CAB)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\mathrm{tr}(BAC)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\mathrm{tr}(ACB)$"
+   }
+  ]
+ },
+ {
+  "n": 64,
+  "id": "q_97241a1c8e45",
+  "chapter": "ML.REG",
+  "marks": 2,
+  "reason": "answer_mismatch",
+  "detail": "PDF key [0.28] vs recomputed 0.2857142857142857",
+  "pdf_key": [
+   0.28
+  ],
+  "recomputed": 0.2857142857142857,
+  "derivation": "w=2/7",
+  "stem": "Given Data $\\{(-1, 1), (2, -5), (3, 5)\\}$ of the form $(x, y)$, we fit a model $y = wx$ using linear least-squares regression. The optimal value of $w$ is ______. (Round off to three decimal places)",
+  "options": null
+ },
+ {
+  "n": 65,
+  "id": "q_eccfac239840",
+  "chapter": "ML.REG",
+  "marks": 2,
+  "reason": "quarantine",
+  "detail": "The contour figure (with $c_1$, $c_2$ and the regulariser shape) is missing, and the key 'A, C, E' points to a non-existent option E.",
+  "pdf_key": [
+   "A",
+   "C",
+   "E"
+  ],
+  "recomputed": null,
+  "derivation": null,
+  "stem": "Consider the contours of the sum-of-squared-errors function in regression along with the contours of the regularizer. Which of the following statements are true?",
+  "options": [
+   {
+    "key": "A",
+    "text": "$c_1 > c_2$"
+   },
+   {
+    "key": "B",
+    "text": "$c_1 < c_2$"
+   },
+   {
+    "key": "C",
+    "text": "This corresponds to LASSO regression"
+   },
+   {
+    "key": "D",
+    "text": "This corresponds to ridge regression"
+   }
+  ]
+ }
+]

@@ -1,0 +1,502 @@
+{
+ "q_019a700732cf": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 20,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_078c0b13af12": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 7,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_0bc3cade38b7": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 2,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_1b9162593399": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 57,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_1e349b7c7e08": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 59,
+  "recomputed": true,
+  "section": "T2M-MSQ",
+  "status": "verified"
+ },
+ "q_222e54ae0c6b": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 11,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_287ff95017f1": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 8,
+  "recomputed": true,
+  "section": "T2M-MCQ",
+  "status": "verified"
+ },
+ "q_28b061f47954": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 29,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_2f173441f10c": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 43,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_30ab18aaed4c": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 5,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_33494ed89882": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 18,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_39bfb1059a5e": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 42,
+  "recomputed": true,
+  "section": "T1M-NAT",
+  "status": "verified"
+ },
+ "q_3a4ba947ef7b": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 25,
+  "recomputed": true,
+  "section": "GA1",
+  "status": "verified"
+ },
+ "q_3a942ee1b85a": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 4,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_3d152c91b02e": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 24,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_3f906377b95e": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 31,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_43f11e259c17": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 56,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_4a53172803d8": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 62,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_4f6e9aa353aa": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 33,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_503d2c68f320": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 30,
+  "recomputed": true,
+  "section": "GA2",
+  "status": "verified"
+ },
+ "q_52127cbcd7d2": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 6,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_53aed46052c8": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 21,
+  "recomputed": true,
+  "section": "GA1",
+  "status": "verified"
+ },
+ "q_53fa64e5978f": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 40,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_5bbef17d1700": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 60,
+  "recomputed": true,
+  "section": "T2M-MCQ",
+  "status": "verified"
+ },
+ "q_5df49cd67e8e": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 28,
+  "recomputed": false,
+  "section": "GA2",
+  "status": "verified"
+ },
+ "q_61713d40d601": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 1,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_620b2ba551ee": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 27,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_69b727a204c1": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 58,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_6b7551afddad": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 22,
+  "recomputed": false,
+  "section": "GA1",
+  "status": "verified"
+ },
+ "q_75b598da3e24": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 52,
+  "recomputed": true,
+  "section": "T1M-NAT",
+  "status": "verified"
+ },
+ "q_79e89cba396d": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 9,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_7d40e05de7f4": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 54,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_82e24752b1e1": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 45,
+  "recomputed": true,
+  "section": "T1M-NAT",
+  "status": "verified"
+ },
+ "q_8ca12e572465": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 37,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_8ce878b5aefe": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 3,
+  "recomputed": true,
+  "section": "T2M-MCQ",
+  "status": "verified"
+ },
+ "q_97241a1c8e45": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 64,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_a1adcd9e8336": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 41,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_a2b65d5a9197": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 44,
+  "recomputed": true,
+  "section": "T2M-MCQ",
+  "status": "verified"
+ },
+ "q_a549be627742": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 14,
+  "recomputed": true,
+  "section": "T2M-MCQ",
+  "status": "verified"
+ },
+ "q_a75379044964": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 48,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_ac5efe5db304": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 50,
+  "recomputed": true,
+  "section": "T1M-NAT",
+  "status": "verified"
+ },
+ "q_ac992193d9c1": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 36,
+  "recomputed": true,
+  "section": "T1M-MSQ",
+  "status": "verified"
+ },
+ "q_b535bc4ec4de": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 17,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_b6d5df574f1b": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 16,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_c3c8431339eb": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 49,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_c420568b0dc0": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 23,
+  "recomputed": true,
+  "section": "GA1",
+  "status": "verified"
+ },
+ "q_c8ddcf43a642": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 53,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_cc3059b093e0": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 34,
+  "recomputed": true,
+  "section": "T1M-NAT",
+  "status": "verified"
+ },
+ "q_ce82f1162e14": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 10,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_d01ed18bf8ed": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 15,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_d2106858cec5": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 47,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_d5adee941626": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 38,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_d8a3819d07ae": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 12,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_d96d64610ac5": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 55,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_da9ea926f13c": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 63,
+  "recomputed": false,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_ddcd3497ef4e": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 19,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_e2e42c327d7c": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 51,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_e4903af30648": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 32,
+  "recomputed": true,
+  "section": "T2M-NAT",
+  "status": "verified"
+ },
+ "q_e4bda39a61ee": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 13,
+  "reason": "answer_mismatch",
+  "status": "needs_review"
+ },
+ "q_ec59026dc720": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 35,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_eccfac239840": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 65,
+  "reason": "quarantine",
+  "status": "needs_review"
+ },
+ "q_ef45f2f69c48": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 26,
+  "recomputed": true,
+  "section": "GA2",
+  "status": "verified"
+ },
+ "q_f5dedf1fc150": {
+  "marks": 2,
+  "marks_basis": "inferred",
+  "n": 61,
+  "recomputed": true,
+  "section": "T2M-MSQ",
+  "status": "verified"
+ },
+ "q_f61feefaed7f": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 39,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ },
+ "q_fd42fcfa72cf": {
+  "marks": 1,
+  "marks_basis": "inferred",
+  "n": 46,
+  "recomputed": true,
+  "section": "T1M-MCQ",
+  "status": "verified"
+ }
+}
