@@ -1,0 +1,1018 @@
+[
+ {
+  "n": 1,
+  "ch": "PDS.GRAPH",
+  "stem": "In an undirected connected planar graph $G$, there are eight vertices and five faces. The number of edges in $G$ is ______.",
+  "opts": null,
+  "key": "11",
+  "sol": "Euler's formula for a connected planar graph: $V-E+F=2$, so $E=V+F-2=8+5-2=11$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 2,
+  "ch": "PDS.ALG",
+  "stem": "Consider the following python function:\n\n```python\ndef fun(n):\n    for i in range(1, n+1):\n        j = 1\n        while j < n:\n            print(i, j)\n            j *= 2\n```\n\nTime complexity of `fun` in terms of $\\Theta$ notation is:",
+  "opts": [
+   "$\\Theta(n)$",
+   "$\\Theta(n^2)$",
+   "$\\Theta(n \\log n)$",
+   "$\\Theta(n^2 \\log n)$"
+  ],
+  "key": "C",
+  "sol": "The inner loop doubles $j$ until it reaches $n$, so it runs $\\lceil\\log_2 n\\rceil$ times; the outer loop runs $n$ times. Total $\\Theta(n\\log n)$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 3,
+  "ch": "PDS.DS",
+  "stem": "Suppose a stack implementation supports an instruction REVERSE, which reverses the order of elements on the stack, in addition to the PUSH and POP instructions. Which one of the following statements is TRUE (with respect to this modified stack)?",
+  "opts": [
+   "A queue cannot be implemented using this stack.",
+   "A queue can be implemented where ENQUEUE takes a single instruction and DEQUEUE takes a sequence of two instructions.",
+   "A queue can be implemented where ENQUEUE takes a sequence of three instructions and DEQUEUE takes a single instruction.",
+   "A queue can be implemented where both ENQUEUE and DEQUEUE take a single instruction each."
+  ],
+  "key": "C",
+  "sol": "Keep the queue front on top of the stack. ENQUEUE = REVERSE, PUSH, REVERSE (the new element goes to the bottom); DEQUEUE = POP. A brute-force search over short instruction sequences finds no working scheme for options B or D.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 4,
+  "ch": "PDS.ALG",
+  "stem": "Select the correct statement(s).",
+  "opts": [
+   "The complexity of Selection sort remains the same irrespective of the sequence of elements.",
+   "The complexity of Insertion sort remains the same irrespective of the sequence of elements.",
+   "The complexity of Merge sort remains the same irrespective of the sequence of elements.",
+   "The complexity of Quicksort remains the same irrespective of the choice of pivot."
+  ],
+  "key": "A,C",
+  "sol": "Selection sort always makes $n(n-1)/2$ comparisons and merge sort is always $\\Theta(n\\log n)$. Insertion sort ranges from $\\Theta(n)$ (sorted input) to $\\Theta(n^2)$ (reversed); quicksort ranges from $\\Theta(n\\log n)$ to $\\Theta(n^2)$ depending on the pivot.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 5,
+  "ch": "PDS.PY",
+  "stem": "What is the output of the following snippet of code?\n\n```python\ndef foo(n):\n    if n % 2 == 0:\n        return n // 2\n    return 3 * n + 1\n\ncount = 0\nx = 10\nwhile x != 1:\n    x = foo(x)\n    count += 1\nprint(count)\n```",
+  "opts": null,
+  "key": "6",
+  "sol": "The sequence is $10\\to5\\to16\\to8\\to4\\to2\\to1$, which is 6 steps.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 6,
+  "ch": "PDS.PY",
+  "stem": "Consider the following program written in pseudo-code. Assume that $x$ and $y$ are integers:\n\n```\nCount(x, y) {\n    if (y != 1) {\n        if (x != 1) {\n            print(\"*\");\n            Count(x/2, y);\n        } else {\n            y = y - 1;\n            Count(1024, y);\n        }\n    }\n}\n```\n\nThe number of times that the print statement is executed by the call `Count(1024, 1024)` is ______.",
+  "opts": null,
+  "key": "10230",
+  "sol": "For each value of $y$ from 1024 down to 2, $x$ halves from 1024 to 1, printing $10$ stars ($x=1024,512,\\dots,2$). That is $1023$ values of $y$, so $1023\\times10=10230$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 7,
+  "ch": "PDS.DS",
+  "stem": "Let $A$ be a priority queue for maintaining a set of elements. Suppose $A$ is implemented using a max-heap data structure. The operation `EXTRACT-MAX(A)` extracts and deletes the maximum element from $A$. The operation `INSERT(A, key)` inserts a new element `key` in $A$. The properties of a max-heap are preserved at the end of each of these operations. When $A$ contains $n$ elements, which one of the following statements about the worst-case running time of these two operations is TRUE?",
+  "opts": [
+   "Both `EXTRACT-MAX(A)` and `INSERT(A, key)` run in $O(1)$.",
+   "Both `EXTRACT-MAX(A)` and `INSERT(A, key)` run in $O(\\log n)$.",
+   "`EXTRACT-MAX(A)` runs in $O(1)$ whereas `INSERT(A, key)` runs in $O(n)$.",
+   "`EXTRACT-MAX(A)` runs in $O(1)$ whereas `INSERT(A, key)` runs in $O(\\log n)$."
+  ],
+  "key": "B",
+  "sol": "Reading the maximum is $O(1)$, but extracting it replaces the root with the last element and sifts down, $O(\\log n)$. Insertion sifts up along one root-leaf path, $O(\\log n)$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 8,
+  "ch": "PDS.PY",
+  "stem": "Consider the Python program fragment below, which is meant to divide $x$ by $y$ using repeated subtractions. The variables $x, y, q$, and $r$ are all unsigned int.\n\n```python\nwhile r >= y:\n    r = r - y\n    q = q + 1\n```\n\nWhich of the following conditions on the variables $x, y, q$, and $r$ before the execution of the fragment will ensure that the loop terminates in a state satisfying the condition $x == (y * q + r)$?",
+  "opts": [
+   "$q == r$ and $r == 0$",
+   "$x > 0$ and $r == x$ and $y > 0$",
+   "$q == 0$ and $r == x$ and $y > 0$",
+   "$q == 0$ and $y > 0$"
+  ],
+  "key": "C",
+  "sol": "The invariant $x=yq+r$ must hold initially: $q=0, r=x$ gives it, and $y>0$ guarantees termination. The other options either leave $r$ or $q$ unconstrained, so the invariant can fail (checked by brute force over small values).",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 9,
+  "ch": "PDS.DS",
+  "stem": "What is the worst-case time complexity of inserting $n$ elements into an empty linked list, maintaining sorted order?",
+  "opts": [
+   "$\\Theta(n)$",
+   "$\\Theta(n \\log n)$",
+   "$\\Theta(n^2)$",
+   "$O(1)$"
+  ],
+  "key": "C",
+  "sol": "Each insertion may have to traverse the whole list (for example inserting increasing keys), giving $0+1+\\dots+(n-1)=\\Theta(n^2)$ steps.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 10,
+  "ch": "PDS.ALG",
+  "stem": "What is the number of arithmetic operations required to implement binary search on a sorted array?",
+  "opts": [
+   "$O(n)$",
+   "$O(\\log n)$",
+   "$O(1)$",
+   "$\\Theta(n^2)$"
+  ],
+  "key": "B",
+  "sol": "Each step halves the search range and computes one midpoint, so $O(\\log n)$ arithmetic operations.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 11,
+  "ch": "DBW.REL",
+  "stem": "Consider two relations $s(A, B, C)$ and $r(P, Q, C)$ such that relation $s$ has 30 rows and relation $r$ has 12 rows. What is the maximum number of rows that are possible in $r \\bowtie s$? ______.",
+  "opts": null,
+  "key": "360",
+  "sol": "The natural join is on the common attribute $C$. The maximum occurs when every row has the same $C$ value, giving $30\\times12=360$ rows.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 12,
+  "ch": "DBW.REL",
+  "stem": "Consider a table which has three attributes: X, Y, and Z, where X is the primary key and Z is the foreign key referencing X. Which of the following sets of tuples are additionally deleted when the tuple (1, 1, 5) is deleted and ON DELETE CASCADE construct is applied over the table?",
+  "opts": [
+   "(2, 2, 5) and (3, 1, 5)",
+   "(6, 1, 1) and (7, 4, 1)",
+   "(6, 1, 1), (7, 4, 1), and (8, 4, 7)",
+   "(6, 1, 1), (7, 4, 1), and (2, 2, 5)"
+  ],
+  "key": "C",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "table contents not shown in the PDF",
+  "derived": null
+ },
+ {
+  "n": 13,
+  "ch": "DBW.REL",
+  "stem": "Consider a table for class and house distribution. Predict the output of the query that uses a NATURAL JOIN and COUNT over the house names. ______.",
+  "opts": null,
+  "key": "6",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "tables and query not shown in the PDF",
+  "derived": null
+ },
+ {
+  "n": 14,
+  "ch": "DBW.REL",
+  "stem": "Consider tables T1 and T2 with defined referential integrity constraints. If a tuple is deleted from T1 with ON DELETE CASCADE applied to T2, and T2 has an ON DELETE SET NULL constraint back to T1, determine the number of additional tuples deleted from T1. ______.",
+  "opts": null,
+  "key": "0",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "table contents/constraints not shown in the PDF",
+  "derived": null
+ },
+ {
+  "n": 15,
+  "ch": "DBW.NF",
+  "stem": "Consider the relational scheme $R(E, F, G, H, I, J, K, L, M, N)$ with functional dependencies: $EF \\to G$, $F \\to I, J$, $EH \\to K, L$, $K \\to M$, $L \\to N$. Which of the following attribute sets is a candidate key for $R$?",
+  "opts": [
+   "$\\{E, F\\}$",
+   "$\\{E, F, H\\}$",
+   "$\\{E, F, H, K, L\\}$",
+   "$\\{E\\}$"
+  ],
+  "key": "B",
+  "sol": "$E, F, H$ never appear on a right-hand side, so every key contains them. $\\{E,F,H\\}^+$ gives $G,I,J$ (from $EF$, $F$), $K,L$ (from $EH$), then $M,N$: all attributes, and it is minimal. $\\{E,F,H,K,L\\}$ is a superkey but not minimal.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 16,
+  "ch": "DBW.REL",
+  "stem": "Consider a log sequence for transactions T1 and T2 operating on a bank database. T1 commits, T2 starts but the system crashes before T2 commits. When the system restarts and the recovery procedure is invoked, which statement is correct?",
+  "opts": [
+   "We must redo log record 6 to set B.",
+   "We must undo log record 6 to set B to 10000 and then redo log records 2 and 3.",
+   "We need not redo log records 2 and 3 because transaction T1 has committed.",
+   "We can apply redo and undo operations in arbitrary order."
+  ],
+  "key": "B",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "the log table (records 1-6) is not shown in the PDF",
+  "derived": null
+ },
+ {
+  "n": 17,
+  "ch": "DBW.REL",
+  "stem": "A company executes three SQL scripts (T1, T2, T3) to update commission slabs. Which of the following options of running these transactions will update the commission of all salespersons correctly without compounding percentages inappropriately?",
+  "opts": [
+   "Execute T1 followed by T2 followed by T3",
+   "Execute T2, followed by T3; T1 running concurrently",
+   "Execute T3 followed by T2; T1 running concurrently",
+   "Execute T3 followed by T2 followed by T1"
+  ],
+  "key": "D",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "the SQL scripts T1-T3 are not shown in the PDF",
+  "derived": null
+ },
+ {
+  "n": 18,
+  "ch": "DBW.NF",
+  "stem": "In a schema with attributes $A, B, C, D$ and $E$ following set of functional dependencies are given: $AB\\to C$, $A\\to C$, $CD\\to E$, $B\\to D$, $E\\to A$. Which of the following functional dependencies is NOT implied by the above set?",
+  "opts": [
+   "$CD\\to AC$",
+   "$BD\\to CD$",
+   "$BC\\to CD$",
+   "$AC\\to BC$"
+  ],
+  "key": "B",
+  "sol": "Closures: $CD^+=\\{C,D,E,A\\}\\ni A,C$ (implied). $BD^+=\\{B,D\\}$: no $C$, so $BD\\to CD$ is NOT implied. $BC^+=\\{B,C,D,E,A\\}$ (implied). $AC^+=\\{A,C\\}$: no $B$, so $AC\\to BC$ is also NOT implied. Two options qualify.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch: both B and D are not implied; question has a single-answer form",
+  "derived": "B,D"
+ },
+ {
+  "n": 19,
+  "ch": "DBW.REL",
+  "stem": "Consider relations Students, Courses, Grades. A SQL query SELECTs DISTINCT Name for students who took courses from 'Korth' and received an 'A'. Which set is computed?",
+  "opts": [
+   "Names of students who got an A grade in all courses taught by Korth.",
+   "Names of students who got an A grade in all courses.",
+   "Names of students who got an A grade in at least one of the courses taught by Korth.",
+   "None of the above."
+  ],
+  "key": "C",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "the SQL query and schema are not shown in the PDF; the answer depends on the exact query",
+  "derived": null
+ },
+ {
+  "n": 20,
+  "ch": "DBW.NF",
+  "stem": "A clustering index is defined on the fields which are of type:",
+  "opts": [
+   "non-key and ordering",
+   "non-key and non-ordering",
+   "key and ordering",
+   "key and non-ordering"
+  ],
+  "key": "A",
+  "sol": "A clustering index is built on an ordering field whose values are not unique (a non-key field); a key ordering field gives a primary index.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 21,
+  "ch": "GA.VERB",
+  "stem": "Despite his initial hesitation, Rehman's ______ to contribute to the success of the project never wavered.",
+  "opts": [
+   "ambivalence",
+   "satisfaction",
+   "resolve",
+   "revolve"
+  ],
+  "key": "C",
+  "sol": "'Despite hesitation ... never wavered' needs a word meaning firm determination: 'resolve'.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 22,
+  "ch": "GA.SPAT",
+  "stem": "A paper is folded to make a cube where each square corresponds to a particular face. Which of the following options represents the correct cube?",
+  "opts": [
+   "Option A",
+   "Option B",
+   "Option C",
+   "Option D"
+  ],
+  "key": "A",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "figure-dependent: net and cube options are drawings absent from the PDF text (options read 'Option A..D')",
+  "derived": null
+ },
+ {
+  "n": 23,
+  "ch": "GA.ANAL",
+  "stem": "If IMAGE and FIELD are coded as FHBNJ and EMFJG respectively, which one among the following options is the most appropriate for BEACH?",
+  "opts": [
+   "CEADP",
+   "IDBFC",
+   "JGIBC",
+   "IBCEC"
+  ],
+  "key": "B",
+  "sol": "Each letter is shifted by +1 and the word is then reversed: IMAGE $\\to$ JNBHF $\\to$ FHBNJ, FIELD $\\to$ GJFME $\\to$ EMFJG. BEACH $\\to$ CFBDI $\\to$ IDBFC.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 24,
+  "ch": "GA.ANAL",
+  "stem": "Which one of the following options is correct for the given data iterations for inputs (I) and outputs (X, Y)?",
+  "opts": [
+   "$X(i)=X(i-1)+I(i);\\ Y(i)=Y(i-1)I(i);\\ i>0$",
+   "$X(i)=X(i-1)I(i);\\ Y(i)=Y(i-1)+I(i);\\ i>0$",
+   "$X(i)=X(i-1)I(i);\\ Y(i)=Y(i-1)I(i);\\ i>0$",
+   "$X(i)=X(i-1)+I(i)$"
+  ],
+  "key": "A",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "the data table of iterations is not shown in the PDF",
+  "derived": null
+ },
+ {
+  "n": 25,
+  "ch": "GA.VERB",
+  "stem": "Ravi had ______ younger brother who taught at ______ university. He was widely regarded as ______ honorable man.",
+  "opts": [
+   "a; a; an",
+   "the; an; a",
+   "a; an; a",
+   "an; an; a"
+  ],
+  "key": "A",
+  "sol": "'a younger brother' (consonant sound), 'a university' (starts with a /j/ sound), 'an honorable man' (silent h).",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 26,
+  "ch": "GA.QUANT",
+  "stem": "The average marks obtained by a class in an examination were calculated as 30.8. However, while checking the marks entered, the teacher found that the marks of one student were entered incorrectly as 24 instead of 42. After correcting the marks, the average becomes 31.4. How many students does the class have?",
+  "opts": [
+   "25",
+   "28",
+   "30",
+   "32"
+  ],
+  "key": "C",
+  "sol": "The total rises by $42-24=18$ and the average by $0.6$, so $n=18/0.6=30$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 27,
+  "ch": "GA.QUANT",
+  "stem": "In a diagram, lines QR and ST are parallel. The shortest distance between these two lines is half the shortest distance between the point P and line QR. What is the ratio of the area of the triangle PST to the area of the trapezium SQRT?",
+  "opts": [
+   "1/3",
+   "1/4",
+   "2/5",
+   "1/2"
+  ],
+  "key": "A",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "figure-dependent: positions of S, T relative to PQ, PR are only in the diagram (key 1/3 holds if P,S,Q and P,T,R are collinear, but this is not stated)",
+  "derived": null
+ },
+ {
+  "n": 28,
+  "ch": "GA.QUANT",
+  "stem": "The number of coins of Rs1, Rs5, and Rs10 denominations that a person has are in the ratio 5:3:13. Of the total amount, the percentage of money in Rs5 coins is:",
+  "opts": [
+   "21%",
+   "10%",
+   "14.28%",
+   "30%"
+  ],
+  "key": "B",
+  "sol": "Amounts are $5\\cdot1=5$, $3\\cdot5=15$, $13\\cdot10=130$ (in units), total $150$. Rs5 share $=15/150=10\\%$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 29,
+  "ch": "GA.SPAT",
+  "stem": "A rectangular paper of 20 cm x 8 cm is folded 3 times. Each fold is made along the line of symmetry, which is perpendicular to its long edge. The perimeter of the final folded sheet (in cm) is:",
+  "opts": [
+   "21",
+   "20",
+   "24",
+   "18"
+  ],
+  "key": "D",
+  "sol": "Reading 1 (long edge fixed, 20 cm): 20 -> 10 -> 5 -> 2.5, sheet is 2.5 x 8, perimeter 21 (option A). Reading 2 (long edge re-picked each fold): 10x8, 5x8, 5x4, perimeter 18 (option D, the PDF key). Ambiguous wording; the literal reading gives A.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch/ambiguous: literal reading gives 21 (A), PDF key is 18 (D)",
+  "derived": "A (literal) / D (alternative reading)"
+ },
+ {
+  "n": 30,
+  "ch": "GA.VERB",
+  "stem": "We reached the station late and ______ missed the train.",
+  "opts": [
+   "near",
+   "nearly",
+   "utterly",
+   "mostly"
+  ],
+  "key": "B",
+  "sol": "'nearly missed' (almost missed) is the idiomatic adverb here.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 31,
+  "ch": "CO.LIM",
+  "stem": "Let $f$ and $g$ be two real valued functions such that $g(x)=f(x)-2$. Select all true options.",
+  "opts": [
+   "If $f$ is odd, then $g$ is odd.",
+   "If $f$ is even, then $g$ is even.",
+   "If $g$ is odd, then $f$ is odd.",
+   "If $g$ is even, then $f$ is even."
+  ],
+  "key": "D",
+  "sol": "$f$ even gives $g(-x)=f(-x)-2=f(x)-2=g(x)$, so B is true; $g$ even gives $f(-x)=g(-x)+2=g(x)+2=f(x)$, so D is true. A and C fail (a constant shift breaks oddness). True options: B and D.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch: key D only, but B is also true",
+  "derived": "B,D"
+ },
+ {
+  "n": 32,
+  "ch": "CO.LIM",
+  "stem": "Evaluate the following limit: $\\lim_{x\\to2}\\dfrac{x^6-24x-16}{x^3+2x-12}$ ______.",
+  "opts": null,
+  "key": "12",
+  "sol": "Both numerator and denominator are $0$ at $x=2$. L'Hopital: $\\dfrac{6x^5-24}{3x^2+2}\\Big|_{2}=\\dfrac{168}{14}=12$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 33,
+  "ch": "CO.OPT",
+  "stem": "Find the global minima of the function $f(x)=2x^3-9x^2+12x+6$ in the interval $(1, 3)$. You need to enter the value of $x^*$ and not the value of $f(x^*)$. ______.",
+  "opts": null,
+  "key": "2",
+  "sol": "$f'(x)=6(x-1)(x-2)$, so the only interior critical point is $x=2$ with $f(2)=10$. Near the open ends $f\\to11$ (at $1$) and $f\\to15$ (at $3$), both larger, so $x^*=2$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 34,
+  "ch": "CO.LIM",
+  "stem": "Define a function $f$ as follows: $f(x)=\\begin{cases}kx^2+l, & \\text{if } x\\le1\\\\ 1x^2+kx+m, & \\text{if } x>1\\end{cases}$. If $f$ is continuous and differentiable at $x=1$ find the value of $k-2l+m$. ______.",
+  "opts": null,
+  "key": "0",
+  "sol": "Differentiability: $2k=2+k$, so $k=2$. Continuity: $k+l=1+k+m$, so $l=1+m$. Then $k-2l+m=2-2-2m+m=-m$, which depends on the free parameter $m$; it equals $0$ only if $m=0$. Underdetermined as printed.",
+  "mode": "Q",
+  "tol": null,
+  "reason": "underdetermined: k-2l+m = -m, m not fixed; PDF key 0 not derivable",
+  "derived": "-m"
+ },
+ {
+  "n": 35,
+  "ch": "CO.LIM",
+  "stem": "Consider a function $f$ defined as: $f(x)=\\begin{cases}3ax+b, & x<1\\\\ 11, & x=1\\\\ 5ax-2b, & x>1\\end{cases}$. If $f$ is continuous at $x=1$, then find the value of $a+b$. ______.",
+  "opts": null,
+  "key": "5",
+  "sol": "Continuity: $3a+b=11$ and $5a-2b=11$. Solving, $a=3, b=2$, so $a+b=5$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 36,
+  "ch": "CO.TAY",
+  "stem": "Select all options that give the correct Taylor series expansion of the function on the left around the point 0.",
+  "opts": [
+   "$\\sin x = x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\ldots$",
+   "$\\sin x = 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!} - \\ldots$",
+   "$\\cos x = 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!} - \\ldots$",
+   "$\\cos x = x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\ldots$"
+  ],
+  "key": "A,C",
+  "sol": "$\\sin x$ has only odd powers and $\\cos x$ only even powers (checked numerically at $x=0.7$).",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 37,
+  "ch": "CO.OPT",
+  "stem": "The height of a right circular cone of maximum volume that can be enclosed within a hollow sphere of radius $R$ is:",
+  "opts": [
+   "$R$",
+   "$\\frac{5}{4}R$",
+   "$\\frac{4}{3}R$",
+   "$\\frac{3}{2}R$"
+  ],
+  "key": "C",
+  "sol": "With height $h$, base radius$^2$ $=h(2R-h)$, so $V=\\frac{\\pi}{3}h^2(2R-h)$. $V'=0$ gives $4Rh=3h^2$, $h=\\frac43R$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 38,
+  "ch": "CO.LIM",
+  "stem": "Evaluate: $\\lim_{x\\to-3}\\dfrac{\\sqrt{2x+22}-4}{x+3}$ ______.",
+  "opts": null,
+  "key": "0.25",
+  "sol": "At $x=-3$ both parts vanish. This is the derivative of $\\sqrt{2x+22}$ at $-3$: $\\dfrac{1}{\\sqrt{2x+22}}=\\dfrac14=0.25$.",
+  "mode": "C",
+  "tol": 0.005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 39,
+  "ch": "CO.LIM",
+  "stem": "Find the angle between the tangents to the curve $y=\\dfrac{\\pi\\sin x}{x}$ at $x=\\pi$ and $x=-\\pi$.",
+  "opts": [
+   "$30^\\circ$",
+   "$45^\\circ$",
+   "$60^\\circ$",
+   "$90^\\circ$"
+  ],
+  "key": "D",
+  "sol": "$y'=\\pi\\dfrac{x\\cos x-\\sin x}{x^2}$ gives slopes $-1$ at $x=\\pi$ and $+1$ at $x=-\\pi$. Product $=-1$, so the tangents are perpendicular.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 40,
+  "ch": "CO.LIM",
+  "stem": "Find the domain and range of $f(x)=\\sqrt{5-4x-x^2}$.",
+  "opts": [
+   "Domain is $[0,\\infty)$",
+   "Domain is $(-\\infty,-5]\\cup[1,\\infty)$",
+   "Domain is $[-5,1]$",
+   "Range is $[0,\\infty)$",
+   "Range is $[0,3]$"
+  ],
+  "key": "C,E",
+  "sol": "$5-4x-x^2=(1-x)(x+5)\\ge0$ on $[-5,1]$. The radicand equals $9-(x+2)^2$, maximum $9$ at $x=-2$, so the range is $[0,3]$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 41,
+  "ch": "PRS.CNT",
+  "stem": "A professor is creating an exam of eleven questions from a test bank of 15 questions. In how many ways can he select and arrange the questions?",
+  "opts": [
+   "$15!$",
+   "$15!/11!4!$",
+   "$15!/11!$",
+   "$15!/4!$"
+  ],
+  "key": "D",
+  "sol": "Ordered selection of 11 from 15: $P(15,11)=15!/(15-11)!=15!/4!$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 42,
+  "ch": "PRS.PROB",
+  "stem": "Out of the students in a class, 60% do well in mathematics, 70% do well in physics and 50% do well in both. Find the probability that a randomly selected student doesn't do well either in mathematics or physics. ______.",
+  "opts": null,
+  "key": "0.2",
+  "sol": "$P(M\\cup P)=0.6+0.7-0.5=0.8$, so the required probability is $1-0.8=0.2$.",
+  "mode": "C",
+  "tol": 0.005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 43,
+  "ch": "PRS.PROB",
+  "stem": "Students from 3 colleges X, Y, and Z have participated in a competition, where 30% of the participants are from college X, 20% from college Y, and 50% from college Z. It is known that 50%, 40% and 60% of the participants from colleges X, Y, and Z respectively are girls. If a girl is randomly selected, what is the probability that she is from college X? (Enter the answer correct upto three decimal places.) ______.",
+  "opts": null,
+  "key": "0.283",
+  "sol": "Bayes: $P(X\\mid G)=\\dfrac{0.3\\cdot0.5}{0.3\\cdot0.5+0.2\\cdot0.4+0.5\\cdot0.6}=\\dfrac{0.15}{0.53}\\approx0.283$.",
+  "mode": "C",
+  "tol": 0.0005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 44,
+  "ch": "PRS.DRV",
+  "stem": "If a fair coin is tossed an even number $2n$ times, then what is the probability of obtaining more heads than tails?",
+  "opts": [
+   "${}^{2n}C_n(1/2)^{2n}$",
+   "$\\frac12\\{1-{}^{2n}C_n(1/2)^{2n}\\}$",
+   "$1-{}^{2n}C_n(1/2)^{n}$",
+   "${}^{2n}C_n(1/2)^{n}$"
+  ],
+  "key": "B",
+  "sol": "By symmetry $P(H>T)=P(T>H)$, and $P(H=T)={}^{2n}C_n(1/2)^{2n}$, so $P(H>T)=\\frac12\\{1-{}^{2n}C_n(1/2)^{2n}\\}$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 45,
+  "ch": "PRS.DRV",
+  "stem": "Suppose the number of visitors arriving at a zoo can be modeled to be Poisson distributed. On an average 20 visitors arrive per hour. Let $X$ be the number of visitors arriving from 2pm to 4pm. Then the probability that at least 35 visitors will arrive in the given duration is:",
+  "opts": [
+   "$\\sum_{k=35}^{\\infty}\\dfrac{e^{-20}(20)^k}{k!}$",
+   "$1-\\sum_{k=0}^{34}\\dfrac{e^{-20}(20)^k}{k!}$",
+   "$\\sum_{k=35}^{\\infty}\\dfrac{e^{-40}(40)^k}{k!}$",
+   "$1-\\sum_{k=0}^{34}\\dfrac{e^{-40}(40)^k}{k!}$"
+  ],
+  "key": "D",
+  "sol": "Two hours at 20/hour gives rate 40. $P(X\\ge35)=\\sum_{k\\ge35}e^{-40}40^k/k!=1-\\sum_{k=0}^{34}e^{-40}40^k/k!$, so both C and D are correct (identical value); the question is single-answer, key D.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch: options C and D are mathematically identical and both correct; key lists only D",
+  "derived": "C,D"
+ },
+ {
+  "n": 46,
+  "ch": "PRS.CLT",
+  "stem": "The average life of a coffee machine is 5 years, with a standard deviation of 1 year. Assuming normal distribution, find the probability that the mean life of a random sample of 16 such machines falls between 4.6 and 5.4 years. ______.",
+  "opts": null,
+  "key": "0.89",
+  "sol": "The sample mean has standard deviation $1/\\sqrt{16}=0.25$, so the limits are $z=\\pm1.6$: $2\\Phi(1.6)-1\\approx0.8904$. (Rounded to 2 decimals: 0.89.)",
+  "mode": "C",
+  "tol": 0.005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 47,
+  "ch": "PRS.INF",
+  "stem": "The average diameter of pipes manufactured by a company is reported to be 25mm, which you suspect to be too low. You observed a random sample of diameters of 10 pipes (in mm) as 24.58, 24.67, 24.99, 25.22, 25.32, 25.25, 24.96, 24.87, 25.52, 24.85. Based on this information, what conclusion can you reach about your suspicion at significance level of 5%? Use $F_{t_9}^{-1}(0.95)=1.833$.",
+  "opts": [
+   "Accept $H_0$",
+   "Reject $H_0$",
+   "Data is insufficient",
+   "None of the above"
+  ],
+  "key": "B",
+  "sol": "$H_0:\\mu=25$ vs $H_1:\\mu<25$. Sample mean $=25.023$, $s=0.2990$, $t=(25.023-25)/(0.2990/\\sqrt{10})=0.243$. The rejection region is $t<-1.833$; $0.243$ is not in it, so $H_0$ is not rejected (option A). The key B (reject) disagrees.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch: t = +0.243 is not below -1.833, so H0 is not rejected; key says Reject",
+  "derived": "A"
+ },
+ {
+  "n": 48,
+  "ch": "PRS.MOM",
+  "stem": "If $X$ and $Y$ are independent Poisson variates such that $P(X=1)=P(X=2)$ and $P(Y=2)=P(Y=3)$. Find the variance of $X-2Y$. ______.",
+  "opts": null,
+  "key": "14",
+  "sol": "$\\lambda e^{-\\lambda}=\\frac{\\lambda^2}{2}e^{-\\lambda}$ gives $\\lambda_X=2$; $\\frac{\\lambda^2}{2}=\\frac{\\lambda^3}{6}$ gives $\\lambda_Y=3$. $\\mathrm{Var}(X-2Y)=2+4\\cdot3=14$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 49,
+  "ch": "PRS.DESC",
+  "stem": "Let the sample mean of a set of 20 data points be 30. If it is discovered that a data point having value 25 was incorrectly entered as 15, what should be the revised value of the sample mean? ______.",
+  "opts": null,
+  "key": "30.5",
+  "sol": "Sum $=600$; replacing 15 by 25 gives $610$; mean $=610/20=30.5$.",
+  "mode": "C",
+  "tol": 0.05,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 50,
+  "ch": "PRS.MOM",
+  "stem": "Let $X, Y \\sim \\text{Uniform}(1, 2)$ be i.i.d discrete random variables. Define $U=X+Y$ and $V=X$. Find the correlation coefficient between U and V. Enter your answer correct to two decimal places. ______.",
+  "opts": null,
+  "key": "0.71",
+  "sol": "$\\mathrm{Cov}(U,V)=\\mathrm{Var}(X)=\\sigma^2$, $\\mathrm{Var}(U)=2\\sigma^2$, $\\mathrm{Var}(V)=\\sigma^2$, so $\\rho=1/\\sqrt2\\approx0.71$ (exact enumeration over $\\{1,2\\}^2$ agrees).",
+  "mode": "C",
+  "tol": 0.005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 51,
+  "ch": "LA.VS",
+  "stem": "$S$ is a linearly independent subset of $\\mathbb{R}^4$. Select all true statements concerning $S$.",
+  "opts": [
+   "$|S|\\le4$",
+   "Any subset of $S$ is also a linearly independent subset of $\\mathbb{R}^4$",
+   "Any superset of $S$ is also a linearly independent subset of $\\mathbb{R}^4$",
+   "$S$ is a basis for $\\mathbb{R}^4$"
+  ],
+  "key": "A,B",
+  "sol": "An independent set in $\\mathbb{R}^4$ has at most 4 vectors; subsets of independent sets are independent. Supersets can add dependent vectors, and $S$ need not span.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 52,
+  "ch": "LA.EIG",
+  "stem": "Consider the matrix $M=\\begin{bmatrix}2&-1\\\\3&1\\end{bmatrix}$. Which one of the following statements is true?",
+  "opts": [
+   "The eigenvalues of $M$ are non-negative and real.",
+   "The eigenvalues of $M$ are complex conjugate pairs.",
+   "One eigenvalue of $M$ is positive and real, and another is zero.",
+   "One eigenvalue of $M$ is non-negative and real, another is negative and real."
+  ],
+  "key": "B",
+  "sol": "Trace $=3$, determinant $=2+3=5$; $\\lambda^2-3\\lambda+5=0$ has discriminant $9-20<0$, so the eigenvalues are complex conjugates.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 53,
+  "ch": "LA.VS",
+  "stem": "Select all true statements.",
+  "opts": [
+   "The intersection of two subspaces of a vector space is a subspace.",
+   "The union of two subspaces of a vector space is a subspace.",
+   "The empty set is a subspace of every vector space.",
+   "Every subset of a vector space need not be a subspace."
+  ],
+  "key": "A",
+  "sol": "A is true. B is false (union of two lines in $\\mathbb{R}^2$). C is false (a subspace must contain $0$). D says not every subset is a subspace, which is true. True options: A and D.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch: option D ('need not be a subspace') is true, key lists only A",
+  "derived": "A,D"
+ },
+ {
+  "n": 54,
+  "ch": "LA.EIG",
+  "stem": "Compute $\\det(A)$ where $A=\\begin{bmatrix}2010&2020&2030\\\\2020&2030&2010\\\\2030&2010&2020\\end{bmatrix}$. ______.",
+  "opts": null,
+  "key": "2000",
+  "sol": "Exact integer cofactor expansion gives $\\det A=-1818000$. Check: rows are cyclic permutations of $(2010,2020,2030)$; with $a=2010,b=2020,c=2030$, the circulant-type determinant is $-(a+b+c)(a^2+b^2+c^2-ab-bc-ca)=-6060\\cdot300=-1818000$.",
+  "mode": "X",
+  "tol": null,
+  "reason": "mismatch: recomputed -1818000, PDF key 2000",
+  "derived": "-1818000"
+ },
+ {
+  "n": 55,
+  "ch": "LA.DEC",
+  "stem": "Find the singular values of the following matrix: $\\begin{bmatrix}-4&-6\\\\3&-8\\end{bmatrix}$",
+  "opts": [
+   "$\\sigma_1=1,\\sigma_2=0$",
+   "$\\sigma_1=10,\\sigma_2=5$",
+   "$\\sigma_1=100,\\sigma_2=25$",
+   "$\\sigma_1=\\sigma_2=0$"
+  ],
+  "key": "B",
+  "sol": "$\\sigma_1^2+\\sigma_2^2=\\|A\\|_F^2=125$ and $\\sigma_1\\sigma_2=|\\det A|=50$, so $\\sigma^2\\in\\{100,25\\}$, $\\sigma=10,5$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 56,
+  "ch": "LA.VS",
+  "stem": "If $u, v, w$ are distinct vectors in $\\mathbb{R}^2$ that are pairwise orthogonal, which of the following are true?",
+  "opts": [
+   "$u, v, w$ are linearly independent",
+   "$u, v, w$ are linearly dependent",
+   "Each of $\\{u,v\\}$, $\\{v,w\\}$ and $\\{u,w\\}$ is a basis for $\\mathbb{R}^2$",
+   "$\\mathrm{span}\\{u,v,w\\}=\\mathbb{R}^3$"
+  ],
+  "key": "B",
+  "sol": "$\\mathbb{R}^2$ has dimension 2, so three vectors are always dependent. Pairwise orthogonal distinct vectors force one to be zero, so not every pair is a basis; the span lies in $\\mathbb{R}^2$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 57,
+  "ch": "LA.MAT",
+  "stem": "Consider these two statements: S1: The sum of two symmetric matrices is a symmetric matrix. S2: The product of two symmetric matrices is a symmetric matrix.",
+  "opts": [
+   "S1 is true, S2 is false",
+   "S1 is false, S2 is true",
+   "S1 and S2 are true",
+   "S1 and S2 are false"
+  ],
+  "key": "A",
+  "sol": "$(A+B)^T=A+B$, so S1 holds. For $A=\\begin{bmatrix}1&1\\\\1&0\\end{bmatrix}, B=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}$, $AB=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}$ is not symmetric.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 58,
+  "ch": "LA.MAT",
+  "stem": "If $A=\\begin{bmatrix}1&2\\\\2&-1\\end{bmatrix}$, which of the following is $A^8$?",
+  "opts": [
+   "$\\begin{bmatrix}25&0\\\\0&25\\end{bmatrix}$",
+   "$\\begin{bmatrix}125&0\\\\0&125\\end{bmatrix}$",
+   "$\\begin{bmatrix}625&0\\\\0&625\\end{bmatrix}$",
+   "$\\begin{bmatrix}3125&0\\\\0&3125\\end{bmatrix}$"
+  ],
+  "key": "C",
+  "sol": "$A^2=5I$, so $A^8=(5I)^4=625I$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 59,
+  "ch": "LA.DEC",
+  "stem": "Consider a system of linear equations $PX=Q$ where $P\\in\\mathbb{R}^{3\\times3}$ and $Q\\in\\mathbb{R}^{3\\times1}$. Suppose $P$ has an LU decomposition, $P=LU$. Which of the following statement(s) is/are true?",
+  "opts": [
+   "The system $PX=Q$ can be solved by first solving $LY=Q$ and then $UX=Y$.",
+   "If $P$ is invertible, then both $L$ and $U$ are invertible.",
+   "If $P$ is singular, then at least one of the diagonal elements of $U$ is zero.",
+   "If $P$ is symmetric, then both $L$ and $U$ are symmetric."
+  ],
+  "key": "A,B,C",
+  "sol": "A is forward then back substitution. B: $\\det P=\\det L\\det U\\ne0$. C: with the usual convention that $L$ is unit lower triangular, $\\det P=\\prod u_{ii}=0$. D is false ($L$ and $U$ are triangular, symmetric only if diagonal). Note: C assumes the standard unit-diagonal $L$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 60,
+  "ch": "LA.SYS",
+  "stem": "Consider the given system of linear equations for some real $k$: $x+ky=1$ and $kx+y=-1$. Which of the following is/are true?",
+  "opts": [
+   "There is exactly one value of $k$ for which the system has no solution.",
+   "There exist an infinite number of values of $k$ for which the system has no solution.",
+   "There exists exactly one value of $k$ for which the system has exactly one solution.",
+   "There exists exactly one value of $k$ for which the system has an infinite number of solutions."
+  ],
+  "key": "A,D",
+  "sol": "The determinant is $1-k^2$. For $k=1$ the equations are $x+y=1$ and $x+y=-1$ (no solution). For $k=-1$ they are the same line (infinitely many). For every other $k$ the solution is unique.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 61,
+  "ch": "ML.CLS",
+  "stem": "$w=\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}$ is the weight vector of a linear classifier for a binary classification problem whose labels lie in the set $\\{0,1\\}$. If the bias of the classifier is set to 0, which of the following is the equation of the decision boundary for this classifier?",
+  "opts": [
+   "$x_1+2x_2+3x_3=1$",
+   "$x_1+2x_2+3x_3=-1$",
+   "$x_1+2x_2+3x_3=0$",
+   "$x_1-2x_3+3x_3=0$"
+  ],
+  "key": "C",
+  "sol": "The boundary is $w^Tx+b=0$ with $b=0$: $x_1+2x_2+3x_3=0$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 62,
+  "ch": "ML.DR",
+  "stem": "Which of the following is the most appropriate description of the method used in PCA to achieve dimensionality reduction?",
+  "opts": [
+   "PCA achieves this by discarding a random subset of features.",
+   "PCA achieves this by selecting those features in the dataset along which the variance is maximised.",
+   "PCA achieves this by looking for those directions in the feature space along which the variance is maximised.",
+   "PCA achieves this by retaining those features along which the variance is minimised."
+  ],
+  "key": "C",
+  "sol": "PCA finds new directions (linear combinations of features) of maximum variance and projects onto the top ones; it does not select original features.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 63,
+  "ch": "ML.DR",
+  "stem": "Consider a covariance matrix $C$ for a mean-centered dataset in $\\mathbb{R}^3$. After performing standard PCA, the three principal components turn out to be the standard basis vectors. Which of the following statements are true?",
+  "opts": [
+   "$C$ is a diagonal matrix.",
+   "The diagonal entries of $C$ are non-negative.",
+   "The diagonal entries of $C$ are strictly greater than zero.",
+   "$C$ has to be the identity matrix."
+  ],
+  "key": "A,B",
+  "sol": "Principal components are eigenvectors of $C$; if they are the standard basis, $C$ is diagonal with the (variance) eigenvalues on the diagonal. Variances are $\\ge0$ but may be $0$, and they need not be equal to 1.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 64,
+  "ch": "ML.DR",
+  "stem": "Let $\\Sigma$ be the covariance matrix of a dataset, and suppose $\\lambda_1\\ge\\lambda_2\\ge\\cdots\\ge\\lambda_d$ are the eigenvalues of $\\Sigma$. If we keep only the first $k$ principal components, what is the fraction of total variance preserved by these $k$ components?",
+  "opts": [
+   "$\\dfrac{\\lambda_1+\\lambda_2+\\cdots+\\lambda_k}{\\lambda_1+\\lambda_2+\\cdots+\\lambda_d}$",
+   "$\\dfrac{\\lambda_1^2+\\lambda_2^2+\\cdots+\\lambda_k^2}{\\lambda_1^2+\\lambda_2^2+\\cdots+\\lambda_d^2}$",
+   "$\\dfrac{\\lambda_k}{\\lambda_1}$",
+   "$\\lambda_1+\\lambda_2+\\cdots+\\lambda_d$"
+  ],
+  "key": "A",
+  "sol": "Each eigenvalue is the variance along its component, so the preserved fraction is the sum of the top $k$ eigenvalues over the sum of all.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 65,
+  "ch": "ML.REG",
+  "stem": "Which of the following is the loss for a single training example $(x, y)$ for a linear regression model with weight vector $w$? Assume the most common scenario.",
+  "opts": [
+   "$w^Tx-y$",
+   "$(w^Tx-y)^2$",
+   "$|w^Tx-y|$",
+   "$-y\\log(w^Tx)$"
+  ],
+  "key": "B",
+  "sol": "The most common loss for linear regression is the squared error $(w^Tx-y)^2$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ }
+]

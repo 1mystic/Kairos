@@ -1,0 +1,2560 @@
+[
+ {
+  "id": "q_a605aa7abad0",
+  "type": "NVQ",
+  "stem": "In an undirected connected planar graph $G$, there are eight vertices and five faces. The number of edges in $G$ is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    11.0,
+    11.0
+   ]
+  },
+  "solution": "Euler's formula for a connected planar graph: $V-E+F=2$, so $E=V+F-2=8+5-2=11$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_0344a37f25c3",
+  "type": "SCQ",
+  "stem": "Consider the following python function:\n\n```python\ndef fun(n):\n    for i in range(1, n+1):\n        j = 1\n        while j < n:\n            print(i, j)\n            j *= 2\n```\n\nTime complexity of `fun` in terms of $\\Theta$ notation is:",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The inner loop doubles $j$ until it reaches $n$, so it runs $\\lceil\\log_2 n\\rceil$ times; the outer loop runs $n$ times. Total $\\Theta(n\\log n)$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(n^2)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n \\log n)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(n^2 \\log n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_1dbd5c4c4901",
+  "type": "SCQ",
+  "stem": "Suppose a stack implementation supports an instruction REVERSE, which reverses the order of elements on the stack, in addition to the PUSH and POP instructions. Which one of the following statements is TRUE (with respect to this modified stack)?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Keep the queue front on top of the stack. ENQUEUE = REVERSE, PUSH, REVERSE (the new element goes to the bottom); DEQUEUE = POP. A brute-force search over short instruction sequences finds no working scheme for options B or D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A queue cannot be implemented using this stack."
+   },
+   {
+    "key": "B",
+    "text": "A queue can be implemented where ENQUEUE takes a single instruction and DEQUEUE takes a sequence of two instructions."
+   },
+   {
+    "key": "C",
+    "text": "A queue can be implemented where ENQUEUE takes a sequence of three instructions and DEQUEUE takes a single instruction."
+   },
+   {
+    "key": "D",
+    "text": "A queue can be implemented where both ENQUEUE and DEQUEUE take a single instruction each."
+   }
+  ]
+ },
+ {
+  "id": "q_c7b95cc4cc56",
+  "type": "MSQ",
+  "stem": "Select the correct statement(s).",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C"
+   ]
+  },
+  "solution": "Selection sort always makes $n(n-1)/2$ comparisons and merge sort is always $\\Theta(n\\log n)$. Insertion sort ranges from $\\Theta(n)$ (sorted input) to $\\Theta(n^2)$ (reversed); quicksort ranges from $\\Theta(n\\log n)$ to $\\Theta(n^2)$ depending on the pivot.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The complexity of Selection sort remains the same irrespective of the sequence of elements."
+   },
+   {
+    "key": "B",
+    "text": "The complexity of Insertion sort remains the same irrespective of the sequence of elements."
+   },
+   {
+    "key": "C",
+    "text": "The complexity of Merge sort remains the same irrespective of the sequence of elements."
+   },
+   {
+    "key": "D",
+    "text": "The complexity of Quicksort remains the same irrespective of the choice of pivot."
+   }
+  ]
+ },
+ {
+  "id": "q_8ad12cfd3f87",
+  "type": "NVQ",
+  "stem": "What is the output of the following snippet of code?\n\n```python\ndef foo(n):\n    if n % 2 == 0:\n        return n // 2\n    return 3 * n + 1\n\ncount = 0\nx = 10\nwhile x != 1:\n    x = foo(x)\n    count += 1\nprint(count)\n```",
+  "images": [],
+  "answer": {
+   "range": [
+    6.0,
+    6.0
+   ]
+  },
+  "solution": "The sequence is $10\\to5\\to16\\to8\\to4\\to2\\to1$, which is 6 steps.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.PY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_cc179de75090",
+  "type": "NVQ",
+  "stem": "Consider the following program written in pseudo-code. Assume that $x$ and $y$ are integers:\n\n```\nCount(x, y) {\n    if (y != 1) {\n        if (x != 1) {\n            print(\"*\");\n            Count(x/2, y);\n        } else {\n            y = y - 1;\n            Count(1024, y);\n        }\n    }\n}\n```\n\nThe number of times that the print statement is executed by the call `Count(1024, 1024)` is ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    10230.0,
+    10230.0
+   ]
+  },
+  "solution": "For each value of $y$ from 1024 down to 2, $x$ halves from 1024 to 1, printing $10$ stars ($x=1024,512,\\dots,2$). That is $1023$ values of $y$, so $1023\\times10=10230$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.PY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a71551bac1df",
+  "type": "SCQ",
+  "stem": "Let $A$ be a priority queue for maintaining a set of elements. Suppose $A$ is implemented using a max-heap data structure. The operation `EXTRACT-MAX(A)` extracts and deletes the maximum element from $A$. The operation `INSERT(A, key)` inserts a new element `key` in $A$. The properties of a max-heap are preserved at the end of each of these operations. When $A$ contains $n$ elements, which one of the following statements about the worst-case running time of these two operations is TRUE?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Reading the maximum is $O(1)$, but extracting it replaces the root with the last element and sifts down, $O(\\log n)$. Insertion sifts up along one root-leaf path, $O(\\log n)$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Both `EXTRACT-MAX(A)` and `INSERT(A, key)` run in $O(1)$."
+   },
+   {
+    "key": "B",
+    "text": "Both `EXTRACT-MAX(A)` and `INSERT(A, key)` run in $O(\\log n)$."
+   },
+   {
+    "key": "C",
+    "text": "`EXTRACT-MAX(A)` runs in $O(1)$ whereas `INSERT(A, key)` runs in $O(n)$."
+   },
+   {
+    "key": "D",
+    "text": "`EXTRACT-MAX(A)` runs in $O(1)$ whereas `INSERT(A, key)` runs in $O(\\log n)$."
+   }
+  ]
+ },
+ {
+  "id": "q_e4a45be1779d",
+  "type": "SCQ",
+  "stem": "Consider the Python program fragment below, which is meant to divide $x$ by $y$ using repeated subtractions. The variables $x, y, q$, and $r$ are all unsigned int.\n\n```python\nwhile r >= y:\n    r = r - y\n    q = q + 1\n```\n\nWhich of the following conditions on the variables $x, y, q$, and $r$ before the execution of the fragment will ensure that the loop terminates in a state satisfying the condition $x == (y * q + r)$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The invariant $x=yq+r$ must hold initially: $q=0, r=x$ gives it, and $y>0$ guarantees termination. The other options either leave $r$ or $q$ unconstrained, so the invariant can fail (checked by brute force over small values).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.PY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$q == r$ and $r == 0$"
+   },
+   {
+    "key": "B",
+    "text": "$x > 0$ and $r == x$ and $y > 0$"
+   },
+   {
+    "key": "C",
+    "text": "$q == 0$ and $r == x$ and $y > 0$"
+   },
+   {
+    "key": "D",
+    "text": "$q == 0$ and $y > 0$"
+   }
+  ]
+ },
+ {
+  "id": "q_a6d873e42d52",
+  "type": "SCQ",
+  "stem": "What is the worst-case time complexity of inserting $n$ elements into an empty linked list, maintaining sorted order?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Each insertion may have to traverse the whole list (for example inserting increasing keys), giving $0+1+\\dots+(n-1)=\\Theta(n^2)$ steps.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(n \\log n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n^2)$"
+   },
+   {
+    "key": "D",
+    "text": "$O(1)$"
+   }
+  ]
+ },
+ {
+  "id": "q_ad876555bf4b",
+  "type": "SCQ",
+  "stem": "What is the number of arithmetic operations required to implement binary search on a sorted array?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Each step halves the search range and computes one midpoint, so $O(\\log n)$ arithmetic operations.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$O(n)$"
+   },
+   {
+    "key": "B",
+    "text": "$O(\\log n)$"
+   },
+   {
+    "key": "C",
+    "text": "$O(1)$"
+   },
+   {
+    "key": "D",
+    "text": "$\\Theta(n^2)$"
+   }
+  ]
+ },
+ {
+  "id": "q_279ebf272710",
+  "type": "NVQ",
+  "stem": "Consider two relations $s(A, B, C)$ and $r(P, Q, C)$ such that relation $s$ has 30 rows and relation $r$ has 12 rows. What is the maximum number of rows that are possible in $r \\bowtie s$? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    360.0,
+    360.0
+   ]
+  },
+  "solution": "The natural join is on the common attribute $C$. The maximum occurs when every row has the same $C$ value, giving $30\\times12=360$ rows.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8da54217cd54",
+  "type": "SCQ",
+  "stem": "Consider the relational scheme $R(E, F, G, H, I, J, K, L, M, N)$ with functional dependencies: $EF \\to G$, $F \\to I, J$, $EH \\to K, L$, $K \\to M$, $L \\to N$. Which of the following attribute sets is a candidate key for $R$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$E, F, H$ never appear on a right-hand side, so every key contains them. $\\{E,F,H\\}^+$ gives $G,I,J$ (from $EF$, $F$), $K,L$ (from $EH$), then $M,N$: all attributes, and it is minimal. $\\{E,F,H,K,L\\}$ is a superkey but not minimal.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\{E, F\\}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\{E, F, H\\}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\{E, F, H, K, L\\}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\{E\\}$"
+   }
+  ]
+ },
+ {
+  "id": "q_477a97326f6d",
+  "type": "SCQ",
+  "stem": "A clustering index is defined on the fields which are of type:",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "A clustering index is built on an ordering field whose values are not unique (a non-key field); a key ordering field gives a primary index.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "non-key and ordering"
+   },
+   {
+    "key": "B",
+    "text": "non-key and non-ordering"
+   },
+   {
+    "key": "C",
+    "text": "key and ordering"
+   },
+   {
+    "key": "D",
+    "text": "key and non-ordering"
+   }
+  ]
+ },
+ {
+  "id": "q_b8ccf44175b7",
+  "type": "SCQ",
+  "stem": "Despite his initial hesitation, Rehman's ______ to contribute to the success of the project never wavered.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "'Despite hesitation ... never wavered' needs a word meaning firm determination: 'resolve'.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "ambivalence"
+   },
+   {
+    "key": "B",
+    "text": "satisfaction"
+   },
+   {
+    "key": "C",
+    "text": "resolve"
+   },
+   {
+    "key": "D",
+    "text": "revolve"
+   }
+  ]
+ },
+ {
+  "id": "q_6c3ddc8a9a70",
+  "type": "SCQ",
+  "stem": "If IMAGE and FIELD are coded as FHBNJ and EMFJG respectively, which one among the following options is the most appropriate for BEACH?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Each letter is shifted by +1 and the word is then reversed: IMAGE $\\to$ JNBHF $\\to$ FHBNJ, FIELD $\\to$ GJFME $\\to$ EMFJG. BEACH $\\to$ CFBDI $\\to$ IDBFC.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.ANAL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "CEADP"
+   },
+   {
+    "key": "B",
+    "text": "IDBFC"
+   },
+   {
+    "key": "C",
+    "text": "JGIBC"
+   },
+   {
+    "key": "D",
+    "text": "IBCEC"
+   }
+  ]
+ },
+ {
+  "id": "q_f80340fdb8b4",
+  "type": "SCQ",
+  "stem": "Ravi had ______ younger brother who taught at ______ university. He was widely regarded as ______ honorable man.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "'a younger brother' (consonant sound), 'a university' (starts with a /j/ sound), 'an honorable man' (silent h).\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "a; a; an"
+   },
+   {
+    "key": "B",
+    "text": "the; an; a"
+   },
+   {
+    "key": "C",
+    "text": "a; an; a"
+   },
+   {
+    "key": "D",
+    "text": "an; an; a"
+   }
+  ]
+ },
+ {
+  "id": "q_3b3c1caf58f4",
+  "type": "SCQ",
+  "stem": "The average marks obtained by a class in an examination were calculated as 30.8. However, while checking the marks entered, the teacher found that the marks of one student were entered incorrectly as 24 instead of 42. After correcting the marks, the average becomes 31.4. How many students does the class have?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The total rises by $42-24=18$ and the average by $0.6$, so $n=18/0.6=30$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "25"
+   },
+   {
+    "key": "B",
+    "text": "28"
+   },
+   {
+    "key": "C",
+    "text": "30"
+   },
+   {
+    "key": "D",
+    "text": "32"
+   }
+  ]
+ },
+ {
+  "id": "q_b2df4dd3acbf",
+  "type": "SCQ",
+  "stem": "The number of coins of Rs1, Rs5, and Rs10 denominations that a person has are in the ratio 5:3:13. Of the total amount, the percentage of money in Rs5 coins is:",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Amounts are $5\\cdot1=5$, $3\\cdot5=15$, $13\\cdot10=130$ (in units), total $150$. Rs5 share $=15/150=10\\%$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "21%"
+   },
+   {
+    "key": "B",
+    "text": "10%"
+   },
+   {
+    "key": "C",
+    "text": "14.28%"
+   },
+   {
+    "key": "D",
+    "text": "30%"
+   }
+  ]
+ },
+ {
+  "id": "q_e4baef09045c",
+  "type": "SCQ",
+  "stem": "We reached the station late and ______ missed the train.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "'nearly missed' (almost missed) is the idiomatic adverb here.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "near"
+   },
+   {
+    "key": "B",
+    "text": "nearly"
+   },
+   {
+    "key": "C",
+    "text": "utterly"
+   },
+   {
+    "key": "D",
+    "text": "mostly"
+   }
+  ]
+ },
+ {
+  "id": "q_b52e997d9ca3",
+  "type": "NVQ",
+  "stem": "Evaluate the following limit: $\\lim_{x\\to2}\\dfrac{x^6-24x-16}{x^3+2x-12}$ ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    12.0,
+    12.0
+   ]
+  },
+  "solution": "Both numerator and denominator are $0$ at $x=2$. L'Hopital: $\\dfrac{6x^5-24}{3x^2+2}\\Big|_{2}=\\dfrac{168}{14}=12$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_5484eaaeb79c",
+  "type": "NVQ",
+  "stem": "Find the global minima of the function $f(x)=2x^3-9x^2+12x+6$ in the interval $(1, 3)$. You need to enter the value of $x^*$ and not the value of $f(x^*)$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    2.0,
+    2.0
+   ]
+  },
+  "solution": "$f'(x)=6(x-1)(x-2)$, so the only interior critical point is $x=2$ with $f(2)=10$. Near the open ends $f\\to11$ (at $1$) and $f\\to15$ (at $3$), both larger, so $x^*=2$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_0f7b2014d631",
+  "type": "NVQ",
+  "stem": "Consider a function $f$ defined as: $f(x)=\\begin{cases}3ax+b, & x<1\\\\ 11, & x=1\\\\ 5ax-2b, & x>1\\end{cases}$. If $f$ is continuous at $x=1$, then find the value of $a+b$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    5.0,
+    5.0
+   ]
+  },
+  "solution": "Continuity: $3a+b=11$ and $5a-2b=11$. Solving, $a=3, b=2$, so $a+b=5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_792dc42e4363",
+  "type": "MSQ",
+  "stem": "Select all options that give the correct Taylor series expansion of the function on the left around the point 0.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C"
+   ]
+  },
+  "solution": "$\\sin x$ has only odd powers and $\\cos x$ only even powers (checked numerically at $x=0.7$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.TAY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\sin x = x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\ldots$"
+   },
+   {
+    "key": "B",
+    "text": "$\\sin x = 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!} - \\ldots$"
+   },
+   {
+    "key": "C",
+    "text": "$\\cos x = 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!} - \\ldots$"
+   },
+   {
+    "key": "D",
+    "text": "$\\cos x = x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\ldots$"
+   }
+  ]
+ },
+ {
+  "id": "q_a335c62e146b",
+  "type": "SCQ",
+  "stem": "The height of a right circular cone of maximum volume that can be enclosed within a hollow sphere of radius $R$ is:",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "With height $h$, base radius$^2$ $=h(2R-h)$, so $V=\\frac{\\pi}{3}h^2(2R-h)$. $V'=0$ gives $4Rh=3h^2$, $h=\\frac43R$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$R$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac{5}{4}R$"
+   },
+   {
+    "key": "C",
+    "text": "$\\frac{4}{3}R$"
+   },
+   {
+    "key": "D",
+    "text": "$\\frac{3}{2}R$"
+   }
+  ]
+ },
+ {
+  "id": "q_5fe4efe6b070",
+  "type": "NVQ",
+  "stem": "Evaluate: $\\lim_{x\\to-3}\\dfrac{\\sqrt{2x+22}-4}{x+3}$ ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.245,
+    0.255
+   ]
+  },
+  "solution": "At $x=-3$ both parts vanish. This is the derivative of $\\sqrt{2x+22}$ at $-3$: $\\dfrac{1}{\\sqrt{2x+22}}=\\dfrac14=0.25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_237f39ef4404",
+  "type": "SCQ",
+  "stem": "Find the angle between the tangents to the curve $y=\\dfrac{\\pi\\sin x}{x}$ at $x=\\pi$ and $x=-\\pi$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$y'=\\pi\\dfrac{x\\cos x-\\sin x}{x^2}$ gives slopes $-1$ at $x=\\pi$ and $+1$ at $x=-\\pi$. Product $=-1$, so the tangents are perpendicular.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$30^\\circ$"
+   },
+   {
+    "key": "B",
+    "text": "$45^\\circ$"
+   },
+   {
+    "key": "C",
+    "text": "$60^\\circ$"
+   },
+   {
+    "key": "D",
+    "text": "$90^\\circ$"
+   }
+  ]
+ },
+ {
+  "id": "q_09e321bee913",
+  "type": "MSQ",
+  "stem": "Find the domain and range of $f(x)=\\sqrt{5-4x-x^2}$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C",
+    "E"
+   ]
+  },
+  "solution": "$5-4x-x^2=(1-x)(x+5)\\ge0$ on $[-5,1]$. The radicand equals $9-(x+2)^2$, maximum $9$ at $x=-2$, so the range is $[0,3]$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Domain is $[0,\\infty)$"
+   },
+   {
+    "key": "B",
+    "text": "Domain is $(-\\infty,-5]\\cup[1,\\infty)$"
+   },
+   {
+    "key": "C",
+    "text": "Domain is $[-5,1]$"
+   },
+   {
+    "key": "D",
+    "text": "Range is $[0,\\infty)$"
+   },
+   {
+    "key": "E",
+    "text": "Range is $[0,3]$"
+   }
+  ]
+ },
+ {
+  "id": "q_50cac3a421c7",
+  "type": "SCQ",
+  "stem": "A professor is creating an exam of eleven questions from a test bank of 15 questions. In how many ways can he select and arrange the questions?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Ordered selection of 11 from 15: $P(15,11)=15!/(15-11)!=15!/4!$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CNT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$15!$"
+   },
+   {
+    "key": "B",
+    "text": "$15!/11!4!$"
+   },
+   {
+    "key": "C",
+    "text": "$15!/11!$"
+   },
+   {
+    "key": "D",
+    "text": "$15!/4!$"
+   }
+  ]
+ },
+ {
+  "id": "q_34d747e2a680",
+  "type": "NVQ",
+  "stem": "Out of the students in a class, 60% do well in mathematics, 70% do well in physics and 50% do well in both. Find the probability that a randomly selected student doesn't do well either in mathematics or physics. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.195,
+    0.205
+   ]
+  },
+  "solution": "$P(M\\cup P)=0.6+0.7-0.5=0.8$, so the required probability is $1-0.8=0.2$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_1c232199e960",
+  "type": "NVQ",
+  "stem": "Students from 3 colleges X, Y, and Z have participated in a competition, where 30% of the participants are from college X, 20% from college Y, and 50% from college Z. It is known that 50%, 40% and 60% of the participants from colleges X, Y, and Z respectively are girls. If a girl is randomly selected, what is the probability that she is from college X? (Enter the answer correct upto three decimal places.) ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.2825,
+    0.2835
+   ]
+  },
+  "solution": "Bayes: $P(X\\mid G)=\\dfrac{0.3\\cdot0.5}{0.3\\cdot0.5+0.2\\cdot0.4+0.5\\cdot0.6}=\\dfrac{0.15}{0.53}\\approx0.283$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_a654fb6790dc",
+  "type": "SCQ",
+  "stem": "If a fair coin is tossed an even number $2n$ times, then what is the probability of obtaining more heads than tails?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "By symmetry $P(H>T)=P(T>H)$, and $P(H=T)={}^{2n}C_n(1/2)^{2n}$, so $P(H>T)=\\frac12\\{1-{}^{2n}C_n(1/2)^{2n}\\}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "${}^{2n}C_n(1/2)^{2n}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\frac12\\{1-{}^{2n}C_n(1/2)^{2n}\\}$"
+   },
+   {
+    "key": "C",
+    "text": "$1-{}^{2n}C_n(1/2)^{n}$"
+   },
+   {
+    "key": "D",
+    "text": "${}^{2n}C_n(1/2)^{n}$"
+   }
+  ]
+ },
+ {
+  "id": "q_c4a601741c76",
+  "type": "NVQ",
+  "stem": "The average life of a coffee machine is 5 years, with a standard deviation of 1 year. Assuming normal distribution, find the probability that the mean life of a random sample of 16 such machines falls between 4.6 and 5.4 years. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.885,
+    0.895
+   ]
+  },
+  "solution": "The sample mean has standard deviation $1/\\sqrt{16}=0.25$, so the limits are $z=\\pm1.6$: $2\\Phi(1.6)-1\\approx0.8904$. (Rounded to 2 decimals: 0.89.)\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CLT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_fd551f4d5a9b",
+  "type": "NVQ",
+  "stem": "If $X$ and $Y$ are independent Poisson variates such that $P(X=1)=P(X=2)$ and $P(Y=2)=P(Y=3)$. Find the variance of $X-2Y$. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    14.0,
+    14.0
+   ]
+  },
+  "solution": "$\\lambda e^{-\\lambda}=\\frac{\\lambda^2}{2}e^{-\\lambda}$ gives $\\lambda_X=2$; $\\frac{\\lambda^2}{2}=\\frac{\\lambda^3}{6}$ gives $\\lambda_Y=3$. $\\mathrm{Var}(X-2Y)=2+4\\cdot3=14$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_7db8147260e2",
+  "type": "NVQ",
+  "stem": "Let the sample mean of a set of 20 data points be 30. If it is discovered that a data point having value 25 was incorrectly entered as 15, what should be the revised value of the sample mean? ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    30.45,
+    30.55
+   ]
+  },
+  "solution": "Sum $=600$; replacing 15 by 25 gives $610$; mean $=610/20=30.5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DESC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d7e6eb222445",
+  "type": "NVQ",
+  "stem": "Let $X, Y \\sim \\text{Uniform}(1, 2)$ be i.i.d discrete random variables. Define $U=X+Y$ and $V=X$. Find the correlation coefficient between U and V. Enter your answer correct to two decimal places. ______.",
+  "images": [],
+  "answer": {
+   "range": [
+    0.705,
+    0.715
+   ]
+  },
+  "solution": "$\\mathrm{Cov}(U,V)=\\mathrm{Var}(X)=\\sigma^2$, $\\mathrm{Var}(U)=2\\sigma^2$, $\\mathrm{Var}(V)=\\sigma^2$, so $\\rho=1/\\sqrt2\\approx0.71$ (exact enumeration over $\\{1,2\\}^2$ agrees).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_148a99dd2f40",
+  "type": "MSQ",
+  "stem": "$S$ is a linearly independent subset of $\\mathbb{R}^4$. Select all true statements concerning $S$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "An independent set in $\\mathbb{R}^4$ has at most 4 vectors; subsets of independent sets are independent. Supersets can add dependent vectors, and $S$ need not span.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$|S|\\le4$"
+   },
+   {
+    "key": "B",
+    "text": "Any subset of $S$ is also a linearly independent subset of $\\mathbb{R}^4$"
+   },
+   {
+    "key": "C",
+    "text": "Any superset of $S$ is also a linearly independent subset of $\\mathbb{R}^4$"
+   },
+   {
+    "key": "D",
+    "text": "$S$ is a basis for $\\mathbb{R}^4$"
+   }
+  ]
+ },
+ {
+  "id": "q_5f027d848545",
+  "type": "SCQ",
+  "stem": "Consider the matrix $M=\\begin{bmatrix}2&-1\\\\3&1\\end{bmatrix}$. Which one of the following statements is true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Trace $=3$, determinant $=2+3=5$; $\\lambda^2-3\\lambda+5=0$ has discriminant $9-20<0$, so the eigenvalues are complex conjugates.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The eigenvalues of $M$ are non-negative and real."
+   },
+   {
+    "key": "B",
+    "text": "The eigenvalues of $M$ are complex conjugate pairs."
+   },
+   {
+    "key": "C",
+    "text": "One eigenvalue of $M$ is positive and real, and another is zero."
+   },
+   {
+    "key": "D",
+    "text": "One eigenvalue of $M$ is non-negative and real, another is negative and real."
+   }
+  ]
+ },
+ {
+  "id": "q_5c3ba2474d6a",
+  "type": "SCQ",
+  "stem": "Find the singular values of the following matrix: $\\begin{bmatrix}-4&-6\\\\3&-8\\end{bmatrix}$",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$\\sigma_1^2+\\sigma_2^2=\\|A\\|_F^2=125$ and $\\sigma_1\\sigma_2=|\\det A|=50$, so $\\sigma^2\\in\\{100,25\\}$, $\\sigma=10,5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.DEC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\sigma_1=1,\\sigma_2=0$"
+   },
+   {
+    "key": "B",
+    "text": "$\\sigma_1=10,\\sigma_2=5$"
+   },
+   {
+    "key": "C",
+    "text": "$\\sigma_1=100,\\sigma_2=25$"
+   },
+   {
+    "key": "D",
+    "text": "$\\sigma_1=\\sigma_2=0$"
+   }
+  ]
+ },
+ {
+  "id": "q_ee063e9d8a5d",
+  "type": "SCQ",
+  "stem": "If $u, v, w$ are distinct vectors in $\\mathbb{R}^2$ that are pairwise orthogonal, which of the following are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$\\mathbb{R}^2$ has dimension 2, so three vectors are always dependent. Pairwise orthogonal distinct vectors force one to be zero, so not every pair is a basis; the span lies in $\\mathbb{R}^2$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$u, v, w$ are linearly independent"
+   },
+   {
+    "key": "B",
+    "text": "$u, v, w$ are linearly dependent"
+   },
+   {
+    "key": "C",
+    "text": "Each of $\\{u,v\\}$, $\\{v,w\\}$ and $\\{u,w\\}$ is a basis for $\\mathbb{R}^2$"
+   },
+   {
+    "key": "D",
+    "text": "$\\mathrm{span}\\{u,v,w\\}=\\mathbb{R}^3$"
+   }
+  ]
+ },
+ {
+  "id": "q_57f212dafb06",
+  "type": "SCQ",
+  "stem": "Consider these two statements: S1: The sum of two symmetric matrices is a symmetric matrix. S2: The product of two symmetric matrices is a symmetric matrix.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$(A+B)^T=A+B$, so S1 holds. For $A=\\begin{bmatrix}1&1\\\\1&0\\end{bmatrix}, B=\\begin{bmatrix}0&1\\\\1&0\\end{bmatrix}$, $AB=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}$ is not symmetric.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "S1 is true, S2 is false"
+   },
+   {
+    "key": "B",
+    "text": "S1 is false, S2 is true"
+   },
+   {
+    "key": "C",
+    "text": "S1 and S2 are true"
+   },
+   {
+    "key": "D",
+    "text": "S1 and S2 are false"
+   }
+  ]
+ },
+ {
+  "id": "q_8745f9110f59",
+  "type": "SCQ",
+  "stem": "If $A=\\begin{bmatrix}1&2\\\\2&-1\\end{bmatrix}$, which of the following is $A^8$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$A^2=5I$, so $A^8=(5I)^4=625I$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\begin{bmatrix}25&0\\\\0&25\\end{bmatrix}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\begin{bmatrix}125&0\\\\0&125\\end{bmatrix}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\begin{bmatrix}625&0\\\\0&625\\end{bmatrix}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\begin{bmatrix}3125&0\\\\0&3125\\end{bmatrix}$"
+   }
+  ]
+ },
+ {
+  "id": "q_e04381f33a52",
+  "type": "MSQ",
+  "stem": "Consider a system of linear equations $PX=Q$ where $P\\in\\mathbb{R}^{3\\times3}$ and $Q\\in\\mathbb{R}^{3\\times1}$. Suppose $P$ has an LU decomposition, $P=LU$. Which of the following statement(s) is/are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "solution": "A is forward then back substitution. B: $\\det P=\\det L\\det U\\ne0$. C: with the usual convention that $L$ is unit lower triangular, $\\det P=\\prod u_{ii}=0$. D is false ($L$ and $U$ are triangular, symmetric only if diagonal). Note: C assumes the standard unit-diagonal $L$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.DEC",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The system $PX=Q$ can be solved by first solving $LY=Q$ and then $UX=Y$."
+   },
+   {
+    "key": "B",
+    "text": "If $P$ is invertible, then both $L$ and $U$ are invertible."
+   },
+   {
+    "key": "C",
+    "text": "If $P$ is singular, then at least one of the diagonal elements of $U$ is zero."
+   },
+   {
+    "key": "D",
+    "text": "If $P$ is symmetric, then both $L$ and $U$ are symmetric."
+   }
+  ]
+ },
+ {
+  "id": "q_a3518af83c5a",
+  "type": "MSQ",
+  "stem": "Consider the given system of linear equations for some real $k$: $x+ky=1$ and $kx+y=-1$. Which of the following is/are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "D"
+   ]
+  },
+  "solution": "The determinant is $1-k^2$. For $k=1$ the equations are $x+y=1$ and $x+y=-1$ (no solution). For $k=-1$ they are the same line (infinitely many). For every other $k$ the solution is unique.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.SYS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "There is exactly one value of $k$ for which the system has no solution."
+   },
+   {
+    "key": "B",
+    "text": "There exist an infinite number of values of $k$ for which the system has no solution."
+   },
+   {
+    "key": "C",
+    "text": "There exists exactly one value of $k$ for which the system has exactly one solution."
+   },
+   {
+    "key": "D",
+    "text": "There exists exactly one value of $k$ for which the system has an infinite number of solutions."
+   }
+  ]
+ },
+ {
+  "id": "q_66b9202bf10e",
+  "type": "SCQ",
+  "stem": "$w=\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}$ is the weight vector of a linear classifier for a binary classification problem whose labels lie in the set $\\{0,1\\}$. If the bias of the classifier is set to 0, which of the following is the equation of the decision boundary for this classifier?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The boundary is $w^Tx+b=0$ with $b=0$: $x_1+2x_2+3x_3=0$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$x_1+2x_2+3x_3=1$"
+   },
+   {
+    "key": "B",
+    "text": "$x_1+2x_2+3x_3=-1$"
+   },
+   {
+    "key": "C",
+    "text": "$x_1+2x_2+3x_3=0$"
+   },
+   {
+    "key": "D",
+    "text": "$x_1-2x_3+3x_3=0$"
+   }
+  ]
+ },
+ {
+  "id": "q_be3f0c6b8c25",
+  "type": "SCQ",
+  "stem": "Which of the following is the most appropriate description of the method used in PCA to achieve dimensionality reduction?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "PCA finds new directions (linear combinations of features) of maximum variance and projects onto the top ones; it does not select original features.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "PCA achieves this by discarding a random subset of features."
+   },
+   {
+    "key": "B",
+    "text": "PCA achieves this by selecting those features in the dataset along which the variance is maximised."
+   },
+   {
+    "key": "C",
+    "text": "PCA achieves this by looking for those directions in the feature space along which the variance is maximised."
+   },
+   {
+    "key": "D",
+    "text": "PCA achieves this by retaining those features along which the variance is minimised."
+   }
+  ]
+ },
+ {
+  "id": "q_10bc7ff99387",
+  "type": "MSQ",
+  "stem": "Consider a covariance matrix $C$ for a mean-centered dataset in $\\mathbb{R}^3$. After performing standard PCA, the three principal components turn out to be the standard basis vectors. Which of the following statements are true?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "Principal components are eigenvectors of $C$; if they are the standard basis, $C$ is diagonal with the (variance) eigenvalues on the diagonal. Variances are $\\ge0$ but may be $0$, and they need not be equal to 1.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$C$ is a diagonal matrix."
+   },
+   {
+    "key": "B",
+    "text": "The diagonal entries of $C$ are non-negative."
+   },
+   {
+    "key": "C",
+    "text": "The diagonal entries of $C$ are strictly greater than zero."
+   },
+   {
+    "key": "D",
+    "text": "$C$ has to be the identity matrix."
+   }
+  ]
+ },
+ {
+  "id": "q_360c0ce62480",
+  "type": "SCQ",
+  "stem": "Let $\\Sigma$ be the covariance matrix of a dataset, and suppose $\\lambda_1\\ge\\lambda_2\\ge\\cdots\\ge\\lambda_d$ are the eigenvalues of $\\Sigma$. If we keep only the first $k$ principal components, what is the fraction of total variance preserved by these $k$ components?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Each eigenvalue is the variance along its component, so the preserved fraction is the sum of the top $k$ eigenvalues over the sum of all.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.DR",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{\\lambda_1+\\lambda_2+\\cdots+\\lambda_k}{\\lambda_1+\\lambda_2+\\cdots+\\lambda_d}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{\\lambda_1^2+\\lambda_2^2+\\cdots+\\lambda_k^2}{\\lambda_1^2+\\lambda_2^2+\\cdots+\\lambda_d^2}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\dfrac{\\lambda_k}{\\lambda_1}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\lambda_1+\\lambda_2+\\cdots+\\lambda_d$"
+   }
+  ]
+ },
+ {
+  "id": "q_8c7f2109ae7a",
+  "type": "SCQ",
+  "stem": "Which of the following is the loss for a single training example $(x, y)$ for a linear regression model with weight vector $w$? Assume the most common scenario.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "The most common loss for linear regression is the squared error $(w^Tx-y)^2$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.REG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$w^Tx-y$"
+   },
+   {
+    "key": "B",
+    "text": "$(w^Tx-y)^2$"
+   },
+   {
+    "key": "C",
+    "text": "$|w^Tx-y|$"
+   },
+   {
+    "key": "D",
+    "text": "$-y\\log(w^Tx)$"
+   }
+  ]
+ }
+]

@@ -1,0 +1,305 @@
+[
+ {
+  "mock": 3,
+  "n": 12,
+  "id": "q_1c7ebc32a997",
+  "chapter": "DBW.REL",
+  "type": "SCQ",
+  "pdf_key": "C",
+  "stem": "Consider a table which has three attributes: X, Y, and Z, where X is the primary key and Z is the foreign key referencing X. Which of the following sets of tuples are additionally deleted when the tuple (1, 1, 5) is deleted and ON DELETE CASCADE construct is applied over the table?",
+  "options": [
+   "(2, 2, 5) and (3, 1, 5)",
+   "(6, 1, 1) and (7, 4, 1)",
+   "(6, 1, 1), (7, 4, 1), and (8, 4, 7)",
+   "(6, 1, 1), (7, 4, 1), and (2, 2, 5)"
+  ],
+  "category": "quarantine",
+  "reason": "table contents not shown in the PDF",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 13,
+  "id": "q_e9123923b296",
+  "chapter": "DBW.REL",
+  "type": "NVQ",
+  "pdf_key": "6",
+  "stem": "Consider a table for class and house distribution. Predict the output of the query that uses a NATURAL JOIN and COUNT over the house names. ______.",
+  "options": null,
+  "category": "quarantine",
+  "reason": "tables and query not shown in the PDF",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 14,
+  "id": "q_d82105e339e1",
+  "chapter": "DBW.REL",
+  "type": "NVQ",
+  "pdf_key": "0",
+  "stem": "Consider tables T1 and T2 with defined referential integrity constraints. If a tuple is deleted from T1 with ON DELETE CASCADE applied to T2, and T2 has an ON DELETE SET NULL constraint back to T1, determine the number of additional tuples deleted from T1. ______.",
+  "options": null,
+  "category": "quarantine",
+  "reason": "table contents/constraints not shown in the PDF",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 16,
+  "id": "q_d9387fb3bd96",
+  "chapter": "DBW.REL",
+  "type": "SCQ",
+  "pdf_key": "B",
+  "stem": "Consider a log sequence for transactions T1 and T2 operating on a bank database. T1 commits, T2 starts but the system crashes before T2 commits. When the system restarts and the recovery procedure is invoked, which statement is correct?",
+  "options": [
+   "We must redo log record 6 to set B.",
+   "We must undo log record 6 to set B to 10000 and then redo log records 2 and 3.",
+   "We need not redo log records 2 and 3 because transaction T1 has committed.",
+   "We can apply redo and undo operations in arbitrary order."
+  ],
+  "category": "quarantine",
+  "reason": "the log table (records 1-6) is not shown in the PDF",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 17,
+  "id": "q_6c798f0bec1e",
+  "chapter": "DBW.REL",
+  "type": "SCQ",
+  "pdf_key": "D",
+  "stem": "A company executes three SQL scripts (T1, T2, T3) to update commission slabs. Which of the following options of running these transactions will update the commission of all salespersons correctly without compounding percentages inappropriately?",
+  "options": [
+   "Execute T1 followed by T2 followed by T3",
+   "Execute T2, followed by T3; T1 running concurrently",
+   "Execute T3 followed by T2; T1 running concurrently",
+   "Execute T3 followed by T2 followed by T1"
+  ],
+  "category": "quarantine",
+  "reason": "the SQL scripts T1-T3 are not shown in the PDF",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 18,
+  "id": "q_19bf3d5c7eb7",
+  "chapter": "DBW.NF",
+  "type": "SCQ",
+  "pdf_key": "B",
+  "stem": "In a schema with attributes $A, B, C, D$ and $E$ following set of functional dependencies are given: $AB\\to C$, $A\\to C$, $CD\\to E$, $B\\to D$, $E\\to A$. Which of the following functional dependencies is NOT implied by the above set?",
+  "options": [
+   "$CD\\to AC$",
+   "$BD\\to CD$",
+   "$BC\\to CD$",
+   "$AC\\to BC$"
+  ],
+  "category": "key_mismatch_manual",
+  "reason": "mismatch: both B and D are not implied; question has a single-answer form",
+  "derived_answer": "B,D",
+  "derivation": "Closures: $CD^+=\\{C,D,E,A\\}\\ni A,C$ (implied). $BD^+=\\{B,D\\}$: no $C$, so $BD\\to CD$ is NOT implied. $BC^+=\\{B,C,D,E,A\\}$ (implied). $AC^+=\\{A,C\\}$: no $B$, so $AC\\to BC$ is also NOT implied. Two options qualify."
+ },
+ {
+  "mock": 3,
+  "n": 19,
+  "id": "q_f08c9550ddad",
+  "chapter": "DBW.REL",
+  "type": "SCQ",
+  "pdf_key": "C",
+  "stem": "Consider relations Students, Courses, Grades. A SQL query SELECTs DISTINCT Name for students who took courses from 'Korth' and received an 'A'. Which set is computed?",
+  "options": [
+   "Names of students who got an A grade in all courses taught by Korth.",
+   "Names of students who got an A grade in all courses.",
+   "Names of students who got an A grade in at least one of the courses taught by Korth.",
+   "None of the above."
+  ],
+  "category": "quarantine",
+  "reason": "the SQL query and schema are not shown in the PDF; the answer depends on the exact query",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 22,
+  "id": "q_3397608ddddc",
+  "chapter": "GA.SPAT",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "A paper is folded to make a cube where each square corresponds to a particular face. Which of the following options represents the correct cube?",
+  "options": [
+   "Option A",
+   "Option B",
+   "Option C",
+   "Option D"
+  ],
+  "category": "quarantine",
+  "reason": "figure-dependent: net and cube options are drawings absent from the PDF text (options read 'Option A..D')",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 24,
+  "id": "q_22c75f10f28a",
+  "chapter": "GA.ANAL",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "Which one of the following options is correct for the given data iterations for inputs (I) and outputs (X, Y)?",
+  "options": [
+   "$X(i)=X(i-1)+I(i);\\ Y(i)=Y(i-1)I(i);\\ i>0$",
+   "$X(i)=X(i-1)I(i);\\ Y(i)=Y(i-1)+I(i);\\ i>0$",
+   "$X(i)=X(i-1)I(i);\\ Y(i)=Y(i-1)I(i);\\ i>0$",
+   "$X(i)=X(i-1)+I(i)$"
+  ],
+  "category": "quarantine",
+  "reason": "the data table of iterations is not shown in the PDF",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 27,
+  "id": "q_13c38578210b",
+  "chapter": "GA.QUANT",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "In a diagram, lines QR and ST are parallel. The shortest distance between these two lines is half the shortest distance between the point P and line QR. What is the ratio of the area of the triangle PST to the area of the trapezium SQRT?",
+  "options": [
+   "1/3",
+   "1/4",
+   "2/5",
+   "1/2"
+  ],
+  "category": "quarantine",
+  "reason": "figure-dependent: positions of S, T relative to PQ, PR are only in the diagram (key 1/3 holds if P,S,Q and P,T,R are collinear, but this is not stated)",
+  "derived_answer": null,
+  "derivation": ""
+ },
+ {
+  "mock": 3,
+  "n": 29,
+  "id": "q_688de590a6dd",
+  "chapter": "GA.SPAT",
+  "type": "SCQ",
+  "pdf_key": "D",
+  "stem": "A rectangular paper of 20 cm x 8 cm is folded 3 times. Each fold is made along the line of symmetry, which is perpendicular to its long edge. The perimeter of the final folded sheet (in cm) is:",
+  "options": [
+   "21",
+   "20",
+   "24",
+   "18"
+  ],
+  "category": "key_mismatch_manual",
+  "reason": "mismatch/ambiguous: literal reading gives 21 (A), PDF key is 18 (D)",
+  "derived_answer": "A (literal) / D (alternative reading)",
+  "derivation": "Reading 1 (long edge fixed, 20 cm): 20 -> 10 -> 5 -> 2.5, sheet is 2.5 x 8, perimeter 21 (option A). Reading 2 (long edge re-picked each fold): 10x8, 5x8, 5x4, perimeter 18 (option D, the PDF key). Ambiguous wording; the literal reading gives A."
+ },
+ {
+  "mock": 3,
+  "n": 31,
+  "id": "q_2ac0573ea8bc",
+  "chapter": "CO.LIM",
+  "type": "SCQ",
+  "pdf_key": "D",
+  "stem": "Let $f$ and $g$ be two real valued functions such that $g(x)=f(x)-2$. Select all true options.",
+  "options": [
+   "If $f$ is odd, then $g$ is odd.",
+   "If $f$ is even, then $g$ is even.",
+   "If $g$ is odd, then $f$ is odd.",
+   "If $g$ is even, then $f$ is even."
+  ],
+  "category": "key_mismatch_manual",
+  "reason": "mismatch: key D only, but B is also true",
+  "derived_answer": "B,D",
+  "derivation": "$f$ even gives $g(-x)=f(-x)-2=f(x)-2=g(x)$, so B is true; $g$ even gives $f(-x)=g(-x)+2=g(x)+2=f(x)$, so D is true. A and C fail (a constant shift breaks oddness). True options: B and D."
+ },
+ {
+  "mock": 3,
+  "n": 34,
+  "id": "q_c07e72582a86",
+  "chapter": "CO.LIM",
+  "type": "NVQ",
+  "pdf_key": "0",
+  "stem": "Define a function $f$ as follows: $f(x)=\\begin{cases}kx^2+l, & \\text{if } x\\le1\\\\ 1x^2+kx+m, & \\text{if } x>1\\end{cases}$. If $f$ is continuous and differentiable at $x=1$ find the value of $k-2l+m$. ______.",
+  "options": null,
+  "category": "quarantine",
+  "reason": "underdetermined: k-2l+m = -m, m not fixed; PDF key 0 not derivable",
+  "derived_answer": "-m",
+  "derivation": "Differentiability: $2k=2+k$, so $k=2$. Continuity: $k+l=1+k+m$, so $l=1+m$. Then $k-2l+m=2-2-2m+m=-m$, which depends on the free parameter $m$; it equals $0$ only if $m=0$. Underdetermined as printed."
+ },
+ {
+  "mock": 3,
+  "n": 45,
+  "id": "q_01df338e4a79",
+  "chapter": "PRS.DRV",
+  "type": "SCQ",
+  "pdf_key": "D",
+  "stem": "Suppose the number of visitors arriving at a zoo can be modeled to be Poisson distributed. On an average 20 visitors arrive per hour. Let $X$ be the number of visitors arriving from 2pm to 4pm. Then the probability that at least 35 visitors will arrive in the given duration is:",
+  "options": [
+   "$\\sum_{k=35}^{\\infty}\\dfrac{e^{-20}(20)^k}{k!}$",
+   "$1-\\sum_{k=0}^{34}\\dfrac{e^{-20}(20)^k}{k!}$",
+   "$\\sum_{k=35}^{\\infty}\\dfrac{e^{-40}(40)^k}{k!}$",
+   "$1-\\sum_{k=0}^{34}\\dfrac{e^{-40}(40)^k}{k!}$"
+  ],
+  "category": "key_mismatch_manual",
+  "reason": "mismatch: options C and D are mathematically identical and both correct; key lists only D",
+  "derived_answer": "C,D",
+  "derivation": "Two hours at 20/hour gives rate 40. $P(X\\ge35)=\\sum_{k\\ge35}e^{-40}40^k/k!=1-\\sum_{k=0}^{34}e^{-40}40^k/k!$, so both C and D are correct (identical value); the question is single-answer, key D."
+ },
+ {
+  "mock": 3,
+  "n": 47,
+  "id": "q_9e6da765be13",
+  "chapter": "PRS.INF",
+  "type": "SCQ",
+  "pdf_key": "B",
+  "stem": "The average diameter of pipes manufactured by a company is reported to be 25mm, which you suspect to be too low. You observed a random sample of diameters of 10 pipes (in mm) as 24.58, 24.67, 24.99, 25.22, 25.32, 25.25, 24.96, 24.87, 25.52, 24.85. Based on this information, what conclusion can you reach about your suspicion at significance level of 5%? Use $F_{t_9}^{-1}(0.95)=1.833$.",
+  "options": [
+   "Accept $H_0$",
+   "Reject $H_0$",
+   "Data is insufficient",
+   "None of the above"
+  ],
+  "category": "key_mismatch_manual",
+  "reason": "mismatch: t = +0.243 is not below -1.833, so H0 is not rejected; key says Reject",
+  "derived_answer": "A",
+  "derivation": "$H_0:\\mu=25$ vs $H_1:\\mu<25$. Sample mean $=25.023$, $s=0.2990$, $t=(25.023-25)/(0.2990/\\sqrt{10})=0.243$. The rejection region is $t<-1.833$; $0.243$ is not in it, so $H_0$ is not rejected (option A). The key B (reject) disagrees."
+ },
+ {
+  "mock": 3,
+  "n": 53,
+  "id": "q_1a9283115895",
+  "chapter": "LA.VS",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "Select all true statements.",
+  "options": [
+   "The intersection of two subspaces of a vector space is a subspace.",
+   "The union of two subspaces of a vector space is a subspace.",
+   "The empty set is a subspace of every vector space.",
+   "Every subset of a vector space need not be a subspace."
+  ],
+  "category": "key_mismatch_manual",
+  "reason": "mismatch: option D ('need not be a subspace') is true, key lists only A",
+  "derived_answer": "A,D",
+  "derivation": "A is true. B is false (union of two lines in $\\mathbb{R}^2$). C is false (a subspace must contain $0$). D says not every subset is a subspace, which is true. True options: A and D."
+ },
+ {
+  "mock": 3,
+  "n": 54,
+  "id": "q_ebd17cde6cb7",
+  "chapter": "LA.EIG",
+  "type": "NVQ",
+  "pdf_key": "2000",
+  "stem": "Compute $\\det(A)$ where $A=\\begin{bmatrix}2010&2020&2030\\\\2020&2030&2010\\\\2030&2010&2020\\end{bmatrix}$. ______.",
+  "options": null,
+  "category": "key_mismatch_manual",
+  "reason": "mismatch: recomputed -1818000, PDF key 2000",
+  "derived_answer": "-1818000",
+  "derivation": "Exact integer cofactor expansion gives $\\det A=-1818000$. Check: rows are cyclic permutations of $(2010,2020,2030)$; with $a=2010,b=2020,c=2030$, the circulant-type determinant is $-(a+b+c)(a^2+b^2+c^2-ab-bc-ca)=-6060\\cdot300=-1818000$."
+ }
+]
