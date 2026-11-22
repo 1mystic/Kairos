@@ -11,6 +11,6 @@
     "@firebase/rules-unit-testing": "^5",
     "firebase": "^12",
     "typescript": "^5",
-    "vitest": "^3"
+    "vitest": "^5"
   }
 }
