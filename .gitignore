@@ -21,3 +21,8 @@ GATE_DA_2027_QBank.zip
 AIML-Engineer-Python-interview/
 sys-des.pdf
 *.pdf
+
+# Mapwright (local code map): venv and history kept inside the project, never committed
+.mapwright-venv/
+.mapwright/
+.mcp.json
