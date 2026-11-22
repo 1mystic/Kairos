@@ -3,8 +3,8 @@
 .ask-split .ask-split-main, .ask-split .ask-split-more {
   color: var(--ink); background: var(--surface-2); border-radius: 0;
 }
-.ask-split .ask-split-main { padding: 0 var(--space-4) 0 var(--space-5); border-top-left-radius: var(--radius-pill); border-bottom-left-radius: var(--radius-pill); }
-.ask-split .ask-split-more { min-width: 44px; padding: 0 var(--space-3) 0 var(--space-3); background: var(--surface-3); border-top-right-radius: var(--radius-pill); border-bottom-right-radius: var(--radius-pill); }
+.ask-split .ask-split-main { padding: 0 var(--space-4) 0 var(--space-5); border-radius: var(--radius-pill) 0 0 var(--radius-pill); }
+.ask-split .ask-split-more { min-width: 44px; padding: 0 var(--space-3) 0 var(--space-3); background: var(--surface-3); border-radius: 0 var(--radius-pill) var(--radius-pill) 0; }
 .ask-split .ask-split-main:active { background: var(--tint-active); }
 .ask-split .ask-split-more:active { background: var(--tint-active); }
 @media (hover: hover) and (pointer: fine) {
