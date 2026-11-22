@@ -2,3 +2,6 @@
 .saved-preview { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; overflow-wrap: anywhere; }
 .saved-filter-search { flex: 1 1 14rem; min-width: 0; }
 .saved-filter-exam { flex: 0 1 14rem; min-width: 0; }
+
+/* the question snippet is markdown + inline KaTeX: keep it inline inside the heading */
+.saved-stem-md, .saved-stem-md .kc-p { display: inline; font: inherit; }

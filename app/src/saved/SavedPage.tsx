@@ -1,3 +1,4 @@
+import { ContentHtml } from '../components/QuestionView';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import type { Question } from '@kairos/core';
@@ -96,7 +97,7 @@ function SavedCard({ note, chapters, onChanged, onDeleted }: CardProps) {
           {chapterName && <Chip>{chapterName}</Chip>}
         </div>
         <div className="stack-text">
-          <h2 className="text-h3 saved-stem">{noteTitle(note)}</h2>
+          <h2 className="text-h3 saved-stem"><ContentHtml as="span" className="saved-stem-md" markdown={noteTitle(note)} /></h2>
           <p className="text-small text-slate">From {providerLabel(note.provider)} · {when(note.updatedAt)}</p>
         </div>
         {err && <p role="alert" className="text-small text-accent-ink">{err}</p>}
