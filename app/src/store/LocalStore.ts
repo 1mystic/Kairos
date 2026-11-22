@@ -1,5 +1,6 @@
 import { DATA_STORES, LOCAL_STORES, type LocalDb, type LocalStoreName } from './localDb';
-import type { GuestProfile, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
+import { assertAiNoteQid, normaliseAiNoteInput } from './aiNotes';
+import type { AiNote, GuestProfile, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
 export const ONBOARDING_KEYS = ['exam', 'examDate', 'ambition', 'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang', 'onboarded', 'profiles', 'activeExam'] as const;
 
@@ -61,6 +62,24 @@ export class LocalStore implements UserStore {
   }
   async listPaceLog() {
     return (await this.db.getAll('pace_log')).map((r) => ({ ...(r.value as PaceLogDoc), date: r.key }));
+  }
+  async getAiNote(qid: string): Promise<AiNote | null> {
+    assertAiNoteQid(qid);
+    return ((await this.db.get('ai_notes', qid)) as AiNote | undefined) ?? null;
+  }
+  async putAiNote(qid: string, note: { text: string; provider: AiNote['provider'] }): Promise<void> {
+    assertAiNoteQid(qid);
+    const n = normaliseAiNoteInput(note);
+    const rec: AiNote = { qid, text: n.text, provider: n.provider, updatedAt: Date.now() };
+    await this.db.put('ai_notes', qid, rec);
+  }
+  async deleteAiNote(qid: string): Promise<void> {
+    assertAiNoteQid(qid);
+    await this.db.delete('ai_notes', qid);
+  }
+  /** local-only (migration): every AI note on this device */
+  async listAiNotes(): Promise<AiNote[]> {
+    return (await this.db.getAll('ai_notes')).map((r) => r.value as AiNote);
   }
 
   // ----- local-only helpers (not part of UserStore) -----

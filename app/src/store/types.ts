@@ -65,6 +65,13 @@ export interface GuestProfile {
 }
 
 export type Profile = UserProfile | GuestProfile;
+
+/** Which assistant the student pasted the explanation from. */
+export type AiProvider = 'gemini' | 'chatgpt' | 'google' | 'claude' | 'perplexity' | 'other';
+/** users/{uid}/ai_notes/{qid}: one pasted AI explanation per question. `updatedAt` is epoch ms. */
+export interface AiNote { qid: string; text: string; provider: AiProvider; updatedAt: number /* ms epoch */ }
+/** Max characters kept for one AI note. putAiNote clips longer text. */
+export const AI_NOTE_MAX = 20000;
 export type StateDocName = 'mastery' | 'pace' | 'roadmap';
 
 export interface ListSessionsOpts {
@@ -100,6 +107,10 @@ export interface UserStore {
   putPaceLog(date: string, p: PaceLogDoc): Promise<void>;
   /** Cloud store returns the newest ~130 days unless `all` (export). */
   listPaceLog(opts?: { all?: boolean }): Promise<Array<PaceLogDoc & { date: string }>>;
+  getAiNote(qid: string): Promise<AiNote | null>;
+  /** trims, rejects empty, clips to AI_NOTE_MAX. Replaces any existing note for the qid. */
+  putAiNote(qid: string, note: { text: string; provider: AiProvider }): Promise<void>;
+  deleteAiNote(qid: string): Promise<void>;
 }
 
 export const isGuestProfile = (p: Profile | null | undefined): p is GuestProfile =>

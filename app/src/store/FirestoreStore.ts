@@ -1,11 +1,26 @@
 import {
-  collection, doc, documentId, getDoc, getDocs, limit as fsLimit, orderBy, query, serverTimestamp, setDoc, updateDoc, where, writeBatch,
+  collection, deleteDoc, doc, documentId, getDoc, getDocs, limit as fsLimit, orderBy, query, serverTimestamp, setDoc, updateDoc, where, writeBatch,
   type Firestore,
 } from 'firebase/firestore';
+import { SERVER_TIME } from './bankCloud';
+import { assertAiNoteQid, normaliseAiNoteInput } from './aiNotes';
 import { chunkOps } from './batching';
-import type { ListMocksOpts, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
+import type { AiNote, AiProvider, ListMocksOpts, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
 type Data = Record<string, unknown>;
+
+/** Top-level SERVER_TIME placeholders (see bankCloud.ts) become serverTimestamp() just before a write. */
+const stampServerTime = (d: Data): Data => {
+  const out: Data = { ...d };
+  for (const k of Object.keys(out)) if (out[k] === SERVER_TIME) out[k] = serverTimestamp();
+  return out;
+};
+/** Firestore Timestamp (or number, or null while a local write is still pending) -> epoch ms. */
+const toMs = (v: unknown): number => {
+  if (v && typeof (v as { toMillis?: unknown }).toMillis === 'function') return (v as { toMillis: () => number }).toMillis();
+  if (typeof v === 'number') return v;
+  return Date.now();
+};
 
 /** The only Firestore surface FirestoreStore touches. Tests inject a fake. */
 export interface FsAdapter {
@@ -21,6 +36,8 @@ export interface FsAdapter {
   listRecent(collectionPath: string, q: { field: string; since?: number; limit: number }): Promise<Array<{ id: string; data: Data }>>;
   /** one atomic batch; callers keep it <= 400 ops */
   batchSet(ops: Array<{ path: string; data: Data }>): Promise<void>;
+  /** delete one document (no-op when missing) */
+  delete(path: string): Promise<void>;
 }
 
 /** Sessions returned by FirestoreStore.listSessions when the caller passes no limit (reads are billed per doc). */
@@ -70,7 +87,7 @@ export function createFirestoreAdapter(db: Firestore, now: () => number = Date.n
     async set(path, data) {
       forget(path);
       try {
-        await setDoc(ref(path), data);
+        await setDoc(ref(path), stampServerTime(data));
       } finally {
         forget(path); // offline, setDoc settles only on server ack: reads in between must not be served stale
       }
@@ -91,12 +108,20 @@ export function createFirestoreAdapter(db: Firestore, now: () => number = Date.n
     },
     async batchSet(ops) {
       const b = writeBatch(db);
-      for (const o of ops) b.set(ref(o.path), o.data);
+      for (const o of ops) b.set(ref(o.path), stampServerTime(o.data));
       for (const o of ops) forget(o.path);
       try {
         await b.commit();
       } finally {
         for (const o of ops) forget(o.path);
+      }
+    },
+    async delete(path) {
+      forget(path);
+      try {
+        await deleteDoc(ref(path));
+      } finally {
+        forget(path);
       }
     },
   };
@@ -170,6 +195,23 @@ export class FirestoreStore implements UserStore {
     return (await this.fs.list(this.p('pace_log'), opts?.all ? undefined : { limit: PACE_LOG_LIMIT, newestById: true })).map((r) => ({ ...r.data, date: r.id }) as PaceLogDoc & { date: string });
   }
 
+  async getAiNote(qid: string): Promise<AiNote | null> {
+    assertAiNoteQid(qid);
+    const d = await this.fs.get(this.p(`ai_notes/${qid}`));
+    if (!d) return null;
+    return { qid, text: String(d.text ?? ''), provider: d.provider as AiProvider, updatedAt: toMs(d.updatedAt) };
+  }
+  /** ONE write: a full set of the doc with updatedAt = server time. */
+  async putAiNote(qid: string, note: { text: string; provider: AiProvider }) {
+    assertAiNoteQid(qid);
+    const n = normaliseAiNoteInput(note);
+    await this.fs.set(this.p(`ai_notes/${qid}`), { text: n.text, provider: n.provider, updatedAt: SERVER_TIME });
+  }
+  async deleteAiNote(qid: string) {
+    assertAiNoteQid(qid);
+    await this.fs.delete(this.p(`ai_notes/${qid}`));
+  }
+
   // ----- cloud-only helpers used by migration -----
   async hasData(): Promise<boolean> {
     for (const c of ['sessions', 'mocks', 'plans', 'pace_log']) {
@@ -177,7 +219,7 @@ export class FirestoreStore implements UserStore {
     }
     return (await this.getState('mastery')) !== null || (await this.getState('pace')) !== null;
   }
-  async existingIds(collectionName: 'sessions' | 'mocks' | 'plans' | 'pace_log'): Promise<Set<string>> {
+  async existingIds(collectionName: 'sessions' | 'mocks' | 'plans' | 'pace_log' | 'ai_notes'): Promise<Set<string>> {
     return new Set((await this.fs.list(this.p(collectionName))).map((r) => r.id));
   }
   async batchWrite(ops: Array<{ path: string; data: Data }>) {

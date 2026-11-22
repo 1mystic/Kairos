@@ -1,13 +1,17 @@
 import { MAX_IMAGES, MAX_IMAGE_B64_CHARS, MAX_NEW_PER_DAY, MAX_QUESTIONS, checkDocSize, type UserQuestion } from '@kairos/core';
 import { parseProfiles, serialiseProfiles } from '../exams/model';
+import { SERVER_TIME } from './bankCloud';
+import { AI_NOTE_QID } from './aiNotes';
 import { chunkOps } from './batching';
 import { imageIdsOf, startOfLocalDay, toStoredQuestion, type BankStore } from './bank';
 import type { FirestoreStore } from './FirestoreStore';
 import { ONBOARDING_KEYS, type LocalStore } from './LocalStore';
-import { isGuestProfile, type GuestProfile, type UserStore } from './types';
+import { AI_NOTE_MAX, isGuestProfile, type GuestProfile, type UserStore } from './types';
 
 export const SESSION_CAP_DAYS = 60;
 export const BATCH_MAX = 400;
+/** AI notes can be up to AI_NOTE_MAX chars each: written in small batches to stay under the request size limit. */
+export const AI_NOTE_BATCH = 50;
 /** firestore.rules limits */
 const MAX_EVENTS = 2000;
 const MAX_TASKS = 200;
@@ -51,11 +55,11 @@ type Op = { key: string; path: string; data: Record<string, unknown> };
 const clean = <T>(x: T): T => JSON.parse(JSON.stringify(x)) as T;
 
 async function gather(local: LocalStore, cutoff: number) {
-  const [allSessions, mocks, plans, paceLog] = await Promise.all([
-    local.listSessions(), local.listMocks(), local.listPlans(), local.listPaceLog(),
+  const [allSessions, mocks, plans, paceLog, aiNotes] = await Promise.all([
+    local.listSessions(), local.listMocks(), local.listPlans(), local.listPaceLog(), local.listAiNotes(),
   ]);
   const sessions = allSessions.filter((s) => s.startedAt >= cutoff);
-  return { sessions, mocks, plans, paceLog, skippedSessions: allSessions.length - sessions.length };
+  return { sessions, mocks, plans, paceLog, aiNotes, skippedSessions: allSessions.length - sessions.length };
 }
 
 /** The onboarding fields firestore.rules accept, validated, from a guest profile. Empty object when none. */
@@ -193,9 +197,9 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
   };
 
   const existing = mode === 'merge'
-    ? { sessions: await cloud.existingIds('sessions'), mocks: await cloud.existingIds('mocks'), plans: await cloud.existingIds('plans'), pace_log: await cloud.existingIds('pace_log') }
+    ? { sessions: await cloud.existingIds('sessions'), mocks: await cloud.existingIds('mocks'), plans: await cloud.existingIds('plans'), pace_log: await cloud.existingIds('pace_log'), ai_notes: await cloud.existingIds('ai_notes') }
     : null;
-  const fresh = (coll: 'sessions' | 'mocks' | 'plans' | 'pace_log', id: string) => !existing || !existing[coll].has(id);
+  const fresh = (coll: 'sessions' | 'mocks' | 'plans' | 'pace_log' | 'ai_notes', id: string) => !existing || !existing[coll].has(id);
   const keepAccountPlan = onboarding === 'kept-account';
 
   for (const s of g.sessions) if (fresh('sessions', s.id)) add('sessions', s.id, s);
@@ -219,6 +223,19 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
 
   const todo = ops.filter((o) => !done[o.key]);
   for (const chunk of chunkOps(todo, BATCH_MAX)) {
+    await cloud.batchWrite(chunk.map(({ path, data }) => ({ path, data })));
+    for (const o of chunk) done[o.key] = true;
+    await saveDone();
+  }
+
+  // AI notes: one doc per qid, updatedAt stamped by the server (SERVER_TIME placeholder, swapped by the adapter)
+  const noteOps: Op[] = g.aiNotes
+    .filter((n) => AI_NOTE_QID.test(n.qid) && fresh('ai_notes', n.qid))
+    .flatMap((n) => {
+      const text = Array.from(String(n.text ?? '').trim()).slice(0, AI_NOTE_MAX).join('');
+      return text.length > 0 ? [{ key: `ai_notes/${n.qid}`, path: `ai_notes/${n.qid}`, data: { text, provider: n.provider, updatedAt: SERVER_TIME } }] : [];
+    });
+  for (const chunk of chunkOps(noteOps.filter((o) => !done[o.key]), AI_NOTE_BATCH)) {
     await cloud.batchWrite(chunk.map(({ path, data }) => ({ path, data })));
     for (const o of chunk) done[o.key] = true;
     await saveDone();

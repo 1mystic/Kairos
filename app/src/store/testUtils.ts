@@ -22,6 +22,7 @@ export function fakeFs(initial: Record<string, Record<string, unknown>> = {}) {
         .sort((a, b) => Number(b.data[q.field]) - Number(a.data[q.field]));
       return Number.isFinite(q.limit) ? rows.slice(0, q.limit) : rows;
     },
+    async delete(p) { docs.delete(p); },
     async batchSet(ops) {
       state.n += 1;
       if (state.n === state.failBatchAt) throw new Error('network');
