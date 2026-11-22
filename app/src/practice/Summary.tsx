@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState, type RefObject } from 'react';
 import { useParams } from 'react-router';
 import type { BehaviourLabel, KairosEvent, Question, SessionSummary } from '@kairos/core';
 import { getLatestVersion, getQuestionsByIds } from '../bank/client';
+import { AiHelp } from '../components/AiNotePanel';
 import { QuestionView } from '../components/QuestionView';
 import { CheckIcon, CloseIcon } from '../components/icons';
 import { Button, Card, Chip, EmptyState, LinkButton, Page, PageHeader, PageSkeleton, Section, Stat, Tabs } from '../components/ui';
@@ -139,6 +140,7 @@ export function SummaryView({ session, questions }: SummaryViewProps) {
                 <p className="text-small text-slate">
                   Your answer: {r.given || 'none'}. Correct answer: {correctAnswerText(r.q)}.
                 </p>
+                <AiHelp question={r.q} given={r.given ?? ''} />
               </div>
             </Card>
           ))}
@@ -259,6 +261,7 @@ function RowItem({ r, n, flagged }: { r: ReviewRow; n: number; flagged: boolean 
       {open && (
         <div className="slog-body">
           <QuestionView question={r.q} variant="review" showSolution selected={r.q.type === 'NVQ' || r.q.type === 'INT' ? [] : r.given ? r.given.split(',') : []} />
+          <AiHelp question={r.q} given={r.given ?? ''} />
         </div>
       )}
     </li>

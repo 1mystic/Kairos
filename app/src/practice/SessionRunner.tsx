@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Question } from '@kairos/core';
+import { AiHelp } from '../components/AiNotePanel';
 import { QuestionView } from '../components/QuestionView';
 import { CheckIcon, CloseIcon, ClockIcon } from '../components/icons';
 import { Banner, Button, Card, Chip, Columns, Input, Modal, ProgressBar } from '../components/ui';
@@ -357,6 +358,7 @@ export function SessionRunner({ questions, base, initial, buffer, clock = Date.n
                 onSelect={isChecked || isNumeric || selfCheck ? undefined : (keys) => setValue([...keys].sort().join(','))}
                 showSolution={isChecked || revealed}
               />
+              {!paused && (isChecked || revealed) && <AiHelp question={q} given={selfCheck ? undefined : answer} />}
               {selfCheck && revealed && !q.solution && (
                 <p className="text-small text-slate">No solution saved for this question. Work it out and grade yourself honestly.</p>
               )}

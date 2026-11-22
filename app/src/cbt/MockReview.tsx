@@ -3,6 +3,7 @@ import type { PublicQuestion, Question, Response } from '@kairos/core';
 import type { MockDoc } from '../store';
 import { Button, Chip, Section, Tabs } from '../components/ui';
 import { CheckIcon, CloseIcon } from '../components/icons';
+import { AiHelp } from '../components/AiNotePanel';
 import { QuestionView } from '../components/QuestionView';
 import { describeResponse, formatClock, readAnalysis } from './model';
 
@@ -72,7 +73,7 @@ export function MockReview({ mock, questions }: { mock: MockDoc; questions: Read
                     </Button>
                   )}
                 </div>
-                {q && showing && <div className="mock-row-body"><QuestionView question={q} variant="review" showSolution selected={keys} /></div>}
+                {q && showing && <div className="mock-row-body"><QuestionView question={q} variant="review" showSolution selected={keys} /><AiHelp question={q} given={describeResponse(mine)} /></div>}
               </li>
             );
           })}
