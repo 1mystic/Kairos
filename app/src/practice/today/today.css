@@ -46,6 +46,26 @@
 .today-tag { flex: none; padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); background: var(--today-tag); color: var(--on-primary); font: 600 var(--fs-caption)/1.4 var(--font-ui); white-space: nowrap; }
 .today-more { justify-content: center; }
 
+/* tag accents (flat, token colours). Contrast, light / dark:
+     weak:   ink #0E1330 / paper #0B0F24 on accent #F5A524      8.9 / 9.3
+     warm:   on-good #FFFFFF / #06281B on good #137A52 / #45D098 5.3 / 8.1
+     review: primary on on-primary (inverted)                    7.3 / 8.6
+     mixed:  on-primary on tag tint (above)                      4.9 / 6.1
+     hovered cell: on-primary on mix(primary, on-primary 20%)    4.7 / 5.9 */
+.today-hero { --today-dark-text: var(--ink); }
+html[data-theme='dark'] .today-hero { --today-dark-text: var(--paper); }
+.today-tag[data-kind='weak'] { background: var(--accent); color: var(--today-dark-text); }
+.today-tag[data-kind='warm'] { background: var(--good); color: var(--on-good); }
+.today-tag[data-kind='review'] { background: var(--on-primary); color: var(--primary); }
+
+/* topic cells respond to the pointer: a slightly brighter tint (informational rows, so no pointer cursor except the +N more link) */
+.today-topic { transition: background-color var(--dur) var(--ease); }
+.today-more .text-link { display: flex; align-items: center; justify-content: center; inline-size: 100%; min-block-size: 100%; }
+@media (hover: hover) {
+  .today-topic:hover { background: color-mix(in srgb, var(--primary), var(--on-primary) 20%); }
+  .today-more:hover { cursor: pointer; }
+}
+
 @media (min-width: 768px) {
   .today-head { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-6); }
   .today-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); inline-size: calc(var(--space-8) * 6); }

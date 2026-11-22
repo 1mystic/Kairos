@@ -49,6 +49,10 @@ function PaceValue({ status }: { status: PaceStatus }) {
 }
 
 /** Presentational: renders one CardModel. Exported so tests can feed it models directly. */
+/** Tag colour family by reason: weak = accent, warm-up = good, review kinds = inverted, mixed = plain tint. */
+const tagKind = (reason: string): string =>
+  reason === 'Weak' ? 'weak' : reason === 'Warm-up' ? 'warm' : reason === 'Mixed' ? 'mixed' : 'review';
+
 export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onRetry?(): void }) {
   if (model.variant === 'loading') return <CardSkeleton />;
   const { primary, secondary, stats, exam } = model;
@@ -98,7 +102,7 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
             {model.chips.map((c) => (
               <li key={`${c.label}-${c.reason}`} className="today-cell today-topic">
                 <span className="truncate" title={c.label}>{c.label}</span>
-                <span className="today-tag">{c.reason}</span>
+                <span className="today-tag" data-kind={tagKind(c.reason)}>{c.reason}</span>
               </li>
             ))}
             {more > 0 && (
