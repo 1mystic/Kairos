@@ -1,6 +1,6 @@
 import { DATA_STORES, LOCAL_STORES, type LocalDb, type LocalStoreName } from './localDb';
-import { assertAiNoteQid, normaliseAiNoteInput } from './aiNotes';
-import type { AiNote, GuestProfile, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
+import { assertAiNoteQid, byNewest, normaliseAiNoteInput, normaliseAiRef } from './aiNotes';
+import type { AiNote, AiNoteRef, GuestProfile, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
 export const ONBOARDING_KEYS = ['exam', 'examDate', 'ambition', 'minutesPerWeekday', 'offDay', 'chaptersDone', 'lang', 'onboarded', 'profiles', 'activeExam'] as const;
 
@@ -67,20 +67,20 @@ export class LocalStore implements UserStore {
     assertAiNoteQid(qid);
     return ((await this.db.get('ai_notes', qid)) as AiNote | undefined) ?? null;
   }
-  async putAiNote(qid: string, note: { text: string; provider: AiNote['provider'] }): Promise<void> {
+  async putAiNote(qid: string, note: { text: string; provider: AiNote['provider'] }, ref?: AiNoteRef): Promise<void> {
     assertAiNoteQid(qid);
     const n = normaliseAiNoteInput(note);
     const now = Date.now();
-    const rec: AiNote = { qid, text: n.text, provider: n.provider, updatedAt: now, savedAt: now };
+    const rec: AiNote = { qid, text: n.text, provider: n.provider, updatedAt: now, savedAt: now, ...normaliseAiRef(ref) };
     await this.db.put('ai_notes', qid, rec);
   }
   async deleteAiNote(qid: string): Promise<void> {
     assertAiNoteQid(qid);
     await this.db.delete('ai_notes', qid);
   }
-  /** local-only (migration): every AI note on this device */
+  /** every AI note on this device, newest first (also used by migration and export) */
   async listAiNotes(): Promise<AiNote[]> {
-    return (await this.db.getAll('ai_notes')).map((r) => r.value as AiNote);
+    return (await this.db.getAll('ai_notes')).map((r) => r.value as AiNote).sort(byNewest);
   }
 
   // ----- local-only helpers (not part of UserStore) -----

@@ -1,7 +1,7 @@
 import { MAX_IMAGES, MAX_IMAGE_B64_CHARS, MAX_NEW_PER_DAY, MAX_QUESTIONS, checkDocSize, type UserQuestion } from '@kairos/core';
 import { parseProfiles, serialiseProfiles } from '../exams/model';
 import { SERVER_TIME } from './bankCloud';
-import { AI_NOTE_QID, clipUtf16 } from './aiNotes';
+import { AI_NOTE_QID, clipUtf16, normaliseAiRef } from './aiNotes';
 import { chunkOps } from './batching';
 import { imageIdsOf, startOfLocalDay, toStoredQuestion, type BankStore } from './bank';
 import type { FirestoreStore } from './FirestoreStore';
@@ -233,7 +233,7 @@ export async function runMigration(local: LocalStore, cloud: FirestoreStore, uid
     .filter((n) => AI_NOTE_QID.test(n.qid) && fresh('ai_notes', n.qid))
     .flatMap((n) => {
       const text = clipUtf16(String(n.text ?? '').trim(), AI_NOTE_MAX);
-      const data: Record<string, unknown> = { text, provider: n.provider, updatedAt: SERVER_TIME };
+      const data: Record<string, unknown> = { text, provider: n.provider, updatedAt: SERVER_TIME, ...normaliseAiRef(n) };
       if (typeof n.savedAt === 'number' && Number.isInteger(n.savedAt) && n.savedAt > 0) data.savedAt = Math.min(n.savedAt, Date.now());
       else if (Number.isInteger(n.updatedAt) && n.updatedAt > 0) data.savedAt = Math.min(n.updatedAt, Date.now());
       return text.length > 0 ? [{ key: `ai_notes/${n.qid}`, path: `ai_notes/${n.qid}`, data }] : [];

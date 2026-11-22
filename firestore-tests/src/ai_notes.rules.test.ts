@@ -107,6 +107,31 @@ describe('users/{uid}/ai_notes/{qid}', () => {
     await seed();
     await assertFails(updateDoc(ref(), { savedAt: Date.now() + 3600_000, updatedAt: serverTimestamp() }));
   });
+  it('accepts the optional question reference (exam, chapter, stem) on create and update', async () => {
+    await assertSucceeds(setDoc(ref(), note({ exam: 'JEE_MAIN', chapter: 'PHY.LOM', stem: 'A block slides down a rough incline.' })));
+    await assertSucceeds(setDoc(ref(), note({ exam: 'x', chapter: 'c', stem: '' })));
+    await assertSucceeds(setDoc(ref(), note({ exam: 'e'.repeat(20), chapter: 'c'.repeat(40), stem: 's'.repeat(300) })));
+    await assertSucceeds(setDoc(ref(), note({ exam: 'IAT' })));
+    await seed();
+    await assertSucceeds(updateDoc(ref(), { text: 'edited', exam: 'NEET_UG', chapter: 'BIO.CELL', stem: 'Which organelle...', updatedAt: serverTimestamp() }));
+  });
+  it('rejects a too-long or empty exam, chapter or stem', async () => {
+    await assertFails(setDoc(ref(), note({ exam: 'e'.repeat(21) })));
+    await assertFails(setDoc(ref(), note({ exam: '' })));
+    await assertFails(setDoc(ref(), note({ chapter: 'c'.repeat(41) })));
+    await assertFails(setDoc(ref(), note({ chapter: '' })));
+    await assertFails(setDoc(ref(), note({ stem: 's'.repeat(301) })));
+    await seed();
+    await assertFails(updateDoc(ref(), { stem: 's'.repeat(301), updatedAt: serverTimestamp() }));
+  });
+  it('rejects non-string exam, chapter or stem', async () => {
+    await assertFails(setDoc(ref(), note({ exam: 5 })));
+    await assertFails(setDoc(ref(), note({ chapter: ['PHY.LOM'] })));
+    await assertFails(setDoc(ref(), note({ stem: { a: 1 } })));
+    await assertFails(setDoc(ref(), note({ stem: null })));
+    await seed();
+    await assertFails(updateDoc(ref(), { chapter: 7, updatedAt: serverTimestamp() }));
+  });
   it('rejects bad doc ids', async () => {
     for (const id of ['x_abc', 'q_', 'abc', 'q-abc', 'q_' + 'a'.repeat(65), 'Q_abc', 'q_ab.c']) {
       await assertFails(setDoc(ref(alice(), id), note()));

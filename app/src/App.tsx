@@ -13,7 +13,7 @@ import { Settings } from './pages/Settings';
 import { uploadRoutes } from './upload/routes';
 import {
   lazyAdminRoutes, lazyAnalysisRoutes, lazyCbtExamRoutes, lazyDsaRoutes, lazyExamRoutes, lazyCbtPageRoutes, lazyDiagnosticRoutes,
-  lazyOnboardingRoutes, lazyPlanRoutes, lazyPracticeRoutes, lazyRoadmapRoutes,
+  lazyOnboardingRoutes, lazyPlanRoutes, lazyPracticeRoutes, lazyRoadmapRoutes, lazySavedRoutes,
 } from './shell/lazyRoutes';
 import { ErrorBoundary } from './shell/ErrorBoundary';
 import { NotFound } from './shell/NotFound';
@@ -28,6 +28,7 @@ import { firebaseConfigError } from './lib/firebase';
 /** Feature route groups mounted inside AppLayout (guests and signed-in users). Heavy ones are code-split in shell/lazyRoutes. */
 const appLayoutRoutes = [
   ...lazyPracticeRoutes,
+  ...lazySavedRoutes,
   ...lazyAnalysisRoutes,
   ...lazyDsaRoutes,
   ...lazyExamRoutes,

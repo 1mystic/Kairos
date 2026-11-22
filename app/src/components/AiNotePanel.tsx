@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import type { PublicQuestion, Question } from '@kairos/core';
 import { PROVIDERS, providerLabel } from '../lib/askAi';
 import { useStore } from '../store';
-import { AI_NOTE_MAX, type AiNote, type AiProvider } from '../store/types';
+import { aiRefOf, normaliseAiRef } from '../store/aiNotes';
+import { AI_NOTE_MAX, type AiNote, type AiNoteRef, type AiProvider } from '../store/types';
 import { AskAiButton, lastProvider } from './AskAi';
-import { ContentHtml } from './QuestionView';
+import { NoteContent } from './NoteContent';
 import { Button, Select, Skeleton, Textarea } from './ui';
 
 const when = (t: number) => new Date(t).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
@@ -14,7 +15,17 @@ const when = (t: number) => new Date(t).toLocaleDateString(undefined, { day: 'nu
  * Text is rendered as markdown + KaTeX through the same safe renderer as solutions (no raw HTML).
  * One store write per save or delete. Works for guests (local) and signed-in users alike.
  */
-export function AiNotePanel({ qid }: { qid: string }) {
+export function AiNotePanel({ qid, qref, autoEdit, onChange, onClose }: {
+  qid: string;
+  /** where the question lives (exam, chapter, stem snippet); saved with the note so the Saved page can find it again */
+  qref?: AiNoteRef;
+  /** open straight in the editor once the note has loaded (Saved page) */
+  autoEdit?: boolean;
+  /** called after a save (the note) or delete (null) */
+  onChange?: (n: AiNote | null) => void;
+  /** called when the editor is cancelled */
+  onClose?: () => void;
+}) {
   const store = useStore();
   const [note, setNote] = useState<AiNote | null | 'loading' | 'error'>('loading');
   const [editing, setEditing] = useState(false);
@@ -23,14 +34,16 @@ export function AiNotePanel({ qid }: { qid: string }) {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
   const [confirming, setConfirming] = useState(false);
+  const saved = note === 'error' || note === 'loading' ? null : note;
 
   useEffect(() => {
     let live = true;
     setNote('loading');
     setEditing(false);
     setConfirming(false);
-    store.getAiNote(qid).then((n) => { if (live) setNote(n); }, () => { if (live) setNote('error'); });
+    store.getAiNote(qid).then((n) => { if (!live) return; setNote(n); if (autoEdit && n) { setText(n.text); setProvider(n.provider); setEditing(true); } }, () => { if (live) setNote('error'); });
     return () => { live = false; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- autoEdit only matters when a note is first loaded
   }, [store, qid]);
 
   const begin = (n: AiNote | null) => {
@@ -52,19 +65,24 @@ export function AiNotePanel({ qid }: { qid: string }) {
     setBusy(true);
     setErr('');
     try {
-      await store.putAiNote(qid, { text: t, provider });
-      setNote({ qid, text: t, provider, updatedAt: Date.now() });
+      // keep the reference of a note saved earlier when this call site does not know the question
+      const keep = qref ?? (saved ? { exam: saved.exam, chapter: saved.chapter, stem: saved.stem } : undefined);
+      const ref = normaliseAiRef(keep);
+      if (Object.keys(ref).length) await store.putAiNote(qid, { text: t, provider }, ref);
+      else await store.putAiNote(qid, { text: t, provider });
+      const next: AiNote = { qid, text: t, provider, updatedAt: Date.now(), ...ref };
+      setNote(next);
       setEditing(false);
+      onChange?.(next);
     } catch { setErr('Could not save. Try again.'); } finally { setBusy(false); }
   };
   const remove = async () => {
     setBusy(true);
     setErr('');
-    try { await store.deleteAiNote(qid); setNote(null); setConfirming(false); } catch { setErr('Could not delete. Try again.'); } finally { setBusy(false); }
+    try { await store.deleteAiNote(qid); setNote(null); setConfirming(false); onChange?.(null); } catch { setErr('Could not delete. Try again.'); } finally { setBusy(false); }
   };
 
   if (note === 'loading') return <Skeleton className="h-s7 w-full" />;
-  const saved = note === 'error' ? null : note;
   const over = text.length > AI_NOTE_MAX;
 
   return (
@@ -86,14 +104,14 @@ export function AiNotePanel({ qid }: { qid: string }) {
           {err && <p role="alert" className="text-small text-accent-ink">{err}</p>}
           <div className="row-inline">
             <Button onClick={() => void save()} loading={busy} disabled={!text.trim() || over}>Save</Button>
-            <Button variant="ghost" onClick={() => setEditing(false)} disabled={busy}>Cancel</Button>
+            <Button variant="ghost" onClick={() => { setEditing(false); onClose?.(); }} disabled={busy}>Cancel</Button>
           </div>
         </div>
       ) : saved ? (
         <div className="stack-card">
           <h3 className="text-h3">Your saved AI explanation</h3>
           <p className="text-small text-slate">From {providerLabel(saved.provider)} · {when(saved.updatedAt)}</p>
-          <ContentHtml markdown={saved.text} />
+          <NoteContent markdown={saved.text} />
           <p className="text-caption text-slate">AI-generated and not checked by Kairos. It can be wrong: compare it with the official solution.</p>
           {err && <p role="alert" className="text-small text-accent-ink">{err}</p>}
           {confirming ? (
@@ -124,7 +142,7 @@ export function AiHelp({ question, given, exam }: { question: Question | PublicQ
   return (
     <div className="stack-card" data-testid="ai-help">
       <AskAiButton question={question} revealed given={given} exam={exam} />
-      <AiNotePanel qid={question.id} />
+      <AiNotePanel qid={question.id} qref={aiRefOf(question, exam)} />
     </div>
   );
 }

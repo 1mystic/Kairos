@@ -174,7 +174,7 @@ service cloud.firestore {
       function validAiNote(qid) {
         let d = incoming();
         return qid.matches('^[qu]_[A-Za-z0-9_]{1,64}$')
-          && d.keys().hasOnly(['text', 'provider', 'updatedAt', 'savedAt'])
+          && d.keys().hasOnly(['text', 'provider', 'updatedAt', 'savedAt', 'exam', 'chapter', 'stem'])
           && d.keys().hasAll(['text', 'provider', 'updatedAt'])
           && d.text is string && d.text.size() >= 1 && d.text.size() <= 20000
           && d.provider is string
@@ -182,7 +182,11 @@ service cloud.firestore {
           && d.updatedAt == request.time
           // optional client save time (ms epoch), kept when guest notes migrate; 10 min clock slack
           && (!('savedAt' in d)
-              || (d.savedAt is int && d.savedAt > 0 && d.savedAt <= request.time.toMillis() + 600000));
+              || (d.savedAt is int && d.savedAt > 0 && d.savedAt <= request.time.toMillis() + 600000))
+          // optional question reference (where to find the question again), shown on the Saved page
+          && (!('exam' in d) || (d.exam is string && d.exam.size() >= 1 && d.exam.size() <= 20))
+          && (!('chapter' in d) || (d.chapter is string && d.chapter.size() >= 1 && d.chapter.size() <= 40))
+          && (!('stem' in d) || (d.stem is string && d.stem.size() <= 300));
       }
 
       match /ai_notes/{qid} {

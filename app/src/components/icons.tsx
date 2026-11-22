@@ -31,3 +31,4 @@ export const ArrowRightIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path
 export const SparkIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" /><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" /></Icon>;
 export const LogOutIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M15 8l4 4-4 4M19 12H9" /></Icon>;
 export const LockIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" /><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" /></Icon>;
+export const BookmarkIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M6.5 4.5h11a1 1 0 0 1 1 1V20l-6.5-4.5L5.5 20V5.5a1 1 0 0 1 1-1z" /></Icon>;

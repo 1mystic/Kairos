@@ -1,0 +1,4 @@
+.saved-stem { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
+.saved-preview { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; overflow-wrap: anywhere; }
+.saved-filter-search { flex: 1 1 14rem; min-width: 0; }
+.saved-filter-exam { flex: 0 1 14rem; min-width: 0; }

@@ -3,9 +3,9 @@ import {
   type Firestore,
 } from 'firebase/firestore';
 import { SERVER_TIME } from './bankCloud';
-import { assertAiNoteQid, normaliseAiNoteInput } from './aiNotes';
+import { assertAiNoteQid, byNewest, normaliseAiNoteInput, normaliseAiRef } from './aiNotes';
 import { chunkOps } from './batching';
-import type { AiNote, AiProvider, ListMocksOpts, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
+import type { AiNote, AiNoteRef, AiProvider, ListMocksOpts, ListSessionsOpts, MockDoc, PaceLogDoc, PlanDoc, Profile, SessionDoc, StateDocName, UserStore } from './types';
 
 type Data = Record<string, unknown>;
 
@@ -27,6 +27,9 @@ const AI_NOTE_EXPORT_MAX = 2000;
 const toAiNote = (qid: string, d: Data): AiNote => ({
   qid, text: String(d.text ?? ''), provider: d.provider as AiProvider,
   updatedAt: typeof d.savedAt === 'number' && d.savedAt > 0 ? d.savedAt : toMs(d.updatedAt),
+  ...(typeof d.exam === 'string' && d.exam ? { exam: d.exam } : {}),
+  ...(typeof d.chapter === 'string' && d.chapter ? { chapter: d.chapter } : {}),
+  ...(typeof d.stem === 'string' && d.stem ? { stem: d.stem } : {}),
 });
 
 /** The only Firestore surface FirestoreStore touches. Tests inject a fake. */
@@ -208,15 +211,15 @@ export class FirestoreStore implements UserStore {
     if (!d) return null;
     return toAiNote(qid, d);
   }
-  /** Export only: every AI note (capped at AI_NOTE_EXPORT_MAX). */
+  /** Every AI note (capped at AI_NOTE_EXPORT_MAX), newest first by the displayed save time. One list read, sorted here. */
   async listAiNotes(): Promise<AiNote[]> {
-    return (await this.fs.list(this.p('ai_notes'), { limit: AI_NOTE_EXPORT_MAX })).map((r) => toAiNote(r.id, r.data));
+    return (await this.fs.list(this.p('ai_notes'), { limit: AI_NOTE_EXPORT_MAX })).map((r) => toAiNote(r.id, r.data)).sort(byNewest);
   }
   /** ONE write: a full set of the doc with updatedAt = server time and savedAt = client time (kept on migration). */
-  async putAiNote(qid: string, note: { text: string; provider: AiProvider }) {
+  async putAiNote(qid: string, note: { text: string; provider: AiProvider }, ref?: AiNoteRef) {
     assertAiNoteQid(qid);
     const n = normaliseAiNoteInput(note);
-    await this.fs.set(this.p(`ai_notes/${qid}`), { text: n.text, provider: n.provider, updatedAt: SERVER_TIME, savedAt: Date.now() });
+    await this.fs.set(this.p(`ai_notes/${qid}`), { text: n.text, provider: n.provider, updatedAt: SERVER_TIME, savedAt: Date.now(), ...normaliseAiRef(ref) });
   }
   async deleteAiNote(qid: string) {
     assertAiNoteQid(qid);

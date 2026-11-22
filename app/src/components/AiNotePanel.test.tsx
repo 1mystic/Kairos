@@ -58,4 +58,20 @@ describe('AiNotePanel', () => {
     render(<AiNotePanel qid="q1" />);
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not load');
   });
+
+  it('saves the question reference with the note (still one write), and keeps it on a later edit', async () => {
+    const qref = { exam: 'JEE_MAIN', chapter: 'PHY.LOM', stem: 'A block slides.' };
+    const { unmount } = render(<AiNotePanel qid="q1" qref={qref} />);
+    await userEvent.click(await screen.findByRole('button', { name: 'Paste AI answer' }));
+    await userEvent.type(screen.getByLabelText('Paste the AI answer'), 'first');
+    await userEvent.click(screen.getByRole('button', { name: 'Save' }));
+    await waitFor(() => expect(store.putAiNote).toHaveBeenCalledTimes(1));
+    expect(store.putAiNote).toHaveBeenCalledWith('q1', { text: 'first', provider: 'chatgpt' }, qref);
+    unmount();
+    notes.q1 = { qid: 'q1', text: 'old', provider: 'gemini', updatedAt: 1, ...qref } as never;
+    render(<AiNotePanel qid="q1" />);
+    await userEvent.click(await screen.findByRole('button', { name: 'Edit' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Save' }));
+    await waitFor(() => expect(store.putAiNote).toHaveBeenLastCalledWith('q1', { text: 'old', provider: 'gemini' }, qref));
+  });
 });

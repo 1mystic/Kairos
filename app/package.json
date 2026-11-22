@@ -18,6 +18,7 @@
     "firebase": "^12",
     "idb": "^8",
     "katex": "^0.16",
+    "mermaid": "^12.3.0",
     "pdfjs-dist": "^6.5.438",
     "react": "^19",
     "react-dom": "^19",

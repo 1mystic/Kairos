@@ -11,6 +11,7 @@ import {
   lazyPlanRoutes,
   lazyPracticeRoutes,
   lazyRoadmapRoutes,
+  lazySavedRoutes,
 } from './lazyRoutes';
 
 const paths = (rs: { path?: string }[]) => rs.map((r) => r.path).sort();
@@ -29,6 +30,7 @@ describe('lazy route table stays in sync with the real route modules', () => {
   it('onboarding', async () => expect(paths(lazyOnboardingRoutes)).toEqual(paths((await import('../onboarding/routes')).onboardingRoutes)));
   it('plan', async () => expect(paths(lazyPlanRoutes)).toEqual(paths((await import('../plan/routes')).planRoutes)));
   it('roadmap', async () => expect(paths(lazyRoadmapRoutes)).toEqual(paths((await import('../roadmap/routes')).roadmapRoutes)));
+  it('saved', async () => expect(paths(lazySavedRoutes)).toEqual(paths((await import('../saved/routes')).savedRoutes)));
   it('admin', async () => expect(paths(lazyAdminRoutes)).toEqual(paths((await import('../admin/routes')).adminRoutes)));
   it('cbt pages', async () => expect(paths(lazyCbtPageRoutes)).toEqual(paths((await import('../cbt/routes')).cbtPageRoutes)));
   it('cbt exam runner', async () => expect(paths(lazyCbtExamRoutes)).toEqual(paths((await import('../cbt/routes')).cbtExamRoutes)));

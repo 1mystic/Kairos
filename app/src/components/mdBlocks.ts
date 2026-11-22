@@ -5,7 +5,7 @@
  */
 import { escapeHtml } from '@kairos/core';
 
-const FENCE_RE = /^ {0,3}```[^\n`]*\n([\s\S]*?)\n {0,3}```[ \t]*$/gm;
+const FENCE_RE = /^ {0,3}```([^\n`]*)\n([\s\S]*?)\n {0,3}```[ \t]*$/gm;
 const SEP_CELL_RE = /^\s*:?-{1,}:?\s*$/;
 
 /**
@@ -98,7 +98,10 @@ export function renderWithBlocks(md: string, renderText: (md: string) => string)
   let last = 0;
   for (const m of src.matchAll(FENCE_RE)) {
     text(src.slice(last, m.index!));
-    out.push(`<pre class="kc-code"><code>${escapeHtml(m[1]!)}</code></pre>`);
+    // language tag from the info string: letters/digits only, so the attribute can never carry markup
+    const lang = (m[1] ?? '').trim().split(/\s+/)[0]!.toLowerCase();
+    const attr = /^[a-z0-9_+#-]{1,20}$/.test(lang) ? ` data-lang="${lang}"` : '';
+    out.push(`<pre class="kc-code"${attr}><code>${escapeHtml(m[2]!)}</code></pre>`);
     last = m.index! + m[0].length;
   }
   text(src.slice(last));

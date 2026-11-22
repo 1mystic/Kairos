@@ -50,6 +50,7 @@ Every prompt must say: read CLAUDE.md + docs/07 + brand/BRAND.md; own only liste
 | **upload your questions** (copy prompt, paste JSON, crop figures, review, private bank) | `/upload`, `/bank` | 09, prompts/v2 | W4d |
 | measurement engine (elo, rd, FSRS, behaviour labels, session summary) | core only | 05.1–5.3 | W4b |
 | **analysis** (mastery heatmap, mock report: waterfall, quadrant, time map, fatigue, unsaved nudge) | `/analysis`, mock result tabs | 04 report, 05 | W5a |
+| **saved AI answers** (revise pasted Ask AI explanations: search, exam filter, question + solution, markdown/KaTeX/Mermaid) | `/saved` | 16 | - |
 | onboarding + exam date + pace ρ + today card | `/onboarding`, Home | 01, 05.7 | W5b |
 | **auto-adaptive planner** (plan_day, backlog carry/spread/shed, capacity, sim gate) | core + Home task list | 05.5–5.6, 05.11 | W5c (engine) + W6b (UI) |
 | diagnostic (cold start) + personalised mock generator | `/diagnostic`, "Make me a mock" | 05.4, 05.9 | W6a |

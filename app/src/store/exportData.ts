@@ -1,9 +1,8 @@
 import type { AiNote, UserStore } from './types';
 
-/** AI notes: the cloud store and the guest store both list them, but it is not on the UserStore contract. */
+/** AI notes, newest first (UserStore.listAiNotes). */
 async function listAiNotes(store: UserStore): Promise<AiNote[]> {
-  const s = store as UserStore & { listAiNotes?: () => Promise<AiNote[]> };
-  return s.listAiNotes ? s.listAiNotes() : [];
+  return store.listAiNotes();
 }
 
 /** Everything the store holds, as a plain object (for the Settings JSON download). */

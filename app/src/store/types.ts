@@ -69,7 +69,16 @@ export type Profile = UserProfile | GuestProfile;
 /** Which assistant the student pasted the explanation from. */
 export type AiProvider = 'gemini' | 'chatgpt' | 'google' | 'claude' | 'perplexity' | 'other';
 /** users/{uid}/ai_notes/{qid}: one pasted AI explanation per question. `updatedAt` is the display time in epoch ms (the stored client `savedAt`, else the server time). */
-export interface AiNote { qid: string; text: string; provider: AiProvider; updatedAt: number /* ms epoch */; savedAt?: number }
+export interface AiNote {
+  qid: string; text: string; provider: AiProvider; updatedAt: number /* ms epoch */; savedAt?: number;
+  /** where to find the question again (the bank is static shards by exam/subject/chapter); all optional, older notes have none */
+  exam?: string; chapter?: string; stem?: string;
+}
+/** Question reference saved with a note. exam <= AI_REF_EXAM_MAX, chapter (taxonomy chapter id) <= AI_REF_CHAPTER_MAX, stem (plain text) <= AI_REF_STEM_MAX. */
+export interface AiNoteRef { exam?: string; chapter?: string; stem?: string }
+export const AI_REF_EXAM_MAX = 20;
+export const AI_REF_CHAPTER_MAX = 40;
+export const AI_REF_STEM_MAX = 300;
 /** Max UTF-16 length (string.length, what firestore.rules measure) kept for one AI note. putAiNote clips longer text. */
 export const AI_NOTE_MAX = 20000;
 export type StateDocName = 'mastery' | 'pace' | 'roadmap';
@@ -109,7 +118,9 @@ export interface UserStore {
   listPaceLog(opts?: { all?: boolean }): Promise<Array<PaceLogDoc & { date: string }>>;
   getAiNote(qid: string): Promise<AiNote | null>;
   /** trims, rejects empty, clips to AI_NOTE_MAX. Replaces any existing note for the qid. */
-  putAiNote(qid: string, note: { text: string; provider: AiProvider }): Promise<void>;
+  putAiNote(qid: string, note: { text: string; provider: AiProvider }, ref?: AiNoteRef): Promise<void>;
+  /** Every saved note, newest first (by the displayed save time). Cloud store: capped at 2000. */
+  listAiNotes(): Promise<AiNote[]>;
   deleteAiNote(qid: string): Promise<void>;
 }
 

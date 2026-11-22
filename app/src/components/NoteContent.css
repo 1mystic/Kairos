@@ -1,0 +1,4 @@
+.note-content { min-width: 0; }
+.note-content .kc-diagram { margin: var(--space-2) 0; padding: var(--space-3); background: var(--surface); border-radius: var(--radius-btn); overflow-x: auto; max-width: 100%; }
+.note-content .kc-diagram svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.note-content .kc-diagram-err { margin: 0 0 var(--space-2); }
