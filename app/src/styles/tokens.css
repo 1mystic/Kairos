@@ -47,7 +47,7 @@
 /* breakpoints (defined once; mirrored in index.css @theme): xs 480, sm 640, md 768, lg 1024, xl 1280, 2xl 1536, 3xl 1920 */
 @media(min-width:768px){:root{--gutter:24px;--card-pad:24px}}
 @media(min-width:1024px){:root{--gutter:32px;--gap-section:var(--space-8);--sticky-top:var(--space-6)}}
-@media(min-width:1280px){:root{--sidebar-w:240px}}
+@media(min-width:1280px){:root{--sidebar-w:272px}}
 @media(min-width:1536px){:root{--w-app:1280px}}
 @media(min-width:1920px){:root{--w-landing:1360px;--w-app:1360px}}
 /* gentle base-font scale for TV distance: every rem token (type + spacing) follows */

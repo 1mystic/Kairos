@@ -66,9 +66,12 @@ function AccountMenu({ up }: { up?: boolean }) {
   const toggle = () => {
     if (!open && up && box.current) {
       const r = box.current.getBoundingClientRect();
-      const rail = box.current.closest('.sidebar')?.getBoundingClientRect();
-      const left = rail ? rail.left + 12 : r.left;
-      setPos({ position: 'fixed', left, bottom: window.innerHeight - r.top + 8, width: Math.max(240, (rail ? rail.width - 24 : r.width)) });
+      const railEl = box.current.closest<HTMLElement>('.sidebar');
+      const rail = railEl?.getBoundingClientRect();
+      // same inset as the sidebar's own padding on left, right and below, so the menu sits evenly inside the rail
+      const inset = railEl ? parseFloat(getComputedStyle(railEl).paddingLeft) || 16 : 16;
+      const inner = rail ? rail.width - 2 * inset : r.width;
+      setPos({ position: 'fixed', left: rail ? rail.left + inset : r.left, bottom: window.innerHeight - r.top + inset, width: inner >= 200 ? inner : 240 });
     }
     setOpen(!open);
   };
