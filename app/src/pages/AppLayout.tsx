@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ComponentType, type MouseEvent as ReactMouseEvent, type ReactNode, type SVGProps } from 'react';
+import { useEffect, useRef, useState, type ComponentType, type CSSProperties, type MouseEvent as ReactMouseEvent, type ReactNode, type SVGProps } from 'react';
 import { Link, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { friendlyAuthError } from '../auth/errors';
@@ -60,7 +60,18 @@ function AccountMenu({ up }: { up?: boolean }) {
   const { user, profile } = useAuth();
   const { isGuest, signOutToGuest } = useGuest();
   const [open, setOpen] = useState(false);
+  const [pos, setPos] = useState<CSSProperties | undefined>(undefined);
   const box = useRef<HTMLDivElement>(null);
+  /** The sidebar scrolls, so an absolutely placed menu is clipped at its edge: in the sidebar, pin it to the viewport above the button. */
+  const toggle = () => {
+    if (!open && up && box.current) {
+      const r = box.current.getBoundingClientRect();
+      const rail = box.current.closest('.sidebar')?.getBoundingClientRect();
+      const left = rail ? rail.left + 12 : r.left;
+      setPos({ position: 'fixed', left, bottom: window.innerHeight - r.top + 8, width: Math.max(240, (rail ? rail.width - 24 : r.width)) });
+    }
+    setOpen(!open);
+  };
   const label = isGuest ? 'Guest' : (profile?.displayName ?? user?.email ?? 'Account');
   useEffect(() => {
     if (!open) return;
@@ -72,12 +83,12 @@ function AccountMenu({ up }: { up?: boolean }) {
   }, [open]);
   return (
     <div className="relative" ref={box}>
-      <button type="button" aria-label={up ? `Account: ${label}` : undefined} className="btn btn-secondary max-w-48" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen(!open)}>
+      <button type="button" aria-label={up ? `Account: ${label}` : undefined} className="btn btn-secondary max-w-48" aria-haspopup="menu" aria-expanded={open} onClick={toggle}>
         <UserIcon width={20} height={20} className="shrink-0" />
         <span className={up ? 'side-only-wide truncate' : 'truncate'}>{label}</span>
       </button>
       {open && (
-        <div role="menu" className={`menu ${up ? 'bottom-full left-0 mb-s2' : 'right-0 mt-s2'}`}>
+        <div role="menu" className={up ? 'menu' : 'menu right-0 mt-s2'} style={up ? pos : undefined}>
           <p className="menu-note truncate text-small text-slate">{isGuest ? 'Saved on this device only' : user?.email}</p>
           {isGuest && <Link role="menuitem" to="/signin" className="menu-item text-primary" onClick={() => setOpen(false)}><UserIcon width={20} height={20} />Sign in to save progress</Link>}
           {up ? null : NAV.filter((n) => !n.tab).map(({ to, label, icon: I }) => (
