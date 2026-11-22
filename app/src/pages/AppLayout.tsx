@@ -71,7 +71,7 @@ function AccountMenu({ up }: { up?: boolean }) {
       // same inset as the sidebar's own padding on left, right and below, so the menu sits evenly inside the rail
       const inset = railEl ? parseFloat(getComputedStyle(railEl).paddingLeft) || 16 : 16;
       const inner = rail ? rail.width - 2 * inset : r.width;
-      setPos({ position: 'fixed', left: rail ? rail.left + inset : r.left, bottom: window.innerHeight - r.top + inset, width: inner >= 200 ? inner : 240 });
+      setPos({ position: 'fixed', left: rail ? rail.left + inset : r.left, bottom: window.innerHeight - r.top + inset, width: inner >= 160 ? inner : 240, minWidth: 0 });
     }
     setOpen(!open);
   };
