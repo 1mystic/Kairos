@@ -1,0 +1,1021 @@
+[
+ {
+  "n": 1,
+  "ch": "PDS.PY",
+  "stem": "Consider the following python program:\n\n```python\ndef jumble(x, y):\n    x = 2 * x + y\n    return x\n\nx = 4; y = 2\ny = jumble(y, x)\nx = jumble(y, x)\nprint(x)\n```\n\nWhat is the output of the given code? [NAT]",
+  "opts": null,
+  "key": "26",
+  "sol": "Trace: `y = jumble(2, 4)` computes $2\\cdot2+4=8$, so `y = 8` (the global `x` is unchanged, still 4). Then `x = jumble(8, 4)` gives $2\\cdot8+4=20$. The program prints 20.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 2,
+  "ch": "PDS.PY",
+  "stem": "Consider the following program:\n\n```python\ndef main():\n    f1()\n    f2(2)\n    f3()\n    return 0\n\ndef f1():\n    return 1\n\ndef f2(x):\n    f3()\n    if x == 1:\n        return f1()\n    else:\n        return x + f2(x-1)\n\ndef f3():\n    return 5\n\nmain()\n```\n\nWhich one of the following options represents the activation tree corresponding to the main function?",
+  "opts": [
+   "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f3` and `f2`. The second `f2` calls `f3` and `f1`.",
+   "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f1` and `f3`.",
+   "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f3` and `f1`.",
+   "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f2` and `f3`."
+  ],
+  "key": "A",
+  "sol": "`f2(2)` first calls `f3()`, then (since `x != 1`) calls `f2(1)`. That inner call first calls `f3()` and then `f1()`. So under `f2` come `f3` and `f2`, and the second `f2` has children `f3` and `f1`: option A.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 3,
+  "ch": "PDS.PY",
+  "stem": "Consider the following Python program:\n\n```python\nsum_value = 0.0\nj = 1.0\ni = 2.0\nwhile i / j > 0.0625:\n    j = j + j\n    sum_value = sum_value + i / j\nprint(sum_value)\n```\n\nThe number of times the variable `sum_value` will be printed when the above program is executed is: [NAT]",
+  "opts": null,
+  "key": "5",
+  "sol": "The `print` statement is outside the loop, so it runs exactly once and `sum_value` is printed once. (The loop body runs 5 times: $i/j$ takes the values $2,1,0.5,0.25,0.125$ before dropping to $0.0625$, which is not $>0.0625$.) The PDF key 5 equals the number of loop iterations, not the number of prints.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 4,
+  "ch": "PDS.DS",
+  "stem": "Consider an implementation of a singly linked list, where each node is created using the given class `Node`. Suppose it has a `head` pointer that points to the first node of the linked list and a `tail` pointer that points to the last element of the linked list.\n\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n```\n\nSuppose we want to perform the following operations on the given linked list:\n1. Insertion of the new node at the front of the linked list.\n2. Insertion of the new node at the end of the linked list.\n3. Deletion of the first node of the linked list.\n4. Deletion of the last node of the linked list.\n\nWhich of the following option represents the correct complexity for each operation?",
+  "opts": [
+   "1-$O(1)$, 2-$O(n)$, 3-$O(1)$, 4-$O(1)$",
+   "1-$O(1)$, 2-$O(1)$, 3-$O(1)$, 4-$O(1)$",
+   "1-$O(1)$, 2-$O(n)$, 3-$O(1)$, 4-$O(n)$",
+   "1-$O(1)$, 2-$O(1)$, 3-$O(1)$, 4-$O(n)$"
+  ],
+  "key": "D",
+  "sol": "Front insertion and front deletion only touch `head`: $O(1)$. With a `tail` pointer, insertion at the end is $O(1)$. Deleting the last node of a singly linked list needs the predecessor of `tail`, which can only be found by walking from `head`: $O(n)$. Option D.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 5,
+  "ch": "PDS.ALG",
+  "stem": "Consider the following function:\n\n```python\ndef fun1(n):\n    q = 0\n    for i in range(1, n):\n        p = 0\n        j = n\n        while j > 1:\n            p += 1\n            j //= 2\n        k = 1\n        while k < p:\n            q += 1\n            k *= 2\n    return q\n```\n\nWhich one of the following most closely approximates the return value of the function `fun1`?",
+  "opts": [
+   "$n^3$",
+   "$n(\\log n) - n(\\log n)^2$",
+   "$n(\\log n)$",
+   "$n \\log(\\log n)$"
+  ],
+  "key": "D",
+  "sol": "The first inner loop sets $p=\\lfloor\\log_2 n\\rfloor$. The second loop runs $\\lceil\\log_2 p\\rceil$ times, i.e. $\\Theta(\\log\\log n)$. The outer loop repeats this $n-1$ times, so the value is $\\Theta(n\\log\\log n)$: option D.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 6,
+  "ch": "PDS.DS",
+  "stem": "Consider the following sequence of operations on an empty stack:\n\n```\n1. push(54)\n2. push(52)\n3. pop()\n4. push(55)\n5. push(62)\n6. s = pop()\n```\n\nConsider the following sequence of operations on an empty queue:\n\n```\n1. enqueue(21)\n2. enqueue(24)\n3. dequeue()\n4. enqueue(28)\n5. enqueue(32)\n6. q = dequeue()\n```\n\nThe value of $s + q$ is: [NAT]",
+  "opts": null,
+  "key": "86",
+  "sol": "Stack: after `push 54, push 52, pop` the stack holds 54, then `push 55, push 62`; the last `pop` returns $s=62$. Queue: `enqueue 21, 24`, `dequeue` removes 21, then `enqueue 28, 32` gives 24, 28, 32; `dequeue` returns $q=24$. So $s+q=86$.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 7,
+  "ch": "PDS.GRAPH",
+  "stem": "Let $G = (V, E)$ be a simple undirected graph. Given a source vertex $s$, for $x \\in V$ let $d(x)$ denote the shortest distance in $G$ from $s$ to $x$. A breadth first search (BFS) is performed starting at $s$. Let $T$ be the resultant BFS tree. If $(u, v)$ is an edge of $G$ that is not in $T$, then which one of the following **cannot** be the value of $d(u) - d(v)$?",
+  "opts": [
+   "$-1$",
+   "0",
+   "1",
+   "2"
+  ],
+  "key": "D",
+  "sol": "For any edge $(u,v)$, $|d(u)-d(v)|\\le 1$ (otherwise the shorter endpoint would give a shortcut). A non-tree edge can join vertices at the same level (difference 0) or adjacent levels (difference $\\pm1$). A difference of 2 is impossible: option D.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 8,
+  "ch": "PDS.GRAPH",
+  "stem": "Consider a complete binary tree with 7 nodes. Let $A$ denote the set of first 3 elements obtained by performing Breadth-First Search (BFS) starting from the root. Let $B$ denote the set of first 3 elements obtained by performing Depth First Search (DFS) starting from the root. The value of $|A - B|$ is: [NAT]",
+  "opts": null,
+  "key": "1",
+  "sol": "Label nodes 1..7 in level order. BFS visits 1, 2, 3, so $A=\\{1,2,3\\}$. DFS (going down the left child first) visits 1, 2, 4, so $B=\\{1,2,4\\}$. Then $A-B=\\{3\\}$ and $|A-B|=1$.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 9,
+  "ch": "PDS.DS",
+  "stem": "Let $H$ be a binary min-heap consisting of $n$ elements implemented as an array. What is the worst-case time complexity of an optimal algorithm to find the maximum element in $H$?",
+  "opts": [
+   "$\\Theta(1)$",
+   "$\\Theta(\\log n)$",
+   "$\\Theta(n)$",
+   "$O(n \\log n)$"
+  ],
+  "key": "C",
+  "sol": "In a min-heap the maximum is one of the leaves (a non-leaf is smaller than its children), but nothing orders the leaves among themselves. About $n/2$ leaves must be examined, so the optimal worst case is $\\Theta(n)$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 10,
+  "ch": "PDS.ALG",
+  "stem": "What is the least number of comparisons required among the array elements to sort the given array in ascending order using the following sorting algorithms?\n`23, 32, 45, 69, 72, 73, 89, 97`",
+  "opts": [
+   "Quicksort using the last element as a pivot",
+   "Selection sort",
+   "Mergesort",
+   "Insertion sort"
+  ],
+  "key": "D",
+  "sol": "The array is already sorted. Interpreting the question as 'which algorithm needs the fewest comparisons', count them for $n=8$: quicksort with the last element as pivot does $n(n-1)/2=28$, selection sort does 28, top-down mergesort does 12, insertion sort does only $n-1=7$. The least is insertion sort (option D).",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 11,
+  "ch": "DBW.REL",
+  "stem": "Consider the table `emp_info` shown below:\n\n| id | name | salary |\n|---|---|---|\n| E001 | Oliver | 45000 |\n| E002 | Jack | 30000 |\n| E003 | Harry | 35000 |\n| E004 | Thomas | 55000 |\n| E005 | Jacob | 70000 |\n| E006 | Tommy | 60000 |\n| E007 | Joseph | 65000 |\n\nWhat will the output of the following query be?\n\n```sql\nSELECT id\nFROM emp_info AS a\nWHERE (SELECT COUNT(*)\n       FROM emp_info b\n       WHERE b.salary > a.salary) < 2\n```",
+  "opts": [
+   "E005, E007",
+   "E002, E003",
+   "E007",
+   "E003"
+  ],
+  "key": "A",
+  "sol": "The subquery counts how many employees earn strictly more than `a`. The condition `< 2` keeps employees with at most one higher earner, i.e. the top two salaries: 70000 (E005) and 65000 (E007). Option A.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 12,
+  "ch": "DBW.REL",
+  "stem": "Given an instance of the `STUDENTS` relation as shown below:\n\n| Student ID | Student Name | Student Email | Student Age | CPI |\n|---|---|---|---|---|\n| 2345 | Shankar | shankar@math | X | 9.4 |\n| 1287 | Swati | swati@ee | 19 | 9.5 |\n| 7853 | Shankar | shankar@cse | 19 | 9.4 |\n| 9876 | Swati | swati@mech | 18 | 9.3 |\n| 8765 | Ganesh | ganesh@civil | 19 | 8.7 |\n\nFor `(Student Name, Student Age)` to be a key for this instance, the value X should NOT be equal to: [NAT]",
+  "opts": null,
+  "key": "19",
+  "sol": "The pair (name, age) must be unique over the instance. The other rows give the pairs (Swati,19), (Shankar,19), (Swati,18), (Ganesh,19). The first row has name Shankar, so if $X=19$ it would duplicate (Shankar,19). Any other value is fine, so X must not equal 19.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 13,
+  "ch": "DBW.REL",
+  "stem": "Consider the relation `student` shown in the below table:\n\n| Roll no | Name | marks |\n|---|---|---|\n| 1 | Ram | 50 |\n| 2 | Rakesh | 65 |\n| 3 | Ram | 45 |\n| 4 | Pranav | 89 |\n| 5 | Rakesh | 99 |\n| 6 | Emily | 99 |\n| 7 | Grace | 100 |\n| 8 | Lily | 95 |\n\nWhat is the number of tuples returned by the following relational algebra expression: $\\Pi_{name}(\\sigma_{marks>50}(s$ ... [expression cut off at the right page edge] $\\Pi_{name}(\\sigma_{marks\\le 50}(student))$? [NAT]",
+  "opts": null,
+  "key": "5",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "relational algebra expression is truncated at the page edge: the operator between the two projections is not shown. If it is set difference the answer is 5 (matches the key); union would give 6, intersection 0.",
+  "derived": "5 if the hidden operator is '-' (names with marks>50 minus names with marks<=50: Rakesh, Pranav, Emily, Grace, Lily)"
+ },
+ {
+  "n": 14,
+  "ch": "DBW.ER",
+  "stem": "In an Entity-Relationship (ER) model, suppose $R$ is a many-to-one relationship from entity set $E1$ to entity set $E2$. Assume that $E1$ and $E2$ participate totally in $R$ and that the cardinality of $E1$ is greater than the cardinality of $E2$. Which one of the following is true about $R$?",
+  "opts": [
+   "Every entity in E1 is associated with exactly one entity in E2.",
+   "Some entity in E1 is associated with more than one entity in E2.",
+   "Every entity in E2 is associated with exactly one entity in E1.",
+   "Every entity in E2 is associated with at most one entity in E1."
+  ],
+  "key": "A",
+  "sol": "Many-to-one from E1 to E2 means each E1 entity relates to at most one E2 entity; total participation of E1 makes it exactly one. B is false by definition. Because $|E1|>|E2|$, some E2 entity must be shared by at least two E1 entities, so C and D are false. Option A.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 15,
+  "ch": "DBW.NF",
+  "stem": "Which of the following is NOT a super key in a relational schema with certain attributes, given that the primary key is \"VY\" and there exist no other candidate keys?",
+  "opts": [
+   "VXYZ",
+   "VWXZ",
+   "VWXY",
+   "VWXYZ"
+  ],
+  "key": "B",
+  "sol": "With the only candidate key $VY$, the super keys are exactly the attribute sets that contain both V and Y. VXYZ, VWXY and VWXYZ do; VWXZ lacks Y, so it is not a super key.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 16,
+  "ch": "DBW.NF",
+  "stem": "In a relational data model, which one of the following statements is TRUE?",
+  "opts": [
+   "A relation with only two attributes is always in BCNF.",
+   "If all attributes of a relation are prime attributes, then the relation is in BCNF.",
+   "Every relation has at least one non-prime attribute.",
+   "BCNF decompositions preserve functional dependencies."
+  ],
+  "key": "A",
+  "sol": "With two attributes the only non-trivial FDs are $A\\to B$ and/or $B\\to A$; any determinant is then a key, so the relation is in BCNF. B is false (all-prime relations are in 3NF but need not be in BCNF), C is false (a relation whose only key is all attributes has no non-prime attribute), and D is false (BCNF decomposition may lose dependencies).",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 17,
+  "ch": "DBW.REL",
+  "stem": "Consider the table `instructor` as shown below.\n\n| id | name | dept_name | salary |\n|---|---|---|---|\n| 10101 | Srinivasan | Comp. Sci. | 65000 |\n| 12121 | Wu | Finance | 90000 |\n| 15151 | Mozart | Music | 40000 |\n| 22222 | Einstein | Physics | 95000 |\n| 32343 | El Said | History | 60000 |\n| 33456 | Gold | Physics | 87000 |\n| 45565 | Katz | Comp. Sci. | 75000 |\n| 58583 | Califieri | History | 62000 |\n| 76543 | Singh | Finance | 80000 |\n| 76766 | Crick | Biology | 72000 |\n| 83821 | Brandt | Comp. Sci. | 92000 |\n| 98345 | Kim | Elec. Eng. | 80000 |\n\nHow many rows will be returned by the following query?\n\n```sql\nWITH dept_salary AS (\n    SELECT dept_name, avg(salary) AS avg_salary\n    FROM instructor\n    GROUP BY dept_name\n)\nSELECT dept_name\nFROM dept_salary\nWHERE avg_salary > (SELECT avg(avg_salary) FROM dept_salary)\n```\n\n[NAT]",
+  "opts": null,
+  "key": "4",
+  "sol": "Department averages: Comp. Sci. 77333.3, Finance 85000, Music 40000, Physics 91000, History 61000, Biology 72000, Elec. Eng. 80000. The average of these seven averages is about 72333.3. Departments above it: Comp. Sci., Finance, Physics, Elec. Eng., so 4 rows.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 18,
+  "ch": "DBW.REL",
+  "stem": "Consider three data items D1, D2, and D3, and the following execution schedule of transactions T1, T2, and T3. In the diagram, R(D) and W(D) denote the actions reading and writing the data item D respectively. Rows are in time order.\n\n| T1 | T2 | T3 |\n|---|---|---|\n| | R(D3); | |\n| | R(D2); | |\n| R(D1); | W(D2); | R(D2); |\n| R(D3); | | W(D3); |\n| W(D1); | W(D2); | |\n| R(D1); | | |\n| R(D2); | W(D2); | |\n| W(D1); | | |\n\nWhich of the following statements is correct?",
+  "opts": [
+   "The schedule is serializable as T2: T3: T1",
+   "The schedule is serializable as T2: T1: T3",
+   "The schedule is serializable as T3: T2: T1",
+   "The schedule is not serializable"
+  ],
+  "key": "D",
+  "sol": "Conflict graph: T2 reads D3 before T3 writes D3 gives T2 $\\to$ T3. T3 reads D2 (row 3) before T2 writes D2 again (row 5) gives T3 $\\to$ T2. The cycle T2 $\\leftrightarrow$ T3 exists whichever way operations sharing a row are ordered, so the schedule is not conflict-serializable: option D.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 19,
+  "ch": "DBW.REL",
+  "stem": "Consider the following tables, `Projects` and `Employee_Assignment`, of a company.\n\n| project_id | department_name | budget |\n|---|---|---|\n| P101 | R&D | 150000 |\n| P102 | Marketing | 120000 |\n| P103 | Finance | 100000 |\n| P104 | R&D | 130000 |\n| P105 | HR | 80000 |\n| P106 | Finance | 90000 |\n| P107 | Marketing | 110000 |\n\n| employee_name | project_id |\n|---|---|\n| Alice | P101 |\n| Bob | P102 |\n| Charlie | P103 |\n| Alice | P104 |\n| David | P105 |\n| Eve | P106 |\n| Alice | P102 |\n| Frank | P105 |\n| Charlie | P101 |\n\nConsider the following relational algebra query:\n\n$\\Pi_{employee\\_name}\\big(\\Pi_{department\\_name,\\,employee\\_name}(Project \\bowtie Employee\\_Assignment) \\div \\Pi_{department\\_name}(Proje$ ... [expression cut off at the right page edge]\n\nChoose the correct output of above relational algebra query?",
+  "opts": [
+   "employee_name: Alice, Bob",
+   "employee_name: Alice, Charlie",
+   "employee_name: Alice",
+   "employee_name: Bob"
+  ],
+  "key": "C",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "the divisor of the division is cut off at the page edge, so the query cannot be evaluated. If the divisor were all departments {R&D, Marketing, Finance, HR} the result would be empty (nobody works in every department), which is not an option; the key (Alice) only fits a divisor such as {R&D, Marketing}.",
+  "derived": "not determinable"
+ },
+ {
+  "n": 20,
+  "ch": "DBW.REL",
+  "stem": "Consider the following relational schema:\n\n- `Student(school_id, sch_roll_no, sname, saddress)`\n- `School(school_id, sch_name, sch_address, sch_phone)`\n- `Enrolment(school_id, sch_roll_no, erollno, examname)`\n- `ExamResult(erollno, examname, marks)`\n\nWhat does the following SQL query output?\n\n```sql\nSELECT sch_name, COUNT(*)\nFROM School C, Enrolment E, ExamResult R\nWHERE E.school_id = C.school_id\n  AND E.examname = R.examname\n  AND E.erollno = R.erollno\n  AND R.marks = 100\n  AND E.school_id IN (\n      SELECT school_id\n      FROM student\n      GROUP BY school_id\n      HAVING COUNT(*) > 200\n  )\nGROUP BY sch_name\n```",
+  "opts": [
+   "for each school with more than 200 students appearing in exams, the name of the school and the number of times 100 marks scored by its students",
+   "for each student scoring 100, the name of the school",
+   "for each school with fewer than 200 students, the name of the school",
+   "count of all exams conducted"
+  ],
+  "key": "A",
+  "sol": "The subquery keeps schools that have more than 200 students. The joins pair each enrolment with its result, `marks = 100` keeps only perfect scores, and `GROUP BY sch_name` counts those scores per school. That is option A.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 21,
+  "ch": "GA.VERB",
+  "stem": "Bird : Nest :: Bee : _______",
+  "opts": [
+   "Kennel",
+   "Hammock",
+   "Hive",
+   "Lair"
+  ],
+  "key": "C",
+  "sol": "A nest is the home of a bird; the home of a bee is a hive.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 22,
+  "ch": "GA.QUANT",
+  "stem": "Let $p_1$ and $p_2$ denote two arbitrary prime numbers. Which one of the following statements is correct for all values of $p_1$ and $p_2$?",
+  "opts": [
+   "$p_1 + p_2$ is not a prime number",
+   "$p_1 p_2$ is not a prime number",
+   "$p_1 + p_2 + 1$ is a prime number",
+   "$p_1 p_2 + 1$ is a prime number"
+  ],
+  "key": "B",
+  "sol": "$p_1p_2$ has the proper divisors $p_1$ and $p_2$, so it is never prime (note $p_1=p_2$ is allowed, still composite). The others fail: $2+3=5$ is prime, $7+7+1=15$ is not prime, $3\\cdot3+1=10$ is not prime.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 23,
+  "ch": "GA.SPAT",
+  "stem": "In the given figure, PQRS is a square of side 2 cm and PLMN is a rectangle. The corner L of the rectangle is on the side QR. Side MN of the rectangle passes through the corner S of the square. What is the area (in cm$^2$) of the rectangle PLMN?",
+  "opts": [
+   "$2\\sqrt{2}$",
+   "4",
+   "2",
+   "8"
+  ],
+  "key": "B",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "depends on a figure that is not in the PDF text. A text-only reading (vertices of PQRS in order, L on QR, S on MN) gives area 4, which matches the key B, but the figure itself is not reproduced.",
+  "derived": "4 (text-only reading)"
+ },
+ {
+  "n": 24,
+  "ch": "GA.ANAL",
+  "stem": "The diagram shows a river system consisting of 7 segments, marked P, Q, R, S, T, U, and V. It splits the land into 5 zones, marked Z1, Z2, Z3, Z4, and Z5. We need to connect these zones using the least number of bridges. Out of the following options, which one is correct?",
+  "opts": [
+   "Bridges on P, Q, and T",
+   "Bridges on P, Q, S, and T",
+   "Bridges on Q, R, T, and V",
+   "Bridges on P, Q, S, U, and V"
+  ],
+  "key": "C",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "depends on the river-system diagram (which segments border which zones), which is not in the PDF text.",
+  "derived": "not determinable"
+ },
+ {
+  "n": 25,
+  "ch": "GA.QUANT",
+  "stem": "In the sequence 6, 9, 14, x, 30, 41, a possible value of x is:",
+  "opts": [
+   "25",
+   "21",
+   "18",
+   "20"
+  ],
+  "key": "B",
+  "sol": "Consecutive differences are $3, 5, x-14, 30-x, 11$. Taking the odd numbers $3,5,7,9,11$ gives $x-14=7$, so $x=21$, and then $30-21=9$ fits.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 26,
+  "ch": "GA.VERB",
+  "stem": "The CEO's decision to downsize the workforce was considered myopic because it sacrificed long-term stability to accommodate short-term gains. Select the most appropriate option that can replace the word \"myopic\" without changing the meaning of the sentence.",
+  "opts": [
+   "visionary",
+   "shortsighted",
+   "progressive",
+   "innovative"
+  ],
+  "key": "B",
+  "sol": "'Myopic' means lacking long-term vision, which is 'shortsighted'. The other options mean the opposite.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 27,
+  "ch": "GA.QUANT",
+  "stem": "A fair six-faced dice, with the faces labelled '1', '2', '3', '4', '5', and '6', is rolled thrice. What is the probability of rolling '6' exactly once?",
+  "opts": [
+   "75/216",
+   "1/6",
+   "1/18",
+   "25/216"
+  ],
+  "key": "A",
+  "sol": "$\\binom{3}{1}\\cdot\\frac16\\cdot\\left(\\frac56\\right)^2=\\frac{75}{216}$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 28,
+  "ch": "GA.QUANT",
+  "stem": "Consider the following sample of numbers: 9, 18, 11, 14, 15, 17, 10, 69, 11, 13\nThe median of the sample is",
+  "opts": [
+   "14",
+   "13.5",
+   "11",
+   "18.7"
+  ],
+  "key": "B",
+  "sol": "Sorted: 9, 10, 11, 11, 13, 14, 15, 17, 18, 69. With 10 values the median is the mean of the 5th and 6th: $(13+14)/2=13.5$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 29,
+  "ch": "GA.VERB",
+  "stem": "In the given text, the blanks are numbered (i)-(iv). Select the best match for all the blanks.\nSteve was advised to keep his head __(i)__ before heading __(ii)__ to bat; for, while he had a head __(iii)__ batting, he could only do so with a cool head __(iv)__ his shoulders.",
+  "opts": [
+   "(i) down (ii) down (iii) on (iv) for",
+   "(i) on (ii) down (iii) for (iv) on",
+   "(i) down (ii) out (iii) for (iv) on",
+   "(i) on (ii) out (iii) on (iv) for"
+  ],
+  "key": "C",
+  "sol": "The idioms are 'keep his head down', 'heading out to bat', 'a head for batting' and 'a cool head on his shoulders': (i) down, (ii) out, (iii) for, (iv) on.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 30,
+  "ch": "GA.SPAT",
+  "stem": "The least number of squares to be added in a $3 \\times 3$ grid to make the diagonal AB a line of symmetry is:",
+  "opts": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "key": "B",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "depends on a grid figure showing which squares are already filled and where diagonal AB lies; the figure is not in the PDF text.",
+  "derived": "not determinable"
+ },
+ {
+  "n": 31,
+  "ch": "CO.LIM",
+  "stem": "Evaluate the following limit:\n$$\\lim_{x\\to\\infty}\\frac{\\sqrt{x^2+x+1}-\\sqrt{x^2+1}}{x^2+1}$$\n[NAT]",
+  "opts": null,
+  "key": "0.5",
+  "sol": "The numerator tends to $\\frac{x}{\\sqrt{x^2+x+1}+\\sqrt{x^2+1}}\\to\\frac12$, while the denominator $x^2+1\\to\\infty$. The limit is $0$. (The PDF key 0.5 is the limit of the numerator alone, or of the expression with denominator $x+1$.)",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 32,
+  "ch": "CO.OPT",
+  "stem": "Consider the function $f(x) = x^3 - 6x$. Which of the following options are correct?",
+  "opts": [
+   "f has neither local maxima nor local minima.",
+   "f has a local maximum at $x = \\sqrt{2}$ and local minimum at $x = -\\sqrt{2}$.",
+   "f has a local maximum at $x = -\\sqrt{2}$ and local minimum at $x = \\sqrt{2}$.",
+   "f has a local minimum at $x = -\\sqrt{2}$.",
+   "f has a global maximum.",
+   "f has two critical points."
+  ],
+  "key": "C,F",
+  "sol": "$f'(x)=3x^2-6=0$ gives the two critical points $x=\\pm\\sqrt2$ (F). $f''(x)=6x$ is negative at $-\\sqrt2$ (local maximum) and positive at $\\sqrt2$ (local minimum): C. A cubic has no global maximum (E false), and B, D, A are false.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 33,
+  "ch": "CO.LIM",
+  "stem": "Consider the function $f(x) = x + \\frac{1}{x}$. Which of the following options are correct?",
+  "opts": [
+   "f is an injective function, if the domain of f is $\\mathbb{R} \\setminus \\{0\\}$.",
+   "f is an injective function if the domain of f is $\\mathbb{N}$.",
+   "f is an injective function if the domain of f is $\\mathbb{Q} \\setminus \\{0\\}$.",
+   "f is an injective function if the domain of f is $\\mathbb{Z} \\setminus \\{0\\}$."
+  ],
+  "key": "C,D",
+  "sol": "$f(a)=f(b)$ with $a\\ne b$ forces $ab=1$. On $\\mathbb{R}\\setminus\\{0\\}$ and on $\\mathbb{Q}\\setminus\\{0\\}$ this happens (for example $f(2)=f(1/2)=5/2$), so f is not injective there. On $\\mathbb{N}$ and $\\mathbb{Z}\\setminus\\{0\\}$ the only solution of $ab=1$ is $a=b=\\pm1$, so f is injective. Correct options: B and D; the PDF key C, D wrongly includes C.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 34,
+  "ch": "CO.LIM",
+  "stem": "If $\\lim_{x\\to4}\\frac{f(x)-5}{x-2}=1$, find $\\lim_{x\\to4}f(x)$. [NAT]",
+  "opts": null,
+  "key": "7",
+  "sol": "As $x\\to4$ the denominator tends to 2, so $f(x)-5=\\frac{f(x)-5}{x-2}(x-2)\\to1\\cdot2=2$. Hence $\\lim f(x)=7$.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 35,
+  "ch": "CO.TAY",
+  "stem": "Find the best linear approximation of $f(x) = \\sqrt{1+x}$ at $x = 0$.",
+  "opts": [
+   "$1+x$",
+   "$x$",
+   "$1+\\frac{x}{2}$",
+   "$1-\\frac{x}{2}$"
+  ],
+  "key": "C",
+  "sol": "$f(0)=1$ and $f'(x)=\\frac1{2\\sqrt{1+x}}$, so $f'(0)=\\frac12$. The linearisation is $1+\\frac x2$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 36,
+  "ch": "CO.LIM",
+  "stem": "Consider the function:\n$$f(x)=\\begin{cases}\\sin(2x), & x\\le 0\\\\ mx, & x>0\\end{cases}$$",
+  "opts": [
+   "f is continuous for exactly one value of m",
+   "f is continuous for any m",
+   "f is differentiable for exactly one value of m",
+   "f is differentiable for any m"
+  ],
+  "key": "A,D",
+  "sol": "At $x=0$ both pieces equal 0, so f is continuous for every m. The left derivative is $2\\cos0=2$ and the right derivative is $m$, so f is differentiable only for $m=2$. Correct options: B and C. The PDF key A, D is incorrect.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 37,
+  "ch": "CO.LIM",
+  "stem": "The line $y = x$ is a tangent to the parabola $y = x^2 + C$. Find $C$. [NAT]",
+  "opts": null,
+  "key": "0.25",
+  "sol": "Tangency means $x^2+C=x$ has a double root: the discriminant $1-4C=0$, so $C=\\frac14$.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 38,
+  "ch": "CO.TAY",
+  "stem": "Find values for the constants $a$, $b$ and $c$ that will make $f(x) = 1 - \\cos x$ and $g(x) = a + bx + cx^2$ satisfy the conditions $f(0) = g(0)$, $f'(0) = g'(0)$, $f''(0) = g''(0)$. Enter $a^2 + b^2 + c^2$ as your answer. [NAT]",
+  "opts": null,
+  "key": "1.25",
+  "sol": "$f(0)=0$ gives $a=0$; $f'(0)=\\sin0=0$ gives $b=0$; $f''(0)=\\cos0=1=2c$ gives $c=\\frac12$. So $a^2+b^2+c^2=\\frac14$. The PDF key 1.25 does not follow.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 39,
+  "ch": "CO.OPT",
+  "stem": "Consider the function f defined on the domain $(0, 1)$: $f(x) = x^m(x - 1)^n$.",
+  "opts": [
+   "f has a stationary point in the interval (0,1)",
+   "f has a minimum in the interval (0,1)",
+   "f has a maximum in the interval (0,1)",
+   "f has a maximum in the interval (0,1) if n is even and a minimum if n is odd."
+  ],
+  "key": "A",
+  "sol": "The stem does not state the range of $m, n$; assume positive integers. Then $f(0)=f(1)=0$, so by Rolle's theorem f has a stationary point inside (0,1) (A). On (0,1), $x^m>0$ and $(x-1)^n$ has the sign $(-1)^n$, so f keeps one sign: for even $n$ it is positive and has an interior maximum, for odd $n$ it is negative and has an interior minimum. So D is also true, while B and C hold only for one parity of $n$. The PDF key lists A only.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 40,
+  "ch": "CO.LIM",
+  "stem": "Consider the function:\n$$f(x)=\\begin{cases}\\dfrac{|(x-1)(x-3)|}{x-3}, & x\\ne 3\\\\[2mm] 2, & x=3\\end{cases}$$",
+  "opts": [
+   "f is continuous at $x=3$",
+   "f is discontinuous at $x=3$",
+   "f is differentiable at $x=3$",
+   "f is not differentiable at $x=3$",
+   "f is continuous at $x=1$",
+   "f is discontinuous at $x=1$"
+  ],
+  "key": "B,E",
+  "sol": "Near 3: from the right $f(x)=x-1\\to2$; from the left $x-3<0$ and $x-1>0$ so $f(x)=-(x-1)\\to-2$. The one-sided limits differ, so f is discontinuous at 3 (B) and hence not differentiable there (D). Near $x=1$ (with $x<3$) $f(x)=-|x-1|$, which is continuous at 1 (E). Correct options: B, D, E; the PDF key B, E omits D.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 41,
+  "ch": "PRS.CNT",
+  "stem": "There are thirteen flights from Delhi to Bangalore, and then six flights from Bangalore to Chennai. Saumya wants to fly from Delhi to Bangalore and then to Chennai. How many choices does she have for her flight plan?",
+  "opts": [
+   "19",
+   "72",
+   "78",
+   "39"
+  ],
+  "key": "C",
+  "sol": "By the multiplication principle, $13\\times6=78$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 42,
+  "ch": "PRS.PROB",
+  "stem": "Which of the following is/are a random experiment?",
+  "opts": [
+   "Tossing two coins.",
+   "Rolling a die.",
+   "Guessing an answer in multiple choice questions.",
+   "Choosing a number at random from 1 to 20."
+  ],
+  "key": "A,B,C,D",
+  "sol": "Each is a repeatable procedure with several possible outcomes that cannot be predicted with certainty, so all four are random experiments.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 43,
+  "ch": "PRS.PROB",
+  "stem": "Let A and B be the two events of a random experiment. Probability that at least one of the two events A and B will occur is 0.6. Probabilities of event A occurring and B occurring are 0.3 and 0.4 respectively. Then, find the probability that event A will occur given that event B has occurred. (Enter to two decimal places). [NAT]",
+  "opts": null,
+  "key": "0.25",
+  "sol": "$P(A\\cap B)=0.3+0.4-0.6=0.1$, so $P(A\\mid B)=0.1/0.4=0.25$.",
+  "mode": "C",
+  "tol": 0.005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 44,
+  "ch": "PRS.DRV",
+  "stem": "Suppose that $P(X=a)=p$ and $P(X=b)=1-p$. Identify the distribution of $\\frac{X-b}{a-b}$.",
+  "opts": [
+   "Binomial distribution",
+   "Negative Binomial distribution",
+   "Bernoulli distribution",
+   "Cannot determine"
+  ],
+  "key": "C",
+  "sol": "When $X=a$ the transformed variable is 1 (probability $p$); when $X=b$ it is 0 (probability $1-p$). It takes the values 0 and 1 only, so it is Bernoulli($p$).",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 45,
+  "ch": "PRS.CRV",
+  "stem": "The total duration of a Test cricket match between any two cricket team is uniformly distributed between 90 overs and 450 overs, both inclusive. What is the probability that the duration of a test cricket match between two cricket team is more than 400 overs? (Enter to two decimal places). [NAT]",
+  "opts": null,
+  "key": "0.14",
+  "sol": "$P(X>400)=\\frac{450-400}{450-90}=\\frac{50}{360}\\approx0.1389\\approx0.14$.",
+  "mode": "C",
+  "tol": 0.005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 46,
+  "ch": "PRS.INF",
+  "stem": "Let X be a random variable with PDF:\n$$f_X(x)=(\\lambda\\alpha)x^{\\alpha-1}e^{-\\lambda x^{\\alpha}},\\quad x>0$$\nwhere $\\lambda$ and $\\alpha$ are constants. Find the maximum likelihood estimator of $\\lambda$ for $n$ i.i.d. samples of X.",
+  "opts": [
+   "$\\dfrac{\\sum_{i=1}^n X_i^\\alpha}{n}$",
+   "$\\dfrac{n}{\\sum_{i=1}^n X_i^\\alpha}$",
+   "$\\alpha\\sum_{i=1}^n X_i^\\alpha$",
+   "$\\dfrac{\\sum_{i=1}^n X_i^\\alpha}{n\\alpha}$"
+  ],
+  "key": "B",
+  "sol": "Log-likelihood: $\\ell(\\lambda)=n\\ln\\lambda+\\text{const}-\\lambda\\sum X_i^\\alpha$. Setting $\\ell'(\\lambda)=\\frac n\\lambda-\\sum X_i^\\alpha=0$ gives $\\hat\\lambda=\\frac{n}{\\sum X_i^\\alpha}$.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 47,
+  "ch": "PRS.MOM",
+  "stem": "Let X be a random variable that follows a normal distribution $N(\\mu = 5, \\sigma^2 = 4)$ and Y is a random variable that follows $N(0, 1)$. Given $x = 5$, find $E(Y|X = 5)$. Assume X and Y are independent. [NAT]",
+  "opts": null,
+  "key": "0",
+  "sol": "Independence gives $E(Y\\mid X=5)=E(Y)=0$.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 48,
+  "ch": "PRS.PROB",
+  "stem": "In a population, 60 percent of the people are male and 40 percent are female. According to a report, 1.69 percent of all females are color blind and 8.73 percent of all males are color blind. What is the probability that a person randomly chosen from the population will be color blind? (Enter upto three decimal accuracy). [NAT]",
+  "opts": null,
+  "key": "0.059",
+  "sol": "Law of total probability: $0.6\\times0.0873+0.4\\times0.0169=0.05238+0.00676=0.05914\\approx0.059$.",
+  "mode": "C",
+  "tol": 0.0005,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 49,
+  "ch": "PRS.MOM",
+  "stem": "Consider $n$ bits $X_1, \\ldots, X_n$, where each bit is equally likely to be 0 or 1, and is independent of all other bits. Define $n-1$ bits $Y_i = X_iX_{i+1}$, $i = 1, \\ldots, n-1$. Let $N_X$ and $N_Y$ be the number of 1s in $\\{X_1, \\ldots, X_n\\}$ and $\\{Y_1, \\ldots, Y_{n-1}\\}$ respectively. Assuming $n = 100$, what is the expected value of $N_X$ and $N_Y$?",
+  "opts": [
+   "$E(N_X)=50,\\ E(N_Y)=49.5$",
+   "$E(N_X)=50,\\ E(N_Y)=24.75$",
+   "$E(N_X)=50,\\ E(N_Y)=50$",
+   "$E(N_X)=50,\\ E(N_Y)=99$"
+  ],
+  "key": "B",
+  "sol": "$E(N_X)=100\\cdot\\frac12=50$. Each $Y_i=X_iX_{i+1}$ equals 1 with probability $\\frac14$, so $E(N_Y)=99\\cdot\\frac14=24.75$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 50,
+  "ch": "PRS.MOM",
+  "stem": "The joint PMF of two discrete random variables X and Y is given. What is the value of $P(0 < X < 1 | Y > 0)$? (Enter to one decimal place). [NAT]",
+  "opts": null,
+  "key": "0.6",
+  "sol": "",
+  "mode": "Q",
+  "tol": null,
+  "reason": "the joint PMF table is not present in the PDF, so the question cannot be answered or checked.",
+  "derived": "not determinable"
+ },
+ {
+  "n": 51,
+  "ch": "LA.SYS",
+  "stem": "Select all correct options concerning a system of linear equations given by $Ax = b$ where $A$ is an $m \\times n$ matrix, $x \\in \\mathbb{R}^n$ and $b \\in \\mathbb{R}^m$.",
+  "opts": [
+   "The solution to this system is given by $A^{-1}b$.",
+   "The system has a solution if and only if b is one of the columns of A.",
+   "The system has a solution if and only if b is in the column-space of A.",
+   "If this system is consistent, it can have either a unique solution or infinitely many solutions."
+  ],
+  "key": "C,D",
+  "sol": "A is false because A need not be square or invertible. B is false: $Ax=b$ is solvable exactly when b is a linear combination of the columns, not necessarily a column itself. C is the definition of consistency. D holds because a linear system has zero, one or infinitely many solutions, and a consistent one has at least one.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 52,
+  "ch": "LA.MAT",
+  "stem": "Select all idempotent matrices from the options given below.",
+  "opts": [
+   "$\\begin{bmatrix}3&-6\\\\1&-2\\end{bmatrix}$",
+   "$\\begin{bmatrix}1&-1\\\\0&1\\end{bmatrix}$",
+   "$\\begin{bmatrix}2&-2\\\\1&-1\\end{bmatrix}$",
+   "$\\begin{bmatrix}3&1\\\\-1&2\\end{bmatrix}$"
+  ],
+  "key": "A,C",
+  "sol": "Square each matrix and compare with the original. A: $\\begin{bmatrix}3&-6\\\\1&-2\\end{bmatrix}^2=\\begin{bmatrix}3&-6\\\\1&-2\\end{bmatrix}$. B squares to $\\begin{bmatrix}1&-2\\\\0&1\\end{bmatrix}$. C squares to itself. D squares to $\\begin{bmatrix}8&5\\\\-5&3\\end{bmatrix}$. So A and C are idempotent.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 53,
+  "ch": "LA.PROJ",
+  "stem": "Let A and B be two matrices such that AB is defined. Select the most appropriate statement.",
+  "opts": [
+   "$\\text{rank}(AB)=\\text{rank}(A)+\\text{rank}(B)$",
+   "$\\text{rank}(AB)=\\text{rank}(A)\\cdot\\text{rank}(B)$",
+   "$\\text{rank}(AB)=\\max(\\text{rank}(A),\\text{rank}(B))$",
+   "$\\text{rank}(AB)\\le\\min(\\text{rank}(A),\\text{rank}(B))$"
+  ],
+  "key": "D",
+  "sol": "The columns of $AB$ lie in the column space of A, and the row space of $AB$ lies in that of B, so $\\text{rank}(AB)\\le\\min(\\text{rank}(A),\\text{rank}(B))$. Taking $B=0$ shows the equalities in the other options can fail.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 54,
+  "ch": "LA.MAT",
+  "stem": "Find the number of true statements. Your answer should be between 0 and 4:\n\n- The product of two upper triangular matrices is upper triangular.\n- The product of two lower triangular matrices is lower triangular.\n- If L is a lower triangular matrix then $L^T$ is lower triangular.\n- If U is an upper triangular matrix then $U^T$ is lower triangular.\n\n[NAT]",
+  "opts": null,
+  "key": "3",
+  "sol": "Triangular matrices are closed under multiplication, so statements 1 and 2 are true. The transpose of a lower triangular matrix is upper triangular, so statement 3 is false (unless L is diagonal) and statement 4 is true. Three statements are true.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 55,
+  "ch": "LA.MAT",
+  "stem": "If A is a real matrix, select all true statements.",
+  "opts": [
+   "$A^TA$ is positive semi-definite.",
+   "$A^TA$ and $AA^T$ have the same eigenvectors.",
+   "$A^TA$ is symmetric if and only if A is symmetric.",
+   "$A^TA$ and $AA^T$ have the same non-zero eigenvalues."
+  ],
+  "key": "A,C,D",
+  "sol": "A: $x^TA^TAx=\\|Ax\\|^2\\ge0$, true. B: false; for $A=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}$ the matrices $A^TA$ and $AA^T$ do not commute, so they have different eigenvectors. C: false; $A^TA$ is symmetric for every real A (here A is not symmetric but $A^TA$ is). D: true, $AB$ and $BA$ share non-zero eigenvalues. Correct: A and D. The PDF key A, C, D wrongly includes C.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 56,
+  "ch": "LA.VS",
+  "stem": "Consider a set $V = \\{(x, y) | x, y \\in \\mathbb{R}\\}$ with the usual rule of addition borrowed from $\\mathbb{R}^2$ and scalar multiplication defined as:\n$$c(x,y)=\\begin{cases}(0,0), & c=0\\\\ \\left(\\dfrac{cx}{2},\\dfrac{y}{c}\\right), & c\\ne0\\end{cases}$$\nConsider the statements given below: P: V is closed under addition. Q: V has a zero element with respect to addition. R: $1 \\cdot v = v$ where $1 \\in \\mathbb{R}$ and $v \\in V$. S: $a(v_1 + v_2) = av_1 + av_2$. Choose all correct options.",
+  "opts": [
+   "Only P is true",
+   "Only Q is true",
+   "P, Q and S are true",
+   "Both R and S are not true"
+  ],
+  "key": "A",
+  "sol": "Addition is the usual one, so P and Q (zero element $(0,0)$) hold. R fails: $1\\cdot(x,y)=(x/2,y)\\ne(x,y)$. S holds: for $a\\ne0$, $a(v_1+v_2)=\\left(\\frac{a(x_1+x_2)}2,\\frac{y_1+y_2}a\\right)=av_1+av_2$, and for $a=0$ both sides are $(0,0)$. So exactly P, Q and S are true: option C. The PDF key A is incorrect.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 57,
+  "ch": "LA.MAT",
+  "stem": "How many orthogonal matrices of order n exist that are made up of only zeros and ones?",
+  "opts": [
+   "$n$",
+   "$n^2$",
+   "$n!$",
+   "$n^n$"
+  ],
+  "key": "C",
+  "sol": "Orthonormal columns with entries in {0,1} must each be a standard basis vector, all distinct: the matrix is a permutation matrix. There are $n!$ of them (checked by enumeration for $n\\le4$).",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 58,
+  "ch": "LA.VS",
+  "stem": "Let $S_1$ and $S_2$ be two subspaces of $\\mathbb{R}^{10}$ with dimensions 7 and 3 respectively. Let $d$ be the dimension of $S_1 \\cap S_2$.",
+  "opts": [
+   "The maximum possible value of d is 7.",
+   "The maximum possible value of d is 3.",
+   "The minimum possible value of d is 1.",
+   "The minimum possible value of d is 0."
+  ],
+  "key": "B,D",
+  "sol": "$d\\le\\min(7,3)=3$ and $d\\ge7+3-10=0$ because $\\dim(S_1+S_2)\\le10$. Both bounds are attainable, so the maximum is 3 and the minimum is 0.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 59,
+  "ch": "LA.EIG",
+  "stem": "Consider the square matrix of order n given below: All entries on the anti-diagonal (top-right to bottom-left) are 1 and all other entries are zero. Which of the following is the determinant of $A_n$?",
+  "opts": [
+   "1",
+   "-1",
+   "$(-1)^n$",
+   "$(-1)^{\\lfloor n/2\\rfloor}$"
+  ],
+  "key": "D",
+  "sol": "$A_n$ is the permutation matrix of the reversal $i\\mapsto n+1-i$, which consists of $\\lfloor n/2\\rfloor$ transpositions. Its determinant is $(-1)^{\\lfloor n/2\\rfloor}$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 60,
+  "ch": "LA.EIG",
+  "stem": "Let $A=\\begin{bmatrix}1&1\\\\1&-1\\end{bmatrix}$ be a $2\\times2$ matrix. What are the eigenvalues of $A^{13}$?",
+  "opts": [
+   "$1,-1$",
+   "$2^{6.5},-2^{6.5}$",
+   "$2^{13},-2^{13}$",
+   "$2^{6},-2^{6}$"
+  ],
+  "key": "B",
+  "sol": "$A^2=2I$, so $A^{13}=A\\,(2I)^6=64A$. The eigenvalues of A are $\\pm\\sqrt2$ (trace 0, determinant $-2$), hence those of $A^{13}$ are $\\pm64\\sqrt2=\\pm2^{6.5}$.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 61,
+  "ch": "ML.CLS",
+  "stem": "Which of the following classifiers produce a linear decision boundary in the feature space?",
+  "opts": [
+   "Perceptron",
+   "Logistic regression",
+   "Kernel SVM with Gaussian kernel",
+   "A neural network with two hidden layers that has ReLU activations"
+  ],
+  "key": "A,B",
+  "sol": "The perceptron and logistic regression decide on the sign of $w^Tx+b$, a hyperplane. A Gaussian-kernel SVM and a ReLU network with hidden layers give non-linear boundaries.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 62,
+  "ch": "ML.DR",
+  "stem": "PCA is performed on a mean-centered dataset in $\\mathbb{R}^3$. If the first principal component is $\\frac{1}{\\sqrt{6}}(1,-1,2)$, which of the following could be the second principal component?",
+  "opts": [
+   "$(0,0,0)$",
+   "$(1,1,0)$",
+   "$(0,1,2)$",
+   "$(1,1,1)$"
+  ],
+  "key": "D",
+  "sol": "Principal components are mutually orthogonal non-zero directions. Dot products with $(1,-1,2)$: $(0,0,0)\\to0$ but it is the zero vector (not a direction); $(1,1,0)\\to0$; $(0,1,2)\\to3$; $(1,1,1)\\to2$. Only $(1,1,0)$ is orthogonal (up to scaling), so B could be the second component. The PDF key D is incorrect.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 63,
+  "ch": "ML.CLS",
+  "stem": "$k:\\mathbb{R}^2\\times\\mathbb{R}^2\\to\\mathbb{R}$ is a kernel defined as:\n$$k(x,y)=(1+x^Ty)^2$$\n$\\phi:\\mathbb{R}^2\\to\\mathbb{R}^D$ is a transformation corresponding to this kernel such that $k(x,y)=\\phi(x)^T\\phi(y)$. Find $D$. [NAT]",
+  "opts": null,
+  "key": "6",
+  "sol": "Expanding $(1+x_1y_1+x_2y_2)^2$ gives the monomials $1,\\ x_1,\\ x_2,\\ x_1^2,\\ x_2^2,\\ x_1x_2$ in $x$, so $\\phi(x)=(1,\\sqrt2x_1,\\sqrt2x_2,x_1^2,x_2^2,\\sqrt2x_1x_2)$ and $D=6$.",
+  "mode": "C",
+  "tol": 0,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 64,
+  "ch": "ML.REG",
+  "stem": "What is the effect of increasing the regularization parameter $\\lambda$ in Ridge Regression?",
+  "opts": [
+   "It increases the variance and decreases the bias of the model.",
+   "It increases both bias and variance of the model.",
+   "It increases the bias and decreases the variance of the model.",
+   "It decreases both bias and variance of the model."
+  ],
+  "key": "C",
+  "sol": "A larger penalty shrinks the weights, making the model simpler: variance falls and bias rises.",
+  "mode": "K",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ },
+ {
+  "n": 65,
+  "ch": "ML.CLS",
+  "stem": "You have the following 5 data points: (0,0), (2,2), (4,4), (5,5) and (10,10), with corresponding labels A, A, B, B and A. If you use KNN with $k = 3$, what will be the predicted label for a test point at (3,3)?",
+  "opts": [
+   "A",
+   "B",
+   "Cannot be determined",
+   "A and B equally"
+  ],
+  "key": "A",
+  "sol": "Euclidean distances from (3,3): (2,2) is $\\sqrt2$, (4,4) is $\\sqrt2$, (5,5) is $2\\sqrt2$, (0,0) is $3\\sqrt2$, (10,10) is $7\\sqrt2$. The three nearest are (2,2) A, (4,4) B, (5,5) B, so the majority label is B. The PDF key A is incorrect.",
+  "mode": "C",
+  "tol": null,
+  "reason": null,
+  "derived": null
+ }
+]

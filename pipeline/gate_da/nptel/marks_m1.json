@@ -1,0 +1,284 @@
+{
+ "q_09606f80df6e": {
+  "marks": 1,
+  "mock": 1,
+  "n": 16,
+  "section": "T1M-MCQ"
+ },
+ "q_0e239a425ae2": {
+  "marks": 1,
+  "mock": 1,
+  "n": 2,
+  "section": "T1M-MCQ"
+ },
+ "q_148db570fdb7": {
+  "marks": 2,
+  "mock": 1,
+  "n": 41,
+  "section": "T2M-MCQ"
+ },
+ "q_1849c7dbfa06": {
+  "marks": 1,
+  "mock": 1,
+  "n": 15,
+  "section": "T1M-MCQ"
+ },
+ "q_1a3116674769": {
+  "marks": 2,
+  "mock": 1,
+  "n": 45,
+  "section": "T2M-NAT"
+ },
+ "q_24073fe21e0b": {
+  "marks": 2,
+  "mock": 1,
+  "n": 64,
+  "section": "T2M-MCQ"
+ },
+ "q_261ec6b60889": {
+  "marks": 1,
+  "mock": 1,
+  "n": 11,
+  "section": "T1M-MCQ"
+ },
+ "q_32e629504011": {
+  "marks": 1,
+  "mock": 1,
+  "n": 9,
+  "section": "T1M-MCQ"
+ },
+ "q_37db7e75524f": {
+  "marks": 1,
+  "mock": 1,
+  "n": 22,
+  "section": "GA1"
+ },
+ "q_387574f6c866": {
+  "marks": 2,
+  "mock": 1,
+  "n": 29,
+  "section": "GA2"
+ },
+ "q_3aa48b72a38b": {
+  "marks": 1,
+  "mock": 1,
+  "n": 35,
+  "section": "T1M-MCQ"
+ },
+ "q_4b2e080cce44": {
+  "marks": 1,
+  "mock": 1,
+  "n": 21,
+  "section": "GA1"
+ },
+ "q_4bdf73bd3db4": {
+  "marks": 2,
+  "mock": 1,
+  "n": 27,
+  "section": "GA2"
+ },
+ "q_652a8c164c43": {
+  "marks": 2,
+  "mock": 1,
+  "n": 26,
+  "section": "GA2"
+ },
+ "q_6f88ffe92bf7": {
+  "marks": 1,
+  "mock": 1,
+  "n": 14,
+  "section": "T1M-MCQ"
+ },
+ "q_7d92653ddba2": {
+  "marks": 1,
+  "mock": 1,
+  "n": 34,
+  "section": "T1M-NAT"
+ },
+ "q_7e2b475f9b1f": {
+  "marks": 2,
+  "mock": 1,
+  "n": 28,
+  "section": "GA2"
+ },
+ "q_890b6bc6fc1f": {
+  "marks": 1,
+  "mock": 1,
+  "n": 4,
+  "section": "T1M-MCQ"
+ },
+ "q_8a8d938ce606": {
+  "marks": 1,
+  "mock": 1,
+  "n": 7,
+  "section": "T1M-MCQ"
+ },
+ "q_8d7b23c1592e": {
+  "marks": 1,
+  "mock": 1,
+  "n": 5,
+  "section": "T1M-MCQ"
+ },
+ "q_9352101646e1": {
+  "marks": 2,
+  "mock": 1,
+  "n": 48,
+  "section": "T2M-NAT"
+ },
+ "q_9b1bd06f4d14": {
+  "marks": 2,
+  "mock": 1,
+  "n": 43,
+  "section": "T2M-NAT"
+ },
+ "q_9c430a624ad2": {
+  "marks": 2,
+  "mock": 1,
+  "n": 60,
+  "section": "T2M-MCQ"
+ },
+ "q_a9931312d3b5": {
+  "marks": 1,
+  "mock": 1,
+  "n": 25,
+  "section": "GA1"
+ },
+ "q_abc0ee0134b4": {
+  "marks": 1,
+  "mock": 1,
+  "n": 6,
+  "section": "T1M-NAT"
+ },
+ "q_aca1aa67741c": {
+  "marks": 1,
+  "mock": 1,
+  "n": 8,
+  "section": "T1M-NAT"
+ },
+ "q_ade0b3dff6c5": {
+  "marks": 2,
+  "mock": 1,
+  "n": 54,
+  "section": "T2M-NAT"
+ },
+ "q_b0439c9ef999": {
+  "marks": 2,
+  "mock": 1,
+  "n": 52,
+  "section": "T2M-MSQ"
+ },
+ "q_b6930e4acd99": {
+  "marks": 2,
+  "mock": 1,
+  "n": 61,
+  "section": "T2M-MSQ"
+ },
+ "q_bd006a5ff38e": {
+  "marks": 1,
+  "mock": 1,
+  "n": 12,
+  "section": "T1M-NAT"
+ },
+ "q_c096f93cf185": {
+  "marks": 2,
+  "mock": 1,
+  "n": 51,
+  "section": "T2M-MSQ"
+ },
+ "q_c1c7f2b5e85a": {
+  "marks": 2,
+  "mock": 1,
+  "n": 53,
+  "section": "T2M-MCQ"
+ },
+ "q_c52133f0ba85": {
+  "marks": 1,
+  "mock": 1,
+  "n": 20,
+  "section": "T1M-MCQ"
+ },
+ "q_ca77d2d8694b": {
+  "marks": 1,
+  "mock": 1,
+  "n": 32,
+  "section": "T1M-MSQ"
+ },
+ "q_cdb5a941989f": {
+  "marks": 1,
+  "mock": 1,
+  "n": 10,
+  "section": "T1M-MCQ"
+ },
+ "q_d0807d08a7de": {
+  "marks": 2,
+  "mock": 1,
+  "n": 46,
+  "section": "T2M-MCQ"
+ },
+ "q_d6f443e46c4d": {
+  "marks": 2,
+  "mock": 1,
+  "n": 58,
+  "section": "T2M-MSQ"
+ },
+ "q_da3647c453c2": {
+  "marks": 1,
+  "mock": 1,
+  "n": 18,
+  "section": "T1M-MCQ"
+ },
+ "q_db396e178eed": {
+  "marks": 2,
+  "mock": 1,
+  "n": 57,
+  "section": "T2M-MCQ"
+ },
+ "q_dc2993d256e9": {
+  "marks": 2,
+  "mock": 1,
+  "n": 47,
+  "section": "T2M-NAT"
+ },
+ "q_dd5cbb51fe48": {
+  "marks": 2,
+  "mock": 1,
+  "n": 59,
+  "section": "T2M-MCQ"
+ },
+ "q_ea8f67ed4cb1": {
+  "marks": 1,
+  "mock": 1,
+  "n": 17,
+  "section": "T1M-NAT"
+ },
+ "q_ebd3fc638cef": {
+  "marks": 2,
+  "mock": 1,
+  "n": 37,
+  "section": "T2M-NAT"
+ },
+ "q_f100732f3608": {
+  "marks": 2,
+  "mock": 1,
+  "n": 49,
+  "section": "T2M-MCQ"
+ },
+ "q_f10d5298e8fb": {
+  "marks": 2,
+  "mock": 1,
+  "n": 63,
+  "section": "T2M-NAT"
+ },
+ "q_f779c538bd3a": {
+  "marks": 2,
+  "mock": 1,
+  "n": 42,
+  "section": "T2M-MSQ"
+ },
+ "q_f8f932e4800d": {
+  "marks": 2,
+  "mock": 1,
+  "n": 44,
+  "section": "T2M-MCQ"
+ }
+}

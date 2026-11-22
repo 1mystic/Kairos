@@ -1,0 +1,316 @@
+[
+ {
+  "mock": 1,
+  "n": 1,
+  "id": "q_04fabee76de7",
+  "chapter": "PDS.PY",
+  "type": "NVQ",
+  "pdf_key": "26",
+  "stem": "Consider the following python program:\n\n```python\ndef jumble(x, y):\n    x = 2 * x + y\n    return x\n\nx = 4; y = 2\ny = jumble(y, x)\nx = jumble(y, x)\nprint(x)\n```\n\nWhat is the output of the given code? [NAT]",
+  "options": null,
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "20",
+  "derivation": "Trace: `y = jumble(2, 4)` computes $2\\cdot2+4=8$, so `y = 8` (the global `x` is unchanged, still 4). Then `x = jumble(8, 4)` gives $2\\cdot8+4=20$. The program prints 20."
+ },
+ {
+  "mock": 1,
+  "n": 3,
+  "id": "q_206443a199ae",
+  "chapter": "PDS.PY",
+  "type": "NVQ",
+  "pdf_key": "5",
+  "stem": "Consider the following Python program:\n\n```python\nsum_value = 0.0\nj = 1.0\ni = 2.0\nwhile i / j > 0.0625:\n    j = j + j\n    sum_value = sum_value + i / j\nprint(sum_value)\n```\n\nThe number of times the variable `sum_value` will be printed when the above program is executed is: [NAT]",
+  "options": null,
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "1",
+  "derivation": "The `print` statement is outside the loop, so it runs exactly once and `sum_value` is printed once. (The loop body runs 5 times: $i/j$ takes the values $2,1,0.5,0.25,0.125$ before dropping to $0.0625$, which is not $>0.0625$.) The PDF key 5 equals the number of loop iterations, not the number of prints."
+ },
+ {
+  "mock": 1,
+  "n": 13,
+  "id": "q_fc43f6d12a43",
+  "chapter": "DBW.REL",
+  "type": "NVQ",
+  "pdf_key": "5",
+  "stem": "Consider the relation `student` shown in the below table:\n\n| Roll no | Name | marks |\n|---|---|---|\n| 1 | Ram | 50 |\n| 2 | Rakesh | 65 |\n| 3 | Ram | 45 |\n| 4 | Pranav | 89 |\n| 5 | Rakesh | 99 |\n| 6 | Emily | 99 |\n| 7 | Grace | 100 |\n| 8 | Lily | 95 |\n\nWhat is the number of tuples returned by the following relational algebra expression: $\\Pi_{name}(\\sigma_{marks>50}(s$ ... [expression cut off at the right page edge] $\\Pi_{name}(\\sigma_{marks\\le 50}(student))$? [NAT]",
+  "options": null,
+  "category": "quarantine",
+  "reason": "relational algebra expression is truncated at the page edge: the operator between the two projections is not shown. If it is set difference the answer is 5 (matches the key); union would give 6, intersection 0.",
+  "derived_answer": "5 if the hidden operator is '-' (names with marks>50 minus names with marks<=50: Rakesh, Pranav, Emily, Grace, Lily)",
+  "derivation": ""
+ },
+ {
+  "mock": 1,
+  "n": 19,
+  "id": "q_05aa2517e94e",
+  "chapter": "DBW.REL",
+  "type": "SCQ",
+  "pdf_key": "C",
+  "stem": "Consider the following tables, `Projects` and `Employee_Assignment`, of a company.\n\n| project_id | department_name | budget |\n|---|---|---|\n| P101 | R&D | 150000 |\n| P102 | Marketing | 120000 |\n| P103 | Finance | 100000 |\n| P104 | R&D | 130000 |\n| P105 | HR | 80000 |\n| P106 | Finance | 90000 |\n| P107 | Marketing | 110000 |\n\n| employee_name | project_id |\n|---|---|\n| Alice | P101 |\n| Bob | P102 |\n| Charlie | P103 |\n| Alice | P104 |\n| David | P105 |\n| Eve | P106 |\n| Alice | P102 |\n| Frank | P105 |\n| Charlie | P101 |\n\nConsider the following relational algebra query:\n\n$\\Pi_{employee\\_name}\\big(\\Pi_{department\\_name,\\,employee\\_name}(Project \\bowtie Employee\\_Assignment) \\div \\Pi_{department\\_name}(Proje$ ... [expression cut off at the right page edge]\n\nChoose the correct output of above relational algebra query?",
+  "options": [
+   "employee_name: Alice, Bob",
+   "employee_name: Alice, Charlie",
+   "employee_name: Alice",
+   "employee_name: Bob"
+  ],
+  "category": "quarantine",
+  "reason": "the divisor of the division is cut off at the page edge, so the query cannot be evaluated. If the divisor were all departments {R&D, Marketing, Finance, HR} the result would be empty (nobody works in every department), which is not an option; the key (Alice) only fits a divisor such as {R&D, Marketing}.",
+  "derived_answer": "not determinable",
+  "derivation": ""
+ },
+ {
+  "mock": 1,
+  "n": 23,
+  "id": "q_f6e138f66a06",
+  "chapter": "GA.SPAT",
+  "type": "SCQ",
+  "pdf_key": "B",
+  "stem": "In the given figure, PQRS is a square of side 2 cm and PLMN is a rectangle. The corner L of the rectangle is on the side QR. Side MN of the rectangle passes through the corner S of the square. What is the area (in cm$^2$) of the rectangle PLMN?",
+  "options": [
+   "$2\\sqrt{2}$",
+   "4",
+   "2",
+   "8"
+  ],
+  "category": "quarantine",
+  "reason": "depends on a figure that is not in the PDF text. A text-only reading (vertices of PQRS in order, L on QR, S on MN) gives area 4, which matches the key B, but the figure itself is not reproduced.",
+  "derived_answer": "4 (text-only reading)",
+  "derivation": ""
+ },
+ {
+  "mock": 1,
+  "n": 24,
+  "id": "q_7c459586af3d",
+  "chapter": "GA.ANAL",
+  "type": "SCQ",
+  "pdf_key": "C",
+  "stem": "The diagram shows a river system consisting of 7 segments, marked P, Q, R, S, T, U, and V. It splits the land into 5 zones, marked Z1, Z2, Z3, Z4, and Z5. We need to connect these zones using the least number of bridges. Out of the following options, which one is correct?",
+  "options": [
+   "Bridges on P, Q, and T",
+   "Bridges on P, Q, S, and T",
+   "Bridges on Q, R, T, and V",
+   "Bridges on P, Q, S, U, and V"
+  ],
+  "category": "quarantine",
+  "reason": "depends on the river-system diagram (which segments border which zones), which is not in the PDF text.",
+  "derived_answer": "not determinable",
+  "derivation": ""
+ },
+ {
+  "mock": 1,
+  "n": 30,
+  "id": "q_1c44af9e13b0",
+  "chapter": "GA.SPAT",
+  "type": "SCQ",
+  "pdf_key": "B",
+  "stem": "The least number of squares to be added in a $3 \\times 3$ grid to make the diagonal AB a line of symmetry is:",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "category": "quarantine",
+  "reason": "depends on a grid figure showing which squares are already filled and where diagonal AB lies; the figure is not in the PDF text.",
+  "derived_answer": "not determinable",
+  "derivation": ""
+ },
+ {
+  "mock": 1,
+  "n": 31,
+  "id": "q_21312a5f9da5",
+  "chapter": "CO.LIM",
+  "type": "NVQ",
+  "pdf_key": "0.5",
+  "stem": "Evaluate the following limit:\n$$\\lim_{x\\to\\infty}\\frac{\\sqrt{x^2+x+1}-\\sqrt{x^2+1}}{x^2+1}$$\n[NAT]",
+  "options": null,
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "0",
+  "derivation": "The numerator tends to $\\frac{x}{\\sqrt{x^2+x+1}+\\sqrt{x^2+1}}\\to\\frac12$, while the denominator $x^2+1\\to\\infty$. The limit is $0$. (The PDF key 0.5 is the limit of the numerator alone, or of the expression with denominator $x+1$.)"
+ },
+ {
+  "mock": 1,
+  "n": 33,
+  "id": "q_6dc8c6623461",
+  "chapter": "CO.LIM",
+  "type": "MSQ",
+  "pdf_key": "C,D",
+  "stem": "Consider the function $f(x) = x + \\frac{1}{x}$. Which of the following options are correct?",
+  "options": [
+   "f is an injective function, if the domain of f is $\\mathbb{R} \\setminus \\{0\\}$.",
+   "f is an injective function if the domain of f is $\\mathbb{N}$.",
+   "f is an injective function if the domain of f is $\\mathbb{Q} \\setminus \\{0\\}$.",
+   "f is an injective function if the domain of f is $\\mathbb{Z} \\setminus \\{0\\}$."
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "B,D",
+  "derivation": "$f(a)=f(b)$ with $a\\ne b$ forces $ab=1$. On $\\mathbb{R}\\setminus\\{0\\}$ and on $\\mathbb{Q}\\setminus\\{0\\}$ this happens (for example $f(2)=f(1/2)=5/2$), so f is not injective there. On $\\mathbb{N}$ and $\\mathbb{Z}\\setminus\\{0\\}$ the only solution of $ab=1$ is $a=b=\\pm1$, so f is injective. Correct options: B and D; the PDF key C, D wrongly includes C."
+ },
+ {
+  "mock": 1,
+  "n": 36,
+  "id": "q_172e1541ab64",
+  "chapter": "CO.LIM",
+  "type": "MSQ",
+  "pdf_key": "A,D",
+  "stem": "Consider the function:\n$$f(x)=\\begin{cases}\\sin(2x), & x\\le 0\\\\ mx, & x>0\\end{cases}$$",
+  "options": [
+   "f is continuous for exactly one value of m",
+   "f is continuous for any m",
+   "f is differentiable for exactly one value of m",
+   "f is differentiable for any m"
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "B,C",
+  "derivation": "At $x=0$ both pieces equal 0, so f is continuous for every m. The left derivative is $2\\cos0=2$ and the right derivative is $m$, so f is differentiable only for $m=2$. Correct options: B and C. The PDF key A, D is incorrect."
+ },
+ {
+  "mock": 1,
+  "n": 38,
+  "id": "q_a5b7f1f48b07",
+  "chapter": "CO.TAY",
+  "type": "NVQ",
+  "pdf_key": "1.25",
+  "stem": "Find values for the constants $a$, $b$ and $c$ that will make $f(x) = 1 - \\cos x$ and $g(x) = a + bx + cx^2$ satisfy the conditions $f(0) = g(0)$, $f'(0) = g'(0)$, $f''(0) = g''(0)$. Enter $a^2 + b^2 + c^2$ as your answer. [NAT]",
+  "options": null,
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "0.25",
+  "derivation": "$f(0)=0$ gives $a=0$; $f'(0)=\\sin0=0$ gives $b=0$; $f''(0)=\\cos0=1=2c$ gives $c=\\frac12$. So $a^2+b^2+c^2=\\frac14$. The PDF key 1.25 does not follow."
+ },
+ {
+  "mock": 1,
+  "n": 39,
+  "id": "q_5432340e25a2",
+  "chapter": "CO.OPT",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "Consider the function f defined on the domain $(0, 1)$: $f(x) = x^m(x - 1)^n$.",
+  "options": [
+   "f has a stationary point in the interval (0,1)",
+   "f has a minimum in the interval (0,1)",
+   "f has a maximum in the interval (0,1)",
+   "f has a maximum in the interval (0,1) if n is even and a minimum if n is odd."
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "A,D",
+  "derivation": "The stem does not state the range of $m, n$; assume positive integers. Then $f(0)=f(1)=0$, so by Rolle's theorem f has a stationary point inside (0,1) (A). On (0,1), $x^m>0$ and $(x-1)^n$ has the sign $(-1)^n$, so f keeps one sign: for even $n$ it is positive and has an interior maximum, for odd $n$ it is negative and has an interior minimum. So D is also true, while B and C hold only for one parity of $n$. The PDF key lists A only."
+ },
+ {
+  "mock": 1,
+  "n": 40,
+  "id": "q_094fb6d83c86",
+  "chapter": "CO.LIM",
+  "type": "MSQ",
+  "pdf_key": "B,E",
+  "stem": "Consider the function:\n$$f(x)=\\begin{cases}\\dfrac{|(x-1)(x-3)|}{x-3}, & x\\ne 3\\\\[2mm] 2, & x=3\\end{cases}$$",
+  "options": [
+   "f is continuous at $x=3$",
+   "f is discontinuous at $x=3$",
+   "f is differentiable at $x=3$",
+   "f is not differentiable at $x=3$",
+   "f is continuous at $x=1$",
+   "f is discontinuous at $x=1$"
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "B,D,E",
+  "derivation": "Near 3: from the right $f(x)=x-1\\to2$; from the left $x-3<0$ and $x-1>0$ so $f(x)=-(x-1)\\to-2$. The one-sided limits differ, so f is discontinuous at 3 (B) and hence not differentiable there (D). Near $x=1$ (with $x<3$) $f(x)=-|x-1|$, which is continuous at 1 (E). Correct options: B, D, E; the PDF key B, E omits D."
+ },
+ {
+  "mock": 1,
+  "n": 50,
+  "id": "q_c4529e251ce7",
+  "chapter": "PRS.MOM",
+  "type": "NVQ",
+  "pdf_key": "0.6",
+  "stem": "The joint PMF of two discrete random variables X and Y is given. What is the value of $P(0 < X < 1 | Y > 0)$? (Enter to one decimal place). [NAT]",
+  "options": null,
+  "category": "quarantine",
+  "reason": "the joint PMF table is not present in the PDF, so the question cannot be answered or checked.",
+  "derived_answer": "not determinable",
+  "derivation": ""
+ },
+ {
+  "mock": 1,
+  "n": 55,
+  "id": "q_7193174bc0cd",
+  "chapter": "LA.MAT",
+  "type": "MSQ",
+  "pdf_key": "A,C,D",
+  "stem": "If A is a real matrix, select all true statements.",
+  "options": [
+   "$A^TA$ is positive semi-definite.",
+   "$A^TA$ and $AA^T$ have the same eigenvectors.",
+   "$A^TA$ is symmetric if and only if A is symmetric.",
+   "$A^TA$ and $AA^T$ have the same non-zero eigenvalues."
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "A,D",
+  "derivation": "A: $x^TA^TAx=\\|Ax\\|^2\\ge0$, true. B: false; for $A=\\begin{bmatrix}1&1\\\\0&1\\end{bmatrix}$ the matrices $A^TA$ and $AA^T$ do not commute, so they have different eigenvectors. C: false; $A^TA$ is symmetric for every real A (here A is not symmetric but $A^TA$ is). D: true, $AB$ and $BA$ share non-zero eigenvalues. Correct: A and D. The PDF key A, C, D wrongly includes C."
+ },
+ {
+  "mock": 1,
+  "n": 56,
+  "id": "q_e6117581c3a5",
+  "chapter": "LA.VS",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "Consider a set $V = \\{(x, y) | x, y \\in \\mathbb{R}\\}$ with the usual rule of addition borrowed from $\\mathbb{R}^2$ and scalar multiplication defined as:\n$$c(x,y)=\\begin{cases}(0,0), & c=0\\\\ \\left(\\dfrac{cx}{2},\\dfrac{y}{c}\\right), & c\\ne0\\end{cases}$$\nConsider the statements given below: P: V is closed under addition. Q: V has a zero element with respect to addition. R: $1 \\cdot v = v$ where $1 \\in \\mathbb{R}$ and $v \\in V$. S: $a(v_1 + v_2) = av_1 + av_2$. Choose all correct options.",
+  "options": [
+   "Only P is true",
+   "Only Q is true",
+   "P, Q and S are true",
+   "Both R and S are not true"
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "C",
+  "derivation": "Addition is the usual one, so P and Q (zero element $(0,0)$) hold. R fails: $1\\cdot(x,y)=(x/2,y)\\ne(x,y)$. S holds: for $a\\ne0$, $a(v_1+v_2)=\\left(\\frac{a(x_1+x_2)}2,\\frac{y_1+y_2}a\\right)=av_1+av_2$, and for $a=0$ both sides are $(0,0)$. So exactly P, Q and S are true: option C. The PDF key A is incorrect."
+ },
+ {
+  "mock": 1,
+  "n": 62,
+  "id": "q_04005cd03642",
+  "chapter": "ML.DR",
+  "type": "SCQ",
+  "pdf_key": "D",
+  "stem": "PCA is performed on a mean-centered dataset in $\\mathbb{R}^3$. If the first principal component is $\\frac{1}{\\sqrt{6}}(1,-1,2)$, which of the following could be the second principal component?",
+  "options": [
+   "$(0,0,0)$",
+   "$(1,1,0)$",
+   "$(0,1,2)$",
+   "$(1,1,1)$"
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "B",
+  "derivation": "Principal components are mutually orthogonal non-zero directions. Dot products with $(1,-1,2)$: $(0,0,0)\\to0$ but it is the zero vector (not a direction); $(1,1,0)\\to0$; $(0,1,2)\\to3$; $(1,1,1)\\to2$. Only $(1,1,0)$ is orthogonal (up to scaling), so B could be the second component. The PDF key D is incorrect."
+ },
+ {
+  "mock": 1,
+  "n": 65,
+  "id": "q_ae955eabe439",
+  "chapter": "ML.CLS",
+  "type": "SCQ",
+  "pdf_key": "A",
+  "stem": "You have the following 5 data points: (0,0), (2,2), (4,4), (5,5) and (10,10), with corresponding labels A, A, B, B and A. If you use KNN with $k = 3$, what will be the predicted label for a test point at (3,3)?",
+  "options": [
+   "A",
+   "B",
+   "Cannot be determined",
+   "A and B equally"
+  ],
+  "category": "key_mismatch",
+  "reason": "PDF key differs from the independently recomputed answer",
+  "recomputed_answer": "B",
+  "derivation": "Euclidean distances from (3,3): (2,2) is $\\sqrt2$, (4,4) is $\\sqrt2$, (5,5) is $2\\sqrt2$, (0,0) is $3\\sqrt2$, (10,10) is $7\\sqrt2$. The three nearest are (2,2) A, (4,4) B, (5,5) B, so the majority label is B. The PDF key A is incorrect."
+ }
+]

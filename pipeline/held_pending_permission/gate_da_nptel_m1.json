@@ -1,0 +1,2540 @@
+[
+ {
+  "id": "q_0e239a425ae2",
+  "type": "SCQ",
+  "stem": "Consider the following program:\n\n```python\ndef main():\n    f1()\n    f2(2)\n    f3()\n    return 0\n\ndef f1():\n    return 1\n\ndef f2(x):\n    f3()\n    if x == 1:\n        return f1()\n    else:\n        return x + f2(x-1)\n\ndef f3():\n    return 5\n\nmain()\n```\n\nWhich one of the following options represents the activation tree corresponding to the main function?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "`f2(2)` first calls `f3()`, then (since `x != 1`) calls `f2(1)`. That inner call first calls `f3()` and then `f1()`. So under `f2` come `f3` and `f2`, and the second `f2` has children `f3` and `f1`: option A.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.PY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f3` and `f2`. The second `f2` calls `f3` and `f1`."
+   },
+   {
+    "key": "B",
+    "text": "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f1` and `f3`."
+   },
+   {
+    "key": "C",
+    "text": "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f3` and `f1`."
+   },
+   {
+    "key": "D",
+    "text": "A tree where `main` calls `f1`, `f2`, `f3`. Under `f2`, it calls `f2` and `f3`."
+   }
+  ]
+ },
+ {
+  "id": "q_890b6bc6fc1f",
+  "type": "SCQ",
+  "stem": "Consider an implementation of a singly linked list, where each node is created using the given class `Node`. Suppose it has a `head` pointer that points to the first node of the linked list and a `tail` pointer that points to the last element of the linked list.\n\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n```\n\nSuppose we want to perform the following operations on the given linked list:\n1. Insertion of the new node at the front of the linked list.\n2. Insertion of the new node at the end of the linked list.\n3. Deletion of the first node of the linked list.\n4. Deletion of the last node of the linked list.\n\nWhich of the following option represents the correct complexity for each operation?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Front insertion and front deletion only touch `head`: $O(1)$. With a `tail` pointer, insertion at the end is $O(1)$. Deleting the last node of a singly linked list needs the predecessor of `tail`, which can only be found by walking from `head`: $O(n)$. Option D.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1-$O(1)$, 2-$O(n)$, 3-$O(1)$, 4-$O(1)$"
+   },
+   {
+    "key": "B",
+    "text": "1-$O(1)$, 2-$O(1)$, 3-$O(1)$, 4-$O(1)$"
+   },
+   {
+    "key": "C",
+    "text": "1-$O(1)$, 2-$O(n)$, 3-$O(1)$, 4-$O(n)$"
+   },
+   {
+    "key": "D",
+    "text": "1-$O(1)$, 2-$O(1)$, 3-$O(1)$, 4-$O(n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_8d7b23c1592e",
+  "type": "SCQ",
+  "stem": "Consider the following function:\n\n```python\ndef fun1(n):\n    q = 0\n    for i in range(1, n):\n        p = 0\n        j = n\n        while j > 1:\n            p += 1\n            j //= 2\n        k = 1\n        while k < p:\n            q += 1\n            k *= 2\n    return q\n```\n\nWhich one of the following most closely approximates the return value of the function `fun1`?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The first inner loop sets $p=\\lfloor\\log_2 n\\rfloor$. The second loop runs $\\lceil\\log_2 p\\rceil$ times, i.e. $\\Theta(\\log\\log n)$. The outer loop repeats this $n-1$ times, so the value is $\\Theta(n\\log\\log n)$: option D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$n^3$"
+   },
+   {
+    "key": "B",
+    "text": "$n(\\log n) - n(\\log n)^2$"
+   },
+   {
+    "key": "C",
+    "text": "$n(\\log n)$"
+   },
+   {
+    "key": "D",
+    "text": "$n \\log(\\log n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_abc0ee0134b4",
+  "type": "NVQ",
+  "stem": "Consider the following sequence of operations on an empty stack:\n\n```\n1. push(54)\n2. push(52)\n3. pop()\n4. push(55)\n5. push(62)\n6. s = pop()\n```\n\nConsider the following sequence of operations on an empty queue:\n\n```\n1. enqueue(21)\n2. enqueue(24)\n3. dequeue()\n4. enqueue(28)\n5. enqueue(32)\n6. q = dequeue()\n```\n\nThe value of $s + q$ is: [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    86.0,
+    86.0
+   ]
+  },
+  "solution": "Stack: after `push 54, push 52, pop` the stack holds 54, then `push 55, push 62`; the last `pop` returns $s=62$. Queue: `enqueue 21, 24`, `dequeue` removes 21, then `enqueue 28, 32` gives 24, 28, 32; `dequeue` returns $q=24$. So $s+q=86$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_8a8d938ce606",
+  "type": "SCQ",
+  "stem": "Let $G = (V, E)$ be a simple undirected graph. Given a source vertex $s$, for $x \\in V$ let $d(x)$ denote the shortest distance in $G$ from $s$ to $x$. A breadth first search (BFS) is performed starting at $s$. Let $T$ be the resultant BFS tree. If $(u, v)$ is an edge of $G$ that is not in $T$, then which one of the following **cannot** be the value of $d(u) - d(v)$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "For any edge $(u,v)$, $|d(u)-d(v)|\\le 1$ (otherwise the shorter endpoint would give a shortcut). A non-tree edge can join vertices at the same level (difference 0) or adjacent levels (difference $\\pm1$). A difference of 2 is impossible: option D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$-1$"
+   },
+   {
+    "key": "B",
+    "text": "0"
+   },
+   {
+    "key": "C",
+    "text": "1"
+   },
+   {
+    "key": "D",
+    "text": "2"
+   }
+  ]
+ },
+ {
+  "id": "q_aca1aa67741c",
+  "type": "NVQ",
+  "stem": "Consider a complete binary tree with 7 nodes. Let $A$ denote the set of first 3 elements obtained by performing Breadth-First Search (BFS) starting from the root. Let $B$ denote the set of first 3 elements obtained by performing Depth First Search (DFS) starting from the root. The value of $|A - B|$ is: [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    1.0,
+    1.0
+   ]
+  },
+  "solution": "Label nodes 1..7 in level order. BFS visits 1, 2, 3, so $A=\\{1,2,3\\}$. DFS (going down the left child first) visits 1, 2, 4, so $B=\\{1,2,4\\}$. Then $A-B=\\{3\\}$ and $|A-B|=1$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.GRAPH",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_32e629504011",
+  "type": "SCQ",
+  "stem": "Let $H$ be a binary min-heap consisting of $n$ elements implemented as an array. What is the worst-case time complexity of an optimal algorithm to find the maximum element in $H$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "In a min-heap the maximum is one of the leaves (a non-leaf is smaller than its children), but nothing orders the leaves among themselves. About $n/2$ leaves must be examined, so the optimal worst case is $\\Theta(n)$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.DS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\Theta(1)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\Theta(\\log n)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\Theta(n)$"
+   },
+   {
+    "key": "D",
+    "text": "$O(n \\log n)$"
+   }
+  ]
+ },
+ {
+  "id": "q_cdb5a941989f",
+  "type": "SCQ",
+  "stem": "What is the least number of comparisons required among the array elements to sort the given array in ascending order using the following sorting algorithms?\n`23, 32, 45, 69, 72, 73, 89, 97`",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The array is already sorted. Interpreting the question as 'which algorithm needs the fewest comparisons', count them for $n=8$: quicksort with the last element as pivot does $n(n-1)/2=28$, selection sort does 28, top-down mergesort does 12, insertion sort does only $n-1=7$. The least is insertion sort (option D).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PDS",
+   "chapter": "PDS.ALG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Quicksort using the last element as a pivot"
+   },
+   {
+    "key": "B",
+    "text": "Selection sort"
+   },
+   {
+    "key": "C",
+    "text": "Mergesort"
+   },
+   {
+    "key": "D",
+    "text": "Insertion sort"
+   }
+  ]
+ },
+ {
+  "id": "q_261ec6b60889",
+  "type": "SCQ",
+  "stem": "Consider the table `emp_info` shown below:\n\n| id | name | salary |\n|---|---|---|\n| E001 | Oliver | 45000 |\n| E002 | Jack | 30000 |\n| E003 | Harry | 35000 |\n| E004 | Thomas | 55000 |\n| E005 | Jacob | 70000 |\n| E006 | Tommy | 60000 |\n| E007 | Joseph | 65000 |\n\nWhat will the output of the following query be?\n\n```sql\nSELECT id\nFROM emp_info AS a\nWHERE (SELECT COUNT(*)\n       FROM emp_info b\n       WHERE b.salary > a.salary) < 2\n```",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The subquery counts how many employees earn strictly more than `a`. The condition `< 2` keeps employees with at most one higher earner, i.e. the top two salaries: 70000 (E005) and 65000 (E007). Option A.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "E005, E007"
+   },
+   {
+    "key": "B",
+    "text": "E002, E003"
+   },
+   {
+    "key": "C",
+    "text": "E007"
+   },
+   {
+    "key": "D",
+    "text": "E003"
+   }
+  ]
+ },
+ {
+  "id": "q_bd006a5ff38e",
+  "type": "NVQ",
+  "stem": "Given an instance of the `STUDENTS` relation as shown below:\n\n| Student ID | Student Name | Student Email | Student Age | CPI |\n|---|---|---|---|---|\n| 2345 | Shankar | shankar@math | X | 9.4 |\n| 1287 | Swati | swati@ee | 19 | 9.5 |\n| 7853 | Shankar | shankar@cse | 19 | 9.4 |\n| 9876 | Swati | swati@mech | 18 | 9.3 |\n| 8765 | Ganesh | ganesh@civil | 19 | 8.7 |\n\nFor `(Student Name, Student Age)` to be a key for this instance, the value X should NOT be equal to: [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    19.0,
+    19.0
+   ]
+  },
+  "solution": "The pair (name, age) must be unique over the instance. The other rows give the pairs (Swati,19), (Shankar,19), (Swati,18), (Ganesh,19). The first row has name Shankar, so if $X=19$ it would duplicate (Shankar,19). Any other value is fine, so X must not equal 19.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_6f88ffe92bf7",
+  "type": "SCQ",
+  "stem": "In an Entity-Relationship (ER) model, suppose $R$ is a many-to-one relationship from entity set $E1$ to entity set $E2$. Assume that $E1$ and $E2$ participate totally in $R$ and that the cardinality of $E1$ is greater than the cardinality of $E2$. Which one of the following is true about $R$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "Many-to-one from E1 to E2 means each E1 entity relates to at most one E2 entity; total participation of E1 makes it exactly one. B is false by definition. Because $|E1|>|E2|$, some E2 entity must be shared by at least two E1 entities, so C and D are false. Option A.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.ER",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Every entity in E1 is associated with exactly one entity in E2."
+   },
+   {
+    "key": "B",
+    "text": "Some entity in E1 is associated with more than one entity in E2."
+   },
+   {
+    "key": "C",
+    "text": "Every entity in E2 is associated with exactly one entity in E1."
+   },
+   {
+    "key": "D",
+    "text": "Every entity in E2 is associated with at most one entity in E1."
+   }
+  ]
+ },
+ {
+  "id": "q_1849c7dbfa06",
+  "type": "SCQ",
+  "stem": "Which of the following is NOT a super key in a relational schema with certain attributes, given that the primary key is \"VY\" and there exist no other candidate keys?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "With the only candidate key $VY$, the super keys are exactly the attribute sets that contain both V and Y. VXYZ, VWXY and VWXYZ do; VWXZ lacks Y, so it is not a super key.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "VXYZ"
+   },
+   {
+    "key": "B",
+    "text": "VWXZ"
+   },
+   {
+    "key": "C",
+    "text": "VWXY"
+   },
+   {
+    "key": "D",
+    "text": "VWXYZ"
+   }
+  ]
+ },
+ {
+  "id": "q_09606f80df6e",
+  "type": "SCQ",
+  "stem": "In a relational data model, which one of the following statements is TRUE?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "With two attributes the only non-trivial FDs are $A\\to B$ and/or $B\\to A$; any determinant is then a key, so the relation is in BCNF. B is false (all-prime relations are in 3NF but need not be in BCNF), C is false (a relation whose only key is all attributes has no non-prime attribute), and D is false (BCNF decomposition may lose dependencies).\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.NF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "A relation with only two attributes is always in BCNF."
+   },
+   {
+    "key": "B",
+    "text": "If all attributes of a relation are prime attributes, then the relation is in BCNF."
+   },
+   {
+    "key": "C",
+    "text": "Every relation has at least one non-prime attribute."
+   },
+   {
+    "key": "D",
+    "text": "BCNF decompositions preserve functional dependencies."
+   }
+  ]
+ },
+ {
+  "id": "q_ea8f67ed4cb1",
+  "type": "NVQ",
+  "stem": "Consider the table `instructor` as shown below.\n\n| id | name | dept_name | salary |\n|---|---|---|---|\n| 10101 | Srinivasan | Comp. Sci. | 65000 |\n| 12121 | Wu | Finance | 90000 |\n| 15151 | Mozart | Music | 40000 |\n| 22222 | Einstein | Physics | 95000 |\n| 32343 | El Said | History | 60000 |\n| 33456 | Gold | Physics | 87000 |\n| 45565 | Katz | Comp. Sci. | 75000 |\n| 58583 | Califieri | History | 62000 |\n| 76543 | Singh | Finance | 80000 |\n| 76766 | Crick | Biology | 72000 |\n| 83821 | Brandt | Comp. Sci. | 92000 |\n| 98345 | Kim | Elec. Eng. | 80000 |\n\nHow many rows will be returned by the following query?\n\n```sql\nWITH dept_salary AS (\n    SELECT dept_name, avg(salary) AS avg_salary\n    FROM instructor\n    GROUP BY dept_name\n)\nSELECT dept_name\nFROM dept_salary\nWHERE avg_salary > (SELECT avg(avg_salary) FROM dept_salary)\n```\n\n[NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    4.0,
+    4.0
+   ]
+  },
+  "solution": "Department averages: Comp. Sci. 77333.3, Finance 85000, Music 40000, Physics 91000, History 61000, Biology 72000, Elec. Eng. 80000. The average of these seven averages is about 72333.3. Departments above it: Comp. Sci., Finance, Physics, Elec. Eng., so 4 rows.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_da3647c453c2",
+  "type": "SCQ",
+  "stem": "Consider three data items D1, D2, and D3, and the following execution schedule of transactions T1, T2, and T3. In the diagram, R(D) and W(D) denote the actions reading and writing the data item D respectively. Rows are in time order.\n\n| T1 | T2 | T3 |\n|---|---|---|\n| | R(D3); | |\n| | R(D2); | |\n| R(D1); | W(D2); | R(D2); |\n| R(D3); | | W(D3); |\n| W(D1); | W(D2); | |\n| R(D1); | | |\n| R(D2); | W(D2); | |\n| W(D1); | | |\n\nWhich of the following statements is correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "Conflict graph: T2 reads D3 before T3 writes D3 gives T2 $\\to$ T3. T3 reads D2 (row 3) before T2 writes D2 again (row 5) gives T3 $\\to$ T2. The cycle T2 $\\leftrightarrow$ T3 exists whichever way operations sharing a row are ordered, so the schedule is not conflict-serializable: option D.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The schedule is serializable as T2: T3: T1"
+   },
+   {
+    "key": "B",
+    "text": "The schedule is serializable as T2: T1: T3"
+   },
+   {
+    "key": "C",
+    "text": "The schedule is serializable as T3: T2: T1"
+   },
+   {
+    "key": "D",
+    "text": "The schedule is not serializable"
+   }
+  ]
+ },
+ {
+  "id": "q_c52133f0ba85",
+  "type": "SCQ",
+  "stem": "Consider the following relational schema:\n\n- `Student(school_id, sch_roll_no, sname, saddress)`\n- `School(school_id, sch_name, sch_address, sch_phone)`\n- `Enrolment(school_id, sch_roll_no, erollno, examname)`\n- `ExamResult(erollno, examname, marks)`\n\nWhat does the following SQL query output?\n\n```sql\nSELECT sch_name, COUNT(*)\nFROM School C, Enrolment E, ExamResult R\nWHERE E.school_id = C.school_id\n  AND E.examname = R.examname\n  AND E.erollno = R.erollno\n  AND R.marks = 100\n  AND E.school_id IN (\n      SELECT school_id\n      FROM student\n      GROUP BY school_id\n      HAVING COUNT(*) > 200\n  )\nGROUP BY sch_name\n```",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "The subquery keeps schools that have more than 200 students. The joins pair each enrolment with its result, `marks = 100` keeps only perfect scores, and `GROUP BY sch_name` counts those scores per school. That is option A.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "DBW",
+   "chapter": "DBW.REL",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "for each school with more than 200 students appearing in exams, the name of the school and the number of times 100 marks scored by its students"
+   },
+   {
+    "key": "B",
+    "text": "for each student scoring 100, the name of the school"
+   },
+   {
+    "key": "C",
+    "text": "for each school with fewer than 200 students, the name of the school"
+   },
+   {
+    "key": "D",
+    "text": "count of all exams conducted"
+   }
+  ]
+ },
+ {
+  "id": "q_4b2e080cce44",
+  "type": "SCQ",
+  "stem": "Bird : Nest :: Bee : _______",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A nest is the home of a bird; the home of a bee is a hive.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Kennel"
+   },
+   {
+    "key": "B",
+    "text": "Hammock"
+   },
+   {
+    "key": "C",
+    "text": "Hive"
+   },
+   {
+    "key": "D",
+    "text": "Lair"
+   }
+  ]
+ },
+ {
+  "id": "q_37db7e75524f",
+  "type": "SCQ",
+  "stem": "Let $p_1$ and $p_2$ denote two arbitrary prime numbers. Which one of the following statements is correct for all values of $p_1$ and $p_2$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$p_1p_2$ has the proper divisors $p_1$ and $p_2$, so it is never prime (note $p_1=p_2$ is allowed, still composite). The others fail: $2+3=5$ is prime, $7+7+1=15$ is not prime, $3\\cdot3+1=10$ is not prime.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$p_1 + p_2$ is not a prime number"
+   },
+   {
+    "key": "B",
+    "text": "$p_1 p_2$ is not a prime number"
+   },
+   {
+    "key": "C",
+    "text": "$p_1 + p_2 + 1$ is a prime number"
+   },
+   {
+    "key": "D",
+    "text": "$p_1 p_2 + 1$ is a prime number"
+   }
+  ]
+ },
+ {
+  "id": "q_a9931312d3b5",
+  "type": "SCQ",
+  "stem": "In the sequence 6, 9, 14, x, 30, 41, a possible value of x is:",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Consecutive differences are $3, 5, x-14, 30-x, 11$. Taking the odd numbers $3,5,7,9,11$ gives $x-14=7$, so $x=21$, and then $30-21=9$ fits.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "25"
+   },
+   {
+    "key": "B",
+    "text": "21"
+   },
+   {
+    "key": "C",
+    "text": "18"
+   },
+   {
+    "key": "D",
+    "text": "20"
+   }
+  ]
+ },
+ {
+  "id": "q_652a8c164c43",
+  "type": "SCQ",
+  "stem": "The CEO's decision to downsize the workforce was considered myopic because it sacrificed long-term stability to accommodate short-term gains. Select the most appropriate option that can replace the word \"myopic\" without changing the meaning of the sentence.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "'Myopic' means lacking long-term vision, which is 'shortsighted'. The other options mean the opposite.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "visionary"
+   },
+   {
+    "key": "B",
+    "text": "shortsighted"
+   },
+   {
+    "key": "C",
+    "text": "progressive"
+   },
+   {
+    "key": "D",
+    "text": "innovative"
+   }
+  ]
+ },
+ {
+  "id": "q_4bdf73bd3db4",
+  "type": "SCQ",
+  "stem": "A fair six-faced dice, with the faces labelled '1', '2', '3', '4', '5', and '6', is rolled thrice. What is the probability of rolling '6' exactly once?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A"
+   ]
+  },
+  "solution": "$\\binom{3}{1}\\cdot\\frac16\\cdot\\left(\\frac56\\right)^2=\\frac{75}{216}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "75/216"
+   },
+   {
+    "key": "B",
+    "text": "1/6"
+   },
+   {
+    "key": "C",
+    "text": "1/18"
+   },
+   {
+    "key": "D",
+    "text": "25/216"
+   }
+  ]
+ },
+ {
+  "id": "q_7e2b475f9b1f",
+  "type": "SCQ",
+  "stem": "Consider the following sample of numbers: 9, 18, 11, 14, 15, 17, 10, 69, 11, 13\nThe median of the sample is",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Sorted: 9, 10, 11, 11, 13, 14, 15, 17, 18, 69. With 10 values the median is the mean of the 5th and 6th: $(13+14)/2=13.5$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.QUANT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "14"
+   },
+   {
+    "key": "B",
+    "text": "13.5"
+   },
+   {
+    "key": "C",
+    "text": "11"
+   },
+   {
+    "key": "D",
+    "text": "18.7"
+   }
+  ]
+ },
+ {
+  "id": "q_387574f6c866",
+  "type": "SCQ",
+  "stem": "In the given text, the blanks are numbered (i)-(iv). Select the best match for all the blanks.\nSteve was advised to keep his head __(i)__ before heading __(ii)__ to bat; for, while he had a head __(iii)__ batting, he could only do so with a cool head __(iv)__ his shoulders.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "The idioms are 'keep his head down', 'heading out to bat', 'a head for batting' and 'a cool head on his shoulders': (i) down, (ii) out, (iii) for, (iv) on.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "GA",
+   "chapter": "GA.VERB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "(i) down (ii) down (iii) on (iv) for"
+   },
+   {
+    "key": "B",
+    "text": "(i) on (ii) down (iii) for (iv) on"
+   },
+   {
+    "key": "C",
+    "text": "(i) down (ii) out (iii) for (iv) on"
+   },
+   {
+    "key": "D",
+    "text": "(i) on (ii) out (iii) on (iv) for"
+   }
+  ]
+ },
+ {
+  "id": "q_ca77d2d8694b",
+  "type": "MSQ",
+  "stem": "Consider the function $f(x) = x^3 - 6x$. Which of the following options are correct?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C",
+    "F"
+   ]
+  },
+  "solution": "$f'(x)=3x^2-6=0$ gives the two critical points $x=\\pm\\sqrt2$ (F). $f''(x)=6x$ is negative at $-\\sqrt2$ (local maximum) and positive at $\\sqrt2$ (local minimum): C. A cubic has no global maximum (E false), and B, D, A are false.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.OPT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "f has neither local maxima nor local minima."
+   },
+   {
+    "key": "B",
+    "text": "f has a local maximum at $x = \\sqrt{2}$ and local minimum at $x = -\\sqrt{2}$."
+   },
+   {
+    "key": "C",
+    "text": "f has a local maximum at $x = -\\sqrt{2}$ and local minimum at $x = \\sqrt{2}$."
+   },
+   {
+    "key": "D",
+    "text": "f has a local minimum at $x = -\\sqrt{2}$."
+   },
+   {
+    "key": "E",
+    "text": "f has a global maximum."
+   },
+   {
+    "key": "F",
+    "text": "f has two critical points."
+   }
+  ]
+ },
+ {
+  "id": "q_7d92653ddba2",
+  "type": "NVQ",
+  "stem": "If $\\lim_{x\\to4}\\frac{f(x)-5}{x-2}=1$, find $\\lim_{x\\to4}f(x)$. [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    7.0,
+    7.0
+   ]
+  },
+  "solution": "As $x\\to4$ the denominator tends to 2, so $f(x)-5=\\frac{f(x)-5}{x-2}(x-2)\\to1\\cdot2=2$. Hence $\\lim f(x)=7$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_3aa48b72a38b",
+  "type": "SCQ",
+  "stem": "Find the best linear approximation of $f(x) = \\sqrt{1+x}$ at $x = 0$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "$f(0)=1$ and $f'(x)=\\frac1{2\\sqrt{1+x}}$, so $f'(0)=\\frac12$. The linearisation is $1+\\frac x2$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.TAY",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": -0.2,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1+x$"
+   },
+   {
+    "key": "B",
+    "text": "$x$"
+   },
+   {
+    "key": "C",
+    "text": "$1+\\frac{x}{2}$"
+   },
+   {
+    "key": "D",
+    "text": "$1-\\frac{x}{2}$"
+   }
+  ]
+ },
+ {
+  "id": "q_ebd3fc638cef",
+  "type": "NVQ",
+  "stem": "The line $y = x$ is a tangent to the parabola $y = x^2 + C$. Find $C$. [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    0.25,
+    0.25
+   ]
+  },
+  "solution": "Tangency means $x^2+C=x$ has a double root: the discriminant $1-4C=0$, so $C=\\frac14$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "CO",
+   "chapter": "CO.LIM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_148db570fdb7",
+  "type": "SCQ",
+  "stem": "There are thirteen flights from Delhi to Bangalore, and then six flights from Bangalore to Chennai. Saumya wants to fly from Delhi to Bangalore and then to Chennai. How many choices does she have for her flight plan?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "By the multiplication principle, $13\\times6=78$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CNT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "19"
+   },
+   {
+    "key": "B",
+    "text": "72"
+   },
+   {
+    "key": "C",
+    "text": "78"
+   },
+   {
+    "key": "D",
+    "text": "39"
+   }
+  ]
+ },
+ {
+  "id": "q_f779c538bd3a",
+  "type": "MSQ",
+  "stem": "Which of the following is/are a random experiment?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "solution": "Each is a repeatable procedure with several possible outcomes that cannot be predicted with certainty, so all four are random experiments.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Tossing two coins."
+   },
+   {
+    "key": "B",
+    "text": "Rolling a die."
+   },
+   {
+    "key": "C",
+    "text": "Guessing an answer in multiple choice questions."
+   },
+   {
+    "key": "D",
+    "text": "Choosing a number at random from 1 to 20."
+   }
+  ]
+ },
+ {
+  "id": "q_9b1bd06f4d14",
+  "type": "NVQ",
+  "stem": "Let A and B be the two events of a random experiment. Probability that at least one of the two events A and B will occur is 0.6. Probabilities of event A occurring and B occurring are 0.3 and 0.4 respectively. Then, find the probability that event A will occur given that event B has occurred. (Enter to two decimal places). [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    0.245,
+    0.255
+   ]
+  },
+  "solution": "$P(A\\cap B)=0.3+0.4-0.6=0.1$, so $P(A\\mid B)=0.1/0.4=0.25$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_f8f932e4800d",
+  "type": "SCQ",
+  "stem": "Suppose that $P(X=a)=p$ and $P(X=b)=1-p$. Identify the distribution of $\\frac{X-b}{a-b}$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "When $X=a$ the transformed variable is 1 (probability $p$); when $X=b$ it is 0 (probability $1-p$). It takes the values 0 and 1 only, so it is Bernoulli($p$).\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.DRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Binomial distribution"
+   },
+   {
+    "key": "B",
+    "text": "Negative Binomial distribution"
+   },
+   {
+    "key": "C",
+    "text": "Bernoulli distribution"
+   },
+   {
+    "key": "D",
+    "text": "Cannot determine"
+   }
+  ]
+ },
+ {
+  "id": "q_1a3116674769",
+  "type": "NVQ",
+  "stem": "The total duration of a Test cricket match between any two cricket team is uniformly distributed between 90 overs and 450 overs, both inclusive. What is the probability that the duration of a test cricket match between two cricket team is more than 400 overs? (Enter to two decimal places). [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    0.135,
+    0.145
+   ]
+  },
+  "solution": "$P(X>400)=\\frac{450-400}{450-90}=\\frac{50}{360}\\approx0.1389\\approx0.14$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.CRV",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_d0807d08a7de",
+  "type": "SCQ",
+  "stem": "Let X be a random variable with PDF:\n$$f_X(x)=(\\lambda\\alpha)x^{\\alpha-1}e^{-\\lambda x^{\\alpha}},\\quad x>0$$\nwhere $\\lambda$ and $\\alpha$ are constants. Find the maximum likelihood estimator of $\\lambda$ for $n$ i.i.d. samples of X.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "Log-likelihood: $\\ell(\\lambda)=n\\ln\\lambda+\\text{const}-\\lambda\\sum X_i^\\alpha$. Setting $\\ell'(\\lambda)=\\frac n\\lambda-\\sum X_i^\\alpha=0$ gives $\\hat\\lambda=\\frac{n}{\\sum X_i^\\alpha}$.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.INF",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\dfrac{\\sum_{i=1}^n X_i^\\alpha}{n}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\dfrac{n}{\\sum_{i=1}^n X_i^\\alpha}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\alpha\\sum_{i=1}^n X_i^\\alpha$"
+   },
+   {
+    "key": "D",
+    "text": "$\\dfrac{\\sum_{i=1}^n X_i^\\alpha}{n\\alpha}$"
+   }
+  ]
+ },
+ {
+  "id": "q_dc2993d256e9",
+  "type": "NVQ",
+  "stem": "Let X be a random variable that follows a normal distribution $N(\\mu = 5, \\sigma^2 = 4)$ and Y is a random variable that follows $N(0, 1)$. Given $x = 5$, find $E(Y|X = 5)$. Assume X and Y are independent. [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    0.0,
+    0.0
+   ]
+  },
+  "solution": "Independence gives $E(Y\\mid X=5)=E(Y)=0$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_9352101646e1",
+  "type": "NVQ",
+  "stem": "In a population, 60 percent of the people are male and 40 percent are female. According to a report, 1.69 percent of all females are color blind and 8.73 percent of all males are color blind. What is the probability that a person randomly chosen from the population will be color blind? (Enter upto three decimal accuracy). [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    0.0585,
+    0.0595
+   ]
+  },
+  "solution": "Law of total probability: $0.6\\times0.0873+0.4\\times0.0169=0.05238+0.00676=0.05914\\approx0.059$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.PROB",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_f100732f3608",
+  "type": "SCQ",
+  "stem": "Consider $n$ bits $X_1, \\ldots, X_n$, where each bit is equally likely to be 0 or 1, and is independent of all other bits. Define $n-1$ bits $Y_i = X_iX_{i+1}$, $i = 1, \\ldots, n-1$. Let $N_X$ and $N_Y$ be the number of 1s in $\\{X_1, \\ldots, X_n\\}$ and $\\{Y_1, \\ldots, Y_{n-1}\\}$ respectively. Assuming $n = 100$, what is the expected value of $N_X$ and $N_Y$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$E(N_X)=100\\cdot\\frac12=50$. Each $Y_i=X_iX_{i+1}$ equals 1 with probability $\\frac14$, so $E(N_Y)=99\\cdot\\frac14=24.75$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "PRS",
+   "chapter": "PRS.MOM",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$E(N_X)=50,\\ E(N_Y)=49.5$"
+   },
+   {
+    "key": "B",
+    "text": "$E(N_X)=50,\\ E(N_Y)=24.75$"
+   },
+   {
+    "key": "C",
+    "text": "$E(N_X)=50,\\ E(N_Y)=50$"
+   },
+   {
+    "key": "D",
+    "text": "$E(N_X)=50,\\ E(N_Y)=99$"
+   }
+  ]
+ },
+ {
+  "id": "q_c096f93cf185",
+  "type": "MSQ",
+  "stem": "Select all correct options concerning a system of linear equations given by $Ax = b$ where $A$ is an $m \\times n$ matrix, $x \\in \\mathbb{R}^n$ and $b \\in \\mathbb{R}^m$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C",
+    "D"
+   ]
+  },
+  "solution": "A is false because A need not be square or invertible. B is false: $Ax=b$ is solvable exactly when b is a linear combination of the columns, not necessarily a column itself. C is the definition of consistency. D holds because a linear system has zero, one or infinitely many solutions, and a consistent one has at least one.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.SYS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The solution to this system is given by $A^{-1}b$."
+   },
+   {
+    "key": "B",
+    "text": "The system has a solution if and only if b is one of the columns of A."
+   },
+   {
+    "key": "C",
+    "text": "The system has a solution if and only if b is in the column-space of A."
+   },
+   {
+    "key": "D",
+    "text": "If this system is consistent, it can have either a unique solution or infinitely many solutions."
+   }
+  ]
+ },
+ {
+  "id": "q_b0439c9ef999",
+  "type": "MSQ",
+  "stem": "Select all idempotent matrices from the options given below.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "C"
+   ]
+  },
+  "solution": "Square each matrix and compare with the original. A: $\\begin{bmatrix}3&-6\\\\1&-2\\end{bmatrix}^2=\\begin{bmatrix}3&-6\\\\1&-2\\end{bmatrix}$. B squares to $\\begin{bmatrix}1&-2\\\\0&1\\end{bmatrix}$. C squares to itself. D squares to $\\begin{bmatrix}8&5\\\\-5&3\\end{bmatrix}$. So A and C are idempotent.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\begin{bmatrix}3&-6\\\\1&-2\\end{bmatrix}$"
+   },
+   {
+    "key": "B",
+    "text": "$\\begin{bmatrix}1&-1\\\\0&1\\end{bmatrix}$"
+   },
+   {
+    "key": "C",
+    "text": "$\\begin{bmatrix}2&-2\\\\1&-1\\end{bmatrix}$"
+   },
+   {
+    "key": "D",
+    "text": "$\\begin{bmatrix}3&1\\\\-1&2\\end{bmatrix}$"
+   }
+  ]
+ },
+ {
+  "id": "q_c1c7f2b5e85a",
+  "type": "SCQ",
+  "stem": "Let A and B be two matrices such that AB is defined. Select the most appropriate statement.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "The columns of $AB$ lie in the column space of A, and the row space of $AB$ lies in that of B, so $\\text{rank}(AB)\\le\\min(\\text{rank}(A),\\text{rank}(B))$. Taking $B=0$ shows the equalities in the other options can fail.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.PROJ",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$\\text{rank}(AB)=\\text{rank}(A)+\\text{rank}(B)$"
+   },
+   {
+    "key": "B",
+    "text": "$\\text{rank}(AB)=\\text{rank}(A)\\cdot\\text{rank}(B)$"
+   },
+   {
+    "key": "C",
+    "text": "$\\text{rank}(AB)=\\max(\\text{rank}(A),\\text{rank}(B))$"
+   },
+   {
+    "key": "D",
+    "text": "$\\text{rank}(AB)\\le\\min(\\text{rank}(A),\\text{rank}(B))$"
+   }
+  ]
+ },
+ {
+  "id": "q_ade0b3dff6c5",
+  "type": "NVQ",
+  "stem": "Find the number of true statements. Your answer should be between 0 and 4:\n\n- The product of two upper triangular matrices is upper triangular.\n- The product of two lower triangular matrices is lower triangular.\n- If L is a lower triangular matrix then $L^T$ is lower triangular.\n- If U is an upper triangular matrix then $U^T$ is lower triangular.\n\n[NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    3.0,
+    3.0
+   ]
+  },
+  "solution": "Triangular matrices are closed under multiplication, so statements 1 and 2 are true. The transpose of a lower triangular matrix is upper triangular, so statement 3 is false (unless L is diagonal) and statement 4 is true. Three statements are true.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_db396e178eed",
+  "type": "SCQ",
+  "stem": "How many orthogonal matrices of order n exist that are made up of only zeros and ones?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "Orthonormal columns with entries in {0,1} must each be a standard basis vector, all distinct: the matrix is a permutation matrix. There are $n!$ of them (checked by enumeration for $n\\le4$).\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.MAT",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$n$"
+   },
+   {
+    "key": "B",
+    "text": "$n^2$"
+   },
+   {
+    "key": "C",
+    "text": "$n!$"
+   },
+   {
+    "key": "D",
+    "text": "$n^n$"
+   }
+  ]
+ },
+ {
+  "id": "q_d6f443e46c4d",
+  "type": "MSQ",
+  "stem": "Let $S_1$ and $S_2$ be two subspaces of $\\mathbb{R}^{10}$ with dimensions 7 and 3 respectively. Let $d$ be the dimension of $S_1 \\cap S_2$.",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B",
+    "D"
+   ]
+  },
+  "solution": "$d\\le\\min(7,3)=3$ and $d\\ge7+3-10=0$ because $\\dim(S_1+S_2)\\le10$. Both bounds are attainable, so the maximum is 3 and the minimum is 0.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.VS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "The maximum possible value of d is 7."
+   },
+   {
+    "key": "B",
+    "text": "The maximum possible value of d is 3."
+   },
+   {
+    "key": "C",
+    "text": "The minimum possible value of d is 1."
+   },
+   {
+    "key": "D",
+    "text": "The minimum possible value of d is 0."
+   }
+  ]
+ },
+ {
+  "id": "q_dd5cbb51fe48",
+  "type": "SCQ",
+  "stem": "Consider the square matrix of order n given below: All entries on the anti-diagonal (top-right to bottom-left) are 1 and all other entries are zero. Which of the following is the determinant of $A_n$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "D"
+   ]
+  },
+  "solution": "$A_n$ is the permutation matrix of the reversal $i\\mapsto n+1-i$, which consists of $\\lfloor n/2\\rfloor$ transpositions. Its determinant is $(-1)^{\\lfloor n/2\\rfloor}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "1"
+   },
+   {
+    "key": "B",
+    "text": "-1"
+   },
+   {
+    "key": "C",
+    "text": "$(-1)^n$"
+   },
+   {
+    "key": "D",
+    "text": "$(-1)^{\\lfloor n/2\\rfloor}$"
+   }
+  ]
+ },
+ {
+  "id": "q_9c430a624ad2",
+  "type": "SCQ",
+  "stem": "Let $A=\\begin{bmatrix}1&1\\\\1&-1\\end{bmatrix}$ be a $2\\times2$ matrix. What are the eigenvalues of $A^{13}$?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "B"
+   ]
+  },
+  "solution": "$A^2=2I$, so $A^{13}=A\\,(2I)^6=64A$. The eigenvalues of A are $\\pm\\sqrt2$ (trace 0, determinant $-2$), hence those of $A^{13}$ are $\\pm64\\sqrt2=\\pm2^{6.5}$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "LA",
+   "chapter": "LA.EIG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "$1,-1$"
+   },
+   {
+    "key": "B",
+    "text": "$2^{6.5},-2^{6.5}$"
+   },
+   {
+    "key": "C",
+    "text": "$2^{13},-2^{13}$"
+   },
+   {
+    "key": "D",
+    "text": "$2^{6},-2^{6}$"
+   }
+  ]
+ },
+ {
+  "id": "q_b6930e4acd99",
+  "type": "MSQ",
+  "stem": "Which of the following classifiers produce a linear decision boundary in the feature space?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "A",
+    "B"
+   ]
+  },
+  "solution": "The perceptron and logistic regression decide on the sign of $w^Tx+b$, a hyperplane. A Gaussian-kernel SVM and a ReLU network with hidden layers give non-linear boundaries.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "Perceptron"
+   },
+   {
+    "key": "B",
+    "text": "Logistic regression"
+   },
+   {
+    "key": "C",
+    "text": "Kernel SVM with Gaussian kernel"
+   },
+   {
+    "key": "D",
+    "text": "A neural network with two hidden layers that has ReLU activations"
+   }
+  ]
+ },
+ {
+  "id": "q_f10d5298e8fb",
+  "type": "NVQ",
+  "stem": "$k:\\mathbb{R}^2\\times\\mathbb{R}^2\\to\\mathbb{R}$ is a kernel defined as:\n$$k(x,y)=(1+x^Ty)^2$$\n$\\phi:\\mathbb{R}^2\\to\\mathbb{R}^D$ is a transformation corresponding to this kernel such that $k(x,y)=\\phi(x)^T\\phi(y)$. Find $D$. [NAT]",
+  "images": [],
+  "answer": {
+   "range": [
+    6.0,
+    6.0
+   ]
+  },
+  "solution": "Expanding $(1+x_1y_1+x_2y_2)^2$ gives the monomials $1,\\ x_1,\\ x_2,\\ x_1^2,\\ x_2^2,\\ x_1x_2$ in $x$, so $\\phi(x)=(1,\\sqrt2x_1,\\sqrt2x_2,x_1^2,x_2^2,\\sqrt2x_1x_2)$ and $D=6$.\n\n*Verified by: recomputed-by-code.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.CLS",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "calculation"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "verified",
+  "version": 1
+ },
+ {
+  "id": "q_24073fe21e0b",
+  "type": "SCQ",
+  "stem": "What is the effect of increasing the regularization parameter $\\lambda$ in Ridge Regression?",
+  "images": [],
+  "answer": {
+   "keys": [
+    "C"
+   ]
+  },
+  "solution": "A larger penalty shrinks the weights, making the model simpler: variance falls and bias rises.\n\nKey from PDF, not independently verified by code (it agrees with the reasoning above).\n\n*Verified by: key from source, conceptual.*",
+  "solution_source": "in_house",
+  "tax": {
+   "subject": "ML",
+   "chapter": "ML.REG",
+   "topics": [],
+   "concepts": []
+  },
+  "skills": [
+   "conceptual"
+  ],
+  "appearances": [],
+  "in_syllabus": {
+   "GATE_DA": {
+    "2027": true
+   }
+  },
+  "difficulty": {
+   "label": "M",
+   "b": 0.4,
+   "n": 0
+  },
+  "source": {
+   "kind": "user",
+   "license": "Freely downloadable NPTEL GATE DA mock tests; provided by the project owner",
+   "url": "Gate_DA_Nptel_mocks.pdf"
+  },
+  "status": "needs_review",
+  "version": 1,
+  "options": [
+   {
+    "key": "A",
+    "text": "It increases the variance and decreases the bias of the model."
+   },
+   {
+    "key": "B",
+    "text": "It increases both bias and variance of the model."
+   },
+   {
+    "key": "C",
+    "text": "It increases the bias and decreases the variance of the model."
+   },
+   {
+    "key": "D",
+    "text": "It decreases both bias and variance of the model."
+   }
+  ]
+ }
+]
