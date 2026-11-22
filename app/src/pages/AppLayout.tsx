@@ -2,31 +2,38 @@ import { useEffect, useRef, useState, type ComponentType, type CSSProperties, ty
 import { Link, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { friendlyAuthError } from '../auth/errors';
-import { Banner, LogoMark } from '../components/ui';
+import { Banner, LogoMark, IconButton } from '../components/ui';
 import { ThemeToggle } from '../components/ThemeToggle';
 import {
-  BookmarkIcon, CalendarIcon, ChartIcon, CodeIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon,
-} from '../components/icons';
+  BookmarkIcon, CalendarIcon, ChartIcon, CodeIcon, HomeIcon, LogOutIcon, MockIcon, PlanIcon, PracticeIcon, SettingsIcon, UploadIcon, UserIcon, PanelCloseIcon, PanelOpenIcon } from '../components/icons';
 import { ExamSwitcher } from '../exams/ExamSwitcher';
 import { useActiveExam } from '../exams/useActiveExam';
 import { useGuest } from '../store/StoreProvider';
 import { SITE_NAME } from '../shell/useDocumentTitle';
 
 type IconC = ComponentType<SVGProps<SVGSVGElement>>;
-interface NavEntry { to: string; label: string; icon: IconC; tab?: boolean; /** extra path prefixes that keep this entry active */ also?: string[] }
+interface NavEntry { to: string; label: string; icon: IconC; tab?: boolean; /** sidebar section */ group: NavGroup; /** false = not in the sidebar list (reached from the account menu) */ side?: boolean; /** extra path prefixes that keep this entry active */ also?: string[] }
 
 /** Every built route. `tab` entries go in the mobile tab bar (4 slots); the rest are in the sidebar and, on phones, the account menu. */
+type NavGroup = 'home' | 'study' | 'progress' | 'library';
+/** Sidebar sections, in order. `null` label = no caption. */
+const NAV_GROUPS: Array<{ id: NavGroup; label: string | null }> = [
+  { id: 'home', label: null },
+  { id: 'study', label: 'Study' },
+  { id: 'progress', label: 'Progress' },
+  { id: 'library', label: 'Library' },
+];
 export const NAV: NavEntry[] = [
-  { to: '/', label: 'Home', icon: HomeIcon, tab: true },
-  { to: '/practice', label: 'Practice', icon: PracticeIcon, tab: true },
-  { to: '/saved', label: 'Saved', icon: BookmarkIcon },
-  { to: '/mocks', label: 'Mocks', icon: MockIcon, tab: true, also: ['/exam'] },
-  { to: '/dsa', label: 'DSA', icon: CodeIcon },
-  { to: '/upload', label: 'Upload', icon: UploadIcon },
-  { to: '/analysis', label: 'Analysis', icon: ChartIcon },
-  { to: '/plan', label: 'Plan', icon: PlanIcon },
-  { to: '/roadmap', label: 'Roadmap', icon: CalendarIcon },
-  { to: '/settings', label: 'Settings', icon: SettingsIcon, tab: true },
+  { to: '/', label: 'Home', icon: HomeIcon, tab: true, group: 'home' },
+  { to: '/practice', label: 'Practice', icon: PracticeIcon, tab: true, group: 'study' },
+  { to: '/mocks', label: 'Mocks', icon: MockIcon, tab: true, also: ['/exam'], group: 'study' },
+  { to: '/dsa', label: 'DSA', icon: CodeIcon, group: 'study' },
+  { to: '/plan', label: 'Plan', icon: PlanIcon, group: 'progress' },
+  { to: '/roadmap', label: 'Roadmap', icon: CalendarIcon, group: 'progress' },
+  { to: '/analysis', label: 'Analysis', icon: ChartIcon, group: 'progress' },
+  { to: '/saved', label: 'Saved answers', icon: BookmarkIcon, group: 'library' },
+  { to: '/upload', label: 'My questions', icon: UploadIcon, group: 'library' },
+  { to: '/settings', label: 'Settings', icon: SettingsIcon, tab: true, group: 'library', side: false },
 ];
 
 function isActive(entry: NavEntry, pathname: string): boolean {
@@ -108,10 +115,19 @@ function AccountMenu({ up }: { up?: boolean }) {
 
 function SidebarNav() {
   return (
-    <nav aria-label="Main" className="stack-text">
-      {NAV.map((entry) => (
-        <NavItem key={entry.to} entry={entry} className="nav-item"><entry.icon /><span className="nav-label">{entry.label}</span></NavItem>
-      ))}
+    <nav aria-label="Main" className="side-nav">
+      {NAV_GROUPS.map((g) => {
+        const items = NAV.filter((n) => n.group === g.id && n.side !== false);
+        if (items.length === 0) return null;
+        return (
+          <div key={g.id} className="side-group" role="group" aria-label={g.label ?? undefined}>
+            {g.label && <p className="side-group-label side-only-wide" aria-hidden="true">{g.label}</p>}
+            {items.map((entry) => (
+              <NavItem key={entry.to} entry={entry} className="nav-item"><entry.icon /><span className="nav-label">{entry.label}</span></NavItem>
+            ))}
+          </div>
+        );
+      })}
     </nav>
   );
 }
@@ -145,12 +161,16 @@ function ExamKeyedOutlet() {
   return <Outlet key={running ? 'running' : `exam-${gen}`} />;
 }
 
+const COLLAPSE_KEY = 'kairos.sidebar.collapsed';
+
 /** App chrome: top bar + bottom tab bar on mobile, slim left sidebar from 1024px. */
 export function AppLayout() {
   const { user, resendVerification } = useAuth();
   const [resent, setResent] = useState(false);
   const [resendError, setResendError] = useState('');
   const wide = useWide();
+  const [collapsed, setCollapsed] = useState<boolean>(() => { try { return localStorage.getItem(COLLAPSE_KEY) === '1'; } catch { return false; } });
+  const toggleCollapsed = () => setCollapsed((c) => { const n = !c; try { localStorage.setItem(COLLAPSE_KEY, n ? '1' : '0'); } catch { /* storage blocked */ } return n; });
   const { pathname } = useLocation();
   const main = useRef<HTMLDivElement>(null);
   const first = useRef(true);
@@ -166,14 +186,17 @@ export function AppLayout() {
   useEffect(() => { if (!document.title) document.title = SITE_NAME; }, [pathname]);
   const skip = (e: ReactMouseEvent<HTMLAnchorElement>) => { e.preventDefault(); main.current?.focus(); };
   return (
-    <div className={`shell${wide ? ' shell-wide' : ''}`}>
+    <div className={`shell${wide ? ' shell-wide' : ''}${wide && collapsed ? ' shell-collapsed' : ''}`}>
       <a href="#main" onClick={skip} className="btn btn-primary sr-only focus:not-sr-only focus:fixed focus:left-s3 focus:top-s3 focus:z-50">Skip to content</a>
       {wide ? (
         <aside className="sidebar">
-          <Link to="/" aria-label="Kairos home" className="brand"><LogoMark /><span className="brand-text"><span className="text-h3 font-bold">Kairos</span><span className="text-caption text-slate">The right question, at the right time</span></span></Link>
+          <div className="side-brand">
+            <Link to="/" aria-label="Kairos home" className="brand"><LogoMark /><span className="brand-text"><span className="text-h3 font-bold">Kairos</span><span className="text-caption text-slate">The right question, at the right time</span></span></Link>
+            <IconButton label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} variant="ghost" className="side-collapse" aria-expanded={!collapsed} onClick={toggleCollapsed}>{collapsed ? <PanelOpenIcon /> : <PanelCloseIcon />}</IconButton>
+          </div>
           <ExamSwitcher variant="sidebar" />
           <SidebarNav />
-          <div className="mt-auto stack items-center gap-tight xl:flex-row xl:justify-between"><AccountMenu up /><ThemeToggle /></div>
+          <div className="sidebar-foot"><AccountMenu up /><ThemeToggle /></div>
         </aside>
       ) : (
         <header className="topbar">

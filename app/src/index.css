@@ -335,6 +335,15 @@
   .nav-item { display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius-btn); font: 600 var(--fs-small)/1.4 var(--font-ui); color: var(--ink); text-decoration: none; transition: background-color var(--dur) var(--ease); }
   .nav-item[aria-current='page'] { background: var(--surface-3); color: var(--ink); }
   .nav-item[aria-disabled='true'] { color: var(--slate); opacity: 0.75; cursor: default; }
+  .side-nav { display: flex; flex-direction: column; gap: var(--space-4); }
+  .side-group { display: flex; flex-direction: column; gap: var(--space-1); }
+  .side-group-label { padding: 0 var(--space-3); font: 600 var(--fs-caption)/1.4 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .side-brand { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .side-collapse { display: none; flex: none; color: var(--slate); cursor: pointer; transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease); }
+  .side-collapse:active { background: var(--tint-active); color: var(--ink); }
+  .shell-collapsed .side-collapse { background: var(--surface-3); color: var(--ink); } /* shows the rail is collapsed */
+  @media (hover: hover) { .side-collapse:hover { background: var(--tint-hover); color: var(--ink); } .shell-collapsed .side-collapse:hover { background: var(--tint-active); } }
+  .sidebar-foot { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
   .nav-label, .side-only-wide { display: none; }
   @media (min-width: 1280px) {
     .sidebar { padding: var(--space-5) var(--space-4); }
@@ -343,7 +352,21 @@
     .side-only-wide.row { display: flex; }
     .brand { justify-content: flex-start; }
     .brand-text { display: flex; }
+    .side-collapse { display: inline-flex; }
+    .sidebar-foot { flex-direction: row; justify-content: space-between; }
+    /* collapsed by the student: the same icon rail as 1024-1279px */
+    .shell-collapsed { --sidebar-w: 72px; }
+    .shell-collapsed .sidebar { padding: var(--space-5) var(--space-3); }
+    .shell-collapsed .nav-item, .shell-collapsed .brand { justify-content: center; }
+    .shell-collapsed [data-testid='exam-switcher'] .nav-item { justify-content: center; }
+    .shell-collapsed .nav-label, .shell-collapsed .side-only-wide, .shell-collapsed .brand-text { display: none; }
+    .shell-collapsed .side-brand, .shell-collapsed .sidebar-foot { flex-direction: column; justify-content: center; }
   }
+  /* icon rail (1024-1279px, or collapsed): menus need to overflow the 72px rail, so the rail does not clip */
+  @media (max-width: 1279.98px) { .sidebar { overflow: visible; } .sidebar .menu-overlay { right: auto; min-width: 240px; } }
+  .shell-collapsed .sidebar { overflow: visible; }
+  .shell-collapsed .sidebar .menu-overlay { right: auto; min-width: 240px; }
+  .shell-wide .shell-main, .sidebar { transition: margin-left var(--dur) var(--ease), width var(--dur) var(--ease); }
 
   /* ---- paired columns (landing, hero): same ratio, same alignment, same gap ---- */
   .twopane { display: grid; gap: var(--space-6); grid-template-columns: minmax(0, 1fr); }

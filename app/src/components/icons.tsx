@@ -25,6 +25,9 @@ export const ChartIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M
 export const PlanIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="3.5" y="5" width="17" height="15" rx="3" /><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4" /></Icon>;
 export const CodeIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" /></Icon>;
 export const CopyIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="8.5" y="8.5" width="11" height="11" rx="2" /><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5" /></Icon>;
+export const PanelIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" /><path d="M9.5 4.5v15" /></Icon>;
+export const PanelCloseIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" /><path d="M9.5 4.5v15M16 10l-2 2 2 2" /></Icon>;
+export const PanelOpenIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" /><path d="M9.5 4.5v15M14 10l2 2-2 2" /></Icon>;
 export const CheckIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M5 12.5l4.5 4.5L19 7.5" /></Icon>;
 export const ChevronDownIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M6 9l6 6 6-6" /></Icon>;
 export const ArrowRightIcon = (p: SVGProps<SVGSVGElement>) => <Icon {...p}><path d="M5 12h14M13 6l6 6-6 6" /></Icon>;

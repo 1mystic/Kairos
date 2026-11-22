@@ -81,7 +81,7 @@ export function ExamSwitcher({ variant = 'sidebar' }: { variant?: 'sidebar' | 't
           <span className="block text-caption text-slate">Preparing for</span>
           <span className="block truncate">{label}</span>
         </span>
-        <ChevronDownIcon width={16} height={16} className="shrink-0" aria-hidden />
+        <ChevronDownIcon width={16} height={16} className={sidebar ? 'shrink-0 side-only-wide' : 'shrink-0'} aria-hidden />
       </button>
       {open && (
         <div id={menuId} role="menu" aria-label="Your exams" className={sidebar ? 'menu menu-overlay' : 'menu right-0 mt-s2'}>
