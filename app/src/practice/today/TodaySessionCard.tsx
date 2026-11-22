@@ -10,7 +10,7 @@ import './today.css';
 
 const PACE_ICON = { ahead: SparkIcon, on_track: CheckIcon, slightly_behind: ClockIcon, behind: AlertIcon } as const;
 
-/** Same shape as the loaded card (header, 4 stat cells, topic cells), so nothing jumps when the plan arrives. */
+/** Same shape as the loaded card (header, 4 stat cells), so nothing jumps when the plan arrives. */
 function CardSkeleton() {
   return (
     <Card className="today-hero" as="section" aria-busy="true" aria-label="Today's session" data-testid="today-card-loading">
@@ -24,9 +24,6 @@ function CardSkeleton() {
           <div className="today-actions"><Skeleton className="h-s8 w-full" /><Skeleton className="h-s8 w-full" /></div>
         </div>
         <div className="today-stats" data-cells="4">
-          {[0, 1, 2, 3].map((i) => <Skeleton key={i} className="today-cell today-skel" />)}
-        </div>
-        <div className="today-topics" aria-hidden="true">
           {[0, 1, 2, 3].map((i) => <Skeleton key={i} className="today-cell today-skel" />)}
         </div>
       </div>
@@ -66,6 +63,7 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
   const more = model.moreTopics ?? 0;
   const topicCells = model.chips.length + (more > 0 ? 1 : 0);
   return (
+    <>
     <Card className="today-hero" as="section" aria-labelledby="today-session-h" data-testid="today-session-card" data-variant={model.variant}>
       <div className="stack-card">
         <div className="today-head">
@@ -97,8 +95,16 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
             {exam?.status && <StatCell label="Pace"><PaceValue status={exam.status} /></StatCell>}
           </div>
         )}
-        {topicCells > 0 && (
-          <ul className="today-topics" aria-label="Focus for today" data-xl3={topicCells % 3 === 0 ? 'true' : undefined}>
+      </div>
+    </Card>
+    {topicCells > 0 && (
+      <Card className="today-hero today-focus" as="section" aria-labelledby="today-focus-h" data-testid="today-focus-card">
+        <div className="stack-card">
+          <div className="row-between">
+            <h2 id="today-focus-h" className="text-h3">Today's focus</h2>
+            <Link to="/plan" className="text-link text-small">Open plan</Link>
+          </div>
+          <ul className="today-topics" aria-labelledby="today-focus-h" data-xl3={topicCells % 3 === 0 ? 'true' : undefined}>
             {model.chips.map((c) => (
               <li key={`${c.label}-${c.reason}`}>
                 <Link to={c.to ?? '/plan'} className="today-cell today-topic" data-kind={tagKind(c.reason)} aria-label={`${c.label}, ${c.reason}`}>
@@ -113,9 +119,10 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
               </li>
             )}
           </ul>
-        )}
-      </div>
-    </Card>
+        </div>
+      </Card>
+    )}
+    </>
   );
 }
 
