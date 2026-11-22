@@ -1,48 +1,19 @@
-/* "Today's session" hero: a solid brand panel, the strongest element on Home.
-   Flat: no borders, shadows or gradients. Colours are tokens only; every pair is WCAG-audited
-   (on-primary on primary 7.3:1 light / 8.6:1 dark; secondary button 4.9:1+; see scripts/contrast_audit.py). No text opacity.
+/* "Today's session" card on Home: the same card surface and text colours as the other dashboard cards,
+   so it sits in the grid like its neighbours. Cells are a deeper shade of the card; topic cells are links and carry
+   a light translucent accent by kind (weak = saffron, warm-up = green, review = brand, mixed = none).
+   Flat: no borders, shadows or gradients; tokens only.
+   Contrast (WCAG, scripts/contrast_audit.py math), text = ink, light / dark:
+     card (surface-2)                    16.0 / 13.2
+     cell  surface-2 + deep 7% / 55%     13.9 / 15.1   slate on cell 6.0 / 9.4   hover (12% / 30%) 12.5 / 14.3
+     weak     + accent 16%               12.8 / 11.4   slate 5.5 / 7.1
+     warm-up  + good 16%                 11.4 / 11.1   slate 4.9 / 6.9
+     review   + primary 12%              11.6 / 12.2   slate 5.0 / 7.6   (all >= 4.5) */
+.today-hero { --today-deep: var(--ink); --today-cell: color-mix(in srgb, var(--surface-2), var(--today-deep) 7%); --today-cell-hover: color-mix(in srgb, var(--surface-2), var(--today-deep) 12%); }
+html[data-theme='dark'] .today-hero { --today-deep: var(--paper); --today-cell: color-mix(in srgb, var(--surface-2), var(--today-deep) 55%); --today-cell-hover: color-mix(in srgb, var(--surface-2), var(--today-deep) 30%); }
+.today-hero .btn-secondary { background: var(--today-cell); }
+@media (hover: hover) and (pointer: fine) { .today-hero .btn-secondary:hover { background: var(--today-cell-hover); } }
 
-   Contrast (WCAG 2.x, math as scripts/contrast_audit.py; on-primary = surface #FFFFFF light / paper #0B0F24 dark):
-     pair                                                          light    dark    need
-     on-primary on --primary (panel text)                          7.26     8.60    4.5
-     on-primary on cell  = mix(primary, on-primary 12%)            5.61     6.89    4.5
-     on-primary on tag   = mix(primary, on-primary 18%)            4.90     6.13    4.5
-     primary on on-primary (primary button label)                  7.26     8.60    4.5
-     on-primary on secondary button = mix(primary, on-primary 12%) 5.61     6.89    4.5
-   Cell and tag fills vs the panel are decorative (flat tint layers); every cell carries text, so nothing relies on its edge.
-   Pace "Behind" uses the same tag-less cell style with an icon + word: bad-ink/bad on indigo would fail 4.5:1, so no red here. */
-.today-hero { --today-pale: var(--surface); --today-pale-amt: 6%; --today-deep: var(--ink); }
-html[data-theme='dark'] .today-hero { --today-pale: var(--ink); --today-pale-amt: 35%; --today-deep: var(--paper); }
-/* panel: the brand violet, a little paler (more so in dark mode) */
-.today-hero { --today-panel: color-mix(in srgb, var(--primary), var(--today-pale) var(--today-pale-amt)); }
-.card.today-hero { --card-bg: var(--today-panel); color: var(--on-primary); }
-.today-hero h2,
-.today-hero p,
-.today-hero .text-slate,
-.today-hero .text-link { color: var(--on-primary); }
-
-/* buttons invert on the solid panel */
-.today-hero .btn-primary { background: var(--on-primary); color: var(--primary); }
-.today-hero .btn-secondary { background: var(--today-cell); color: var(--on-primary); }
-.today-hero .btn-primary:active { background: color-mix(in srgb, var(--on-primary), var(--primary) 14%); color: var(--primary); }
-.today-hero .btn-secondary:active { background: var(--today-cell-hover); }
-@media (hover: hover) and (pointer: fine) {
-  .today-hero .btn-primary:hover { background: color-mix(in srgb, var(--on-primary), var(--primary) 8%); color: var(--primary); }
-  .today-hero .btn-secondary:hover { background: var(--today-cell-hover); }
-}
-
-/* layout: header (text left, actions right, vertically centred), stats strip, topic grid.
-   Compact: cells share one fill, padding, radius and height so rows and columns line up.
-   Cells are a deeper shade of the panel (--today-deep = darkest token per theme). Topic cells are links: kind is shown as
-   plain text plus a light translucent accent in the cell fill (weak = saffron, warm-up = green, review = surface, mixed = none).
-   Contrast (WCAG, scripts/contrast_audit.py math), text = on-primary, light / dark:
-     panel      mix(primary, pale 6% / 35%)     6.4 / 10.9
-     cell base  mix(panel, deep 24%)            8.5 / 6.7     hover (deep 30%)  9.1 / 5.8
-     weak       + accent 22%                    6.6 / 7.0     hover             6.9 / 6.3
-     warm-up    + good 22%                      8.1 / 7.1     hover             8.5 / 6.4
-     review     + surface 12%                   6.3 / 5.5     hover             6.7 / 4.8   (all >= 4.5)
-   Secondary button uses the cell fill (same ratios). */
-.today-hero { --today-cell: color-mix(in srgb, var(--today-panel), var(--today-deep) 24%); --today-cell-hover: color-mix(in srgb, var(--today-panel), var(--today-deep) 30%); }
+/* layout: header (text left, actions right, vertically centred), stats strip, topic grid; all cells line up */
 .today-head { display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); align-items: center; }
 .today-head > * { min-width: 0; }
 .today-actions { display: grid; gap: var(--space-2); grid-template-columns: minmax(0, 1fr); }
@@ -51,22 +22,22 @@ html[data-theme='dark'] .today-hero { --today-pale: var(--ink); --today-pale-amt
 .today-stats, .today-topics { display: grid; gap: var(--space-2); grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
 .today-stats > :nth-child(odd):last-child { grid-column: 1 / -1; }
 .today-topics > li { display: flex; min-width: 0; }
-.today-cell { display: flex; flex: 1; min-width: 0; padding: var(--space-2) var(--space-4); border-radius: var(--radius-btn); background: var(--today-cell); color: var(--on-primary); text-decoration: none; }
+.today-cell { display: flex; flex: 1; min-width: 0; padding: var(--space-2) var(--space-4); border-radius: var(--radius-btn); background: var(--today-cell); color: var(--ink); text-decoration: none; }
 .today-skel { background: var(--today-cell); min-height: var(--space-7); }
 .today-stat { flex-direction: column; justify-content: center; align-items: flex-start; gap: 0; min-height: var(--space-7); }
 .today-stat-value { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 600; }
 .today-topics { grid-template-columns: minmax(0, 1fr); }
 .today-topic { align-items: center; justify-content: space-between; gap: var(--space-3); min-height: var(--space-6); font-size: var(--fs-small); cursor: pointer; transition: background-color var(--dur) var(--ease); }
-.today-topic[data-kind='weak'] { background: color-mix(in srgb, var(--today-cell), var(--accent) 22%); }
-.today-topic[data-kind='warm'] { background: color-mix(in srgb, var(--today-cell), var(--good) 22%); }
-.today-topic[data-kind='review'] { background: color-mix(in srgb, var(--today-cell), var(--surface) 12%); }
+.today-topic[data-kind='weak'] { background: color-mix(in srgb, var(--today-cell), var(--accent) 16%); }
+.today-topic[data-kind='warm'] { background: color-mix(in srgb, var(--today-cell), var(--good) 16%); }
+.today-topic[data-kind='review'] { background: color-mix(in srgb, var(--today-cell), var(--primary) 12%); }
 .today-kind { flex: none; font: 600 var(--fs-caption)/1.4 var(--font-ui); white-space: nowrap; }
 .today-more { justify-content: center; font-weight: 600; }
 @media (hover: hover) {
   .today-topic:hover { background: var(--today-cell-hover); }
-  .today-topic[data-kind='weak']:hover { background: color-mix(in srgb, var(--today-cell-hover), var(--accent) 22%); }
-  .today-topic[data-kind='warm']:hover { background: color-mix(in srgb, var(--today-cell-hover), var(--good) 22%); }
-  .today-topic[data-kind='review']:hover { background: color-mix(in srgb, var(--today-cell-hover), var(--surface) 12%); }
+  .today-topic[data-kind='weak']:hover { background: color-mix(in srgb, var(--today-cell-hover), var(--accent) 16%); }
+  .today-topic[data-kind='warm']:hover { background: color-mix(in srgb, var(--today-cell-hover), var(--good) 16%); }
+  .today-topic[data-kind='review']:hover { background: color-mix(in srgb, var(--today-cell-hover), var(--primary) 12%); }
 }
 
 @media (min-width: 768px) {
@@ -84,8 +55,6 @@ html[data-theme='dark'] .today-hero { --today-pale: var(--ink); --today-pale-amt
 }
 
 /* progress + loading skeleton read against the solid panel */
-.today-hero .progress { background: var(--today-cell-hover); }
-.today-hero .progress > span { background: var(--on-primary); }
 .today-hero .skeleton { background: var(--today-cell); }
 
 /* keyboard focus must stay visible on the solid panel */

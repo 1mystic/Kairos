@@ -371,5 +371,3 @@
   }
 }
 
-/* keyboard focus on the solid Today hero panel */
-.today-hero :focus-visible { outline: 2px solid var(--on-primary); outline-offset: 2px; }

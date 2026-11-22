@@ -13,7 +13,7 @@ const PACE_ICON = { ahead: SparkIcon, on_track: CheckIcon, slightly_behind: Cloc
 /** Same shape as the loaded card (header, 4 stat cells, topic cells), so nothing jumps when the plan arrives. */
 function CardSkeleton() {
   return (
-    <Card tone="primary" className="today-hero" as="section" aria-busy="true" aria-label="Today's session" data-testid="today-card-loading">
+    <Card className="today-hero" as="section" aria-busy="true" aria-label="Today's session" data-testid="today-card-loading">
       <div className="stack-card">
         <div className="today-head">
           <div className="stack-label">
@@ -66,7 +66,7 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
   const more = model.moreTopics ?? 0;
   const topicCells = model.chips.length + (more > 0 ? 1 : 0);
   return (
-    <Card tone="primary" className="today-hero" as="section" aria-labelledby="today-session-h" data-testid="today-session-card" data-variant={model.variant}>
+    <Card className="today-hero" as="section" aria-labelledby="today-session-h" data-testid="today-session-card" data-variant={model.variant}>
       <div className="stack-card">
         <div className="today-head">
           <div className="stack-label">
