@@ -1,6 +1,16 @@
 /* "Today's session" hero: a solid brand panel, the strongest element on Home.
    Flat: no borders, shadows or gradients. Colours are tokens only; every pair is WCAG-audited
-   (on-primary on primary 7.3:1 light / 8.6:1 dark; secondary button 4.9:1+; see scripts/contrast_audit.py). No text opacity. */
+   (on-primary on primary 7.3:1 light / 8.6:1 dark; secondary button 4.9:1+; see scripts/contrast_audit.py). No text opacity.
+
+   Contrast (WCAG 2.x, math as scripts/contrast_audit.py; on-primary = surface #FFFFFF light / paper #0B0F24 dark):
+     pair                                                          light    dark    need
+     on-primary on --primary (panel text)                          7.26     8.60    4.5
+     on-primary on cell  = mix(primary, on-primary 12%)            5.61     6.89    4.5
+     on-primary on tag   = mix(primary, on-primary 18%)            4.90     6.13    4.5
+     primary on on-primary (primary button label)                  7.26     8.60    4.5
+     on-primary on secondary button = mix(primary, on-primary 12%) 5.61     6.89    4.5
+   Cell and tag fills vs the panel are decorative (flat tint layers); every cell carries text, so nothing relies on its edge.
+   Pace "Behind" uses the same tag-less cell style with an icon + word: bad-ink/bad on indigo would fail 4.5:1, so no red here. */
 .card.today-hero { --card-bg: var(--primary); color: var(--on-primary); }
 .today-hero h2,
 .today-hero p,
@@ -15,6 +25,39 @@
 @media (hover: hover) and (pointer: fine) {
   .today-hero .btn-primary:hover { background: color-mix(in srgb, var(--on-primary), var(--primary) 8%); color: var(--primary); }
   .today-hero .btn-secondary:hover { background: color-mix(in srgb, var(--primary), var(--on-primary) 18%); }
+}
+
+/* layout: header (text left, actions right, vertically centred), stats strip, topic grid.
+   All cells share one background, padding, radius and min-height so rows and columns line up. */
+.today-hero { --today-cell: color-mix(in srgb, var(--primary), var(--on-primary) 12%); --today-tag: color-mix(in srgb, var(--primary), var(--on-primary) 18%); }
+.today-head { display: grid; gap: var(--space-5); grid-template-columns: minmax(0, 1fr); align-items: center; }
+.today-head > * { min-width: 0; }
+.today-actions { display: grid; gap: var(--space-3); grid-template-columns: minmax(0, 1fr); }
+.today-actions > :nth-child(odd):last-child { grid-column: 1 / -1; }
+
+.today-stats, .today-topics { display: grid; gap: var(--space-3); grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.today-stats > :nth-child(odd):last-child { grid-column: 1 / -1; }
+.today-cell { display: flex; min-width: 0; min-height: var(--space-8); padding: var(--space-3) var(--space-4); border-radius: var(--radius-btn); background: var(--today-cell); color: var(--on-primary); }
+.today-skel { background: var(--today-cell); }
+.today-stat { flex-direction: column; justify-content: center; align-items: flex-start; gap: var(--space-1); }
+.today-stat-value { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 600; }
+.today-topics { grid-template-columns: minmax(0, 1fr); }
+.today-topic { align-items: center; justify-content: space-between; gap: var(--space-3); min-height: var(--space-7); }
+.today-tag { flex: none; padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); background: var(--today-tag); color: var(--on-primary); font: 600 var(--fs-caption)/1.4 var(--font-ui); white-space: nowrap; }
+.today-more { justify-content: center; }
+
+@media (min-width: 768px) {
+  .today-head { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-6); }
+  .today-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); inline-size: calc(var(--space-8) * 6); }
+  .today-stats[data-cells="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .today-stats[data-cells="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .today-stats[data-cells="3"] > :nth-child(odd):last-child { grid-column: auto; }
+  .today-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .today-topics > :nth-child(odd):last-child { grid-column: 1 / -1; }
+}
+@media (min-width: 1280px) {
+  .today-topics[data-xl3="true"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .today-topics[data-xl3="true"] > :nth-child(odd):last-child { grid-column: auto; }
 }
 
 /* progress + loading skeleton read against the solid panel */

@@ -15,7 +15,7 @@ const readyModel = (over: Partial<CardModel> = {}): CardModel => ({
   variant: 'session', headline: '46 questions · about 55 min', reason: 'Built from your plan: 2 weak topics, 1 review, 1 mixed set',
   chips: [{ label: 'Optics', reason: 'Weak' }, { label: 'Waves', reason: 'Review due' }], progress: null, doneChip: false,
   primary: { label: "Start today's session", to: '/practice/today' }, secondary: null, planLink: true,
-  exam: { label: 'JEE Main', daysLeft: 45, status: 'ahead' }, ...over,
+  exam: { label: 'JEE Main', daysLeft: 45, status: 'ahead' }, stats: { questions: 46, minutes: 55 }, moreTopics: 0, ...over,
 });
 
 describe('TodaySessionCardView', () => {
@@ -24,10 +24,20 @@ describe('TodaySessionCardView', () => {
     expect(screen.getByText("Today's session")).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '46 questions · about 55 min' })).toBeInTheDocument();
     expect(screen.getByText(/2 weak topics, 1 review, 1 mixed set/)).toBeInTheDocument();
-    expect(screen.getByText('Optics · Weak')).toBeInTheDocument();
-    expect(screen.getByText('45 days to JEE Main')).toBeInTheDocument();
+    expect(screen.getByText('Optics')).toHaveAttribute('title', 'Optics');
+    expect(screen.getByText('Weak')).toBeInTheDocument();
+    expect(screen.getByText('Days to JEE Main')).toBeInTheDocument();
+    expect(screen.getByText('45')).toBeInTheDocument();
+    expect(screen.getByText('Ahead')).toBeInTheDocument();
+    expect(screen.getByText('Questions')).toBeInTheDocument();
+    expect(screen.getByText('about 55 min')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: "Start today's session" })).toHaveAttribute('href', '/practice/today');
     expect(screen.getByRole('link', { name: 'See full plan' })).toHaveAttribute('href', '/plan');
+  });
+
+  it('more than 6 topics: a "+N more" cell links to the plan', () => {
+    view(readyModel({ moreTopics: 3 }));
+    expect(screen.getByRole('link', { name: '+3 more' })).toHaveAttribute('href', '/plan');
   });
 
   it('done: success chip, progress bar and "Practise more"', () => {

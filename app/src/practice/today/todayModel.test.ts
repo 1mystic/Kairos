@@ -42,9 +42,12 @@ describe('card model', () => {
     expect(m.exam).toEqual({ label: 'JEE Main', daysLeft: 60, status: 'on_track' });
   });
 
-  it('shows at most 4 focus chips', () => {
-    const plan = dayPlan(['A', 'B', 'C', 'D', 'E'].map((c, i) => task(String(i), c, 5)));
-    expect(cardModel(input({ plan })).chips).toHaveLength(4);
+  it('shows at most 6 focus chips and counts the rest', () => {
+    const plan = dayPlan(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].map((c, i) => task(String(i), c, 5)));
+    const m = cardModel(input({ plan }));
+    expect(m.chips).toHaveLength(6);
+    expect(m.moreTopics).toBe(2);
+    expect(m.stats?.questions).toBe(40);
   });
 
   it('mock day: the mock is primary, practice is the secondary action', () => {

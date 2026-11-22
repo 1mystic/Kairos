@@ -29,6 +29,10 @@ export interface CardModel {
   headline: string;
   reason: string;
   chips: CardChip[];
+  /** topics beyond the ones in `chips` ("+N more") */
+  moreTopics?: number;
+  /** numbers for the stats strip (questions and estimated minutes); null when the variant has no session to count */
+  stats?: { questions: number; minutes: number } | null;
   progress: { done: number; total: number } | null;
   /** "Today's session done" success chip */
   doneChip: boolean;
@@ -61,7 +65,7 @@ export interface CardInput {
 }
 
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`;
-const MAX_CHIPS = 4;
+const MAX_CHIPS = 6;
 
 function examOf(i: CardInput): CardModel['exam'] {
   return i.daysLeft !== null && i.examLabel ? { label: i.examLabel, daysLeft: i.daysLeft, status: i.status } : null;
@@ -121,6 +125,8 @@ export function cardModel(i: CardInput): CardModel {
         headline: i.buffered ? `Continue: ${i.buffered.done} of ${i.buffered.total} questions done` : `${s.questions} questions · about ${fmtMin(s.estMin)}`,
         reason: s.summary,
         chips: s.focus.slice(0, MAX_CHIPS).map((f) => ({ label: f.name, reason: f.reason })),
+        moreTopics: Math.max(0, s.focus.length - MAX_CHIPS),
+        stats: i.buffered ? null : { questions: s.questions, minutes: s.estMin },
         progress: i.buffered,
         primary: { label: i.buffered ? 'Continue' : "Start today's session", to: TODAY_ROUTE },
         planLink: false,
@@ -142,6 +148,8 @@ export function cardModel(i: CardInput): CardModel {
         headline: i.buffered ? `Continue: ${i.buffered.done} of ${i.buffered.total} questions done` : `${s.questions} questions · about ${fmtMin(s.estMin)}`,
         reason: s.summary,
         chips: s.focus.slice(0, MAX_CHIPS).map((f) => ({ label: f.name, reason: f.reason })),
+        moreTopics: Math.max(0, s.focus.length - MAX_CHIPS),
+        stats: i.buffered ? null : { questions: s.questions, minutes: s.estMin },
         progress: i.buffered,
         primary: { label: i.buffered ? 'Continue' : "Start today's session", to: TODAY_ROUTE },
         planLink: false,
@@ -182,6 +190,7 @@ export function cardModel(i: CardInput): CardModel {
       headline: `Continue: ${i.buffered.done} of ${i.buffered.total} questions done`,
       reason: todo.length > 0 ? planReason(todo) : 'Pick up where you left off.',
       chips: chipsOf(todo, i.names),
+      moreTopics: Math.max(0, todo.length - MAX_CHIPS),
       progress: i.buffered,
       primary: { label: 'Continue', to: TODAY_ROUTE },
     });
@@ -213,6 +222,8 @@ export function cardModel(i: CardInput): CardModel {
     headline: lightOnly ? `Light day: ${plural(q, 'question')} of review` : `${plural(q, 'question')} · about ${fmtMin(min)}`,
     reason: planReason(todo),
     chips: chipsOf(todo, i.names),
+    moreTopics: Math.max(0, todo.length - MAX_CHIPS),
+    stats: { questions: q, minutes: min },
     progress,
     primary: { label: "Start today's session", to: TODAY_ROUTE },
   });
