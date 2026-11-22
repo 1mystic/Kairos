@@ -9,6 +9,7 @@ import { HBars } from '../charts/HBars';
 import { LabelMix } from '../charts/LabelMix';
 import { pct } from '../charts/primitives';
 import { accuracyTrend, chapterHeatmap, difficultyBands, labelMixByWeek, studyTimeBySubject, subjectName, type ChapterRef } from '../compute';
+import { useSavedCounts } from '../../saved/useSavedCounts';
 import { chapterIndex, useSessionQuestions } from '../hooks';
 import { Heatmap } from './Heatmap';
 
@@ -44,6 +45,7 @@ export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: {
   const cells = useMemo(() => chapterHeatmap({ chapters: rows, mastery: chAgg }), [rows, chAgg]);
   const recent = useMemo(() => sessions.filter((s) => now - (s.endedAt ?? s.startedAt) < 30 * 86_400_000), [sessions, now]);
   const { questions, loading: qLoading } = useSessionQuestions(recent);
+  const savedCounts = useSavedCounts();
   const bands = useMemo(() => {
     const out = [];
     for (const s of recent) {
@@ -100,7 +102,7 @@ export function MasteryTab({ tax, mastery, sessions, exam: profileExam, now }: {
       </Section>
 
       <Section title="Chapters by priority" aside={<span className="text-small text-slate">{cells.filter((c) => c.flagged).length} to focus on</span>}>
-        <Card><Heatmap cells={cells} exam={exam} /></Card>
+        <Card><Heatmap cells={cells} exam={exam} saved={savedCounts} /></Card>
       </Section>
 
       <CardGrid cols={2}>

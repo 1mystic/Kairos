@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import type { PublicQuestion, Question } from '@kairos/core';
-import { PROVIDERS, providerLabel } from '../lib/askAi';
+import { looksLikeKairosPrompt, PROVIDERS, providerLabel } from '../lib/askAi';
 import { useStore } from '../store';
 import { aiRefOf, normaliseAiRef } from '../store/aiNotes';
 import { AI_NOTE_MAX, type AiNote, type AiNoteRef, type AiProvider } from '../store/types';
 import { AskAiButton, lastProvider } from './AskAi';
+import { invalidateSavedNotes } from '../saved/notesCache';
 import { NoteContent } from './NoteContent';
 import { Button, Select, Skeleton, Textarea } from './ui';
 
@@ -61,7 +62,7 @@ export function AiNotePanel({ qid, qref, autoEdit, onChange, onClose }: {
   };
   const save = async () => {
     const t = text.trim();
-    if (!t || t.length > AI_NOTE_MAX) return;
+    if (!t || t.length > AI_NOTE_MAX || looksLikeKairosPrompt(t)) return;
     setBusy(true);
     setErr('');
     try {
@@ -71,6 +72,7 @@ export function AiNotePanel({ qid, qref, autoEdit, onChange, onClose }: {
       if (Object.keys(ref).length) await store.putAiNote(qid, { text: t, provider }, ref);
       else await store.putAiNote(qid, { text: t, provider });
       const next: AiNote = { qid, text: t, provider, updatedAt: Date.now(), ...ref };
+      invalidateSavedNotes();
       setNote(next);
       setEditing(false);
       onChange?.(next);
@@ -79,11 +81,12 @@ export function AiNotePanel({ qid, qref, autoEdit, onChange, onClose }: {
   const remove = async () => {
     setBusy(true);
     setErr('');
-    try { await store.deleteAiNote(qid); setNote(null); setConfirming(false); onChange?.(null); } catch { setErr('Could not delete. Try again.'); } finally { setBusy(false); }
+    try { await store.deleteAiNote(qid); invalidateSavedNotes(); setNote(null); setConfirming(false); onChange?.(null); } catch { setErr('Could not delete. Try again.'); } finally { setBusy(false); }
   };
 
   if (note === 'loading') return <Skeleton className="h-s7 w-full" />;
   const over = text.length > AI_NOTE_MAX;
+  const isPrompt = looksLikeKairosPrompt(text);
 
   return (
     <section aria-label="Your saved AI explanation" className="card" data-testid="ai-note">
@@ -94,16 +97,20 @@ export function AiNotePanel({ qid, qref, autoEdit, onChange, onClose }: {
           <label htmlFor={`ai-note-${qid}`} className="text-small font-semibold">Paste the AI answer</label>
           <Textarea id={`ai-note-${qid}`} rows={8} value={text} onChange={(e) => setText(e.target.value)} invalid={over} placeholder="Paste the explanation here. Markdown and $math$ work." />
           <div className="row-between">
-            <Button size="sm" variant="secondary" onClick={() => void paste()}>Paste from clipboard</Button>
+            <div className="stack-text">
+              <div><Button size="sm" variant="secondary" onClick={() => void paste()}>Paste from clipboard</Button></div>
+              <span className="text-caption text-slate">Copy the AI's reply, then paste it here.</span>
+            </div>
             <span className={`text-caption tabular ${over ? 'text-accent-ink' : 'text-slate'}`} aria-live="polite">{text.length} / {AI_NOTE_MAX}</span>
           </div>
+          {isPrompt && <p role="alert" className="text-small text-accent-ink">This looks like the prompt Kairos copied, not the AI's answer. Copy the AI's reply first.</p>}
           <Select aria-label="Which AI wrote it" value={provider} onChange={(e) => setProvider(e.target.value as AiProvider)}>
             {PROVIDERS.map((p) => <option key={p.id} value={p.id}>{p.label}</option>)}
             <option value="other">Another AI</option>
           </Select>
           {err && <p role="alert" className="text-small text-accent-ink">{err}</p>}
           <div className="row-inline">
-            <Button onClick={() => void save()} loading={busy} disabled={!text.trim() || over}>Save</Button>
+            <Button onClick={() => void save()} loading={busy} disabled={!text.trim() || over || isPrompt}>Save</Button>
             <Button variant="ghost" onClick={() => { setEditing(false); onClose?.(); }} disabled={busy}>Cancel</Button>
           </div>
         </div>

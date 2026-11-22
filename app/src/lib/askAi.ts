@@ -49,9 +49,19 @@ function answerText(q: Q): string {
   return `${a.range[0]} to ${a.range[1]}`;
 }
 
+/** First line of every prompt Kairos builds; also how a pasted prompt is recognised. */
+export const PROMPT_OPENING = 'I am preparing for an Indian entrance exam and need help with this question.';
+
+/** True when `text` is (mostly) the prompt Kairos copied rather than an AI's reply: it starts with our opening line or carries our fixed closing instructions. */
+export function looksLikeKairosPrompt(text: string): boolean {
+  const t = text.trim().toLowerCase().replace(/\s+/g, ' ');
+  if (t.startsWith(PROMPT_OPENING.toLowerCase())) return true;
+  return t.includes('please: 1. explain the solution step by step.') || t.includes('(the full details, including the solution, are copied to my clipboard');
+}
+
 function header(q: Q, o: PromptOptions): string[] {
   const exam = o.exam ?? q.appearances?.[0]?.exam;
-  const lines = ['I am preparing for an Indian entrance exam and need help with this question.'];
+  const lines = [PROMPT_OPENING];
   if (exam) lines.push(`Exam: ${examLabel(exam)}`);
   const where = [q.tax?.subject, q.tax?.chapter].filter(Boolean).join(' / ');
   if (where) lines.push(`Subject / chapter: ${where}`);

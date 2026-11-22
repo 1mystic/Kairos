@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router';
 import type { Question } from '@kairos/core';
 import { getLatestVersion, getShard } from '../bank/client';
 import { AiNotePanel } from '../components/AiNotePanel';
@@ -11,8 +12,11 @@ import { examLabel } from '../plan/syllabus';
 import { loadTaxonomy } from '../practice/taxonomy';
 import { useDocumentTitle } from '../shell/useDocumentTitle';
 import { useStore } from '../store';
+import { stemSnippet } from '../store/aiNotes';
 import type { AiNote } from '../store/types';
 import { examsIn, filterNotes, noteTitle, notePreview, type SortOrder } from './model';
+import { getSavedNotes, invalidateSavedNotes } from './notesCache';
+import { loadQIndex, needsRef, resolveRefs } from './qindex';
 import './saved.css';
 
 const when = (t: number) => new Date(t).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
@@ -61,7 +65,7 @@ function SavedCard({ note, chapters, onChanged, onDeleted }: CardProps) {
   const remove = async () => {
     setBusy(true);
     setErr('');
-    try { await store.deleteAiNote(note.qid); onDeleted(note.qid); } catch { setErr('Could not delete. Try again.'); setBusy(false); }
+    try { await store.deleteAiNote(note.qid); invalidateSavedNotes(); onDeleted(note.qid); } catch { setErr('Could not delete. Try again.'); setBusy(false); }
   };
 
   return (
@@ -103,6 +107,7 @@ function SavedCard({ note, chapters, onChanged, onDeleted }: CardProps) {
               <AiNotePanel
                 qid={note.qid}
                 autoEdit
+                qref={{ exam: note.exam, chapter: note.chapter, stem: note.stem }}
                 onChange={(n) => { if (n) { onChanged({ ...note, ...n }); setEditing(false); } else onDeleted(note.qid); }}
                 onClose={() => setEditing(false)}
               />
@@ -138,16 +143,28 @@ export function SavedPage() {
   const [notes, setNotes] = useState<AiNote[] | null>(null);
   const [failed, setFailed] = useState(false);
   const [chapters, setChapters] = useState<Record<string, ChapterInfo> | null>(null);
+  const [topicsOf, setTopicsOf] = useState<Record<string, string[]>>({});
   const [query, setQuery] = useState('');
-  const [exam, setExam] = useState('');
+  const [params, setParams] = useSearchParams();
+  const [exam, setExam] = useState(params.get('exam') ?? '');
   const [sort, setSort] = useState<SortOrder>('newest');
+  const chapter = params.get('chapter') ?? '';
 
   const load = useCallback(() => {
     setNotes(null);
     setFailed(false);
-    store.listAiNotes().then(setNotes, () => setFailed(true));
+    getSavedNotes(store, { fresh: true }).then(setNotes, () => setFailed(true));
   }, [store]);
   useEffect(load, [load]);
+
+  // Old notes carry no exam/chapter: place them through the bank question index (in memory only, never written back)
+  const unplaced = useMemo(() => (notes ? notes.filter(needsRef).length : 0), [notes]);
+  useEffect(() => {
+    if (!unplaced) return;
+    let live = true;
+    loadQIndex().then((idx) => { if (live) setNotes((cur) => (cur ? resolveRefs(cur, idx) : cur)); }, () => { /* offline: they stay as "Question q_..." */ });
+    return () => { live = false; };
+  }, [unplaced]);
 
   // chapter names and subjects (to find the shard); a failure only means ids are shown instead of names
   useEffect(() => {
@@ -155,16 +172,45 @@ export function SavedPage() {
     loadTaxonomy().then((tax) => {
       if (!live) return;
       const m: Record<string, ChapterInfo> = {};
-      for (const s of tax.subjects) for (const c of s.chapters) m[c.id] = { name: c.name, subject: s.id };
+      const t: Record<string, string[]> = {};
+      for (const s of tax.subjects) for (const c of s.chapters) { m[c.id] = { name: c.name, subject: s.id }; t[c.id] = c.topics.map((x) => x.name); }
       setChapters(m);
+      setTopicsOf(t);
     }, () => { if (live) setChapters({}); });
     return () => { live = false; };
   }, []);
 
+  // ... and give them a stem snippet from the question's shard (a few shards at a time)
+  const needStem = useMemo(() => (notes && chapters ? notes.filter((n) => !n.stem && n.exam && n.chapter && chapters[n.chapter]).map((n) => n.qid).join(',') : ''), [notes, chapters]);
+  useEffect(() => {
+    if (!needStem || !notes || !chapters) return;
+    let live = true;
+    const want = new Set(needStem.split(','));
+    const groups = new Map<string, AiNote[]>();
+    for (const n of notes) if (want.has(n.qid)) groups.set(`${n.exam}/${n.chapter}`, [...(groups.get(`${n.exam}/${n.chapter}`) ?? []), n]);
+    void (async () => {
+      const queue = [...groups.values()];
+      const worker = async () => {
+        for (let g = queue.shift(); g && live; g = queue.shift()) {
+          const first = g[0]!;
+          try {
+            const qs = await getShard(await getLatestVersion(), first.exam!, chapters[first.chapter!]!.subject, first.chapter!);
+            const stems = new Map(qs.map((q) => [q.id, stemSnippet(q.stem)] as const));
+            if (live) setNotes((cur) => (cur ?? []).map((n) => (!n.stem && want.has(n.qid) && n.exam === first.exam && n.chapter === first.chapter && stems.get(n.qid) ? { ...n, stem: stems.get(n.qid) } : n)));
+          } catch { /* leave the title as "Question q_..." */ }
+        }
+      };
+      await Promise.all([worker(), worker(), worker()]);
+    })();
+    return () => { live = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- needStem encodes which notes still lack a stem
+  }, [needStem, chapters]);
+
   const names = useMemo(() => Object.fromEntries(Object.entries(chapters ?? {}).map(([id, c]) => [id, c.name])), [chapters]);
-  const shown = useMemo(() => (notes ? filterNotes(notes, { query, exam, sort, chapterNames: names }) : []), [notes, query, exam, sort, names]);
+  const shown = useMemo(() => (notes ? filterNotes(notes, { query, exam, chapter, sort, chapterNames: names, topicNames: topicsOf }) : []), [notes, query, exam, chapter, sort, names, topicsOf]);
   const exams = useMemo(() => (notes ? examsIn(notes) : []), [notes]);
-  const filtering = query.trim() !== '' || exam !== '';
+  const filtering = query.trim() !== '' || exam !== '' || chapter !== '';
+  const clearChapter = () => setParams((p) => { const n = new URLSearchParams(p); n.delete('chapter'); return n; }, { replace: true });
 
   return (
     <Page width="reading">
@@ -194,11 +240,17 @@ export function SavedPage() {
                 </Select>
               </div>
             )}
-            <Tabs label="Sort order" tabs={SORTS} value={sort} onChange={setSort} />
+            <Tabs label="Sort order" tabs={SORTS} value={sort} onChange={(id) => setSort(id as SortOrder)} />
           </div>
+          {chapter && (
+            <div className="row-inline" data-testid="chapter-filter">
+              <Chip tone="primary">Chapter: {names[chapter] ?? chapter}</Chip>
+              <Button size="sm" variant="ghost" onClick={clearChapter} aria-label="Remove chapter filter">Remove filter</Button>
+            </div>
+          )}
           <p className="text-small text-slate" role="status">{shown.length} of {notes.length} saved {notes.length === 1 ? 'answer' : 'answers'}</p>
           {shown.length === 0 ? (
-            <EmptyState icon={BookmarkIcon} title="No matches" action={filtering ? <Button variant="secondary" onClick={() => { setQuery(''); setExam(''); }}>Clear filters</Button> : undefined}>
+            <EmptyState icon={BookmarkIcon} title="No matches" action={filtering ? <Button variant="secondary" onClick={() => { setQuery(''); setExam(''); clearChapter(); }}>Clear filters</Button> : undefined}>
               Nothing saved matches that search.
             </EmptyState>
           ) : (

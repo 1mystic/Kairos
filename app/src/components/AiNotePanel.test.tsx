@@ -75,3 +75,15 @@ describe('AiNotePanel', () => {
     await waitFor(() => expect(store.putAiNote).toHaveBeenLastCalledWith('q1', { text: 'old', provider: 'gemini' }, qref));
   });
 });
+
+describe('AiNotePanel prompt guard', () => {
+  it('blocks saving the prompt Kairos copied and shows a warning', async () => {
+    render(<AiNotePanel qid="q1" />);
+    await userEvent.click(await screen.findByRole('button', { name: 'Paste AI answer' }));
+    expect(screen.getByText("Copy the AI's reply, then paste it here.")).toBeInTheDocument();
+    await userEvent.type(screen.getByLabelText('Paste the AI answer'), 'I am preparing for an Indian entrance exam and need help with this question.');
+    expect(screen.getByRole('alert')).toHaveTextContent('looks like the prompt Kairos copied');
+    expect(screen.getByRole('button', { name: 'Save' })).toBeDisabled();
+    expect(store.putAiNote).not.toHaveBeenCalled();
+  });
+});

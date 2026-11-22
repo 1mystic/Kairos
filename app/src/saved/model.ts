@@ -1,6 +1,7 @@
 import { providerLabel } from '../lib/askAi';
 import { examLabel } from '../plan/syllabus';
 import { clipUtf16 } from '../store/aiNotes';
+import { searchNotes } from './search';
 import type { AiNote } from '../store/types';
 
 export type SortOrder = 'newest' | 'oldest';
@@ -22,21 +23,23 @@ export interface SavedFilter {
   query: string;
   /** '' = every exam */
   exam: string;
+  /** '' = every chapter (taxonomy chapter id) */
+  chapter?: string;
   sort: SortOrder;
   /** chapter id -> display name, so a search for "kinematics" finds notes by chapter */
   chapterNames?: Readonly<Record<string, string>>;
+  /** chapter id -> topic names, also searched */
+  topicNames?: Readonly<Record<string, readonly string[]>>;
 }
 
-/** Search (stem, note text, chapter, exam, provider, qid), exam filter and date sort. Never mutates the input. */
+/**
+ * Exam and chapter filters, then smart search (stemming, typo tolerance, weighted: chapter/topic > stem > note). With a query the
+ * result is ranked by score; without one it follows the chosen date sort. Never mutates the input.
+ */
 export function filterNotes(notes: readonly AiNote[], f: SavedFilter): AiNote[] {
-  const q = f.query.trim().toLowerCase();
-  const out = notes.filter((n) => {
-    if (f.exam && n.exam !== f.exam) return false;
-    if (!q) return true;
-    const hay = [n.stem, n.text, n.qid, n.chapter, n.chapter && f.chapterNames?.[n.chapter], n.exam && examLabel(n.exam), providerLabel(n.provider)].filter(Boolean).join('\n').toLowerCase();
-    return hay.includes(q);
-  });
-  return out.sort((a, b) => (f.sort === 'oldest' ? a.updatedAt - b.updatedAt : b.updatedAt - a.updatedAt) || (a.qid < b.qid ? -1 : 1));
+  const kept = notes.filter((n) => (!f.exam || n.exam === f.exam) && (!f.chapter || n.chapter === f.chapter));
+  if (f.query.trim()) return searchNotes(kept, f.query, { chapterNames: f.chapterNames, topicNames: f.topicNames, meta: (n) => `${n.exam ? examLabel(n.exam) : ''} ${providerLabel(n.provider)}` });
+  return kept.sort((a, b) => (f.sort === 'oldest' ? a.updatedAt - b.updatedAt : b.updatedAt - a.updatedAt) || (a.qid < b.qid ? -1 : 1));
 }
 
 /** Exams present in the notes, in a stable order. */

@@ -12,7 +12,7 @@ const BAND_BG: Record<MasteryBand, string> = {
 const CONFIDENCE_WORD = { none: 'No attempts yet', not_enough_data: 'Not enough data to say', rough: 'A rough estimate', confident: 'A confident estimate' } as const;
 
 /** Chapter weight x mastery grid. Cells are buttons; the detail panel (not a hover tooltip) carries the numbers. */
-export function Heatmap({ cells, exam, empty }: { cells: HeatCell[]; exam: string; empty?: string }) {
+export function Heatmap({ cells, exam, empty, saved }: { cells: HeatCell[]; exam: string; empty?: string; /** chapter id -> saved AI answers, shows a link to /saved */ saved?: Record<string, number> }) {
   const [sel, setSel] = useState<string | null>(null);
   const [all, setAll] = useState(false);
   if (cells.length === 0) return <p className="text-slate">{empty ?? 'No chapters to show yet.'}</p>;
@@ -67,7 +67,14 @@ export function Heatmap({ cells, exam, empty }: { cells: HeatCell[]; exam: strin
             </div>
             <p className="text-small">About {pct(picked.weight)} of the exam. {picked.mastery === null ? CONFIDENCE_WORD[picked.confidence] + '.' : `Mastery ${pct(picked.mastery)}. ${CONFIDENCE_WORD[picked.confidence]} from ${picked.n} answers.`}</p>
             {picked.evidence && <p className="text-small">In this paper: {picked.evidence.correct} right, {picked.evidence.wrong} wrong, {picked.evidence.blank} blank, {marksText(picked.evidence.marksLost)} marks lost.</p>}
-            <div><Link to={`/practice/${exam}/${picked.id}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">Practise this chapter</Link></div>
+            <div className="row-actions">
+              <Link to={`/practice/${exam}/${picked.id}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">Practise this chapter</Link>
+              {!!saved?.[picked.id] && (
+                <Link to={`/saved?chapter=${encodeURIComponent(picked.id)}`} className="inline-flex min-h-s7 items-center font-semibold text-primary">
+                  {saved[picked.id]} saved {saved[picked.id] === 1 ? 'answer' : 'answers'}
+                </Link>
+              )}
+            </div>
           </div>
         </Card>
       )}

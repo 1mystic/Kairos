@@ -8,6 +8,7 @@ Routing: a question is written to one shard per exam in schema.EXAMS it is serve
 Output (deterministic: sorted keys, gzip mtime=0):
   bank/v{N}/{exam}/{subject}/{chapter}.json.gz   verified questions, with answers + solutions
   bank/v{N}/mocks/{paperId}.json                 mock papers, answers/solutions stripped
+  bank/v{N}/qindex.json                          {qid: [exam, chapter]}, one entry per published question
   bank/v{N}/taxonomy.json, bank/v{N}/blueprints/*.json
   bank/v{N}/manifest.json                        every other file: sha256, bytes, counts
   bank/latest.json                               {"version": N}
@@ -101,6 +102,14 @@ def build(src: Path | list[Path], papers_dir: Path, img_src: Path | None = None)
             gz(dumps(qs)),
             {"kind": "shard", "exam": exam, "subject": subj, "chapter": chap, "count": len(qs)},
         )
+
+    # qid -> [exam, chapter] (one entry per question: the first shard it is routed to, in sorted shard order).
+    # Lets the app find the question behind an old saved AI note that has no exam/chapter reference.
+    qindex: dict[str, list[str]] = {}
+    for (exam, _subj, chap), qs in sorted(groups.items()):
+        for d in qs:
+            qindex.setdefault(d["id"], [exam, chap])
+    files["qindex.json"] = (dumps(qindex), {"kind": "qindex", "count": len(qindex)})
 
     for p in load_papers(papers_dir):
         qs = []

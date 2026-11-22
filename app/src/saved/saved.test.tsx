@@ -23,13 +23,19 @@ vi.mock('../practice/taxonomy', async (orig) => ({
   loadTaxonomy: vi.fn(async () => ({ subjects: [{ id: 'PHY', name: 'Physics', chapters: [{ id: 'PHY.LOM', name: 'Laws of Motion', topics: [] }] }] })),
 }));
 
+vi.mock('./qindex', async (orig) => ({ ...(await orig<typeof import('./qindex')>()), loadQIndex: vi.fn(async () => ({})) }));
+
+import { getShard } from '../bank/client';
+import { invalidateSavedNotes } from './notesCache';
+import { loadQIndex, resolveRefs } from './qindex';
 import { SavedPage } from './SavedPage';
 
 const N = (over: Partial<AiNote> & { qid: string }): AiNote => ({ text: 'An explanation', provider: 'claude', updatedAt: 1_700_000_000_000, ...over });
-const mount = () => render(<MemoryRouter><SavedPage /></MemoryRouter>);
+const mount = (url = '/saved') => render(<MemoryRouter initialEntries={[url]}><SavedPage /></MemoryRouter>);
 
 beforeEach(() => {
   vi.clearAllMocks();
+  invalidateSavedNotes();
   notes = [
     N({ qid: 'q_1', text: 'Use Newton second law', updatedAt: 3000, exam: 'JEE_MAIN', chapter: 'PHY.LOM', stem: 'A block slides down an incline' }),
     N({ qid: 'q_2', text: 'Cells divide by mitosis', updatedAt: 2000, exam: 'NEET_UG', chapter: 'BIO.CELL', stem: 'Which phase of mitosis' }),
@@ -115,6 +121,42 @@ describe('SavedPage', () => {
     expect(await screen.findByText('Could not load your saved answers')).toBeInTheDocument();
     await userEvent.click(screen.getByRole('button', { name: 'Try again' }));
     expect(await screen.findAllByTestId('saved-note')).toHaveLength(3);
+  });
+});
+
+describe('SavedPage URL filters and old notes', () => {
+  it('reads ?chapter= as a removable filter chip', async () => {
+    mount('/saved?chapter=PHY.LOM');
+    expect(await screen.findAllByTestId('saved-note')).toHaveLength(1);
+    expect(screen.getByTestId('chapter-filter')).toHaveTextContent('Chapter: Laws of Motion');
+    await userEvent.click(screen.getByRole('button', { name: 'Remove chapter filter' }));
+    expect(await screen.findAllByTestId('saved-note')).toHaveLength(3);
+    expect(screen.queryByTestId('chapter-filter')).toBeNull();
+  });
+
+  it('reads ?exam= as the initial exam filter', async () => {
+    mount('/saved?exam=NEET_UG');
+    expect(await screen.findAllByTestId('saved-note')).toHaveLength(1);
+  });
+
+  it('places a note without a reference through the question index and fills its stem, without writing it back', async () => {
+    vi.mocked(loadQIndex).mockResolvedValueOnce({ q_3: ['JEE_MAIN', 'PHY.LOM'] });
+    vi.mocked(getShard).mockResolvedValueOnce([mkQ('q_3', { stem: 'Resolved stem from the bank' })]);
+    mount();
+    expect(await screen.findByText('Resolved stem from the bank')).toBeInTheDocument();
+    const card = screen.getAllByTestId('saved-note').find((c) => c.getAttribute('aria-label') === 'Resolved stem from the bank')!;
+    expect(within(card).getByRole('link', { name: 'Practise this chapter' })).toHaveAttribute('href', '/practice/JEE_MAIN/PHY.LOM');
+    expect(store.putAiNote).not.toHaveBeenCalled();
+  });
+
+  it('resolveRefs leaves notes that already have a reference, and unknown ids, alone', () => {
+    const a = N({ qid: 'q_a', exam: 'NEET_UG', chapter: 'BIO.CELL' });
+    const b = N({ qid: 'q_b' });
+    const c = N({ qid: 'q_c' });
+    const out = resolveRefs([a, b, c], { q_a: ['JEE_MAIN', 'PHY.LOM'], q_b: ['IAT', 'MAT.LIM'] });
+    expect(out[0]).toBe(a);
+    expect(out[1]).toMatchObject({ exam: 'IAT', chapter: 'MAT.LIM' });
+    expect(out[2]).toBe(c);
   });
 });
 

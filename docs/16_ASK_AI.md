@@ -16,6 +16,12 @@ A fenced ```mermaid block in a note renders as a diagram. `mdBlocks.ts` now tags
 ## saved answers page (`/saved`)
 `app/src/saved/` (`savedRoutes`, lazy group `lazySavedRoutes`; sidebar entry "Saved" after Practice). Lists every note newest first (`UserStore.listAiNotes`, same for guests and signed-in users). Each card: exam chip, chapter name (taxonomy), the stem snippet (or `Question <qid>`), provider and date, and a three-line preview. "Show answer" expands the full rendered note plus the original question with its official solution, loaded from the bank shard (`getShard(version, exam, subject, chapter)`, subject from the taxonomy); notes without `exam`/`chapter` show only the note. Filters: search (stem, note text, chapter, exam, provider, qid), exam, newest/oldest. Actions: Edit (the `AiNotePanel` editor), Delete (confirm, one write), "Practise this chapter" (`/practice/<exam>/<chapter>`). Empty state explains how to save with Ask AI.
 
+## smart search, old notes, analysis link
+- `/saved` search (`saved/search.ts`, pure): tokenise, lowercase, drop stop words, light English stemming, ranked by weighted hits (chapter and topic names 3, stem 2, note 1, exam/provider/qid 0.5) with typo tolerance (Damerau-Levenshtein <= 1 for words of 5+ letters, prefix match for 3+). Short queries need every word, longer ones about 60%. With a query the list is sorted by score, otherwise by the chosen date order.
+- Old notes without `exam`/`chapter`: the pipeline writes `bank/v{N}/qindex.json` (`{qid: [exam, chapter]}`, sorted, one entry per published question, manifest kind `qindex`). `/saved` loads it (`saved/qindex.ts`, cached by the service worker's bank rule), places those notes, then fills the stem snippet from the chapter shard. This is in memory only: nothing is written back until the student saves the note again.
+- Prompt guard: `AiNotePanel` refuses to save text that is the prompt Kairos copied (`looksLikeKairosPrompt` in `lib/askAi.ts`) and tells the student to copy the AI's reply first.
+- Analysis: the chapter detail on the mastery heatmap shows "N saved answers" linking to `/saved?chapter=<id>`. `/saved` also reads `?exam=` and shows a removable chapter chip. Notes are read once per session through `saved/notesCache.ts` (one Firestore list read; invalidated on any save or delete).
+
 ## privacy
 Nothing is sent automatically. The question text leaves the app only when the student clicks a provider, and goes to that third-party site via the URL / their clipboard. Kairos never calls an AI API and has no keys.
 
