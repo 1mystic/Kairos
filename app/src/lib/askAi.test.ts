@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Question } from '@kairos/core';
-import { aiTarget, aiTargetUrl, buildAiPrompt, PROVIDERS } from './askAi';
+import { aiTarget, aiTargetUrl, buildAiPrompt, PROVIDERS, LAUNCH_PROVIDERS } from './askAi';
 
 const mk = (over: Record<string, unknown> = {}) => ({
   id: 'q1', type: 'SCQ', stem: 'A body of mass $m$ falls. Find $v$.',
@@ -59,6 +59,7 @@ describe('aiTargetUrl', () => {
     expect(t).toEqual({ url: 'https://gemini.google.com/app', clipboardOnly: true, shortened: false });
     expect(PROVIDERS.find((p) => p.id === 'gemini')?.prefill).toBe(false);
     expect(PROVIDERS.map((p) => p.label)).toEqual(['Gemini', 'ChatGPT', 'Google AI search', 'Claude', 'Perplexity']);
+    expect(LAUNCH_PROVIDERS.map((p) => p.id)).toEqual(['chatgpt', 'google', 'claude', 'perplexity']);
   });
   it('long prompts fall back to a short one under the limit', () => {
     const q = mk({ stem: 'x'.repeat(20000) });

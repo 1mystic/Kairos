@@ -13,6 +13,9 @@ export const PROVIDERS: readonly ProviderInfo[] = [
   { id: 'perplexity', label: 'Perplexity', prefill: true },
 ];
 
+/** Sites the Ask AI menu opens: only those that accept the prompt in the URL (Gemini does not, so it is left out; the menu offers 'Copy prompt' instead). */
+export const LAUNCH_PROVIDERS: readonly ProviderInfo[] = PROVIDERS.filter((p) => p.prefill);
+
 export const DEFAULT_PROVIDER: Exclude<AiProvider, 'other'> = 'chatgpt';
 
 export const providerLabel = (id: AiProvider): string => PROVIDERS.find((p) => p.id === id)?.label ?? 'another AI';

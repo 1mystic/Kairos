@@ -31,26 +31,37 @@ describe('AskAiButton', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('Opened ChatGPT');
   });
 
-  it('chevron menu: keyboard, pick Gemini (clipboard only), remembered next time', async () => {
+  it('chevron menu: keyboard, pick Claude, remembered next time; no Gemini', async () => {
     const { unmount } = render(<AskAiButton question={q} revealed />);
     const chev = screen.getByRole('button', { name: 'Choose an AI' });
     expect(chev).toHaveAttribute('aria-expanded', 'false');
     chev.focus();
     await userEvent.keyboard('{ArrowDown}');
     expect(chev).toHaveAttribute('aria-expanded', 'true');
-    expect(screen.getAllByRole('menuitemradio')).toHaveLength(5);
+    expect(screen.getAllByRole('menuitemradio').map((b) => b.textContent)).toEqual(['ChatGPT', 'Google AI search', 'Claude', 'Perplexity']);
+    expect(screen.queryByRole('menuitemradio', { name: /Gemini/ })).toBeNull();
     await userEvent.keyboard('{Escape}');
     expect(screen.queryByRole('menu')).toBeNull();
     await userEvent.click(chev);
-    await userEvent.click(screen.getByRole('menuitemradio', { name: /Gemini/ }));
-    expect(open).toHaveBeenCalledWith('https://gemini.google.com/app', '_blank', 'noopener,noreferrer');
-    expect(await screen.findByRole('status')).toHaveTextContent('Prompt copied');
-    expect(localStorage.getItem('kairos.askAi.provider')).toBe('gemini');
+    await userEvent.click(screen.getByRole('menuitemradio', { name: /Claude/ }));
+    expect(open.mock.calls[0]![0]).toMatch(/^https:\/\/claude\.ai\/new\?q=/);
+    expect(localStorage.getItem('kairos.askAi.provider')).toBe('claude');
     unmount();
     open.mockClear();
     render(<AskAiButton question={q} revealed />);
     await userEvent.click(screen.getByRole('button', { name: /^Ask AI/ }));
-    expect(open.mock.calls[0]![0]).toBe('https://gemini.google.com/app');
+    expect(open.mock.calls[0]![0]).toMatch(/^https:\/\/claude\.ai\//);
+  });
+
+  it('Copy prompt copies without opening a tab; a stored gemini choice falls back to ChatGPT', async () => {
+    localStorage.setItem('kairos.askAi.provider', 'gemini');
+    render(<AskAiButton question={q} revealed />);
+    await userEvent.click(screen.getByRole('button', { name: 'Choose an AI' }));
+    await userEvent.click(screen.getByRole('menuitem', { name: /Copy prompt/ }));
+    expect(open).not.toHaveBeenCalled();
+    expect(writeText).toHaveBeenCalledTimes(1);
+    expect(await screen.findByRole('status')).toHaveTextContent('Prompt copied');
+    expect(screen.getByRole('button', { name: /^Ask AI/ })).toHaveAccessibleName(/ChatGPT/);
   });
 
   it('closes on click-away', async () => {

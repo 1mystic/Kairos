@@ -1,9 +1,9 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import type { PublicQuestion, Question } from '@kairos/core';
-import { aiTarget, buildAiPrompt, DEFAULT_PROVIDER, PROVIDERS, providerLabel, type PromptOptions } from '../lib/askAi';
+import { aiTarget, buildAiPrompt, DEFAULT_PROVIDER, LAUNCH_PROVIDERS, providerLabel, type PromptOptions } from '../lib/askAi';
 import type { AiProvider } from '../store/types';
 import './AskAi.css';
-import { CheckIcon, ChevronDownIcon, SparkIcon } from './icons';
+import { CheckIcon, ChevronDownIcon, CopyIcon, SparkIcon } from './icons';
 
 const KEY = 'kairos.askAi.provider';
 
@@ -12,7 +12,7 @@ type Known = Exclude<AiProvider, 'other'>;
 export function lastProvider(): Known {
   try {
     const v = localStorage.getItem(KEY);
-    if (PROVIDERS.some((p) => p.id === v)) return v as Known;
+    if (LAUNCH_PROVIDERS.some((p) => p.id === v)) return v as Known;
   } catch { /* storage blocked */ }
   return DEFAULT_PROVIDER;
 }
@@ -83,10 +83,16 @@ export function AskAiButton({ question, onAsk, ...opts }: AskAiProps) {
     onAsk?.(id);
   };
 
+  const copyPrompt = () => {
+    void copyText(buildAiPrompt(question, opts)).then((ok) => setMsg(ok ? 'Prompt copied. Paste it into any AI chat.' : 'Copying failed, so copy the question by hand.'));
+    setOpen(false);
+    trigger.current?.focus();
+  };
+
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Escape' && open) { e.stopPropagation(); setOpen(false); trigger.current?.focus(); return; }
     if (!open) return;
-    const items = [...(box.current?.querySelectorAll<HTMLElement>('[role="menuitemradio"]') ?? [])];
+    const items = [...(box.current?.querySelectorAll<HTMLElement>('[role^="menuitem"]') ?? [])];
     const i = items.indexOf(document.activeElement as HTMLElement);
     const go = (n: number) => { e.preventDefault(); items[(n + items.length) % items.length]?.focus(); };
     if (e.key === 'ArrowDown') go(i + 1);
@@ -119,15 +125,20 @@ export function AskAiButton({ question, onAsk, ...opts }: AskAiProps) {
         </div>
         {open && (
           <div id={menuId} role="menu" aria-label="Ask an AI" className="menu left-0 top-full mt-s2">
-            {PROVIDERS.map((p) => (
+            {LAUNCH_PROVIDERS.map((p) => (
               <button key={p.id} type="button" role="menuitemradio" aria-checked={p.id === provider} className="menu-item" onClick={() => ask(p.id)}>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate">{p.label}</span>
-                  {!p.prefill && <span className="block text-caption text-slate">Paste the prompt</span>}
-                </span>
+                <span className="min-w-0 flex-1 truncate">{p.label}</span>
                 {p.id === provider && <CheckIcon width={20} height={20} className="shrink-0 text-primary" />}
               </button>
             ))}
+            <hr />
+            <button type="button" role="menuitem" className="menu-item" onClick={copyPrompt}>
+              <CopyIcon width={20} height={20} className="shrink-0" aria-hidden />
+              <span className="min-w-0 flex-1">
+                <span className="block truncate">Copy prompt</span>
+                <span className="block text-caption text-slate">Paste it into Gemini or any AI</span>
+              </span>
+            </button>
           </div>
         )}
       </div>
