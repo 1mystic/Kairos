@@ -1,0 +1,3912 @@
+{
+ "version": 1,
+ "_verify": "check against official 2027 syllabus (GATE_DA). VERIFY: chapter lists are based on the rationalised NCERT class 11/12 books and must be checked against the official 2026 NTA syllabi (JEE Main, NEET UG) and the IAT syllabus before launch. Equilibrium is split into CHE.CHEQ/CHE.IONEQ for practice granularity. Topics are intentionally sparse in v1. W7a additions (JEE Advanced coverage): CHE.GAS, CHE.SBLK, CHE.PBLK, CHE.SOLID, CHE.SURF, CHE.METAL, CHE.POLY. Flags for the six non-PBLK chapters (JEE_MAIN/NEET_UG false) reflect the rationalised 2024-26 syllabi as best known and are Advanced-only content; VERIFY against the official NTA syllabi. GATE_DA additions (W8): subjects GA PRS LA CO PDS DBW ML AI follow the GATE 2027 syllabus for DA in the official Information Brochure (gate2027ib.iitm.ac.in, Appendix D, DA + GA); chapter 'class' is a placeholder (12) because GATE has no NCERT class. VERIFY: check against official 2027 syllabus when the final brochure revision is released.",
+ "iat_subject_map": {
+  "BIO": [
+   "BOT",
+   "ZOO"
+  ],
+  "CHE": [
+   "CHE"
+  ],
+  "MAT": [
+   "MAT"
+  ],
+  "PHY": [
+   "PHY"
+  ]
+ },
+ "subjects": [
+  {
+   "id": "PHY",
+   "name": "Physics",
+   "chapters": [
+    {
+     "id": "PHY.UNT",
+     "name": "Units and Measurements",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.KIN1D",
+     "name": "Motion in a Straight Line",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.KIN2D",
+     "name": "Motion in a Plane",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.LOM",
+     "name": "Laws of Motion",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.WEP",
+     "name": "Work, Energy and Power",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ROT",
+     "name": "System of Particles and Rotational Motion",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "PHY.ROT.MOI",
+       "name": "Moment of inertia"
+      },
+      {
+       "id": "PHY.ROT.TORQ",
+       "name": "Torque and angular momentum"
+      },
+      {
+       "id": "PHY.ROT.RIGID",
+       "name": "Rolling and rigid body equilibrium"
+      }
+     ]
+    },
+    {
+     "id": "PHY.GRAV",
+     "name": "Gravitation",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.SOL",
+     "name": "Mechanical Properties of Solids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.FLU",
+     "name": "Mechanical Properties of Fluids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.THP",
+     "name": "Thermal Properties of Matter",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.THD",
+     "name": "Thermodynamics",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.KTG",
+     "name": "Kinetic Theory",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.OSC",
+     "name": "Oscillations",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.WAV",
+     "name": "Waves",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ELE",
+     "name": "Electric Charges and Fields",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.CAP",
+     "name": "Electrostatic Potential and Capacitance",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.CUR",
+     "name": "Current Electricity",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.MAG",
+     "name": "Moving Charges and Magnetism",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.MAGM",
+     "name": "Magnetism and Matter",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.EMI",
+     "name": "Electromagnetic Induction",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.AC",
+     "name": "Alternating Current",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.EMW",
+     "name": "Electromagnetic Waves",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ROP",
+     "name": "Ray Optics and Optical Instruments",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.WOP",
+     "name": "Wave Optics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.DUAL",
+     "name": "Dual Nature of Radiation and Matter",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.ATM",
+     "name": "Atoms",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.NUC",
+     "name": "Nuclei",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PHY.SEM",
+     "name": "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "CHE",
+   "name": "Chemistry",
+   "chapters": [
+    {
+     "id": "CHE.MOLE",
+     "name": "Some Basic Concepts of Chemistry",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.ATOM",
+     "name": "Structure of Atom",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.PERIO",
+     "name": "Classification of Elements and Periodicity in Properties",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.BOND",
+     "name": "Chemical Bonding and Molecular Structure",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.THERMO",
+     "name": "Thermodynamics",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.CHEQ",
+     "name": "Equilibrium: Chemical Equilibrium",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.IONEQ",
+     "name": "Equilibrium: Ionic Equilibrium",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "CHE.IONEQ.PH",
+       "name": "pH and pOH"
+      },
+      {
+       "id": "CHE.IONEQ.BUFF",
+       "name": "Buffer solutions"
+      },
+      {
+       "id": "CHE.IONEQ.KSP",
+       "name": "Solubility product"
+      }
+     ]
+    },
+    {
+     "id": "CHE.REDOX",
+     "name": "Redox Reactions",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.GOC",
+     "name": "Organic Chemistry: Some Basic Principles and Techniques",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.HC",
+     "name": "Hydrocarbons",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.GAS",
+     "name": "States of Matter: Gases and Liquids",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SBLK",
+     "name": "s-Block Elements (Hydrogen, Alkali and Alkaline Earth Metals)",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SOLN",
+     "name": "Solutions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.ELEC",
+     "name": "Electrochemistry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.KIN",
+     "name": "Chemical Kinetics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.DF",
+     "name": "The d- and f-Block Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.COORD",
+     "name": "Coordination Compounds",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.HALO",
+     "name": "Haloalkanes and Haloarenes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.ALC",
+     "name": "Alcohols, Phenols and Ethers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.CARB",
+     "name": "Aldehydes, Ketones and Carboxylic Acids",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.AMN",
+     "name": "Amines",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.BIOM",
+     "name": "Biomolecules",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.PBLK",
+     "name": "The p-Block Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SOLID",
+     "name": "The Solid State",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.SURF",
+     "name": "Surface Chemistry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.METAL",
+     "name": "General Principles and Processes of Isolation of Elements",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CHE.POLY",
+     "name": "Polymers and Chemistry in Everyday Life",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "MAT",
+   "name": "Mathematics",
+   "chapters": [
+    {
+     "id": "MAT.SET",
+     "name": "Sets",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.FUN",
+     "name": "Relations and Functions",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.TRIG",
+     "name": "Trigonometric Functions",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.CPLX",
+     "name": "Complex Numbers and Quadratic Equations",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.INEQ",
+     "name": "Linear Inequalities",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.PNC",
+     "name": "Permutations and Combinations",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.BINO",
+     "name": "Binomial Theorem",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.SEQ",
+     "name": "Sequences and Series",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.LINE",
+     "name": "Straight Lines",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.CONIC",
+     "name": "Conic Sections",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.TDI",
+     "name": "Introduction to Three Dimensional Geometry",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.LIM",
+     "name": "Limits and Derivatives",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "MAT.LIM.STD",
+       "name": "Standard limits"
+      },
+      {
+       "id": "MAT.LIM.DERIV",
+       "name": "Derivative from first principles"
+      }
+     ]
+    },
+    {
+     "id": "MAT.STAT",
+     "name": "Statistics",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.PROB",
+     "name": "Probability",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.RELF",
+     "name": "Relations and Functions (Class 12)",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.ITF",
+     "name": "Inverse Trigonometric Functions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.MATX",
+     "name": "Matrices",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.DET",
+     "name": "Determinants",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.CD",
+     "name": "Continuity and Differentiability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.AOD",
+     "name": "Application of Derivatives",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.INTG",
+     "name": "Integrals",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.AOI",
+     "name": "Application of Integrals",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.DE",
+     "name": "Differential Equations",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.VEC",
+     "name": "Vector Algebra",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.TDG",
+     "name": "Three Dimensional Geometry",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.LP",
+     "name": "Linear Programming",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "MAT.PROB2",
+     "name": "Probability (Class 12)",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": true,
+      "NEET_UG": false,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "BOT",
+   "name": "Botany",
+   "chapters": [
+    {
+     "id": "BOT.LIV",
+     "name": "The Living World",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BCL",
+     "name": "Biological Classification",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.PKG",
+     "name": "Plant Kingdom",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.MORPH",
+     "name": "Morphology of Flowering Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.ANAT",
+     "name": "Anatomy of Flowering Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.CELL",
+     "name": "Cell: The Unit of Life",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.CCD",
+     "name": "Cell Cycle and Cell Division",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.TRN",
+     "name": "Transport in Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.MIN",
+     "name": "Mineral Nutrition",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.PHS",
+     "name": "Photosynthesis in Higher Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.RESP",
+     "name": "Respiration in Plants",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.PGD",
+     "name": "Plant Growth and Development",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.SRP",
+     "name": "Sexual Reproduction in Flowering Plants",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.GEN",
+     "name": "Principles of Inheritance and Variation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": [
+      {
+       "id": "BOT.GEN.MENDEL",
+       "name": "Mendelian inheritance"
+      },
+      {
+       "id": "BOT.GEN.MENDEL.DIHYBRID",
+       "name": "Dihybrid cross"
+      },
+      {
+       "id": "BOT.GEN.LINK",
+       "name": "Linkage and recombination"
+      }
+     ]
+    },
+    {
+     "id": "BOT.MOL",
+     "name": "Molecular Basis of Inheritance",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.MIC",
+     "name": "Microbes in Human Welfare",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BTP",
+     "name": "Biotechnology: Principles and Processes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BTA",
+     "name": "Biotechnology and its Applications",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.ORG",
+     "name": "Organisms and Populations",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.ECOS",
+     "name": "Ecosystem",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "BOT.BIOD",
+     "name": "Biodiversity and Conservation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "ZOO",
+   "name": "Zoology",
+   "chapters": [
+    {
+     "id": "ZOO.ANK",
+     "name": "Animal Kingdom",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.STR",
+     "name": "Structural Organisation in Animals",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.BMOL",
+     "name": "Biomolecules",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.DIG",
+     "name": "Digestion and Absorption",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.BRE",
+     "name": "Breathing and Exchange of Gases",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.CIR",
+     "name": "Body Fluids and Circulation",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.EXC",
+     "name": "Excretory Products and their Elimination",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.LOC",
+     "name": "Locomotion and Movement",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.NEU",
+     "name": "Neural Control and Coordination",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.CHC",
+     "name": "Chemical Coordination and Integration",
+     "class": 11,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.HRP",
+     "name": "Human Reproduction",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.RPH",
+     "name": "Reproductive Health",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.EVO",
+     "name": "Evolution",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    },
+    {
+     "id": "ZOO.HHD",
+     "name": "Human Health and Disease",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": true,
+      "IAT": true
+     },
+     "topics": []
+    }
+   ]
+  },
+  {
+   "id": "GA",
+   "name": "General Aptitude",
+   "chapters": [
+    {
+     "id": "GA.VERB",
+     "name": "Verbal Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.VERB.GRAM",
+       "name": "English grammar: tenses, articles, prepositions, agreement"
+      },
+      {
+       "id": "GA.VERB.VOC",
+       "name": "Vocabulary: words, idioms and phrases in context"
+      },
+      {
+       "id": "GA.VERB.RC",
+       "name": "Reading comprehension"
+      },
+      {
+       "id": "GA.VERB.SEQ",
+       "name": "Narrative sequencing"
+      }
+     ]
+    },
+    {
+     "id": "GA.QUANT",
+     "name": "Quantitative Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.QUANT.DI",
+       "name": "Data interpretation: graphs, tables, maps"
+      },
+      {
+       "id": "GA.QUANT.NUMC",
+       "name": "Numerical computation and estimation: ratios, percentages, powers, logs, series, P&C"
+      },
+      {
+       "id": "GA.QUANT.MENS",
+       "name": "Mensuration and geometry"
+      },
+      {
+       "id": "GA.QUANT.STAT",
+       "name": "Elementary statistics and probability"
+      }
+     ]
+    },
+    {
+     "id": "GA.ANAL",
+     "name": "Analytical Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.ANAL.DED",
+       "name": "Logic: deduction and induction"
+      },
+      {
+       "id": "GA.ANAL.ANLG",
+       "name": "Analogy"
+      },
+      {
+       "id": "GA.ANAL.NREL",
+       "name": "Numerical relations and reasoning"
+      }
+     ]
+    },
+    {
+     "id": "GA.SPAT",
+     "name": "Spatial Aptitude",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "GA.SPAT.TRANS",
+       "name": "Transformation of shapes: translation, rotation, scaling, mirroring"
+      },
+      {
+       "id": "GA.SPAT.FOLD",
+       "name": "Paper folding, cutting, patterns"
+      },
+      {
+       "id": "GA.SPAT.ASSM",
+       "name": "Assembling and grouping in 2D and 3D"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PRS",
+   "name": "Probability and Statistics",
+   "chapters": [
+    {
+     "id": "PRS.CNT",
+     "name": "Counting",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.CNT.PC",
+       "name": "Permutations and combinations"
+      }
+     ]
+    },
+    {
+     "id": "PRS.PROB",
+     "name": "Probability Axioms, Events and Bayes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.PROB.AX",
+       "name": "Sample space, axioms, events"
+      },
+      {
+       "id": "PRS.PROB.IND",
+       "name": "Independent and mutually exclusive events"
+      },
+      {
+       "id": "PRS.PROB.COND",
+       "name": "Marginal, conditional and joint probability"
+      },
+      {
+       "id": "PRS.PROB.BAYES",
+       "name": "Bayes theorem"
+      }
+     ]
+    },
+    {
+     "id": "PRS.DESC",
+     "name": "Descriptive Statistics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.DESC.CT",
+       "name": "Mean, median, mode"
+      },
+      {
+       "id": "PRS.DESC.SD",
+       "name": "Standard deviation"
+      },
+      {
+       "id": "PRS.DESC.COR",
+       "name": "Correlation and covariance"
+      }
+     ]
+    },
+    {
+     "id": "PRS.DRV",
+     "name": "Discrete Random Variables",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.DRV.PMF",
+       "name": "Probability mass function"
+      },
+      {
+       "id": "PRS.DRV.UNI",
+       "name": "Discrete uniform"
+      },
+      {
+       "id": "PRS.DRV.BER",
+       "name": "Bernoulli"
+      },
+      {
+       "id": "PRS.DRV.BIN",
+       "name": "Binomial"
+      },
+      {
+       "id": "PRS.DRV.POI",
+       "name": "Poisson"
+      }
+     ]
+    },
+    {
+     "id": "PRS.CRV",
+     "name": "Continuous Random Variables",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.CRV.PDF",
+       "name": "PDF and CDF"
+      },
+      {
+       "id": "PRS.CRV.UNI",
+       "name": "Uniform"
+      },
+      {
+       "id": "PRS.CRV.EXP",
+       "name": "Exponential"
+      },
+      {
+       "id": "PRS.CRV.NOR",
+       "name": "Normal and standard normal"
+      },
+      {
+       "id": "PRS.CRV.TCH",
+       "name": "t and chi-squared distributions"
+      },
+      {
+       "id": "PRS.CRV.CPDF",
+       "name": "Conditional PDF"
+      }
+     ]
+    },
+    {
+     "id": "PRS.MOM",
+     "name": "Expectation, Variance and Joint Distributions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.MOM.EXV",
+       "name": "Expectation and variance"
+      },
+      {
+       "id": "PRS.MOM.CEX",
+       "name": "Conditional expectation and variance"
+      },
+      {
+       "id": "PRS.MOM.JNT",
+       "name": "Joint and marginal distributions"
+      }
+     ]
+    },
+    {
+     "id": "PRS.CLT",
+     "name": "Central Limit Theorem",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PRS.INF",
+     "name": "Confidence Intervals and Hypothesis Tests",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PRS.INF.CI",
+       "name": "Confidence interval"
+      },
+      {
+       "id": "PRS.INF.ZT",
+       "name": "z-test"
+      },
+      {
+       "id": "PRS.INF.TT",
+       "name": "t-test"
+      },
+      {
+       "id": "PRS.INF.CHI",
+       "name": "chi-squared test"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LA",
+   "name": "Linear Algebra",
+   "chapters": [
+    {
+     "id": "LA.VS",
+     "name": "Vector Spaces and Independence",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.VS.SUB",
+       "name": "Subspaces"
+      },
+      {
+       "id": "LA.VS.LIN",
+       "name": "Linear dependence and independence"
+      }
+     ]
+    },
+    {
+     "id": "LA.MAT",
+     "name": "Matrices and Special Matrices",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.MAT.PROP",
+       "name": "Matrix properties, partition matrices"
+      },
+      {
+       "id": "LA.MAT.ORTH",
+       "name": "Orthogonal matrices"
+      },
+      {
+       "id": "LA.MAT.IDEM",
+       "name": "Idempotent matrices"
+      },
+      {
+       "id": "LA.MAT.QF",
+       "name": "Quadratic forms"
+      }
+     ]
+    },
+    {
+     "id": "LA.SYS",
+     "name": "Linear Systems",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.SYS.GAUSS",
+       "name": "Gaussian elimination"
+      },
+      {
+       "id": "LA.SYS.SOL",
+       "name": "Existence and uniqueness of solutions"
+      }
+     ]
+    },
+    {
+     "id": "LA.EIG",
+     "name": "Determinant, Eigenvalues and Eigenvectors",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.EIG.DET",
+       "name": "Determinant"
+      },
+      {
+       "id": "LA.EIG.EV",
+       "name": "Eigenvalues and eigenvectors"
+      }
+     ]
+    },
+    {
+     "id": "LA.PROJ",
+     "name": "Rank, Nullity and Projections",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.PROJ.RK",
+       "name": "Rank and nullity"
+      },
+      {
+       "id": "LA.PROJ.PM",
+       "name": "Projection matrix and projections"
+      }
+     ]
+    },
+    {
+     "id": "LA.DEC",
+     "name": "Matrix Decompositions",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "LA.DEC.LU",
+       "name": "LU decomposition"
+      },
+      {
+       "id": "LA.DEC.SVD",
+       "name": "Singular value decomposition"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "CO",
+   "name": "Calculus and Optimization",
+   "chapters": [
+    {
+     "id": "CO.LIM",
+     "name": "Limits, Continuity and Differentiability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "CO.LIM.LIM",
+       "name": "Limits"
+      },
+      {
+       "id": "CO.LIM.CNT",
+       "name": "Continuity"
+      },
+      {
+       "id": "CO.LIM.DIF",
+       "name": "Differentiability"
+      }
+     ]
+    },
+    {
+     "id": "CO.TAY",
+     "name": "Taylor Series",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "CO.OPT",
+     "name": "Maxima, Minima and Single-variable Optimization",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "CO.OPT.MM",
+       "name": "Maxima and minima"
+      },
+      {
+       "id": "CO.OPT.OPT",
+       "name": "Optimization involving a single variable"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PDS",
+   "name": "Programming, Data Structures and Algorithms",
+   "chapters": [
+    {
+     "id": "PDS.PY",
+     "name": "Programming in Python",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "PDS.DS",
+     "name": "Basic Data Structures",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PDS.DS.STK",
+       "name": "Stacks"
+      },
+      {
+       "id": "PDS.DS.QUE",
+       "name": "Queues"
+      },
+      {
+       "id": "PDS.DS.LL",
+       "name": "Linked lists"
+      },
+      {
+       "id": "PDS.DS.TREE",
+       "name": "Trees"
+      },
+      {
+       "id": "PDS.DS.HASH",
+       "name": "Hash tables"
+      }
+     ]
+    },
+    {
+     "id": "PDS.ALG",
+     "name": "Searching, Sorting and Divide and Conquer",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PDS.ALG.SRCH",
+       "name": "Linear and binary search"
+      },
+      {
+       "id": "PDS.ALG.SORT",
+       "name": "Selection, bubble and insertion sort"
+      },
+      {
+       "id": "PDS.ALG.DC",
+       "name": "Mergesort and quicksort"
+      },
+      {
+       "id": "PDS.ALG.CPX",
+       "name": "Complexity analysis"
+      }
+     ]
+    },
+    {
+     "id": "PDS.GRAPH",
+     "name": "Graph Theory and Basic Graph Algorithms",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "PDS.GRAPH.BASIC",
+       "name": "Introduction to graph theory"
+      },
+      {
+       "id": "PDS.GRAPH.TRAV",
+       "name": "Traversals"
+      },
+      {
+       "id": "PDS.GRAPH.SP",
+       "name": "Shortest path"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "DBW",
+   "name": "Database Management and Warehousing",
+   "chapters": [
+    {
+     "id": "DBW.ER",
+     "name": "ER Model",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": []
+    },
+    {
+     "id": "DBW.REL",
+     "name": "Relational Model, Algebra, Calculus and SQL",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.REL.ALGB",
+       "name": "Relational algebra"
+      },
+      {
+       "id": "DBW.REL.TUP",
+       "name": "Tuple calculus"
+      },
+      {
+       "id": "DBW.REL.SQL",
+       "name": "SQL"
+      },
+      {
+       "id": "DBW.REL.IC",
+       "name": "Integrity constraints"
+      }
+     ]
+    },
+    {
+     "id": "DBW.NF",
+     "name": "Normal Forms, File Organization and Indexing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.NF.NF",
+       "name": "Normal forms"
+      },
+      {
+       "id": "DBW.NF.FILE",
+       "name": "File organization"
+      },
+      {
+       "id": "DBW.NF.IDX",
+       "name": "Indexing"
+      }
+     ]
+    },
+    {
+     "id": "DBW.XFM",
+     "name": "Data Types and Data Transformation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.XFM.NORM",
+       "name": "Normalization (scaling)"
+      },
+      {
+       "id": "DBW.XFM.DISC",
+       "name": "Discretization"
+      },
+      {
+       "id": "DBW.XFM.SAMP",
+       "name": "Sampling"
+      },
+      {
+       "id": "DBW.XFM.COMP",
+       "name": "Compression"
+      }
+     ]
+    },
+    {
+     "id": "DBW.DW",
+     "name": "Data Warehouse Modelling",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "DBW.DW.SCH",
+       "name": "Schemas for multidimensional models"
+      },
+      {
+       "id": "DBW.DW.HIER",
+       "name": "Concept hierarchies"
+      },
+      {
+       "id": "DBW.DW.MEAS",
+       "name": "Measures: categorization and computation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ML",
+   "name": "Machine Learning",
+   "chapters": [
+    {
+     "id": "ML.REG",
+     "name": "Regression",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.REG.SLR",
+       "name": "Simple linear regression"
+      },
+      {
+       "id": "ML.REG.MLR",
+       "name": "Multiple linear regression"
+      },
+      {
+       "id": "ML.REG.RDG",
+       "name": "Ridge regression"
+      }
+     ]
+    },
+    {
+     "id": "ML.CLS",
+     "name": "Classification",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.CLS.LOG",
+       "name": "Logistic regression"
+      },
+      {
+       "id": "ML.CLS.KNN",
+       "name": "k-nearest neighbour"
+      },
+      {
+       "id": "ML.CLS.NB",
+       "name": "Naive Bayes classifier"
+      },
+      {
+       "id": "ML.CLS.LDA",
+       "name": "Linear discriminant analysis"
+      },
+      {
+       "id": "ML.CLS.SVM",
+       "name": "Support vector machine"
+      },
+      {
+       "id": "ML.CLS.DT",
+       "name": "Decision trees"
+      }
+     ]
+    },
+    {
+     "id": "ML.EVAL",
+     "name": "Model Selection and Generalisation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.EVAL.BV",
+       "name": "Bias-variance trade-off"
+      },
+      {
+       "id": "ML.EVAL.CV",
+       "name": "Cross-validation: LOO, k-fold"
+      }
+     ]
+    },
+    {
+     "id": "ML.NN",
+     "name": "Neural Networks",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.NN.MLP",
+       "name": "Multi-layer perceptron"
+      },
+      {
+       "id": "ML.NN.FF",
+       "name": "Feed-forward neural network"
+      }
+     ]
+    },
+    {
+     "id": "ML.CLU",
+     "name": "Clustering",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.CLU.KM",
+       "name": "k-means and k-medoid"
+      },
+      {
+       "id": "ML.CLU.HC",
+       "name": "Hierarchical clustering: single and multiple linkage"
+      }
+     ]
+    },
+    {
+     "id": "ML.DR",
+     "name": "Dimensionality Reduction",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "ML.DR.PCA",
+       "name": "Principal component analysis"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "AI",
+   "name": "Artificial Intelligence",
+   "chapters": [
+    {
+     "id": "AI.SRCH",
+     "name": "Search",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "AI.SRCH.UNINF",
+       "name": "Uninformed search"
+      },
+      {
+       "id": "AI.SRCH.INF",
+       "name": "Informed search"
+      },
+      {
+       "id": "AI.SRCH.ADV",
+       "name": "Adversarial search"
+      }
+     ]
+    },
+    {
+     "id": "AI.LOG",
+     "name": "Logic",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "AI.LOG.PROP",
+       "name": "Propositional logic"
+      },
+      {
+       "id": "AI.LOG.PRED",
+       "name": "Predicate logic"
+      }
+     ]
+    },
+    {
+     "id": "AI.UNC",
+     "name": "Reasoning under Uncertainty",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": true
+     },
+     "topics": [
+      {
+       "id": "AI.UNC.CI",
+       "name": "Conditional independence representation"
+      },
+      {
+       "id": "AI.UNC.VE",
+       "name": "Exact inference: variable elimination"
+      },
+      {
+       "id": "AI.UNC.SAMP",
+       "name": "Approximate inference: sampling"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "SD",
+   "name": "System Design",
+   "chapters": [
+    {
+     "id": "SD.SCAL",
+     "name": "Scalability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.SCAL.DEF",
+       "name": "Scalability dimensions"
+      },
+      {
+       "id": "SD.SCAL.BOT",
+       "name": "Finding bottlenecks"
+      }
+     ]
+    },
+    {
+     "id": "SD.AVAIL",
+     "name": "Availability and reliability",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.AVAIL.NINES",
+       "name": "Availability nines"
+      },
+      {
+       "id": "SD.AVAIL.REDUN",
+       "name": "Redundancy and failover"
+      }
+     ]
+    },
+    {
+     "id": "SD.LATTP",
+     "name": "Latency vs throughput",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.LATTP.LAT",
+       "name": "Latency percentiles"
+      },
+      {
+       "id": "SD.LATTP.LITTLE",
+       "name": "Little's law and queueing"
+      }
+     ]
+    },
+    {
+     "id": "SD.CAP",
+     "name": "CAP theorem and PACELC",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CAP.CAP",
+       "name": "Consistency, availability, partition tolerance"
+      },
+      {
+       "id": "SD.CAP.PACELC",
+       "name": "Latency trade-off without partitions"
+      }
+     ]
+    },
+    {
+     "id": "SD.LB",
+     "name": "Load balancers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.LB.ALGO",
+       "name": "Balancing algorithms"
+      },
+      {
+       "id": "SD.LB.L4L7",
+       "name": "Layer 4 vs layer 7"
+      },
+      {
+       "id": "SD.LB.HEALTH",
+       "name": "Health checks"
+      }
+     ]
+    },
+    {
+     "id": "SD.DB",
+     "name": "Databases and replication",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.DB.REPL",
+       "name": "Replication"
+      },
+      {
+       "id": "SD.DB.TXN",
+       "name": "Transactions and isolation"
+      }
+     ]
+    },
+    {
+     "id": "SD.CDN",
+     "name": "Content delivery networks",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CDN.PUSH",
+       "name": "Push vs pull CDN"
+      },
+      {
+       "id": "SD.CDN.INV",
+       "name": "Cache invalidation and TTL"
+      }
+     ]
+    },
+    {
+     "id": "SD.MQ",
+     "name": "Message queues and streams",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.MQ.DELIV",
+       "name": "Delivery guarantees"
+      },
+      {
+       "id": "SD.MQ.ORDER",
+       "name": "Ordering and partitions"
+      }
+     ]
+    },
+    {
+     "id": "SD.RATE",
+     "name": "Rate limiting",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.RATE.ALGO",
+       "name": "Token bucket and window algorithms"
+      },
+      {
+       "id": "SD.RATE.DIST",
+       "name": "Distributed rate limiting"
+      }
+     ]
+    },
+    {
+     "id": "SD.IDX",
+     "name": "Database indexes",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.IDX.BTREE",
+       "name": "B-tree and LSM indexes"
+      },
+      {
+       "id": "SD.IDX.COST",
+       "name": "Index cost and selectivity"
+      }
+     ]
+    },
+    {
+     "id": "SD.CACHE",
+     "name": "Caching",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CACHE.POLICY",
+       "name": "Eviction policies"
+      },
+      {
+       "id": "SD.CACHE.PATT",
+       "name": "Cache-aside and stampede"
+      },
+      {
+       "id": "SD.CACHE.HIT",
+       "name": "Hit ratio and latency"
+      }
+     ]
+    },
+    {
+     "id": "SD.CHASH",
+     "name": "Consistent hashing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CHASH.RING",
+       "name": "Hash ring"
+      },
+      {
+       "id": "SD.CHASH.VNODE",
+       "name": "Virtual nodes"
+      }
+     ]
+    },
+    {
+     "id": "SD.SHARD",
+     "name": "Database sharding",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.SHARD.KEY",
+       "name": "Shard keys"
+      },
+      {
+       "id": "SD.SHARD.HOT",
+       "name": "Hot spots and resharding"
+      }
+     ]
+    },
+    {
+     "id": "SD.CONS",
+     "name": "Consensus and quorums",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CONS.QUORUM",
+       "name": "Quorum arithmetic"
+      },
+      {
+       "id": "SD.CONS.RAFT",
+       "name": "Leader election and log replication"
+      }
+     ]
+    },
+    {
+     "id": "SD.PROXY",
+     "name": "Proxy servers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PROXY.FWD",
+       "name": "Forward vs reverse proxy"
+      },
+      {
+       "id": "SD.PROXY.USE",
+       "name": "Typical proxy roles"
+      }
+     ]
+    },
+    {
+     "id": "SD.HB",
+     "name": "Heartbeats and failure detection",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.HB.FD",
+       "name": "Failure detectors"
+      },
+      {
+       "id": "SD.HB.TIMEOUT",
+       "name": "Timeouts and false positives"
+      }
+     ]
+    },
+    {
+     "id": "SD.CKSUM",
+     "name": "Checksums and data integrity",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CKSUM.CRC",
+       "name": "Checksums and hashes"
+      },
+      {
+       "id": "SD.CKSUM.REPAIR",
+       "name": "Corruption detection and repair"
+      }
+     ]
+    },
+    {
+     "id": "SD.SVCDISC",
+     "name": "Service discovery",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.SVCDISC.REG",
+       "name": "Registries"
+      },
+      {
+       "id": "SD.SVCDISC.CLIENT",
+       "name": "Client-side vs server-side discovery"
+      }
+     ]
+    },
+    {
+     "id": "SD.BLOOM",
+     "name": "Bloom filters",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.BLOOM.FPR",
+       "name": "False-positive rate"
+      },
+      {
+       "id": "SD.BLOOM.USE",
+       "name": "Applications and limits"
+      }
+     ]
+    },
+    {
+     "id": "SD.GOSSIP",
+     "name": "Gossip protocols",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.GOSSIP.SPREAD",
+       "name": "Epidemic dissemination"
+      },
+      {
+       "id": "SD.GOSSIP.MEMB",
+       "name": "Membership and failure detection"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_SCALE",
+     "name": "Trade-off: vertical vs horizontal scaling",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_SCALE.VH",
+       "name": "Scale up vs scale out"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_CONS",
+     "name": "Trade-off: strong vs eventual consistency",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_CONS.MODELS",
+       "name": "Consistency models"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_STATE",
+     "name": "Trade-off: stateful vs stateless",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_STATE.SESS",
+       "name": "Sessions and state placement"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_WRITE",
+     "name": "Trade-off: write-through vs write-back caching",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_WRITE.POL",
+       "name": "Write policies"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_SQL",
+     "name": "Trade-off: SQL vs NoSQL",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_SQL.CHOICE",
+       "name": "Choosing a data store"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_API",
+     "name": "Trade-off: REST vs RPC",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_API.STYLE",
+       "name": "API styles"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_ASYNC",
+     "name": "Trade-off: synchronous vs asynchronous",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_ASYNC.COMM",
+       "name": "Communication styles"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_BATCH",
+     "name": "Trade-off: batch vs stream processing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_BATCH.PROC",
+       "name": "Processing models"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_PUSH",
+     "name": "Trade-off: polling, long polling, WebSockets",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_PUSH.RT",
+       "name": "Real-time delivery"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_NORM",
+     "name": "Trade-off: normalisation vs denormalisation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_NORM.MODEL",
+       "name": "Data modelling"
+      }
+     ]
+    },
+    {
+     "id": "SD.TO_NET",
+     "name": "Trade-off: TCP vs UDP",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TO_NET.TRANS",
+       "name": "Transport protocols"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_CS",
+     "name": "Pattern: client-server",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_CS.TIER",
+       "name": "Tiers and layering"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_MICRO",
+     "name": "Pattern: microservices",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_MICRO.BOUND",
+       "name": "Service boundaries"
+      },
+      {
+       "id": "SD.PAT_MICRO.RES",
+       "name": "Resilience patterns"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_SERVERLESS",
+     "name": "Pattern: serverless",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_SERVERLESS.FAAS",
+       "name": "Functions as a service"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_EVENT",
+     "name": "Pattern: event-driven architecture",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_EVENT.ES",
+       "name": "Event sourcing and CQRS"
+      }
+     ]
+    },
+    {
+     "id": "SD.PAT_P2P",
+     "name": "Pattern: peer-to-peer",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.PAT_P2P.DHT",
+       "name": "Decentralised lookup"
+      }
+     ]
+    },
+    {
+     "id": "SD.TEMPLATE",
+     "name": "Interview framework",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.TEMPLATE.REQ",
+       "name": "Requirements and scope"
+      },
+      {
+       "id": "SD.TEMPLATE.API",
+       "name": "API and data model"
+      },
+      {
+       "id": "SD.TEMPLATE.DEEP",
+       "name": "Deep dives and bottlenecks"
+      }
+     ]
+    },
+    {
+     "id": "SD.ESTIM",
+     "name": "Back-of-the-envelope estimation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.ESTIM.QPS",
+       "name": "Traffic estimates"
+      },
+      {
+       "id": "SD.ESTIM.STORE",
+       "name": "Storage and bandwidth"
+      }
+     ]
+    },
+    {
+     "id": "SD.CASES",
+     "name": "Classic design problems",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": true,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": [
+      {
+       "id": "SD.CASES.URL",
+       "name": "URL shortener"
+      },
+      {
+       "id": "SD.CASES.FEED",
+       "name": "News feed and chat"
+      },
+      {
+       "id": "SD.CASES.MEDIA",
+       "name": "Video streaming and crawling"
+      },
+      {
+       "id": "SD.CASES.INFRA",
+       "name": "Notifications, ride sharing, autocomplete, cache"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "MSD",
+   "name": "AI/ML System Design",
+   "chapters": [
+    {
+     "id": "MSD.FRAME",
+     "name": "Problem framing and metrics",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.FRAME.OBJ",
+       "name": "Objectives and proxies"
+      },
+      {
+       "id": "MSD.FRAME.METRIC",
+       "name": "Business vs model metrics"
+      }
+     ]
+    },
+    {
+     "id": "MSD.DATA",
+     "name": "Data and labels",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.DATA.LABEL",
+       "name": "Label sources and noise"
+      },
+      {
+       "id": "MSD.DATA.SPLIT",
+       "name": "Splits and leakage"
+      },
+      {
+       "id": "MSD.DATA.IMB",
+       "name": "Class imbalance"
+      }
+     ]
+    },
+    {
+     "id": "MSD.FEAT",
+     "name": "Features and feature stores",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.FEAT.OFFON",
+       "name": "Offline/online consistency"
+      },
+      {
+       "id": "MSD.FEAT.ENC",
+       "name": "Encodings and embeddings"
+      }
+     ]
+    },
+    {
+     "id": "MSD.MODEL",
+     "name": "Model selection and training",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.MODEL.SEL",
+       "name": "Model choice"
+      },
+      {
+       "id": "MSD.MODEL.OPT",
+       "name": "Optimisation and scaling rules"
+      }
+     ]
+    },
+    {
+     "id": "MSD.EVAL",
+     "name": "Offline and online evaluation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.EVAL.OFF",
+       "name": "Offline metrics"
+      },
+      {
+       "id": "MSD.EVAL.AB",
+       "name": "A/B testing"
+      }
+     ]
+    },
+    {
+     "id": "MSD.SERVE",
+     "name": "Serving and latency",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.SERVE.BATCH",
+       "name": "Batch vs online inference"
+      },
+      {
+       "id": "MSD.SERVE.LAT",
+       "name": "Latency budgets"
+      }
+     ]
+    },
+    {
+     "id": "MSD.MON",
+     "name": "Monitoring and drift",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.MON.DRIFT",
+       "name": "Data and concept drift"
+      },
+      {
+       "id": "MSD.MON.LOOP",
+       "name": "Feedback loops"
+      }
+     ]
+    },
+    {
+     "id": "MSD.REC",
+     "name": "Recommender systems",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.REC.RETR",
+       "name": "Retrieval and ranking"
+      },
+      {
+       "id": "MSD.REC.COLD",
+       "name": "Cold start and exploration"
+      }
+     ]
+    },
+    {
+     "id": "MSD.CLF",
+     "name": "Classification: spam and abuse",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.CLF.SPAM",
+       "name": "Spam detection"
+      },
+      {
+       "id": "MSD.CLF.ADV",
+       "name": "Adversaries and thresholds"
+      }
+     ]
+    },
+    {
+     "id": "MSD.FRAUD",
+     "name": "Real-time fraud detection",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.FRAUD.RT",
+       "name": "Streaming features"
+      },
+      {
+       "id": "MSD.FRAUD.COST",
+       "name": "Cost-sensitive decisions"
+      }
+     ]
+    },
+    {
+     "id": "MSD.DIST",
+     "name": "Distributed training",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.DIST.PAR",
+       "name": "Data, model and pipeline parallelism"
+      },
+      {
+       "id": "MSD.DIST.COMM",
+       "name": "Communication and memory"
+      }
+     ]
+    },
+    {
+     "id": "MSD.RAG",
+     "name": "Retrieval-augmented generation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.RAG.RETR",
+       "name": "Chunking and retrieval"
+      },
+      {
+       "id": "MSD.RAG.EVAL",
+       "name": "RAG evaluation"
+      }
+     ]
+    },
+    {
+     "id": "MSD.LLMOPS",
+     "name": "LLM serving, cost and guardrails",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.LLMOPS.COST",
+       "name": "Token cost and latency"
+      },
+      {
+       "id": "MSD.LLMOPS.SAFE",
+       "name": "Guardrails and safety"
+      }
+     ]
+    },
+    {
+     "id": "MSD.CASES",
+     "name": "ML system design case studies",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": false,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": true
+     },
+     "topics": [
+      {
+       "id": "MSD.CASES.RANK",
+       "name": "Ranking and ads"
+      },
+      {
+       "id": "MSD.CASES.PLAT",
+       "name": "End-to-end platforms"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ALG",
+   "name": "Algorithms & Data Structures",
+   "chapters": [
+    {
+     "id": "ALG.ARR",
+     "name": "Arrays & hashing",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.TWOP",
+     "name": "Two pointers",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.SLIDE",
+     "name": "Sliding window",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.STACK",
+     "name": "Stacks & monotonic stack",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.BSEARCH",
+     "name": "Binary search",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.LL",
+     "name": "Linked lists",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.TREE",
+     "name": "Trees",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.GRAPH",
+     "name": "Graphs (BFS, DFS, shortest paths)",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.UF",
+     "name": "Union-find",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.HEAP",
+     "name": "Heaps & top-k",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.DP",
+     "name": "Dynamic programming",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.BACK",
+     "name": "Backtracking",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.GREEDY",
+     "name": "Greedy & intervals",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.TRIE",
+     "name": "Tries",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.BIT",
+     "name": "Bit manipulation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.MATH",
+     "name": "Math & randomisation",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.DESIGN",
+     "name": "Data-structure design",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.STR",
+     "name": "String algorithms",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    },
+    {
+     "id": "ALG.JS",
+     "name": "JavaScript utilities & async",
+     "class": 12,
+     "exams": {
+      "JEE_MAIN": false,
+      "NEET_UG": false,
+      "IAT": false,
+      "GATE_DA": false,
+      "DSA_INTERVIEW": true,
+      "SYS_DESIGN": false,
+      "ML_SYS_DESIGN": false
+     },
+     "topics": []
+    }
+   ]
+  }
+ ]
+}
