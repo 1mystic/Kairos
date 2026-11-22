@@ -22,6 +22,8 @@ export interface Cta {
 export interface CardChip {
   label: string;
   reason: ReasonLabel;
+  /** where the topic cell goes (practice that chapter); absent = plan page */
+  to?: string;
 }
 
 export interface CardModel {
@@ -56,6 +58,8 @@ export interface CardInput {
   status: PaceStatus | null;
   /** an unfinished buffered Today session */
   buffered: { done: number; total: number } | null;
+  /** practice link for a chapter (topic cells); absent = cells link to the plan */
+  chapterLink?: (chapter: string) => string | null;
   /** auto-suggestion used when the plan is unavailable but the exam is known */
   suggestion: Suggestion | null;
   hasExam: boolean;
@@ -98,8 +102,12 @@ export function planReason(todo: readonly Task[]): string {
   return parts.length ? `Built from your plan: ${parts.join(', ')}` : 'Built from your plan';
 }
 
-const chipsOf = (tasks: readonly Task[], names: Readonly<Record<string, string>>): CardChip[] =>
-  orderTasks(tasks).slice(0, MAX_CHIPS).map((t) => ({ label: names[t.chapter] ?? t.chapter, reason: reasonOf(t) }));
+const withLink = (c: CardChip, chapter: string | undefined, link: CardInput['chapterLink']): CardChip => {
+  const to = chapter && link ? link(chapter) : null;
+  return to ? { ...c, to } : c;
+};
+const chipsOf = (tasks: readonly Task[], names: Readonly<Record<string, string>>, link?: CardInput['chapterLink']): CardChip[] =>
+  orderTasks(tasks).slice(0, MAX_CHIPS).map((t) => withLink({ label: names[t.chapter] ?? t.chapter, reason: reasonOf(t) }, t.chapter, link));
 
 export function cardModel(i: CardInput): CardModel {
   if (i.loading || i.planKind === 'loading') {
@@ -124,7 +132,7 @@ export function cardModel(i: CardInput): CardModel {
         variant: i.buffered ? 'continue' : 'suggest',
         headline: i.buffered ? `Continue: ${i.buffered.done} of ${i.buffered.total} questions done` : `${s.questions} questions · about ${fmtMin(s.estMin)}`,
         reason: s.summary,
-        chips: s.focus.slice(0, MAX_CHIPS).map((f) => ({ label: f.name, reason: f.reason })),
+        chips: s.focus.slice(0, MAX_CHIPS).map((f) => withLink({ label: f.name, reason: f.reason }, f.chapter, i.chapterLink)),
         moreTopics: Math.max(0, s.focus.length - MAX_CHIPS),
         stats: i.buffered ? null : { questions: s.questions, minutes: s.estMin },
         progress: i.buffered,
@@ -147,7 +155,7 @@ export function cardModel(i: CardInput): CardModel {
         variant: i.buffered ? 'continue' : 'suggest',
         headline: i.buffered ? `Continue: ${i.buffered.done} of ${i.buffered.total} questions done` : `${s.questions} questions · about ${fmtMin(s.estMin)}`,
         reason: s.summary,
-        chips: s.focus.slice(0, MAX_CHIPS).map((f) => ({ label: f.name, reason: f.reason })),
+        chips: s.focus.slice(0, MAX_CHIPS).map((f) => withLink({ label: f.name, reason: f.reason }, f.chapter, i.chapterLink)),
         moreTopics: Math.max(0, s.focus.length - MAX_CHIPS),
         stats: i.buffered ? null : { questions: s.questions, minutes: s.estMin },
         progress: i.buffered,
@@ -189,7 +197,7 @@ export function cardModel(i: CardInput): CardModel {
       variant: 'continue',
       headline: `Continue: ${i.buffered.done} of ${i.buffered.total} questions done`,
       reason: todo.length > 0 ? planReason(todo) : 'Pick up where you left off.',
-      chips: chipsOf(todo, i.names),
+      chips: chipsOf(todo, i.names, i.chapterLink),
       moreTopics: Math.max(0, todo.length - MAX_CHIPS),
       progress: i.buffered,
       primary: { label: 'Continue', to: TODAY_ROUTE },
@@ -221,7 +229,7 @@ export function cardModel(i: CardInput): CardModel {
     variant: lightOnly ? 'light' : 'session',
     headline: lightOnly ? `Light day: ${plural(q, 'question')} of review` : `${plural(q, 'question')} · about ${fmtMin(min)}`,
     reason: planReason(todo),
-    chips: chipsOf(todo, i.names),
+    chips: chipsOf(todo, i.names, i.chapterLink),
     moreTopics: Math.max(0, todo.length - MAX_CHIPS),
     stats: { questions: q, minutes: min },
     progress,

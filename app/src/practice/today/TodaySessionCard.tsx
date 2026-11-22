@@ -14,7 +14,7 @@ const PACE_ICON = { ahead: SparkIcon, on_track: CheckIcon, slightly_behind: Cloc
 function CardSkeleton() {
   return (
     <Card tone="primary" className="today-hero" as="section" aria-busy="true" aria-label="Today's session" data-testid="today-card-loading">
-      <div className="stack-grid">
+      <div className="stack-card">
         <div className="today-head">
           <div className="stack-label">
             <Skeleton className="h-s4 w-32" />
@@ -67,7 +67,7 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
   const topicCells = model.chips.length + (more > 0 ? 1 : 0);
   return (
     <Card tone="primary" className="today-hero" as="section" aria-labelledby="today-session-h" data-testid="today-session-card" data-variant={model.variant}>
-      <div className="stack-grid">
+      <div className="stack-card">
         <div className="today-head">
           <div className="stack-label">
             <div className="row-inline">
@@ -100,14 +100,16 @@ export function TodaySessionCardView({ model, onRetry }: { model: CardModel; onR
         {topicCells > 0 && (
           <ul className="today-topics" aria-label="Focus for today" data-xl3={topicCells % 3 === 0 ? 'true' : undefined}>
             {model.chips.map((c) => (
-              <li key={`${c.label}-${c.reason}`} className="today-cell today-topic">
-                <span className="truncate" title={c.label}>{c.label}</span>
-                <span className="today-tag" data-kind={tagKind(c.reason)}>{c.reason}</span>
+              <li key={`${c.label}-${c.reason}`}>
+                <Link to={c.to ?? '/plan'} className="today-cell today-topic" data-kind={tagKind(c.reason)} aria-label={`${c.label}, ${c.reason}`}>
+                  <span className="truncate" title={c.label}>{c.label}</span>
+                  <span className="today-kind">{c.reason}</span>
+                </Link>
               </li>
             ))}
             {more > 0 && (
-              <li className="today-cell today-topic today-more">
-                <Link to="/plan" className="text-link">+{more} more</Link>
+              <li>
+                <Link to="/plan" className="today-cell today-topic today-more">+{more} more in your plan</Link>
               </li>
             )}
           </ul>

@@ -37,7 +37,7 @@ describe('TodaySessionCardView', () => {
 
   it('more than 6 topics: a "+N more" cell links to the plan', () => {
     view(readyModel({ moreTopics: 3 }));
-    expect(screen.getByRole('link', { name: '+3 more' })).toHaveAttribute('href', '/plan');
+    expect(screen.getByRole('link', { name: '+3 more in your plan' })).toHaveAttribute('href', '/plan');
   });
 
   it('done: success chip, progress bar and "Practise more"', () => {

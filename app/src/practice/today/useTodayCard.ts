@@ -85,6 +85,7 @@ export function useTodayCard(): { model: CardModel; retry(): void } {
         suggestion,
         suggestionReady,
         hasExam: profile.hasExam || !!exam,
+        chapterLink: (ch: string) => { const ex = view?.ctx.syllabus.examOf[ch] ?? exam; return ex ? `/practice/${ex}/${ch}` : null; },
         ...(errorMessage ? { errorMessage } : {}),
       }),
     [plan.loading, profile.loading, planKind, plan.plan, view, mockLink, plan.daysLeft, plan.examLabel, plan.status, buffered, suggestion, profile.hasExam, exam, errorMessage, suggestionReady],

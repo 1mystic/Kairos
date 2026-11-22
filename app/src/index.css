@@ -86,6 +86,8 @@
   a { color: var(--primary); text-underline-offset: 3px; }
   /* the only outline in the product: keyboard focus ring */
   :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  /* programmatic focus after navigation lands on the content area / page title: not interactive, so no ring (it drew a stray primary line along the container edge) */
+  .shell-main:focus-visible, .page-head h1:focus-visible { outline: none; }
   ::placeholder { color: var(--slate); opacity: 1; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -292,8 +294,8 @@
   .shell:not(.shell-wide) .toast { bottom: calc(5.5rem + var(--safe-b)); }
   .toast a, .toast button.link { color: var(--accent); text-decoration: underline; cursor: pointer; }
   .menu { position: absolute; z-index: 30; min-width: 240px; padding: var(--space-2); border-radius: var(--radius-card); background: var(--surface-3); animation: rise var(--dur) var(--ease); }
-  /* inside the scrolling sidebar a floating menu is clipped: let it open in the flow instead */
-  .menu-inline { position: static; width: 100%; min-width: 0; margin-top: var(--space-2); }
+  /* inside the sidebar: float over the nav at the trigger's width (never wider than the rail, so nothing clips or shifts) */
+  .menu-overlay { left: 0; right: 0; top: 100%; min-width: 0; margin-top: var(--space-2); z-index: 40; }
   .menu-note { padding: var(--space-2) var(--space-3); }
   .brand { display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: var(--topbar-h); padding: 0 var(--space-3); border-radius: var(--radius-card); background: transparent; color: var(--ink); text-decoration: none; transition: color var(--dur) var(--ease); }
   .brand:active { background: transparent; }
