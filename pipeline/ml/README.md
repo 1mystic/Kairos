@@ -38,3 +38,23 @@ is used only by `--eval`, never by the fit.
 Model selection without true b: `--select-block-days 7,14,28,0` holds out a seeded 10% of rows, picks the `block_days` with the lowest
 held-out log-loss (0 = one ability per sid,policy,topic), refits on all data and writes `selection`/`chosen` (plus a post-hoc,
 true-b `sensitivity` block that is NOT used for the choice) into `irt_recovery.json`.
+
+## Tagging and dedupe (Phase G, no LLM)
+Offline classical ML, no network, no pretrained models. Results: `docs/results/tagging/` (`metrics.json`,
+`precision_coverage.png`, `dedupe.json`, `dup_candidates.json`).
+
+    $PY -m pipeline.ml.tagger --out docs/results/tagging --seed 2026        # 5-fold CV, ~7 min on 4 cores
+    $PY -m pipeline.ml.tagger --suggest untagged.json --model-out model.pkl  # train on all labelled data, write suggestions
+    $PY -m pipeline.ml.dedupe --out docs/results/tagging --seed 2026        # ~4 s
+    $PY -m pytest pipeline/ml/tests/test_tagger.py -q
+
+- Tagger: TF-IDF word 1-2 + char_wb 3-5 grams, one multinomial logreg (and one LinearSVC) per subject, so a
+  prediction never leaves its subject; C tuned by inner 3-fold CV. Labels: `tax.chapter` of verified rows in
+  jeebench / authored_*; provenance = `manual` (in manual_tags.json), `rule` (jeebench, rule tag accepted, partly
+  circular), `authored`. Compare against `pipeline.tag.rules.classify` (abstains on BOT/ZOO).
+- `--suggest` output (`suggestions.json`) is **for human review only**. The pipeline rule stays: a question with no
+  tag is rejected, never guessed; nothing here writes tags. `confident` = top-1 probability >= the CV threshold that
+  reached 95% precision.
+- Dedupe: char 3-5-gram TF-IDF cosine. The labelled set is **synthetic** (300 seeded perturbed twins), so recall is
+  optimistic. `dup_candidates.json` lists the 20 most similar cross-source bank pairs for human review (not claimed
+  to be duplicates).

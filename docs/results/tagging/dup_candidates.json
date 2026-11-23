@@ -1,0 +1,305 @@
+{
+ "note": "Top cross-source pairs by cosine, for human review only. Not claimed to be duplicates.",
+ "pairs": [
+  {
+   "cosine": 0.8608,
+   "a": {
+    "qid": "q_68e5ef67c015",
+    "source": "authored_jee_main",
+    "chapter": "CHE.HC",
+    "stem": "Propene reacts with $\\ce{HBr}$ in the presence of an organic peroxide. The major product is"
+   },
+   "b": {
+    "qid": "q_960fede0d2df",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.HC",
+    "stem": "The major product of the addition of HBr to propene in the absence of peroxide is"
+   }
+  },
+  {
+   "cosine": 0.8047,
+   "a": {
+    "qid": "q_ed577450ad8f",
+    "source": "authored_jee_main",
+    "chapter": "CHE.BIOM",
+    "stem": "A double-stranded DNA contains $30\\%$ adenine. The percentage of guanine in it is"
+   },
+   "b": {
+    "qid": "q_7073162fac12",
+    "source": "authored_neet_iat",
+    "chapter": "BOT.MOL",
+    "stem": "In a double-stranded DNA 30% of the bases are adenine. The percentage of guanine is ______."
+   }
+  },
+  {
+   "cosine": 0.7443,
+   "a": {
+    "qid": "q_4f13e1896a43",
+    "source": "authored_jee_main",
+    "chapter": "PHY.WOP",
+    "stem": "Unpolarised light is reflected from a glass surface of refractive index $\\sqrt3$. The angle of incidence (in degrees) at which the reflected light is completely"
+   },
+   "b": {
+    "qid": "q_2c23a4686d6b",
+    "source": "authored_neet_iat",
+    "chapter": "PHY.WOP",
+    "stem": "Light is totally plane-polarised on reflection from a glass surface of refractive index $\\sqrt3$. The angle of incidence in degrees is ______."
+   }
+  },
+  {
+   "cosine": 0.7303,
+   "a": {
+    "qid": "q_33e53432cd7e",
+    "source": "authored_jee_main",
+    "chapter": "CHE.PERIO",
+    "stem": "The number of elements in the fourth period of the periodic table is"
+   },
+   "b": {
+    "qid": "q_ba7c5693b511",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.PERIO",
+    "stem": "The number of elements in the sixth period of the periodic table is"
+   }
+  },
+  {
+   "cosine": 0.7137,
+   "a": {
+    "qid": "q_acab0a08f86d",
+    "source": "authored_jee_main",
+    "chapter": "PHY.MAGM",
+    "stem": "The magnetic susceptibility of a paramagnetic sample at $300\\ \\mathrm{K}$ is $6\\times10^{-5}$. Assuming Curie's law, its susceptibility at $200\\ \\mathrm{K}$ is "
+   },
+   "b": {
+    "qid": "q_ce3812dc43f0",
+    "source": "authored_neet_iat",
+    "chapter": "PHY.MAGM",
+    "stem": "The susceptibility of a paramagnetic sample is $6\\times10^{-4}$ at 300 K. By Curie's law, its susceptibility at 600 K, in units of $10^{-4}$, is ______."
+   }
+  },
+  {
+   "cosine": 0.6966,
+   "a": {
+    "qid": "q_af144b3b530c",
+    "source": "authored_jee_main",
+    "chapter": "PHY.MAGM",
+    "stem": "A magnet of moment $5\\ \\mathrm{A\\,m^2}$ is held at $30^\\circ$ to a uniform field of $0.2\\ \\mathrm{T}$. The torque on it (in N m) is"
+   },
+   "b": {
+    "qid": "q_b0d257cc2167",
+    "source": "authored_neet_iat",
+    "chapter": "PHY.MAGM",
+    "stem": "A magnetic dipole of moment $0.1\\ \\mathrm{A\\,m^2}$ is placed at $30^\\circ$ to a uniform field of $0.5$ T. The torque on it (in N m) is ______."
+   }
+  },
+  {
+   "cosine": 0.6779,
+   "a": {
+    "qid": "q_950215b029bc",
+    "source": "authored_jee_main",
+    "chapter": "CHE.BIOM",
+    "stem": "The number of peptide bonds in a linear (unbranched) polypeptide made from $25$ amino acid residues is"
+   },
+   "b": {
+    "qid": "q_1b02d1f4a065",
+    "source": "authored_neet_iat",
+    "chapter": "ZOO.BMOL",
+    "stem": "The number of peptide bonds in a linear polypeptide made of 100 amino acids is ______."
+   }
+  },
+  {
+   "cosine": 0.6651,
+   "a": {
+    "qid": "q_4f2768db7579",
+    "source": "authored_jee_main",
+    "chapter": "CHE.PERIO",
+    "stem": "Which of the following isoelectronic species has the largest ionic radius?"
+   },
+   "b": {
+    "qid": "q_e28f2b80f368",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.PERIO",
+    "stem": "Among the isoelectronic species $\\ce{O^2-}$, $\\ce{F-}$, $\\ce{Na+}$ and $\\ce{Mg^2+}$, the largest ionic radius is that of"
+   }
+  },
+  {
+   "cosine": 0.6552,
+   "a": {
+    "qid": "q_815a4f3e81cc",
+    "source": "authored_jee_main",
+    "chapter": "CHE.ALC",
+    "stem": "The most acidic compound among the following is"
+   },
+   "b": {
+    "qid": "q_69c7a9a4890e",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.ALC",
+    "stem": "Which of the following is the most acidic?"
+   }
+  },
+  {
+   "cosine": 0.6362,
+   "a": {
+    "qid": "q_56cc12e92ad4",
+    "source": "jeebench",
+    "chapter": "MAT.RELF",
+    "stem": "If the function $f: \\mathbb{R} \\rightarrow \\mathbb{R}$ is defined by $f(x)=|x|(x-\\sin x)$, then which of the following statements is TRUE?"
+   },
+   "b": {
+    "qid": "q_4ae5cc8718d9",
+    "source": "authored_jee_main",
+    "chapter": "MAT.RELF",
+    "stem": "The function $f:\\mathbb Z\\to\\mathbb Z$, $f(n)=2n+1$, is"
+   }
+  },
+  {
+   "cosine": 0.6029,
+   "a": {
+    "qid": "q_5502f8c24d8c",
+    "source": "authored_jee_main",
+    "chapter": "CHE.ALC",
+    "stem": "The number of structural isomers of $\\ce{C4H9OH}$ that are alcohols is"
+   },
+   "b": {
+    "qid": "q_3b8c18b22937",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.ALC",
+    "stem": "The number of structural isomers of alcohols with the molecular formula $\\ce{C4H10O}$ is ______."
+   }
+  },
+  {
+   "cosine": 0.596,
+   "a": {
+    "qid": "q_8ba43defd2d7",
+    "source": "authored_jee_main",
+    "chapter": "PHY.MAGM",
+    "stem": "A short bar magnet of magnetic moment $2\\ \\mathrm{A\\,m^2}$ lies in air. The magnitude of its field at a point on its axis $10\\ \\mathrm{cm}$ from the centre is ("
+   },
+   "b": {
+    "qid": "q_ec29f9872f87",
+    "source": "authored_neet_iat",
+    "chapter": "PHY.MAGM",
+    "stem": "A short bar magnet of dipole moment $1\\ \\mathrm{A\\,m^2}$ lies along the axis through the point at 0.1 m from its centre. The magnetic field at that axial point,"
+   }
+  },
+  {
+   "cosine": 0.5923,
+   "a": {
+    "qid": "q_57afea023b67",
+    "source": "jeebench",
+    "chapter": "CHE.COORD",
+    "stem": "The geometries of the ammonia complexes of $\\mathrm{Ni}^{2+}, \\mathrm{Pt}^{2+}$ and $\\mathrm{Zn}^{2+}$, respectively, are"
+   },
+   "b": {
+    "qid": "q_a7613acaf257",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.PBLK",
+    "stem": "The shape of $\\ce{XeF4}$ is"
+   }
+  },
+  {
+   "cosine": 0.5822,
+   "a": {
+    "qid": "q_68e5ef67c015",
+    "source": "authored_jee_main",
+    "chapter": "CHE.HC",
+    "stem": "Propene reacts with $\\ce{HBr}$ in the presence of an organic peroxide. The major product is"
+   },
+   "b": {
+    "qid": "q_cb06648bd233",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.HC",
+    "stem": "In the presence of a peroxide, HBr adds to propene to give mainly"
+   }
+  },
+  {
+   "cosine": 0.5655,
+   "a": {
+    "qid": "q_27aa4ed36ff5",
+    "source": "authored_jee_main",
+    "chapter": "CHE.PERIO",
+    "stem": "An element has atomic number $34$. Its group number in the long form of the periodic table is"
+   },
+   "b": {
+    "qid": "q_ba7c5693b511",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.PERIO",
+    "stem": "The number of elements in the sixth period of the periodic table is"
+   }
+  },
+  {
+   "cosine": 0.5513,
+   "a": {
+    "qid": "q_bf5757aa1f6c",
+    "source": "jeebench",
+    "chapter": "MAT.RELF",
+    "stem": "Let $X$ be a set with exactly 5 elements and $Y$ be a set with exactly 7 elements. If $\\alpha$ is the number of one-one functions from $X$ to $Y$ and $\\beta$ is"
+   },
+   "b": {
+    "qid": "q_c380c0e41956",
+    "source": "authored_jee_main",
+    "chapter": "MAT.FUN",
+    "stem": "The number of onto functions from a set of $4$ elements to a set of $3$ elements is"
+   }
+  },
+  {
+   "cosine": 0.542,
+   "a": {
+    "qid": "q_27aa4ed36ff5",
+    "source": "authored_jee_main",
+    "chapter": "CHE.PERIO",
+    "stem": "An element has atomic number $34$. Its group number in the long form of the periodic table is"
+   },
+   "b": {
+    "qid": "q_89010a39beda",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.PERIO",
+    "stem": "The element with atomic number 35 belongs to"
+   }
+  },
+  {
+   "cosine": 0.5395,
+   "a": {
+    "qid": "q_a32af209b664",
+    "source": "authored_jee_main",
+    "chapter": "CHE.CARB",
+    "stem": "Which of the following gives a yellow precipitate of iodoform with $\\ce{I2}$/$\\ce{NaOH}$?"
+   },
+   "b": {
+    "qid": "q_f496011fd87c",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.CARB",
+    "stem": "Which of the following gives a yellow precipitate of iodoform with $\\ce{I2}$ and NaOH?"
+   }
+  },
+  {
+   "cosine": 0.5274,
+   "a": {
+    "qid": "q_ad8ce6a46785",
+    "source": "authored_jee_main",
+    "chapter": "PHY.EMW",
+    "stem": "Select all correct statements about a plane electromagnetic wave in vacuum."
+   },
+   "b": {
+    "qid": "q_69fa833dea74",
+    "source": "authored_neet_iat",
+    "chapter": "PHY.EMW",
+    "stem": "In an electromagnetic wave, the electric field and magnetic field vectors are"
+   }
+  },
+  {
+   "cosine": 0.5242,
+   "a": {
+    "qid": "q_46ff947a0fd7",
+    "source": "authored_jee_main",
+    "chapter": "CHE.AMN",
+    "stem": "In aqueous solution the strongest base among the following is"
+   },
+   "b": {
+    "qid": "q_cde602942e0b",
+    "source": "authored_neet_iat",
+    "chapter": "CHE.AMN",
+    "stem": "In aqueous solution, the correct order of basic strength of methylamines and ammonia is"
+   }
+  }
+ ]
+}

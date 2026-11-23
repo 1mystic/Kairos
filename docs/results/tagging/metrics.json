@@ -1,0 +1,336 @@
+{
+  "caveats": [
+    "rule-provenance labels come from the keyword rules and were accepted by a reviewer: partly circular, the rules baseline is ~perfect there by construction.",
+    "manual rows exist exactly where the rules failed or abstained: the rules baseline is biased low on them.",
+    "authored questions are often written in sibling families: near-twins across CV folds inflate authored scores.",
+    "the 95%-precision threshold is chosen on the same out-of-fold predictions it is reported on (optimistic).",
+    "BOT/ZOO have no rule baseline (rules cover PHY/CHE/MAT): rules abstain on them."
+  ],
+  "config": {
+    "C_grid": {
+      "logreg": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "svc": [
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "folds": 5,
+    "macro_f1_labels": "classes present in y_true",
+    "model": "one per subject",
+    "seed": 2026,
+    "svc_confidence": "top1-top2 decision margin"
+  },
+  "data": {
+    "by_provenance": {
+      "authored": 900,
+      "manual": 312,
+      "rule": 183
+    },
+    "by_subject": {
+      "BOT": 293,
+      "CHE": 329,
+      "MAT": 298,
+      "PHY": 278,
+      "ZOO": 197
+    },
+    "n_chapters": 117,
+    "n_evaluated": 1395,
+    "n_rows": 1395,
+    "n_singleton_rows": 0,
+    "singleton_chapters_train_only": []
+  },
+  "logreg": {
+    "by_provenance": {
+      "authored": {
+        "macro_f1": 0.5899742589466436,
+        "n": 900,
+        "top1": 0.6522222222222223,
+        "top3": 0.8422222222222222
+      },
+      "manual": {
+        "macro_f1": 0.5717271490349095,
+        "n": 312,
+        "top1": 0.6762820512820513,
+        "top3": 0.8717948717948718
+      },
+      "rule": {
+        "macro_f1": 0.7950679122505747,
+        "n": 183,
+        "top1": 0.8743169398907104,
+        "top3": 0.9562841530054644
+      }
+    },
+    "by_subject": {
+      "BOT": {
+        "macro_f1": 0.6430364865869322,
+        "n": 293,
+        "top1": 0.6552901023890785,
+        "top3": 0.8327645051194539
+      },
+      "CHE": {
+        "macro_f1": 0.6474169726589077,
+        "n": 329,
+        "top1": 0.6595744680851063,
+        "top3": 0.8571428571428571
+      },
+      "MAT": {
+        "macro_f1": 0.7023200948777564,
+        "n": 298,
+        "top1": 0.738255033557047,
+        "top3": 0.8758389261744967
+      },
+      "PHY": {
+        "macro_f1": 0.7119520423797426,
+        "n": 278,
+        "top1": 0.7446043165467626,
+        "top3": 0.8812949640287769
+      },
+      "ZOO": {
+        "macro_f1": 0.6200336296259988,
+        "n": 197,
+        "top1": 0.6192893401015228,
+        "top3": 0.8781725888324873
+      }
+    },
+    "overall": {
+      "macro_f1": 0.6714683337026693,
+      "n": 1395,
+      "top1": 0.6867383512544802,
+      "top3": 0.8637992831541219
+    },
+    "selective": {
+      "at_target": {
+        "coverage": 0.25017921146953404,
+        "precision": 0.9512893982808023,
+        "threshold": 0.7267053832695404
+      },
+      "at_target_by_provenance": {
+        "authored": {
+          "coverage": 0.21,
+          "n": 900,
+          "precision": 0.9470899470899471
+        },
+        "manual": {
+          "coverage": 0.27884615384615385,
+          "n": 312,
+          "precision": 0.9425287356321839
+        },
+        "rule": {
+          "coverage": 0.3989071038251366,
+          "n": 183,
+          "precision": 0.9726027397260274
+        }
+      },
+      "target_precision": 0.95
+    }
+  },
+  "rules_baseline": {
+    "by_provenance": {
+      "authored": {
+        "accuracy_abstain_counts_wrong": 0.19111111111111112,
+        "coverage": 0.23333333333333334,
+        "n": 900,
+        "precision": 0.819047619047619
+      },
+      "manual": {
+        "accuracy_abstain_counts_wrong": 0.0,
+        "coverage": 0.0641025641025641,
+        "n": 312,
+        "precision": 0.0
+      },
+      "rule": {
+        "accuracy_abstain_counts_wrong": 1.0,
+        "coverage": 1.0,
+        "n": 183,
+        "precision": 1.0
+      }
+    },
+    "by_subject": {
+      "BOT": {
+        "accuracy_abstain_counts_wrong": 0.0,
+        "coverage": 0.0,
+        "n": 293,
+        "precision": null
+      },
+      "CHE": {
+        "accuracy_abstain_counts_wrong": 0.2857142857142857,
+        "coverage": 0.3495440729483283,
+        "n": 329,
+        "precision": 0.8173913043478261
+      },
+      "MAT": {
+        "accuracy_abstain_counts_wrong": 0.3859060402684564,
+        "coverage": 0.47651006711409394,
+        "n": 298,
+        "precision": 0.8098591549295775
+      },
+      "PHY": {
+        "accuracy_abstain_counts_wrong": 0.5251798561151079,
+        "coverage": 0.5611510791366906,
+        "n": 278,
+        "precision": 0.9358974358974359
+      },
+      "ZOO": {
+        "accuracy_abstain_counts_wrong": 0.0,
+        "coverage": 0.0,
+        "n": 197,
+        "precision": null
+      }
+    },
+    "overall": {
+      "accuracy_abstain_counts_wrong": 0.25448028673835127,
+      "coverage": 0.2960573476702509,
+      "n": 1395,
+      "precision": 0.8595641646489104
+    },
+    "overall_rule_subjects_only": {
+      "accuracy_abstain_counts_wrong": 0.39226519337016574,
+      "coverage": 0.456353591160221,
+      "n": 905,
+      "precision": 0.8595641646489104
+    }
+  },
+  "runtime_s": 419.1,
+  "svc": {
+    "by_provenance": {
+      "authored": {
+        "macro_f1": 0.5948219642917467,
+        "n": 900,
+        "top1": 0.6577777777777778,
+        "top3": 0.8477777777777777
+      },
+      "manual": {
+        "macro_f1": 0.6038419975674083,
+        "n": 312,
+        "top1": 0.6858974358974359,
+        "top3": 0.875
+      },
+      "rule": {
+        "macro_f1": 0.8158039014076165,
+        "n": 183,
+        "top1": 0.8688524590163934,
+        "top3": 0.9508196721311475
+      }
+    },
+    "by_subject": {
+      "BOT": {
+        "macro_f1": 0.6506833544261822,
+        "n": 293,
+        "top1": 0.6655290102389079,
+        "top3": 0.8395904436860068
+      },
+      "CHE": {
+        "macro_f1": 0.6737904407608897,
+        "n": 329,
+        "top1": 0.6717325227963525,
+        "top3": 0.8662613981762918
+      },
+      "MAT": {
+        "macro_f1": 0.6918970021560042,
+        "n": 298,
+        "top1": 0.7348993288590604,
+        "top3": 0.87248322147651
+      },
+      "PHY": {
+        "macro_f1": 0.7015927416565146,
+        "n": 278,
+        "top1": 0.737410071942446,
+        "top3": 0.8992805755395683
+      },
+      "ZOO": {
+        "macro_f1": 0.6353942974969178,
+        "n": 197,
+        "top1": 0.6345177664974619,
+        "top3": 0.8578680203045685
+      }
+    },
+    "overall": {
+      "macro_f1": 0.6758805840431216,
+      "n": 1395,
+      "top1": 0.6917562724014337,
+      "top3": 0.8673835125448028
+    },
+    "selective": {
+      "at_target": {
+        "coverage": 0.2630824372759857,
+        "precision": 0.9509536784741145,
+        "threshold": 0.6683628027307443
+      },
+      "at_target_by_provenance": {
+        "authored": {
+          "coverage": 0.23777777777777778,
+          "n": 900,
+          "precision": 0.9392523364485982
+        },
+        "manual": {
+          "coverage": 0.25961538461538464,
+          "n": 312,
+          "precision": 0.9506172839506173
+        },
+        "rule": {
+          "coverage": 0.39344262295081966,
+          "n": 183,
+          "precision": 0.9861111111111112
+        }
+      },
+      "target_precision": 0.95
+    }
+  },
+  "top10_confused_pairs": [
+    {
+      "count": 5,
+      "predicted": "CHE.HC",
+      "true": "CHE.GOC"
+    },
+    {
+      "count": 4,
+      "predicted": "BOT.CELL",
+      "true": "BOT.BCL"
+    },
+    {
+      "count": 4,
+      "predicted": "BOT.MOL",
+      "true": "BOT.BTP"
+    },
+    {
+      "count": 4,
+      "predicted": "ZOO.CHC",
+      "true": "ZOO.HRP"
+    },
+    {
+      "count": 3,
+      "predicted": "BOT.GEN",
+      "true": "BOT.BTA"
+    },
+    {
+      "count": 3,
+      "predicted": "BOT.BIOD",
+      "true": "BOT.LIV"
+    },
+    {
+      "count": 3,
+      "predicted": "CHE.PBLK",
+      "true": "CHE.CARB"
+    },
+    {
+      "count": 3,
+      "predicted": "CHE.PBLK",
+      "true": "CHE.DF"
+    },
+    {
+      "count": 3,
+      "predicted": "CHE.PBLK",
+      "true": "CHE.REDOX"
+    },
+    {
+      "count": 3,
+      "predicted": "CHE.PBLK",
+      "true": "CHE.SBLK"
+    }
+  ]
+}
