@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
-    "sim": "KAIROS_SIM_FULL=1 vitest run src/sim/full.sim.test.ts"
+    "sim": "KAIROS_SIM_FULL=1 vitest run src/sim/full.sim.test.ts",
+    "sim:study": "tsx scripts/sim-study.ts",
+    "sim:export": "tsx scripts/sim-export.ts"
   },
   "dependencies": {
     "katex": "^0.16",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@types/katex": "^0.16",
     "@vitest/coverage-v8": "^3",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^3"
   }
