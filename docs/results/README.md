@@ -10,6 +10,7 @@ Files: `irt/` (Phase D), `score_interval/` (Phase F), `sim_baselines.json` (Phas
 - **Planner**: the uncertainty-aware planner using the learned model (`planner_unc_learned`) gains **+3.02 marks** at exam day over the current planner (95% CI [2.95, 3.08], positive in 5/5 seeds) and beats every baseline with a CI excluding 0; it also cuts wasted practice minutes by 76 (−19%). Each piece helps on its own: uncertainty priority with Elo +1.90 [1.83, 1.96]; learned model with the heuristic priority +0.59 [0.53, 0.66].
 - **Item calibration (Phase D)**: 1PL IRT recovers true difficulty with ρ = 0.979 overall, but only 0.885 at 50 attempts per item (gate 0.9 not met; met from ~100).
 - **Score intervals (Phase F)**: conformal 80% intervals cover 80.0% (Elo) / 80.3% (learned) of held-out mocks; the naive model band covers only 56% (Elo) / 74% (learned). Gate met.
+- **Tagging without an LLM (Phase G)**: a TF-IDF + logistic-regression tagger gets 68.7% top-1 / 86.4% top-3 chapter accuracy and can auto-suggest 25% of questions at 95% precision (keyword rules: 29.6% at 86%); suggestions go to human review only.
 - **Defaults unchanged**: Elo and the heuristic priority stay the product default; both new paths are behind app flags (off).
 
 ## Setup
@@ -177,9 +178,29 @@ Data: `sim:export --mocks-only 1`, 1,000 students × 2 policies (`random`, `plan
 
 **Acceptance (empirical coverage within ±5 points of 80% on held-out sim) is met** for both models overall. Subgroups — conformal Elo: seen<=0.5 0.807 (n=564), seen<=0.9 0.805 (n=1379), seen<=1.0 0.799 (n=9985), days_left 0-29 0.809 (n=3976), days_left 30-59 0.843 (n=3976), days_left 60-999 0.748 (n=3976); conformal learned: seen<=0.5 0.812 (n=564), seen<=0.9 0.806 (n=1379), seen<=1.0 0.803 (n=9985), days_left 0-29 0.824 (n=3976), days_left 30-59 0.801 (n=3976), days_left 60-999 0.785 (n=3976). Conformal guarantees marginal coverage only: Elo intervals early in the runway (≥ 60 days left) cover 0.748, just outside ±5; the learned model stays within ±5 in every subgroup. Point error of the predicted mock score (MAE / bias, marks): Elo 22.0 / +12.0, learned 15.6 / +3.2, oracle true-P 13.4 / +0.0 — Elo under-predicts by 12 marks (the same underconfidence as in Phase C). Client: `core/src/gen/score_interval.json` + `scoreInterval()`; `predictScore(..., { interval: { seenFrac, model } })` adds `interval` (off by default; the p25–p75 band is unchanged).
 
-## Phase G: LLM tagging — not done
+## Phase G: tagging and dedupe without an LLM (`tagging/`)
 
-Blocked: it needs an LLM API key (paid inference, and question text sent to a third party) and a human-labelled validation sample to report precision/recall against; neither exists in this repo or session. Nothing was faked.
+Fully offline, classical ML; no question text leaves the machine. `pipeline/ml/tagger.py`: TF-IDF word 1–2 grams + char 3–5 grams on LaTeX-aware normalised stem + options, one model per subject (a prediction can never leave its subject), logistic regression (C by inner CV) and a linear SVC. Data: 1,395 verified JEE/NEET/IAT questions with human chapter labels — 900 `authored` (set by their authors), 312 `manual` (settled by hand in `tag/manual_tags.json`), 183 `rule` (rule-tagger output accepted on review; partly circular). 5-fold stratified CV, seed 2026.
+
+| model | top-1 | top-3 | macro-F1 |
+|---|---|---|---|
+| logreg, all | 0.687 | 0.864 | 0.671 |
+| logreg, authored (900) | 0.652 | 0.842 | 0.590 |
+| logreg, manual (312) | 0.676 | 0.872 | 0.572 |
+| logreg, rule (183) | 0.874 | 0.956 | 0.795 |
+| linear SVC, all | 0.692 | 0.867 | 0.676 |
+
+By subject (logreg top-1): PHY 0.745, MAT 0.738, CHE 0.660, BOT 0.655, ZOO 0.619.
+
+**Selective prediction**: at a confidence threshold of 0.727 the logreg suggests a chapter for **25.0% of questions at 95.1% precision** (SVC: 26.3% at 95.1%). The keyword rules (`tag/rules.py`, no rules for BOT/ZOO) answer 29.6% at 86.0% precision; on `authored` rows 23.3% at 81.9%. At the rules' coverage the ML tagger is ~94% precise. The threshold is chosen on the same out-of-fold predictions it is reported on (slightly optimistic).
+
+![precision vs coverage](tagging/precision_coverage.png)
+
+Use: `python -m pipeline.ml.tagger --suggest FILE.json` writes top-3 chapter suggestions with confidence **for human review only** (`for_human_review_only: true`). The pipeline rule stands: a question without a tag is rejected, never guessed. Top confusions (in `metrics.json`): CHE.GOC→CHE.HC, BOT.BCL→BOT.CELL, BOT.BTP→BOT.MOL, ZOO.HRP→ZOO.CHC.
+
+**Near-duplicate detection** (`pipeline/ml/dedupe.py`, TF-IDF char 3–5-gram cosine): on 300 seeded *synthetic* twins (numbers changed, options shuffled, spacing/LaTeX edits, a phrase dropped) hidden among the bank, recall@1 0.997, recall@5 1.0, MRR 0.998; at cosine ≥ 0.8 recall 0.93, precision ≥ 0.92. Synthetic twins are easier than real paraphrases, so these are upper bounds. 12 real bank pairs score ≥ 0.95 (likely templated authored siblings); the top 20 cross-source pairs are in `dup_candidates.json` for human review, with no claim that they are duplicates.
+
+Caveats: authored questions come in sibling families, so near-twins across folds inflate authored scores; `rule` labels are partly circular; no human-labelled duplicate pairs exist yet.
 
 ## Reproduce
 
@@ -227,6 +248,16 @@ pnpm sim:export -- --students 1000 --seed 2027 --days 100 --chunk 100 --policies
 pipeline/ml/.venv/bin/python -m pipeline.ml.conformal --data pipeline/ml/data/sim_mocks.csv --seed 2027 --out docs/results/score_interval --export core/src/gen/score_interval.json
 ```
 
+Phase G (tagger ≈ 7 min with inner CV; dedupe ≈ 5 s):
+
+```bash
+pipeline/ml/.venv/bin/python -m pipeline.ml.tagger --out docs/results/tagging --seed 2026
+```
+
+```bash
+pipeline/ml/.venv/bin/python -m pipeline.ml.dedupe --out docs/results/tagging --seed 2026
+```
+
 Phase E comparison (~22 min on 4 cores) and ablation (~14 min):
 
 ```bash
@@ -261,14 +292,13 @@ Off by default. Build-time `VITE_FLAG_LEARNED_RECALL=1` and/or `VITE_FLAG_UNCERT
 - **Within-session count is the most useful learned feature** (`log_k`): the sim learns item by item within a session while the mastery doc only updates at session end. In the app, `kInSession` is passed by `buildTodayQueue` per pick; the planner calls the model with `kInSession = 0`.
 - **Phase D gate missed at n = 50** (ρ 0.885 vs 0.9). Only 1PL; no 2PL discrimination; calibration is fitted on the sim's attempts — the real bank has no pooled attempts yet, so no `calib.json` is published and the app does not apply one.
 - **Phase F intervals are calibrated on sim mocks** (60 questions, every question attempted). Real papers (blank-below-threshold strategy, other lengths) need recalibration on real mock results; the app does not display the interval yet.
-- **Not done**: Bayesian IRT (pymc/numpyro) and DKT/SAKT models (Phase C optional), "buffer days used" metric (Phase A), the Settings "Download my attempts (CSV)" button (Phase B; app session events have no typed attempt shape yet, so `toAttemptRows` has no clean source), and stretch phases D, F, G.
+- **Not done**: Bayesian IRT (pymc/numpyro) and DKT/SAKT models (Phase C optional), "buffer days used" metric (Phase A), the Settings "Download my attempts (CSV)" button (Phase B; app session events have no typed attempt shape yet, so `toAttemptRows` has no clean source), and LLM-based tagging (replaced by the offline classical tagger).
 
 ## Blockers
 
 - **Push to GitHub refused (HTTP 403)** for this session ("Claude doesn't have GitHub access to 1mystic/Kairos"). All commits are on the local branch `feat/ml-upgrade`; push once access is restored.
 - **Pre-existing failures on `main`, unchanged by this branch**: 7 app tests fail (`src/practice/{mine,screens,summary}.test.tsx` — "useStore must be used inside StoreProvider"; `src/saved/saved.test.tsx`; `src/styles/consistency.test.ts`), and `pnpm lint` reports 212 errors, all in the committed build output `app/public/dryrun/`. Verified identical on `main` (83a0f94). Not fixed here (out of scope).
 - `pipeline/tests -k publish`: 1 failure + 8 errors (unverified slots in `gate_da_mock_a`), identical on `main`; the new `publish.py --calib` option is therefore not exercised by a test.
-- Phase G blocked (see above).
 - `core/scripts/*.ts` are not covered by `tsc -p core` (core has no Node types); they are linted and exercised by every study run.
 
 ## Ethics and privacy

@@ -7,7 +7,7 @@
 - [~] Phase D calibrated item difficulty: `pipeline/ml/irt_job.py` (1PL, held-out model selection), `publish.py --calib`, core `applyCalibration` + time norms in labels. Recovery ρ 0.979 overall but 0.885 at n = 50 — **gate (ρ > 0.9 at n ≥ 50) not met**, met from n ≈ 100. No 2PL. -> `docs/results/irt/`.
 - [x] Phase E uncertainty-aware planner: `priorityMode: 'uncertainty'`, ablation per signal, paired comparison vs all baselines -> `docs/results/sim_planner.json`, `docs/results/sim_ablation.json`.
 - [x] Phase F score intervals: split conformal on sim mocks, coverage 0.800 / 0.803 at 80% (gate ±5 met) -> `docs/results/score_interval/`, `core/src/gen/interval.ts`. App does not display it yet.
-- [ ] Phase G LLM features: blocked (needs an LLM API key / paid inference and a human-labelled validation set).
+- [x] Phase G done without an LLM: offline TF-IDF chapter tagger (68.7% top-1, 25% coverage at 95% precision vs rules 29.6% at 86%) validated on human labels, and a near-duplicate detector (synthetic twins recall@1 0.997) -> `docs/results/tagging/`. Suggestions are for human review only. Misconception tagging and embedding retrieval not done.
 - [x] Phase H report: `docs/results/README.md`, `pnpm --filter @kairos/core sim:study`, `python -m pipeline.ml.train`.
 
 Goal: turn Kairos from "well-engineered heuristics" into a defensible **applied ML / data science project** (student capstone, 2026-27) without breaking the product rules: Spark-plan only, `/core` stays pure TypeScript, guest data stays on device, minors' data is used only for their own learning.
