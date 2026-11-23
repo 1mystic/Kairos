@@ -25,4 +25,4 @@ sys-des.pdf
 
 # ML pipeline
 pipeline/ml/data/
-pipeline/ml/out/
+pipeline/ml/out*/
