@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "method": "split conformal, Mondrian on seen_frac, z = (actual - pred) / sd",
+ "level": 0.8,
+ "seed": 2027,
+ "csv_sha256": "d7f51c1dc9ad47543687e59f77ee435c6c657383d4ba50b3210ae740d5ff544a",
+ "models": {
+  "elo": [
+   {
+    "max_seen_frac": 0.5,
+    "q_lo": -2.616759,
+    "q_hi": 0.764361,
+    "n": 572
+   },
+   {
+    "max_seen_frac": 0.9,
+    "q_lo": -2.166585,
+    "q_hi": 0.968845,
+    "n": 1426
+   },
+   {
+    "max_seen_frac": 1.0,
+    "q_lo": -0.681596,
+    "q_hi": 2.534722,
+    "n": 10074
+   }
+  ],
+  "learned": [
+   {
+    "max_seen_frac": 0.5,
+    "q_lo": -1.673911,
+    "q_hi": 1.724237,
+    "n": 572
+   },
+   {
+    "max_seen_frac": 0.9,
+    "q_lo": -1.662552,
+    "q_hi": 1.436653,
+    "n": 1426
+   },
+   {
+    "max_seen_frac": 1.0,
+    "q_lo": -1.162036,
+    "q_hi": 1.609666,
+    "n": 10074
+   }
+  ]
+ },
+ "test_coverage": {
+  "elo": 0.7999,
+  "learned": 0.8033
+ }
+}

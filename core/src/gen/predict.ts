@@ -3,12 +3,15 @@ import type { Question } from '../question';
 import { roundMarks } from '../scoring';
 import { generatePaper } from './select';
 import { mulberry32, subSeed } from './rng';
+import { scoreInterval, type ScoreInterval } from './interval';
 
 export interface ScoreBand {
   p25: number;
   p50: number;
   p75: number;
   mean: number;
+  /** calibrated interval (Phase F), only when `interval` is requested */
+  interval?: ScoreInterval;
 }
 
 function quantile(sorted: number[], q: number): number {
@@ -33,10 +36,18 @@ export function predictScore(opts: {
   weights: Record<string, number>;
   sims?: number;
   seed: number;
+  /**
+   * Calibrated 80% interval (docs/17 Phase F): seenFrac = share of the paper's topics the student has practised;
+   * model = which recall model produced theta. Uses the analytic expected marks / Bernoulli sd averaged over the
+   * sampled papers, then the conformal table. Off by default: the p25-p75 band is unchanged.
+   */
+  interval?: { seenFrac: number; model?: 'elo' | 'learned' };
 }): ScoreBand {
   const sims = opts.sims ?? 500;
   const slots = flattenSlots(opts.blueprint);
   const scores: number[] = [];
+  let muSum = 0;
+  let sdSum = 0;
   for (let s = 0; s < sims; s++) {
     const sd = subSeed(opts.seed, s);
     const paper = generatePaper({
@@ -50,6 +61,8 @@ export function predictScore(opts: {
     const rng = mulberry32(sd ^ 0x5bd1e995);
     const byId = new Map(opts.bank.map((q) => [q.id, q]));
     let total = 0;
+    let mu = 0;
+    let v = 0;
     paper.slots.forEach(({ qid }, i) => {
       const q = byId.get(qid)!;
       const m = slots[i]!.marks;
@@ -60,7 +73,13 @@ export function predictScore(opts: {
       const p = 1 / (1 + Math.exp(-(th - b)));
       const threshold = (m.blank - m.wrong) / (m.correct - m.wrong);
       total += p > threshold ? (rng() < p ? m.correct : m.wrong) : m.blank;
+      if (p > threshold) {
+        mu += m.correct * p + m.wrong * (1 - p);
+        v += (m.correct - m.wrong) ** 2 * p * (1 - p);
+      } else mu += m.blank;
     });
+    muSum += mu;
+    sdSum += Math.sqrt(v);
     scores.push(roundMarks(total));
   }
   scores.sort((a, b) => a - b);
@@ -69,5 +88,6 @@ export function predictScore(opts: {
     p50: quantile(scores, 0.5),
     p75: quantile(scores, 0.75),
     mean: scores.reduce((a, b) => a + b, 0) / scores.length,
+    ...(opts.interval ? { interval: scoreInterval(muSum / sims, sdSum / sims, opts.interval.seenFrac, opts.interval.model ?? 'elo') } : {}),
   };
 }

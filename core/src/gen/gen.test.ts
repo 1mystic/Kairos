@@ -337,6 +337,17 @@ describe('predictScore', () => {
     expect(a.p25).toBeLessThanOrEqual(a.p50);
     expect(a.p50).toBeLessThanOrEqual(a.p75);
   });
+  it('optional calibrated interval brackets the mean; band unchanged', () => {
+    const a = predictScore({ ...args, theta: () => 0.5 });
+    const b = predictScore({ ...args, theta: () => 0.5, interval: { seenFrac: 1 } });
+    expect(a.interval).toBeUndefined();
+    expect({ ...b, interval: undefined }).toEqual({ ...a, interval: undefined });
+    expect(b.interval!.lo).toBeLessThan(b.mean);
+    expect(b.interval!.hi).toBeGreaterThan(b.mean);
+    expect(b.interval!.level).toBeCloseTo(0.8, 9);
+    const c = predictScore({ ...args, theta: () => 0.5, interval: { seenFrac: 0.2, model: 'learned' } });
+    expect(c.interval!.hi - c.interval!.lo).toBeGreaterThan(0);
+  });
   it('is monotone in theta and bounded by max marks / blank', () => {
     const means = [-3, -1, 0, 1, 3].map((t) => predictScore({ ...args, theta: () => t }).mean);
     for (let i = 1; i < means.length; i++) expect(means[i]!).toBeGreaterThan(means[i - 1]!);
