@@ -2,6 +2,7 @@
 import { logit } from './util';
 import { applySession, emptyMastery, type MasteryDoc } from '../measure/mastery';
 import { cardFromParts, retrievability } from '../measure/fsrs';
+import { predictRecall } from '../measure/learned';
 import { sigmoid } from '../measure/elo';
 import type { Attempt } from '../measure/labels';
 import { updateFu } from '../plan/pace';
@@ -103,6 +104,20 @@ function pickItem(topic: SimTopic, bTarget: number, rng: () => number): number {
   return j;
 }
 
+/** Item whose model-predicted P is closest to the target (ties and near-ties jittered like pickItem). */
+function pickItemByModel(topic: SimTopic, targetP: number, p: (b: number) => number, rng: () => number): number {
+  let best = 0;
+  let bestD = Infinity;
+  topic.bank.forEach((b, j) => {
+    const d = Math.abs(p(b) - targetP) + rng() * 0.03;
+    if (d < bestD) {
+      bestD = d;
+      best = j;
+    }
+  });
+  return best;
+}
+
 export function simulatePolicy(
   policy: Policy,
   studentIdx: number,
@@ -135,14 +150,22 @@ export function simulatePolicy(
   const priorN = new Map<string, number>();
   const lastDay = new Map<string, number>();
   const kToday = new Map<string, number>();
+  /** topics practised today; `lastDay` is updated at day end so days_since_last_topic matches the pre-session mastery doc */
+  const touchedToday = new Set<string>();
   const emit = cfg.onAttempt;
   const run = (day: number, topic: SimTopic, items: number, targetP: number | null, isMock = false): void => {
     const est = mastery[topic.id];
     const thetaEst = est && est.n > 0 ? est.θ : 0;
     const bs: number[] = [];
     const qs: Question[] = [];
+    const k0 = kToday.get(topic.id) ?? 0;
     for (let i = 0; i < items; i++) {
-      const j = targetP === null ? Math.floor(rng() * topic.bank.length) : pickItem(topic, thetaEst - logit(targetP), rng);
+      const j =
+        targetP === null
+          ? Math.floor(rng() * topic.bank.length)
+          : policy.recall === 'learned'
+            ? pickItemByModel(topic, targetP, (b) => predictRecall(est, b, epoch + day * DAY_MS, { model: 'learned', kInSession: k0 + i }), rng)
+            : pickItem(topic, thetaEst - logit(targetP), rng);
       bs.push(topic.bank[j] as number);
       qs.push(topic.questions[j] as Question);
     }
@@ -192,8 +215,8 @@ export function simulatePolicy(
           p_true: o.p,
         });
         priorN.set(topic.id, pn + 1);
-        kToday.set(topic.id, k + 1);
       }
+      kToday.set(topic.id, (kToday.get(topic.id) ?? 0) + 1);
       attempts.push({
         q: q.id,
         r: o.correct ? 1 : 0,
@@ -206,7 +229,7 @@ export function simulatePolicy(
         skipped: false,
       });
     });
-    if (emit && items > 0) lastDay.set(topic.id, day);
+    if (items > 0) touchedToday.add(topic.id);
     inst.noteSeen?.(day, topic.id, items);
   };
 
@@ -251,6 +274,8 @@ export function simulatePolicy(
     }
     inst.missed(ctx, undone);
     if (attempts.length > 0) mastery = applySession(mastery, attempts, [...used.values()], epoch + day * DAY_MS);
+    for (const id of touchedToday) lastDay.set(id, day);
+    touchedToday.clear();
     ({ ewma, fu } = updateFu(ewma, doneMin, planned));
   }
   const end = expectedScore(world, (id) => student.thetaAt(id, cfg.days));

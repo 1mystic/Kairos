@@ -1,0 +1,1 @@
+{"version": 0, "model": "logreg", "features": ["x_elo"], "mean": [0], "scale": [1], "coef": [1], "intercept": 0, "note": "placeholder equal to Elo; replaced by pipeline.ml.export_weights"}

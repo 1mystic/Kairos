@@ -3,7 +3,8 @@ import { masteryProb } from '../measure/elo';
 import type { MasteryDoc } from '../measure/mastery';
 import { addDays } from '../plan/calendar';
 import { reconcileBacklog } from '../plan/backlog';
-import { planDay } from '../plan/planner';
+import { planDay, type PlannerConfig } from '../plan/planner';
+import type { RecallModel } from '../measure/learned';
 import { DEFAULT_PHASES, type PhaseDef } from '../plan/phases';
 import type { ScheduleDay } from '../plan/schedule';
 import type { Task } from '../plan/types';
@@ -45,6 +46,8 @@ export interface PolicyInstance {
 
 export interface Policy {
   name: string;
+  /** model the harness uses to pick items at the task's target P (default 'elo') */
+  recall?: RecallModel;
   start(world: SimWorld, schedule: readonly ScheduleDay[]): PolicyInstance;
 }
 
@@ -164,9 +167,10 @@ export const weakestFirstPolicy: Policy = {
 };
 
 /** The product planner: planDay driven by estimated mastery, with backlog reconciliation. */
-export function plannerPolicy(overrides: { name?: string } = {}): Policy {
+export function plannerPolicy(overrides: { name?: string; config?: Partial<PlannerConfig>; recall?: RecallModel } = {}): Policy {
   return {
     name: overrides.name ?? 'planner',
+    ...(overrides.recall ? { recall: overrides.recall } : {}),
     start: () => {
       let pending: Task[] = [];
       let scheduled: Record<string, Task[]> = {};
@@ -200,6 +204,7 @@ export function plannerPolicy(overrides: { name?: string } = {}): Policy {
             backlog: rec.carry,
             seenRecently: Object.fromEntries(recent),
             seed: ctx.seed,
+            ...(overrides.config ? { config: overrides.config } : {}),
             ...(prevLoad !== undefined ? { prevLoadMin: prevLoad } : {}),
           });
           if (plan.loadMin !== null) prevLoad = plan.loadMin;
