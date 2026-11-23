@@ -1,0 +1,583 @@
+{
+  "generated": "2026-11-23",
+  "command": "pnpm --filter @kairos/core sim:study -- --students 1000 --seeds 1,2,3,4,5 --days 100 --jobs 3 --out ../docs/results/sim_baselines.json",
+  "config": {
+    "students": 1000,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "days": 100,
+    "policies": [
+      "random",
+      "fixed_round_robin",
+      "difficulty_only",
+      "weakest_first",
+      "chapter_order",
+      "planner"
+    ],
+    "baselines": [
+      "random"
+    ],
+    "bootstrap": 2000,
+    "worldSeed": "same as seed",
+    "schedule": "weekday 180 min, Saturday 240, Sunday off",
+    "metrics": {
+      "gain": "exam-day predicted score gain (marks, true ability)",
+      "retention": "exam-weighted mean memory retention at exam day over practised topics",
+      "wastedMin": "practice minutes on items with true P>0.9 or <0.2",
+      "aumc": "mean over days of (expected score - start)",
+      "practiceMin": "practice minutes done"
+    }
+  },
+  "runtimeSec": 476,
+  "policies": [
+    "random",
+    "fixed_round_robin",
+    "difficulty_only",
+    "weakest_first",
+    "chapter_order",
+    "planner"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "studentsPerSeed": 1000,
+  "metrics": {
+    "random": {
+      "gain": {
+        "mean": 115.5889,
+        "ci95": [
+          115.1112,
+          116.0631
+        ]
+      },
+      "retention": {
+        "mean": 0.9566,
+        "ci95": [
+          0.9565,
+          0.9568
+        ]
+      },
+      "wastedMin": {
+        "mean": 351.0933,
+        "ci95": [
+          345.2226,
+          357.3645
+        ]
+      },
+      "aumc": {
+        "mean": 62.7022,
+        "ci95": [
+          62.3894,
+          63.0087
+        ]
+      },
+      "practiceMin": {
+        "mean": 11147.5713,
+        "ci95": [
+          11139.9469,
+          11155.2192
+        ]
+      }
+    },
+    "fixed_round_robin": {
+      "gain": {
+        "mean": 125.171,
+        "ci95": [
+          124.6677,
+          125.6609
+        ]
+      },
+      "retention": {
+        "mean": 0.9777,
+        "ci95": [
+          0.9776,
+          0.9777
+        ]
+      },
+      "wastedMin": {
+        "mean": 335.7404,
+        "ci95": [
+          329.5927,
+          342.0372
+        ]
+      },
+      "aumc": {
+        "mean": 68.0289,
+        "ci95": [
+          67.68,
+          68.3582
+        ]
+      },
+      "practiceMin": {
+        "mean": 11150.7568,
+        "ci95": [
+          11142.7225,
+          11158.3009
+        ]
+      }
+    },
+    "difficulty_only": {
+      "gain": {
+        "mean": 120.3421,
+        "ci95": [
+          119.8706,
+          120.8279
+        ]
+      },
+      "retention": {
+        "mean": 0.9566,
+        "ci95": [
+          0.9564,
+          0.9568
+        ]
+      },
+      "wastedMin": {
+        "mean": 557.4101,
+        "ci95": [
+          546.449,
+          568.8777
+        ]
+      },
+      "aumc": {
+        "mean": 65.0466,
+        "ci95": [
+          64.715,
+          65.3804
+        ]
+      },
+      "practiceMin": {
+        "mean": 11148.2937,
+        "ci95": [
+          11140.763,
+          11155.5552
+        ]
+      }
+    },
+    "weakest_first": {
+      "gain": {
+        "mean": 100.9216,
+        "ci95": [
+          100.5317,
+          101.3229
+        ]
+      },
+      "retention": {
+        "mean": 0.9186,
+        "ci95": [
+          0.9182,
+          0.9191
+        ]
+      },
+      "wastedMin": {
+        "mean": 363.0719,
+        "ci95": [
+          359.6962,
+          366.6806
+        ]
+      },
+      "aumc": {
+        "mean": 57.9941,
+        "ci95": [
+          57.7265,
+          58.2698
+        ]
+      },
+      "practiceMin": {
+        "mean": 11147.4221,
+        "ci95": [
+          11139.3705,
+          11154.9971
+        ]
+      }
+    },
+    "chapter_order": {
+      "gain": {
+        "mean": 89.8156,
+        "ci95": [
+          89.4387,
+          90.1858
+        ]
+      },
+      "retention": {
+        "mean": 0.8993,
+        "ci95": [
+          0.899,
+          0.8997
+        ]
+      },
+      "wastedMin": {
+        "mean": 1049.9708,
+        "ci95": [
+          1036.1442,
+          1064.6763
+        ]
+      },
+      "aumc": {
+        "mean": 43.8609,
+        "ci95": [
+          43.6599,
+          44.0753
+        ]
+      },
+      "practiceMin": {
+        "mean": 11117.065,
+        "ci95": [
+          11109.733,
+          11124.4522
+        ]
+      }
+    },
+    "planner": {
+      "gain": {
+        "mean": 128.5954,
+        "ci95": [
+          128.1569,
+          129.0244
+        ]
+      },
+      "retention": {
+        "mean": 0.9619,
+        "ci95": [
+          0.9617,
+          0.962
+        ]
+      },
+      "wastedMin": {
+        "mean": 393.5488,
+        "ci95": [
+          388.1002,
+          399.4737
+        ]
+      },
+      "aumc": {
+        "mean": 74.7543,
+        "ci95": [
+          74.4319,
+          75.0776
+        ]
+      },
+      "practiceMin": {
+        "mean": 10527.7986,
+        "ci95": [
+          10521.0774,
+          10534.8862
+        ]
+      }
+    }
+  },
+  "paired": {
+    "random": {
+      "fixed_round_robin": {
+        "gain": {
+          "mean": 9.5821,
+          "ci95": [
+            9.4849,
+            9.6768
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.021,
+          "ci95": [
+            0.0209,
+            0.0212
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -15.3528,
+          "ci95": [
+            -17.2811,
+            -13.3657
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 5.3267,
+          "ci95": [
+            5.2505,
+            5.4001
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 3.1856,
+          "ci95": [
+            2.522,
+            3.8484
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "difficulty_only": {
+        "gain": {
+          "mean": 4.7532,
+          "ci95": [
+            4.6471,
+            4.8633
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0,
+          "ci95": [
+            -0.0002,
+            0.0001
+          ],
+          "pBoot": 0.627,
+          "positiveSeeds": 2,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 206.3169,
+          "ci95": [
+            199.418,
+            212.6881
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 2.3444,
+          "ci95": [
+            2.253,
+            2.4344
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 0.7225,
+          "ci95": [
+            0.0282,
+            1.3813
+          ],
+          "pBoot": 0.0215,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "weakest_first": {
+        "gain": {
+          "mean": -14.6672,
+          "ci95": [
+            -14.8867,
+            -14.4566
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.038,
+          "ci95": [
+            -0.0384,
+            -0.0376
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 11.9787,
+          "ci95": [
+            6.9434,
+            17.0289
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 3,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -4.7081,
+          "ci95": [
+            -4.8628,
+            -4.549
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.1491,
+          "ci95": [
+            -0.8071,
+            0.5099
+          ],
+          "pBoot": 0.6775,
+          "positiveSeeds": 3,
+          "seeds": 5
+        }
+      },
+      "chapter_order": {
+        "gain": {
+          "mean": -25.7733,
+          "ci95": [
+            -25.9163,
+            -25.634
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0573,
+          "ci95": [
+            -0.0576,
+            -0.057
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 698.8776,
+          "ci95": [
+            684.9368,
+            711.8869
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -18.8413,
+          "ci95": [
+            -18.9739,
+            -18.717
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -30.5063,
+          "ci95": [
+            -31.1781,
+            -29.8346
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner": {
+        "gain": {
+          "mean": 13.0065,
+          "ci95": [
+            12.8973,
+            13.1106
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0053,
+          "ci95": [
+            0.0051,
+            0.0054
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 42.4555,
+          "ci95": [
+            37.9122,
+            46.7693
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 12.0521,
+          "ci95": [
+            11.9647,
+            12.1395
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -619.7727,
+          "ci95": [
+            -621.1072,
+            -618.409
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      }
+    }
+  },
+  "perSeedGain": {
+    "1": {
+      "random": 117.5001,
+      "fixed_round_robin": 126.8237,
+      "difficulty_only": 122.1236,
+      "weakest_first": 103.8178,
+      "chapter_order": 92.7326,
+      "planner": 130.0306
+    },
+    "2": {
+      "random": 115.725,
+      "fixed_round_robin": 125.6093,
+      "difficulty_only": 120.4515,
+      "weakest_first": 101.834,
+      "chapter_order": 93.0126,
+      "planner": 126.7597
+    },
+    "3": {
+      "random": 116.9664,
+      "fixed_round_robin": 126.5207,
+      "difficulty_only": 121.7093,
+      "weakest_first": 101.2552,
+      "chapter_order": 89.3795,
+      "planner": 130.9793
+    },
+    "4": {
+      "random": 111.9129,
+      "fixed_round_robin": 121.1809,
+      "difficulty_only": 116.8839,
+      "weakest_first": 96.5844,
+      "chapter_order": 86.9111,
+      "planner": 126.1576
+    },
+    "5": {
+      "random": 115.84,
+      "fixed_round_robin": 125.7202,
+      "difficulty_only": 120.5421,
+      "weakest_first": 101.1167,
+      "chapter_order": 87.0421,
+      "planner": 129.0498
+    }
+  }
+}
