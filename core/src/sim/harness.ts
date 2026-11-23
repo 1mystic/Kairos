@@ -1,13 +1,14 @@
 /** 5.11 validation harness: synthetic students, policy comparison on predicted exam-day score gain. */
 import { logit } from './util';
 import { applySession, emptyMastery, type MasteryDoc } from '../measure/mastery';
+import { cardFromParts, retrievability } from '../measure/fsrs';
 import { sigmoid } from '../measure/elo';
 import type { Attempt } from '../measure/labels';
 import { updateFu } from '../plan/pace';
 import { addDays } from '../plan/calendar';
 import { buildSchedule, type ScheduleDay } from '../plan/schedule';
 import type { Question } from '../question';
-import { chapterOrderPolicy, plannerPolicy, randomPolicy, type Policy, type PolicyContext, type SimTask } from './policies';
+import { chapterOrderPolicy, difficultyOnlyPolicy, fixedRoundRobinPolicy, plannerPolicy, randomPolicy, weakestFirstPolicy, type Policy, type PolicyContext, type SimTask } from './policies';
 import { hashSeed, mulberry32, normal } from './rng';
 import { simulateStudent, type SimStudent } from './student';
 import { expectedScore, makeWorld, type SimTopic, type SimWorld } from './world';
@@ -25,18 +26,64 @@ export interface SimConfig {
   saturdayMin?: number;
   examId?: string;
   startDate?: string;
+  /** Receives every answered item (the anonymous attempt table + learner-state snapshot), for model training. */
+  onAttempt?: (row: SimAttemptRow) => void;
 }
 
+/** One answered item: docs/03 attempt table columns + sim-only columns (sid, policy, pre-session snapshot). */
+export interface SimAttemptRow {
+  sid: number;
+  policy: string;
+  day_idx: number;
+  topic: string;
+  qid: string;
+  difficulty_b: number;
+  correct: 0 | 1;
+  time_ms: number;
+  hint_used: 0 | 1;
+  prior_n_topic: number;
+  days_since_last_topic: number;
+  elo_theta: number;
+  elo_rd: number;
+  elo_n: number;
+  fsrs_r: number;
+  fsrs_s: number;
+  fsrs_d: number;
+  err_rate: number;
+  k_in_session: number;
+  /** true P(correct) of the synthetic student (never a model input; for diagnostics only) */
+  p_true: number;
+}
+
+export const SIM_ATTEMPT_COLUMNS = [
+  'sid', 'policy', 'day_idx', 'topic', 'qid', 'difficulty_b', 'correct', 'time_ms', 'hint_used', 'prior_n_topic', 'days_since_last_topic',
+  'elo_theta', 'elo_rd', 'elo_n', 'fsrs_r', 'fsrs_s', 'fsrs_d', 'err_rate', 'k_in_session', 'p_true',
+] as const;
+
 export interface StudentRun {
+  /** predicted exam-day score gain (true ability, blueprint paper) */
   gain: number;
   start: number;
   end: number;
+  /** exam-weighted mean memory retention at exam day over practised topics */
+  retention: number;
+  /** practice minutes on items with true P > 0.9 or < 0.2 (mocks excluded) */
+  wastedMin: number;
+  /** mean over days of (expected score - start): area under the score curve per day */
+  aumc: number;
+  /** practice minutes actually done (mocks excluded) */
+  practiceMin: number;
 }
+
+export const METRICS = ['gain', 'retention', 'wastedMin', 'aumc', 'practiceMin'] as const;
+export type MetricName = (typeof METRICS)[number];
 
 export interface SimResult {
   policies: string[];
   /** per policy, gain per student (index-aligned across policies = paired) */
   gains: Record<string, number[]>;
+  /** per policy, per metric, value per student (index-aligned) */
+  metrics: Record<string, Record<MetricName, number[]>>;
 }
 
 const DAY_MS = 86_400_000;
@@ -59,7 +106,7 @@ function pickItem(topic: SimTopic, bTarget: number, rng: () => number): number {
 export function simulatePolicy(
   policy: Policy,
   studentIdx: number,
-  cfg: Required<Pick<SimConfig, 'days' | 'seed' | 'examId'>> & { world: SimWorld; schedule: ScheduleDay[]; startDate: string },
+  cfg: Required<Pick<SimConfig, 'days' | 'seed' | 'examId'>> & { world: SimWorld; schedule: ScheduleDay[]; startDate: string; onAttempt?: SimConfig['onAttempt'] },
 ): StudentRun {
   const { world, schedule, startDate } = cfg;
   // student parameters depend on (seed, student) only: identical across policies (paired design)
@@ -82,7 +129,14 @@ export function simulatePolicy(
 
   const attempts: Attempt[] = [];
   const used = new Map<string, Question>();
-  const run = (day: number, topic: SimTopic, items: number, targetP: number | null): void => {
+  let wastedMin = 0;
+  let practiceMin = 0;
+  let aumcSum = 0;
+  const priorN = new Map<string, number>();
+  const lastDay = new Map<string, number>();
+  const kToday = new Map<string, number>();
+  const emit = cfg.onAttempt;
+  const run = (day: number, topic: SimTopic, items: number, targetP: number | null, isMock = false): void => {
     const est = mastery[topic.id];
     const thetaEst = est && est.n > 0 ? est.θ : 0;
     const bs: number[] = [];
@@ -93,26 +147,73 @@ export function simulatePolicy(
       qs.push(topic.questions[j] as Question);
     }
     const out = student.practice(topic.id, day, bs);
+    let snap: Omit<SimAttemptRow, 'day_idx' | 'topic' | 'qid' | 'difficulty_b' | 'correct' | 'time_ms' | 'hint_used' | 'prior_n_topic' | 'days_since_last_topic' | 'k_in_session' | 'p_true'> | undefined;
+    if (emit) {
+      const t = mastery[topic.id];
+      const now = epoch + day * DAY_MS;
+      const seen = t !== undefined && t.n > 0;
+      const err = t ? Object.values(t.err_mix).reduce<number>((a, b) => a + (b ?? 0), 0) : 0;
+      snap = {
+        sid: studentIdx,
+        policy: policy.name,
+        elo_theta: t?.θ ?? 0,
+        elo_rd: t?.rd ?? 1,
+        elo_n: t?.n ?? 0,
+        fsrs_r: seen ? retrievability(cardFromParts(t), now) : 1,
+        fsrs_s: seen ? t.S : 0,
+        fsrs_d: seen ? t.D : 0,
+        err_rate: seen ? Math.min(1, err / t.n) : 0,
+      };
+    }
     out.forEach((o, i) => {
       const q = qs[i] as Question;
       used.set(q.id, q);
+      if (!isMock) {
+        practiceMin += topic.tMinPerItem;
+        if (o.p > 0.9 || o.p < 0.2) wastedMin += topic.tMinPerItem;
+      }
+      const timeMs = 60_000 * (o.correct ? 0.6 + 0.8 * rng() : 0.3 + 1.9 * rng());
+      if (emit && snap) {
+        const pn = priorN.get(topic.id) ?? 0;
+        const last = lastDay.get(topic.id);
+        const k = kToday.get(topic.id) ?? 0;
+        emit({
+          ...snap,
+          day_idx: day,
+          topic: topic.id,
+          qid: q.id,
+          difficulty_b: Math.round(o.b * 1000) / 1000,
+          correct: o.correct ? 1 : 0,
+          time_ms: Math.round(timeMs),
+          hint_used: 0,
+          prior_n_topic: pn,
+          days_since_last_topic: last === undefined ? -1 : day - last,
+          k_in_session: k,
+          p_true: o.p,
+        });
+        priorN.set(topic.id, pn + 1);
+        kToday.set(topic.id, k + 1);
+      }
       attempts.push({
         q: q.id,
         r: o.correct ? 1 : 0,
         b: o.b,
         correct: o.correct,
-        timeMs: 60_000 * (o.correct ? 0.6 + 0.8 * rng() : 0.3 + 1.9 * rng()),
+        timeMs,
         medianTimeMs: 60_000,
         pCorrect: sigmoid(-o.b),
         changedCorrectToWrong: false,
         skipped: false,
       });
     });
+    if (emit && items > 0) lastDay.set(topic.id, day);
     inst.noteSeen?.(day, topic.id, items);
   };
 
   for (let day = 0; day < cfg.days; day++) {
+    if (day > 0) aumcSum += expectedScore(world, (id) => student.thetaAt(id, day)) - start;
     const sched = schedule[day] as ScheduleDay;
+    kToday.clear();
     if (sched.kind === 'off' || sched.capacityMin <= 0) continue;
     const date = addDays(startDate, day);
     const cap = sched.capacityMin;
@@ -136,7 +237,7 @@ export function simulatePolicy(
         const id = world.topics[Math.max(0, idx)]!.id;
         byTopic.set(id, (byTopic.get(id) ?? 0) + 1);
       }
-      for (const [id, n] of byTopic) run(day, world.byId[id] as SimTopic, n, null);
+      for (const [id, n] of byTopic) run(day, world.byId[id] as SimTopic, n, null, true);
     }
     const undone: SimTask[] = [];
     let doneMin = mockDay ? MOCK_MIN : 0;
@@ -153,7 +254,20 @@ export function simulatePolicy(
     ({ ewma, fu } = updateFu(ewma, doneMin, planned));
   }
   const end = expectedScore(world, (id) => student.thetaAt(id, cfg.days));
-  return { gain: end - start, start, end };
+  aumcSum += end - start;
+  let rw = 0;
+  let rs = 0;
+  for (const t of world.topics) {
+    if (student.exposures(t.id) === 0) continue;
+    rw += t.weight;
+    rs += t.weight * student.retentionAt(t.id, cfg.days);
+  }
+  return { gain: end - start, start, end, retention: rw > 0 ? rs / rw : 0, wastedMin, aumc: aumcSum / Math.max(1, cfg.days), practiceMin };
+}
+
+/** Every policy the study compares (baselines + the product planner). */
+export function allPolicies(): Policy[] {
+  return [randomPolicy, fixedRoundRobinPolicy, difficultyOnlyPolicy, weakestFirstPolicy, chapterOrderPolicy, plannerPolicy()];
 }
 
 /** Run every policy over the same synthetic students. */
@@ -171,21 +285,34 @@ export function runSim(config: SimConfig): SimResult {
   });
   const policies = config.policies ?? [plannerPolicy(), randomPolicy, chapterOrderPolicy];
   const gains: Record<string, number[]> = {};
-  for (const p of policies) gains[p.name] = [];
-  const base = { days: config.days, seed, examId: config.examId ?? 'jee', world, schedule, startDate };
+  const metrics: Record<string, Record<MetricName, number[]>> = {};
+  for (const p of policies) {
+    gains[p.name] = [];
+    metrics[p.name] = Object.fromEntries(METRICS.map((m) => [m, [] as number[]])) as Record<MetricName, number[]>;
+  }
+  const base = { days: config.days, seed, examId: config.examId ?? 'jee', world, schedule, startDate, ...(config.onAttempt ? { onAttempt: config.onAttempt } : {}) };
   const first = config.firstStudent ?? 0;
   for (let i = first; i < first + config.students; i++) {
-    for (const p of policies) (gains[p.name] as number[]).push(simulatePolicy(p, i, base).gain);
+    for (const p of policies) {
+      const r = simulatePolicy(p, i, base);
+      (gains[p.name] as number[]).push(r.gain);
+      const pm = metrics[p.name] as Record<MetricName, number[]>;
+      for (const m of METRICS) pm[m].push(r[m]);
+    }
   }
-  return { policies: policies.map((p) => p.name), gains };
+  return { policies: policies.map((p) => p.name), gains, metrics };
 }
 
 /** Concatenate results of batches run with different `firstStudent`. */
 export function mergeResults(parts: readonly SimResult[]): SimResult {
   const policies = parts[0]?.policies ?? [];
   const gains: Record<string, number[]> = {};
-  for (const p of policies) gains[p] = parts.flatMap((r) => r.gains[p] as number[]);
-  return { policies, gains };
+  const metrics: Record<string, Record<MetricName, number[]>> = {};
+  for (const p of policies) {
+    gains[p] = parts.flatMap((r) => r.gains[p] as number[]);
+    metrics[p] = Object.fromEntries(METRICS.map((m) => [m, parts.flatMap((r) => r.metrics?.[p]?.[m] ?? [])])) as Record<MetricName, number[]>;
+  }
+  return { policies, gains, metrics };
 }
 
 export const mean = (xs: readonly number[]): number => xs.reduce((a, b) => a + b, 0) / Math.max(1, xs.length);

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { mulberry32 } from './rng';
-import { chapterOrderPolicy, compareToBaselines, expectedScore, hashSeed, makeWorld, mergeResults, normal, pairedDiff, plannerPolicy, randomPolicy, runSim, simulateStudent, summarize } from './index';
+import { allPolicies, chapterOrderPolicy, compareToBaselines, difficultyOnlyPolicy, fixedRoundRobinPolicy, METRICS, SIM_ATTEMPT_COLUMNS, weakestFirstPolicy, expectedScore, hashSeed, makeWorld, mergeResults, normal, pairedDiff, plannerPolicy, randomPolicy, runSim, simulateStudent, summarize } from './index';
 import { logit } from './util';
 
 describe('rng', () => {
@@ -146,7 +146,57 @@ describe('validation harness', () => {
   }, 25_000);
 
   it('summarize flags a failing planner', () => {
-    const res = summarize({ policies: ['planner', 'random', 'chapter_order'], gains: { planner: [1, 1, 1, 2], random: [2, 2, 2, 3], chapter_order: [0, 0, 0, 0] } });
+    const res = summarize({ policies: ['planner', 'random', 'chapter_order'], gains: { planner: [1, 1, 1, 2], random: [2, 2, 2, 3], chapter_order: [0, 0, 0, 0] }, metrics: {} });
     expect(res.passes).toBe(false);
   });
 });
+
+describe('baseline policies (Phase A)', () => {
+  it('every policy runs, is deterministic, stays within budget and reports all metrics', () => {
+    const cfg = { students: 2, days: 25, seed: 5, policies: allPolicies() };
+    const a = runSim(cfg);
+    expect(runSim(cfg)).toEqual(a);
+    expect(a.policies).toEqual(['random', 'fixed_round_robin', 'difficulty_only', 'weakest_first', 'chapter_order', 'planner']);
+    for (const p of a.policies) {
+      for (const m of METRICS) expect(a.metrics[p]![m]).toHaveLength(2);
+      for (const g of a.gains[p]!) expect(g).toBeGreaterThan(0);
+      for (const r of a.metrics[p]!.retention) expect(r).toBeGreaterThan(0);
+      for (const r of a.metrics[p]!.retention) expect(r).toBeLessThanOrEqual(1);
+      for (const w of a.metrics[p]!.wastedMin) expect(w).toBeLessThanOrEqual(a.metrics[p]!.practiceMin[0]! + a.metrics[p]!.practiceMin[1]!);
+    }
+    // all policies get the same minutes (paired design): practice minutes within 15% of random
+    const base = a.metrics.random!.practiceMin[0]!;
+    for (const p of [fixedRoundRobinPolicy, difficultyOnlyPolicy, weakestFirstPolicy]) expect(Math.abs(a.metrics[p.name]!.practiceMin[0]! - base) / base).toBeLessThan(0.15);
+  });
+
+  it('fixed round robin cycles every topic; weakest first concentrates on few topics', () => {
+    const w = makeWorld();
+    const seen = new Set<string>();
+    const inst = fixedRoundRobinPolicy.start(w, []);
+    const ctx = { day: 0, date: '2026-01-05', schedule: [], sched: { date: '2026-01-05', daysLeft: 50, kind: 'work', phase: 'build', capacityMin: 180 }, budgetMin: 180, fu: 1, mastery: {}, world: w, rng: mulberry32(1), seed: 1, examId: 'jee' } as const;
+    for (let d = 0; d < 20; d++) for (const t of inst.plan({ ...ctx, day: d })) seen.add(t.topic);
+    expect(seen.size).toBe(w.topics.length);
+    const wk = weakestFirstPolicy.start(w, []).plan({ ...ctx, mastery: { [w.topics[3]!.id]: { θ: -2, rd: 0.5, n: 5, last: 0, S: 1, D: 5, due: 0, err_mix: {}, reps: 1, lapses: 0, st: 2 } } });
+    expect(wk[0]!.topic).toBe(w.topics[3]!.id);
+    expect(difficultyOnlyPolicy.start(w, []).plan(ctx).every((t) => t.targetP === 0.5)).toBe(true);
+  });
+
+  it('emits the attempt table with consistent bookkeeping', () => {
+    const rows: Array<Record<string, unknown>> = [];
+    runSim({ students: 1, days: 12, seed: 2, policies: [plannerPolicy()], onAttempt: (r) => rows.push(r as unknown as Record<string, unknown>) });
+    expect(rows.length).toBeGreaterThan(50);
+    expect(Object.keys(rows[0]!).sort()).toEqual([...SIM_ATTEMPT_COLUMNS].sort());
+    const byTopic = new Map<string, number>();
+    for (const r of rows) {
+      const t = r.topic as string;
+      expect(r.prior_n_topic).toBe(byTopic.get(t) ?? 0);
+      byTopic.set(t, (byTopic.get(t) ?? 0) + 1);
+      if (r.prior_n_topic === 0) expect(r.days_since_last_topic).toBe(-1);
+      expect(r.fsrs_r as number).toBeGreaterThan(0);
+      expect(r.fsrs_r as number).toBeLessThanOrEqual(1);
+    }
+    expect(rows.some((r) => (r.k_in_session as number) > 0)).toBe(true);
+    expect(rows.some((r) => (r.elo_n as number) > 0)).toBe(true);
+  });
+});
+

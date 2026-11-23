@@ -1,4 +1,5 @@
 /** Study policies compared by the harness. All receive the same daily minutes. */
+import { masteryProb } from '../measure/elo';
 import type { MasteryDoc } from '../measure/mastery';
 import { addDays } from '../plan/calendar';
 import { reconcileBacklog } from '../plan/backlog';
@@ -100,6 +101,66 @@ export const chapterOrderPolicy: Policy = {
       missed: noMissed,
     };
   },
+};
+
+/** Fill the budget with chunks of `chunk` items over topics in the given order (wrapping), starting at `from`. */
+function fillInOrder(ctx: PolicyContext, order: readonly string[], from: number, chunk: number, targetP?: number): { tasks: SimTask[]; next: number } {
+  const acc = new Map<string, number>();
+  let left = ctx.budgetMin;
+  let i = from;
+  for (let guard = 0; guard < 1000 && left > 0 && order.length > 0; guard++) {
+    const t = ctx.world.byId[order[i % order.length] as string]!;
+    const items = Math.min(chunk, Math.floor(left / t.tMinPerItem));
+    if (items < 1) break;
+    acc.set(t.id, (acc.get(t.id) ?? 0) + items);
+    left -= items * t.tMinPerItem;
+    i++;
+  }
+  return { tasks: [...acc].map(([topic, items]) => ({ topic, items, ...(targetP !== undefined ? { targetP } : {}) })), next: i % Math.max(1, order.length) };
+}
+
+/** Fixed schedule: every topic in syllabus order, 6 items each, cycling; item difficulty as the default (P~0.65). */
+export const fixedRoundRobinPolicy: Policy = {
+  name: 'fixed_round_robin',
+  start: (world) => {
+    const order = [...world.topics].sort((a, b) => a.order - b.order).map((t) => t.id);
+    let next = 0;
+    return {
+      plan(ctx) {
+        const r = fillInOrder(ctx, order, next, 6);
+        next = r.next;
+        return r.tasks;
+      },
+      missed: noMissed,
+    };
+  },
+};
+
+/** Difficulty targeting only: random topics (as `random`) but every item is chosen at an estimated P~0.5. */
+export const difficultyOnlyPolicy: Policy = {
+  name: 'difficulty_only',
+  start: () => ({
+    plan(ctx) {
+      return randomPolicy.start(ctx.world, ctx.schedule).plan(ctx).map((t) => ({ ...t, targetP: 0.5 }));
+    },
+    missed: noMissed,
+  }),
+};
+
+/** Weakest first: topics ranked by estimated mastery (unseen = theta 0), lowest first, 8 items each. */
+export const weakestFirstPolicy: Policy = {
+  name: 'weakest_first',
+  start: () => ({
+    plan(ctx) {
+      const m = (id: string): number => {
+        const t = ctx.mastery[id];
+        return masteryProb(t && t.n > 0 ? t.θ : 0);
+      };
+      const order = [...ctx.world.topics].sort((a, b) => m(a.id) - m(b.id) || a.order - b.order).map((t) => t.id);
+      return fillInOrder(ctx, order, 0, 8).tasks;
+    },
+    missed: noMissed,
+  }),
 };
 
 /** The product planner: planDay driven by estimated mastery, with backlog reconciliation. */

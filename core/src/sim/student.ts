@@ -39,6 +39,8 @@ export interface SimStudent {
   /** Practise items of the given difficulties in one session on `day`; learning happens item by item. */
   practice(topic: string, day: number, bs: readonly number[]): Outcome[];
   exposures(topic: string): number;
+  /** Memory retention exp(-dt/S) of the topic on `day` (1 if never practised). */
+  retentionAt(topic: string, day: number): number;
 }
 
 const MAX_STABILITY = 400;
@@ -63,6 +65,7 @@ export function simulateStudent(params: SimStudentParams): SimStudent {
   return {
     thetaAt,
     exposures: (id) => state(id).n,
+    retentionAt: (id, day) => retention(state(id), day),
     practice(id, day, bs) {
       const s = state(id);
       const r0 = retention(s, day);
