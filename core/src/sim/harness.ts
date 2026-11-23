@@ -29,7 +29,31 @@ export interface SimConfig {
   startDate?: string;
   /** Receives every answered item (the anonymous attempt table + learner-state snapshot), for model training. */
   onAttempt?: (row: SimAttemptRow) => void;
+  /** Receives one row per mock: score predicted from the pre-mock mastery doc vs the realised score (Phase F). */
+  onMock?: (row: SimMockRow) => void;
 }
+
+/** One sim mock (+4 / -1 per item, every item attempted). Predictions use the pre-mock mastery doc only. */
+export interface SimMockRow {
+  sid: number;
+  policy: string;
+  day_idx: number;
+  days_left: number;
+  n_items: number;
+  /** share of mock items whose topic has been practised before */
+  seen_frac: number;
+  /** expected marks and model sd (Bernoulli luck only) under Elo */
+  pred_elo: number;
+  sd_elo: number;
+  /** same under the learned recall model */
+  pred_learned: number;
+  sd_learned: number;
+  /** expected marks under the true P (oracle) */
+  pred_true: number;
+  actual: number;
+}
+
+export const SIM_MOCK_COLUMNS = ['sid', 'policy', 'day_idx', 'days_left', 'n_items', 'seen_frac', 'pred_elo', 'sd_elo', 'pred_learned', 'sd_learned', 'pred_true', 'actual'] as const;
 
 /** One answered item: docs/03 attempt table columns + sim-only columns (sid, policy, pre-session snapshot). */
 export interface SimAttemptRow {
@@ -121,7 +145,7 @@ function pickItemByModel(topic: SimTopic, targetP: number, p: (b: number) => num
 export function simulatePolicy(
   policy: Policy,
   studentIdx: number,
-  cfg: Required<Pick<SimConfig, 'days' | 'seed' | 'examId'>> & { world: SimWorld; schedule: ScheduleDay[]; startDate: string; onAttempt?: SimConfig['onAttempt'] },
+  cfg: Required<Pick<SimConfig, 'days' | 'seed' | 'examId'>> & { world: SimWorld; schedule: ScheduleDay[]; startDate: string; onAttempt?: SimConfig['onAttempt']; onMock?: SimConfig['onMock'] },
 ): StudentRun {
   const { world, schedule, startDate } = cfg;
   // student parameters depend on (seed, student) only: identical across policies (paired design)
@@ -153,6 +177,7 @@ export function simulatePolicy(
   /** topics practised today; `lastDay` is updated at day end so days_since_last_topic matches the pre-session mastery doc */
   const touchedToday = new Set<string>();
   const emit = cfg.onAttempt;
+  const mockAcc = { n: 0, seen: 0, pe: 0, ve: 0, pl: 0, vl: 0, pt: 0, actual: 0 };
   const run = (day: number, topic: SimTopic, items: number, targetP: number | null, isMock = false): void => {
     const est = mastery[topic.id];
     const thetaEst = est && est.n > 0 ? est.θ : 0;
@@ -169,7 +194,24 @@ export function simulatePolicy(
       bs.push(topic.bank[j] as number);
       qs.push(topic.questions[j] as Question);
     }
+    if (isMock && cfg.onMock) {
+      const now = epoch + day * DAY_MS;
+      for (const b of bs) {
+        const pe = predictRecall(est, b, now);
+        const pl = predictRecall(est, b, now, { model: 'learned' });
+        mockAcc.n++;
+        mockAcc.seen += est && est.n > 0 ? 1 : 0;
+        mockAcc.pe += 5 * pe - 1;
+        mockAcc.ve += 25 * pe * (1 - pe);
+        mockAcc.pl += 5 * pl - 1;
+        mockAcc.vl += 25 * pl * (1 - pl);
+      }
+    }
     const out = student.practice(topic.id, day, bs);
+    if (isMock && cfg.onMock) for (const o of out) {
+      mockAcc.pt += 5 * o.p - 1;
+      mockAcc.actual += o.correct ? 4 : -1;
+    }
     let snap: Omit<SimAttemptRow, 'day_idx' | 'topic' | 'qid' | 'difficulty_b' | 'correct' | 'time_ms' | 'hint_used' | 'prior_n_topic' | 'days_since_last_topic' | 'k_in_session' | 'p_true'> | undefined;
     if (emit) {
       const t = mastery[topic.id];
@@ -261,6 +303,23 @@ export function simulatePolicy(
         byTopic.set(id, (byTopic.get(id) ?? 0) + 1);
       }
       for (const [id, n] of byTopic) run(day, world.byId[id] as SimTopic, n, null, true);
+      if (cfg.onMock && mockAcc.n > 0) {
+        cfg.onMock({
+          sid: studentIdx,
+          policy: policy.name,
+          day_idx: day,
+          days_left: sched.daysLeft,
+          n_items: mockAcc.n,
+          seen_frac: mockAcc.seen / mockAcc.n,
+          pred_elo: mockAcc.pe,
+          sd_elo: Math.sqrt(mockAcc.ve),
+          pred_learned: mockAcc.pl,
+          sd_learned: Math.sqrt(mockAcc.vl),
+          pred_true: mockAcc.pt,
+          actual: mockAcc.actual,
+        });
+      }
+      Object.assign(mockAcc, { n: 0, seen: 0, pe: 0, ve: 0, pl: 0, vl: 0, pt: 0, actual: 0 });
     }
     const undone: SimTask[] = [];
     let doneMin = mockDay ? MOCK_MIN : 0;
@@ -315,7 +374,7 @@ export function runSim(config: SimConfig): SimResult {
     gains[p.name] = [];
     metrics[p.name] = Object.fromEntries(METRICS.map((m) => [m, [] as number[]])) as Record<MetricName, number[]>;
   }
-  const base = { days: config.days, seed, examId: config.examId ?? 'jee', world, schedule, startDate, ...(config.onAttempt ? { onAttempt: config.onAttempt } : {}) };
+  const base = { days: config.days, seed, examId: config.examId ?? 'jee', world, schedule, startDate, ...(config.onAttempt ? { onAttempt: config.onAttempt } : {}), ...(config.onMock ? { onMock: config.onMock } : {}) };
   const first = config.firstStudent ?? 0;
   for (let i = first; i < first + config.students; i++) {
     for (const p of policies) {

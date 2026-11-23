@@ -3,7 +3,7 @@
  * World and students both depend on the seed. Writes a SimResult JSON (and optionally the attempt table CSV).
  */
 import { createWriteStream, writeFileSync } from 'node:fs';
-import { makeWorld, runSim, SIM_ATTEMPT_COLUMNS, type SimAttemptRow } from '../src/sim';
+import { makeWorld, runSim, SIM_ATTEMPT_COLUMNS, SIM_MOCK_COLUMNS, type SimAttemptRow, type SimMockRow } from '../src/sim';
 import { policyByName } from './policies';
 
 const args = new Map<string, string>();
@@ -16,6 +16,7 @@ const days = Number(args.get('days') ?? 100);
 const policies = (args.get('policies') ?? 'random,planner').split(',').map(policyByName);
 const out = args.get('out')!;
 const attemptsPath = args.get('attempts');
+const mocksPath = args.get('mocks');
 
 const csv = attemptsPath ? createWriteStream(attemptsPath) : undefined;
 const fmt = (v: unknown): string => (typeof v === 'number' && !Number.isInteger(v) ? String(Math.round(v * 1e6) / 1e6) : String(v));
@@ -30,7 +31,10 @@ const onAttempt = csv
     }
   : undefined;
 if (csv && first === 0) csv.write(SIM_ATTEMPT_COLUMNS.join(',') + '\n');
-const res = runSim({ students: n, firstStudent: first, days, seed, world: makeWorld({ seed }), policies, ...(onAttempt ? { onAttempt } : {}) });
+const mockLines: string[] = mocksPath && first === 0 ? [SIM_MOCK_COLUMNS.join(',')] : [];
+const onMock = mocksPath ? (r: SimMockRow): void => void mockLines.push(SIM_MOCK_COLUMNS.map((c) => fmt(r[c])).join(',')) : undefined;
+const res = runSim({ students: n, firstStudent: first, days, seed, world: makeWorld({ seed }), policies, ...(onAttempt ? { onAttempt } : {}), ...(onMock ? { onMock } : {}) });
+if (mocksPath) writeFileSync(mocksPath, mockLines.length ? mockLines.join('\n') + '\n' : '');
 writeFileSync(out, JSON.stringify(res));
 if (csv) {
   if (buf.length) csv.write(buf.join('\n') + '\n');

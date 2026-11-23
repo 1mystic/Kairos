@@ -212,3 +212,22 @@ describe('learned recall in the sim', () => {
     expect(a.gains.pl).not.toEqual(a.gains.planner);
   });
 });
+
+describe('mock rows (Phase F)', () => {
+  it('emit predicted vs actual mock scores without changing the simulation', () => {
+    const rows: Array<Record<string, number | string>> = [];
+    const cfg = { students: 2, days: 40, seed: 3, policies: [plannerPolicy()] };
+    const plain = runSim(cfg);
+    const withMocks = runSim({ ...cfg, onMock: (r) => rows.push(r as unknown as Record<string, number | string>) });
+    expect(withMocks).toEqual(plain);
+    expect(rows.length).toBeGreaterThan(0);
+    for (const r of rows) {
+      expect(r.n_items).toBe(60);
+      expect(r.actual as number).toBeLessThanOrEqual(240);
+      expect(r.actual as number).toBeGreaterThanOrEqual(-60);
+      expect(r.sd_elo as number).toBeGreaterThan(0);
+      expect(r.seen_frac as number).toBeGreaterThanOrEqual(0);
+      expect(r.seen_frac as number).toBeLessThanOrEqual(1);
+    }
+  });
+});

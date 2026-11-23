@@ -1,6 +1,7 @@
 /**
  * Training data for the learned recall model (Phase C): the simulator's attempt table as one CSV.
  *   pnpm --filter @kairos/core sim:export -- --students 250 --seed 2026 --days 100 --policies random,weakest_first,planner --out ../pipeline/ml/data/sim_attempts.csv
+ * With `--mocks-only 1` it writes only the mock table (SIM_MOCK_COLUMNS: predicted vs actual mock scores, Phase F).
  * Rows are ordered by (student chunk, student, policy, time). Columns: SIM_ATTEMPT_COLUMNS (core/src/sim/harness.ts).
  */
 import { spawn } from 'node:child_process';
@@ -20,6 +21,7 @@ const jobs = Number(args.get('jobs') ?? 4);
 const chunk = Number(args.get('chunk') ?? 25);
 const policies = args.get('policies') ?? 'random,weakest_first,planner';
 const out = resolve(process.cwd(), args.get('out') ?? '../pipeline/ml/data/sim_attempts.csv');
+const mocksOnly = args.get('mocks-only') === '1';
 
 const tmp = mkdtempSync(join(tmpdir(), 'kairos-export-'));
 const tasks = [] as Array<{ first: number; n: number; csv: string }>;
@@ -27,7 +29,7 @@ for (let f = 0; f < students; f += chunk) tasks.push({ first: f, n: Math.min(chu
 let next = 0;
 const runOne = (t: (typeof tasks)[number]): Promise<void> =>
   new Promise((ok, fail) => {
-    const p = spawn(process.execPath, ['--import', 'tsx', join(here, 'sim-worker.ts'), '--seed', String(seed), '--first', String(t.first), '--n', String(t.n), '--days', String(days), '--policies', policies, '--out', join(tmp, `r_${t.first}.json`), '--attempts', t.csv], { stdio: 'inherit' });
+    const p = spawn(process.execPath, ['--import', 'tsx', join(here, 'sim-worker.ts'), '--seed', String(seed), '--first', String(t.first), '--n', String(t.n), '--days', String(days), '--policies', policies, '--out', join(tmp, `r_${t.first}.json`), mocksOnly ? '--mocks' : '--attempts', t.csv], { stdio: 'inherit' });
     p.on('exit', (code) => (code === 0 ? ok() : fail(new Error(`worker ${t.first} exited ${code}`))));
   });
 await Promise.all(Array.from({ length: jobs }, async () => {
