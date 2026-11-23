@@ -36,6 +36,7 @@ import {
   type Task,
   type WorkChapter,
 } from '@kairos/core';
+import { isFlagOn, recallModel } from '../lib/flags';
 import type { ExamSel } from '../onboarding/profileModel';
 import { topicMeta as taxTopicMeta, type Taxonomy } from '../practice/taxonomy';
 import type { PaceLogDoc, PlanDoc, SessionDoc, UserStore } from '../store/types';
@@ -396,6 +397,9 @@ export function todayPlan(ctx: PlanContext, opts: { stored?: StoredPlan | null; 
     ...(ctx.mockQuestions ? { mockQuestions: ctx.mockQuestions } : {}),
     ...(ctx.prevLoadMin !== undefined ? { prevLoadMin: ctx.prevLoadMin } : {}),
     ...(ctx.backlogResult?.miniDiagnostic ? { miniDiagnostic: true } : {}),
+    ...(isFlagOn('learnedRecall') || isFlagOn('uncertaintyPlanner')
+      ? { config: { recallModel: recallModel(), ...(isFlagOn('uncertaintyPlanner') ? { priorityMode: 'uncertainty' as const } : {}) } }
+      : {}),
   };
   const horizon = planHorizon(base, 7);
   let day = horizon[0]!;

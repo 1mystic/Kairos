@@ -1,4 +1,5 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
+import * as core from '@kairos/core';
 import type { MasteryDoc, Question, Task } from '@kairos/core';
 import { mkQ } from '../fixtures.test-util';
 import { buildTodayQueue, completedTaskIds, orderTasks, reasonOf, seenMap } from './buildTodayQueue';
@@ -185,5 +186,27 @@ describe('completedTaskIds / seenMap', () => {
   it('maps question ids to their latest session start', () => {
     const m = seenMap([{ startedAt: 5, qids: ['a', 'b'] }, { startedAt: 9, qids: ['a'] }, { startedAt: 3, events: [{ a: 'visit', q: 'c' }] }]);
     expect(m).toEqual({ a: 9, b: 5, c: 3 });
+  });
+});
+
+describe('buildTodayQueue recall model', () => {
+  const qs = bank('K', 30);
+  const run = (recallModel?: 'elo' | 'learned') =>
+    buildTodayQueue({ ...base({ mastery: mastery('K', 0.4) }), tasks: [task('t', 'K', 6)], questionsByChapter: { K: qs }, ...(recallModel ? { recallModel } : {}) }).queue.map((q) => q.id);
+
+  it('elo model (explicit or default) is identical and never calls predictRecall', () => {
+    const spy = vi.spyOn(core, 'predictRecall');
+    const dflt = run();
+    expect(run('elo')).toEqual(dflt);
+    expect(spy).not.toHaveBeenCalled();
+    spy.mockRestore();
+  });
+  it('learned model scores through predictRecall and can change the pick', () => {
+    const spy = vi.spyOn(core, 'predictRecall').mockImplementation((_t, b) => 1 / (1 + Math.exp(-(-2 - b))));
+    const learned = run('learned');
+    expect(spy).toHaveBeenCalled();
+    expect(spy.mock.calls.every((c) => c[3]?.model === 'learned')).toBe(true);
+    spy.mockRestore();
+    expect(learned).not.toEqual(run('elo'));
   });
 });

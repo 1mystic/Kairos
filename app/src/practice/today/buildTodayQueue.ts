@@ -1,4 +1,5 @@
-import { pCorrect, type MasteryDoc, type Question, type Task } from '@kairos/core';
+import { pCorrect, predictRecall, type MasteryDoc, type Question, type RecallModel, type Task, type TopicMastery } from '@kairos/core';
+import { recallModel } from '../../lib/flags';
 import { hashSeed, mulberry32, seededShuffle } from '../rng';
 import { bandOf, bOf, isSelfCheck, RECENCY_DAYS, TARGET_P, type Band } from '../queue';
 
@@ -56,6 +57,8 @@ export interface BuildInput {
   names?: Readonly<Record<string, string>>;
   /** the student's own uploaded questions are left out unless they asked for them */
   includeMine?: boolean;
+  /** recall model used to pick questions near the target success rate; defaults to the app flag (Elo when off) */
+  recallModel?: RecallModel;
 }
 
 export interface TodaySection {
@@ -89,13 +92,35 @@ function thetaOf(task: Task, pool: readonly Question[], mastery: MasteryDoc | nu
   return ts.length ? ts.reduce((a, b) => a + b, 0) / ts.length : undefined;
 }
 
+/** The topic mastery the learned model reads: the task's own topic first, else the first topic in the pool with data. */
+function topicMasteryOf(task: Task, pool: readonly Question[], mastery: MasteryDoc | null | undefined): TopicMastery | undefined {
+  if (!mastery) return undefined;
+  const own = mastery[task.topic];
+  if (own && own.n > 0) return own;
+  for (const q of pool) {
+    const m = mastery[topicOf(q)];
+    if (m && m.n > 0) return m;
+  }
+  return undefined;
+}
+
+/** Learned-model inputs for pickNear; absent means the Elo path (pCorrect on theta). */
+interface Recall {
+  model: RecallModel;
+  tm: TopicMastery | undefined;
+  now: number;
+}
+
 /** n questions: nearest to the target success rate when theta is known, else an easy -> medium -> hard spread. Seeded. */
-function pickNear(pool: readonly Question[], n: number, rng: () => number, theta: number | undefined, targetP: number): Question[] {
+function pickNear(pool: readonly Question[], n: number, rng: () => number, theta: number | undefined, targetP: number, recall?: Recall): Question[] {
   if (n <= 0 || pool.length === 0) return [];
   const shuffled = seededShuffle(pool, rng);
   if (theta !== undefined) {
     return shuffled
-      .map((q) => ({ q, s: Math.abs(pCorrect(theta, bOf(q)) - targetP) + rng() * 0.08 }))
+      .map((q, i) => {
+        const p = recall && recall.model === 'learned' ? predictRecall(recall.tm, bOf(q), recall.now, { model: 'learned', kInSession: i }) : pCorrect(theta, bOf(q));
+        return { q, s: Math.abs(p - targetP) + rng() * 0.08 };
+      })
       .sort((a, b) => a.s - b.s)
       .slice(0, n)
       .map((x) => x.q);
@@ -165,6 +190,7 @@ export function buildTodayQueue(input: BuildInput): TodayQueue {
     const rng = mulberry32(hashSeed(`${input.seed}:${task.id}:${task.chapter}`));
     const theta = thetaOf(task, pool, mastery);
     const targetP = task.target_p ?? TARGET_P;
+    const recall: Recall = { model: input.recallModel ?? recallModel(), tm: topicMasteryOf(task, pool, mastery), now };
     const fresh = pool.filter((q) => !isSeen(q));
     const stale = pool.filter((q) => isSeen(q)).sort((a, b) => (seen[a.id] ?? 0) - (seen[b.id] ?? 0));
 
@@ -172,11 +198,11 @@ export function buildTodayQueue(input: BuildInput): TodayQueue {
     let twinCount = 0;
     if (task.kind === 'fsrs_due') {
       const keys = twinKeys(task, all, seen);
-      const twins = pickNear(fresh.filter((q) => isTwin(q, keys)), n, rng, theta, targetP);
+      const twins = pickNear(fresh.filter((q) => isTwin(q, keys)), n, rng, theta, targetP, recall);
       twinCount = twins.length;
       const ids = new Set(twins.map((q) => q.id));
-      chosen = [...twins, ...pickNear(fresh.filter((q) => !ids.has(q.id)), n - twins.length, rng, theta, targetP)];
-    } else chosen = pickNear(fresh, n, rng, theta, targetP);
+      chosen = [...twins, ...pickNear(fresh.filter((q) => !ids.has(q.id)), n - twins.length, rng, theta, targetP, recall)];
+    } else chosen = pickNear(fresh, n, rng, theta, targetP, recall);
 
     let repeats = 0;
     if (chosen.length < n && stale.length > 0) {
