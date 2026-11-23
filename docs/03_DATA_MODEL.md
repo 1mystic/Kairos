@@ -53,3 +53,27 @@ taxonomy IDs: dotted, stable, from official syllabus + NCERT: `PHY.ROT.MOI`, `BI
 {"t":183402,"q":"q_7f3a9c","a":"visit|select|clear|save|mark|unmark|leave|submit","v":"B","ctx":"mock|practice|plan|review"}
 ```
 `t` = ms since session start.
+
+## attempt table (anonymous, for learning / research export)
+One row per answered, non-skipped item. Built by `core/src/measure/export.ts` (`toAttemptRows`, `rowsToCsv`, `csvToRows`).
+
+| column | type | meaning |
+|---|---|---|
+| `day_idx` | int | whole UTC days since the table epoch (default: UTC midnight of the first attempt) |
+| `topic` | string | taxonomy topic id |
+| `qid` | string | question id (bank id, no text) |
+| `difficulty_b` | float (3dp) | calibrated item difficulty |
+| `correct` | 0/1 | answered correctly |
+| `time_ms` | int ≥ 0 | time on item |
+| `hint_used` | 0/1 | hint or solution peeked before answering |
+| `prior_n_topic` | int | earlier rows on this topic |
+| `days_since_last_topic` | int | `day_idx` gap since previous row on the topic; -1 if none |
+
+Rows are sorted by time (stable). CSV: header = column names, `\n` endings, RFC-4180 quoting for `topic`/`qid`.
+
+privacy rules:
+- no uid, no free text, no answers, no timestamps finer than a day index.
+- opt-in download only; never uploaded automatically.
+- minors' data stays on device (no export-to-server path).
+
+simulator (`core/src/sim`) emits the same columns plus sim-only columns: `sid` (synthetic student index), `policy`, and a pre-session learner-state snapshot used for model training: `elo_theta, elo_rd, elo_n, fsrs_r, fsrs_s, fsrs_d, err_rate, k_in_session`. All snapshot columns are derivable on-device from the mastery doc.
