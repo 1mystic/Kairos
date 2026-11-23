@@ -1,0 +1,2966 @@
+{
+  "generated": "2026-11-23",
+  "command": "pnpm --filter @kairos/core sim:study -- --students 1000 --seeds 1,2,3,4,5 --days 100 --jobs 4 --policies random,fixed_round_robin,difficulty_only,weakest_first,chapter_order,planner,planner_unc,planner_learned,planner_unc_learned --baselines random,fixed_round_robin,difficulty_only,weakest_first,chapter_order,planner --out ../docs/results/sim_planner.json",
+  "config": {
+    "students": 1000,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "days": 100,
+    "policies": [
+      "random",
+      "fixed_round_robin",
+      "difficulty_only",
+      "weakest_first",
+      "chapter_order",
+      "planner",
+      "planner_unc",
+      "planner_learned",
+      "planner_unc_learned"
+    ],
+    "baselines": [
+      "random",
+      "fixed_round_robin",
+      "difficulty_only",
+      "weakest_first",
+      "chapter_order",
+      "planner"
+    ],
+    "bootstrap": 2000,
+    "worldSeed": "same as seed",
+    "schedule": "weekday 180 min, Saturday 240, Sunday off",
+    "metrics": {
+      "gain": "exam-day predicted score gain (marks, true ability)",
+      "retention": "exam-weighted mean memory retention at exam day over practised topics",
+      "wastedMin": "practice minutes on items with true P>0.9 or <0.2",
+      "aumc": "mean over days of (expected score - start)",
+      "practiceMin": "practice minutes done"
+    }
+  },
+  "runtimeSec": 1310,
+  "policies": [
+    "random",
+    "fixed_round_robin",
+    "difficulty_only",
+    "weakest_first",
+    "chapter_order",
+    "planner",
+    "planner_unc",
+    "planner_learned",
+    "planner_unc_learned"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "studentsPerSeed": 1000,
+  "metrics": {
+    "random": {
+      "gain": {
+        "mean": 115.5889,
+        "ci95": [
+          115.1112,
+          116.0631
+        ]
+      },
+      "retention": {
+        "mean": 0.9566,
+        "ci95": [
+          0.9565,
+          0.9568
+        ]
+      },
+      "wastedMin": {
+        "mean": 351.0933,
+        "ci95": [
+          345.2226,
+          357.3645
+        ]
+      },
+      "aumc": {
+        "mean": 62.7022,
+        "ci95": [
+          62.3894,
+          63.0087
+        ]
+      },
+      "practiceMin": {
+        "mean": 11147.5713,
+        "ci95": [
+          11139.9469,
+          11155.2192
+        ]
+      }
+    },
+    "fixed_round_robin": {
+      "gain": {
+        "mean": 125.171,
+        "ci95": [
+          124.6677,
+          125.6609
+        ]
+      },
+      "retention": {
+        "mean": 0.9777,
+        "ci95": [
+          0.9776,
+          0.9777
+        ]
+      },
+      "wastedMin": {
+        "mean": 335.7404,
+        "ci95": [
+          329.5927,
+          342.0372
+        ]
+      },
+      "aumc": {
+        "mean": 68.0289,
+        "ci95": [
+          67.68,
+          68.3582
+        ]
+      },
+      "practiceMin": {
+        "mean": 11150.7568,
+        "ci95": [
+          11142.7225,
+          11158.3009
+        ]
+      }
+    },
+    "difficulty_only": {
+      "gain": {
+        "mean": 120.3421,
+        "ci95": [
+          119.8706,
+          120.8279
+        ]
+      },
+      "retention": {
+        "mean": 0.9566,
+        "ci95": [
+          0.9564,
+          0.9568
+        ]
+      },
+      "wastedMin": {
+        "mean": 557.4101,
+        "ci95": [
+          546.449,
+          568.8777
+        ]
+      },
+      "aumc": {
+        "mean": 65.0466,
+        "ci95": [
+          64.715,
+          65.3804
+        ]
+      },
+      "practiceMin": {
+        "mean": 11148.2937,
+        "ci95": [
+          11140.763,
+          11155.5552
+        ]
+      }
+    },
+    "weakest_first": {
+      "gain": {
+        "mean": 100.9216,
+        "ci95": [
+          100.5317,
+          101.3229
+        ]
+      },
+      "retention": {
+        "mean": 0.9186,
+        "ci95": [
+          0.9182,
+          0.9191
+        ]
+      },
+      "wastedMin": {
+        "mean": 363.0719,
+        "ci95": [
+          359.6962,
+          366.6806
+        ]
+      },
+      "aumc": {
+        "mean": 57.9941,
+        "ci95": [
+          57.7265,
+          58.2698
+        ]
+      },
+      "practiceMin": {
+        "mean": 11147.4221,
+        "ci95": [
+          11139.3705,
+          11154.9971
+        ]
+      }
+    },
+    "chapter_order": {
+      "gain": {
+        "mean": 89.8156,
+        "ci95": [
+          89.4387,
+          90.1858
+        ]
+      },
+      "retention": {
+        "mean": 0.8993,
+        "ci95": [
+          0.899,
+          0.8997
+        ]
+      },
+      "wastedMin": {
+        "mean": 1049.9708,
+        "ci95": [
+          1036.1442,
+          1064.6763
+        ]
+      },
+      "aumc": {
+        "mean": 43.8609,
+        "ci95": [
+          43.6599,
+          44.0753
+        ]
+      },
+      "practiceMin": {
+        "mean": 11117.065,
+        "ci95": [
+          11109.733,
+          11124.4522
+        ]
+      }
+    },
+    "planner": {
+      "gain": {
+        "mean": 128.5954,
+        "ci95": [
+          128.1569,
+          129.0244
+        ]
+      },
+      "retention": {
+        "mean": 0.9619,
+        "ci95": [
+          0.9617,
+          0.962
+        ]
+      },
+      "wastedMin": {
+        "mean": 393.5488,
+        "ci95": [
+          388.1002,
+          399.4737
+        ]
+      },
+      "aumc": {
+        "mean": 74.7543,
+        "ci95": [
+          74.4319,
+          75.0776
+        ]
+      },
+      "practiceMin": {
+        "mean": 10527.7986,
+        "ci95": [
+          10521.0774,
+          10534.8862
+        ]
+      }
+    },
+    "planner_unc": {
+      "gain": {
+        "mean": 130.4925,
+        "ci95": [
+          130.0565,
+          130.9127
+        ]
+      },
+      "retention": {
+        "mean": 0.9602,
+        "ci95": [
+          0.9601,
+          0.9604
+        ]
+      },
+      "wastedMin": {
+        "mean": 382.7251,
+        "ci95": [
+          377.2216,
+          387.7885
+        ]
+      },
+      "aumc": {
+        "mean": 77.8702,
+        "ci95": [
+          77.5373,
+          78.2021
+        ]
+      },
+      "practiceMin": {
+        "mean": 10527.5173,
+        "ci95": [
+          10520.1855,
+          10534.2908
+        ]
+      }
+    },
+    "planner_learned": {
+      "gain": {
+        "mean": 129.1899,
+        "ci95": [
+          128.7366,
+          129.6684
+        ]
+      },
+      "retention": {
+        "mean": 0.9626,
+        "ci95": [
+          0.9624,
+          0.9628
+        ]
+      },
+      "wastedMin": {
+        "mean": 326.8824,
+        "ci95": [
+          321.729,
+          331.7894
+        ]
+      },
+      "aumc": {
+        "mean": 74.7021,
+        "ci95": [
+          74.3611,
+          75.0314
+        ]
+      },
+      "practiceMin": {
+        "mean": 10529.967,
+        "ci95": [
+          10523.2157,
+          10536.604
+        ]
+      }
+    },
+    "planner_unc_learned": {
+      "gain": {
+        "mean": 131.6152,
+        "ci95": [
+          131.1671,
+          132.0398
+        ]
+      },
+      "retention": {
+        "mean": 0.961,
+        "ci95": [
+          0.9608,
+          0.9611
+        ]
+      },
+      "wastedMin": {
+        "mean": 317.8194,
+        "ci95": [
+          312.7466,
+          322.8297
+        ]
+      },
+      "aumc": {
+        "mean": 78.0119,
+        "ci95": [
+          77.6782,
+          78.3601
+        ]
+      },
+      "practiceMin": {
+        "mean": 10528.8436,
+        "ci95": [
+          10521.9347,
+          10535.7066
+        ]
+      }
+    }
+  },
+  "paired": {
+    "random": {
+      "fixed_round_robin": {
+        "gain": {
+          "mean": 9.5821,
+          "ci95": [
+            9.4849,
+            9.6768
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.021,
+          "ci95": [
+            0.0209,
+            0.0212
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -15.3528,
+          "ci95": [
+            -17.2811,
+            -13.3657
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 5.3267,
+          "ci95": [
+            5.2505,
+            5.4001
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 3.1856,
+          "ci95": [
+            2.522,
+            3.8484
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "difficulty_only": {
+        "gain": {
+          "mean": 4.7532,
+          "ci95": [
+            4.6471,
+            4.8633
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0,
+          "ci95": [
+            -0.0002,
+            0.0001
+          ],
+          "pBoot": 0.627,
+          "positiveSeeds": 2,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 206.3169,
+          "ci95": [
+            199.418,
+            212.6881
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 2.3444,
+          "ci95": [
+            2.253,
+            2.4344
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 0.7225,
+          "ci95": [
+            0.0282,
+            1.3813
+          ],
+          "pBoot": 0.0215,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "weakest_first": {
+        "gain": {
+          "mean": -14.6672,
+          "ci95": [
+            -14.8867,
+            -14.4566
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.038,
+          "ci95": [
+            -0.0384,
+            -0.0376
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 11.9787,
+          "ci95": [
+            6.9434,
+            17.0289
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 3,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -4.7081,
+          "ci95": [
+            -4.8628,
+            -4.549
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.1491,
+          "ci95": [
+            -0.8071,
+            0.5099
+          ],
+          "pBoot": 0.6775,
+          "positiveSeeds": 3,
+          "seeds": 5
+        }
+      },
+      "chapter_order": {
+        "gain": {
+          "mean": -25.7733,
+          "ci95": [
+            -25.9163,
+            -25.634
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0573,
+          "ci95": [
+            -0.0576,
+            -0.057
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 698.8776,
+          "ci95": [
+            684.9368,
+            711.8869
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -18.8413,
+          "ci95": [
+            -18.9739,
+            -18.717
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -30.5063,
+          "ci95": [
+            -31.1781,
+            -29.8346
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner": {
+        "gain": {
+          "mean": 13.0065,
+          "ci95": [
+            12.8973,
+            13.1106
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0053,
+          "ci95": [
+            0.0051,
+            0.0054
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 42.4555,
+          "ci95": [
+            37.9122,
+            46.7693
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 12.0521,
+          "ci95": [
+            11.9647,
+            12.1395
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -619.7727,
+          "ci95": [
+            -621.1072,
+            -618.409
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc": {
+        "gain": {
+          "mean": 14.9036,
+          "ci95": [
+            14.7874,
+            15.015
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0036,
+          "ci95": [
+            0.0034,
+            0.0038
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 31.6318,
+          "ci95": [
+            27.5317,
+            35.8691
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 15.168,
+          "ci95": [
+            15.0759,
+            15.2609
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -620.054,
+          "ci95": [
+            -621.4349,
+            -618.6857
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_learned": {
+        "gain": {
+          "mean": 13.601,
+          "ci95": [
+            13.4931,
+            13.7156
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.006,
+          "ci95": [
+            0.0058,
+            0.0062
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -24.2109,
+          "ci95": [
+            -30.3492,
+            -18.0423
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 11.9999,
+          "ci95": [
+            11.9073,
+            12.0961
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -617.6042,
+          "ci95": [
+            -618.9418,
+            -616.2364
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc_learned": {
+        "gain": {
+          "mean": 16.0263,
+          "ci95": [
+            15.911,
+            16.1433
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0043,
+          "ci95": [
+            0.0041,
+            0.0045
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -33.2739,
+          "ci95": [
+            -39.6136,
+            -27.1106
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 15.3097,
+          "ci95": [
+            15.2193,
+            15.4035
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -618.7277,
+          "ci95": [
+            -620.1333,
+            -617.4184
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      }
+    },
+    "fixed_round_robin": {
+      "random": {
+        "gain": {
+          "mean": -9.5821,
+          "ci95": [
+            -9.679,
+            -9.4921
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.021,
+          "ci95": [
+            -0.0212,
+            -0.0209
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 15.3528,
+          "ci95": [
+            13.4425,
+            17.2984
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -5.3267,
+          "ci95": [
+            -5.4015,
+            -5.2545
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -3.1856,
+          "ci95": [
+            -3.8261,
+            -2.578
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "difficulty_only": {
+        "gain": {
+          "mean": -4.8289,
+          "ci95": [
+            -4.9253,
+            -4.7334
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0211,
+          "ci95": [
+            -0.0212,
+            -0.0209
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 221.6697,
+          "ci95": [
+            215.4811,
+            227.5159
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -2.9823,
+          "ci95": [
+            -3.0585,
+            -2.9068
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -2.4631,
+          "ci95": [
+            -3.1272,
+            -1.8156
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "weakest_first": {
+        "gain": {
+          "mean": -24.2493,
+          "ci95": [
+            -24.4721,
+            -24.0075
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.059,
+          "ci95": [
+            -0.0595,
+            -0.0586
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 27.3315,
+          "ci95": [
+            22.3145,
+            32.3844
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -10.0348,
+          "ci95": [
+            -10.207,
+            -9.8602
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -3.3347,
+          "ci95": [
+            -4.017,
+            -2.6298
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "chapter_order": {
+        "gain": {
+          "mean": -35.3554,
+          "ci95": [
+            -35.5346,
+            -35.1891
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0784,
+          "ci95": [
+            -0.0787,
+            -0.078
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 714.2304,
+          "ci95": [
+            700.0869,
+            727.9472
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -24.168,
+          "ci95": [
+            -24.3216,
+            -24.0065
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -33.6918,
+          "ci95": [
+            -34.3526,
+            -33.0257
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner": {
+        "gain": {
+          "mean": 3.4244,
+          "ci95": [
+            3.3112,
+            3.5328
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0158,
+          "ci95": [
+            -0.016,
+            -0.0156
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 57.8083,
+          "ci95": [
+            53.0947,
+            62.4268
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 6.7254,
+          "ci95": [
+            6.6421,
+            6.8038
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -622.9582,
+          "ci95": [
+            -624.2952,
+            -621.5795
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc": {
+        "gain": {
+          "mean": 5.3215,
+          "ci95": [
+            5.2087,
+            5.4402
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0175,
+          "ci95": [
+            -0.0176,
+            -0.0173
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 46.9847,
+          "ci95": [
+            42.0118,
+            51.6631
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 9.8413,
+          "ci95": [
+            9.7587,
+            9.9287
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -623.2396,
+          "ci95": [
+            -624.5931,
+            -621.9251
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_learned": {
+        "gain": {
+          "mean": 4.0189,
+          "ci95": [
+            3.9109,
+            4.1275
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0151,
+          "ci95": [
+            -0.0152,
+            -0.0149
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -8.858,
+          "ci95": [
+            -15.481,
+            -2.7495
+          ],
+          "pBoot": 0.9985,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 6.6732,
+          "ci95": [
+            6.5974,
+            6.7526
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -620.7898,
+          "ci95": [
+            -622.0711,
+            -619.37
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc_learned": {
+        "gain": {
+          "mean": 6.4442,
+          "ci95": [
+            6.3324,
+            6.5617
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0167,
+          "ci95": [
+            -0.0169,
+            -0.0166
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -17.9211,
+          "ci95": [
+            -24.2626,
+            -11.3898
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 9.983,
+          "ci95": [
+            9.8933,
+            10.0663
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -621.9132,
+          "ci95": [
+            -623.274,
+            -620.6035
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      }
+    },
+    "difficulty_only": {
+      "random": {
+        "gain": {
+          "mean": -4.7532,
+          "ci95": [
+            -4.8597,
+            -4.6469
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0,
+          "ci95": [
+            -0.0001,
+            0.0002
+          ],
+          "pBoot": 0.3475,
+          "positiveSeeds": 3,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -206.3169,
+          "ci95": [
+            -213.3754,
+            -199.5583
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -2.3444,
+          "ci95": [
+            -2.4274,
+            -2.2638
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.7225,
+          "ci95": [
+            -1.4132,
+            -0.0261
+          ],
+          "pBoot": 0.9805,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "fixed_round_robin": {
+        "gain": {
+          "mean": 4.8289,
+          "ci95": [
+            4.7292,
+            4.923
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0211,
+          "ci95": [
+            0.0209,
+            0.0212
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -221.6697,
+          "ci95": [
+            -227.6364,
+            -215.7806
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 2.9823,
+          "ci95": [
+            2.9075,
+            3.0574
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 2.4631,
+          "ci95": [
+            1.7994,
+            3.1363
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "weakest_first": {
+        "gain": {
+          "mean": -19.4204,
+          "ci95": [
+            -19.6561,
+            -19.1961
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.038,
+          "ci95": [
+            -0.0384,
+            -0.0375
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -194.3382,
+          "ci95": [
+            -204.5317,
+            -184.2724
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -7.0525,
+          "ci95": [
+            -7.2357,
+            -6.8888
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.8716,
+          "ci95": [
+            -1.5552,
+            -0.1723
+          ],
+          "pBoot": 0.9905,
+          "positiveSeeds": 3,
+          "seeds": 5
+        }
+      },
+      "chapter_order": {
+        "gain": {
+          "mean": -30.5265,
+          "ci95": [
+            -30.6765,
+            -30.3785
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0573,
+          "ci95": [
+            -0.0576,
+            -0.057
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 492.5607,
+          "ci95": [
+            473.2406,
+            511.9533
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -21.1857,
+          "ci95": [
+            -21.3268,
+            -21.0402
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -31.2287,
+          "ci95": [
+            -31.9422,
+            -30.5448
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner": {
+        "gain": {
+          "mean": 8.2533,
+          "ci95": [
+            8.1312,
+            8.3819
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0053,
+          "ci95": [
+            0.0051,
+            0.0055
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -163.8614,
+          "ci95": [
+            -174.8323,
+            -153.5647
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 9.7077,
+          "ci95": [
+            9.6048,
+            9.8141
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -620.4951,
+          "ci95": [
+            -621.8354,
+            -619.1044
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc": {
+        "gain": {
+          "mean": 10.1504,
+          "ci95": [
+            10.0075,
+            10.2824
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0036,
+          "ci95": [
+            0.0034,
+            0.0038
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -174.685,
+          "ci95": [
+            -184.8029,
+            -164.6317
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 12.8236,
+          "ci95": [
+            12.7104,
+            12.929
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -620.7765,
+          "ci95": [
+            -622.1291,
+            -619.4649
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_learned": {
+        "gain": {
+          "mean": 8.8478,
+          "ci95": [
+            8.722,
+            8.9755
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.006,
+          "ci95": [
+            0.0058,
+            0.0062
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -230.5277,
+          "ci95": [
+            -243.4272,
+            -218.2864
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 9.6555,
+          "ci95": [
+            9.5534,
+            9.7614
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -618.3267,
+          "ci95": [
+            -619.7507,
+            -616.9999
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc_learned": {
+        "gain": {
+          "mean": 11.2731,
+          "ci95": [
+            11.1369,
+            11.3986
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0044,
+          "ci95": [
+            0.0042,
+            0.0046
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -239.5908,
+          "ci95": [
+            -251.6943,
+            -227.1298
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 12.9653,
+          "ci95": [
+            12.8634,
+            13.0689
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -619.4501,
+          "ci95": [
+            -620.7899,
+            -618.1365
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      }
+    },
+    "weakest_first": {
+      "random": {
+        "gain": {
+          "mean": 14.6672,
+          "ci95": [
+            14.4571,
+            14.8878
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.038,
+          "ci95": [
+            0.0376,
+            0.0384
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -11.9787,
+          "ci95": [
+            -16.707,
+            -6.9908
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 2,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 4.7081,
+          "ci95": [
+            4.554,
+            4.861
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 0.1491,
+          "ci95": [
+            -0.5221,
+            0.8506
+          ],
+          "pBoot": 0.3395,
+          "positiveSeeds": 2,
+          "seeds": 5
+        }
+      },
+      "fixed_round_robin": {
+        "gain": {
+          "mean": 24.2493,
+          "ci95": [
+            24.0161,
+            24.4888
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.059,
+          "ci95": [
+            0.0586,
+            0.0594
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -27.3315,
+          "ci95": [
+            -32.3463,
+            -22.184
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 10.0348,
+          "ci95": [
+            9.851,
+            10.2115
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 3.3347,
+          "ci95": [
+            2.6749,
+            3.9967
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "difficulty_only": {
+        "gain": {
+          "mean": 19.4204,
+          "ci95": [
+            19.198,
+            19.6403
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.038,
+          "ci95": [
+            0.0376,
+            0.0384
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 194.3382,
+          "ci95": [
+            184.6,
+            204.4438
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 7.0525,
+          "ci95": [
+            6.8776,
+            7.229
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 0.8716,
+          "ci95": [
+            0.211,
+            1.5223
+          ],
+          "pBoot": 0.005,
+          "positiveSeeds": 2,
+          "seeds": 5
+        }
+      },
+      "chapter_order": {
+        "gain": {
+          "mean": -11.1061,
+          "ci95": [
+            -11.3065,
+            -10.9033
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0193,
+          "ci95": [
+            -0.0198,
+            -0.0189
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 686.8989,
+          "ci95": [
+            673.6242,
+            700.8079
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -14.1332,
+          "ci95": [
+            -14.2817,
+            -13.99
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -30.3571,
+          "ci95": [
+            -31.0498,
+            -29.681
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner": {
+        "gain": {
+          "mean": 27.6738,
+          "ci95": [
+            27.4931,
+            27.8622
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0432,
+          "ci95": [
+            0.0428,
+            0.0436
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 30.4768,
+          "ci95": [
+            26.4262,
+            34.8052
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 16.7602,
+          "ci95": [
+            16.621,
+            16.8985
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -619.6235,
+          "ci95": [
+            -621.1185,
+            -618.2998
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc": {
+        "gain": {
+          "mean": 29.5709,
+          "ci95": [
+            29.3833,
+            29.7569
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0416,
+          "ci95": [
+            0.0412,
+            0.042
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 19.6532,
+          "ci95": [
+            15.4369,
+            23.8882
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 19.8761,
+          "ci95": [
+            19.7375,
+            20.008
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -619.9049,
+          "ci95": [
+            -621.2342,
+            -618.4907
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_learned": {
+        "gain": {
+          "mean": 28.2682,
+          "ci95": [
+            28.0838,
+            28.4507
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0439,
+          "ci95": [
+            0.0436,
+            0.0444
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -36.1895,
+          "ci95": [
+            -40.2973,
+            -31.5427
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 16.708,
+          "ci95": [
+            16.5714,
+            16.8465
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -617.4551,
+          "ci95": [
+            -618.8048,
+            -616.1085
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc_learned": {
+        "gain": {
+          "mean": 30.6936,
+          "ci95": [
+            30.5133,
+            30.882
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0423,
+          "ci95": [
+            0.0419,
+            0.0427
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -45.2526,
+          "ci95": [
+            -49.7608,
+            -41.0047
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 20.0178,
+          "ci95": [
+            19.8723,
+            20.1545
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -618.5785,
+          "ci95": [
+            -619.9097,
+            -617.2096
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      }
+    },
+    "chapter_order": {
+      "random": {
+        "gain": {
+          "mean": 25.7733,
+          "ci95": [
+            25.6299,
+            25.9178
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0573,
+          "ci95": [
+            0.057,
+            0.0576
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -698.8776,
+          "ci95": [
+            -712.6095,
+            -683.9095
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 18.8413,
+          "ci95": [
+            18.7153,
+            18.9683
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 30.5063,
+          "ci95": [
+            29.8326,
+            31.1803
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "fixed_round_robin": {
+        "gain": {
+          "mean": 35.3554,
+          "ci95": [
+            35.1919,
+            35.5284
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0784,
+          "ci95": [
+            0.078,
+            0.0787
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -714.2304,
+          "ci95": [
+            -729.3224,
+            -699.0444
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 24.168,
+          "ci95": [
+            24.0072,
+            24.3267
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 33.6918,
+          "ci95": [
+            33.0093,
+            34.341
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "difficulty_only": {
+        "gain": {
+          "mean": 30.5265,
+          "ci95": [
+            30.3662,
+            30.6816
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0573,
+          "ci95": [
+            0.057,
+            0.0576
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -492.5607,
+          "ci95": [
+            -511.8724,
+            -471.7847
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 21.1857,
+          "ci95": [
+            21.0426,
+            21.328
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 31.2287,
+          "ci95": [
+            30.5503,
+            31.9166
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "weakest_first": {
+        "gain": {
+          "mean": 11.1061,
+          "ci95": [
+            10.9258,
+            11.2975
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0193,
+          "ci95": [
+            0.0189,
+            0.0198
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -686.8989,
+          "ci95": [
+            -700.5892,
+            -673.8059
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 14.1332,
+          "ci95": [
+            13.9908,
+            14.2708
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 30.3571,
+          "ci95": [
+            29.6874,
+            31.0269
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "planner": {
+        "gain": {
+          "mean": 38.7798,
+          "ci95": [
+            38.6216,
+            38.9301
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0626,
+          "ci95": [
+            0.0622,
+            0.0629
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -656.4221,
+          "ci95": [
+            -667.6082,
+            -644.7333
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 30.8934,
+          "ci95": [
+            30.7372,
+            31.0479
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -589.2664,
+          "ci95": [
+            -590.6869,
+            -587.8983
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc": {
+        "gain": {
+          "mean": 40.6769,
+          "ci95": [
+            40.5295,
+            40.832
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0609,
+          "ci95": [
+            0.0606,
+            0.0613
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -667.2457,
+          "ci95": [
+            -678.7297,
+            -655.6207
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 34.0093,
+          "ci95": [
+            33.8481,
+            34.1703
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -589.5477,
+          "ci95": [
+            -590.9492,
+            -588.199
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_learned": {
+        "gain": {
+          "mean": 39.3743,
+          "ci95": [
+            39.2121,
+            39.5353
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0633,
+          "ci95": [
+            0.063,
+            0.0636
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -723.0884,
+          "ci95": [
+            -734.4047,
+            -711.9414
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 30.8412,
+          "ci95": [
+            30.6766,
+            31.0035
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -587.098,
+          "ci95": [
+            -588.5583,
+            -585.64
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      },
+      "planner_unc_learned": {
+        "gain": {
+          "mean": 41.7996,
+          "ci95": [
+            41.6479,
+            41.9556
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0616,
+          "ci95": [
+            0.0613,
+            0.062
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -732.1515,
+          "ci95": [
+            -743.6325,
+            -720.9819
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 34.151,
+          "ci95": [
+            33.9928,
+            34.2956
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -588.2214,
+          "ci95": [
+            -589.5867,
+            -586.8646
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        }
+      }
+    },
+    "planner": {
+      "random": {
+        "gain": {
+          "mean": -13.0065,
+          "ci95": [
+            -13.115,
+            -12.8962
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0053,
+          "ci95": [
+            -0.0055,
+            -0.0051
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -42.4555,
+          "ci95": [
+            -47.0154,
+            -38.0991
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -12.0521,
+          "ci95": [
+            -12.1427,
+            -11.9612
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 619.7727,
+          "ci95": [
+            618.5026,
+            621.0776
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "fixed_round_robin": {
+        "gain": {
+          "mean": -3.4244,
+          "ci95": [
+            -3.54,
+            -3.3197
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0158,
+          "ci95": [
+            0.0156,
+            0.0159
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -57.8083,
+          "ci95": [
+            -62.5711,
+            -53.2652
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -6.7254,
+          "ci95": [
+            -6.809,
+            -6.642
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 622.9582,
+          "ci95": [
+            621.6242,
+            624.3821
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "difficulty_only": {
+        "gain": {
+          "mean": -8.2533,
+          "ci95": [
+            -8.3771,
+            -8.1281
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0053,
+          "ci95": [
+            -0.0055,
+            -0.0051
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 163.8614,
+          "ci95": [
+            153.4838,
+            174.2092
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -9.7077,
+          "ci95": [
+            -9.8105,
+            -9.6135
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 620.4951,
+          "ci95": [
+            619.0505,
+            621.8505
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "weakest_first": {
+        "gain": {
+          "mean": -27.6738,
+          "ci95": [
+            -27.8669,
+            -27.4864
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0432,
+          "ci95": [
+            -0.0437,
+            -0.0428
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -30.4768,
+          "ci95": [
+            -34.6454,
+            -26.3114
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -16.7602,
+          "ci95": [
+            -16.9003,
+            -16.6197
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 619.6235,
+          "ci95": [
+            618.349,
+            620.9355
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "chapter_order": {
+        "gain": {
+          "mean": -38.7798,
+          "ci95": [
+            -38.9307,
+            -38.623
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0626,
+          "ci95": [
+            -0.0629,
+            -0.0623
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 656.4221,
+          "ci95": [
+            644.6962,
+            667.9827
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -30.8934,
+          "ci95": [
+            -31.046,
+            -30.7373
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 589.2664,
+          "ci95": [
+            587.8963,
+            590.6965
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "planner_unc": {
+        "gain": {
+          "mean": 1.8971,
+          "ci95": [
+            1.832,
+            1.9615
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0017,
+          "ci95": [
+            -0.0019,
+            -0.0015
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -10.8236,
+          "ci95": [
+            -12.7947,
+            -8.7608
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 3.1159,
+          "ci95": [
+            3.0615,
+            3.1768
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.2813,
+          "ci95": [
+            -1.181,
+            0.5644
+          ],
+          "pBoot": 0.747,
+          "positiveSeeds": 2,
+          "seeds": 5
+        }
+      },
+      "planner_learned": {
+        "gain": {
+          "mean": 0.5945,
+          "ci95": [
+            0.5254,
+            0.6601
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0007,
+          "ci95": [
+            0.0005,
+            0.0009
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -66.6664,
+          "ci95": [
+            -69.9334,
+            -63.3715
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -0.0522,
+          "ci95": [
+            -0.1132,
+            0.0024
+          ],
+          "pBoot": 0.97,
+          "positiveSeeds": 2,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 2.1684,
+          "ci95": [
+            1.3104,
+            3.0689
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      },
+      "planner_unc_learned": {
+        "gain": {
+          "mean": 3.0198,
+          "ci95": [
+            2.9509,
+            3.0833
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0009,
+          "ci95": [
+            -0.0011,
+            -0.0007
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -75.7294,
+          "ci95": [
+            -78.9495,
+            -72.5404
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 3.2576,
+          "ci95": [
+            3.1988,
+            3.3137
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 1.045,
+          "ci95": [
+            0.2003,
+            1.8902
+          ],
+          "pBoot": 0.007,
+          "positiveSeeds": 4,
+          "seeds": 5
+        }
+      }
+    }
+  },
+  "perSeedGain": {
+    "1": {
+      "random": 117.5001,
+      "fixed_round_robin": 126.8237,
+      "difficulty_only": 122.1236,
+      "weakest_first": 103.8178,
+      "chapter_order": 92.7326,
+      "planner": 130.0306,
+      "planner_unc": 132.2311,
+      "planner_learned": 130.1717,
+      "planner_unc_learned": 132.9328
+    },
+    "2": {
+      "random": 115.725,
+      "fixed_round_robin": 125.6093,
+      "difficulty_only": 120.4515,
+      "weakest_first": 101.834,
+      "chapter_order": 93.0126,
+      "planner": 126.7597,
+      "planner_unc": 128.5298,
+      "planner_learned": 127.0473,
+      "planner_unc_learned": 129.0141
+    },
+    "3": {
+      "random": 116.9664,
+      "fixed_round_robin": 126.5207,
+      "difficulty_only": 121.7093,
+      "weakest_first": 101.2552,
+      "chapter_order": 89.3795,
+      "planner": 130.9793,
+      "planner_unc": 132.8998,
+      "planner_learned": 131.3919,
+      "planner_unc_learned": 133.9935
+    },
+    "4": {
+      "random": 111.9129,
+      "fixed_round_robin": 121.1809,
+      "difficulty_only": 116.8839,
+      "weakest_first": 96.5844,
+      "chapter_order": 86.9111,
+      "planner": 126.1576,
+      "planner_unc": 128.0564,
+      "planner_learned": 127.3225,
+      "planner_unc_learned": 129.852
+    },
+    "5": {
+      "random": 115.84,
+      "fixed_round_robin": 125.7202,
+      "difficulty_only": 120.5421,
+      "weakest_first": 101.1167,
+      "chapter_order": 87.0421,
+      "planner": 129.0498,
+      "planner_unc": 130.7454,
+      "planner_learned": 130.0159,
+      "planner_unc_learned": 132.2835
+    }
+  }
+}
