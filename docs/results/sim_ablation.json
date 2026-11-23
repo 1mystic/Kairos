@@ -1,0 +1,583 @@
+{
+  "generated": "2026-11-23",
+  "command": "pnpm --filter @kairos/core sim:study -- --students 1000 --seeds 1,2,3,4,5 --days 100 --jobs 4 --policies planner_unc,planner_unc_no_examWeight,planner_unc_no_weakness,planner_unc_no_infoGain,planner_unc_no_forgetting,planner_unc_no_backlog --baselines planner_unc --out ../docs/results/sim_ablation.json",
+  "config": {
+    "students": 1000,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "days": 100,
+    "policies": [
+      "planner_unc",
+      "planner_unc_no_examWeight",
+      "planner_unc_no_weakness",
+      "planner_unc_no_infoGain",
+      "planner_unc_no_forgetting",
+      "planner_unc_no_backlog"
+    ],
+    "baselines": [
+      "planner_unc"
+    ],
+    "bootstrap": 2000,
+    "worldSeed": "same as seed",
+    "schedule": "weekday 180 min, Saturday 240, Sunday off",
+    "metrics": {
+      "gain": "exam-day predicted score gain (marks, true ability)",
+      "retention": "exam-weighted mean memory retention at exam day over practised topics",
+      "wastedMin": "practice minutes on items with true P>0.9 or <0.2",
+      "aumc": "mean over days of (expected score - start)",
+      "practiceMin": "practice minutes done"
+    }
+  },
+  "runtimeSec": 852,
+  "policies": [
+    "planner_unc",
+    "planner_unc_no_examWeight",
+    "planner_unc_no_weakness",
+    "planner_unc_no_infoGain",
+    "planner_unc_no_forgetting",
+    "planner_unc_no_backlog"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "studentsPerSeed": 1000,
+  "metrics": {
+    "planner_unc": {
+      "gain": {
+        "mean": 130.4925,
+        "ci95": [
+          130.0565,
+          130.9127
+        ]
+      },
+      "retention": {
+        "mean": 0.9602,
+        "ci95": [
+          0.9601,
+          0.9604
+        ]
+      },
+      "wastedMin": {
+        "mean": 382.7251,
+        "ci95": [
+          377.2216,
+          387.7885
+        ]
+      },
+      "aumc": {
+        "mean": 77.8702,
+        "ci95": [
+          77.5373,
+          78.2021
+        ]
+      },
+      "practiceMin": {
+        "mean": 10527.5173,
+        "ci95": [
+          10520.1855,
+          10534.2908
+        ]
+      }
+    },
+    "planner_unc_no_examWeight": {
+      "gain": {
+        "mean": 121.9858,
+        "ci95": [
+          121.4977,
+          122.449
+        ]
+      },
+      "retention": {
+        "mean": 0.9622,
+        "ci95": [
+          0.9621,
+          0.9624
+        ]
+      },
+      "wastedMin": {
+        "mean": 400.7978,
+        "ci95": [
+          395.3606,
+          406.3772
+        ]
+      },
+      "aumc": {
+        "mean": 66.4272,
+        "ci95": [
+          66.1095,
+          66.7546
+        ]
+      },
+      "practiceMin": {
+        "mean": 10528.4636,
+        "ci95": [
+          10521.7767,
+          10535.0932
+        ]
+      }
+    },
+    "planner_unc_no_weakness": {
+      "gain": {
+        "mean": 126.521,
+        "ci95": [
+          126.0658,
+          126.9978
+        ]
+      },
+      "retention": {
+        "mean": 0.9624,
+        "ci95": [
+          0.9623,
+          0.9626
+        ]
+      },
+      "wastedMin": {
+        "mean": 385.9521,
+        "ci95": [
+          380.5286,
+          391.1728
+        ]
+      },
+      "aumc": {
+        "mean": 70.8487,
+        "ci95": [
+          70.5127,
+          71.1671
+        ]
+      },
+      "practiceMin": {
+        "mean": 10528.7139,
+        "ci95": [
+          10521.9087,
+          10535.0165
+        ]
+      }
+    },
+    "planner_unc_no_infoGain": {
+      "gain": {
+        "mean": 129.8897,
+        "ci95": [
+          129.4305,
+          130.2961
+        ]
+      },
+      "retention": {
+        "mean": 0.9603,
+        "ci95": [
+          0.9602,
+          0.9605
+        ]
+      },
+      "wastedMin": {
+        "mean": 381.7631,
+        "ci95": [
+          376.5852,
+          387.3701
+        ]
+      },
+      "aumc": {
+        "mean": 76.2757,
+        "ci95": [
+          75.9714,
+          76.5914
+        ]
+      },
+      "practiceMin": {
+        "mean": 10527.5072,
+        "ci95": [
+          10520.9755,
+          10534.5686
+        ]
+      }
+    },
+    "planner_unc_no_forgetting": {
+      "gain": {
+        "mean": 129.9732,
+        "ci95": [
+          129.5079,
+          130.4109
+        ]
+      },
+      "retention": {
+        "mean": 0.9604,
+        "ci95": [
+          0.9602,
+          0.9606
+        ]
+      },
+      "wastedMin": {
+        "mean": 385.2427,
+        "ci95": [
+          379.7674,
+          390.7679
+        ]
+      },
+      "aumc": {
+        "mean": 77.507,
+        "ci95": [
+          77.1887,
+          77.8431
+        ]
+      },
+      "practiceMin": {
+        "mean": 10526.6941,
+        "ci95": [
+          10519.8781,
+          10533.2276
+        ]
+      }
+    },
+    "planner_unc_no_backlog": {
+      "gain": {
+        "mean": 131.4441,
+        "ci95": [
+          131.0044,
+          131.8643
+        ]
+      },
+      "retention": {
+        "mean": 0.9579,
+        "ci95": [
+          0.9577,
+          0.9581
+        ]
+      },
+      "wastedMin": {
+        "mean": 299.3243,
+        "ci95": [
+          294.3675,
+          304.3733
+        ]
+      },
+      "aumc": {
+        "mean": 79.0663,
+        "ci95": [
+          78.7552,
+          79.3845
+        ]
+      },
+      "practiceMin": {
+        "mean": 10529.9819,
+        "ci95": [
+          10523.4229,
+          10537.0028
+        ]
+      }
+    }
+  },
+  "paired": {
+    "planner_unc": {
+      "planner_unc_no_examWeight": {
+        "gain": {
+          "mean": -8.5067,
+          "ci95": [
+            -8.5955,
+            -8.4191
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.002,
+          "ci95": [
+            0.0018,
+            0.0022
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 18.0727,
+          "ci95": [
+            16.0088,
+            20.3443
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -11.443,
+          "ci95": [
+            -11.5216,
+            -11.3736
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 0.9464,
+          "ci95": [
+            0.1112,
+            1.8071
+          ],
+          "pBoot": 0.0135,
+          "positiveSeeds": 4,
+          "seeds": 5
+        }
+      },
+      "planner_unc_no_weakness": {
+        "gain": {
+          "mean": -3.9715,
+          "ci95": [
+            -4.0453,
+            -3.8942
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0022,
+          "ci95": [
+            0.002,
+            0.0024
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 3.227,
+          "ci95": [
+            1.2194,
+            5.2906
+          ],
+          "pBoot": 0.001,
+          "positiveSeeds": 4,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -7.0214,
+          "ci95": [
+            -7.087,
+            -6.9523
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 1.1967,
+          "ci95": [
+            0.2909,
+            2.0794
+          ],
+          "pBoot": 0.003,
+          "positiveSeeds": 3,
+          "seeds": 5
+        }
+      },
+      "planner_unc_no_infoGain": {
+        "gain": {
+          "mean": -0.6028,
+          "ci95": [
+            -0.6618,
+            -0.5423
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0001,
+          "ci95": [
+            -0.0001,
+            0.0003
+          ],
+          "pBoot": 0.114,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -0.9621,
+          "ci95": [
+            -2.9345,
+            1.0362
+          ],
+          "pBoot": 0.821,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -1.5945,
+          "ci95": [
+            -1.6477,
+            -1.5381
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.0101,
+          "ci95": [
+            -0.8895,
+            0.8877
+          ],
+          "pBoot": 0.5,
+          "positiveSeeds": 1,
+          "seeds": 5
+        }
+      },
+      "planner_unc_no_forgetting": {
+        "gain": {
+          "mean": -0.5193,
+          "ci95": [
+            -0.5816,
+            -0.4556
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": 0.0002,
+          "ci95": [
+            0,
+            0.0004
+          ],
+          "pBoot": 0.064,
+          "positiveSeeds": 4,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": 2.5175,
+          "ci95": [
+            0.3703,
+            4.5747
+          ],
+          "pBoot": 0.0115,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": -0.3632,
+          "ci95": [
+            -0.4156,
+            -0.3108
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": -0.8232,
+          "ci95": [
+            -1.6446,
+            -0.0043
+          ],
+          "pBoot": 0.9755,
+          "positiveSeeds": 2,
+          "seeds": 5
+        }
+      },
+      "planner_unc_no_backlog": {
+        "gain": {
+          "mean": 0.9516,
+          "ci95": [
+            0.8867,
+            1.0158
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "retention": {
+          "mean": -0.0023,
+          "ci95": [
+            -0.0025,
+            -0.0021
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "wastedMin": {
+          "mean": -83.4008,
+          "ci95": [
+            -86.0502,
+            -80.84
+          ],
+          "pBoot": 1,
+          "positiveSeeds": 0,
+          "seeds": 5
+        },
+        "aumc": {
+          "mean": 1.1962,
+          "ci95": [
+            1.1434,
+            1.2474
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        },
+        "practiceMin": {
+          "mean": 2.4646,
+          "ci95": [
+            1.6535,
+            3.3029
+          ],
+          "pBoot": 0,
+          "positiveSeeds": 5,
+          "seeds": 5
+        }
+      }
+    }
+  },
+  "perSeedGain": {
+    "1": {
+      "planner_unc": 132.2311,
+      "planner_unc_no_examWeight": 123.4418,
+      "planner_unc_no_weakness": 127.8353,
+      "planner_unc_no_infoGain": 131.7289,
+      "planner_unc_no_forgetting": 131.5289,
+      "planner_unc_no_backlog": 133.549
+    },
+    "2": {
+      "planner_unc": 128.5298,
+      "planner_unc_no_examWeight": 121.5531,
+      "planner_unc_no_weakness": 124.9676,
+      "planner_unc_no_infoGain": 127.7932,
+      "planner_unc_no_forgetting": 127.9733,
+      "planner_unc_no_backlog": 129.2841
+    },
+    "3": {
+      "planner_unc": 132.8998,
+      "planner_unc_no_examWeight": 123.5076,
+      "planner_unc_no_weakness": 128.6087,
+      "planner_unc_no_infoGain": 132.4208,
+      "planner_unc_no_forgetting": 132.4276,
+      "planner_unc_no_backlog": 133.896
+    },
+    "4": {
+      "planner_unc": 128.0564,
+      "planner_unc_no_examWeight": 118.8374,
+      "planner_unc_no_weakness": 124.0423,
+      "planner_unc_no_infoGain": 127.308,
+      "planner_unc_no_forgetting": 127.5334,
+      "planner_unc_no_backlog": 129.085
+    },
+    "5": {
+      "planner_unc": 130.7454,
+      "planner_unc_no_examWeight": 122.5894,
+      "planner_unc_no_weakness": 127.1511,
+      "planner_unc_no_infoGain": 130.1977,
+      "planner_unc_no_forgetting": 130.4026,
+      "planner_unc_no_backlog": 131.4064
+    }
+  }
+}
