@@ -87,6 +87,12 @@ describe('attemptsFromEvents', () => {
   const att = attemptsFromEvents(events, qs, { reasons: { q2: 'strategy' }, msq: jeeAdvancedPartial });
   const by = Object.fromEntries(att.map((a) => [a.q, a]));
 
+  it('time norms set a per-item time-sink threshold', () => {
+    const withNorms = attemptsFromEvents(events, qs, { timeNorms: { x: [1, 1, 100] } });
+    expect(withNorms.every((a) => typeof a.timeSinkMs === 'number')).toBe(true);
+    expect(att.every((a) => a.timeSinkMs === undefined)).toBe(true);
+  });
+
   it('time sums spans, changes detected', () => {
     expect(att.map((a) => a.q)).toEqual(['q1', 'q2', 'q3', 'q4', 'q5']);
     expect(by.q1).toMatchObject({ correct: false, skipped: false, timeMs: 40_000, r: 0 });

@@ -23,6 +23,8 @@ export interface AttemptFacts {
   pCorrect: number;
   changedCorrectToWrong: boolean;
   skipped: boolean;
+  /** time-sink threshold for this item (ms); default TIME_SINK_MS. Set from per-topic time norms (median + 3 x 1.4826 x MAD). */
+  timeSinkMs?: number;
 }
 
 export interface Attempt extends AttemptFacts {
@@ -57,7 +59,7 @@ export function behaviourLabels(
     if (f.correct && f.timeMs > 2 * m) out.push('fluency');
     if (f.changedCorrectToWrong) out.push('overthinking');
     if (!f.correct && easy) out.push('silly_mistake');
-    if (!f.correct && f.timeMs > TIME_SINK_MS) out.push('time_sink');
+    if (!f.correct && f.timeMs > (f.timeSinkMs ?? TIME_SINK_MS)) out.push('time_sink');
   }
   if (f.reason) {
     if ((opts.reasonMode ?? 'override') === 'override') return [f.reason];
@@ -73,6 +75,20 @@ export interface AttemptsOptions {
   reasons?: Record<string, BehaviourLabel>;
   /** MSQ scorer (default all-or-nothing); pass jeeAdvancedPartial for partial credit */
   msq?: MsqScorer;
+  /** per-topic solve-time norms (pipeline/ml/irt_job.py time_norms.json); replace the fixed TIME_SINK_MS when n is large enough */
+  timeNorms?: TimeNorms;
+}
+
+/** topic -> [median_ms, mad_ms (raw), n] */
+export type TimeNorms = Record<string, [number, number, number]>;
+/** norms with fewer attempts than this are ignored */
+export const TIME_NORM_MIN_N = 30;
+
+/** Time-sink threshold for a topic: median + 3 x 1.4826 x MAD (robust 3 sigma), never below 60 s; TIME_SINK_MS without a usable norm. */
+export function timeSinkThreshold(norms: TimeNorms | undefined, topic: string | undefined): number {
+  const t = topic !== undefined ? norms?.[topic] : undefined;
+  if (!t || t[2] < TIME_NORM_MIN_N) return TIME_SINK_MS;
+  return Math.max(60_000, t[0] + 3 * 1.4826 * t[1]);
 }
 
 const DEFAULT_MEDIAN_MS = 120_000;
@@ -180,6 +196,7 @@ export function attemptsFromEvents(
       changedCorrectToWrong: a.wasCorrect && !skipped && !correct,
       skipped,
     };
+    if (opts.timeNorms) att.timeSinkMs = timeSinkThreshold(opts.timeNorms, q.tax?.topics?.[0] ?? q.tax?.chapter);
     const reason = opts.reasons?.[id];
     if (reason) att.reason = reason;
     out.push(att);
