@@ -47,6 +47,9 @@ capacity: questions_d = C(d)·f_u / t̄_item ; f_u = EWMA14(done/planned)·1.1
 priority: π_T = α w_T(1−m_T) + β(1−R_T) + γ rd_T/rd_max + δ e_T + ε[fix-list] − ζ s_T  (phase sets weights)
 triage from 45 days: low w + very low m → capped, said plainly, student can un-skip.
 
+**uncertainty mode** (`PlannerConfig.priorityMode = 'uncertainty'`, docs/17 Phase E; off by default, app flag `uncertaintyPlanner`):
+π_T = w_T · (α(1−m_T) + γ·EIG_T + β(1−R_T)) + δ e_T + ε[fix-list] − ζ s_T, with EIG_T = ln(1 + rd_T²·p(1−p)) / ln(1 + 0.25·rd_max²) at the practice target p = 0.65 (expected information gain about θ of one item under the Elo posterior). exam weight gates every value term; only *which* topics get minutes changes — capacity cap, ±15% load rule, buffers and taper are untouched (property-tested). `signals` switches each term off for ablation. `recallModel: 'learned'` makes m_T come from the learned model (5.12).
+
 ```
 plan_day(d):
   budget = C(d)*f_u
@@ -85,3 +88,7 @@ monte carlo 500 blueprint papers with current θ → band (P25–P75). nightly.
 
 ## 5.11 validation harness
 `core/sim`: 1,000 synthetic students with true abilities + learning/forgetting; compare planner vs random practice vs chapter-order on predicted-score gain at exam day. gate planner PRs on it.
+policies (`sim/policies.ts`): `random`, `fixed_round_robin` (every topic in syllabus order, 6 items, cycling), `difficulty_only` (random topics, items at estimated P≈0.5), `weakest_first` (lowest estimated mastery first, 8 items each), `chapter_order`, `planner`. metrics per student: exam-day score gain, exam-weighted retention at exam day, wasted minutes (true P>0.9 or <0.2), area under the score curve, practice minutes. study: `pnpm --filter @kairos/core sim:study` (≥5 seeds, stratified bootstrap CIs, paired differences; `sim/stats.ts`). results and exact commands: `docs/results/`.
+
+## 5.12 learned recall model (Elo stays the default)
+P(correct) from a logistic regression on 13 closed-form features of the on-device mastery doc + item b (`measure/learned.ts`, weights `measure/learned.weights.json`, trained offline by `pipeline/ml` on the simulator's attempt table, split by student). features: x = θ−b, rd, ln(1+n), R, 1−R, ln(1+days since topic), unseen, err rate, b, ln(1+items on topic this session), x·R, x·rd, ln(1+S). inference: standardise, dot, sigmoid — no server. `predictRecall(t, b, now, {model})` dispatches: `'elo'` (default) = σ(θ−b), `'learned'` = the model. used for planner mastery m_T and practice item picking only when the app flag `learnedRecall` is on. a golden test pins TS to the Python reference (1e-9). held-out results: `docs/results/README.md`.
