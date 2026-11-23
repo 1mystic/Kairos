@@ -5,7 +5,8 @@
   <a href="docs/01_PRODUCT.md">Product</a> ·
   <a href="docs/02_ARCHITECTURE.md">Architecture</a> ·
   <a href="docs/05_ALGORITHMS.md">Algorithms</a> ·
-  <a href="docs/06_ROADMAP.md">Roadmap</a>
+  <a href="docs/06_ROADMAP.md">Roadmap</a> ·
+  <a href="docs/17_ML_UPGRADE_PLAN.md">ML upgrade plan</a>
 </p>
 
 <p align="center">
