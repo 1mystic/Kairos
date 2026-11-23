@@ -2,12 +2,14 @@
 
 All numbers below come from the JSON files in this folder, produced by the commands in **Reproduce**. Synthetic students only (`core/src/sim`): no real user data was collected or used.
 
-Files: `sim_baselines.json` (Phase A), `sim_planner.json` (Phase E comparison), `sim_ablation.json` (Phase E ablation), `recall_model/` (Phase C: `metrics.json`, `ablation.json`, `reliability.json`, `reliability.png`), plots `policy_gain.png`, `policy_gain_vs_planner.png`, `ablation.png`.
+Files: `irt/` (Phase D), `score_interval/` (Phase F), `sim_baselines.json` (Phase A), `sim_planner.json` (Phase E comparison), `sim_ablation.json` (Phase E ablation), `recall_model/` (Phase C: `metrics.json`, `ablation.json`, `reliability.json`, `reliability.png`), plots `policy_gain.png`, `policy_gain_vs_planner.png`, `ablation.png`.
 
 ## Headline
 
 - **Learned recall model vs Elo** (held-out students, 660k attempts): logistic regression log-loss **0.6098 vs 0.6330** (Δ −0.0232, 95% CI [−0.0243, −0.0222], bootstrap over students), ECE **0.0047** vs 0.0498, AUC 0.686 vs 0.648. It closes ~44% of the gap between Elo and the oracle (the sim's true P, log-loss 0.5808). Temporal split (train days < 69, test later days of unseen students): 0.5892 vs 0.6163, ECE 0.011. **Gate met** (beats Elo on student-split log-loss with ECE < 0.05).
 - **Planner**: the uncertainty-aware planner using the learned model (`planner_unc_learned`) gains **+3.02 marks** at exam day over the current planner (95% CI [2.95, 3.08], positive in 5/5 seeds) and beats every baseline with a CI excluding 0; it also cuts wasted practice minutes by 76 (−19%). Each piece helps on its own: uncertainty priority with Elo +1.90 [1.83, 1.96]; learned model with the heuristic priority +0.59 [0.53, 0.66].
+- **Item calibration (Phase D)**: 1PL IRT recovers true difficulty with ρ = 0.979 overall, but only 0.885 at 50 attempts per item (gate 0.9 not met; met from ~100).
+- **Score intervals (Phase F)**: conformal 80% intervals cover 80.0% (Elo) / 80.3% (learned) of held-out mocks; the naive model band covers only 56% (Elo) / 74% (learned). Gate met.
 - **Defaults unchanged**: Elo and the heuristic priority stay the product default; both new paths are behind app flags (off).
 
 ## Setup
@@ -128,6 +130,57 @@ Feature ablation (logreg refit without each feature, student test split):
 | `one_minus_r` | +0.00001 |
 | `x_elo_rd` | -0.00000 |
 
+## Phase D: calibrated item difficulty (`irt/`)
+
+`pipeline/ml/irt_job.py`: penalised joint-ML 1PL (Rasch) fit, P = σ(θ_g − b_q), on the same pooled anonymous attempts as Phase C (3.75M rows, 2,304 items). Priors: b ~ N(0, 1²) (shrinkage toward the prior for items with few attempts), θ ~ N(0, 1.5²). Ability groups g = (student, topic[, time block]); the block length is **chosen by held-out log-loss on a seeded 10% of attempts, never by the true b**. Discrimination is not fitted (a = 1). The simulator's true b is used only for the recovery evaluation. Output: `calib.json` `{qid: [b, a, n]}`, `time_norms.json` `{topic: [median_ms, mad_ms, n]}`; `pipeline/publish.py --calib` copies it to `bank/v{N}/calib.json`; core `applyCalibration(bank, calib, minN=50)` sets `difficulty.b/a/n` (and a consistent `p_correct`), which the generator, predicted score, labels and mastery already read; `attemptsFromEvents(..., { timeNorms })` replaces the fixed 180 s time-sink rule with median + 3·1.4826·MAD per topic (n ≥ 30).
+
+Model selection (held-out attempt log-loss; coverage = held-out rows whose group and item were seen):
+
+| ability block | held-out log-loss | coverage |
+|---|---|---|
+| 7 | 0.63247 | 0.9412 |
+| 14 | 0.62880 | 0.9715 |
+| 28 | 0.62434 | 0.9888 |
+| whole run | 0.62129 | 0.9998 |
+
+Chosen: one ability per (student, topic) for the whole run; converged in 190 iterations. Recovery vs the true b: **Spearman ρ = 0.979** over all items (RMSE 0.182; most items have ≥ 100 attempts). Controlled curve (each item's attempts capped at n, seeded, refit):
+
+| attempts per item | items | Spearman ρ | RMSE |
+|---|---|---|---|
+| 10 | 2304 | 0.646 | 0.682 |
+| 20 | 2304 | 0.762 | 0.572 |
+| 50 | 2297 | 0.885 | 0.420 |
+| 100 | 2218 | 0.930 | 0.324 |
+| 200 | 2024 | 0.957 | 0.243 |
+
+**Acceptance (ρ > 0.9 at n ≥ 50) is not met: ρ = 0.885 at n = 50; it is met from n ≈ 100 (0.930).** Post-hoc sensitivity (true b, computed after the choice and not used for it), ρ at n = 50 / 100 / 200:
+
+| ability block | n=50 | n=100 | n=200 |
+|---|---|---|---|
+| 7 | 0.842 | 0.887 | 0.916 |
+| 14 | 0.850 | 0.899 | 0.932 |
+| 28 | 0.861 | 0.911 | 0.945 |
+| whole run | 0.885 | 0.930 | 0.957 |
+
+The held-out ordering and the true-b ordering agree. ![irt recovery](irt/irt_recovery.png)
+
+## Phase F: calibrated score intervals (`score_interval/`)
+
+Data: `sim:export --mocks-only 1`, 1,000 students × 2 policies (`random`, `planner`), seed 2027 (independent of the Phase C training seed) → 24,000 mocks (60 questions, +4/−1). For each mock the sim logs the expected marks and Bernoulli sd predicted from the **pre-mock** mastery doc (Elo and learned model) and the realised score. Split by student 50/50 into calibration / test. Method: split conformal on z = (actual − pred)/sd with Mondrian buckets on seen_frac (share of the paper's questions whose topic was practised: < 0.5, < 0.9, ≤ 1); interval = pred + sd·[q_lo, q_hi]. Baseline: the model's own normal band pred ± 1.2816·sd (point ability, luck only — what the Monte Carlo band in `gen/predict.ts` amounts to). Target: 80%.
+
+| interval (test students, n = 11928) | coverage | 95% CI (students bootstrap) | mean width (marks) |
+|---|---|---|---|
+| conformal, Elo | 0.800 | [0.792, 0.808] | 55.4 |
+| conformal, learned | 0.803 | [0.796, 0.810] | 49.1 |
+| naive normal band, Elo | 0.561 | [0.551, 0.570] | 44.2 |
+| naive normal band, learned | 0.744 | [0.736, 0.752] | 44.3 |
+
+**Acceptance (empirical coverage within ±5 points of 80% on held-out sim) is met** for both models overall. Subgroups — conformal Elo: seen<=0.5 0.807 (n=564), seen<=0.9 0.805 (n=1379), seen<=1.0 0.799 (n=9985), days_left 0-29 0.809 (n=3976), days_left 30-59 0.843 (n=3976), days_left 60-999 0.748 (n=3976); conformal learned: seen<=0.5 0.812 (n=564), seen<=0.9 0.806 (n=1379), seen<=1.0 0.803 (n=9985), days_left 0-29 0.824 (n=3976), days_left 30-59 0.801 (n=3976), days_left 60-999 0.785 (n=3976). Conformal guarantees marginal coverage only: Elo intervals early in the runway (≥ 60 days left) cover 0.748, just outside ±5; the learned model stays within ±5 in every subgroup. Point error of the predicted mock score (MAE / bias, marks): Elo 22.0 / +12.0, learned 15.6 / +3.2, oracle true-P 13.4 / +0.0 — Elo under-predicts by 12 marks (the same underconfidence as in Phase C). Client: `core/src/gen/score_interval.json` + `scoreInterval()`; `predictScore(..., { interval: { seenFrac, model } })` adds `interval` (off by default; the p25–p75 band is unchanged).
+
+## Phase G: LLM tagging — not done
+
+Blocked: it needs an LLM API key (paid inference, and question text sent to a third party) and a human-labelled validation sample to report precision/recall against; neither exists in this repo or session. Nothing was faked.
+
 ## Reproduce
 
 Versions: Node 22, pnpm 12, Python 3.11.18 (numpy 2.4.6, pandas 3.1.1, scikit-learn 1.9.1, lightgbm 4.7.0, matplotlib 3.11.2; `pipeline/ml/requirements.txt`). From the repo root:
@@ -158,6 +211,20 @@ pipeline/ml/.venv/bin/python -m pipeline.ml.train --data pipeline/ml/data/sim_at
 
 ```bash
 pipeline/ml/.venv/bin/python -m pipeline.ml.export_weights --model pipeline/ml/out/logreg.pkl --out core/src/measure/learned.weights.json --sim-command "pnpm --filter @kairos/core sim:export -- --students 300 --seed 2026 --days 100 --chunk 50 --policies random,weakest_first,planner --out ../pipeline/ml/data/sim_attempts.csv"
+```
+
+Phase D (≈ 1.5 min) and Phase F (≈ 1 min):
+
+```bash
+pipeline/ml/.venv/bin/python -m pipeline.ml.irt_job --data pipeline/ml/data/sim_attempts.csv --out docs/results/irt --seed 2026 --select-block-days 7,14,28,0 --eval
+```
+
+```bash
+pnpm sim:export -- --students 1000 --seed 2027 --days 100 --chunk 100 --policies random,planner --mocks-only 1 --out ../pipeline/ml/data/sim_mocks.csv
+```
+
+```bash
+pipeline/ml/.venv/bin/python -m pipeline.ml.conformal --data pipeline/ml/data/sim_mocks.csv --seed 2027 --out docs/results/score_interval --export core/src/gen/score_interval.json
 ```
 
 Phase E comparison (~22 min on 4 cores) and ablation (~14 min):
@@ -192,12 +259,16 @@ Off by default. Build-time `VITE_FLAG_LEARNED_RECALL=1` and/or `VITE_FLAG_UNCERT
 - **FSRS retrievability alone does not predict item correctness** in this sim: raw R is badly calibrated (log-loss 1.21) and the calibrated version has AUC < 0.5, i.e. a negative fitted slope. A plausible (unverified) reason is confounding: policies revisit weak topics more, so high R marks weak topics. R still adds a little inside the logistic model.
 - **Elo calibration**: Elo is systematically underconfident (observed accuracy above predicted in the 0.2–0.7 range; ECE 0.050 student split, 0.097 temporal). Part of the learned model's gain is simply recalibration.
 - **Within-session count is the most useful learned feature** (`log_k`): the sim learns item by item within a session while the mastery doc only updates at session end. In the app, `kInSession` is passed by `buildTodayQueue` per pick; the planner calls the model with `kInSession = 0`.
+- **Phase D gate missed at n = 50** (ρ 0.885 vs 0.9). Only 1PL; no 2PL discrimination; calibration is fitted on the sim's attempts — the real bank has no pooled attempts yet, so no `calib.json` is published and the app does not apply one.
+- **Phase F intervals are calibrated on sim mocks** (60 questions, every question attempted). Real papers (blank-below-threshold strategy, other lengths) need recalibration on real mock results; the app does not display the interval yet.
 - **Not done**: Bayesian IRT (pymc/numpyro) and DKT/SAKT models (Phase C optional), "buffer days used" metric (Phase A), the Settings "Download my attempts (CSV)" button (Phase B; app session events have no typed attempt shape yet, so `toAttemptRows` has no clean source), and stretch phases D, F, G.
 
 ## Blockers
 
 - **Push to GitHub refused (HTTP 403)** for this session ("Claude doesn't have GitHub access to 1mystic/Kairos"). All commits are on the local branch `feat/ml-upgrade`; push once access is restored.
 - **Pre-existing failures on `main`, unchanged by this branch**: 7 app tests fail (`src/practice/{mine,screens,summary}.test.tsx` — "useStore must be used inside StoreProvider"; `src/saved/saved.test.tsx`; `src/styles/consistency.test.ts`), and `pnpm lint` reports 212 errors, all in the committed build output `app/public/dryrun/`. Verified identical on `main` (83a0f94). Not fixed here (out of scope).
+- `pipeline/tests -k publish`: 1 failure + 8 errors (unverified slots in `gate_da_mock_a`), identical on `main`; the new `publish.py --calib` option is therefore not exercised by a test.
+- Phase G blocked (see above).
 - `core/scripts/*.ts` are not covered by `tsc -p core` (core has no Node types); they are linted and exercised by every study run.
 
 ## Ethics and privacy

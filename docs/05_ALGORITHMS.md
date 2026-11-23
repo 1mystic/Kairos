@@ -7,6 +7,7 @@ track rd (glicko-style): falls with n, grows with time since last seen. UI shows
 chapter/subject = weight-averaged topics, shrunk to chapter mean when n small.
 mastery m_T = P(correct) on a medium exam-level item.
 item b: prior (source label + LLM + solution length) → offline 2PL IRT once n≥~200.
+calibration (docs/17 Phase D): `pipeline/ml/irt_job.py` fits a penalised 1PL on pooled anonymous attempts (b ~ N(0,1) shrinkage, ability block chosen by held-out log-loss) → `bank/v{N}/calib.json` {qid: [b, a, n]}; `applyCalibration(bank, calib)` uses the fitted b for items with n ≥ 50. sim recovery: ρ 0.885 at n = 50, 0.930 at n = 100 (docs/results). time norms per topic (median, MAD) replace the fixed 180 s time-sink rule when n ≥ 30: sink = median + 3·1.4826·MAD.
 
 ## 5.2 retention — FSRS per topic (`ts-fsrs`)
 due when R < 0.85 (0.9 in last 60 days). same question never returns soon; a **twin** (same concept) does.
@@ -85,6 +86,7 @@ rules: never exceed stated capacity w/o asking · Δload ≤ ±15%/day · off-da
 
 ## 5.10 predicted score
 monte carlo 500 blueprint papers with current θ → band (P25–P75). nightly.
+calibrated interval (docs/17 Phase F, opt-in `predictScore(..., {interval})`): split-conformal quantiles of z = (actual − pred)/sd on sim mocks, bucketed by seen_frac → 80% interval pred + sd·[q_lo, q_hi] (`gen/score_interval.json`). held-out sim coverage 0.800 (Elo) / 0.803 (learned); the plain model band covers 0.56 / 0.74.
 
 ## 5.11 validation harness
 `core/sim`: 1,000 synthetic students with true abilities + learning/forgetting; compare planner vs random practice vs chapter-order on predicted-score gain at exam day. gate planner PRs on it.
