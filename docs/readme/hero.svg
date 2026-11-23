@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="Kairos: the right question, at the right time">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E1330"/><stop offset="1" stop-color="#1B1F63"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F5A524" stop-opacity=".45"/><stop offset="1" stop-color="#F5A524" stop-opacity="0"/></radialGradient>
+<clipPath id="c"><rect width="1200" height="380" rx="24"/></clipPath>
+</defs>
+<g clip-path="url(#c)">
+<rect width="1200" height="380" fill="url(#bg)"/>
+<g stroke="#fff" stroke-opacity=".05">
+<path d="M0 95H1200M0 190H1200M0 285H1200M150 0V380M300 0V380M450 0V380M600 0V380M750 0V380M900 0V380M1050 0V380"/>
+</g>
+<circle cx="1010" cy="190" r="150" fill="url(#glow)"><animate attributeName="r" values="130;175;130" dur="5s" repeatCount="indefinite"/></circle>
+<g fill="none" stroke="#F5A524" stroke-opacity=".35">
+<circle cx="1010" cy="190" r="70"><animate attributeName="r" values="60;140" dur="4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".5;0" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="1010" cy="190" r="70"><animate attributeName="r" values="60;140" dur="4s" begin="2s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".5;0" dur="4s" begin="2s" repeatCount="indefinite"/></circle>
+</g>
+<g transform="translate(930 110) scale(1.25)">
+<rect width="64" height="64" rx="14" fill="#3A3FD9"/>
+<path d="M20 14v36" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+<path d="M46 14 L30 32 L46 50" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="30" cy="32" r="4.5" fill="#F5A524"><animate attributeName="r" values="4.5;7;4.5" dur="2s" repeatCount="indefinite"/></circle>
+</g>
+<text x="70" y="150" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="92" font-weight="800" fill="#fff" letter-spacing="-3">kairos
+<animate attributeName="opacity" values="0;1" dur=".8s" fill="freeze"/></text>
+<text x="74" y="212" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="34" font-weight="600" fill="#F5A524">The right question, at the right time.
+<animate attributeName="opacity" values="0;0;1" keyTimes="0;.4;1" dur="1.6s" fill="freeze"/></text>
+<text x="74" y="262" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="20" fill="#C9CCF0">Tell it your exam date. It counts back and plans every day.
+<animate attributeName="opacity" values="0;0;1" keyTimes="0;.6;1" dur="2.2s" fill="freeze"/></text>
+<g font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#fff">
+<g><rect x="74" y="296" width="104" height="34" rx="17" fill="#3A3FD9"/><text x="126" y="318" text-anchor="middle">JEE Main</text></g>
+<g><rect x="188" y="296" width="96" height="34" rx="17" fill="#3A3FD9"/><text x="236" y="318" text-anchor="middle">NEET UG</text></g>
+<g><rect x="294" y="296" width="64" height="34" rx="17" fill="#3A3FD9"/><text x="326" y="318" text-anchor="middle">IAT</text></g>
+<g><rect x="368" y="296" width="98" height="34" rx="17" fill="#3A3FD9"/><text x="417" y="318" text-anchor="middle">GATE DA</text></g>
+<g><rect x="476" y="296" width="110" height="34" rx="17" fill="#2B2F8F"/><text x="531" y="318" text-anchor="middle">DSA · Design</text></g>
+</g>
+</g>
+</svg>
