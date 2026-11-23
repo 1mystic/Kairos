@@ -22,3 +22,7 @@ AIML-Engineer-Python-interview/
 sys-des.pdf
 *.pdf
 
+
+# ML pipeline
+pipeline/ml/data/
+pipeline/ml/out/
