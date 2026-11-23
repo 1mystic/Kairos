@@ -27,7 +27,9 @@ def load_csv(path) -> pd.DataFrame:
     missing = [c for c in COLUMNS if c not in df.columns]
     if missing:
         raise ValueError(f"missing columns: {missing}")
-    return df[COLUMNS].reset_index(drop=True)
+    # p_true (sim-only diagnostic, never a feature) is kept when present for the oracle reference row
+    extra = ["p_true"] if "p_true" in df.columns else []
+    return df[COLUMNS + extra].reset_index(drop=True)
 
 
 def _bucket(sid: int, seed: int) -> float:

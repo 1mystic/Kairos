@@ -75,6 +75,9 @@ def evaluate(df, preds, seed):
     for n in NAMES:
         if n != "elo":
             out[n]["logloss_diff_vs_elo"] = M.bootstrap_logloss_diff(y, preds[n], preds["elo"], df.sid.values, seed=seed)
+    if "p_true" in df.columns:
+        # reference only (not a model): the simulator's true P(correct), i.e. the best achievable score on this data
+        out["oracle_p_true"] = M.all_metrics(y, df.p_true.values)
     return out
 
 
