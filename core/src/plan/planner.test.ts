@@ -443,3 +443,52 @@ describe('fsrs integration', () => {
     expect(p.tasks.find((t) => t.kind === 'fsrs_due')?.topic).toBe(id);
   });
 });
+
+describe('uncertainty-aware priority (docs/17 Phase E)', () => {
+  it('expectedInfoGain is in [0,1], grows with rd and peaks at p=0.5', async () => {
+    const { expectedInfoGain } = await import('./planner');
+    expect(expectedInfoGain(1, 0.5)).toBeCloseTo(1, 12);
+    expect(expectedInfoGain(0.15, 0.65)).toBeLessThan(expectedInfoGain(0.8, 0.65));
+    expect(expectedInfoGain(0.5, 0.9)).toBeLessThan(expectedInfoGain(0.5, 0.5));
+    expect(expectedInfoGain(0, 0.5)).toBe(0);
+  });
+});
+
+describe('uncertainty mode and learned recall keep every hard rule', () => {
+  const modes = [
+    { priorityMode: 'uncertainty' as const },
+    { priorityMode: 'uncertainty' as const, recallModel: 'learned' as const },
+    { recallModel: 'learned' as const },
+    { priorityMode: 'uncertainty' as const, signals: { examWeight: false, infoGain: false } },
+  ];
+  it('capacity, buffer cap and +/-15% load rule hold; plans differ from the heuristic', () => {
+    let pairs = 0;
+    let differs = 0;
+    for (const config of modes) {
+      for (let seed = 1; seed <= 25; seed++) {
+        const rng = mulberry32(seed + 900);
+        const caps: Record<number, number> = {};
+        for (let i = 0; i < 7; i++) caps[i] = Math.floor(90 + rng() * 150);
+        const s = sched(40 + Math.floor(rng() * 100), caps, rng() < 0.5 ? 0 : null);
+        const fu = 0.6 + rng() * 0.5;
+        const mastery = randomMastery(rng, TODAY);
+        const plans = planHorizon(input({ schedule: s, fu, seed, mastery, config }), 14);
+        const heur = planHorizon(input({ schedule: s, fu, seed, mastery }), 14);
+        let prev: number | null = null;
+        plans.forEach((p, i) => {
+          expect(total(p)).toBeLessThanOrEqual(p.capacityMin + 1e-9);
+          if (p.dayKind === 'buffer') expect(total(p)).toBeLessThanOrEqual(0.6 * p.capacityMin + 1e-9);
+          if (JSON.stringify(p.tasks.map((t) => t.topic)) !== JSON.stringify(heur[i]!.tasks.map((t) => t.topic))) differs++;
+          if (p.loadMin === null) return;
+          if (prev !== null) {
+            pairs++;
+            expect(p.loadMin).toBeLessThanOrEqual(Math.max(prev, LOAD_RULE_FLOOR_MIN) * 1.15 + 1e-9);
+          }
+          prev = p.loadMin;
+        });
+      }
+    }
+    expect(pairs).toBeGreaterThan(400);
+    expect(differs).toBeGreaterThan(50);
+  });
+});

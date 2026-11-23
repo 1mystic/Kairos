@@ -14,6 +14,7 @@ import { gumbel, hashSeed, mulberry32, type Rng } from '../sim/rng';
 import { masteryProb } from '../measure/elo';
 import { cardFromParts, isDue, retrievability } from '../measure/fsrs';
 import type { MasteryDoc } from '../measure/mastery';
+import { predictRecall, type RecallModel } from '../measure/learned';
 import { addDays, dayNumber } from './calendar';
 import { limitLoadChange, FU_MAX } from './pace';
 import { DEFAULT_PHASES, type PhaseDef, type PhaseId } from './phases';
@@ -83,7 +84,27 @@ export interface PlannerConfig {
   coverageMaxShare: number;
   weights?: Record<PhaseId, PriorityWeights>;
   phases?: readonly PhaseDef[];
+  /** How mastery m_T = P(correct on a medium item) is estimated: 'elo' (default) or the learned recall model. */
+  recallModel?: RecallModel;
+  /**
+   * Topic priority. 'heuristic' (default): docs/05 5.5 pi_T. 'uncertainty' (docs/17 Phase E): exam weight gates every
+   * value term, pi_T = w_T x (alpha (1-m) + gamma EIG + beta (1-R)) + delta e + epsilon fix - zeta s, where EIG is the
+   * expected information gain about theta of one item at the practice target P under the Elo posterior (rd).
+   * Only *which* topics get the minutes changes; caps, load rule and buffers are untouched.
+   */
+  priorityMode?: 'heuristic' | 'uncertainty';
+  /** Ablation switches for the 'uncertainty' mode (all default true). */
+  signals?: Partial<Record<UncertaintySignal, boolean>>;
 }
+
+export type UncertaintySignal = 'examWeight' | 'weakness' | 'infoGain' | 'forgetting';
+
+/** Normalised expected information gain of one item at success probability p for a Gaussian ability posterior with sd rd. */
+export function expectedInfoGain(rd: number, p: number): number {
+  const fisher = p * (1 - p);
+  return Math.log1p(rd * rd * fisher) / Math.log1p(0.25 * ELO_RD_MAX * ELO_RD_MAX);
+}
+const ELO_RD_MAX = 1;
 
 export const DEFAULT_PLANNER_CONFIG: PlannerConfig = {
   fsrsCap: 0.25,
@@ -224,6 +245,8 @@ interface Stat {
 }
 
 const r1 = (x: number): number => Math.round(x * 10) / 10;
+/** typical practice target used to value information gain */
+const PRACTICE_P = 0.65;
 const dayMs = (date: string): number => dayNumber(date) * 86_400_000 + 43_200_000;
 
 function targetP(phase: PhaseDef, bucket: Bucket): number {
@@ -238,7 +261,7 @@ function findDay(input: PlanInput): ScheduleDay {
   return { date: input.date, daysLeft: 0, kind: 'work', phase: input.phase.id, capacityMin: input.capacityMin ?? 0 };
 }
 
-function computeStats(input: PlanInput, daysLeft: number, weights: PriorityWeights): Stat[] {
+function computeStats(input: PlanInput, daysLeft: number, weights: PriorityWeights, cfg: PlannerConfig): Stat[] {
   const scope = input.examsTopics ?? Object.keys(input.topicMeta);
   const ids = scope.filter((id) => input.topicMeta[id]).sort();
   const maxW = Math.max(1e-9, ...ids.map((id) => (input.topicMeta[id] as PlannerTopicMeta).weight));
@@ -248,7 +271,7 @@ function computeStats(input: PlanInput, daysLeft: number, weights: PriorityWeigh
     const meta = input.topicMeta[id] as PlannerTopicMeta;
     const t = input.mastery[id];
     const n = t?.n ?? 0;
-    const m = t && n > 0 ? masteryProb(t.θ) : 0.5;
+    const m = t && n > 0 ? (cfg.recallModel === 'learned' ? predictRecall(t, 0, now, { model: 'learned' }) : masteryProb(t.θ)) : 0.5;
     let R = 1;
     let due = false;
     if (t && n > 0) {
@@ -262,8 +285,15 @@ function computeStats(input: PlanInput, daysLeft: number, weights: PriorityWeigh
     const rdn = t && n > 0 ? t.rd : 1;
     const s = Math.min(1, (input.seenRecently?.[id] ?? 0) / 20);
     const wn = meta.weight / maxW;
-    const pi =
-      weights.alpha * wn * (1 - m) + weights.beta * (1 - R) + weights.gamma * rdn + weights.delta * e + weights.epsilon * (isFix ? 1 : 0) - weights.zeta * s;
+    let pi: number;
+    if (cfg.priorityMode === 'uncertainty') {
+      const on = (k: UncertaintySignal): number => (cfg.signals?.[k] === false ? 0 : 1);
+      const w = on('examWeight') ? wn : 1;
+      const eig = expectedInfoGain(rdn, PRACTICE_P);
+      pi = w * (on('weakness') * weights.alpha * (1 - m) + on('infoGain') * weights.gamma * eig + on('forgetting') * weights.beta * (1 - R)) + weights.delta * e + weights.epsilon * (isFix ? 1 : 0) - weights.zeta * s;
+    } else {
+      pi = weights.alpha * wn * (1 - m) + weights.beta * (1 - R) + weights.gamma * rdn + weights.delta * e + weights.epsilon * (isFix ? 1 : 0) - weights.zeta * s;
+    }
     return { id, meta, n, m, R, e, errTotal, wn, pi, due };
   });
 }
@@ -330,7 +360,7 @@ export function planDay(input: PlanInput): DayPlan {
   }
 
   const weights = (cfg.weights ?? PRIORITY_WEIGHTS)[input.phase.id];
-  const stats = computeStats(input, day.daysLeft, weights);
+  const stats = computeStats(input, day.daysLeft, weights, cfg);
   const triaged = triage(stats, input, day.daysLeft, cfg);
   const skipped = new Set(triaged.map((t) => t.topic));
   const live = stats.filter((s) => !skipped.has(s.id));
