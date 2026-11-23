@@ -1,1 +1,214 @@
-{"version": 0, "model": "logreg", "features": ["x_elo"], "mean": [0], "scale": [1], "coef": [1], "intercept": 0, "note": "placeholder equal to Elo; replaced by pipeline.ml.export_weights"}
+{
+ "version": 1,
+ "model": "logreg",
+ "features": [
+  "x_elo",
+  "rd",
+  "log_n",
+  "r",
+  "one_minus_r",
+  "log_days",
+  "unseen",
+  "err",
+  "b",
+  "log_k",
+  "x_elo_r",
+  "x_elo_rd",
+  "log_s"
+ ],
+ "mean": [
+  0.28596817,
+  0.57605468,
+  2.8479783,
+  0.83933316,
+  0.16066684,
+  1.4844535,
+  0.091509869,
+  0.24746624,
+  -0.49917245,
+  1.0196411,
+  0.25900744,
+  0.178696,
+  1.288826
+ ],
+ "scale": [
+  0.68443147,
+  0.2619777,
+  1.2984337,
+  0.14245688,
+  0.14245688,
+  0.89767271,
+  0.28833282,
+  0.19917307,
+  0.76330752,
+  0.72842946,
+  0.5682546,
+  0.43909759,
+  1.2164316
+ ],
+ "coef": [
+  0.61589965,
+  -0.34108259,
+  -0.059101783,
+  0.046024452,
+  -0.046024452,
+  -0.046266656,
+  -0.18577855,
+  -0.037460756,
+  0.037566853,
+  0.10500345,
+  0.06961924,
+  -0.019881899,
+  -0.05694747
+ ],
+ "intercept": 0.54068296,
+ "seed": 2026,
+ "trained_on": {
+  "rows": 3750795,
+  "csv_sha256": "8042e4b4cbf53a2faac57e244269c490ae64114c1e85cd08ffb1394a6b72dceb",
+  "sim_command": "pnpm --filter @kairos/core sim:export -- --students 300 --seed 2026 --days 100 --chunk 50 --policies random,weakest_first,planner --out ../pipeline/ml/data/sim_attempts.csv"
+ },
+ "metrics": {
+  "logreg": {
+   "n": 660446,
+   "auc": 0.686473296641729,
+   "log_loss": 0.6098188478020189,
+   "brier": 0.21084551914537364,
+   "ece": 0.004677302404683277,
+   "logloss_diff_vs_elo": {
+    "diff": -0.023224253613367517,
+    "lo": -0.024251928177184016,
+    "hi": -0.022198126930350122
+   }
+  },
+  "elo": {
+   "n": 660446,
+   "auc": 0.6477461669042044,
+   "log_loss": 0.6330431014153864,
+   "brier": 0.22136688809790478,
+   "ece": 0.0498310790099373
+  }
+ },
+ "golden": [
+  {
+   "input": {
+    "elo_theta": 0.0,
+    "elo_rd": 1.0,
+    "elo_n": 0,
+    "fsrs_r": 1.0,
+    "fsrs_s": 0.0,
+    "fsrs_d": 0.0,
+    "err_rate": 0.0,
+    "k_in_session": 0,
+    "days_since_last_topic": -1,
+    "difficulty_b": 0.0
+   },
+   "p": 0.35820058292603807
+  },
+  {
+   "input": {
+    "elo_theta": 0.0,
+    "elo_rd": 1.0,
+    "elo_n": 0,
+    "fsrs_r": 1.0,
+    "fsrs_s": 0.0,
+    "fsrs_d": 0.0,
+    "err_rate": 0.0,
+    "k_in_session": 2,
+    "days_since_last_topic": -1,
+    "difficulty_b": 1.5
+   },
+   "p": 0.13983611310945016
+  },
+  {
+   "input": {
+    "elo_theta": 0.8,
+    "elo_rd": 0.4,
+    "elo_n": 25,
+    "fsrs_r": 0.9,
+    "fsrs_s": 12.0,
+    "fsrs_d": 5.5,
+    "err_rate": 0.2,
+    "k_in_session": 0,
+    "days_since_last_topic": 3,
+    "difficulty_b": 0.2
+   },
+   "p": 0.732099931657309
+  },
+  {
+   "input": {
+    "elo_theta": -0.5,
+    "elo_rd": 0.6,
+    "elo_n": 8,
+    "fsrs_r": 0.55,
+    "fsrs_s": 4.0,
+    "fsrs_d": 7.0,
+    "err_rate": 0.5,
+    "k_in_session": 1,
+    "days_since_last_topic": 14,
+    "difficulty_b": -0.3
+   },
+   "p": 0.4450505250828884
+  },
+  {
+   "input": {
+    "elo_theta": 1.5,
+    "elo_rd": 0.15,
+    "elo_n": 120,
+    "fsrs_r": 0.98,
+    "fsrs_s": 90.0,
+    "fsrs_d": 3.0,
+    "err_rate": 0.05,
+    "k_in_session": 4,
+    "days_since_last_topic": 1,
+    "difficulty_b": -1.5
+   },
+   "p": 0.9797249158492924
+  },
+  {
+   "input": {
+    "elo_theta": -2.0,
+    "elo_rd": 0.9,
+    "elo_n": 3,
+    "fsrs_r": 0.2,
+    "fsrs_s": 1.0,
+    "fsrs_d": 9.5,
+    "err_rate": 0.8,
+    "k_in_session": 0,
+    "days_since_last_topic": 60,
+    "difficulty_b": 2.5
+   },
+   "p": 0.009596223591346141
+  },
+  {
+   "input": {
+    "elo_theta": 2.5,
+    "elo_rd": 0.15,
+    "elo_n": 300,
+    "fsrs_r": 0.0001,
+    "fsrs_s": 365.0,
+    "fsrs_d": 1.0,
+    "err_rate": 0.0,
+    "k_in_session": 10,
+    "days_since_last_topic": 0,
+    "difficulty_b": -3.0
+   },
+   "p": 0.9939137050053772
+  },
+  {
+   "input": {
+    "elo_theta": 0.1,
+    "elo_rd": 0.3,
+    "elo_n": 1,
+    "fsrs_r": 0.75,
+    "fsrs_s": 2.5,
+    "fsrs_d": 6.0,
+    "err_rate": 1.0,
+    "k_in_session": 3,
+    "days_since_last_topic": 7,
+    "difficulty_b": 0.0
+   },
+   "p": 0.6733029315857612
+  }
+ ]
+}
