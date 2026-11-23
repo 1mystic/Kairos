@@ -1,37 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="Kairos: the right question, at the right time">
-<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E1330"/><stop offset="1" stop-color="#1B1F63"/></linearGradient>
-<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F5A524" stop-opacity=".45"/><stop offset="1" stop-color="#F5A524" stop-opacity="0"/></radialGradient>
-<clipPath id="c"><rect width="1200" height="380" rx="24"/></clipPath>
-</defs>
-<g clip-path="url(#c)">
-<rect width="1200" height="380" fill="url(#bg)"/>
-<g stroke="#fff" stroke-opacity=".05">
-<path d="M0 95H1200M0 190H1200M0 285H1200M150 0V380M300 0V380M450 0V380M600 0V380M750 0V380M900 0V380M1050 0V380"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Kairos: the right question, at the right time">
+<style>
+text{font-family:"Plus Jakarta Sans","Plus Jakarta Sans Variable",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+.in{animation:i .8s cubic-bezier(.2,.7,.2,1) both}@keyframes i{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}
+.ring{stroke-dasharray:377;stroke-dashoffset:377;animation:r 2.2s .4s cubic-bezier(.2,.7,.2,1) forwards}@keyframes r{to{stroke-dashoffset:96}}
+.bar{transform-box:fill-box;transform-origin:left;animation:b 1.4s cubic-bezier(.2,.7,.2,1) both}@keyframes b{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.pulse{animation:p 2.4s ease-in-out infinite}@keyframes p{50%{opacity:.3}}
+</style>
+<rect width="1200" height="400" rx="24" fill="#FAFAF7" stroke="#CBCFE0"/>
+<!-- brand -->
+<g transform="translate(64 40) scale(.62)"><rect width="64" height="64" rx="14" fill="#3A3FD9"/><path d="M20 14v36" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M46 14 L30 32 L46 50" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="32" r="4.5" fill="#F5A524"/></g>
+<text x="112" y="66" font-size="22" font-weight="800" fill="#0E1330">Kairos</text>
+<!-- copy -->
+<g class="in"><text x="64" y="140" font-size="13" font-weight="800" fill="#8A5000" letter-spacing="1.4">JEE MAIN · NEET UG · IAT · GATE DA</text></g>
+<g class="in d1"><text x="64" y="204" font-size="56" font-weight="800" fill="#0E1330" letter-spacing="-2">The right question,</text></g>
+<g class="in d2"><text x="64" y="268" font-size="56" font-weight="800" fill="#3A3FD9" letter-spacing="-2">at the right time.</text></g>
+<g class="in d3"><text x="64" y="312" font-size="18" fill="#4B516A">Tell Kairos your exam date. It counts back and plans every day,</text><text x="64" y="338" font-size="18" fill="#4B516A">never crammed at the end.</text></g>
+<g class="in d4" font-size="15" font-weight="700">
+<rect x="64" y="354" width="196" height="30" rx="15" fill="#EEF0FF"/><text x="162" y="374" text-anchor="middle" fill="#3A3FD9">Real exam-style screen</text>
+<rect x="270" y="354" width="128" height="30" rx="15" fill="#EEF0FF"/><text x="334" y="374" text-anchor="middle" fill="#3A3FD9">Works offline</text>
+<rect x="408" y="354" width="150" height="30" rx="15" fill="#EEF0FF"/><text x="483" y="374" text-anchor="middle" fill="#3A3FD9">No sign-in needed</text>
 </g>
-<circle cx="1010" cy="190" r="150" fill="url(#glow)"><animate attributeName="r" values="130;175;130" dur="5s" repeatCount="indefinite"/></circle>
-<g fill="none" stroke="#F5A524" stroke-opacity=".35">
-<circle cx="1010" cy="190" r="70"><animate attributeName="r" values="60;140" dur="4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".5;0" dur="4s" repeatCount="indefinite"/></circle>
-<circle cx="1010" cy="190" r="70"><animate attributeName="r" values="60;140" dur="4s" begin="2s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".5;0" dur="4s" begin="2s" repeatCount="indefinite"/></circle>
+<!-- app card -->
+<rect x="660" y="40" width="500" height="320" rx="22" fill="#EEF0F7"/>
+<circle cx="686" cy="64" r="4" fill="#D9DCEA"/><circle cx="700" cy="64" r="4" fill="#D9DCEA"/><circle cx="714" cy="64" r="4" fill="#D9DCEA"/>
+<text x="732" y="68" font-size="12" font-weight="600" fill="#4B516A">Today · JEE Main</text>
+<rect x="680" y="84" width="200" height="180" rx="14" fill="#fff"/>
+<circle cx="780" cy="168" r="60" fill="none" stroke="#D9DCEA" stroke-width="8"/>
+<circle class="ring" cx="780" cy="168" r="60" fill="none" stroke="#3A3FD9" stroke-width="8" stroke-linecap="round" transform="rotate(-90 780 168)"/>
+<text x="780" y="180" text-anchor="middle" font-size="44" font-weight="800" fill="#0E1330">97</text>
+<text x="780" y="200" text-anchor="middle" font-size="11" fill="#4B516A">days to JEE Main</text>
+<rect x="892" y="84" width="248" height="180" rx="14" fill="#fff"/>
+<text x="908" y="112" font-size="15" font-weight="800" fill="#0E1330">Today's plan</text><text x="1124" y="112" text-anchor="end" font-size="12" fill="#4B516A">~2h 10m</text>
+<g font-size="13" font-weight="700" fill="#0E1330">
+<circle cx="916" cy="140" r="8" fill="#3A3FD9"/><path d="M912 140l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="934" y="144">Rotation</text><text x="1124" y="144" text-anchor="end" font-weight="500" fill="#4B516A">45 min</text>
+<rect x="934" y="152" width="190" height="4" rx="2" fill="#D9DCEA"/><rect class="bar" x="934" y="152" width="190" height="4" rx="2" fill="#3A3FD9"/>
+<circle cx="916" cy="189" r="8" fill="#D9DCEA"/>
+<text x="934" y="193">Ionic Eq</text><text x="1124" y="193" text-anchor="end" font-weight="500" fill="#4B516A">40 min</text>
+<rect x="934" y="201" width="190" height="4" rx="2" fill="#D9DCEA"/><rect class="bar" x="934" y="201" width="80" height="4" rx="2" fill="#3A3FD9" style="animation-delay:.3s"/>
+<circle cx="916" cy="238" r="8" fill="#D9DCEA"/>
+<text x="934" y="242">Mixed set</text><text x="1124" y="242" text-anchor="end" font-weight="500" fill="#4B516A">45 min</text>
 </g>
-<g transform="translate(930 110) scale(1.25)">
-<rect width="64" height="64" rx="14" fill="#3A3FD9"/>
-<path d="M20 14v36" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-<path d="M46 14 L30 32 L46 50" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="30" cy="32" r="4.5" fill="#F5A524"><animate attributeName="r" values="4.5;7;4.5" dur="2s" repeatCount="indefinite"/></circle>
-</g>
-<text x="70" y="150" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="92" font-weight="800" fill="#fff" letter-spacing="-3">kairos
-<animate attributeName="opacity" values="0;1" dur=".8s" fill="freeze"/></text>
-<text x="74" y="212" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="34" font-weight="600" fill="#F5A524">The right question, at the right time.
-<animate attributeName="opacity" values="0;0;1" keyTimes="0;.4;1" dur="1.6s" fill="freeze"/></text>
-<text x="74" y="262" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="20" fill="#C9CCF0">Tell it your exam date. It counts back and plans every day.
-<animate attributeName="opacity" values="0;0;1" keyTimes="0;.6;1" dur="2.2s" fill="freeze"/></text>
-<g font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#fff">
-<g><rect x="74" y="296" width="104" height="34" rx="17" fill="#3A3FD9"/><text x="126" y="318" text-anchor="middle">JEE Main</text></g>
-<g><rect x="188" y="296" width="96" height="34" rx="17" fill="#3A3FD9"/><text x="236" y="318" text-anchor="middle">NEET UG</text></g>
-<g><rect x="294" y="296" width="64" height="34" rx="17" fill="#3A3FD9"/><text x="326" y="318" text-anchor="middle">IAT</text></g>
-<g><rect x="368" y="296" width="98" height="34" rx="17" fill="#3A3FD9"/><text x="417" y="318" text-anchor="middle">GATE DA</text></g>
-<g><rect x="476" y="296" width="110" height="34" rx="17" fill="#2B2F8F"/><text x="531" y="318" text-anchor="middle">DSA · Design</text></g>
-</g>
+<g>
+<rect x="680" y="276" width="140" height="68" rx="12" fill="#fff"/><text x="694" y="298" font-size="11" fill="#4B516A">Pace</text><text x="694" y="321" font-size="20" font-weight="800" fill="#0E1330">0.92</text><circle class="pulse" cx="698" cy="333" r="3.5" fill="#3A3FD9"/><text x="708" y="336" font-size="11" fill="#4B516A">On track</text>
+<rect x="830" y="276" width="140" height="68" rx="12" fill="#fff"/><text x="844" y="298" font-size="11" fill="#4B516A">Accuracy</text><text x="844" y="321" font-size="20" font-weight="800" fill="#0E1330">74%</text><text x="844" y="336" font-size="11" fill="#4B516A">Last 7 days</text>
+<rect x="980" y="276" width="160" height="68" rx="12" fill="#fff"/><text x="994" y="298" font-size="11" fill="#4B516A">Next mock</text><text x="994" y="321" font-size="20" font-weight="800" fill="#0E1330">Sat 9:00</text><text x="994" y="336" font-size="11" fill="#4B516A">Full pattern</text>
 </g>
 </svg>

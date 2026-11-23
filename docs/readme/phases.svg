@@ -1,21 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="Phases planned backwards from the exam date">
 <style>
-text{font-family:system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#fff;font-weight:700}
+text{font-family:"Plus Jakarta Sans","Plus Jakarta Sans Variable",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+.t{fill:#fff;font-weight:800}.s{fill:#fff;fill-opacity:.8;font-weight:500;font-size:13px}
 .p{animation:r .9s cubic-bezier(.2,.7,.2,1) both}@keyframes r{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.mk{animation:m 6s linear infinite}@keyframes m{from{transform:translateX(0)}to{transform:translateX(1050px)}}
+.mk{animation:m 7s ease-in-out infinite alternate}@keyframes m{from{transform:translateX(0)}to{transform:translateX(1050px)}}
 </style>
-<rect width="1200" height="220" rx="24" fill="#0E1330"/>
-<g>
-<rect class="p" x="40"  y="60" width="240" height="64" rx="12" fill="#3A3FD9" style="animation-delay:0s"/><text x="60" y="88" font-size="18">Build</text><text x="60" y="110" font-size="13" style="fill:#C9CCF0;font-weight:500">first pass of chapters</text>
-<rect class="p" x="290" y="60" width="240" height="64" rx="12" fill="#5257E8" style="animation-delay:.15s"/><text x="310" y="88" font-size="18">Strengthen</text><text x="310" y="110" font-size="13" style="fill:#DCDEFA;font-weight:500">weak topics, spaced review</text>
-<rect class="p" x="540" y="60" width="220" height="64" rx="12" fill="#6A3FB5" style="animation-delay:.3s"/><text x="560" y="88" font-size="18">Consolidate</text><text x="560" y="110" font-size="13" style="fill:#E4D8F7;font-weight:500">mixed sets, mocks begin</text>
-<rect class="p" x="770" y="60" width="170" height="64" rx="12" fill="#C73737" style="animation-delay:.45s"/><text x="790" y="88" font-size="18">Exam mode</text><text x="790" y="110" font-size="13" style="fill:#FBD9D9;font-weight:500">timed full papers</text>
-<rect class="p" x="950" y="60" width="140" height="64" rx="12" fill="#F5A524" style="animation-delay:.6s"/><text x="966" y="88" font-size="18" style="fill:#0E1330">Sprint</text><text x="966" y="110" font-size="13" style="fill:#5A3600;font-weight:500">daily mock</text>
-<rect class="p" x="1100" y="60" width="60" height="64" rx="12" fill="#137A52" style="animation-delay:.75s"/><text x="1130" y="98" font-size="14" text-anchor="middle">Taper</text>
-</g>
-<path d="M40 160H1160" stroke="#3A3FD9" stroke-opacity=".5" stroke-width="2" stroke-dasharray="4 6"/>
-<g class="mk"><circle cx="50" cy="160" r="8" fill="#F5A524"/></g>
-<text x="40" y="196" font-size="14" style="fill:#C9CCF0;font-weight:500">today</text>
-<text x="1160" y="196" font-size="14" text-anchor="end" style="fill:#F5A524">exam day</text>
-<text x="600" y="36" font-size="15" text-anchor="middle" style="fill:#C9CCF0;font-weight:600">PLANNED BACKWARDS FROM YOUR DATE</text>
+<rect width="1200" height="220" rx="24" fill="#EEF0F7"/>
+<text x="600" y="38" font-size="13" font-weight="800" text-anchor="middle" fill="#8A5000" letter-spacing="1.4">PLANNED BACKWARDS FROM YOUR DATE</text>
+<rect class="p" x="40" y="62" width="240" height="68" rx="14" fill="#3A3FD9"/><text class="t" x="60" y="92" font-size="18">Build</text><text class="s" x="60" y="114">first pass of chapters</text>
+<rect class="p" x="290" y="62" width="240" height="68" rx="14" fill="#4D52E3" style="animation-delay:.15s"/><text class="t" x="310" y="92" font-size="18">Strengthen</text><text class="s" x="310" y="114">weak topics, spaced review</text>
+<rect class="p" x="540" y="62" width="220" height="68" rx="14" fill="#6A3FB5" style="animation-delay:.3s"/><text class="t" x="560" y="92" font-size="18">Consolidate</text><text class="s" x="560" y="114">mixed sets, mocks begin</text>
+<rect class="p" x="770" y="62" width="170" height="68" rx="14" fill="#C73737" style="animation-delay:.45s"/><text class="t" x="790" y="92" font-size="18">Exam mode</text><text class="s" x="790" y="114">timed full papers</text>
+<rect class="p" x="950" y="62" width="140" height="68" rx="14" fill="#F5A524" style="animation-delay:.6s"/><text class="t" x="968" y="92" font-size="18" style="fill:#0E1330">Sprint</text><text class="s" x="968" y="114" style="fill:#5A3600;fill-opacity:1">daily mock</text>
+<rect class="p" x="1100" y="62" width="60" height="68" rx="14" fill="#137A52" style="animation-delay:.75s"/><text class="t" x="1130" y="102" font-size="14" text-anchor="middle">Taper</text>
+<path d="M40 168H1160" stroke="#CBCFE0" stroke-width="2" stroke-dasharray="4 6"/>
+<g class="mk"><circle cx="50" cy="168" r="8" fill="#F5A524"/></g>
+<text x="40" y="202" font-size="13" font-weight="600" fill="#4B516A">today</text>
+<text x="1160" y="202" font-size="13" font-weight="700" text-anchor="end" fill="#8A5000">exam day</text>
 </svg>
