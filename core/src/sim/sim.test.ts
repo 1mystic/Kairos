@@ -200,3 +200,15 @@ describe('baseline policies (Phase A)', () => {
   });
 });
 
+
+describe('learned recall in the sim', () => {
+  it('a planner using the learned model picks items by predicted P and runs deterministically', () => {
+    const p = plannerPolicy({ name: 'pl', recall: 'learned', config: { recallModel: 'learned', priorityMode: 'uncertainty' } });
+    const cfg = { students: 2, days: 20, seed: 4, policies: [p, plannerPolicy()] };
+    const a = runSim(cfg);
+    expect(runSim(cfg)).toEqual(a);
+    expect(p.recall).toBe('learned');
+    for (const g of a.gains.pl!) expect(g).toBeGreaterThan(0);
+    expect(a.gains.pl).not.toEqual(a.gains.planner);
+  });
+});
