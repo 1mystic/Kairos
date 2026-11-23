@@ -72,4 +72,25 @@ Requires Node 20+ and pnpm. See [CLAUDE.md](CLAUDE.md) and [docs/](docs/) for th
 
 Questions come from official papers and answer keys, open datasets, user uploads and original solutions. Nothing is scraped from competitors. Many users are minors, so attempt data is used only for the student's own learning (DPDP-aware, with a parental-consent flow under 18).
 
+## ML
+
+Kairos ships a learned recall model, P(correct), trained offline on simulated students. Elo stays the default. Details and all numbers: `docs/results/README.md`. Algorithms: `docs/05_ALGORITHMS.md` 5.11-5.12. Plan: `docs/17_ML_UPGRADE_PLAN.md`.
+
+- On a held-out student split, the logistic model gets log-loss 0.610 vs Elo 0.633 (ECE 0.005 vs 0.050).
+- The uncertainty-aware planner with the learned model gains +3.0 marks (95% CI 2.95 to 3.08) over the current planner and beats every baseline (1,000 students x 5 seeds, paired).
+
+```bash
+pnpm --filter @kairos/core sim:study -- --students 1000 --seeds 1,2,3,4,5 --days 100 --out ../docs/results/sim_baselines.json
+```
+
+```bash
+pnpm --filter @kairos/core sim:export -- --students 300 --seed 2026 --days 100 --chunk 50 --policies random,weakest_first,planner --out ../pipeline/ml/data/sim_attempts.csv
+```
+
+```bash
+pipeline/ml/.venv/bin/python -m pipeline.ml.train --data pipeline/ml/data/sim_attempts.csv --seed 2026 --out pipeline/ml/out
+```
+
+Flags (off by default): `VITE_FLAG_LEARNED_RECALL=1` / `VITE_FLAG_UNCERTAINTY_PLANNER=1` at build time, or localStorage `kairos.flag.learnedRecall` / `kairos.flag.uncertaintyPlanner` = `1`.
+
 <p align="center"><sub>Built with care for students who'd rather practise well than practise more.</sub></p>
