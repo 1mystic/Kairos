@@ -20,7 +20,10 @@
     "build:prod": "VITE_USE_EMULATORS=false pnpm --filter @kairos/app exec vite build",
     "deploy:rules": "firebase deploy --only firestore:rules,firestore:indexes --project kairos-76a0d --non-interactive",
     "deploy:preview": "pnpm build:prod && firebase hosting:channel:deploy preview --expires 7d --project kairos-76a0d --non-interactive",
-    "deploy:hosting": "pnpm build:prod && firebase deploy --only hosting --project kairos-76a0d --non-interactive"
+    "deploy:hosting": "pnpm build:prod && firebase deploy --only hosting --project kairos-76a0d --non-interactive",
+    "sim:study": "pnpm --filter @kairos/core sim:study",
+    "sim:export": "pnpm --filter @kairos/core sim:export",
+    "ml:train": "pipeline/ml/.venv/bin/python -m pipeline.ml.train --data pipeline/ml/data/sim_attempts.csv --seed 2026 --out pipeline/ml/out"
   },
   "devDependencies": {
     "@eslint/js": "^9",
