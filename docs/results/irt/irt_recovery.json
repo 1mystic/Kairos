@@ -1,0 +1,234 @@
+{
+ "overall": {
+  "items": 2304,
+  "spearman": 0.979,
+  "rmse": 0.1819
+ },
+ "by_n_bucket": {
+  "n<20": {
+   "items": 0,
+   "spearman": null,
+   "rmse": null
+  },
+  "20-49": {
+   "items": 7,
+   "spearman": 0.7857,
+   "rmse": 0.2949
+  },
+  "50-99": {
+   "items": 79,
+   "spearman": 0.864,
+   "rmse": 0.3048
+  },
+  ">=100": {
+   "items": 2218,
+   "spearman": 0.9782,
+   "rmse": 0.175
+  }
+ },
+ "by_n_target": {
+  "10": {
+   "items": 2304,
+   "spearman": 0.6462,
+   "rmse": 0.6823,
+   "iterations": 10
+  },
+  "20": {
+   "items": 2304,
+   "spearman": 0.762,
+   "rmse": 0.5723,
+   "iterations": 11
+  },
+  "50": {
+   "items": 2297,
+   "spearman": 0.8846,
+   "rmse": 0.4204,
+   "iterations": 16
+  },
+  "100": {
+   "items": 2218,
+   "spearman": 0.9301,
+   "rmse": 0.3237,
+   "iterations": 20
+  },
+  "200": {
+   "items": 2024,
+   "spearman": 0.957,
+   "rmse": 0.2433,
+   "iterations": 24
+  }
+ },
+ "fit": {
+  "seed": 2026,
+  "iterations": 190,
+  "converged": true,
+  "max_abs_delta": 9.981186875693534e-05,
+  "n_groups": 85889,
+  "priors": {
+   "theta_sd": 1.5,
+   "b_mean": 0.0,
+   "b_sd": 1.0
+  },
+  "block_days": 0,
+  "min_n": 20,
+  "rows": 3750795,
+  "n_items": 2304,
+  "csv_sha256": "8042e4b4cbf53a2faac57e244269c490ae64114c1e85cd08ffb1394a6b72dceb"
+ },
+ "selection": [
+  {
+   "block_days": 7,
+   "heldout_logloss": 0.63247,
+   "coverage": 0.9412
+  },
+  {
+   "block_days": 14,
+   "heldout_logloss": 0.6288,
+   "coverage": 0.9715
+  },
+  {
+   "block_days": 28,
+   "heldout_logloss": 0.62434,
+   "coverage": 0.9888
+  },
+  {
+   "block_days": 0,
+   "heldout_logloss": 0.62129,
+   "coverage": 0.9998
+  }
+ ],
+ "chosen": 0,
+ "sensitivity": {
+  "note": "computed AFTER selection using true b; NOT used for choosing block_days",
+  "by_block_days": {
+   "7": {
+    "10": {
+     "items": 2304,
+     "spearman": 0.6306,
+     "rmse": 0.6909,
+     "iterations": 8
+    },
+    "20": {
+     "items": 2304,
+     "spearman": 0.7322,
+     "rmse": 0.597,
+     "iterations": 10
+    },
+    "50": {
+     "items": 2297,
+     "spearman": 0.842,
+     "rmse": 0.4742,
+     "iterations": 14
+    },
+    "100": {
+     "items": 2218,
+     "spearman": 0.8866,
+     "rmse": 0.4043,
+     "iterations": 16
+    },
+    "200": {
+     "items": 2024,
+     "spearman": 0.9158,
+     "rmse": 0.3462,
+     "iterations": 17
+    }
+   },
+   "14": {
+    "10": {
+     "items": 2304,
+     "spearman": 0.6326,
+     "rmse": 0.6896,
+     "iterations": 9
+    },
+    "20": {
+     "items": 2304,
+     "spearman": 0.7367,
+     "rmse": 0.5933,
+     "iterations": 11
+    },
+    "50": {
+     "items": 2297,
+     "spearman": 0.8503,
+     "rmse": 0.4644,
+     "iterations": 15
+    },
+    "100": {
+     "items": 2218,
+     "spearman": 0.8986,
+     "rmse": 0.3856,
+     "iterations": 16
+    },
+    "200": {
+     "items": 2024,
+     "spearman": 0.9317,
+     "rmse": 0.3158,
+     "iterations": 17
+    }
+   },
+   "28": {
+    "10": {
+     "items": 2304,
+     "spearman": 0.6362,
+     "rmse": 0.6874,
+     "iterations": 9
+    },
+    "20": {
+     "items": 2304,
+     "spearman": 0.7438,
+     "rmse": 0.5879,
+     "iterations": 11
+    },
+    "50": {
+     "items": 2297,
+     "spearman": 0.8609,
+     "rmse": 0.4526,
+     "iterations": 15
+    },
+    "100": {
+     "items": 2218,
+     "spearman": 0.9108,
+     "rmse": 0.3661,
+     "iterations": 16
+    },
+    "200": {
+     "items": 2024,
+     "spearman": 0.9449,
+     "rmse": 0.2867,
+     "iterations": 18
+    }
+   },
+   "0": {
+    "10": {
+     "items": 2304,
+     "spearman": 0.6462,
+     "rmse": 0.6823,
+     "iterations": 10
+    },
+    "20": {
+     "items": 2304,
+     "spearman": 0.762,
+     "rmse": 0.5723,
+     "iterations": 11
+    },
+    "50": {
+     "items": 2297,
+     "spearman": 0.8846,
+     "rmse": 0.4204,
+     "iterations": 16
+    },
+    "100": {
+     "items": 2218,
+     "spearman": 0.9301,
+     "rmse": 0.3237,
+     "iterations": 20
+    },
+    "200": {
+     "items": 2024,
+     "spearman": 0.957,
+     "rmse": 0.2433,
+     "iterations": 24
+    }
+   }
+  }
+ }
+}

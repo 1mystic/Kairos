@@ -9,6 +9,7 @@ Output (deterministic: sorted keys, gzip mtime=0):
   bank/v{N}/{exam}/{subject}/{chapter}.json.gz   verified questions, with answers + solutions
   bank/v{N}/mocks/{paperId}.json                 mock papers, answers/solutions stripped
   bank/v{N}/qindex.json                          {qid: [exam, chapter]}, one entry per published question
+  bank/v{N}/calib.json                           optional (--calib PATH): IRT item calibration {qid: [b, a, n]}
   bank/v{N}/taxonomy.json, bank/v{N}/blueprints/*.json
   bank/v{N}/manifest.json                        every other file: sha256, bytes, counts
   bank/latest.json                               {"version": N}
@@ -152,8 +153,13 @@ def build(src: Path | list[Path], papers_dir: Path, img_src: Path | None = None)
 
 
 def publish(version: int, src: Path | list[Path], out: Path, papers: Path, force: bool = False,
-            img_src: Path | None = None, img_out: Path | None = None) -> Path:
+            img_src: Path | None = None, img_out: Path | None = None, calib: Path | None = None) -> Path:
     files = build(src, papers, img_src)
+    if calib is not None:  # optional IRT calibration (pipeline.ml.irt_job), published verbatim next to qindex.json
+        if not calib.is_file():
+            raise PublishError(f"--calib {calib} not found")
+        cdoc = json.loads(calib.read_text())
+        files["calib.json"] = (calib.read_bytes(), {"kind": "calib", "count": len(cdoc.get("items", {}))})
     images = files.pop("__images__")[1]["images"]
     img_root = img_out if img_out is not None else out.parent / "img"
     total = files.pop("__total__")[1]
@@ -194,11 +200,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--img-src", type=Path, default=FIXTURES / "images", help="source png/jpg/webp dir")
     ap.add_argument("--img-out", type=Path, default=None, help="default: <out>/../img")
     ap.add_argument("--force", action="store_true", help="overwrite an existing version")
+    ap.add_argument("--calib", type=Path, default=None, help="calib.json from pipeline.ml.irt_job; copied to bank/v{N}/calib.json")
     a = ap.parse_args(argv)
     if a.version < 1:
         ap.error("--version must be >= 1")
     try:
-        vdir = publish(a.version, a.src or list(DEFAULT_SRCS), a.out, a.papers, a.force, a.img_src, a.img_out)
+        vdir = publish(a.version, a.src or list(DEFAULT_SRCS), a.out, a.papers, a.force, a.img_src, a.img_out, a.calib)
     except PublishError as e:
         print(f"publish failed: {e}", file=sys.stderr)
         return 1
